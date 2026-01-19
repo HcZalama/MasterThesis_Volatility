@@ -1,0 +1,2373 @@
+\documentclass[12pt, a4paper, hidelinks,openrigth, margin=2cm]{book}
+
+%Cosas de idioma
+\usepackage[english]{babel}
+\selectlanguage{english}
+%spanish, es-tabla
+% Cosas de formato
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{array}
+\usepackage[svgnames]{xcolor} % o [x11names]
+\usepackage{soul}             % cargar después de xcolor
+
+\sethlcolor{Gold}             % o Yellow, Gold, Khaki, etc.
+
+\usepackage{empheq}
+\usepackage[margin=2cm]{geometry}
+\usepackage{fancyhdr}
+
+\usepackage{dsfont}
+
+
+%para la dedicatoria
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\newenvironment{dedication}
+  {%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+
+
+\renewcommand{\headrulewidth}{0.4pt}% Line at the header invisible
+\renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+%\renewcommand{\plainheadrulewidth}{0pt}
+
+\fancypagestyle{fancyhdr}{%
+  \fancyhf{}%
+  \fancyhead[CE]{\leftmark}
+  \fancyhead[CO]{\rightmark}
+  \fancyfoot[LE]{\thepage}
+  \fancyfoot[RO]{\thepage}
+  \fancyfoot[LO]{\textsc{Héctor Zalama Alonso}}
+  \fancyfoot[RE]{\textsc{Universidad Nacional de Educación a Distancia}\quad \includegraphics[width=1.8em]{Images/LOGOUNEDDDD.png}}
+}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[LE]{\thepage}
+  \fancyfoot[RO]{\thepage}
+  \fancyfoot[LO]{\textsc{Héctor Zalama Alonso}}
+  \fancyfoot[RE]{\textsc{Universidad Nacional de Educación a Distancia}\quad \includegraphics[width=1.8em]{Images/LOGOUNEDDDD.png}}
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+
+
+\pagestyle{fancyhdr}
+\usepackage{emptypage}%no number empty odd pages created for formating right opening
+
+
+\usepackage{etoolbox}
+\patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
+
+% Cosas matemáticas
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+
+\usepackage{amsmath, amsthm}
+%\numberwithin{equation}{section} 
+
+\newtheorem{result}{Result}[section] % Common counter named 'result'
+
+% Aliases
+
+% Define theorem styles
+\theoremstyle{plain} % italic body (default) — for theorems, lemmas, etc.
+\theoremstyle{definition}
+\newtheorem{theorem}[result]{Theorem}
+\newtheorem{lemma}[result]{Lemma}
+\newtheorem{proposition}[result]{Proposition}
+\newtheorem{corollary}[result]{Corollary}
+
+\theoremstyle{definition} % upright body — for definitions and examples
+\newtheorem{definition}[result]{Definition}
+\newtheorem{example}[result]{Example}
+
+\theoremstyle{remark} % upright body + italic header — for remarks
+\newtheorem{remark}[result]{Remark}
+
+\usepackage{soul}
+
+
+%\usepackage{cancel} \cancel{} \bcancel{} \xcancel \cancelto{}{}
+
+
+% Changing theorem name to make it bf
+
+\setlength{\parskip}{0.68em}
+
+
+%\setlength{\parskip}{1em} %añadir espaciado entre parrafos. "em" es una unidad como cm o pt. significa ancho de una letra "m". Eso tiene gracia porque si pones el tamaño de letra general (el que va en documentclass cambia el ancho
+\setlength{\parindent}{0em} %quitar identacion en todo
+
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{Referencias/Bib.bib}
+\DefineBibliographyStrings{english}{%
+  andothers = {\textit{et\addabbrvspace al\adddot}}
+}
+
+% Metadata
+\title{Stochastic models and rough paths for volatility study}
+\author{Héctor Zalama Alonso}
+\date{June 2025}
+
+\usepackage[pdfusetitle,colorlinks=false]{hyperref}
+\hyphenpenalty=100000
+
+% \usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+% \hyphenpenalty=1000000000
+%==============================================================
+\numberwithin{equation}{chapter}
+
+
+\begin{document}
+
+
+\begin{titlepage}
+    \centering
+
+
+    {\bfseries \LARGE UNIVERSIDAD NACIONAL DE EDUCACIÓN A DISTANCIA\par}
+    \vspace{0.5cm}
+    {\large FACULTAD DE CIENCIAS \par}
+
+
+    \vspace{0.6cm}
+    \includegraphics[width=7cm]{Images/LOGOUNEDDDD.png} % Replace 'logo.png' with your university logo file
+    
+\vspace{0.6cm}
+
+{\LARGE \bfseries Máster en Matemáticas Avanzadas \par}
+ {\bfseries TRABAJO FIN DE MÁSTER \par}
+    
+    \vspace{0.12cm}
+    \rule{0.95\textwidth}{1.5pt}
+    \vspace{0.2cm}
+
+   {\bfseries \LARGE Classical and Modern Approaches to Volatility in Mathematical Finance\par}
+
+
+    \vspace{0.2cm}
+    \rule{0.8\textwidth}{1.5pt}
+    \vspace{0.3cm}
+
+ 
+
+
+    
+
+    %{\large \bfseries Especialidad: Matemática Aplicada \par}
+    
+    {\Large Autor: \par}
+    {\LARGE \bfseries Héctor Zalama Alonso\par}
+
+    \vspace{0.35cm}
+    {\Large Tutor: \par}
+    { \Large \bfseries Dr. Carlos Escudero Liébana \par}
+    
+\rule{0.8\textwidth}{1.5pt}
+
+
+    \vfill
+    {\large Madrid, February 2026 \par}
+\end{titlepage}
+
+
+
+\frontmatter              %% better to use this in book class
+
+  \begin{dedication}
+    Aus dem Paradies, das Cantor uns geschaffen hat, soll uns niemand vertreiben können. 
+    \par   %% or a blank line
+    \vspace{2\baselineskip}
+    We shall never be expelled from the paradise Cantor created for us.
+
+    \vspace{\baselineskip}
+    
+    \textbf{David Hilbert}
+  \end{dedication}
+%.
+%.
+%.
+%.
+\mainmatter          
+
+
+
+
+
+
+
+\newpage 
+\clearpage
+\pagestyle{empty}
+
+
+
+{\Huge \textbf{Preface}}
+
+\vspace{0.6cm}
+
+
+
+This document constitutes the Master’s Thesis of Héctor Zalama Alonso, prepared as the final requirement for the Master’s Degree in Advanced Mathematics at UNED, under the supervision of Carlos Escudero Liébana, Full Professor at UNED.
+
+The aim of this work is to present a natural progression from the classical foundations of stochastic calculus to the study and application of modern tools such as Rough Path Theory, with the ultimate goal of employing these tools in the field of financial modeling — particularly in the calibration of advanced volatility models. The intention is to illustrate how techniques originally developed in purely analytical contexts can find natural and effective applications in real-world problems in quantitative finance.
+
+The text is divided into two parts. The first covers the stochastic and financial foundations, including classical processes, basic notions of stochastic calculus, financial derivatives, and the most commonly used volatility models. The second part introduces Rough Path Theory, developing the necessary algebraic and topological structures, along with fundamental results on existence and uniqueness for differential equations driven by irregular paths. This section concludes with a concrete application to the calibration of volatility surfaces and cubes (???), highlighting the practical relevance of the theory presented.
+
+Some background knowledge is assumed, particularly in areas such as Probability Theory, Differential Calculus, and Functional Analysis. Nonetheless, introductory explanations are provided in the early chapters to keep the text as self-contained as possible, without compromising the depth of the results discussed in the later sections.
+
+I hope the reader finds this work as enriching to read as it has been for me to write. I remain open to any suggestions or comments — whether to point out typographical errors or to propose improvements — via the contact address: \newline \textit{hectorzalama@gmail.com}.
+
+\newpage
+
+
+
+
+
+\tableofcontents
+\thispagestyle{empty} 
+
+\newpage
+
+\clearpage % or \newpage, to ensure clean break
+\pagenumbering{arabic} % Start with arabic numbers (1, 2, 3...)
+\setcounter{page}{1}   % Start counting from 1
+\pagestyle{fancy}      % Activate your fancyhdr styling
+
+
+
+
+
+\part{Foundations and Classical Models} \label{part:part1} 
+\thispagestyle{empty}
+
+\chapter*{Introduction} \label{ch:cap1}
+
+
+
+
+
+
+
+\section{A worthy note on context}
+
+\begin{center}
+    \centering
+    \textit{The miracle of the appropriateness of the language of mathematics for the formulation of the laws of physics is a gift which we neither understand nor deserve.}
+\end{center}
+
+Eugene Wigner expressed his admiration in his 1960 article in \textit{Communications in Pure and Applied Mathematics.} It is a sentiment many would agree with: the effectiveness of mathematics in describing Nature is both remarkable and fascinating. Moreover, over the last century its branches have reached into areas where, not so long ago, mathematicians were considered too abstract to be of much use in business terms.
+
+In 1827, Robert Brown, while studying the behaviour of pollen grains suspended in water, noticed something unexpected: the grains wandered along irregular, hard-to-describe paths. Physics was not prepared to tackle such a problem yet. What was needed belonged to what we now call \textit{statistical mechanics}, the study of collective behaviour of particles and molecules, intimately tied to \textit{thermodynamics.} The decisive step came later, in 1905, when Albert Einstein provided a theory of this motion — the same year he also explained the photoelectric effect.
+
+A parallel story unfolded in finance. Louis Bachelier, a doctoral student of Henri Poincaré, was interested in modelling stock prices. His model, which we now recognise as essentially Gaussian, drew on probability theory but was on shaky ground. Worse, it allowed negative prices — a point critics did not miss.
+
+The common thread in both stories is \emph{Brownian motion}. This stochastic process is a central object in probability: geometers find its fractal dimension fascinating, while probabilists value the rich family of processes built upon it. The idea of treating “random noise” as a genuine mathematical object took shape gradually, but it was Kiyoshi Itô’s work on \emph{stochastic integration} that truly changed the picture.
+
+Finance joined somewhat later, but with undeniable impact. Today mathematics is everywhere in banks, consultancies, and audit firms, underpinning the valuation of derivatives, that is, assigning a \emph{fair price} (according to market data) to contracts involving random future cash flows. It is this topic that will be the focus of the present thesis.
+
+
+
+
+
+
+
+
+
+\section{Objective and Scope}
+
+
+The primary objective of this Thesis is to provide a solid review of \textit{Volatility}, aiming to fill the gap between those who are strictly Mathematics-oriented—who often lack expertise in Finance—and those who are Finance-oriented and do not fully appreciate the depth of the ideas they are working with. For this reconciliatory purpose, the Thesis embraces a clear and rigorous mathematical mindset, while maintaining continuous references to practical and financial interpretations. 
+
+
+
+
+\hyperref[part:part1]{Part I} aims to provide a thorough introduction to the subject. The core mathematical ideas—rooted in Probability Theory and forming the basis of modern Financial Theory—are presented in \hyperref[ch:cap2]{Chapter 2}. Then, classical volatility models are introduced in \hyperref[ch:cap3]{Chapter 3}, covering the renowned Black-Scholes paradigm and its extensions, including local and stochastic volatility models. These chapters lay the foundational framework for understanding both the strengths and the limitations of traditional approaches.
+
+\hyperref[part:part2]{Part II} is devoted to more recent developments in volatility modeling, including and rough volatility models (\hyperref[ch:cap4]{Chapter 4}). The latter is introduced from a general and mathematical perspective: although it finds direct applications in Finance, the theory of rough paths has far-reaching implications in other areas of mathematics as well. These chapters reflect the evolution of volatility modeling and highlight the need for refined tools to better capture empirical phenomena such as volatility clustering and roughness.
+
+Finally, these theoretical constructs are brought to practice in \hyperref[ch:cap5]{Chapter 5}, where a calibration of \hl{XXX} is performed. Here, the models are numerically implemented and compared, providing an applied perspective and illustrating the strengths and challenges associated with each approach. Some final conclusions are left for \hyperref[ch:cap6]{Chapter 6}, where a general overview of the work done will be given, along with reflections on possible directions for further research.
+
+\newpage
+%\rule{0.95\textwidth}{1.5pt}
+
+
+\chapter{Stochastic and Financial Foundations} \label{ch:cap2} 
+
+% \section{Preliminaries}
+
+% We shall assume some prior knowledge on Probability Theory, which can be found in any book on the matter. As for a personal preference, Billingsley's oeuvre (\textbf{reference}).
+
+% Let (Omega, F, P) be a probability space. It is known that we can assume the probability space to be \textit{complete}, that is, if $A \in F$ and $P(A) = 0$, then every $B \subset A$ also belongs to $F$ and $P(B) = 0.$ We will always assume that our probability space is complete.
+
+
+% % Throughout the text, we will mainly work with continuous stochastic processes (appropriately defined in \textbf{REFERENCE}). However, in order to give a wide setting for these processes, let $\mathbb{T}$ be the time that indexes a process.
+
+
+% \section{Elementary Processes}
+
+% The first key concept we need to address is that of stochastic process.
+
+% \begin{definition}
+%     Let (Omega, F, P) a probability space. Let $\mathbb{T} \in \{\mathbb{N}, \mathbb{Z}, [0,T], [0, \infty) , \mathbb{R}\}$ for $T > 0.$ We say $X(t,\omega)$ is a stochastic process ...
+% \end{definition}
+
+We assume the reader is familiar with the foundations of Probability Theory. 
+Standard references include, for example, Billingsley's classic text 
+\cite{Biggy}, as well as the treatments in \cite{durrett2019probability} and \cite{kallenberg2021foundations}. 
+Nevertheless, we briefly recall the basic probabilistic framework in order to fix 
+notation and ensure clarity.
+
+\medskip
+
+Throughout, we work on a probability space 
+\((\Omega, \mathcal{F}, \mathbb{P})\), where:
+\begin{itemize}
+    \item \(\Omega\) is the \emph{sample space}, representing the collection of 
+    all possible outcomes of the experiment under consideration.
+    \item \(\mathcal{F}\) is a \(\sigma\)-algebra of subsets of \(\Omega\), whose 
+    elements are called \emph{events}. By definition, \(\mathcal{F}\) is closed 
+    under countable unions, countable intersections, and complements, thereby 
+    providing the natural domain for the probability measure.
+    \item \(\mathbb{P}\) is a probability measure on \((\Omega, \mathcal{F})\). The measure-theoretic formulation of 
+    probability ensures that both discrete and continuous models can be treated 
+    within a unified framework.
+\end{itemize}
+
+Without loss of generality, we shall assume that the probability space is 
+\emph{complete}. That is, if \(A \in \mathcal{F}\) satisfies \(\mathbb{P}(A) = 0\), 
+then every subset \(B \subseteq A\) also belongs to \(\mathcal{F}\), and moreover 
+\(\mathbb{P}(B) = 0\). This technical assumption rules out ambiguities caused by 
+“missing” null sets, and will be taken for granted throughout.
+
+\medskip
+
+\begin{definition}[Random Variable] \label{def:random-variable}
+A \textbf{random variable} is a measurable function 
+\[
+X : (\Omega, \mathcal{F}) \to (E, \mathcal{E}),
+\]
+where \((E, \mathcal{E})\) is a measurable space. 
+In most of our applications, the target space will be 
+\((\mathbb{R}, \mathcal{B}(\mathbb{R}))\), where 
+\(\mathcal{B}(\mathbb{R})\) denotes the Borel \(\sigma\)-algebra. 
+\end{definition}
+
+Intuitively, a random variable associates to each elementary outcome 
+\(\omega \in \Omega\) a numerical value \(X(\omega)\). 
+Formally, the measurability condition ensures that events of the form 
+\(\{ \omega \in \Omega : X(\omega) \in B \}\) belong to \(\mathcal{F}\) 
+whenever \(B \in \mathcal{B}(\mathbb{R})\), so that their probabilities 
+are well-defined.
+
+\medskip
+
+This general framework provides the foundation for the study of stochastic processes, 
+which may be regarded as families of random variables indexed by time or some other 
+parameter. Before turning to them, we emphasize that the measure-theoretic language 
+is not merely a technical convenience: it is indispensable for developing modern 
+stochastic calculus, where delicate issues such as path regularity, filtrations, and 
+martingale properties require the full power of measure theory.
+\section{Probabilistic Preliminaries}
+
+The notion of \emph{stochastic process} generalizes that of a single random variable by allowing evolution in an external parameter, usually interpreted as time. To accommodate both discrete-time and continuous-time settings in a unified framework, we let \(\mathbb{T}\) denote the \textbf{index set}, representing time. Typically, \(\mathbb{T}\) is a subset of \(\mathbb{R}\), such as:
+\[
+\mathbb{T} \in \{ \mathbb{N}, \mathbb{N}_0, \mathbb{Z}, [0, T], [0, \infty), \mathbb{R} \},
+\]
+depending on the application.
+
+\begin{definition}
+Let \((\Omega, \mathcal{F}, \mathbb{P})\) be a complete probability space, and let \(\mathbb{T} \) be a time index set. A \textbf{stochastic process} is a collection of random variables \(\{ X_t : t \in \mathbb{T} \}\) defined on \((\Omega, \mathcal{F}, \mathbb{P})\) with values in a measurable space \((E, \mathcal{E})\), such that the map
+\[
+X : \mathbb{T} \times \Omega \to E, \quad (t, \omega) \mapsto X_t(\omega)
+\]
+is jointly measurable with respect to \(\mathcal{B}(\mathbb{T}) \otimes \mathcal{F}\). In particular:
+\begin{itemize}
+    \item For each fixed \(t \in \mathbb{T}\), the function \(\omega \mapsto X_t(\omega)\) is a random variable on \((\Omega, \mathcal{F}, \mathbb{P})\).
+    \item For each fixed \(\omega \in \Omega\), the function \(t \mapsto X_t(\omega)\) is called the \emph{sample path} or \emph{trajectory} of the process.
+\end{itemize}
+We may denote the process by \(X = \{X_t\}_{t \in \mathbb{T}}\), and abbreviate \(X_t(\omega)\) as \(X(t)\) or simply \(X_t\) when context allows. We say $X$ is \textit{discrete} whenever $\mathbb{T}$ is $\mathbb{N}$ o $\mathbb{Z}$ and \textit{continuous} if $\mathbb{T}$ is $[0,T]$ for some $T>0$ or $[0,\infty).$
+\end{definition}
+
+This formulation includes many important examples such as Markov chains, Poisson processes, and Brownian motion. Note that the nature of the index set \(\mathbb{T}\) often dictates the regularity assumptions or path properties we may require (e.g., right-continuity, càdlàg, continuity in probability, etc.).  The previous examples impose some kind of structure of the processes within itself. This idea is contained in the \textbf{conditional expectation}. Its existence relies on the following profound result:
+
+\begin{theorem}[Radon-Nikodym Derivative]\label{thm:radon-nikodym}.
+    Let \(\nu\) and \(\mu\) be two \(\sigma\)-finite measures defined on the same measurable space \((\Omega, \mathcal{F})\). Suppose that \(\nu\) is \emph{absolutely continuous} with respect to \(\mu\), denoted \(\nu \ll \mu\); that is,
+\begin{equation} \label{eq:abscont}
+\mu(A) = 0 \quad \Rightarrow \quad \nu(A) = 0, \quad \text{for all } A \in \mathcal{F}.
+\end{equation}
+
+\noindent Then there exists a measurable function \(f : \Omega \to [0, \infty)\), unique up to a null set, such that for all \(A \in \mathcal{F}\),
+\begin{equation} \label{eq:radonnikodym}
+\nu(A) = \int_A f \, d\mu.
+\end{equation}
+This function \(f\) is called the \emph{Radon--Nikodym derivative} of \(\nu\) with respect to \(\mu\), and is denoted by $f = d\nu/d\mu$. \hfill $\blacksquare$
+\end{theorem}
+
+As a consequence, if \(X \in L^1(\Omega, \mathcal{F}, \mathbb{P})\) (that is, $\int |X| \, d\mathbb{P}$ is finite) and letting \(\mathcal{G} \subseteq \mathcal{F}\) be a sub-\(\sigma\)-algebra, the \emph{conditional expectation} of \(X\) given \(\mathcal{G}\), denoted \(\mathbb{E}[X \mid \mathcal{G}]\), is the unique (up to \(\mathbb{P}\)-a.e. equality) \(\mathcal{G}\)-measurable function satisfying:
+\begin{equation}
+\int_G \mathbb{E}[X \mid \mathcal{G}] \, d\mathbb{P} = \int_G X \, d\mathbb{P}, \quad \text{for all } G \in \mathcal{G}.
+\end{equation}
+
+This definition is structurally equivalent to the Radon--Nikodym theorem. Define the set function \(\nu : \mathcal{G} \to \mathbb{R}\) by
+\begin{equation}
+\nu(G) := \int_G X \, d\mathbb{P}, \quad \text{for } G \in \mathcal{G}.
+\end{equation}
+Since \(X\) is integrable, \(\nu\) is a finite signed measure on \((\Omega, \mathcal{G})\), and it is absolutely continuous with respect to \(\mathbb{P}|_{\mathcal{G}}\), the restriction of \(\mathbb{P}\) to \(\mathcal{G}\). Then, by the Radon--Nikodym theorem (see \cite{Biggy} or \cite{RoydenFitzpatrick2010}), there exists a \(\mathcal{G}\)-measurable function, namely \(\mathbb{E}[X \mid \mathcal{G}]\) such that:
+\begin{equation}
+\int_G \mathbb{E}[X \mid \mathcal{G}] \, d\mathbb{P} = \int_G X \, d\mathbb{P}, \quad \text{for all } G \in \mathcal{G}.
+\end{equation}
+
+\begin{proposition}[Properties of conditional expectation]\label{def:conditional-expectation}
+Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space and let $\mathcal{G}$ be a sub-$\sigma$-field of $\mathcal{F}$. Then, the following hold almost surely:
+
+\begin{itemize}
+    \item[1.] $\mathbb{E}\!\left[\,\mathbb{E}[X \mid \mathcal{G}]\,\right] = \mathbb{E}[X]$. Hence the conditional expectation $\mathbb{E}[X \mid \mathcal{G}]$ and $X$ have the same expectation.
+
+    \item[2.] If $X$ is $\mathcal{G}$-measurable, then $\mathbb{E}[X \mid \mathcal{G}] = X$.
+
+    \item[3.] If $X$ and $\mathcal{G}$ are independent, then $\mathbb{E}[X \mid \mathcal{G}] = \mathbb{E}[X]$   ($\{X \in U\}$ and $A$ are independent events for any Borel subset $U \subseteq \mathbb{R}$ and $A \in \mathcal{G}$).
+
+
+    \item[4.] If $Y$ is $\mathcal{G}$-measurable and $\mathbb{E}[\,|XY|\,] < \infty$, then
+    $
+        \mathbb{E}[XY \mid \mathcal{G}] = Y \, \mathbb{E}[X \mid \mathcal{G}]. $
+    
+
+    \item[5.] If $\mathcal{H}$ is a sub-$\sigma$-field of $\mathcal{G}$, then
+    $
+        \mathbb{E}[X \mid \mathcal{H}] = \mathbb{E}\!\left[\,\mathbb{E}[X \mid \mathcal{G}] \,\middle|\, \mathcal{H}\,\right]. $
+    
+
+
+    \item[6.] If $X, Y \in L^{1}(\Omega)$ and $X \leq Y$, then
+    $
+        \mathbb{E}[X \mid \mathcal{G}] \leq \mathbb{E}[Y \mid \mathcal{G}]$ and, therefore, $\left| \mathbb{E}[X \mid \mathcal{G}] \right| \leq \mathbb{E}[\,|X| \mid \mathcal{G}].$
+
+
+    \item[7.] For all $a,b \in \mathbb{R}$ and $X,Y \in L^{1}(\Omega)$,
+    \[
+        \mathbb{E}[aX + bY \mid \mathcal{G}] = a \, \mathbb{E}[X \mid \mathcal{G}] + b \, \mathbb{E}[Y \mid \mathcal{G}].
+    \]
+    \textit{Remark:} It follows that the conditional expectation $\mathbb{E}[\cdot \mid \mathcal{G}]$ is a bounded linear operator from $L^{1}(\Omega,\mathcal{F})$ into $L^{1}(\Omega,\mathcal{G})$.
+
+    \item[8.] (\textbf{Conditional Fatou’s Lemma}) Let $X_n \geq 0$, $X_n \in L^{1}(\Omega)$ for $n \geq 1$, and assume that $\liminf_{n \to \infty} X_n \in L^{1}(\Omega)$. Then
+    \[
+        \mathbb{E}\!\left[\liminf_{n \to \infty} X_n \,\middle|\, \mathcal{G}\right] 
+        \leq \liminf_{n \to \infty} \mathbb{E}[X_n \mid \mathcal{G}].
+    \]
+
+    \item[9.] (\textbf{Conditional Monotone Convergence Theorem}) Let $0 \leq X_1 \leq X_2 \leq \cdots \leq X_n \leq \cdots$ and assume that $X = \lim_{n \to \infty} X_n \in L^{1}(\Omega)$. Then
+        $\mathbb{E}[X \mid \mathcal{G}] = \lim_{n \to \infty} \mathbb{E}[X_n \mid \mathcal{G}].
+    $ \hfill $\blacksquare$
+\end{itemize}
+\end{proposition}
+
+
+There is one final structural component that needs to be addressed. In the study of stochastic processes, it is essential to formalize how information accumulates over time. This is done through the concept of a \textbf{filtration}, which models the \emph{evolution of knowledge} or \emph{information available} up to each time \(t\).
+
+
+
+\begin{definition}[Filtration]
+Let \((\Omega, \mathcal{F}, \mathbb{P})\) be a probability space and let \(\mathbb{T}\) be a time index set. A \textbf{filtration} is a family \(\{\mathcal{F}_t\}_{t \in \mathbb{T}}\) of sub-\(\sigma\)-algebras of \(\mathcal{F}\) satisfying:
+\begin{equation}
+\mathcal{F}_s \subseteq \mathcal{F}_t \subseteq \mathcal{F} \quad \text{for all } s \leq t.
+\end{equation}
+That is, the filtration is \emph{increasing} in \(t\). We interpret \(\mathcal{F}_t\) as the collection of events whose outcomes are known or observable up to  \(t\). A stochastic process \(X = \{X_t\}_{t \in \mathbb{T}}\) is said to be \textbf{adapted} to the filtration \(\{\mathcal{F}_t\}\) if, for each \(t \in \mathbb{T}\), the random variable \(X_t\) is measurable with respect to \(\mathcal{F}_t\).  We say that $(\Omega, \mathcal F, \{\mathcal F_t\}, \mathbb P)$ is a \textbf{filtered probability space}.
+\end{definition}
+%We will work with $right-continuous$ filtrations, that is, those that satisfy 
+
+
+Recall that if \(\chi\) is a real-valued random variable on a probability space \((\Omega, \mathcal{F}, \mathbb{P})\), then the \(\sigma\)-algebra generated by \(\chi\) is denoted \(\sigma(\chi)\) and defined as:
+\begin{equation}
+\sigma(\chi) := \{ A \in \mathcal{F} : A = \chi^{-1}(B) \text{ for some } B \in \mathcal{B}(\mathbb{R}) \}.
+\end{equation}
+
+
+\begin{example}[Natural Filtration]
+Given a stochastic process \(X = \{X_t\}_{t \in \mathbb{T}}\), the \textbf{natural filtration} generated by \(X\) is defined by:
+\begin{equation}
+\mathcal{F}_t^X := \sigma(X_s : s \leq t),
+\end{equation}
+the smallest \(\sigma\)-algebra with respect to which all variables \(X_s\) for \(s \leq t\) are measurable. This filtration encodes exactly the information revealed by observing the process up to time \(t\).
+\end{example}
+
+\begin{definition}[Stopping time]\label{stoppingTime}
+Let $(\Omega,\mathcal{F}, \mathbb{P})$ a probability space and a filtration $\{\mathcal{F}_t\}.$ A mapping $\tau:\Omega \rightarrow [0,T]$ is  a \textit{stopping time} if, for each $t\geq 0$, $\{\omega  :  \tau(\omega) \leq t\} \in \mathcal{F}_t.$ 
+\end{definition}
+
+
+\begin{proposition}
+ Let \(\{ \mathcal{F}_t \,;\, a \leq t \leq b \}\) be a right-continuous filtration.  
+A random variable \(\tau : \Omega \to [a, b]\) is called a stopping time with respect to \(\{ \mathcal{F}_t \}\) if and only if  
+\[
+\{ \, \omega \in \Omega : \tau(\omega) < t \, \} \in \mathcal{F}_t, 
+\quad \text{for all } t \in [a, b].
+\]
+
+\end{proposition}
+
+\textbf{\textit{Proof:}} (...) \hfill $\blacksquare$
+
+\begin{example}\label{example_stoppingTimes}
+    Let $X_t$ be a stochastic process  on $[a,b]$ such that $\int_a^b |X_s|^2 d s < \infty$. Let $A_n =  \{ t : \int_a^t |X_t|^2 ds > n\}$
+    and $\tau_n(\omega) = \inf A_n$ if $A_n \neq \emptyset$ and $\tau_n(\omega) = b$ otherwise. Then, for $t\in (a,b]$, 
+    \begin{equation}
+        \{\omega : \tau_n(\omega) < t\} = \cup_{a<r<t, r \in \mathbb{Q}} \{\omega: \int_a^r |X_t|^2 dx < n\} \in \mathcal{F}_t
+    \end{equation}
+    whereas $\{\omega : \tau_n(\omega) < a\} = \emptyset \in \mathcal{F}_t$, so that by the previous proposition, $\tau_n$ is a stopping time.
+\end{example}
+
+\begin{example}[First hitting time]
+    Let $X_t$ be a right continuous process adapted to $\{\mathcal{F}_t\}.$ If $U$ is an open set of $\mathbb{R}$, then the \textit{first hitting time}, $\tau_U$ is defined as
+    \begin{equation}
+        \tau_u(\omega) = \inf\{t>0 : X_t(\omega) \in U\}
+    \end{equation}
+
+     is a stopping time.
+    
+    % since
+
+    % \[
+    % \{\tau_U \leq t\} = \cap_n \{\tau_U < t + \frac{1}{n}\} = \cap_n \cup_{r\in\mathbb{Q} \cap (-\infty,t+1/n)} \{X_r \in U\} \in
+    % \]
+\end{example}
+
+%     \subsection{Fundamental Distributions}
+
+
+% Before presenting some cornerstone distributions, recall that the \textbf{characteristic function} of a (real) random variable $X$ is defined by
+% \begin{equation}
+% \varphi_X(u) := \mathbb{E}[e^{i u X}], \quad u \in \mathbb{R}.
+% \end{equation}
+% It is the Fourier transform of the probability distribution of $X$, \hl{and it uniquely determines the law of $X$. }
+
+% Some basic properties of this new variable are:
+% \begin{itemize}
+%   \item $\varphi_X(0) = 1$.
+%   \item $|\varphi_X(u)| \leq 1$ for all $u \in \mathbb{R}$.
+%   \item $\varphi_X(-u) = \overline{\varphi_X(u)}$ (Hermitian symmetry in the complex case).
+%   \item $\varphi_{aX + b}(u) = e^{i u b} \varphi_X(a u)$ for all $a, b \in \mathbb{R}$.
+%   \item If $X$ and $Y$ are independent, then $\varphi_{X + Y}(u) = \varphi_X(u) \varphi_Y(u)$.
+%   %\item $\varphi_X$ is uniformly continuous on $\mathbb{R}$.
+% \end{itemize}
+
+% If $X$ has finite $n$-th moment, i.e.\ $\mathbb{E}[|X|^n] < \infty$, then $\varphi_X$ is $n$ times differentiable and
+% \[
+% \varphi_X^{(k)}(0) = i^k \, \mathbb{E}[X^k], \quad \text{for } 1 \leq k \leq n.
+% \]
+% Conversely, the existence of continuous derivatives of $\varphi_X$ on a nieghborhood of $0$ imply that the corresponding moments exist.
+
+% \begin{theorem}
+% Let $X$ be a random variable with distribution function $F_X$. If $\varphi_X$ is integrable, then $F_X$ admits a continuous density $f_X$ given by
+% \[
+% f_X(x) = \frac{1}{2\pi} \int_{\mathbb{R}} e^{-i u x} \varphi_X(u) \, du.
+% \]
+% \end{theorem}
+
+% In the general case, without assuming a density, the distribution function $F_X$ can still be recovered via the \emph{Lévy inversion formula}:
+% \begin{equation}\label{levyInversionFormula}
+% F_X(b) - F_X(a) = \lim_{T \to \infty} \frac{1}{2\pi} \int_{-T}^T \frac{e^{-i a u} - e^{-i b u}}{i u} \, \varphi_X(u) \, du.
+% \end{equation}
+
+
+
+% We deduce that if two random variables $X$ and $Y$ have the same characteristic function, i.e.\ $\varphi_X(u) = \varphi_Y(u)$ for all $u \in \mathbb{R}$, then $X$ and $Y$ have the same distribution. That is,
+% \[
+% \varphi_X = \varphi_Y \quad \Longleftrightarrow \quad \mathbb{P}_X = \mathbb{P}_Y.
+% \]
+% \begin{theorem}[Continuity Theorem, Lévy]\label{theorem:LevyContinuity}
+% Let $\{X_n\}_{n \in \mathbb{N}}$ be a sequence of random variables with characteristic functions $\varphi_{X_n}$, and let $X$ be a random variable with characteristic function $\varphi_X$. Then the following are equivalent:
+% \begin{itemize}
+%   \item $X_n \xrightarrow{d} X$ (convergence in distribution),
+%   \item $\varphi_{X_n}(u) \to \varphi_X(u)$ for all $u \in \mathbb{R}$, and $\varphi_X$ is continuous at $u = 0$.
+% \end{itemize}
+% \end{theorem}
+
+% We now give some description of certain processes  with widespread name and usefulness. The first place must be given to the normal distribution.
+
+
+% \medskip
+
+% \begin{example}[Normal Distribution]
+% Let $\mu \in \mathbb{R}$ and $\sigma > 0$, and define the real-valued random variable $X \colon \Omega \to \mathbb{R}$ with distribution $X \sim \mathcal{N}(\mu, \sigma^2),$
+% that is, $X$ has the probability density function
+% \[
+% f_X(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2} \right), \quad x \in \mathbb{R}.
+% \]
+% Then $X$ is said to be normally distributed with mean $\mu$ and variance $\sigma^2$, so that a normal distribution is characterized by its two first moments.
+% \end{example}
+
+% The normal distribution is fundamental in probability theory and statistics. It appears as the limiting distribution in the Central Limit Theorem and models many naturally occurring phenomena. Its characteristic function adopts the form $\varphi_X(u) = \exp\left( i u \mu - \frac{1}{2} \sigma^2 u^2 \right).$ Its resemblance to the \textit{heat kernel} (see \cite{Evans2010}) is not a coincidence and will be explored in the next section.
+
+% Let $X \sim \mathcal{N}(\mu_X, \sigma_X^2)$, $Y \sim \mathcal{N}(\mu_Y, \sigma_Y^2)$ be two normal random variables. The following are easily verified through Theorem \ref{theorem:LevyContinuity}:
+
+% \begin{itemize}
+%     \item For $a, b \in \mathbb{R}, aX + bY \sim \mathcal{N}(a\mu_X+b\mu_Y, a^2\sigma_X^2+b^2 \sigma_Y^2)$. For appropriateness when working with constant variables, we may write $ Z \sim \mathcal{N}(\mu, 0)$ for a constant random variable that only takes the value $\mu$. With this notation, the former idendity is still fulfilled when constant and normal variables are put together.
+%     \item Its characteristic function is entire analytic.
+%     \item Normal distribution maximizes \textbf{entropy} among distributions for fixed first two moments. This makes it the \textit{least informative} among these distributions.
+%     \item If $\{X _n \sim \mathcal{N}(\mu_n, \sigma_n^2)\}_{n=1}^\infty$ is a sequence of normal random variables, then $X_n \rightarrow^d X \sim \mathcal{N}(\mu, \sigma^2)$, with $\sigma > 0$, if, and only if, $\mu_n \rightarrow^{n\rightarrow \infty}$ and $\sigma_n^2 \rightarrow ^{n\rightarrow \infty} \sigma^2.$
+%     \item In general, two independent random variables have null correlation. In the special case of normal variables, their correlation being zero implies their independence.
+    
+    
+% \end{itemize}
+
+% However, the most sensible reason to why normal distribution is so important relies on the following fundamental result, in a relatively weak form:
+
+% \begin{theorem}[Central Limit Theorem]
+%     Let $\{X_n\}_{n=1}^\infty$ a sequence of independent, identically distributed random variables (hereafter, \emph{iidrv}) with finite first two moments, $\mu$ and $\sigma$ respectively. Then,
+
+%     $$
+%     \frac{\sum_{k=1}^nX_k-\mu}{\sqrt{n}} \rightarrow^d \mathcal{N}(\sigma^2).
+%     $$
+% \end{theorem}
+
+% It is hard to stress enough the importance and implications of the normal distribution throughout mathematics. Some insight on the multivariate case shall also be provided.
+
+\subsection{Fundamental Distributions}
+
+Before presenting some cornerstone distributions, recall that the \textbf{characteristic function} of a (real) random variable $X$ is defined by
+\begin{equation}
+\varphi_X(u) := \mathbb{E}[e^{i u X}], \quad u \in \mathbb{R}.
+\end{equation}
+It is the Fourier transform of the probability distribution of $X$, and it uniquely determines the law of $X$.
+
+Some basic properties of the characteristic function are:
+\begin{itemize}
+  \item $\varphi_X(0) = 1$.
+  \item $|\varphi_X(u)| \leq 1$ for all $u \in \mathbb{R}$.
+  \item $\varphi_X(-u) = \overline{\varphi_X(u)}$ (Hermitian symmetry in the complex case).
+  \item $\varphi_{aX + b}(u) = e^{i u b} \varphi_X(a u)$ for all $a, b \in \mathbb{R}$.
+  \item If $X$ and $Y$ are independent, then $\varphi_{X + Y}(u) = \varphi_X(u) \varphi_Y(u)$.
+\end{itemize}
+
+If $X$ has finite $n$-th moment, i.e.\ $\mathbb{E}[|X|^n] < \infty$, then $\varphi_X$ is $n$ times differentiable and
+\begin{equation}
+\varphi_X^{(k)}(0) = i^k \, \mathbb{E}[X^k], \quad \text{for } 1 \leq k \leq n.
+\end{equation}
+Conversely, the existence of continuous derivatives of $\varphi_X$ on a neighborhood of $0$ implies that the corresponding moments exist.
+
+\begin{theorem}
+Let $X$ be a random variable with distribution function $F_X$. If $\varphi_X$ is integrable, then $F_X$ admits a continuous density $f_X$ given by
+\begin{equation}
+f_X(x) = \frac{1}{2\pi} \int_{\mathbb{R}} e^{-i u x} \varphi_X(u) \, du.
+\end{equation}
+\end{theorem}
+
+In the general case, without assuming a density, the distribution function $F_X$ can still be recovered via the \emph{Lévy inversion formula}:
+\begin{equation}\label{levyInversionFormula}
+F_X(b) - F_X(a) = \lim_{T \to \infty} \frac{1}{2\pi} \int_{-T}^T \frac{e^{-i a u} - e^{-i b u}}{i u} \, \varphi_X(u) \, du.
+\end{equation}
+
+We deduce that if two random variables $X$ and $Y$ have the same characteristic function, i.e.\ $\varphi_X(u) = \varphi_Y(u)$ for all $u \in \mathbb{R}$, then $X$ and $Y$ have the same distribution. \hfill $\blacksquare$
+
+\begin{theorem}[Lévy's Continuity Theorem]\label{theorem:LevyContinuity}
+Let $\{X_n\}_{n \in \mathbb{N}}$ be a sequence of random variables with characteristic functions $\varphi_{X_n}$, and let $X$ be a random variable with characteristic function $\varphi_X$. Then the following are equivalent:
+\begin{itemize}
+  \item $X_n \xrightarrow{d} X$ (convergence in distribution),
+  \item $\varphi_{X_n}(u) \to \varphi_X(u)$ for all $u \in \mathbb{R}$, and $\varphi_X$ is continuous at $u = 0$.  \hfill $\blacksquare$
+\end{itemize}
+\end{theorem}
+
+We now describe certain distributions of widespread importance and usefulness. The first place must be given to the normal distribution.
+
+\medskip
+
+\begin{example}[Normal Distribution]
+Let $\mu \in \mathbb{R}$ and $\sigma > 0$, and define the real-valued random variable $X \colon \Omega \to \mathbb{R}$ with distribution $X \sim \mathcal{N}(\mu, \sigma^2),$
+that is, $X$ has the probability density function
+\begin{equation}
+f_X(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2} \right), \quad x \in \mathbb{R}.
+\end{equation}
+Then $X$ is said to be normally distributed with mean $\mu$ and variance $\sigma^2$; thus, a normal distribution is characterized by its first two moments.
+\end{example}
+
+The normal distribution is fundamental in probability theory and statistics. It appears as the limiting distribution in the Central Limit Theorem and models many naturally occurring phenomena. Its characteristic function adopts the form
+\begin{equation}
+\varphi_X(u) = \exp\left( i u \mu - \tfrac{1}{2} \sigma^2 u^2 \right).
+\end{equation}
+Its resemblance to the \textit{heat kernel} (see \cite{Evans2010}) is not a coincidence and will be explored in the next section.
+
+Let $X \sim \mathcal{N}(\mu_X, \sigma_X^2)$, $Y \sim \mathcal{N}(\mu_Y, \sigma_Y^2)$ be two normal random variables. The following are easily verified through Theorem \ref{theorem:LevyContinuity}:
+
+\begin{itemize}
+    \item For $a, b \in \mathbb{R}$, $aX + bY \sim \mathcal{N}(a\mu_X+b\mu_Y, a^2\sigma_X^2+b^2 \sigma_Y^2)$. For convenience when working with constant random variables, we may write $Z \sim \mathcal{N}(\mu, 0)$ for a constant random variable that only takes the value $\mu$. With this notation, the former identity is still fulfilled when constant and normal variables are combined.
+    \item Its characteristic function is entire analytic.
+    \item The normal distribution maximizes \textbf{entropy} among distributions with fixed first two moments. This makes it the \textit{least informative} among these distributions.
+    \item If $\{X _n \sim \mathcal{N}(\mu_n, \sigma_n^2)\}_{n=1}^\infty$ is a sequence of normal random variables, then $X_n \xrightarrow{d} X \sim \mathcal{N}(\mu, \sigma^2)$, with $\sigma > 0$, if and only if $\mu_n \to \mu$ and $\sigma_n^2 \to \sigma^2$ as $n \to \infty$.
+    \item In general, two independent random variables have zero correlation. In the special case of normal variables, their correlation being zero implies their independence.
+\end{itemize}
+
+However, the most compelling reason why the normal distribution is so important rests on the following fundamental result, in a relatively weak form:
+
+\begin{theorem}[Central Limit Theorem]
+    Let $\{X_n\}_{n=1}^\infty$ be a sequence of independent, identically distributed (hereafter, \emph{iid}) random variables  with finite mean $\mu$ and variance $\sigma^2 > 0$. Then
+    \begin{equation}
+    \frac{\sum_{k=1}^n X_k - n\mu}{\sigma \sqrt{n}} \xrightarrow{d} \mathcal{N}(0,1). \text{\hspace{0.6cm}} \blacksquare
+    \end{equation}
+\end{theorem}
+
+It is hard to stress enough the importance and implications of the normal distribution throughout mathematics. Some insight on the multivariate case shall also be provided.
+
+
+% \begin{example}[Multivariate Normal Distribution]
+% Let \( X = (X_1, \dots, X_d)^\top \) be a \( \mathbb{R}^d \)-valued random vector defined on a probability space \( (\Omega, \mathcal{F}, \mathbb{P}) \). The vector \( X \) is said to follow a \textbf{multivariate normal distribution} with mean vector \( \mu \in \mathbb{R}^d \) and covariance matrix \( \Sigma \in \mathbb{R}^{d \times d} \), written as
+% \[
+% X \sim \mathcal{N}_d(\mu, \Sigma),
+% \]
+% if for every \( a \in \mathbb{R}^d \), the real-valued random variable \( a^\top X \) is normally distributed in \( \mathbb{R} \), i.e.,
+% \[
+% a^\top X \sim \mathcal{N}(a^\top \mu, a^\top \Sigma a).
+% \]
+
+
+% \end{example}
+
+% Note that $\Sigma$ is symmetric. If \( \Sigma \) is invertible (that is, positive definite), the distribution is absolutely continuous with full support on \( \mathbb{R}^d \). If \( \Sigma \) is only positive semi-definite and not full-rank, then \( X \) is supported on a lower-dimensional affine subspace of \( \mathbb{R}^d \). In the former case, \( X \) has the following density with respect to Lebesgue measure on \( \mathbb{R}^d \):
+% \[
+% f_X(x) = \frac{1}{(2\pi)^{d/2} \det(\Sigma)^{1/2}} \exp\left( -\frac{1}{2}(x - \mu)^\top \Sigma^{-1} (x - \mu) \right).
+% \]
+
+% The characteristic function of a multivariate normal random vector \( X \sim \mathcal{N}_d(\mu, \Sigma) \) is $\varphi_X(u) = \mathbb{E}[e^{i u^\top X}] = \exp\left( i u^\top \mu - \frac{1}{2} u^\top \Sigma u \right), \quad \text{for all } u \in \mathbb{R}^d.$ As in the real case, these variables are determined completely by a mean vector and a covariance matrix.
+
+
+
+
+% Similarly to real normal variables,  for multivariate normals uncorrelatedness implies independence. 
+
+
+% \begin{example}[Log-Normal Distribution]
+
+% A random variable \( X \) is said to follow a \textbf{log-normal distribution} with parameters \( \mu \in \mathbb{R} \) and \( \sigma > 0 \), denoted
+% \[
+% X \sim \text{Log}\mathcal{N}(\mu, \sigma^2),
+% \]
+% if the logarithm of \( X \) is normally distributed, i.e.,
+% \[
+% \log X \sim \mathcal{N}(\mu, \sigma^2).
+% \]
+% \end{example}
+
+% The probability density function of \( X \sim \text{Log}\mathcal{N}(\mu, \sigma^2) \), after a minor change of variable calculation, is
+% \[
+% f_X(x) = \frac{1}{x \sigma \sqrt{2\pi}} \exp\left( -\frac{(\log x - \mu)^2}{2\sigma^2} \right), \quad x > 0.
+% \]
+
+% All positive moments of a log-normal variable exist and are explicitly given by:
+% \[
+% \mathbb{E}[X^k] = \exp\left( k\mu + \frac{1}{2}k^2\sigma^2 \right), \quad \text{for all } k > 0.
+% \]
+% In particular,
+% \[
+% \mathbb{E}[X] = \exp\left( \mu + \frac{\sigma^2}{2} \right), \qquad
+% \mathbb{V}[X] = \left( e^{\sigma^2} - 1 \right) e^{2\mu + \sigma^2}.
+% \]
+
+
+% The characteristic function of a log-normal variable has no closed-form expression. Moreover, it is not integrable, and \( \varphi_X(u) \) is not defined for all complex values of \( u \). Despite having finite moments, this distribution is not uniquely determined by them. The key assumption that fails for taking advantace of Lévy inversion formula \eqref{levyInversionFormula} is the existence of the limit when $T \rightarrow \infty.$
+
+    
+% The usefulness of the log-normal distribution in finance is something that will be presented in Section  \hl{XX}.
+
+
+
+
+
+
+
+
+
+
+
+
+% \begin{example}[Random Walk]
+% Let \(\mathbb{T} = \mathbb{N}_0\) and consider the probability space \((\Omega, \mathcal{F}, \mathbb{P})\) where we define a sequence of i.i.d. random variables \(\{\xi_n\}_{n \in \mathbb{N}}\) such that \(\mathbb{P}(\xi_n = 1) = \mathbb{P}(\xi_n = -1) = \frac{1}{2}\). The \textbf{simple symmetric random walk} is the stochastic process \(X = \{X_n\}_{n \in \mathbb{N}_0}\) defined by:
+% \[
+% X_0 := 0, \quad X_n := \sum_{k=1}^n \xi_k \quad \text{for } n \geq 1.
+% \]
+% This process models a discrete-time evolution in which the system moves at each step by \(\pm1\) with equal probability. Each sample path is piecewise constant and consists of successive steps forming a path on \(\mathbb{Z}\). It is a classic example of a discrete-time, integer-valued stochastic process with stationary and independent increments.
+% \end{example}
+
+% It is clear that $\varphi_\xi(u) = \frac{e^{iu}+e^{-iu}}{2}=\cos(u)$ and, due to independence, $\varphi_{X_n}(u) =  \cos^n(u).$ We will return to this process, where the size of the jump and the time between jumps are put into agreement to allow a new process to take place.
+
+% \begin{example}[Poisson Process]
+% Let \(\mathbb{T} = [0, \infty)\) and fix a rate \(\lambda > 0\). On a suitable probability space \((\Omega, \mathcal{F}, \mathbb{P})\), define a stochastic process \(N = \{N_t\}_{t \geq 0}\) with values in \(\mathbb{N}_0\), where \(N_t\) counts the number of events that have occurred up to time \(t\). The process \(N\) is called a \textbf{Poisson process with rate \(\lambda\)} if it satisfies:
+% \begin{itemize}
+%     \item \(N_0 = 0\) almost surely,
+%     \item \(N\) has independent increments,
+%     \item The number of events in any interval of length \(t\) follows a Poisson distribution with mean \(\lambda t\), i.e.,
+%     \[
+%     \mathbb{P}(N_{t+s} - N_s = k) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad \text{for all } k \in \mathbb{N}_0, \, s,t \geq 0.
+%     \]
+% \end{itemize}
+% Sample paths of the Poisson process are piecewise constant and non-decreasing, with jumps of size \(+1\) occurring at random times. It is a fundamental model for counting processes and illustrates a continuous-time stochastic process with jump discontinuities.
+% \end{example}
+
+% After some  calculations, $\mathbb{E}[N_t] = \mathbb{V}[N_t] = \lambda t.$ We may also compute its characteristic function, arriving to $\varphi_{N_t}(u) = e^{\lambda t (e^{iu}-1)}$
+
+% Poisson processes are useful when trying to count the amount of independent events with exponential decay that may take place during a certain amount of time. A well-known application relies on counting the amount of calls that a "centralita" receives during a normal day. It is also being used to model electricity curves, where abrupt jumps are customary. 
+
+
+% Note that the Poisson process is \emph{continuous in time} because \(\mathbb{T} = [0,\infty)\), even though its sample paths exhibit discontinuities. This distinction between the continuity of the index set and the continuity of sample paths shall not lead to confusion.
+
+
+
+% \begin{remark}
+%     \emph{Despite the importance of discrete processes, \textbf{for most of the dissertation we will assume that the process is continuous}, unless otherwise stated.}
+% \end{remark}
+
+\begin{example}[Multivariate Normal Distribution]
+Let \( X = (X_1, \dots, X_d)^\top \) be a \( \mathbb{R}^d \)-valued random vector defined on a probability space \( (\Omega, \mathcal{F}, \mathbb{P}) \). The vector \( X \) is said to follow a \textbf{multivariate normal distribution} with mean vector \( \mu \in \mathbb{R}^d \) and covariance matrix \( \Sigma \in \mathbb{R}^{d \times d} \), written as
+\begin{equation}
+X \sim \mathcal{N}_d(\mu, \Sigma),
+\end{equation}
+if for every \( a \in \mathbb{R}^d \), the real-valued random variable \( a^\top X \) is normally distributed in \( \mathbb{R} \), i.e.,
+\begin{equation}
+a^\top X \sim \mathcal{N}(a^\top \mu, a^\top \Sigma a).
+\end{equation}
+\end{example}
+
+Note that $\Sigma$ is symmetric and positive semi-definite. If \( \Sigma \) is invertible (that is, positive definite), the distribution is absolutely continuous with full support on \( \mathbb{R}^d \). If \( \Sigma \) is only positive semi-definite and not full-rank, then \( X \) is supported on a lower-dimensional affine subspace of \( \mathbb{R}^d \). In the former case, \( X \) admits the following density with respect to Lebesgue measure on \( \mathbb{R}^d \):
+\begin{equation}
+f_X(x) = \frac{1}{(2\pi)^{d/2} \det(\Sigma)^{1/2}} \exp\left( -\frac{1}{2}(x - \mu)^\top \Sigma^{-1} (x - \mu) \right).
+\end{equation}
+
+The characteristic function of a multivariate normal random vector \( X \sim \mathcal{N}_d(\mu, \Sigma) \) is
+\begin{equation}
+\varphi_X(u) = \mathbb{E}[e^{i u^\top X}] = \exp\left( i u^\top \mu - \tfrac{1}{2} u^\top \Sigma u \right), \quad u \in \mathbb{R}^d.
+\end{equation}
+As in the univariate case, for multivariate normal variables, uncorrelatedness implies independence.
+
+\begin{example}[Log-Normal Distribution]
+A random variable \( X \) is said to follow a \textbf{log-normal distribution} with parameters \( \mu \in \mathbb{R} \) and \( \sigma > 0 \), denoted
+\begin{equation}
+X \sim \text{Log}\mathcal{N}(\mu, \sigma^2),
+\end{equation}
+if the logarithm of \( X \) is normally distributed, i.e.,
+\begin{equation}
+\log X \sim \mathcal{N}(\mu, \sigma^2).
+\end{equation}
+\end{example}
+
+The probability density function of \( X \sim \text{Log}\mathcal{N}(\mu, \sigma^2) \), after a straightforward change-of-variable calculation, is
+\begin{equation}
+f_X(x) = \frac{1}{x \sigma \sqrt{2\pi}} \exp\left( -\frac{(\log x - \mu)^2}{2\sigma^2} \right), \quad x > 0.
+\end{equation}
+
+All positive moments of a log-normal variable exist and are explicitly given by
+\begin{equation}
+\mathbb{E}[X^k] = \exp\left( k\mu + \tfrac{1}{2}k^2\sigma^2 \right), \quad k > 0.
+\end{equation}
+In particular,
+\begin{equation}
+\mathbb{E}[X] = \exp\left( \mu + \tfrac{\sigma^2}{2} \right), \qquad
+\mathbb{V}[X] = \left( e^{\sigma^2} - 1 \right) e^{2\mu + \sigma^2}.
+\end{equation}
+
+The characteristic function of a log-normal variable has no closed-form expression. Moreover, it is not integrable, and \( \varphi_X(u) \) is not defined for all complex values of \( u \). Despite having finite moments, this distribution is not uniquely determined by them. The key assumption that fails for taking advantage of Lévy’s inversion formula \eqref{levyInversionFormula} is the existence of the limit when $T \to \infty$.
+
+
+
+\begin{example}[Random Walk]
+Let \(\mathbb{T} = \mathbb{N}_0\) and consider the probability space \((\Omega, \mathcal{F}, \mathbb{P})\) where we define a sequence of i.i.d. random variables \(\{\xi_n\}_{n \in \mathbb{N}}\) such that \(\mathbb{P}(\xi_n = 1) = \mathbb{P}(\xi_n = -1) = \tfrac{1}{2}\). The \textbf{simple symmetric random walk} is the stochastic process \(X = \{X_n\}_{n \in \mathbb{N}_0}\) defined by
+\begin{equation}
+X_0 := 0, \quad X_n := \sum_{k=1}^n \xi_k, \quad n \geq 1.
+\end{equation}
+This process models a discrete-time evolution in which the system moves at each step by \(\pm1\) with equal probability. Each sample path is piecewise constant and consists of successive steps forming a path on \(\mathbb{Z}\). It is a classic example of a discrete-time, integer-valued stochastic process with stationary and independent increments.
+\end{example}
+
+It is clear that
+\begin{equation}
+\varphi_\xi(u) = \frac{e^{iu}+e^{-iu}}{2}=\cos(u),
+\end{equation}
+and, due to independence,
+\begin{equation}
+\varphi_{X_n}(u) =  \cos^n(u).
+\end{equation}
+We will return to this process, where the size of the jump and the time between jumps are adjusted to allow a new process to emerge.
+
+\begin{example}[Poisson Process]
+Let \(\mathbb{T} = [0, \infty)\) and fix a rate \(\lambda > 0\). On a suitable probability space \((\Omega, \mathcal{F}, \mathbb{P})\), define a stochastic process \(N = \{N_t\}_{t \geq 0}\) with values in \(\mathbb{N}_0\), where \(N_t\) counts the number of events that have occurred up to time \(t\). The process \(N\) is called a \textbf{Poisson process with rate \(\lambda\)} if it satisfies:
+\begin{itemize}
+    \item \(N_0 = 0\) almost surely,
+    \item \(N\) has independent increments,
+    \item The number of events in any interval of length \(t\) follows a Poisson distribution with mean \(\lambda t\), i.e.,
+    \begin{equation}
+    \mathbb{P}(N_{t+s} - N_s = k) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad k \in \mathbb{N}_0, \, s,t \geq 0.
+    \end{equation}
+\end{itemize}
+Sample paths of the Poisson process are piecewise constant and non-decreasing, with jumps occurring at random times. It is a fundamental model for counting processes and illustrates a continuous-time stochastic process with jump discontinuities.
+\end{example}
+
+After some calculations,
+\begin{equation}
+\mathbb{E}[N_t] = \mathbb{V}[N_t] = \lambda t.
+\end{equation}
+We may also compute its characteristic function, leading to
+\begin{equation}
+\varphi_{N_t}(u) = e^{\lambda t (e^{iu}-1)}.
+\end{equation}
+
+Poisson processes are useful when trying to count the number of independent events occurring randomly over time, with exponentially distributed inter-arrival times. A well-known application is counting the number of calls that a switchboard receives during a typical day. Poisson processes are also used to model electricity demand curves, where abrupt jumps are customary.
+
+Note that the Poisson process is \emph{continuous in time} because \(\mathbb{T} = [0,\infty)\), even though its sample paths exhibit discontinuities. This distinction between the continuity of the index set and the continuity of sample paths should not cause confusion.
+
+\begin{remark}
+    \emph{Despite the importance of discrete processes, \textbf{for most of this dissertation we will assume that the process is continuous}, unless otherwise stated.}
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Markov Processes}
+
+Markov processes are characterized by a specific form of \emph{memorylessness}. They are particularly suited to describe the evolution of systems where the future depends only on the present state and not on the past history. Some of these processes arise as \textit{difussions} and in that case, a lot can be said about the distributions.
+
+
+
+
+\begin{definition}[Markov Process]
+Let \((\Omega, \mathcal{F}, \mathbb{P})\) be a probability space, and let \(X = \{X_t\}_{t \in \mathbb{T}}\) be a stochastic process taking values in a measurable space \((E, \mathcal{E})\). We say that \(X\) is a \textbf{Markov process} if for every $s < t$ and every measurable set $A \in \mathcal{S}$,
+\end{definition}
+
+\begin{equation}
+\mathbb{P}(X_t \in A \mid \mathcal{F}_s) = \mathbb{P}(X_t \in A \mid X_s) \quad \text{almost surely}, 
+\end{equation}
+
+where $\mathcal{F}_s = \sigma(X_r : r \leq s)$ is the $\sigma$-algebra generated by the history of the process up to time $s$. Let us define the \textbf{transition probability} of  Markov process by $  \mathbb{P}(X_{t} \in A \mid X_0 = x)$. In order to integrate against the measure given by the transition probability, we can write $P_{s,x}(t,dy) = \mathbb{P}(X_t \in dy | X_s = x).$
+
+
+There is a rather sharp distinction between finite-state Markov processes and those with infinitely many states. In the finite case, the theory is built around transition matrices: the probability of moving from one state to another in a single step is recorded in a matrix \(P_t\), so that the evolution can either be understood as $\prod_{i=1}^n P_i$. Long-run behaviour can then often be analysed by classical linear-algebraic tools, specially in the stationary case, that is, when the transition probability is independent of $t$.
+
+In the infinite-state setting,  the dynamics are described by operators acting on spaces of functions or measures. The study of these processes therefore relies on functional analysis, differential equations and probabilistic techniques, showing that these topics are deeply linked. The evolution can be described by a family of linear operators $(P_t)_{t \geq 0}$ acting on a suitable class of functions $f : S \to \mathbb{R}$, following:
+
+
+\begin{equation}
+P_t f(x) := \mathbb{E}^x[f(X_t)] = \int_S f(y) P_t(x, dy), 
+\end{equation}
+
+where $\mathbb{E}^x[\cdot]$ denotes expectation conditioned on $X_0 = x$. The family $(P_t)_{t \geq 0}$ forms a \textbf{semigroup of operators} in the sense that: $P_0 = I$ and $P_{t+s} = P_t \circ P_s \quad \forall t, s \geq 0 $. Moreover, under suitable regularity conditions, we have:
+
+\[
+\lim_{t \to 0^+} P_t f = f.
+\]
+
+
+The \textbf{infinitesimal generator} $A$ of the semigroup $(P_t)$ is the linear operator defined by:
+
+\begin{equation}
+Af := \lim_{t \to 0^+} \frac{P_t f - f}{t}, 
+\end{equation}
+
+for those functions $f$ for which the limit exists in an appropriate sense (e.g., uniform limit if $f$ is bounded and continuous). The domain of the generator is denoted by
+
+\[
+\mathcal{D}(A) := \left\{ f \in \mathcal{B}(S) : \lim_{t \to 0^+} \frac{P_t f - f}{t} \text{ exists} \right\}.
+\]
+
+The generator captures the infinitesimal behavior of the process. This generator is of seminal importance because it allows to connect Markov processes with PDEs and functional analysis, as will be shown in Subsection \ref{section:itoDiff}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Martingales, semimartingales and local martingales}
+
+Martingales are processes for which the expected value of a future instant is precisely the state of the process up to present time. Martingales are absolutely key in the study of stochastic processes. Some generalizations are needed as well. We keep the notation used in the previous section.
+
+
+\begin{definition}{(Martingale)} 
+    Let $X_t$ be a stochastic process, adapted to a given filtration $\mathcal{F}_t$. We say it is a \textbf{martingale} provided:
+    \begin{itemize}
+        \item $\mathbb{E}[|X_t|]<\infty$ for almost all $t.$
+        \item $X_s = \mathbb{E}[X_t | \mathcal{F}_s]$ for $s<t.$
+    \end{itemize}
+    We say that $X_t$ is a \textbf{supermartinagle} if the second condition is replaced by $X_s  \geq \mathbb{E}[X_t | \mathcal{F}_s]$ and a \textbf{submartingale} if $X_s\leq \mathbb{E}[X_t | \mathcal{F}_s].$
+\end{definition}
+
+The following result will be useful when constructing stochastic processes from Itô integrals. Notice that if $X_t$ is a martingale, then by Jensen's inequality $X_t^2$ is a submartingale.
+
+\begin{proposition}(Doob submartingale inequality)
+    Let $Z(t)$, $a\leq b$ be a right continuous submarintagale (that is $\mathbb{P}(\omega \, : \, f(t,w)$ is continuous) $= 1$). Then, for any $\varepsilon > 0$,
+    $$
+    \mathbb{P}(\sup_{a\leq t\leq b} Z(t) \geq \varepsilon) \leq \frac{\mathbb{E}[\max\{Z(b),0\}]}{\varepsilon}.
+    $$
+    In particular, for right continuous martingales, $\mathbb{P}(\sup_{a\leq t\leq b} |X_t| \geq \varepsilon) \leq \mathbb{E}[|X_t|]/\varepsilon.$
+\end{proposition}
+\textbf{\textit{Proof:}} (...) \hfill $\blacksquare$
+
+
+
+
+
+\noindent
+The notion of a martingale is often too restrictive, particularly when considering processes such as stochastic exponentials or certain diffusion models. A relaxation is therefore introduced.
+
+\begin{definition}[Local Martingale]
+A process $X = \{X_t\}_{t \geq 0}$ is a \textbf{local martingale} if there exists an increasing sequence of stopping times $(\tau_n)_{n \geq 1}$ with $\tau_n \uparrow \infty$ almost surely, such that each stopped process $X^{\tau_n}_t := X_{t \wedge \tau_n}$ is a martingale.
+\end{definition}
+
+The idea is that $X$ behaves like a martingale, but only up to random horizons. Local martingales are “martingales in disguise”: their martingale property can break down globally, often because integrability conditions fail. 
+
+\noindent
+Finally, there is another related concept, broad enough to serve as a class of \textit{good integrators}. In particular, it extends the role played by Brownian motion as a canonical integrator, while retaining enough structure to allow a general theory of stochastic calculus.
+
+
+\begin{definition}[Semimartingale]
+A process $X$ is called a \textbf{semimartingale} if it can be decomposed as
+\[
+X_t = M_t + A_t,
+\]
+where $M_t$ is a local martingale and $A_t$ is  right continuous process with well defined left limits and of locally bounded variation.
+\end{definition}
+
+This decomposition strikes a balance: the “rough” martingale part is where the randomness lives, while the finite variation part behaves like a deterministic drift. The class of semimartingales is large enough to encompass essentially all models used in stochastic analysis and in finance. Most importantly, it is precisely the right class of processes with respect to which one can define a robust stochastic integral in the Itô sense.
+
+
+
+
+
+
+
+\subsection{Brownian Motion}
+
+Brownian motion is a fundamental stochastic process whose importance has grown 
+throughout many areas of mathematics. It is complex enough to generate a new class 
+of \textit{stochastic differential equations} and to address numerous applied problems 
+involving randomness, yet simple enough to allow explicit calculations. 
+Its properties also enable efficient simulation, making it a cornerstone of Monte Carlo 
+methods across disciplines.
+
+\begin{definition}[Brownian Motion] \label{def:brownian-motion}
+A stochastic process \(W : \mathbb{R}^+ \times \Omega \to \mathbb{R}\) is called a 
+\textbf{Brownian motion} (or \textbf{Wiener process}) if the following conditions hold:
+\begin{itemize}
+    \item[i)] \begin{equation}
+        \mathbb{P}(W_0 = 0) = 1.
+    \end{equation}
+    \item[ii)] \begin{equation}
+        \mathbb{P}\big( \{ \omega : t \mapsto W_t(\omega) 
+        \text{ is continuous} \} \big) = 1.
+    \end{equation}
+    \item[iii)] For \(0 \leq s < t\), 
+    \begin{equation}
+        W_t - W_s \sim \mathcal{N}(0, t-s).
+    \end{equation}
+    \item[iv)] The process has independent increments: for 
+    \(0 \leq t_1 < t_2 < \dots < t_n\), the random variables
+    \begin{equation}
+        \{ W_{t_1}, \ W_{t_2}-W_{t_1}, \ W_{t_3}-W_{t_2}, \ \dots, \ W_{t_n}-W_{t_{n-1}} \}
+    \end{equation}
+    are independent.
+\end{itemize}
+\end{definition}
+
+Some properties of Brownian motion follow immediately from the definition 
+and are presented below. The last one illustrates the property known as 
+\emph{stochastic self-similarity}. 
+
+\medskip
+
+In order to work with the broadest possible class of stochastic processes, 
+we introduce the following general result.
+
+\begin{proposition} \label{prop:independent-increments}
+Let \(S(t), \, t \geq 0\), be a process adapted to the filtration 
+\((\mathcal{F}_t)_{t \geq 0}\) such that for any \(0 \leq s < t\),
+the increment \(S(t)-S(s)\) is independent of \(\mathcal{F}_s\). 
+Then \(S(t)\) has independent increments.
+\end{proposition}
+
+\textit{\textbf{Proof}.} (...) \hfill $\blacksquare$
+
+\medskip
+
+Therefore, a process \(B(t)\) satisfying the conditions of 
+Definition~\ref{def:brownian-motion}, together with a filtration satisfying 
+Proposition~\ref{prop:independent-increments}, is a Brownian motion.\footnote{
+Analogous considerations hold for a Poisson process; see \cite{durrett2019probability}.} 
+Throughout, we will work with processes adapted to their natural filtration, i.e. 
+\(B_t\) is \(\mathcal{F}_t\)-measurable and increments \(B(t)-B(s)\) are independent 
+of \(\mathcal{F}_s\) whenever \(s \leq t\).
+
+The next definition and proposition highlight some of the structural richness 
+of such processes. In particular, the last property quantifies the 
+\emph{roughness} of sample paths, a key feature of Brownian motion.
+
+\begin{definition}[Quadratic Variation] \label{def:quadratic-variation}
+Let \(f : \mathbb{R} \to \mathbb{R}\) be defined on an interval \([a,b]\), 
+and let \(\mathcal{P} = \{a=t_0 < t_1 < \dots < t_n=b\}\) be a partition. 
+The \textbf{quadratic variation} of \(f\) on \([a,b]\) is
+\begin{equation}
+[f]_t = \lim_{\lVert \mathcal{P} \rVert \to 0} 
+\sum_{k=1}^n \big( f(t_k) - f(t_{k-1}) \big)^2,
+\end{equation}
+where 
+\begin{equation}
+\lVert \mathcal{P} \rVert = \max_{1 \leq k \leq n} (t_k - t_{k-1}).
+\end{equation}
+In the stochastic setting, when $f$ is a random variable, this limit is typically understood in 
+\(L^p(\Omega)\).
+\end{definition}
+
+\begin{proposition} \label{prop:bm-properties}
+Let \((W_t)_{t \geq 0}\) be a Brownian motion. Then:
+\begin{itemize}
+    \item[a)] For \(t > 0\), \(W_t \sim \mathcal{N}(0,t)\). Moreover, for all 
+    \(s,t \geq 0\),
+    \begin{equation}
+        \mathbb{E}[W_s W_t] = \min\{s,t\}.
+    \end{equation}
+    \item[b)] For \(t_0 \geq 0\), the process
+    \begin{equation}
+        Y(t) = W(t+t_0) - W(t_0)
+    \end{equation}
+    is also a Brownian motion.
+    \item[c)] For any \(\lambda > 0\), the process
+    \begin{equation}
+        Z(t) = \frac{1}{\sqrt{\lambda}} W(\lambda t)
+    \end{equation}
+    is also a Brownian motion.
+    \item[d)] Brownian motion is both a Markov process and a martingale. 
+    \item[e)] The quadratic variation of \(W_t\) over \([a,b]\) is
+    \begin{equation}
+        [W]_{[a,b]} = b-a \quad \text{in } L^2(\Omega)
+    \end{equation}
+    so that $W_t^2 - t$ is a martingale if $a = 0$.
+\end{itemize}
+Properties b) and c) are called \emph{translation invariance} 
+and \emph{scaling invariance}, respectively. Property d) is the key underlying characteristic of brownian motion.
+\end{proposition}
+
+\textit{\textbf{Proof}.} (...) \hfill $\blacksquare$
+
+\medskip
+
+One might wonder whether such a process actually exists, given the strong 
+set of requirements in Definition~\ref{def:brownian-motion}. 
+This definition is reminiscent of the analogous definition of the 
+Poisson process. A detailed discussion of the existence and construction 
+of processes defined through such specifications is an important 
+topic in probability theory. However, since both Brownian motion and 
+the Poisson process are classical and well established, we shall omit 
+this discussion here and instead focus on the construction of Itô's integral 
+in the next section.
+
+
+
+
+\section{Stochastic Calculus}
+
+% Stochastic Calculus is a wide area in Mathematics that allows, for example, to incorporate some kind of randomness and uncertainty in differential equations. One of our main aims is to give meaning to expressions of the kind 
+
+% $$
+% dX_t = a(t,X_t) dt + b(t,X_T) dW_t \, \, \, \text{and} \, \, \, X(\omega,0) = X_0 \, \forall \omega \in \Omega.
+% $$
+
+% where $dW_t$ will be specified in the next subsection. The generalization aims to be in the sense that $X_t$ is the solution to the ODE $dY_t = a(t,Y_t) dt$ if $b = 0.$
+
+% First, we will give sense to such expressions from an integral point of view, constructing concrete meaning for these. Then, we will show how a new and somewhat \textit{bizarre} Chain Rule arises in this context, and how to solve these new differential equations.
+
+% \subsection{The Itô Integral}
+
+% First, let's restate the problem as 
+
+% $$
+% X_t - X_0 = \int_0^t a(t,X_t) dt + \int_0^t b(t,X_T) dW_t 
+% $$
+% For each $\omega \in \Omega$, the first term in the right handside is nothing new. Regarding the second one, we may wonder if there is a sensible way of defining 
+% $$
+% M_t = \int_a^tf(s,\omega) dW(s,\omega), \, \, \, \, a\leq t\leq b
+% $$
+% so that $M_t$ is a martingale. There is another witty consideration that leads to the definition of Itô Calculus, which is the necessity that the integrand is adapted in some sense to the filtration considered. These ideas lead to the following definition:
+
+% \begin{definition}
+    
+% \begin{itemize}
+%     \item[i)] The space of stochastic processes on $[a,b]$ adapted to a filtration $\mathcal{F}_t$ and such that $\int_a^b\mathbb{E}[|f(t)|^2]dt < \infty$ will be denoted by $L^2_{ad}([a,b]\times \Omega).$ It is a Hilbert space, the standard one that arises in the finite-measure space $[a,b]\times \Omega.$ 
+%     \item[ii)] We say $f\in L^2_{ad}([,b]\times\Omega)$ is a \textbf{step stochastic process} if $$f(t,\omega) = \sum_{i= 1}^n \varphi_{i-1}(\omega)\mathds{1}_{[t_{i-1},t_i)}$$
+%     where $\varphi_i$ is a collection of $\mathcal{F}_{t_i}$-measurable and of finite variance ($\mathbb{E}[\varphi_i^2] < \infty$).
+% \end{itemize}
+    
+    
+% \end{definition}
+
+% The idea behind the following construction relies on working carefully with these step functions and approximating up to its closure in $L_{ad}^2([a,b]\times\Omega).$ For any such process $f$, take $t_0 = a$ and $t_n = b$ and \textbf{define}\footnote{One thing that must be noticed is why we take the left evaluation on each subinterval. It is the martingale property that motivates this. There are however variants of this kind of Calculus, where the evaluation point is different and different calculus rules apply. See Stratonovich Caclulus in (REFERENCE).} \textbf{its integral} as
+% $$
+% \int_a^b fdB_t = I(f) = \sum_{i=1}^n \varphi_{t_{i-1}}\left(  B(t_i)-B(t_{i-1}\right)(\omega).
+% $$
+% This transformation is clearly linear. Additionally, the following two lemmas are key for the construction for any $f\in L^2_{ad}(a,b\times\Omega).$
+
+% \begin{lemma}
+
+% Under these conditions, for $f$ step stochastic, $\mathbb{E}[I(f)]=0$ and $$\mathbb{E}[I(f)^2]= \int_a^b \mathbb{E}[f(t)^2]dt.$$
+% \end{lemma}
+% \textit{\textbf{Proof:}} (...) \hfill $\blacksquare$
+
+% \begin{lemma}
+% Suppose $f\in L^2_{ad}(a,b\times\Omega).$ There exists a sequence $\{f_n\}_{n= 1}^\infty$ of step stochastic processes in $L^2_{ad}([a,b]\times\Omega)$ such that
+% $$
+% \lim_{n\rightarrow \infty}\int_a^b \mathbb{E}[(f(t)-f_n(t))^2]dt =0
+% $$    
+% which amounts to say that these step processes are $dense$ in $L^2_{ad}([a,b]\times\Omega).$
+% \end{lemma}
+
+% \textbf{\textit{Proof:}} (...) \hfill $\blacksquare$
+
+% We are know ready to define this to every process in $L^2_{ad}(...).$ Note that, in the conditions of the previous lemma, if $\{f_n\}_{n=1}^\infty$ is any such approximating sequence, then
+% $$
+% \mathbb{E}[(I(f_n)-I(f_m))^2] = \int_a^b \mathbb{E}[(f_n-f_m)^2] \rightarrow 0 \text{ as } n,m\rightarrow \infty
+% $$
+% since the righthandside is convergent, thus Cauchy condition holds. Then ${I(f_n)}_{n=1}^\infty$ is a Cauchy sequence in $L^2(\Omega)$ and, being a complete space, this leads to the following definition.
+
+% \begin{definition}{Stochastic Integral}
+%     Let $f \in L^2_{ad}(...)$. We define its \textit{stochastic integral} over $[a,b]$, namely $I(f)$ as the limit in $L^2(\Omega)$ of $I(f_n)$ for any sequence of step stocahstic processes such that $f_n \rightarrow_{L^2_{ad([a,b]\times\Omega)}} f.$
+% \end{definition}
+
+% It is linear. One of the previous lemmas must be stated now, together with an immediate consequece, as a legit Theorem.
+
+% \begin{theorem}(Itô's isometry)
+% \begin{itemize}
+%     \item[i)]
+
+% Suppose $f\in L^2_{ad}(...). $ Then $I(f)$ is a centered random variable such that
+
+% $$
+% \mathbb{E}[I(f)^2] = \int _a ^b \mathbb{E}[f(t)^2]dt.
+% $$
+
+% \item[ii)] For any $f,g \in L^2_{ad}(...)$, 
+% $$
+% \mathbb{E}\left[   \int_a^b f(t)dB(t) \int_a^bg(t)dB(t)\right] = \int_a^b \mathbb{E}[f(t)g(t)]dt.
+% $$
+% \end{itemize}    
+% \end{theorem}
+
+
+
+
+
+% \textit{\textbf{Proof:}} (...) \hfill $\blacksquare$
+
+% Also, note that whenever $f(t)$ does not show any dependence on $\omega$, then $I(f)$ is a centered normal variable with variance $\int_a^b f(t)^2 dt.$
+
+Stochastic Calculus is a wide area in Mathematics that allows, for example, the incorporation of randomness and uncertainty into differential equations. One of our main aims is to give meaning to expressions of the kind 
+\begin{equation}\label{eq:sde_intro}
+dX_t = a(t,X_t)\,dt + b(t,X_t)\,dW_t, 
+\quad X_0 \in \mathbb{R}.
+\end{equation}
+Here $dW_t$ will be specified in the next subsection. Notice that this generalizes the deterministic case: if $b \equiv 0$, then $X_t$ reduces to the solution of the ODE $dY_t = a(t,Y_t)\,dt$.
+
+We shall first construct a rigorous integral interpretation of such expressions, providing concrete meaning to the stochastic term. Afterwards, we will introduce the stochastic chain rule (Itô's Lemma), which differs from the classical one in a somewhat surprising way, and then proceed to study how these new differential equations can be solved.
+
+\subsection{The Itô Integral}
+
+The stochastic differential equation \eqref{eq:sde_intro} can be reformulated in integral form as
+\begin{equation}\label{eq:sde_integral}
+X_t - X_0 = \int_0^t a(s,X_s)\,ds \;+\; \int_0^t b(s,X_s)\,dW_s.
+\end{equation}
+For each $\omega \in \Omega$, the first integral on the right-hand side is nothing new. Regarding the second one, we may ask whether there is a sensible way of defining
+\[
+M_t = \int_a^t f(s,\omega)\,dW_s, \quad a \leq t \leq b,
+\]
+so that $\{M_t\}_{t\in[a,b]}$ is a martingale. Another important consideration is that the integrand must be \emph{adapted} to the filtration associated with $W_t$. These requirements naturally lead to the following definitions.
+
+\begin{definition}[Adapted square-integrable processes]\label{def:L2_adapted}
+Let ($\Omega, \mathcal F, \{\mathcal F_t\}, \mathbb P$) be a filtered probability space.
+\begin{itemize}
+    \item[i)] The space of stochastic processes on $[a,b]$, adapted to a filtration $(\mathcal{F}_t)_{t\geq 0}$ and such that 
+    \[
+    \int_a^b \mathbb{E}[|f(t)|^2]\,dt < \infty,
+    \]
+    will be denoted by $L^2_{ad}([a,b]\times \Omega)$. This is a Hilbert space with the inner product
+    \[
+    \langle f,g \rangle = \int_a^b \mathbb{E}[f(t)g(t)]\,dt.
+    \]
+
+    \item[ii)] We say $f \in L^2_{ad}([a,b]\times \Omega)$ is a \textbf{step stochastic process} if
+    \[
+    f(t,\omega) = \sum_{i=1}^n \varphi_{i-1}(\omega)\,\mathds{1}_{[t_{i-1},t_i)}(t),
+    \]
+    where $\varphi_{i-1}$ is $\mathcal{F}_{t_{i-1}}$-measurable and has finite variance ($\mathbb{E}[\varphi_{i-1}^2] < \infty$).
+\end{itemize}
+\end{definition}
+
+\medskip
+
+The construction of the stochastic integral begins by defining it on step processes and extending by density. For such $f$, take $t_0=a$, $t_n=b$, and define\footnote{The choice of the left endpoint $t_{i-1}$ ensures that the stochastic integral preserves the martingale property. Variants with different evaluation points lead to different calculi, e.g. Stratonovich calculus, where the classical chain rule holds (see \cite{Kuo2006}).}
+\begin{equation}\label{eq:integral_step}
+I(f) = \int_a^b f(t)\,dW_t := \sum_{i=1}^n \varphi_{i-1}\,\big(W(t_i)-W(t_{i-1})\big).
+\end{equation}
+This mapping $f \mapsto I(f)$ is linear. The following lemmas are key.
+
+\begin{lemma}\label{lem:isometry_step}
+If $f$ is a step stochastic process, then
+\[
+\mathbb{E}[I(f)] = 0, 
+\quad 
+\mathbb{E}[I(f)^2] = \int_a^b \mathbb{E}[f(t)^2]\,dt.
+\]
+\end{lemma}
+\textit{\textbf{Proof}:} (...)() \hfill $\blacksquare$
+
+\begin{lemma}[Density of step processes]\label{lem:density}
+For every $f \in L^2_{ad}([a,b]\times \Omega)$, there exists a sequence $\{f_n\}_{n=1}^\infty$ of step stochastic processes such that
+\[
+\lim_{n\to\infty}\int_a^b \mathbb{E}[(f(t)-f_n(t))^2]\,dt = 0.
+\]
+That is, step processes are dense in $L^2_{ad}([a,b]\times \Omega)$.
+\end{lemma}
+\textit{\textbf{Proof}:} (...) \hfill $\blacksquare$
+
+\medskip
+
+We are now ready to extend the definition.
+
+\begin{definition}[Stochastic Integral]\label{def:stochastic_integral}
+Let $f \in L^2_{ad}([a,b]\times\Omega)$. We define its \emph{stochastic integral} over $[a,b]$ as the limit in $L^2(\Omega)$ of $I(f_n)$ for any approximating sequence of step processes $\{f_n\}$ with $f_n \to f$ in $L^2_{ad}([a,b]\times\Omega)$.
+\end{definition}
+
+The following fundamental result follows.
+
+\begin{theorem}[Itô's isometry]\label{thm:ito_isometry}
+
+Let $f \in L^2_{ad}([a,b]\times \Omega)$.
+\begin{itemize}
+    \item[i)] The stochastic integral $I(f)$ is a centered random variable and
+    \[
+    \mathbb{E}[I(f)^2] = \int_a^b \mathbb{E}[f(t)^2]\,dt.
+    \]
+
+    \item[ii)] For another $g \in L^2_{ad}([a,b]\times\Omega)$,
+    \[
+    \mathbb{E}\left[\left(\int_a^b f(t)\,dW_t\right)\left(\int_a^b g(t)\,dW_t\right)\right]
+    = \int_a^b \mathbb{E}[f(t)g(t)]\,dt.
+    \]
+\end{itemize}
+\end{theorem}
+\textit{\textbf{Proof}:} (...) \hfill $\blacksquare$
+
+It is worth noting that if $f$ is deterministic (i.e. does not depend on $\omega$), then
+\[
+I(f) \sim \mathcal{N}\!\left(0, \int_a^b f(t)^2\,dt\right).
+\]
+
+
+Now, since, for $a\leq t \leq b$, it is clear that $\int_a^t \mathbb{E}[f(t)^2] dt \leq \int_a^b \mathbb{E}[f(t)^2] dt$, it follows that $f\in L^2_{ad}([a,t]\times \Omega)$ so that the stochastic integral in $[a,t]$ is well defined. Consider then the process $X_t = \int_a^t f(s) dW(s) .$ We know this process has finite first two moments, and so we can take the conditional expectation of $X_t$ with respect to the given filtration. 
+
+
+
+\begin{theorem}[Martingale property]\label{theorem:MartingalePropertyIntegration}
+
+Consider $f\in L ^2_{ad}([a,b]\times\Omega). $ Then the process $X_t = I(f \mathds{1}_{[a,t]}) $ is a martingale with respect to the  given filtration $\mathcal{F}_t.$
+    
+\end{theorem}
+
+
+\textbf{\textit{Proof:}} (...) \hfill $\blacksquare$
+
+The Markov property also holds, but we will return to that when we see these processes as diffusions in Subsection \ref{section:itoDiff}. 
+
+We shall now address the continuity of the process $X_t$. We must keep in mind that this integral is not defined for each $\omega$ in a riemannian sense. The following result is therefore not as elementary as in real analysis.
+
+\begin{theorem}[Continuity property]\label{theorem:continuity_property}
+    Suppose $f\in L ^2_{ad}([a,b]\times\Omega). $ Then, almost all paths of $X_t = \int_a^t f(s)dW(s)$ are continuous on $[a,b].$
+\end{theorem}
+\textbf{\textit{Proof:}} (...) \hfill $\blacksquare$
+
+
+Finally, a result that actually links riemannian sums with stochastic integrals will be helpful in the next section.
+
+
+\begin{theorem}\label{theorem:riemannian_limit}
+    Suppose $f\in L ^2_{ad}([a,b]\times\Omega)$ and assume that $\mathbb{E}[f(t)f(s)]$ is a continuous function of $t$ and $s$. Then, for  partitions of $[a,b] $ $ P=\{ a=t_0,t_1<\cdots<t_n=b\}$
+
+\begin{equation}
+\int_a^b f(t)\, dW(t)
+= \lim_{\|\mathcal P\|\to 0} \sum_{i=1}^n f(t_{i-1})\bigl(W(t_i)-W(t_{i-1})\bigr)
+\end{equation}
+in $L^2(\Omega),$ where the limit is taken as in Definition \ref{def:quadratic-variation}.
+\end{theorem}
+\textbf{\textit{Proof:}} (...) \hfill $\blacksquare$
+
+More genearlly, we can consider a larger family of integrands. Let $\mathcal{L}(\Omega,L^2[a,b])$ be the family of processes $f$ such that
+\begin{itemize}
+    \item $f(t)$ is $\mathcal{F}_t-$adapted.
+    \item $\int_a^b |f(t)| ^2 \, dt < \infty$ almost surely.
+\end{itemize}
+
+Notice how we dropped the condition of having finite expectation, so that we have indeed a larger class of processes. Consider for example the process $f(t) =e^{B(t)^2}.$ It follows that 
+
+\begin{empheq}[left={\mathbb{E}[f(t)^2]= \empheqlbrace}]{equation}
+  \begin{aligned}
+      &\frac 1 {\sqrt{1-4t}} & & \text{if } 0\leq t< 1/4\\[1ex]
+      & \infty & & \text{if } t \geq 1/4.
+  \end{aligned}
+\end{empheq}
+
+Hence $\int_ 0 ^1 e^{B(t)^2 \, dW_t}$ does not make sense with the previous construction. It can be shown, however, that these processes are still pretty worth the attention. Beyond the scope of our purposes, it can be shown that:
+
+\begin{theorem}(Local Martingale Property) Let $f\in \mathcal{L} (\Omega,L^2 [a,b])$ and $t \in [a,b]$. Then 
+$$
+X_ t = \int_a^t f(s) \,dW_s
+$$
+    is a local martingale. Furthermore, it has a continuous realization. \hfill $\blacksquare$
+\end{theorem}
+
+
+
+\subsection{Itô's Chain Rule}
+
+One of the most shocking facts about this new integration is a sophisticated version of  the Chain Rule, that generalizes the familiar expression $d (f(g))(x) = f'(g(x))dg(x)$. The key underlying fact for this new integration rule is the non-zero quadratic variation of Brownian motion. This fantastic new calculus allows us to find some new relations and solve new equations that naturally generalize the already rich world of differential equations.
+
+\begin{definition}(Itô process)
+
+Given an initial random variable $X_a$, an Itô process is a stochastic process on $[a,b]$ of the form 
+
+$$
+X_t = X_a + \int_a^t g(s) \,ds  +\int_a^t f(s) \, dW_s  \iff dX_t = g(s) \,ds + f(s) \, dW_s, \text{ } \text{ } X(a) = X_a
+$$
+    where we emphasize the equivalent formulations, since the latter is just a way of writing the former. We impose $X_a$ being $\mathcal F_a$-measurable, $g \in \mathcal{L}(\Omega,L^1 [a,b])$ and $f \in \mathcal{L}(\Omega,L^2 [a,b]).$ Note how the first integral is just a riemannian sum for each $\omega$, that is, for each path of $W$. The second is a proper Itô integral.
+\end{definition}
+
+We directly state the more general form of Itô's new calculus rule, in the convenient \textit{differential formulation}. A complete proof is beyond the scope of this Thesis. However, such a renowned Theorem has been addressed by several authors, for example in \cite{Kuo2006}.
+
+
+
+\begin{theorem}[Itô's Rule]\label{theorem:itorule}
+    Let $dX_t = \mu(t)\,dt + \sigma(t)\,dW_t$ be an Itô process, and let 
+    $V(t,x)$ be a continuous function on $[a,b] \times \mathbb{R}$ with continuous partial derivatives 
+    $\frac{\partial V}{\partial t}$, $\frac{\partial V}{\partial x}$ and $\frac{\partial^2 V}{\partial x^2}$.
+    Then $V(t,X_t)$ is also an Itô process, and
+    \begin{equation}\label{eq:ito_formula}
+        dV(t,X_t) 
+        = \left(
+            \frac{\partial V}{\partial t}(t,X_t)
+            + \mu(t)\frac{\partial V}{\partial x}(t,X_t)
+            + \frac{1}{2}\sigma^2(t)\frac{\partial^2 V}{\partial x^2}(t,X_t)
+        \right) dt
+        + \sigma(t)\frac{\partial V}{\partial x}(t,X_t)\,dW_t.
+    \end{equation}
+\end{theorem}
+
+\noindent
+A convenient way to derive Equation~\eqref{eq:ito_formula} is through a symbolic
+derivation using the Taylor expansion to first order in $dt$ and second order in $dX_t$,
+together with the \textit{Itô table}:
+\[
+\begin{array}{c|cc}\label{ItoTable}
+\times & dW_t & dt \\ \hline
+dW_t & dt & 0 \\
+dt & 0 & 0
+\end{array}
+\]
+
+
+\noindent
+Applying the Taylor expansion to $V(t,X_t)$ gives
+\[
+dV(t,X_t)
+= \frac{\partial V}{\partial t}(t,X_t)\,dt
++ \frac{\partial V}{\partial x}(t,X_t)\,dX_t
++ \frac{1}{2}\frac{\partial^2 V}{\partial x^2}(t,X_t)\,(dX_t)^2.
+\]
+Using the Itô table, we have $(dX_t)^2 = \sigma(t)^2\,dt$, so using
+$dX_t = \mu(t)\,dt + \sigma(t)\,dW_t$ yields
+\[
+dV(t,X_t)
+= \frac{\partial V}{\partial x}(t,X_t)\sigma(t)\,dW_t
++ \left[
+\frac{\partial V}{\partial t}(t,X_t)
++ \mu(t)\frac{\partial V}{\partial x}(t,X_t)
++ \frac{1}{2}\sigma(t)^2\frac{\partial^2 V}{\partial x^2}(t,X_t)
+\right] dt,
+\]
+which is precisely Equation~\eqref{eq:ito_formula}. \hfill $\blacksquare$
+
+Just like ordinary Chain Rule, this has opened plenty of possibilities in order to calculate some stochastic integrals in terms of others.
+
+\begin{example}
+ We can use this result to easily obtain a simpler form for the process   $W_t\,dW_t$. We can simply consider $g(x) = x^2$ and define $H_t = g(W_t)$ to obtain
+ \begin{equation}
+     dH_t = 2W_t\,dW_t + 2 \,(dW_t)^2 = 2\,dt + \frac 2 2 W_t\,dW_t
+ \end{equation}
+ so that $\int_0^t W_s\,dW_s = \frac 1 2 \left( W_t^2 - t\right)$, which is a much simpler expression, and clearly a martingale.
+\end{example}
+
+\begin{example}
+    One key Finance model (see section \hl{XXX}) relies on the equation $dS_t = rS_t \, dt + \sigma S_t \, dW_t$, where $r, \sigma \in \mathbb R$ and $\sigma > 0$. It can be solved by taking $H_t = \ln (S_t),$ so that
+    \begin{equation}
+        dH_t = \frac 1 S_t dS_t -\frac{1}{2S_t^2}(dS_t)^2 = r\,dt + \sigma\, dW_t -  \frac 1 2 \sigma^2 \, dt
+    \end{equation}
+
+    obtaining $H_t = H_0 + (r-\sigma^2 / 2) \, dt + \sigma W_t \implies S_t = S_0e^{(r-\sigma^2/ 2)\, dt + \sigma \, W_t} $.
+\end{example}
+
+
+
+\begin{example}(Lamperti's Transform) \hl{NOTA PARA CARLOS: Estoy usando esta transformación en el BBVA :)}
+
+
+     Consider a general process  $dX_t = \mu(t,X_t)\, dt + \sigma(t,X_t) \, dW_t$ and assume $\sigma$ is differentiable once with respect to time and twice with respect to $x$. Define the function 
+    \begin{equation}
+        \Gamma(t,x) = \int_{X_0}^x \frac{1}{\sigma(t,s)}\, ds
+    \end{equation}
+and consider the process $H_t = \Gamma(t,X_t).$ After a few calculations, we arrive to
+\begin{equation}
+    \begin{aligned}
+        dH_t &= \left( \frac{\partial \Gamma}{\partial t} + \mu(t,X_t)\frac{\partial \Gamma}{\partial x} + \frac{1}{2}\sigma^2(t,X_t)\frac{\partial^2 \Gamma}{\partial x^2} \right) dt + \underbrace{\sigma(t,X_t)\frac{\partial \Gamma}{\partial x}}_{=1} \, dW_t \\
+        &= \left( \frac{\partial \Gamma}{\partial t} + \frac{\mu(t,X_t)}{\sigma(t,X_t)} - \frac{1}{2}\frac{\partial \sigma}{\partial x}(t,X_t) \right) dt + dW_t
+    \end{aligned}
+\end{equation}
+so that all the complexity of the original process is contained in the drift. This transformation is convenient because it creates a process of constant volatility, which enables much faster and accurate numerical methods, such as derivatives pricing through trees  (see Section \hl{XXX}.)
+\end{example}
+
+% \textbf{\textit{Proof:}} (...)
+
+%  The proof follows from two technical lemmas. First, note that if $f\in\mathcal{C}^2([a,b])$ and consider a partition $\{a=t_0,t_1,\dots,t_n=t\}$ to obtain, due to Taylor Theorem, an expression of the form
+
+% \begin{equation}
+% f(W_t) - f(W_a = 
+% \sum_{i=1}^{n} f'(W_{t_{i-1}})\,\bigl(W_{t_i} - W_{t_{i-1}}\bigr)  + \frac{1}{2} \sum_{i=1}^{n} 
+% f''\!\left(\chi_i\right) 
+% \bigl(W_{t_i} - W_{t_{i-1}}\bigr)^{2}
+% \end{equation}
+% where $\chi_i = W_{t_{i-1}} + \lambda_i \bigl(W_{t_i} - W_{t_{i-1}}\bigr)$ for some $\lambda_i\in(0,1).$
+
+% The first summation has already been addressed in $REFERENCE,.5.3.3;7.1.3;4.7.1$
+
+% For the second summation term, it seems reasonable to assess the limit should be 
+% \begin{equation}
+% %\lim_{\lVert \mathcal{P} \rVert \rightarrow 0}
+% \sum_{i=1}^{n} 
+% f''\!\left(\chi_i\right) 
+% \bigl(W_{t_i} - W_{t_{i-1}}\bigr)^{2} \rightarrow \int_a^t f''(W(s)) \, ds
+% \end{equation}
+% in probability as ${\lVert \mathcal{P} \rVert \rightarrow 0}$, that is, naming $Z_\mathcal{P}$ the summation associated to $\mathcal{P}$, $\forall \varepsilon >0$ there exists $\delta >0$ such that if $\lVert \mathcal{P} \rVert <\delta$ then $\mathbb{P}(|Z_\mathcal{P}-\int_a^t f''(W_s) ds|>\varepsilon)<\varepsilon$. Additionally, this condition is equivalent to the property of having, for any sequence of partitions $\{\mathcal{P}_{n}\}_{n=1}^\infty$ such that $\lim _ {n \rightarrow \infty} \lVert \mathcal{P}_n \rVert = 0$, a subsequence that makes $Z_{\mathcal{P}_{n_k}}$ converge almost surely. In order to obtain (REFERENCE EQUATION), note that
+
+% \begin{equation}
+% \begin{aligned}
+% \sum_{i=1}^{n} f''(\chi_i) (W_{t_i} - W_{t_{i-1}})^2 &= \sum_{i=1}^{n} \Big( f''(\chi_i) - f''(W_{t_{i-1}}) \Big) (W_{t_i} - W_{t_{i-1}})^2 \\
+% &\quad + \sum_{i=1}^{n} f''(W_{t_{i-1}}) \Big( (W_{t_i} - W_{t_{i-1}})^2 - (t_i - t_{i-1}) \Big) \\
+% &\quad + \sum_{i=1}^{n} f''(W_{t_{i-1}}) (t_i - t_{i-1}).
+% \end{aligned}
+% \end{equation}
+
+% The two following lemmas address the first two summations.
+
+% \begin{lemma}
+
+% Let $g(x)$ be a continuous function on $\mathbb R$. For each $n\geq 1$, let $\Delta_n = \{t_0, t_1, \dots, t_n\}$ be a partition of $[a,t]$ and let $0< \lambda_i < 1$ for $1\leq i\leq n.$ There exists a subsequence of 
+
+% \begin{equation}
+%     \sum_{i=1}^n \left( g(B_{t_{i-1}}+\lambda_i (B_{t_i}-B-{t_{i-1}}) - g(B_{t_{i-1}})  \right) (B_{t_i}-B_{t_{i-1}})^2
+% \end{equation}
+% that converges to 0 almost surely as $\lVert \Delta_n\rVert \rightarrow 0.$
+% \end{lemma}
+
+% \textbf{\textit{Proof:}}  (...)
+
+% \begin{lemma}
+% Let $g(x)$ be a continuous function on $\mathbb{R}.$ For each $n\geq 1$, let $\Delta_n$ be again a partition of $[a,t]$. Then the sequence 
+
+% \begin{equation}
+% \sum_{i=1}^{n} g(B_{t_{i-1}})\,\bigl(B_{t_i} - B_{t_{i-1}}\bigr)^{2} - (t_i - t_{i-1})
+% \;\;\xrightarrow[\Delta_n \to 0]{}\; 0 \quad \text{in probability}.
+% \end{equation}
+
+
+% INCLUDE HERE THE RELATION WITH THE PREVIOUS RESULT; GENERAL DIFFERNETIAL FORMULA
+
+
+% \end{lemma}
+
+% \textbf{\textit{Proof:}}  
+
+
+
+
+
+
+\subsection{Stochastic Differential Equations}
+
+The main aim of this section is to provide necessary and sufficient conditions for the existence of Itô processes. We will follow a direct approach and state the existence and uniqueness theorem. In addition, notice how we will be working with the differential form of the equations, however realising the integral sense they have been provided with. We need a precise definition for \textit{stochastic differential equation} or $SDE$ and thus some preliminary results.
+
+Given a $\mathcal{F}_a-$measurable random variable $\Theta$ of finite variance and consider the following formal equation on the interval $[0,t]$: 
+
+\begin{equation}\label{sde_template}
+    dX_t = \mu(t,X_t) \ , d ++ \sigma ( t, X_t) \, dW_t \text{ }\text{ }\text{ }\text{ }\text{ }\text{ } X(0)= \Theta.
+\end{equation}
+
+\begin{definition}
+    A stochastic process $X_t$, $a\leq t \leq b$ is called a solution of \ref{sde_template} if it satisfies:
+
+    \begin{itemize}
+        \item $\sigma(t,X_t) \in \mathcal L (\Omega,[a,b])$ so its Itô integral makes sense for each $t\in [a,b].$
+        \item Almost all sample paths of $\mu(t,X_t)$ belong to $L^1[a,b]$, that is, its expected value is finite.
+        \item Equation \ref{sde_template} holds almost surely.
+     \end{itemize}
+\end{definition}
+
+We need to establish some growth conditions on  $\mu$ and $\sigma$ for the to make sense on, at least, an open interval, just like in ordinary differential equations. Let us define the following conditions:
+
+\begin{definition}
+    Let $g(t,x)$  a measurable function on $[a,b] \times \mathbb R$.
+
+    \begin{itemize}
+        \item It is said to satisfy a Lipschitz condition in $x$ if there exists $K>0$ such that $|g(t,x)-g(t,y) |\leq K |x-y| $ for all $a \leq t \leq b,$ $x,y\in\mathbb{R}.$
+        \item It is said to satisfy a linear growth condition in x if there exists $K>0$ such that $|g(t,x)|\leq K(1+|x|)$ for all $a \leq t \leq b,$ $x\in\mathbb{R}.$
+    \end{itemize}
+\end{definition}
+
+Now, notice that for $x\geq 0$, it holds that $1+x^2 \leq (1+x) ^2 \leq 2(1+x^2)$  so that the linear growth condition can be restated in terms of a new constant $M$ such that $|g(t,x)| \leq M \sqrt{1+x^2}.$ 
+
+Before stating the existence and uniqueness theorem, we need an auxiliary lemma, which is standard in the study of ordinary differential equations.
+
+\begin{lemma}(Grönwall's Inequality)
+Let $g, \varphi \in L^1[a,b]$ and $\lambda > 0$ satisfy 
+
+\begin{equation}
+    \varphi (t ) \leq g(t) + \lambda \int_a^t \varphi(s) \, ds.
+\end{equation}
+    Then,
+
+    \begin{equation}
+    \varphi (t) \leq g(t) + \lambda \int_a^t g(s) e^{\lambda(t-s)}
+ \, ds  \text{ } \text{ for all } a\leq t \leq b.   
+ \end{equation}
+ In particular, if $g$ is just a constant $\kappa$, then   $ \varphi(t) \leq \kappa e^{\lambda(t-a)} \text{ } \text{ for all } a\leq t \leq b.   $ \hfill $\blacksquare$
+
+
+ 
+\end{lemma}
+
+
+
+\begin{theorem}
+    Let $\mu$ and $\sigma$ be measurable functions on $[a,b] \times \mathbb{R}$ satisfying Lipschitz condition in $x.$ Then the stochastic differential equation \ref{sde_template} has a unique continuous solution.
+\end{theorem}
+\textbf{\textit{Proof:}}
+We shall only proof the uniqueness part. For that purpose, (...) $\blacksquare$
+
+\subsection{The multidimensional case}
+
+For the time being, we have only addressed processes in dimension 1. Almost everything result already covered can be restated for multidimensional processes or has a direct analogue.
+
+By a multidimensional brownian motion on $\mathbb{R}^n$ we mean a stochastic process of the form  $\mathbf{W}(t) = (W_1(t),W_2(t),\dots,W_n(t))$ formed by $n$ independent brownian motions on $\mathbb{R}$. Similarly, we can set them to start at $x_0\in \mathbb{R}^n$ just by a simple translation. It is a martingale and a Markov process that, starting at $\vec{0}$, has a transition density function given by $p_t(x) = (2\pi t)^{-d/2}e^{-\lVert x \rVert / 2t}.$
+
+There are certain properties of these processes that dramatically change with dimension. For example, for $d= 1$, it returns to 0 infinitely often, and for $d= 2$ enters arbitrarily small neighborhoods of $0$ infinitely often with probability 1, however the probability that it reaches $\vec 0$ is 0. For $d\geq 3$, the process is much more sparse, satisfying $\lim_{t\rightarrow \infty } \lVert \mathbf{W}(t) \rVert = \infty$ almost surely. 
+
+In terms of fractal dimensions, the path $\mathbf{W}([0,t])$ has dimension $2$ for $d\geq 2$, and dimension $1$ for $d=1$. On the other hand, the graph $\{(s,\mathbf{W}(s)), s\in [0,t]\}$ has dimension $3/2$ for $d\geq 2.$ These fascinating properties of brownian motion can be found in \cite{falconer}.
+
+We can therefore define a multidimensional stochastic integral (expressed in differential form) as
+\begin{equation}
+    dX_t = \mu \, dt + \sum_ {i= 1} ^n \sigma_ i \, dW_t^i
+\end{equation}
+where each integral must be considered separately. Let \(B_1(t), B_2(t), \ldots, B_m(t)\) be independent Brownian motions. Consider \(n\) Itô processes \(X_t^{(1)}, X_t^{(2)}, \ldots, X_t^{(n)}\) given by
+\begin{equation}\label{equation:general_multidmensionalProcess}
+X_t^{(i)} = X_a^{(i)} +  \int_a^t \mu_i(s) \, ds +\sum_{j=1}^m \int_a^t \sigma_{ij}(s) \, dW_j(s)  , \quad 1 \leq i \leq n,
+\end{equation}
+where \(\mu_{ij} \in \mathcal{L}(\Omega, L^2[a,b])\) and \(\sigma_i \in \mathcal{L}(\Omega, L^1[a,b])\) for all \(1 \leq i \leq n\) and \(1 \leq j \leq m\). If we introduce the matrices
+\[
+\vec W(t) = \begin{bmatrix} W_1(t) \\ \vdots \\ W_m(t) \end{bmatrix}, \quad
+\vec X_t = \begin{bmatrix} X_t^{(1)} \\ \vdots \\ X_t^{(n)} \end{bmatrix},
+\]
+\[
+\vec{\vec \sigma}(t) = \begin{bmatrix} \sigma_{11}(t) \cdots \sigma_{1m}(t) \\ \vdots \ddots \vdots \\ \sigma_{n1}(t) \cdots \sigma_{nm}(t) \end{bmatrix}, \quad
+\vec \mu(t) = \begin{bmatrix} \mu_1(t) \\ \vdots \\ \mu_n(t) \end{bmatrix},
+\]
+then Equation \ref{equation:general_multidmensionalProcess} can be written as a matrix equation:
+\[
+\vec{X}_t = \vec{X}_a +  \int_a^t \vec\mu(s) \, ds+\int_a^t  \vec{\vec\sigma}(s) \, d\vec W (s) , \quad a \leq t \leq b.
+\]
+
+We will usually drop the arrows if the dimension is clear. Additionally, we must impose that $\mu_i$ and $\sigma_ {i,j}$ satisfy certain growth conditions so that the solution makes sense. Itô's formula holds similarly for $\theta(\vec{X}_t)$, now accounting for the crossed second derivatives $\partial^2 \theta / \partial x_l \partial x_h$ being particularly useful a new \textit{Itô's} matrix 
+
+\[
+\begin{array}{c|ccccc}
+\times & dt & dW_t^1 & dW_t^2 & \cdots & dW_t^n \\ \hline
+dt & 0 & 0 & 0 & \cdots & 0 \\
+dW_t^1 & 0 & dt & \rho_{12}\,dt & \cdots & \rho_{1n}\,dt \\
+dW_t^2 & 0 & \rho_{21}\,dt & dt & \cdots & \rho_{2n}\,dt \\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+dW_t^n & 0 & \rho_{n1}\,dt & \rho_{n2}\,dt & \cdots & dt
+\end{array}
+\]
+\captionof{table}{Itô multiplication table for correlated $n$-dimensional Brownian motion.}
+\label{tab:ItoTable}
+
+\begin{example}
+    
+Let $f : \mathbb{ R}^n \rightarrow \mathbb{ R} $ a  $\mathcal{C}^2$ function and let  $\nabla f = (\frac{\partial  f}{ \partial x_1}, \frac{\partial  f}{ \partial x_2}, \dots, \frac{\partial  f}{ \partial x_n})$ and $\Delta f = \sum_{i= 1}^n \frac {\partial f}{\partial x_ i ^2}  $ to obtain 
+
+$$
+f(W(t)) = f_0 + \int_0^t \nabla f \cdot d\Vec{B}_t + \int_0 ^t \left( \frac{\partial f}{\partial t} + \Delta f\right) \, dt.
+$$
+This equation highlights that the deep connection between brownian motion and difussions, showing how the $Laplace$ $operator$ is the generator of brownian motion; see Subsection \ref{section:itoDiff}.
+\end{example}
+\begin{example}
+    An important example is given by $\theta(x,y) = xy.$ Clearly, $\partial \theta / \partial x = y$ and also $\partial \theta / \partial y = x$. Therefore, if we have processes $X_t$ and $Z_t$, we have
+    \begin{equation}
+        d(X_t\,Z_t) = Z_t\,dX_t + X_t\,dZ_t + \frac 1 2 dX_t\, dZ_t+ \frac 1 2 dX_t\, dZ_t=Z_t\,dX_t + X_t\,dZ_t + dX_t\, dZ_t
+    \end{equation}
+    what is usually known as Itô product formula, understunding $dX_t\,dZ_t$ as in table \ref{tab:ItoTable}.
+\end{example}
+
+The following generalization holds.
+
+\begin{theorem} \label{theorem:solutions:ndimensional_sde}
+    Let $\sigma(t,x)$ be a $n\times n$ matrix-valued function and $f(t,x)$ a random vector on $\mathbb{R}^n$. Assume there exists $C>0$ such that for all $t\in[a,b]$ and $x,y \in \mathbb R^n$, 
+    $$
+    \lVert \sigma (t,x) - \sigma(t,y) \rVert \leq C | x - y| \text{ } \text{ , } \text{ } |\mu(t,x) - \mu(t,y)| \leq C|x-y|
+    $$
+    and 
+    $$
+    \lVert \sigma(t,x)\rVert ^2 \leq C(1+|x|^2 ) \text{ } \text{ , } \text{ } |\mu(t,x)| ^2 \leq C(1+|x|^2 ) 
+    $$ 
+    where $\lVert \sigma \rVert^2 = \sum_i \sum_j \sigma_{ij}^2$. For any $\mathcal{F}_ a$-measurable random vector $\Theta$ of finite variance, the SDE $dX_t = \mu(t,X_t) \, dt +  \sigma(t,X_t) \, dW_t  $, $X_0 = \Theta$ has a unique continuous solution. \hfill $\blacksquare$
+\end{theorem}
+
+
+\subsection{Probability measure changes}
+
+Another important topic we must cover has to do with probability changes. Brownian motion depends crucially on the underlying probability $\mathbb{P}$. Given a process $X_t$, it seems legit to ask whether there is a probability $\mathbb{Q}$ so that $X_t$ is a Brownian motion with respect to $\mathbb{Q}$. We assume the $\sigma$-algebra and the filtration remain unchanged.
+
+We say the filtration is \textit{right-continuous} provided
+\begin{equation}\label{rightcontinuousFiltration}
+    \cap_{n=1}^\infty \mathcal{F}_{t+1/n} = \mathcal{F}_t.
+\end{equation}
+We shall work hereafter with right-continuous filtrations.
+
+\begin{definition}(Predictable Process)
+    Let $\{\mathcal F_t\}$ be a right continuous filtration and let $\mathbb{L}$ the collection  of stochastic processes adapted to $\{\mathcal F_t\}$ and such that almost all their sample paths are left continuous. Let $\Sigma$ the smallest $\sigma-$algebra of $[a,b]\times \Omega$ such that all processes in $\mathbb L$ are measurable. The family of processes that are $\Sigma-$measurable are called \textbf{predictable.}
+\end{definition}
+
+\begin{definition}(\textit{Càldàg} Process)
+We say that a stochatic process \textbf{\textit{càdlàg}} provided it's right-continuous and has left limits (\textit{continue à droite, limite à gauche}). 
+
+\end{definition}
+
+These technical definitions play a role in the following fundamental theorem, that we state without proof. 
+
+
+
+\begin{theorem}(Doob-Meyer Decomposition Theorem)
+    Let $M(t)$ , $t\in[0,T]$ be a \textit{càdlàg}, square integrable martingale. Then there exists a unique decomposition of the form
+    \begin{equation}
+        M_t ^2 = R(t) + \left<M_t\right>
+    \end{equation}
+    where $R(t)$ is \textit{càdlàg} martingale and $\left<M_t\right>$ is a predictable, right continuous and increasing process such that $\left<M_0\right> = 0$ and $\mathbb E[\left<M_t\right>] < \infty$ for all $t\in[0,T].$ We call $\left<M_t\right>$ the \textbf{compensator} of $M_t.$ \hfill $\blacksquare$
+\end{theorem}
+
+The theorem holds in a way more general form for submartingales, but if $M_t$ is a square integrable martingale, then, by Jensen's inequality, $M_t^2$ is a submartingale and it suffices for our purposes. For a proof of Doob-Meyer's Decomposition Theorem, see \textit{\textbf{(REF).}}
+
+
+\begin{theorem}(Lévy Characterization Theorem)
+    A stochastic process $X_t$ is a Brownian motion if and only if there exists a probability measure $\mathbb{Q}$ and a filtration $\{\mathcal F_t\}$ such that $X_t$ is a continuous martingale for $\mathbb Q$ and $\{\mathcal F_t\}$. $\mathbb Q (X_0 = 0) = 1$ and $\left<X_t\right>=t$ almost surely with respect to $\mathbb Q$ for each $t.$
+\end{theorem}
+\textbf{\textit{Proof:}} (...) $\blacksquare$
+
+\begin{definition}(Exponential Process)
+    Let $\alpha \in \mathcal L (\Omega, L^2[0,T])$. We define its exponential process by
+    \begin{equation}\label{exponential_process_definition}
+        \mathcal E _\alpha(t) = e^{  \int_0^t \alpha(s) dW(s)-\frac 1 2 \int_0^t \alpha^2(s)ds}
+    \end{equation}
+    which is precisely the solution of $d\mathcal E_\alpha(t) =\alpha(t)\mathcal{E}_\alpha (t) dW(t)$, $\mathcal E_\alpha(0) = 1$ so that $\mathcal{E}_\alpha(t)$ is a local martingale.
+\end{definition}
+
+This exponential process is important because it leads to the construction of a new probability $\mathbb{Q}$ for which $\mathcal{E}_\alpha(t)$ is actually a martingale.
+
+\begin{theorem}\label{CHUCHIEXPONENTIALESPERANZA1}
+    Let $\alpha \in \mathcal L (\Omega, L^2[0,T])$. Then $\mathcal E_\alpha(t)$ is a martingale if, and only if, $\mathbb E[\mathcal E_\alpha (t)]= 1 $ for all $t\in [0.T].$
+\end{theorem}
+\textbf{\textit{Proof:}} (...) $\blacksquare$
+
+
+For the following Theorem, we need to make use of two auxiliary lemmas.
+\begin{lemma}
+    Let $\gamma$ be a nonnegative integrable random variable, so that $d\mathbb{Q} = \gamma d \mathbb{P}$ defines a new probability measure (see \ref{eq:radonnikodym}). Then, for any $\sigma$-algebra $\mathcal{G} \subset \mathcal{F}$ and $\Theta$ such that $\mathbb E _ \mathbb Q [\Theta] < \infty$, it follows that 
+    \begin{equation}
+        \mathbb{E}_ \mathbb Q [\Theta \,|\, \mathcal G] = \frac{\mathbb{E}_ \mathbb P [\gamma\Theta  \,|\, \mathcal G] }{\mathbb{E}_ \mathbb P [\gamma \,|\, \mathcal G] }, \, \, \mathbb{Q}-\text{almost surely.}
+    \end{equation}
+\end{lemma}
+
+\textbf{\textit{Proof:}} (...) $\blacksquare$
+
+Then, if $\alpha \in \mathcal L (\Omega, L^2[0,T])$ satisfies the condition on Theorem \ref{CHUCHIEXPONENTIALESPERANZA1}, it follows that $\mathcal E_\alpha(t)$ is a $\mathbb P$-martingale. Let $\mathbb Q$ be defined by $d\mathbb Q = \mathcal E_\alpha(T)d\mathbb P$, that is, $\mathbb Q (A) = \int _A \mathcal E_\alpha (T) \, d\mathbb P \text{ for every  } A\in \mathcal F$. 
+
+
+\begin{lemma}
+Let $\alpha \in \mathcal L (\Omega, L^2[0,T])$.   Then a $\{\mathcal F_t \}$-adapted process $X_t$, $t\in[0,T]$ is a $\mathbb Q$-martingale if, and only if, $X(t) \mathcal E_\alpha(t)$  is a $\mathbb{P}$-martingale.
+\end{lemma}
+\textbf{\textit{Proof:}} (...) $\blacksquare$
+
+Finally, the following key result holds from the previous lemmas.
+
+\begin{theorem}(Girsanov's Theorem)\label{girsanovtheorem}
+Let $\alpha \in \mathcal L (\Omega, L^2[0,T])$ such that $\mathcal E_\alpha$ is a martingale. Then the process 
+
+\begin{equation}
+    Z(t) = W(t) - \int_0^t \alpha(s) \, ds, \text{ }\text{ } t\in[0,T]
+\end{equation}
+is a Brownian motion with respect to the measure $d\mathbb Q  = \mathcal E_\alpha (T) d\mathbb P$.
+\end{theorem}
+\textbf{\textit{Proof:}} (...) $\blacksquare$
+
+The importance of Girsanov's Theorem relies on the possibility of changing numeraire, something that will be clarified in Section \hl{XXX}
+
+
+
+\subsection{ Itô Diffusions}\label{section:itoDiff}
+
+Recall that, for a Markov process, the \textit{transition probability} $\mathbb P_{s,x}(t,A) = \mathbb P (X_t \in A \, | \, X_s = x)$, for $A$ measurable and $a\leq s\leq t \leq b$ and $x\in \mathbb{R}^n$. The Chapman-Kolmogorov equation states that 
+$$
+\mathbb P _ {s,x}(t,A) = \int _ {\mathbb R ^n} \mathbb P _ {u,z}(t,A) \, \mathbb{P}_ {s,x}(u,dz).
+$$
+
+\begin{definition}(Diffusion Process)
+    A $\mathbb R ^n$-valued process $X_t$, $t\in [0,T]$ is called a diffusion process if its transition probabilities $\{\mathbb P_ {s,x}(t, \cdot )\}$ satisfy the following conditions for all $t\in [0,T]$, $x\in\mathbb R ^n$:
+
+     \begin{equation*}
+                 \text{i) }   \lim_ {\varepsilon \rightarrow 0^+ }\frac{1}{\varepsilon }  \int_ {\mathbb R^n} \mathbb P_ {t,x}(t+\varepsilon,dy) = 0             \end{equation*} 
+
+           
+
+                  \begin{equation*}
+                 \text{ii) }   \lim_ {\varepsilon \rightarrow 0^+ }\frac{1}{\varepsilon }  \int_ {\mathbb R^n} (y-x) \, \mathbb P_ {t,x}(t+\varepsilon,dy) =  \lim_ {\varepsilon \rightarrow 0^+ } \frac{1}{\varepsilon }   \mathbb{E}  \left[ X_{t+\varepsilon} -x \, | \, X_t = x  \right]  = \mu(t,x) \in \mathbb R ^n \text{ exists.}\end{equation*}
+
+                        \begin{equation*}
+                 \text{iii) }   \lim_ {\varepsilon \rightarrow 0^+ }\frac{1}{\varepsilon }  \int_ {\mathbb R^n}  (x-y)(x-y)^t  \, \mathbb P_ {t,x}(t+\varepsilon,dy) =  \lim_ {\varepsilon \rightarrow 0^+ } \frac{1}{\varepsilon }   \mathbb{E}  \left[ (X_{t+\varepsilon} -x) (X_{t+\varepsilon} -x)^t \, | \, X_t = x  \right]  = \Sigma(t,x) \in \mathbb{R}^{n\times n} \end{equation*}
+
+                 
+exists, where  the vectors in $\mathbb{R}^n$ are implicitly taken as columns, so that $(x-y)(x-y)^t$ yields a symmetric matrix.  $\mu$ and $\Sigma$ are called the \textit{drift} and the \textit{diffusion} coefficient, respectively. Also, note how condition i) implies that the process cannot have jumps. Therefore, the Poisson process is not a diffusion.
+ 
+\end{definition}
+
+\begin{example}
+    Take a $\mathbb{R}^n$-valued brownian motion $W_t$. Note that $W_t^2$ is a sum $n$ independent squares of normal variables, so that for any $c>0$, 
+    $$
+    \mathbb P (|W_{t-\varepsilon}-x|\geq c \, | \, W_t=x) = \mathbb{P}|W_{t+\varepsilon}-W_t| \geq c) \leq c^{-4}\mathbb{E}(W_\varepsilon^4) = c^{-4}n(n+2) \varepsilon^2
+    $$
+    so that the first considiton in the previous definition is satisfied. Additionally, we have $\Sigma(t,x)= \mathbb{I} _{n\times n}$ and $\mu(t,x) = 0. $
+\end{example}
+
+The following result finally connects the previous concepts and gives and unambiguous meaning to $\mu.$
+
+\begin{theorem}
+    Let $\sigma(t,x)$ and $\mu(t,x)$ be functions as in Theorem \ref{theorem:solutions:ndimensional_sde}. Assume they are also continuous on $[a,b] \times \mathbb R^n$. The solution to the SDE there defined is a diffusion process where $\mu(t,x)$ is identified and $\Sigma(t,x)= \sigma(t,x)\cdot\sigma(t,x)^t$.
+\end{theorem}
+
+The proof of this Theorem is beyond the scope of our purposes and can be found in \cite{Kuo2006}.
+
+
+We have reached a critical point where diffusions, SDE and semigroups interesect. This seemingly unrelated mathematical objects give rise to a set of (parabolic) partial differential equations (\textit{PDEs}) that are crucial for computational purposes and pricing financial derivatives. In this context, powerful mathematical tools can be applied.
+
+The first of the approaches, where we consider a semigroup of opeartors, is included for completeness purposes, showing how its infinitesimal generators may be used to construct diffusion processes. It is also included to illustratate how Functional Analysis arises in this context.
+\vspace{0.3cm}
+
+
+\textbf{\underline{1. Semigroup approach}}
+\vspace{0.2cm}
+
+In this section, let's stick to the \textbf{stationary case}, that is, when both $\mu$ and $\Sigma$ just depend on $x$. We will need to make use of some basic concepts of Functional Analysis such as what a \textit{Banach space} is. All the definitions and standard results can be found in \cite{Brezis2011}.
+
+
+\begin{definition}
+    A family of linear operators $\{T_t, t\geq 0 \}$ on a Banach space $\mathbb{B}$ (with norm $\lVert \cdot \rVert)$ is called a contraction semigroup if it satisfies the following three properties:
+
+    \begin{itemize}
+    \item[a)] \textbf{Semigroup property:} $T_0 = \text{I}_\mathbb B$ and $T_{t+s}=T_tT_s$, for all $t,s\geq 0$.
+        \item[b)] \textbf{Strong continuity:} $\lim_{t\downarrow0}T_t(v) = v\, \text{ for every } v\in\mathbb{B}.$
+        \item[c)] \textbf{Contraction:} $\lVert T_t(v) \rVert \leq \lVert v\rVert \, \forall t\geq 0 $ and $v\in\mathbb B$.
+        
+    \end{itemize}
+
+    If $\{T_t, t\geq 0\}$ is a contraction semigroup, we define its \textbf{infinitesimal generator} $\mathcal A$ by
+    \begin{equation}
+        \mathcal A (v) = \lim_{t\downarrow 0} \frac 1 t \left( T_t (v) - v \right),
+    \end{equation}
+    whose domain consists in all vectors $v$ for which the limit exists (strongly) in $\mathbb{ B}.$
+\end{definition}
+
+\begin{example}
+    We can take the space of continuous and bounded functions $C_b[0,\infty)$ with the supremum norm $\lVert \cdot \rVert _ \infty$ and the translation transformations $T_t(f)(x)=f(x+t)$, so that $\mathcal A f = f'$, for those differentiable $f$ such that $f'\in C_b [0,\infty)$. In this case, $\mathcal A$ is an unbounded operator.
+\end{example}
+
+Connecting now with the stationary diffusion process $X_t$ driven by $\mu$ and $ \Sigma$, let's assume that its transition probabilities $\mathbb P_t$ satisfy the following three properties:
+\begin{itemize}
+    \item[1.)] For any $t>0$ and $c>0$, $\lim_{<\lVert x\rVert\rightarrow \infty} \mathbb P_t (x,\{y \, : \, \lVert y \rVert < c\}) = 0.$
+    \item[2.)] For any $c>0$, $\lim_{t\downarrow 0}\mathbb P_t (x, \{y\, : \, \lVert y-x \rVert \geq c \}) = 0$ uniformly on $x\in \mathbb R^n.$
+    \item[3.)] For any bounded and continuous function $f$ and $t >0$, 
+    \begin{equation}\label{pre_hilleYoshida}
+        T_t(f)(x) = \int_ {\mathbb{ R}^n} f(y) \, \mathbb{ P}_ t (x,dy), \, x \in \mathbb{ R}^n\, \, \text{is continuous.}
+    \end{equation}
+\end{itemize}
+\begin{theorem}
+    In the previous conditions, the family of linear operators given in condition 3.) is a contraction semigroup on the Banach space $C_0(\mathbb{R}^n)$ (the space of continuous functions vanishing at infinity), whose infinitesimal generator $\mathcal A$ is given by
+    \begin{equation}
+        \mathcal A (f) (x)= \frac 1 2 \sum_{i,j= 1}^n \Sigma_{ij}(x) \frac{\partial ^2 f}{\partial x_i \partial x_j} + \sum_{i= 1}^n \mu_i(x) \frac{\partial f}{ \partial x_i}
+    \end{equation}
+\end{theorem}
+\begin{example}
+    In the case of brownian motion, since $\Sigma=\text{I}_{n\times n} $ and $\mu = 0$, we have $\mathcal A (f) = \frac 1 2 \Delta f$, where $\Delta$ is the Laplacian operator.
+\end{example}
+
+However, among the three approaches under discussion, the semigroup approach has the least financial application so we will not dive into it any further.
+
+\vspace{0.3cm}
+
+% \textbf{\underline{2. Partial Differential Equations Approach}}
+% \vspace{0.2cm}
+
+% Let's informally obtain one of the main results involving the relation between stochastic processes and PDEs. Let $\mathbb{P}_{s,x}(t, \cdot)$ for $a\leq s \leq t \leq b$ and $x\in\mathbb R^n$ be the trasition probabilities of a diffusion process $X_t$ on $[a,b]$ driven by $\Sigma(t,x)$ and $\rho(t,x).$ Let also $F_{s,x}$ be the distribution function of the random variable $X_t$ such that $X_0=x$. The Chapman-Kolmogorov equation adopts the form
+
+% \begin{equation}
+%     F_{s,x} (t,y)= \int_ {\mathbb{R}^n} F_{u,z}(t,y)dF_{s,x}(u,z).
+% \end{equation}
+
+% Now, fixing $t_0$ and $y_0$ and taking $u = s+ \varepsilon$, we can approximate (all evaluated in $(t_0,y_0))$
+% \begin{equation}
+%     F_{s+\varepsilon,z} \approx  F_{s+\varepsilon,x} + \frac {\partial  F_{s+\varepsilon,x} }{\partial x}(z-x) + \frac{1}{2}\frac{\partial ^2  F_{s+\varepsilon,x} }{\partial x ^2} (z-x)^2
+% \end{equation}
+
+% what in the multidimensional case leads to the approximation 
+
+
+% \begin{equation}
+%      F_{s,x} \approx F_{s+\varepsilon,x}+\frac{\partial F_{s+\varepsilon,x} }{\partial x} \varepsilon \mu(s,x) + \frac{1}{2} \frac{\partial^2 F_{s+\varepsilon,x}}{\partial x ^2} \varepsilon \Sigma(s,x)
+% \end{equation}
+
+% what, after rearraging, dividing by $\varepsilon $ and computing the limit $\varepsilon \rightarrow 0$ yields
+% \begin{equation}\label{Kolmogorov_backward}
+%     -\frac{\partial F_{s,x}}{\partial s} = \mu \frac{\partial F_{s,x}}{\partial x} + \frac 1 2 \Sigma(s,x) \frac{\partial ^2 F_{s,x}}{\partial x^2},
+% \end{equation}
+% together with the terminal condition 
+% \begin{equation}
+%     \lim_{s\uparrow t_0} F_{s,x}(t_0,y_0) = \biggl\{ \begin{array}{cc}
+%          1& \text{ if } x<y_0 , \\
+%          0 & \text{ if } x>y_0.
+%     \end{array}    
+% \end{equation}
+
+% Equation \ref{Kolmogorov_backward} is called \textbf{Kolmogorov backward equation}, because the variable $s$ moves backwards from $t_0.$ However, we aim for another formula that enables \textit{forward} calculations.
+
+% We will stay in the one dimensional case. Assume the transition probabilities of a Markov process $X_t$ possess density functions, that is,
+
+% \begin{equation}
+%     P_{s,x}(t,dy) = p_{s,x}(t,y)\, dy,
+% \end{equation}
+% so that the Chapman-Kolmogorov equation thakes the form 
+% \begin{equation}
+%     p_{s,x}(t,y) = \int_ {\mathbb{R}}p_{u,z}(t,y)p_{s,x}(u,z)\, dz.
+% \end{equation}
+% By using this identity and some auxiliary test functions, it can be proven that
+
+% \begin{equation}
+%     \frac{\partial p_{s_0,x_0}(t,y)}{\partial t}  = -\frac{\partial (\mu(t,y) p_{s_0,x_0}(t,y))}{\partial y} +\frac 1 2 \frac{\partial^2 (\Sigma(t,y)p_{s_0,x_0}(t,y))}{\partial y^2} 
+% \end{equation}
+% what, together with 
+% \begin{equation}
+%     \lim_{t\downarrow s_0}p_{s_0,x_0}(t,y) = \delta_{x_0}(y)
+% \end{equation}
+% is known as either the \textbf{Kolmogorov forward equation} or the \textbf{Fokker-Plank equation.} This equation is much more useful in Finance context because it allows calculations \textit{forward} in time, that is, from known market variables.
+
+% \begin{theorem}
+%     Let $\Sigma$ and $\mu$ satisfy the linear and growth conditions in $x.$ Assume, additionally, that there exists $c>0$ such that $w^t\Sigma(t,y)w \geq c\lVert w \rVert ^2 $
+% for all $w\in \mathbb R^n$. Then:
+
+% \begin{itemize}
+%     \item[a)] The Kolmogorov backward equation has a unique solution. Moreover, there exists a continuous Markov process $X_t$ whose transition probabilities satisfy $\mathbb P_{s,x}(t_0,dy_0) = dF_{s,x}(t_0,y_0).$
+%     \item[b)] Assume additionally that $\partial  \mu/ \partial x$, $\partial \Sigma/ \partial x$ and $\partial \Sigma / \partial x^2$ satisfy the Lipschitz and linear growth conditions in $x.$ Then the Kolmogorov forward equation has a unique solution. $\blacksquare$
+% \end{itemize}
+
+% \end{theorem}
+
+
+% In terms of the infinitesimal generator, we can summarize the previous discussion in the following table:
+
+% \begin{center}
+% \begin{tabular}{|c|c|}
+% \hline
+% \textbf{Forward Equation} & \textbf{Backward Equation} \\
+% \hline
+% $\displaystyle \frac{\partial \rho}{\partial t}(t,x) = \mathcal A^* \rho(t,x)$ & 
+% $\displaystyle \frac{\partial u}{\partial t}(t,x) = \mathcal A u(t,x), \quad u(0,x) = f(x)$ \\
+% \hline
+% \end{tabular}
+% \end{center}
+% where $\mathcal A^*$ represents the adjoint of the generator $\mathcal A.$
+
+
+% \vspace{0.3cm}
+
+% \textbf{\underline{3. Stochastic Differential Equations Approach}}
+% \vspace{0.2cm}
+
+% In this case, take $\mu$, $\Sigma$ and $\sigma$ such that $\sigma \sigma^T = \Sigma$. Notice that $\sigma U$ is also a valid solution for any $U$ such that $UU^T = \textbf{I}_{n\times n}.$ Therefore, the election of $\sigma$ is unique up the multiplication by an orthogonal matrix, since $UW(t)$ is also a Brownian motion, so the transition probabilities of $X_t$ do not depend on the particular choice of $\sigma$ within its class over the group of orthogonal matrices. Therefore, we call this class of matrices the \textit{square root} of $\Sigma.$
+
+% Now, suppose $\Sigma$ and $\mu$ satisfy the linear and growth conditions. It is clear that any square root of $\Sigma$ satisfies them. Moreover, any such $\sigma$ also satifies the Lipschitz conditions given that 
+
+% \begin{equation}
+%     \lVert\sigma(t,x)-\sigma(t,y)\rVert = \frac{\lVert\Sigma(t,x)-\Sigma(t,y)\rVert}{\lVert\sigma(t,x)\rVert+\lVert\sigma(t,y)\rVert}\leq \frac{\lVert\Sigma(t,x)-\Sigma(t,y)\rVert}{2\sqrt{c}}.
+% \end{equation}
+
+% Having this, we can directly state the main theorem corresponding to the SDE approach.
+
+% \begin{theorem}
+%     The unique solution to 
+%     \begin{equation}
+%         dX_t = \mu(t,X_t) \, dt + \sigma(t,X_t)\, dW_t, \text{ } \text{ } X_0 = \Theta
+%     \end{equation}
+%     is a diffusion process, whose transition distribution function $F_{s,x}(t,y)$ is the Kolmogorov backward equation. If the additional conditions on part $b)$ of the previous Theorem are satisfied, then $X_t$ has density functions $p_{s,x}(t,y)$, satisfying the corresponding Kolmogorov forward equation.
+% \end{theorem}
+
+% \begin{example}
+%     We illustrate the previous discussion with an example. Consider the infinitesimal generator (...).
+% \end{example}
+
+\textbf{\underline{2. Partial Differential Equations Approach}}
+\vspace{0.2cm}
+
+Let's informally obtain one of the main results involving the relation between stochastic processes and PDEs. Let $\mathbb{P}_{s,x}(t, \cdot)$ for $a\leq s \leq t \leq b$ and $x\in\mathbb R^n$ be the transition probabilities of a diffusion process $X_t$ on $[a,b]$ driven by $\mu(t,x)$ and $\Sigma(t,x).$ Let also $F_{s,x}$ be the distribution function of the random variable $X_t$ such that $X_0=x$. The Chapman-Kolmogorov equation adopts the form
+
+\begin{equation}
+    F_{s,x} (t,y)= \int_ {\mathbb{R}^n} F_{u,z}(t,y)\, dF_{s,x}(u,z).
+\end{equation}
+
+Now, fixing $t$ and $y$ and taking $u = s+ \varepsilon$, we can approximate the integrand around $x$ (for $z$ close to $x$):
+\begin{equation}
+    F_{s+\varepsilon,z}(t,y) \approx  F_{s+\varepsilon,x}(t,y) + \nabla_x F_{s+\varepsilon,x}(t,y) \cdot (z-x) + \frac{1}{2} (z-x)^T H_x(F_{s+\varepsilon,x})(z-x)
+\end{equation}
+where $\nabla_x$ and $H_x$ denote the gradient and Hessian with respect to the spatial variable. Substituting this back into the integral and recalling that $\int (z-x) dF_{s,x}(s+\varepsilon, z) = \mathbb{E}[X_{s+\varepsilon}-X_s | X_s=x] \approx \mu(s,x)\varepsilon$, we obtain:
+
+\begin{equation}
+     F_{s,x} \approx F_{s+\varepsilon,x} + \nabla_x F_{s+\varepsilon,x} \cdot (\mu(s,x) \varepsilon) + \frac{1}{2} \text{Tr}\left( H_x(F_{s+\varepsilon,x}) \Sigma(s,x) \right) \varepsilon
+\end{equation}
+
+Rearranging, dividing by $\varepsilon$, and computing the limit $\varepsilon \rightarrow 0$ yields
+\begin{equation}\label{Kolmogorov_backward}
+    -\frac{\partial F_{s,x}}{\partial s} = \sum_{i=1}^n \mu_i \frac{\partial F_{s,x}}{\partial x_i} + \frac{1}{2} \sum_{i,j=1}^n \Sigma_{ij} \frac{\partial^2 F_{s,x}}{\partial x_i \partial x_j},
+\end{equation}
+together with the terminal condition 
+\begin{equation}
+    \lim_{s\uparrow t} F_{s,x}(t,y) = \mathbb{I}_{\{x \le y\}}.
+\end{equation}
+
+Equation (\ref{Kolmogorov_backward}) is called the \textbf{Kolmogorov backward equation}, because the variable $s$ is the starting time, effectively moving backwards from the terminal time $t.$ However, we often aim for a formula that enables \textit{forward} calculations.
+
+We will stay in the one-dimensional case for simplicity. Assume the transition probabilities of a Markov process $X_t$ possess density functions, that is,
+
+\begin{equation}
+    P_{s,x}(t,dy) = p_{s,x}(t,y)\, dy,
+\end{equation}
+so that the Chapman-Kolmogorov equation takes the form 
+\begin{equation}
+    p_{s,x}(t,y) = \int_ {\mathbb{R}}p_{u,z}(t,y)p_{s,x}(u,z)\, dz.
+\end{equation}
+By using this identity and some auxiliary test functions (integration by parts), it can be proven that
+
+\begin{equation}
+    \frac{\partial p_{s_0,x_0}(t,y)}{\partial t}  = -\frac{\partial (\mu(t,y) p_{s_0,x_0}(t,y))}{\partial y} +\frac 1 2 \frac{\partial^2 (\Sigma(t,y)p_{s_0,x_0}(t,y))}{\partial y^2} 
+\end{equation}
+which, together with the initial condition
+\begin{equation}
+    \lim_{t\downarrow s_0}p_{s_0,x_0}(t,y) = \delta_{x_0}(y)
+\end{equation}
+is known as either the \textbf{Kolmogorov forward equation} or the \textbf{Fokker-Planck equation.} This equation is much more useful in a financial context because it allows calculations \textit{forward} in time, i.e., evolving from known current market variables.
+
+\begin{theorem}
+    Let $\Sigma$ and $\mu$ satisfy the linear growth and Lipschitz conditions in $x.$ Assume, additionally, that there exists $c>0$ such that $w^T\Sigma(t,y)w \geq c\lVert w \rVert ^2 $
+for all $w\in \mathbb R^n$ (uniform ellipticity). Then:
+
+\begin{itemize}
+    \item[a)] The Kolmogorov backward equation has a unique solution. Moreover, there exists a continuous Markov process $X_t$ whose transition probabilities satisfy $\mathbb P_{s,x}(t_0,dy_0) = dF_{s,x}(t_0,y_0).$
+    \item[b)] Assume additionally that the derivatives of $\mu$ and $\Sigma$ up to second order satisfy the Lipschitz and linear growth conditions. Then the Kolmogorov forward equation has a unique solution.
+\end{itemize}
+
+\end{theorem}
+
+
+In terms of the infinitesimal generator, we can summarize the previous discussion in the following table:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Forward Equation} & \textbf{Backward Equation} \\
+\hline
+$\displaystyle \partial \rho/\partial t = \mathcal A^* \rho$ & 
+$\displaystyle -\partial u/\partial s = \mathcal A u$ \\
+\hline
+\end{tabular}
+\end{center}
+where $\mathcal A^*$ represents the adjoint of the generator $\mathcal A.$
+
+
+\vspace{0.3cm}
+
+\textbf{\underline{3. Stochastic Differential Equations Approach}}
+\vspace{0.2cm}
+
+In this case, take $\mu$, $\Sigma$ and $\sigma$ such that $\sigma \sigma^T = \Sigma$. Notice that $\sigma U$ is also a valid solution for any matrix $U$ such that $UU^T = \textbf{I}_{n\times n}$ (orthogonal matrix). Therefore, the choice of $\sigma$ is unique up to multiplication by an orthogonal matrix. Since $U W(t)$ is also a Brownian motion, the transition probabilities of $X_t$ do not depend on the particular choice of $\sigma$ within its class. We call this class of matrices the \textit{square root} of $\Sigma.$
+
+Now, suppose $\Sigma$ and $\mu$ satisfy the linear growth and Lipschitz conditions. It is clear that any square root of $\Sigma$ satisfies the growth condition. Moreover, if $\Sigma$ is uniformly elliptic (bounded away from zero), $\sigma$ also satisfies the Lipschitz conditions. In the 1D case, this can be seen via the inequality:
+
+\begin{equation}
+    |\sigma(t,x)-\sigma(t,y)| = \frac{|\Sigma(t,x)-\Sigma(t,y)|}{|\sigma(t,x)|+|\sigma(t,y)|}\leq \frac{|\Sigma(t,x)-\Sigma(t,y)|}{2\sqrt{c}}.
+\end{equation}
+
+Having this, we can directly state the main theorem corresponding to the SDE approach.
+
+\begin{theorem}
+    The unique solution to 
+    \begin{equation}
+        dX_t = \mu(t,X_t) \, dt + \sigma(t,X_t)\, dW_t, \quad X_{t_0} = \Theta
+    \end{equation}
+    is a diffusion process, whose transition distribution function $F_{s,x}(t,y)$ satisfies the Kolmogorov backward equation. If the additional conditions on part $b)$ of the previous Theorem are satisfied, then $X_t$ has density functions $p_{s,x}(t,y)$, satisfying the corresponding Kolmogorov forward equation.
+\end{theorem}
+
+\begin{example}
+    We illustrate the previous discussion with an example. Consider the infinitesimal generator (...).
+\end{example}
+
+
+
+\subsection{References to Section 1.2}
+The theoretical framework presented in this chapter draws primarily from two authoritative sources. The general Probability Theory concepts follow the classic exposition of P. Billingsley (\cite{Biggy}), while the construction of the Stochastic Integral is based on the comprehensive treatment by H. Kuo (\cite{Kuo2006}). Additionally, references for the underlying Functional Analysis theory, implicit in the PDE treatment of diffusions, can be found in the seminal work of H. Brezis (\cite{Brezis2011}).
+
+Certain advanced topics, such as the general formulation of Stochastic Integration with respect to semimartingales or deeper pathwise properties of Brownian motion, have been omitted as they lie beyond the scope of this work. However, the selected contents provide a rigorous and sufficient foundation for the financial applications discussed in subsequent sections and chapters.
+
+
+
+
+
+
+
+
+
+
+
+\section{Financial Derivatives}
+
+In this section, we introduce the main ideas behind Mathematical Finance and the role played by Mathematics in this field. We first informally introduce the concept of \textit{derivative} and give some examples of the main quoted derivatives.
+
+The rigorous mathematical treatment of hedging and market completeness is addressed afterwards.
+
+\subsection{The Concept of a Derivative}
+
+In the context of modern mathematical finance, a financial derivative is formally defined as a \textit{contingent claim}. Its value is derived from---or ``contingent'' upon---the state of some other underlying variables.
+
+Let us fix a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_t)_{t \in [0, T]}, \mathbb{P})$, where $\mathbb{P}$ represents the physical (or real-world) probability measure, and the filtration $(\mathcal{F}_t)_{t \geq 0}$ models the flow of information over time up to a finite time horizon $T$. Mathematically, a financial derivative with maturity $T$ is an $\mathcal{F}_T$-measurable random variable, denoted by $H_T$. There are certain derivatives, such as perpetual bonds, whose underlying time horizon is $T= \infty$, but they are not the object of this thesis, since they are not liquid and do not constitute a core part of the market.
+
+This measurability condition implies that the value of the derivative at maturity is fully determined by the information available at time $T$. The function determining this value is often referred to as the \textit{payoff function}, denoted by $\Phi_H$. The key idea behind the subsequent theory is being able to give \textit{fair prices} to those contingent claims, deduced by quoted (and liquid) market data.
+
+In order to motivate the following definitions, let's start by thinking of a linear expression of the form $ax+by=c$, given $a,b,c\in\mathbb{R}$ and $ab\neq 0$. It is clear that, if we know the value of $x$, the value of $y$ is determined by this linear relation.
+
+Something similar happens for market derivatives. Entangled by way more complicated relationships, the prices of certain claims are not independent of others. Modern markets are composed by a cohort of derivatives, bought and sold by banks, hedge funds and some other institutions, but these derivatives are just certain standard contracts that are liquid enough (that is, bought and sold with large amounts of money and with at least relatively high frequency).
+
+These standarized contracts give enough information to assess prices for more custom contracts, in such a way that these new derivatives must be priced consistently with the rest of market data. The key idea behind is that markets must (or at least, tend to) lack \textbf{arbitrage.}  An informal definition of arbitrage is the possibility of making profit in the market without carrying any risk. 
+
+For example, let's suppose a person is willing to buy a house by a certain amount $X$ in whatever currency, and another person is willing to sell it for another quantity $Y<X$. We could buy it from the later and sell it to the former, obtaining the difference as profit without any risk.
+
+There are many possible critics for the previous example. Some of them can be related to the role played by taxes, but those can be included in our model relatively easily. Some others rely on the fact that we need $Y$ units of the underlying currency to buy the house in the first place, so the cost of borrowing money should be included. But the main problem, from a Finance perspective, relies on the fact that every house is different in many ways, so extracting information from the Real Estate market is much harder done than said.
+
+However, since modern markets deal with fungible assets (that is, all contracts with same characteristics are alike and we can buy or sell many of them), it became gradually clear that Mathematics had a lot to say here. Additionally, Mathematics is very helpful in order to address the underlying risks that market players assume, both quantifying it and enabling strategies to minimize it.
+
+\subsubsection*{The Underlying Asset}
+The stochastic process driving the derivative's value is known as the \textit{underlying asset}, denoted by $S = (S_t)_{0 \le t \le T}$. The underlying is defined as an $(\mathcal{F}_t)$-adapted stochastic process, and we can even have several underlyings. In financial markets, $S_t$ typically represents the price of:
+\begin{itemize}
+    \item \textbf{Equities:} Individual stocks or market indices.
+    \item \textbf{Fixed Income:} Bonds or interest rates (often modeled via a short-rate process $r_t$).
+    \item \textbf{Commodities:} Physical goods such as oil, gold, or electricity.
+    \item \textbf{Currencies (FX):} Exchange rates between two economies.
+\end{itemize}
+
+Derivatives are generally categorized by the functional form of their payoff $H_T$.
+
+\paragraph{1. Linear Derivatives (Forwards and Futures)}
+These instruments possess a payoff that is a linear function of the underlying asset price at maturity. A prime example is the \textbf{Forward Contract}, which is an agreement to buy or sell the asset at time $T$ for a pre-specified delivery price $K$. The payoff at time $T$ for the holder of a long position is:
+\begin{equation}
+    H_T = S_T - K
+\end{equation}
+Note that this payoff ranges over $\mathbb{R}$, implying a potential liability for the holder.
+
+\paragraph{2. Non-Linear Derivatives (Options)}
+Options provide the \textit{right}, but not the \textit{obligation}, to transact. This asymmetry introduces convexity (non-linearity) into the payoff structure.
+\begin{itemize}
+    \item \textbf{European Call Option:} The right to buy $S_T$ at strike price $K$. The payoff is defined as:
+    \begin{equation}
+        H_T = (S_T - K)^+ = \max(S_T - K, 0)
+    \end{equation}
+    \item \textbf{European Put Option:} The right to sell $S_T$ at strike price $K$. The payoff is defined as:
+    \begin{equation}
+        H_T = (K - S_T)^+ = \max(K - S_T, 0)
+    \end{equation}
+\end{itemize}
+
+\paragraph{3. Path-Dependent Derivatives (Exotics)}
+While standard ``Vanilla'' options depend only on the terminal value $S_T$, exotic derivatives may depend on the entire trajectory (path) of the process $(S_t)_{0 \le t \le T}$. Examples include:
+\begin{itemize}
+    \item \textbf{American Options:} American call or put options are alike their European counterparts, with the key difference that the claim can be performed anytime up to maturity.
+    \item \textbf{Barrier Options:} The payoff is contingent on whether $S_t$ crosses a specific barrier level $B$ during the interval $[0, T]$.
+\end{itemize}
+
+From a theoretical standpoint, derivatives serve two primary functions in the market:
+\begin{enumerate}
+    \item \textbf{Hedging:} They allow agents to transfer specific risks (e.g., volatility risk) to those willing to bear them.
+    \item \textbf{Market Completeness:} In an idealized complete market, derivatives allow for the replication of any payoff profile, effectively spanning the state space of future uncertainties.
+\end{enumerate}
+
+These concepts will be rigourously defined in the next subsection. However, the main question remains unsolved: what price should these contracts hold? There a couple of notions worth noticing before entering the mathematical details. These notions can be easily compared to some intuitions a physicists may have when examining some phenomena, regarding how energy or momentum should behave.
+\begin{itemize}
+    \item If $T=0$, that is, we are pricing some present claim, the price must be the payoff. In the case of a European Call Option  of strike $K$ and underlying $S_0$, its price must be $(S_0-K)^+.$
+    \item If an asset gives its buyer more \textit{decision power} compared to other derivative, the price of the former must be greater than the price of the later. For example, the price of an American Call Option is greater or equal than the price of an European Call Option (both of them with same strike and maturity).
+\end{itemize}
+
+
+
+\subsection{Derivative Pricing}
+
+\subsection{References to Section 1.3}
+
+\chapter{Classical Volatility Models} \label{ch:cap3} 
+
+
+\section{The Black-Scholes Framework}
+\subsection{The Model}
+
+\subsection{Smile and Skewness}
+
+\section{Other Important Models}
+
+\subsection{Local models}
+
+\subsection{Stochastic models}
+
+\subsection{Path-dependent Models??} \label{cap4}
+
+\part{Modern approaches} \label{part:part2} 
+
+ 
+
+\chapter{Rough Paths} \label{ch:cap5} 
+\section{Introduction}
+
+\section{Rough Paths}
+
+\subsection{Tensor Spaces}
+
+\subsection{Multiplicative Property}
+
+\subsection{Types of Rough Paths}
+
+\section{Fundamental Results}
+
+\subsection{Integration}
+
+\subsection{Differential Equations}
+
+\subsection{Existence}
+
+\subsection{Uniqueness and Continuity}
+
+\section{Signature Transformation}
+
+%\section{Regularity Structures (?)}
+
+\chapter{Applications} \label{ch:cap6} 
+
+\section{Calibration of a Volatility Surface}
+\subsection{The Model}
+
+\section{Joint Calibration (?)}
+\subsection{The Challenge (?)}
+
+\subsection{Calibration of a (???)}
+
+\section{Implementation}
+
+\section{Results}
+
+\chapter{Conclusions} \label{ch:cap7} 
+
+\begin{theorem}\label{thm:main}
+This is the main result.
+\end{theorem}
+
+As we saw in Theorem~\ref{thm:main}, ...
+
+
+\begin{equation}\label{eq:energy}
+E = mc^2
+\end{equation}
+
+We substitute into equation~\eqref{eq:energy}. also \ref{eq:energy}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\nocite{*}
+\printbibliography[heading=bibintoc]
+
+
+
+\appendix
+
+
+
+
+\chapter{Auxiliary Results}\label{resultadosauxiliares}
+
+
+
+
+
+
+
+
+
+
+\end{document}

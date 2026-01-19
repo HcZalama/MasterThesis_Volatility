@@ -1,0 +1,15 @@
+# LaTeX ignore files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lot
+*.lof
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
+# Keep the PDF if you really want it, but usually we ignore it to save space
+# Remove *.pdf above if you want your thesis PDF on GitHub
