@@ -2200,7 +2200,7 @@ These standardized contracts give enough information to assess prices for more c
 
 For example, let's suppose a person is willing to buy a house by a certain amount $X$ in whatever currency, and another person is willing to sell it for another quantity $Y<X$. We could buy it from the latter and sell it to the former, obtaining the difference as profit without any risk.
 
-There are many possible critics for the previous example. Some of them can be related to the role played by taxes, but those can be included in our model relatively easily. Some others rely on the fact that we need $Y$ units of the underlying currency to buy the house in the first place, so the cost of borrowing money should be included. But the main problem, from a Finance perspective, relies on the fact that every house is different in many ways, so extracting information from the Real Estate market is much harder done than said.
+There are many possible critics for the previous example. Some of them can be related to the role played by taxes, but those can be included in our model relatively easily. Some others rely on the fact that we need $Y$ units of the underlying currency to buy the house in the first place, so the cost of borrowing money should be included. But the main problem, from a Finance perspective, relies on the fact that every house is different in many ways, so extracting information from the Real Estate market is much easier said than done.
 
 However, since modern markets deal with fungible assets (that is, all contracts with same characteristics are alike and we can buy or sell many of them), it became gradually clear that Mathematics had a lot to say here. Additionally, Mathematics is very helpful in order to address the underlying risks that market players assume, both quantifying it and enabling strategies to minimize it.
 
@@ -2251,16 +2251,136 @@ From a theoretical standpoint, derivatives serve two primary functions in the ma
 These concepts will be rigorously defined in the next subsection. However, the main question remains unsolved: what price should these contracts hold? There are a couple of notions worth noticing before entering the mathematical details. These notions can be easily compared to some intuitions a physicist may have when examining some phenomena, regarding how energy or momentum should behave.
 \begin{itemize}
     \item If $T=0$, that is, we are pricing some present claim, the price must be the payoff. In the case of a European Call Option  of strike $K$ and underlying $S_0$, its price must be $(S_0-K)^+.$
-    \item If an asset gives its buyer more \textit{decision power} compared to other derivative, the price of the former must be greater than the price of the latter. For example, the price of an American Call Option is greater or equal than the price of an European Call Option (both of them with same strike and maturity).
+    \item If an asset gives its buyer more optionality compared to other derivative, the price of the former must be greater than the price of the latter. For example, the price of an American Call Option is greater or equal than the price of an European Call Option (both of them with same strike and maturity).
 \end{itemize}
 
 
 
 \subsection{Derivative Pricing}
 
-Continueee
+We now turn to the rigorous problem of pricing contingent claims. While elementary treatments often assume asset prices follow geometric Brownian motions and interest rates are constant, these assumptions are insufficient for a general mathematical theory.
 
-Cmon lets gooo
+We work in a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_t)_{0 \le t \le T}, \mathbb{P})$ satisfying the usual conditions (right-continuity and completeness). The time horizon $T$ is finite.
+
+
+Let the market consist of $d+1$ assets denoted by the vector process $S = (S^0, S^1, \dots, S^d)$. We assume that each component $S^i$ is a \textbf{semimartingale}. This is the most general class of processes for which a stochastic integral can be defined in a way that respects the geometric and physical intuition of trading. Despite stating the results in this generality, we will work with the special case of Itô processes, given their prevalence in financial modeling.
+
+We distinguish the $0$-th asset, $S^0$, as the \textbf{numeraire}.
+\begin{definition}[Numeraire]
+A numeraire is a price process $S^0$ that is strictly positive ($S^0_t > 0$ almost surely for all $t$) and non-dividend paying. It serves as the unit of account for the market.
+\end{definition}
+\noindent While $S^0$ is often chosen to be a bank account $B_t = \exp(\int_0^t r_s ds)$ with finite variation, the theory holds for \textit{any} semimartingale numeraire (e.g., a foreign currency or a commodity). From this point of view, the bank account is just a particular case, though it is rather convenient because it explicitly models the time value of money. 
+
+
+
+We define the \textbf{discounted price process} $X$ as the prices of the primary assets expressed in units of the numeraire:
+\begin{equation}
+    X_t = \left( 1, \frac{S^1_t}{S^0_t}, \dots, \frac{S^d_t}{S^0_t} \right)
+\end{equation}
+Since the ratio of semimartingales (with a non-vanishing denominator) is a semimartingale, $X$ is a vector semimartingale.
+
+\begin{proposition}
+    The ratio of semimartingales with non-vanishing denominator is a semimartingale.
+\end{proposition}
+\textbf{\textit{Proof:}} Let $Y$ and $Z$ be semimartingales such that $Z_t \neq 0$ almost surely for all $t$. By Itô's formula for semimartingales, \hl{REF REF REF REF} we have:
+\begin{equation}
+    d\left(\frac{Y_t}{Z_t}\right) = \frac{1}{Z_{t-}} \, dY_t - \frac{Y_{t-}}{(Z_{t-})^2} \, dZ_t + \frac{1}{(Z_{t-})^2} \, d\langle Y, Z \rangle_t - \frac{Y_{t-}}{(Z_{t-})^3} \, d\langle Z \rangle_t
+\end{equation}
+Each term on the right-hand side is a semimartingale, as it involves stochastic integrals with respect to semimartingales. Therefore, the ratio $Y_t / Z_t$ is itself a semimartingale. \hfill $\blacksquare$
+
+
+
+
+
+A trading strategy is a predictable process $H = (H^0, H^1, \dots, H^d)$, where $H^i_t$ represents the number of units of asset $i$ held at time $t$. The value of the portfolio at time $t$ is the scalar process:
+\begin{equation}
+    V_t(H) = \sum_{i=0}^d H^i_t S^i_t
+\end{equation}
+
+For the strategy to be economically meaningful, it must be \textbf{self-financing}. In the language of stochastic integration, this implies that changes in wealth are generated solely by the fluctuations of the asset prices:
+\begin{equation}
+    dV_t(H) = \sum_{i=0}^d H^i_t \, dS^i_t
+\end{equation}
+When working with discounted prices $X$, the self-financing condition simplifies. It can be shown (by Ito's Lemma for semimartingales) that a strategy is self-financing if and only if the discounted wealth process $V_t/S^0_t$ satisfies:
+\begin{equation}
+    \frac{V_t(H)}{S^0_t} = \frac{V_0(H)}{S^0_0} + \int_0^t \sum_{i=1}^d H^i_u \, dX^i_u = \frac{V_0}{S^0_0} + (H \cdot X)_t
+\end{equation}
+where $(H \cdot X)$ denotes the vector stochastic integral.
+
+\paragraph{Admissibility:}
+In continuous time, the standard definition of arbitrage is insufficient because "doubling strategies" (integrands with extremely large negative values) can technically generate profit from nothing in local time intervals. To preclude this, we restrict ourselves to \textbf{admissible strategies}.
+\begin{definition}[Admissible Strategy]
+A self-financing strategy $H$ is called $a$-admissible if its discounted value process is uniformly bounded from below by a constant $-a$ almost surely (i.e., $(H \cdot X)_t \ge -a$ for all $t$). A strategy is admissible if it is $a$-admissible for some $a \ge 0$.
+\end{definition}
+
+
+
+The classical definition of "No Arbitrage" fails to be closed in the topology of $L^\infty$. Delbaen and Schachermayer (1994) proved that the appropriate condition for the existence of an equivalent martingale measure is \textit{No Free Lunch with Vanishing Risk}.
+
+Let $K$ be the set of random variables representing the terminal wealth of all admissible strategies starting with zero capital:
+\begin{equation}
+    K = \{ (H \cdot X)_T \mid H \text{ is admissible and } H_0 = 0 \}
+\end{equation}
+Let $C$ be the cone of claims dominated by elements in $K$, i.e., $C = \{ g \in L^\infty(\mathcal{F}_T) \mid \exists f \in K, g \le f \}$.
+The market satisfies \textbf{NFLVR} if:
+\begin{equation}
+    \overline{C} \cap L_+^\infty = \{0\}
+\end{equation}
+where $\overline{C}$ is the closure of $C$ in the $L^\infty$ norm. Intuitively, this condition prevents not just exact arbitrage, but also sequences of strategies that approximate an arbitrage opportunity with risk converging to zero.
+
+
+
+We are now equipped to state the core result linking market topology to measure theory.
+
+\begin{definition}[Equivalent Local Martingale Measure]
+A probability measure $\mathbb{Q}$ is an Equivalent Local Martingale Measure (ELMM) for the numeraire $S^0$ if:
+\begin{enumerate}
+    \item $\mathbb{Q} \sim \mathbb{P}$ (they share the same null sets).
+    \item The discounted price process $X_t = S_t / S^0_t$ is a \textbf{local martingale} under $\mathbb{Q}$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[First Fundamental Theorem of Asset Pricing]
+Assume the process $X$ is locally bounded. The market satisfies the NFLVR condition if and only if there exists at least one Equivalent Local Martingale Measure $\mathbb{Q}$.
+\end{theorem}
+\noindent Note the necessity of \textit{local} martingales. For general semimartingales, true martingality is too strong a requirement. However, for pricing bounded claims, the local property suffices.
+
+
+
+The other reasonable question to ask ourselves is whether every contingent claim can be replicated by a self-financing strategy. Before stating the second theorem, we must rigorously define market completeness.
+
+\begin{definition}[Market Completeness]
+A market is \textbf{complete} if every contingent claim $\xi \in L^\infty(\mathcal{F}_T)$ is \textit{attainable}. That is, for every bounded random variable $\xi$, there exists an admissible self-financing strategy $H$ and an initial capital $x \in \mathbb{R}$ such that:
+\begin{equation}
+    \frac{\xi}{S^0_T} = x + (H \cdot X)_T \quad \mathbb{Q}\text{-almost surely.}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Second Fundamental Theorem of Asset Pricing]
+Assume that the set of equivalent local martingale measures $\mathcal{M}^e$ is non-empty (i.e., the market is arbitrage-free). The market is complete if and only if $\mathcal{M}^e$ is a singleton set (i.e., $\mathbb{Q}$ is unique).
+\end{theorem}
+
+
+
+If the market is arbitrage-free and complete (i.e., there exists a unique $\mathbb{Q}$), the fair price at time $t$ of a generic derivative paying $H_T$ at maturity is given by the expectation of the discounted payoff:
+\begin{equation}
+    \frac{V_t}{S^0_t} = \mathbb{E}^\mathbb{Q} \left[ \frac{H_T}{S^0_T} \bigg| \mathcal{F}_t \right] \implies V_t = S^0_t \, \mathbb{E}^\mathbb{Q} \left[ \frac{H_T}{S^0_T} \bigg| \mathcal{F}_t \right]
+\end{equation}
+
+This formulation reveals that "risk-neutral probabilities" are not absolute; they are inextricably linked to the choice of numeraire.
+
+\paragraph{Change of Numeraire}
+Let $N$ be a different numeraire (strictly positive semimartingale). Let $\mathbb{Q}^S$ be the measure associated with numeraire $S^0$, and $\mathbb{Q}^N$ be the measure associated with numeraire $N$.
+Prices must be consistent regardless of the unit of account. Therefore, for any asset $Z$:
+\begin{equation}
+    \frac{Z_t}{S^0_t} = \mathbb{E}^{\mathbb{Q}^S}\left[ \frac{Z_T}{S^0_T} \mid \mathcal{F}_t \right] \quad \text{and} \quad \frac{Z_t}{N_t} = \mathbb{E}^{\mathbb{Q}^N}\left[ \frac{Z_T}{N_T} \mid \mathcal{F}_t \right]
+\end{equation}
+
+The change of measure from $\mathbb{Q}^S$ to $\mathbb{Q}^N$ is defined by the Radon-Nikodym derivative, which turns out to be exactly the normalized ratio of the numeraires:
+\begin{equation}
+    \frac{d\mathbb{Q}^N}{d\mathbb{Q}^S}\bigg|_{\mathcal{F}_T} = \frac{N_T / S^0_T}{N_0 / S^0_0}
+\end{equation}
+This elegantly shows that changing the numeraire is mathematically equivalent to performing a change of probability measure. This technique is particularly powerful in interest rate theory (e.g., switching to the $T$-forward measure to price bond options).
 
 \subsection{References to Section 1.3}
 
