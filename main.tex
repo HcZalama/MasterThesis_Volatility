@@ -2196,9 +2196,9 @@ In order to motivate the following definitions, let's start by thinking of a lin
 
 Something similar happens for market derivatives. Entangled by way more complicated relationships, the prices of certain claims are not independent of others. Modern markets are composed by a cohort of derivatives, bought and sold by banks, hedge funds and some other institutions, but these derivatives are just certain standard contracts that are liquid enough (that is, bought and sold with large amounts of money and with at least relatively high frequency).
 
-These standarized contracts give enough information to assess prices for more custom contracts, in such a way that these new derivatives must be priced consistently with the rest of market data. The key idea behind is that markets must (or at least, tend to) lack \textbf{arbitrage.}  An informal definition of arbitrage is the possibility of making profit in the market without carrying any risk. 
+These standardized contracts give enough information to assess prices for more custom contracts, in such a way that these new derivatives must be priced consistently with the rest of market data. The key idea behind is that markets must (or at least, tend to) lack \textbf{arbitrage.}  An informal definition of arbitrage is the possibility of making profit in the market without carrying any risk. 
 
-For example, let's suppose a person is willing to buy a house by a certain amount $X$ in whatever currency, and another person is willing to sell it for another quantity $Y<X$. We could buy it from the later and sell it to the former, obtaining the difference as profit without any risk.
+For example, let's suppose a person is willing to buy a house by a certain amount $X$ in whatever currency, and another person is willing to sell it for another quantity $Y<X$. We could buy it from the latter and sell it to the former, obtaining the difference as profit without any risk.
 
 There are many possible critics for the previous example. Some of them can be related to the role played by taxes, but those can be included in our model relatively easily. Some others rely on the fact that we need $Y$ units of the underlying currency to buy the house in the first place, so the cost of borrowing money should be included. But the main problem, from a Finance perspective, relies on the fact that every house is different in many ways, so extracting information from the Real Estate market is much harder done than said.
 
@@ -2248,15 +2248,17 @@ From a theoretical standpoint, derivatives serve two primary functions in the ma
     \item \textbf{Market Completeness:} In an idealized complete market, derivatives allow for the replication of any payoff profile, effectively spanning the state space of future uncertainties.
 \end{enumerate}
 
-These concepts will be rigourously defined in the next subsection. However, the main question remains unsolved: what price should these contracts hold? There a couple of notions worth noticing before entering the mathematical details. These notions can be easily compared to some intuitions a physicists may have when examining some phenomena, regarding how energy or momentum should behave.
+These concepts will be rigorously defined in the next subsection. However, the main question remains unsolved: what price should these contracts hold? There are a couple of notions worth noticing before entering the mathematical details. These notions can be easily compared to some intuitions a physicist may have when examining some phenomena, regarding how energy or momentum should behave.
 \begin{itemize}
     \item If $T=0$, that is, we are pricing some present claim, the price must be the payoff. In the case of a European Call Option  of strike $K$ and underlying $S_0$, its price must be $(S_0-K)^+.$
-    \item If an asset gives its buyer more \textit{decision power} compared to other derivative, the price of the former must be greater than the price of the later. For example, the price of an American Call Option is greater or equal than the price of an European Call Option (both of them with same strike and maturity).
+    \item If an asset gives its buyer more \textit{decision power} compared to other derivative, the price of the former must be greater than the price of the latter. For example, the price of an American Call Option is greater or equal than the price of an European Call Option (both of them with same strike and maturity).
 \end{itemize}
 
 
 
 \subsection{Derivative Pricing}
+
+Continueee
 
 \subsection{References to Section 1.3}
 
