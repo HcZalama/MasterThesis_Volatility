@@ -2235,8 +2235,8 @@ Options provide the \textit{right}, but not the \textit{obligation}, to transact
     \end{equation}
 \end{itemize}
 
-\paragraph{3. Path-Dependent Derivatives (Exotics)}
-While standard ``Vanilla'' options depend only on the terminal value $S_T$, exotic derivatives may depend on the entire trajectory (path) of the process $(S_t)_{0 \le t \le T}$. Examples include:
+\paragraph{3. Other Derivatives (Exotics)}
+While standard \textit{vanilla} options depend only on the terminal value $S_T$, exotic derivatives may depend on the entire trajectory (path) of the process $(S_t)_{0 \le t \le T}$. Examples include:
 \begin{itemize}
     \item \textbf{American Options:} American call or put options are alike their European counterparts, with the key difference that the claim can be performed anytime up to maturity.
     \item \textbf{Barrier Options:} The payoff is contingent on whether $S_t$ crosses a specific barrier level $B$ during the interval $[0, T]$.
@@ -2382,21 +2382,143 @@ The change of measure from $\mathbb{Q}^S$ to $\mathbb{Q}^N$ is defined by the Ra
 \end{equation}
 This elegantly shows that changing the numeraire is mathematically equivalent to performing a change of probability measure. This technique is particularly powerful in interest rate theory (e.g., switching to the $T$-forward measure to price bond options).
 
-\subsection{References to Section 1.3}
-
-\chapter{Classical Volatility Models} \label{ch:cap3} 
-
 
 \section{The Black-Scholes Framework}
+\label{sec:black_scholes_framework}
+
+Having established the general theory of arbitrage-free pricing and martingale measures, we now specialize our market model to the most famous and widely used framework in financial history: the Black-Scholes-Merton model.
+
 \subsection{The Model}
+\label{subsec:bs_model}
+
+We assume a frictionless market with a constant risk-free rate $r$. The dynamics of the underlying asset $S_t$ under the physical measure $\mathbb{P}$ are typically modeled by a Geometric Brownian Motion (GBM). However, we have seen that pricing depends solely on the dynamics under the risk-neutral measure $\mathbb{Q}$.
+
+Let us assume the asset pays a continuous dividend yield $q$. Under $\mathbb{Q}$, the drift of the asset must be $r-q$ to ensure that the discounted gain process is a martingale. The SDE is:
+\begin{equation} \label{eq:BS_SDE}
+    dS_t = (r - q) S_t \, dt + \sigma S_t \, dW^\mathbb{Q}_t
+\end{equation}
+where $\sigma$ is a constant volatility parameter and $W^\mathbb{Q}_t$ is a standard Brownian motion under $\mathbb{Q}$.
+
+While we can price derivatives using the expectation operator $\mathbb{E}^\mathbb{Q}$, the original (and physically more insightful) derivation relies on the construction of a hedging portfolio. This demonstrates that the price is enforced by the absence of arbitrage, not merely by probabilistic expectation.
+
+Consider a derivative with price $V(S, t)$. We form a self-financing portfolio $\Pi_t$ consisting of:
+\begin{itemize}
+    \item One short position in the derivative $V$.
+    \item $\Delta_t$ units of the underlying asset $S_t$.
+\end{itemize}
+The value of the portfolio is $\Pi_t = -V(S_t, t) + \Delta_t S_t$. The change in value over a time step $dt$ (including dividends $qS_dt$ earned on the stock) is:
+\begin{equation}
+    d\Pi_t = -dV_t + \Delta_t dS_t + \Delta_t q S_t dt
+\end{equation}
+Applying Itô's Lemma to $dV_t$:
+\begin{equation}
+    dV_t = \frac{\partial V}{\partial t} dt + \frac{\partial V}{\partial S} dS_t + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} dt
+\end{equation}
+Substituting this into the portfolio dynamics and grouping the $dW_t$ terms:
+\begin{equation}
+    d\Pi_t = \left( -\frac{\partial V}{\partial t} - \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \Delta_t(r-q)S_t - \Delta_t q S_t \right) dt + \left( \Delta_t - \frac{\partial V}{\partial S} \right) \sigma S_t dW_t
+\end{equation}
+To make the portfolio risk-free (hedged), we must eliminate the stochastic term $dW_t$. This determines the \textit{Delta}:
+\begin{equation}
+    \Delta_t = \frac{\partial V}{\partial S}
+\end{equation}
+With this choice, the portfolio evolves deterministically. To avoid arbitrage, it must earn the risk-free rate $r$: $d\Pi_t = r \Pi_t dt$. This leads to the celebrated Black-Scholes PDE:
+\begin{equation} \label{eq:BS_PDE}
+    \frac{\partial V}{\partial t} + (r-q)S \frac{\partial V}{\partial S} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} - rV = 0
+\end{equation}
+with terminal condition $V(S, T) = H(S_T)$.
+
+
+The standard Black-Scholes model assumes \textbf{Log-Normal} dynamics (prices cannot be negative). The closed-form solution for a European Call ($H(S_T) = (S_T - K)^+$) is:
+\begin{equation}
+    C_{BS}(S, t) = S e^{-q(T-t)} N(d_1) - K e^{-r(T-t)} N(d_2)
+\end{equation}
+where $d_{1,2} = \frac{\ln(S/K) + (r-q \pm \sigma^2/2)\tau}{\sigma\sqrt{\tau}}$.
+
+Alternatively, one might assume \textbf{Normal} (Gaussian) dynamics, often attributed to Bachelier ($dS_t = \sigma dW_t$). This allows for negative prices and is sometimes used in interest rate modeling or spread options. However, for equities, the Log-Normal model is the standard convention due to the limited liability of shareholders (stock prices bounded at 0).
+
+\subsubsection{The Forward Measure and Black-76}
+It is often convenient to work with the Forward price $F_t = S_t e^{(r-q)(T-t)}$. Under the $T$-forward measure $\mathbb{Q}^T$, the forward price is a martingale:
+\begin{equation}
+    dF_t = \sigma F_t \, dW^T_t
+\end{equation}
+This leads to the Black-76 formula, which is formally identical to Black-Scholes but utilizes $F_t$ instead of $S_t$ and $r=0$ inside the $N(\cdot)$ terms.
+
+\subsubsection{The Inversion Problem and Implied Volatility}
+In professional markets, participants do not "price" options using Black-Scholes to find the dollar value. The market price $C^{mkt}$ is determined by supply and demand.
+
+Instead, Black-Scholes is used as a translation mechanism. Since the pricing function $C_{BS}(\sigma)$ is strictly monotonic in $\sigma$, we can invert it to find the unique parameter $\sigma_{impl}$ that matches the market price:
+\begin{equation}
+    C_{BS}(S, K, T, r, q, \sigma_{impl}) = C^{mkt}
+\end{equation}
+\textbf{Implied Volatility} is the true "price" quoted in the market. It represents the market's consensus on the average future volatility of the underlying asset over the life of the option.
 
 \subsection{Smile and Skewness}
+\label{subsec:smile_skew}
+
+If the assumptions of Black-Scholes were satisfied physically (i.e., if returns were truly log-normal with constant variance), the implied volatility $\sigma_{impl}$ would be constant across all strike prices $K$ and maturities $T$.
+
+Empirical data reveals this is not the case. When we plot $\sigma_{impl}(K)$ against $K$, we observe distinct shapes:
+\begin{itemize}
+    \item \textbf{The Skew (Smirk):} Typical in equity markets. $\sigma_{impl}$ decreases as $K$ increases. This reflects "Crash Phobia"---investors bid up the price of low-strike Puts (insurance against market drops), implying higher volatility for downside strikes.
+    \item \textbf{The Smile:} Typical in Forex markets. $\sigma_{impl}$ is lowest at the money ($K \approx S$) and increases for both deep ITM and OTM options. This reflects "Fat Tails" (leptokurtosis) in the return distribution---extreme moves are more probable than the Gaussian model predicts.
+\end{itemize}
+
+Mathematically, the existence of the smile $\sigma(K, T)$ implies that the risk-neutral probability density function $\psi(S_T)$ deviates from the log-normal density. Breeden and Litzenberger (1978) showed that the risk-neutral density can be recovered from the second derivative of the call price with respect to the strike:
+\begin{equation}
+    \psi(K) = e^{rT} \frac{\partial^2 C}{\partial K^2}
+\end{equation}
+This formula confirms that any curvature in the implied volatility surface corresponds to a non-Gaussian distribution of the underlying.
 
 \section{Other Important Models}
+\label{sec:other_models}
 
-\subsection{Local models}
+To account for the volatility smile and skew, we must extend the Black-Scholes framework. There are two primary approaches: making volatility a deterministic function of the state (Local Volatility) or making it a stochastic process (Stochastic Volatility).
 
-\subsection{Stochastic models}
+\subsection{Local Volatility Models}
+\label{subsec:local_vol}
+
+\subsubsection{Concept}
+The Local Volatility (LV) framework, introduced by Dupire (1994), posits that volatility is a deterministic function of the current asset price and time: $\sigma = \sigma(S_t, t)$. The dynamics are:
+\begin{equation}
+    dS_t = (r-q) S_t dt + \sigma(S_t, t) S_t dW_t
+\end{equation}
+This model preserves the completeness of the market (there is only one source of randomness $W_t$) while allowing the model to fit \textit{any} observed arbitrage-free implied volatility surface exactly.
+
+\subsubsection{The Dupire Formula}
+Dupire's great insight was to link the unknown function $\sigma(K, T)$ directly to observed market option prices $C(K, T)$. By applying the Fokker-Planck (forward Kolmogorov) equation to the transition density of the diffusion process, Dupire derived the following relation:
+\begin{equation} \label{eq:dupire}
+    \sigma_{loc}^2(K, T) = \frac{\frac{\partial C}{\partial T} + (r-q)K \frac{\partial C}{\partial K} + qC}{\frac{1}{2} K^2 \frac{\partial^2 C}{\partial K^2}}
+\end{equation}
+This formula implies that if we have a dense continuum of option prices for all strikes and maturities, the local volatility function is uniquely determined.
+
+While LV models fit the surface perfectly, they often produce unrealistic forward volatility dynamics (the smile flattens as the spot price moves), making them less suitable for pricing path-dependent exotics like barriers or cliquets.
+
+\subsection{Stochastic Volatility Models}
+\label{subsec:stochastic_vol}
+
+\subsubsection{Concept}
+To capture realistic dynamics of the volatility surface itself, we introduce a second source of randomness. In Stochastic Volatility (SV) models, the variance $v_t = \sigma_t^2$ follows its own Stochastic Differential Equation (SDE).
+\begin{equation}
+    \begin{cases}
+        dS_t = \mu S_t dt + \sqrt{v_t} S_t dW_t^S \\
+        dv_t = \alpha(v_t, t) dt + \beta(v_t, t) dW_t^v
+    \end{cases}
+\end{equation}
+A critical parameter is the correlation $\rho$ between the two Brownian motions: $d\langle W^S, W^v \rangle_t = \rho dt$.
+\begin{itemize}
+    \item If $\rho < 0$, a drop in price ($S \downarrow$) is associated with an increase in volatility ($v \uparrow$), naturally generating the \textbf{skew} observed in equity markets.
+    \item The "vol of vol" parameter (in the diffusion of $v_t$) controls the convexity or \textbf{curvature} of the smile.
+\end{itemize}
+
+\subsubsection{The Heston Model}
+The most prominent SV model is the Heston Model (1993), which models the variance as a Cox-Ingersoll-Ross (CIR) process (mean-reverting square root process):
+\begin{equation}
+    dv_t = \kappa (\theta - v_t) dt + \xi \sqrt{v_t} dW_t^v
+\end{equation}
+where $\kappa$ is the mean reversion speed, $\theta$ is the long-run variance, and $\xi$ is the volatility of volatility.
+
+Unlike Local Volatility, Stochastic Volatility models render the market \textbf{incomplete}, as there is no primary asset to hedge the volatility risk $dW^v$. Pricing requires specifying a market price of volatility risk, or simply calibrating the parameters $(\kappa, \theta, \xi, \rho, v_0)$ to liquid market options. The Heston model is particularly popular because it allows for a semi-closed form solution for European options via Fourier inversion characteristic functions.
 
 \subsection{Path-dependent Models??} \label{cap4}
 
