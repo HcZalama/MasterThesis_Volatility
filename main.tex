@@ -2216,13 +2216,13 @@ This measurability condition implies that the value of the derivative at maturit
 
 In order to motivate the following definitions, let us start by thinking of a linear expression of the form $ax+by=c$, given $a,b,c\in\mathbb{R}$ and $ab\neq 0$. It is clear that, if we know the value of $x$, the value of $y$ is strictly determined by this linear relation.
 
-Something similar happens for market derivatives. Entangled by much more complicated relationships, the prices of certain claims are not independent of others. Modern markets are composed of a cohort of derivatives, bought and sold by banks, hedge funds, and other institutions. However, the core of these derivatives are standardized contracts that are highly liquid (bought and sold in large volumes with high frequency).
+Something similar happens for market derivatives. Entangled by much more complicated relationships, the prices of certain claims are not independent of others. Modern markets are composed of a cohort of derivatives, bought and sold by banks, hedge funds, and other institutions. However, the core of these derivatives are standardized contracts that are highly liquid (bought and sold in large volumes with high frequency), and the language institutions and contracts share is rooted in the mathematical machinery of Probability Theory and Stochastic Processes.
 
 These standardized contracts provide enough information to assess prices for more custom contracts, ensuring that these new derivatives are priced consistently with the rest of the market data. The foundational principle behind this consistency is that markets must (or at least, theoretically tend to) lack \textbf{arbitrage.} An informal definition of arbitrage is the possibility of making a profit in the market without carrying any risk and with zero net initial investment. 
 
 For example, consider a non-dividend-paying stock trading at $S_0$ and a forward contract on that stock with delivery price $K > S_0 e^{rT}$ (where $r$ is the continuous risk-free rate). An arbitrageur could borrow $S_0$ from the bank, buy the stock, and simultaneously short the forward contract. At maturity $T$, the arbitrageur delivers the stock, receives $K$, and repays the bank $S_0 e^{rT}$, locking in a strictly positive, risk-free profit of $K - S_0 e^{rT}$.
 
-There are, of course, practical criticisms of such idealized examples. Factors such as transaction costs, bid-ask spreads, differential borrowing and lending rates, and taxes all create friction. However, since modern markets deal with highly fungible assets and increasingly efficient electronic trading, these arbitrage bounds are remarkably tight. Consequently, it became clear that Mathematics is essential here—not only to price assets consistently but to quantify underlying risks and engineer dynamic strategies to hedge them.
+There are, of course, practical criticisms of such idealized examples. Factors such as transaction costs, bid-ask spreads, differential borrowing and lending rates, and taxes all create friction. However, since modern markets deal with highly fungible assets and increasingly efficient electronic trading, these arbitrage bounds are remarkably tight. Consequently, it became clear that Mathematics is essential here—not only to price assets consistently but to quantify underlying risks and engineer dynamic strategies to \textbf{hedge} them.
 
 \subsubsection*{The Underlying Asset}
 The stochastic process driving the derivative's value is known as the \textit{underlying asset}, denoted by $S = (S_t)_{0 \le t \le T}$. The underlying is defined as an $(\mathcal{F}_t)$-adapted stochastic process, and a derivative may even depend on several underlyings. In financial markets, $S_t$ typically represents the price of:
@@ -2253,14 +2253,11 @@ Options provide the \textit{right}, but not the \textit{obligation}, to transact
     \begin{equation}
         H_T = (K - S_T)^+ = \max(K - S_T, 0)
     \end{equation}
+        \item \textbf{American Options:} American call or put options are similar to their European counterparts, with the key difference being that the option can be \textit{exercised} at any time up to maturity $T$.
 \end{itemize}
 
-\paragraph{3. Other Derivatives (Exotics)}
-While standard \textit{vanilla} options depend only on the terminal value $S_T$, exotic derivatives may depend on the entire trajectory (path) of the process $(S_t)_{0 \le t \le T}$. Examples include:
-\begin{itemize}
-    \item \textbf{American Options:} American call or put options are similar to their European counterparts, with the key difference being that the option can be \textit{exercised} at any time up to maturity $T$.
-    \item \textbf{Barrier Options:} The payoff is contingent on whether $S_t$ crosses a specific barrier level $B$ during the interval $[0, T]$.
-\end{itemize}
+
+
 
 From a theoretical standpoint, derivatives serve two primary functions in the market:
 \begin{enumerate}
@@ -2270,8 +2267,8 @@ From a theoretical standpoint, derivatives serve two primary functions in the ma
 
 These concepts will be rigorously defined in the next subsection. However, the main question remains: what price should these contracts hold? Before entering the mathematical machinery, we can establish bounds based on physical intuition, much like conservation laws:
 \begin{itemize}
-    \item If $T=0$, meaning we are pricing a claim that expires immediately, the price must equal the payoff. For a European Call Option with strike $K$ and underlying $S_0$, its price must be $(S_0-K)^+$.
-    \item If an asset gives its buyer strictly more optionality compared to another derivative, its price must be greater than or equal to the latter. For example, the price of an American Call Option must be bounded below by the price of a European Call Option with the identical strike and maturity.
+    \item If $T=0$, meaning we are pricing a claim that expires immediately (and only depends on the underlying at maturity, not on its trajectory), the price must equal the payoff. For a European Call Option with strike $K$ and underlying $S_0$, its price must be $(S_0-K)^+$.
+    \item If an asset gives its buyer strictly more optionality compared to another derivative, its price must be greater than or equal to the latter. For example, the price of an American Call Option must be bounded below by the price of a European Call Option with same strike and maturity.
 \end{itemize}
 
 
@@ -2286,7 +2283,7 @@ Let the market consist of $d+1$ assets denoted by the vector process $S = (S^0, 
 
 We distinguish the $0$-th asset, $S^0$, as the \textbf{numeraire}.
 \begin{definition}[Numeraire]
-A numeraire is a price process $S^0$ that is strictly positive ($S^0_t > 0$ almost surely for all $t$) and non-dividend paying. It serves as the unit of account for the market.
+A numeraire is a price process $S^0$ that is strictly positive ($S^0_t > 0$ almost surely for all $t$) and non-dividend paying\footnote{Dividends certainly are a pain to work with. They are usually modeled with the \textit{Forward} process. This process basically accounts for the time value of dividends, modeled with a relative and an absolute parts following $F_t = \alpha_t S_t + \beta_t$, for certain functions of time, discount and dividends. We will omit the details for clarity but a direct application of the \textit{Local Martingale} theory yields the results easily, if no other stochasticity is present, just an absolute and a relative dividend.}. It serves as the unit of account for the market.
 \end{definition}
 \noindent While $S^0$ is often chosen to be a bank account $B_t = \exp(\int_0^t r_s ds)$ with finite variation, the theory holds for \textit{any} semimartingale numeraire (e.g., a foreign currency or a commodity). The bank account is merely a convenient particular case because it explicitly models the time value of money. 
 
@@ -2335,7 +2332,7 @@ Let $K$ be the set of random variables representing the terminal wealth of all a
     K = \{ (H \cdot X)_T \mid H \text{ is admissible and } H_0 = 0 \}
 \end{equation}
 Let $C$ be the cone of claims dominated by elements in $K$, i.e., $C = \{ g \in L^\infty(\mathcal{F}_T) \mid \exists f \in K, g \le f \}$.
-The market satisfies \textbf{NFLVR} if:
+The market  satisfies (at least tries to) \textbf{NFLVR} if:
 \begin{equation}
     \overline{C} \cap L_+^\infty = \{0\}
 \end{equation}
