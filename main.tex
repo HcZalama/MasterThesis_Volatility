@@ -153,16 +153,16 @@
 {\LARGE \bfseries Máster en Matemáticas Avanzadas \par}
  {\bfseries TRABAJO FIN DE MÁSTER \par}
     
-    \vspace{0.12cm}
-    \rule{0.95\textwidth}{1.5pt}
-    \vspace{0.2cm}
+    \vspace{0.5cm}
+    \rule{0.99\textwidth}{1.5pt}
+    \vspace{0.6cm}
 
-   {\bfseries \LARGE Classical and Modern Approaches to Volatility in Mathematical Finance\par}
+   {\bfseries \Huge Classical and Rough Volatility Models\par}
 
 
-    \vspace{0.2cm}
-    \rule{0.8\textwidth}{1.5pt}
-    \vspace{0.3cm}
+    \vspace{0.6cm}
+    \rule{0.99\textwidth}{1.5pt}
+    \vspace{0.7cm}
 
  
 
@@ -182,7 +182,7 @@
 
 
     \vfill
-    {\large Madrid, February 2026 \par}
+    {\large Madrid, April 2026 \par}
 \end{titlepage}
 
 
@@ -227,9 +227,9 @@ This document constitutes the Master’s Thesis of Héctor Zalama Alonso, prepar
 
 The aim of this work is to present a natural progression from the classical foundations of stochastic calculus to the study and application of modern tools such as Rough Path Theory, with the ultimate goal of employing these tools in the field of financial modelling — particularly in the calibration of advanced volatility models. The intention is to illustrate how techniques originally developed in purely analytical contexts can find natural and effective applications in real-world problems in quantitative finance.
 
-The text is divided into two parts. The first covers the stochastic and financial foundations, including classical processes, basic notions of stochastic calculus, financial derivatives, and the most commonly used volatility models. The second part introduces Rough Path Theory, developing the necessary algebraic and topological structures, along with fundamental results on existence and uniqueness for differential equations driven by irregular paths. This section concludes with a concrete application to the calibration of volatility surfaces and cubes (???), highlighting the practical relevance of the theory presented.
+The text is divided into two parts. The first covers the stochastic and financial foundations, including classical processes, basic notions of stochastic calculus, financial derivatives, and the most commonly used volatility models. The second part introduces Rough Path Theory, developing the necessary algebraic and topological structures, along with fundamental results on existence and uniqueness for differential equations driven by irregular paths. The dissertation concludes with a concrete application to the calibration of volatility surfaces and cubes (???), highlighting the practical relevance of the theory presented.
 
-Some background knowledge is assumed, particularly in areas such as Probability Theory, Differential Calculus, and Functional Analysis. Nonetheless, introductory explanations are provided in the early chapters to keep the text as self-contained as possible, without compromising the depth of the results discussed in the later sections.
+Some background knowledge is assumed, particularly in areas such as Probability Theory, Differential Calculus, and Functional Analysis. Nonetheless, introductory explanations are provided in the early chapters, aiming to be as self-contained as possible, without compromising the depth of the results discussed in the later sections.
 
 I hope the reader finds this work as enriching to read as it has been for me to write. I remain open to any suggestions or comments — whether to point out typographical errors or to propose improvements — via the contact address: \newline \textit{hectorzalama@gmail.com}.
 
@@ -273,13 +273,13 @@ I hope the reader finds this work as enriching to read as it has been for me to 
 
 Eugene Wigner expressed his admiration in his 1960 article in \textit{Communications in Pure and Applied Mathematics.} It is a sentiment many would agree with: the effectiveness of mathematics in describing Nature is both remarkable and fascinating. Moreover, over the last century its branches have reached into areas where, not so long ago, mathematicians were considered too abstract to be of much use in business terms.
 
-In 1827, Robert Brown, while studying the behaviour of pollen grains suspended in water, noticed something unexpected: the grains wandered along irregular, hard-to-describe paths. Physics was not prepared to tackle such a problem yet. What was needed belonged to what we now call \textit{statistical mechanics}, the study of collective behaviour of particles and molecules, intimately tied to \textit{thermodynamics.} The decisive step came later, in 1905, when Albert Einstein provided a theory of this motion — the same year he also explained the photoelectric effect.
+In 1827, Robert Brown, while studying the behaviour of pollen grains suspended in water, noticed something unexpected: the grains wandered along irregular, hard-to-describe paths. Physics was not prepared to tackle such a problem yet. What was needed belonged to what we now call \textit{statistical mechanics}, the study of collective behaviour of particles and molecules, intimately tied to \textit{thermodynamics.} The decisive step came later, in 1905, when Albert Einstein provided a theory of this motion — the same year he also explained the photoelectric effect, introduced the Special Relativity theory and provided the first appearance of the mass-energy equivalence formula, $E=mc^2$. What a year.
 
-A parallel story unfolded in finance. Louis Bachelier, a doctoral student of Henri Poincaré, was interested in modelling stock prices. His model, which we now recognise as essentially Gaussian, drew on probability theory but was on shaky ground. Worse, it allowed negative prices — a point critics did not miss.
+Regarding the polen grains, a parallel story took place in finance. Louis Bachelier, a doctoral student of Henri Poincaré, was interested in modelling stock prices. His model, which we now recognise as essentially Gaussian, worked with some shaky concepts on probability theory (Kolmogorov and his peers were not born yet, even Lebesgue had not published his work on measure theory yet). Worse, it allowed negative prices — a point critics did not miss.
 
 The common thread in both stories is \emph{Brownian motion}. This stochastic process is a central object in probability: geometers find its fractal dimension fascinating, while probabilists value the rich family of processes built upon it. The idea of treating “random noise” as a genuine mathematical object took shape gradually, but it was Kiyoshi Itô’s work on \emph{stochastic integration} that truly changed the picture.
 
-Finance joined somewhat later, but with undeniable impact. Today mathematics is everywhere in banks, consultancies, and audit firms, underpinning the valuation of derivatives, that is, assigning a \emph{fair price} (according to market data) to contracts involving random future cash flows. It is this topic that will be the focus of the present thesis.
+Finance joined somewhat later, but with undeniable impact. Today mathematics is everywhere in banks, consultancy and audit firms, underpinning the valuation of derivatives, that is, assigning a \emph{fair price} (according to market data) to contracts involving random future cash flows. This pricing orientation  will be the focus of the present thesis, among many other applications in finance, such as risk management and portfolio optimization.
 
 
 
@@ -297,11 +297,11 @@ The primary objective of this Thesis is to provide a solid review of \textit{Vol
 
 
 
-\hyperref[part:part1]{Part I} aims to provide a thorough introduction to the subject. The core mathematical ideas—rooted in Probability Theory and forming the basis of modern Financial Theory—are presented in \hyperref[ch:cap2]{Chapter 2}. Then, classical volatility models are introduced in \hyperref[ch:cap3]{Chapter 3}, covering the renowned Black-Scholes paradigm and its extensions, including local and stochastic volatility models. These chapters lay the foundational framework for understanding both the strengths and the limitations of traditional approaches.
+\hyperref[part:part1]{Part I} aims to provide a thorough introduction to the subject. The core mathematical ideas, rooted in Probability Theory and forming the basis of modern Financial Theory and basic Pricing Theory, are presented in \hyperref[ch:cap2]{Chapter 2}. 
 
-\hyperref[part:part2]{Part II} is devoted to more recent developments in volatility modelling, including rough volatility models (\hyperref[ch:cap4]{Chapter 4}). The latter is introduced from a general and mathematical perspective: although it finds direct applications in Finance, the theory of rough paths has far-reaching implications in other areas of mathematics as well. These chapters reflect the evolution of volatility modelling and highlight the need for refined tools to better capture empirical phenomena such as volatility clustering and roughness.
+\hyperref[part:part2]{Part II} is devoted to more recent developments in volatility modelling, including Routh Paths and Rough Volatility theories (\hyperref[ch:cap4]{Chapter 3}). The latter is introduced from a general and mathematical perspective: although it finds direct applications in Finance, the theory of rough paths has far-reaching implications in other areas of mathematics as well. These chapters aim to highlight the necessity of more sophisticated tools to describe and operate in the market.
 
-Finally, these theoretical constructs are brought to practice in \hyperref[ch:cap5]{Chapter 5}, where a calibration of \hl{XXX} is performed. Here, the models are numerically implemented and compared, providing an applied perspective and illustrating the strengths and challenges associated with each approach. Some final conclusions are left for \hyperref[ch:cap6]{Chapter 6}, where a general overview of the work done will be given, along with reflections on possible directions for further research.
+Finally, these theoretical constructs are brought to practice in \hyperref[ch:cap5]{Chapter 4}, where a calibration of \hl{XXX} is performed. Here, the models are numerically implemented and compared, providing an applied perspective and illustrating the strengths and challenges associated with each approach. Some final conclusions are left for \hyperref[ch:cap6]{Chapter 6}, where a general overview of the work done will be given, along with reflections on possible directions for further research.
 
 \newpage
 %\rule{0.95\textwidth}{1.5pt}
@@ -485,7 +485,7 @@ Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space and let $\mathcal
 \end{proposition}
 
 
-There is one final structural component that needs to be addressed. In the study of stochastic processes, it is essential to formalize how information accumulates over time. This is done through the concept of a \textbf{filtration}, which models the \emph{evolution of knowledge} or \emph{information available} up to each time \(t\).
+There is one final structural component that needs to be described. In the study of stochastic processes, it is essential to formalize how information accumulates over time. This is done through the concept of a \textbf{filtration}, which models the \emph{evolution of knowledge} or \emph{information available} up to each time \(t\).
 
 
 
@@ -722,7 +722,7 @@ Let $X \sim \mathcal{N}(\mu_X, \sigma_X^2)$, $Y \sim \mathcal{N}(\mu_Y, \sigma_Y
 However, the most compelling reason why the normal distribution is so important rests on the following fundamental result, in a relatively weak form:
 
 \begin{theorem}[Central Limit Theorem]
-    Let $\{X_n\}_{n=1}^\infty$ be a sequence of independent, identically distributed (hereafter, \emph{iid}) random variables  with finite mean $\mu$ and variance $\sigma^2 > 0$. Then
+    Let $\{X_n\}_{n=1}^\infty$ be a sequence of independent, identically distributed (hereafter, \emph{i.i.d.}) random variables  with finite mean $\mu$ and variance $\sigma^2 > 0$. Then
     \begin{equation}
     \frac{\sum_{k=1}^n X_k - n\mu}{\sigma \sqrt{n}} \xrightarrow{d} \mathcal{N}(0,1). \text{\hspace{0.6cm}} \blacksquare
     \end{equation}
@@ -890,7 +890,7 @@ The characteristic function of a log-normal variable has no closed-form expressi
 
 
 \begin{example}[Random Walk]
-Let \(\mathbb{T} = \mathbb{N}_0\) and consider the probability space \((\Omega, \mathcal{F}, \mathbb{P})\) where we define a sequence of i.i.d. random variables \(\{\xi_n\}_{n \in \mathbb{N}}\) such that \(\mathbb{P}(\xi_n = 1) = \mathbb{P}(\xi_n = -1) = \tfrac{1}{2}\). The \textbf{simple symmetric random walk} is the stochastic process \(X = \{X_n\}_{n \in \mathbb{N}_0}\) defined by
+Let \(\mathbb{T} = \mathbb{N}_0\) and consider the probability space \((\Omega, \mathcal{F}, \mathbb{P})\) where we define a sequence of  independent, identically distributed random variables \(\{\xi_n\}_{n \in \mathbb{N}}\) such that \(\mathbb{P}(\xi_n = 1) = \mathbb{P}(\xi_n = -1) = \tfrac{1}{2}\). The \textbf{simple symmetric random walk} is the stochastic process \(X = \{X_n\}_{n \in \mathbb{N}_0}\) defined by
 \begin{equation}
 X_0 := 0, \quad X_n := \sum_{k=1}^n \xi_k, \quad n \geq 1.
 \end{equation}
@@ -1047,7 +1047,7 @@ The notion of a martingale is often too restrictive, particularly when consideri
 A process $X = \{X_t\}_{t \geq 0}$ is a \textbf{local martingale} if there exists an increasing sequence of stopping times $(\tau_n)_{n \geq 1}$ with $\tau_n \uparrow \infty$ almost surely, such that each stopped process $X^{\tau_n}_t := X_{t \wedge \tau_n}$ is a martingale.
 \end{definition}
 
-The idea is that $X$ behaves like a martingale, but only up to random horizons. Local martingales are “martingales in disguise”: their martingale property can break down globally, often because integrability conditions fail. 
+The idea is that $X$ behaves like a martingale, but only up to random horizons. An analogy could drawn from ODEs: there are solutions that explode to infinity in finite time, and those that can be extented to all times. Here, the integrability condition can be somewhat replaced if we work with sequences of stopping times. This mathematical object deserves its own study but lies beyond the scope of this dissertation.
 
 \noindent
 Finally, there is another related concept, broad enough to serve as a class of \textit{good integrators}. In particular, it extends the role played by Brownian motion as a canonical integrator, while retaining enough structure to allow a general theory of stochastic calculus.
@@ -1058,10 +1058,10 @@ A process $X$ is called a \textbf{semimartingale} if it can be decomposed as
 \[
 X_t = M_t + A_t,
 \]
-where $M_t$ is a local martingale and $A_t$ is  right continuous process with well defined left limits and of locally bounded variation.
+where $M_t$ is a local martingale and $A_t$ is  \textit{continue à droite, avec limite à gauche} (càdlàg) and of locally bounded variation.
 \end{definition}
 
-This decomposition strikes a balance: the “rough” martingale part is where the randomness lives, while the finite variation part behaves like a deterministic drift. The class of semimartingales is large enough to encompass essentially all models used in stochastic analysis and in finance. Most importantly, it is precisely the right class of processes with respect to which one can define a robust stochastic integral in the Itô sense.
+This last definition 
 
 
 
@@ -1176,7 +1176,7 @@ Let \((W_t)_{t \geq 0}\) be a Brownian motion. Then:
     so that $W_t^2 - t$ is a martingale if $a = 0$.
 \end{itemize}
 Properties b) and c) are called \emph{translation invariance} 
-and \emph{scaling invariance}, respectively. Property d) is the key underlying characteristic of Brownian motion.
+and \emph{scaling invariance}, respectively.
 \end{proposition}
 
 \textit{\textbf{Proof}.} (...) \hfill $\blacksquare$
@@ -1185,8 +1185,8 @@ and \emph{scaling invariance}, respectively. Property d) is the key underlying c
 
 One might wonder whether such a process actually exists, given the strong 
 set of requirements in Definition~\ref{def:Brownian-motion}. 
-This definition is reminiscent of the analogous definition of the 
-Poisson process. A detailed discussion of the existence and construction 
+This definition is similar of the corresponding of the 
+Poisson process (Example 1.1.17). A detailed discussion of the existence and construction 
 of processes defined through such specifications is an important 
 topic in probability theory. However, since both Brownian motion and 
 the Poisson process are classical and well established, we shall omit 
@@ -1301,7 +1301,9 @@ dX_t = a(t,X_t)\,dt + b(t,X_t)\,dW_t,
 \end{equation}
 Here $dW_t$ will be specified in the next subsection. Notice that this generalizes the deterministic case: if $b \equiv 0$, then $X_t$ reduces to the solution of the ODE $dY_t = a(t,Y_t)\,dt$.
 
-We shall first construct a rigorous integral interpretation of such expressions, providing concrete meaning to the stochastic term. Afterwards, we will introduce the stochastic chain rule (Itô's Lemma), which differs from the classical one in a somewhat surprising way, and then proceed to study how these new differential equations can be solved.
+We shall first construct a rigorous integral interpretation of such expressions, providing concrete meaning to the stochastic term. Afterwards, we will introduce the stochastic chain rule (Itô's Lemma), which differs from the classical one in a somewhat surprising way, and then proceed to study the existence and uniqueness of solutions, and some of their properties.
+
+It must be highlighted that the following dissertation can be expanded up to the most general setting, however we will stick to the most classical presentation of the subject, leaving the most general case a worthy space at the end, but without letting the trees hide the forest.
 
 \subsection{The Itô Integral}
 
@@ -1329,9 +1331,9 @@ Let ($\Omega, \mathcal F, \{\mathcal F_t\}, \mathbb P$) be a filtered probabilit
 
     \item[ii)] We say $f \in L^2_{ad}([a,b]\times \Omega)$ is a \textbf{step stochastic process} if
     \[
-    f(t,\omega) = \sum_{i=1}^n \varphi_{i-1}(\omega)\,\mathds{1}_{[t_{i-1},t_i)}(t),
+    f(t,\omega) = \sum_{i=1}^n \varphi_{\omega}(t_{i-1})\,\mathds{1}_{[t_{i-1},t_i)}(t),
     \]
-    where $\varphi_{i-1}$ is $\mathcal{F}_{t_{i-1}}$-measurable and has finite variance ($\mathbb{E}[\varphi_{i-1}^2] < \infty$).
+    where $\varphi(t_{i-1})$ is $\mathcal{F}_{t_{i-1}}$-measurable and has finite variance ($\mathbb{E}[\varphi(t_{i-1})^2] < \infty$).
 \end{itemize}
 \end{definition}
 
@@ -1339,7 +1341,7 @@ Let ($\Omega, \mathcal F, \{\mathcal F_t\}, \mathbb P$) be a filtered probabilit
 
 The construction of the stochastic integral begins by defining it on step processes and extending by density. For such $f$, take $t_0=a$, $t_n=b$, and define\footnote{The choice of the left endpoint $t_{i-1}$ ensures that the stochastic integral preserves the martingale property. Variants with different evaluation points lead to different calculi, e.g. Stratonovich calculus, where the classical chain rule holds (see \cite{Kuo2006}).}
 \begin{equation}\label{eq:integral_step}
-I(f) = \int_a^b f(t)\,dW_t := \sum_{i=1}^n \varphi_{i-1}\,\big(W(t_i)-W(t_{i-1})\big).
+I(f) = \int_a^b f(t)\,dW_t := \sum_{i=1}^n \varphi(t_{i-1})\,\big(W(t_i)-W(t_{i-1})\big).
 \end{equation}
 This mapping $f \mapsto I(f)$ is linear. The following lemmas are key.
 
@@ -1396,13 +1398,13 @@ I(f) \sim \mathcal{N}\!\left(0, \int_a^b f(t)^2\,dt\right).
 \]
 
 
-Now, since, for $a\leq t \leq b$, it is clear that $\int_a^t \mathbb{E}[f(t)^2] dt \leq \int_a^b \mathbb{E}[f(t)^2] dt$, it follows that $f\in L^2_{ad}([a,t]\times \Omega)$ so that the stochastic integral in $[a,t]$ is well defined. Consider then the process $X_t = \int_a^t f(s) dW(s) .$ We know this process has finite first two moments, and so we can take the conditional expectation of $X_t$ with respect to the given filtration. 
+For $a\leq t \leq b$, we have $\int_a^t \mathbb{E}[f(t)^2] dt \leq \int_a^b \mathbb{E}[f(t)^2] dt$, so $f\in L^2_{ad}([a,t]\times \Omega)$ and the stochastic integral is well defined in $[a,t]$. Consider then the process $X_t = \int_a^t f(s) dW(s) .$ We know this process has finite first two moments, and so we can take the conditional expectation of $X_t$ with respect to the given filtration. 
 
 
 
 \begin{theorem}[Martingale property]\label{theorem:MartingalePropertyIntegration}
 
-Consider $f\in L ^2_{ad}([a,b]\times\Omega). $ Then the process $X_t = I(f \mathds{1}_{[a,t]}) $ is a martingale with respect to the  given filtration $\mathcal{F}_t.$
+Take $f\in L ^2_{ad}([a,b]\times\Omega). $ Then the process given by $X_t = I(f \mathds{1}_{[a,t]}) $ is a martingale with respect to the   filtration $\mathcal{F}_t.$
     
 \end{theorem}
 
@@ -1423,7 +1425,7 @@ Finally, a result that actually links Riemann sums with stochastic integrals wil
 
 
 \begin{theorem}\label{theorem:riemannian_limit}
-    Suppose $f\in L ^2_{ad}([a,b]\times\Omega)$ and assume that $\mathbb{E}[f(t)f(s)]$ is a continuous function of $t$ and $s$. Then, for  partitions of $[a,b] $ $ P=\{ a=t_0,t_1<\cdots<t_n=b\}$
+    Suppose $f\in L ^2_{ad}([a,b]\times\Omega)$ and assume that $\mathbb{E}[f(t)f(s)]$ is a continuous function of $t$ and $s$. Then, for  partitions of $[a,b] $, given by $ P=\{ a=t_0,t_1<\cdots<t_n=b\}$,
 
 \begin{equation}
 \int_a^b f(t)\, dW(t)
@@ -1538,7 +1540,7 @@ Just like ordinary Chain Rule, this has opened plenty of possibilities in order 
 \end{example}
 
 \begin{example}
-    One key Finance model (see section \hl{XXX}) relies on the equation $dS_t = rS_t \, dt + \sigma S_t \, dW_t$, where $r, \sigma \in \mathbb R$ and $\sigma > 0$. It can be solved by taking $H_t = \ln (S_t),$ so that
+    In Finance, the Black-Scholes model relies on the \textit{log-normal} equation, given by $dS_t = rS_t \, dt + \sigma S_t \, dW_t$, where $r, \sigma \in \mathbb R$ and $\sigma > 0$. It can be solved by taking $H_t = \ln (S_t),$ so that
     \begin{equation}
         dH_t = \frac 1 S_t dS_t -\frac{1}{2S_t^2}(dS_t)^2 = r\,dt + \sigma\, dW_t -  \frac 1 2 \sigma^2 \, dt
     \end{equation}
@@ -1564,6 +1566,7 @@ and consider the process $H_t = \Gamma(t,X_t).$ After a few calculations, we arr
 \end{equation}
 so that all the complexity of the original process is contained in the drift. This transformation is convenient because it creates a process of constant volatility, which enables much faster and accurate numerical methods, such as derivatives pricing through trees  (see Section \hl{XXX}.)
 \end{example}
+
 
 % \textbf{\textit{Proof:}} (...)
 
@@ -1833,10 +1836,8 @@ The previous result is tautological and hard to check in practice, so we need a 
 
 \end{theorem}
 
-This is a much more practical way to check whether $\mathcal E_\alpha(t)$ is a martingale, and therefore whether we can construct a new probability $\mathbb{Q}$ such that $d\mathbb{Q} = \mathcal E_\alpha(T) d\mathbb P$.
+This is a much more practical way to check whether $\mathcal E_\alpha(t)$ is a martingale, and therefore whether we can construct a new probability $\mathbb{Q}$ such that $d\mathbb{Q} = \mathcal E_\alpha(T) d\mathbb P$. For the following Theorem, we need to make use of two auxiliary lemmas.
 
-
-For the following Theorem, we need to make use of two auxiliary lemmas.
 \begin{lemma}
     Let $\gamma$ be a nonnegative integrable random variable, so that $d\mathbb{Q} = \gamma d \mathbb{P}$ defines a new probability measure (see \ref{eq:radonnikodym}). Then, for any $\sigma$-algebra $\mathcal{G} \subset \mathcal{F}$ and $\Theta$ such that $\mathbb E _ \mathbb Q [\Theta] < \infty$, it follows that 
     \begin{equation}
@@ -1901,7 +1902,7 @@ exists, where  the vectors in $\mathbb{R}^n$ are implicitly taken as columns, so
     $$
     \mathbb P (|W_{t+\varepsilon}-x|\geq c \, | \, W_t=x) = \mathbb{P}|W_{t+\varepsilon}-W_t| \geq c) \leq c^{-4}\mathbb{E}(W_\varepsilon^4) = c^{-4}n(n+2) \varepsilon^2
     $$
-    so that the first condition in the previous definition is satisfied. Additionally, we have $\Sigma(t,x)= \mathbb{I} _{n\times n}$ and $\mu(t,x) = 0. $
+    so that the first condition in the previous definition is satisfied, $\Sigma(t,x)= \mathbb{I} _{n\times n}$ and $\mu(t,x) = 0. $
 \end{example}
 
 The following result finally connects the previous concepts and gives an unambiguous meaning to $\mu.$
@@ -1913,7 +1914,7 @@ The following result finally connects the previous concepts and gives an unambig
 The proof of this Theorem is beyond the scope of our purposes and can be found in \cite{Kuo2006}.
 
 
-We have reached a critical point where diffusions, SDE and semigroups interesect. This seemingly unrelated mathematical objects give rise to a set of (parabolic) partial differential equations (\textit{PDEs}) that are crucial for computational purposes and pricing financial derivatives. In this context, powerful mathematical tools can be applied.
+We have reached a critical point where diffusions, SDE and semigroups interesect. These seemingly unrelated mathematical objects give rise to a set of (parabolic) partial differential equations (\textit{PDEs}) that are crucial for computational purposes and pricing financial derivatives. In this context, powerful mathematical tools can be applied.
 
 The first of the approaches, where we consider a semigroup of operators, is included for completeness purposes, showing how its infinitesimal generators may be used to construct diffusion processes. It is also included to illustrate how Functional Analysis arises in this context.
 \vspace{0.3cm}
@@ -2202,9 +2203,7 @@ Certain advanced topics, such as the general formulation of Stochastic Integrati
 
 \section{Financial Derivatives}
 
-In this section, we introduce the main ideas behind Mathematical Finance and the role played by Mathematics in this field. We first informally introduce the concept of \textit{derivative} and give some examples of the main quoted derivatives. 
-
-The rigorous mathematical treatment of hedging and market completeness is addressed afterwards.
+In this section, we introduce the main ideas behind Mathematical Finance and the role played by Mathematics in this field. We first informally introduce the concept of \textit{derivative} and give some examples of the main quoted derivatives. The rigorous mathematical treatment of hedging and market completeness is addressed afterwards.
 
 \subsection{The Concept of a Derivative}
 
@@ -2214,11 +2213,9 @@ Let us fix a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_t)_{
 
 This measurability condition implies that the value of the derivative at maturity is fully determined by the information available at time $T$. The function determining this value is often referred to as the \textit{payoff function}, denoted by $\Phi_H$. The key idea behind the subsequent theory is being able to assign \textit{fair prices} to those contingent claims, deduced from quoted (and liquid) market data.
 
-In order to motivate the following definitions, let us start by thinking of a linear expression of the form $ax+by=c$, given $a,b,c\in\mathbb{R}$ and $ab\neq 0$. It is clear that, if we know the value of $x$, the value of $y$ is strictly determined by this linear relation.
+In order to motivate the following definitions, let us start by thinking of a linear expression of the form $ax+by=c$, given $a,b,c\in\mathbb{R}$ and $ab\neq 0$. It is clear that, if we know the value of either $x$ or $y$ determines the value of the other. Something similar happens for market derivatives. Entangled by more sophisticated relationships, the prices of certain claims are not independent of others. Modern markets are composed of a cohort of derivatives, bought and sold by banks, hedge funds, and other institutions. However, the core of these derivatives are standardized contracts that are highly liquid (bought and sold in large volumes with high frequency), and the language institutions and contracts share is rooted in the mathematical machinery of Probability Theory and Stochastic Processes.
 
-Something similar happens for market derivatives. Entangled by much more complicated relationships, the prices of certain claims are not independent of others. Modern markets are composed of a cohort of derivatives, bought and sold by banks, hedge funds, and other institutions. However, the core of these derivatives are standardized contracts that are highly liquid (bought and sold in large volumes with high frequency), and the language institutions and contracts share is rooted in the mathematical machinery of Probability Theory and Stochastic Processes.
-
-These standardized contracts provide enough information to assess prices for more custom contracts, ensuring that these new derivatives are priced consistently with the rest of the market data. The foundational principle behind this consistency is that markets must (or at least, theoretically tend to) lack \textbf{arbitrage.} An informal definition of arbitrage is the possibility of making a profit in the market without carrying any risk and with zero net initial investment. 
+These standardized contracts provide enough information to infer prices of more custom contracts, ensuring that these new derivatives are priced consistently with the rest of the market data. The foundational principle behind this consistency is that markets must (or at least, theoretically tend to) lack \textbf{arbitrage.} An informal definition of arbitrage is the possibility of making a profit in the market without carrying any risk and with zero net initial investment. 
 
 For example, consider a non-dividend-paying stock trading at $S_0$ and a forward contract on that stock with delivery price $K > S_0 e^{rT}$ (where $r$ is the continuous risk-free rate). An arbitrageur could borrow $S_0$ from the bank, buy the stock, and simultaneously short the forward contract. At maturity $T$, the arbitrageur delivers the stock, receives $K$, and repays the bank $S_0 e^{rT}$, locking in a strictly positive, risk-free profit of $K - S_0 e^{rT}$.
 
@@ -2279,47 +2276,36 @@ We now turn to the rigorous problem of pricing contingent claims. While elementa
 
 We work in a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_t)_{0 \le t \le T}, \mathbb{P})$ satisfying the usual conditions (right-continuity and completeness). The time horizon $T$ is finite.
 
-Let the market consist of $d+1$ assets denoted by the vector process $S = (S^0, S^1, \dots, S^d)$. We assume that each component $S^i$ is a \textbf{semimartingale}. This is the most general class of processes for which a stochastic integral can be defined in a way that respects the geometric and physical intuition of trading. Despite stating the results in this generality, we will predominantly work with the special case of Itô processes, given their prevalence in financial modelling.
+Let the market consist of $n+1$ assets denoted by the vector process $S = (S^0, S^1, \dots, S^n)$. We assume that each component $S^i$ is an \textbf{Itô process}. While the most abstract fundamental theorems of asset pricing rely on the broader class of general semimartingales, Itô processes provide the precise mathematical framework required for the diffusion models prevalent in this thesis, seamlessly connecting with the stochastic calculus developed in Section 1.2.
 
 We distinguish the $0$-th asset, $S^0$, as the \textbf{numeraire}.
 \begin{definition}[Numeraire]
-A numeraire is a price process $S^0$ that is strictly positive ($S^0_t > 0$ almost surely for all $t$) and non-dividend paying\footnote{Dividends certainly are a pain to work with. They are usually modeled with the \textit{Forward} process. This process basically accounts for the time value of dividends, modeled with a relative and an absolute parts following $F_t = \alpha_t S_t + \beta_t$, for certain functions of time, discount and dividends. We will omit the details for clarity but a direct application of the \textit{Local Martingale} theory yields the results easily, if no other stochasticity is present, just an absolute and a relative dividend.}. It serves as the unit of account for the market.
+A numeraire is a price process $S^0$ that is strictly positive ($S^0_t > 0$ almost surely for all $t$) and non-dividend paying. It serves as the unit of account for the market.
 \end{definition}
-\noindent While $S^0$ is often chosen to be a bank account $B_t = \exp(\int_0^t r_s ds)$ with finite variation, the theory holds for \textit{any} semimartingale numeraire (e.g., a foreign currency or a commodity). The bank account is merely a convenient particular case because it explicitly models the time value of money. 
+\noindent While $S^0$ is often chosen to be a bank account $B_t = \exp(\int_0^t r_s ds)$, the theory holds for \textit{any} valid Itô process numeraire (e.g., a foreign currency or a stock). The bank account is merely a convenient particular case because it explicitly models the time value of money. 
 
 We define the \textbf{discounted price process} $X$ as the prices of the primary assets expressed in units of the numeraire:
 \begin{equation}
-    X_t = \left( 1, \frac{S^1_t}{S^0_t}, \dots, \frac{S^d_t}{S^0_t} \right)
+    X_t = \left( 1, \frac{S^1_t}{S^0_t}, \dots, \frac{S^n_t}{S^0_t} \right)
 \end{equation}
-Since the ratio of semimartingales (with a non-vanishing denominator) is a semimartingale, $X$ is a vector semimartingale.
+Because the denominator $S^0_t$ is strictly positive almost surely, the transformation $f(x, y) = x/y$ is smooth. By a direct application of the multidimensional Itô's formula, the discounted price processes $X_t^i$ are themselves Itô processes.
 
-\begin{proposition}
-    The ratio of semimartingales with a non-vanishing denominator is a semimartingale.
-\end{proposition}
-\textbf{\textit{Proof:}} Let $Y$ and $Z$ be semimartingales such that $Z_t \neq 0$ almost surely for all $t$. By Itô's formula for semimartingales (see, e.g., Protter \cite{Protter2005}), we have:
+A trading strategy is a predictable process $H = (H^0, H^1, \dots, H^n)$, where $H^i_t$ represents the number of units of asset $i$ held at time $t$. The value of the portfolio at time $t$ is the scalar process:
 \begin{equation}
-    d\left(\frac{Y_t}{Z_t}\right) = \frac{1}{Z_{t-}} \, dY_t - \frac{Y_{t-}}{(Z_{t-})^2} \, dZ_t + \frac{1}{(Z_{t-})^3} \, d\langle Z \rangle_t - \frac{1}{(Z_{t-})^2} \, d\langle Y, Z \rangle_t
-\end{equation}
-Each term on the right-hand side is a semimartingale, as it involves stochastic integrals with respect to semimartingales and their quadratic variations. Therefore, the ratio $Y_t / Z_t$ is itself a semimartingale. \hfill $\blacksquare$
-
-
-A trading strategy is a predictable process $H = (H^0, H^1, \dots, H^d)$, where $H^i_t$ represents the number of units of asset $i$ held at time $t$. The value of the portfolio at time $t$ is the scalar process:
-\begin{equation}
-    V_t(H) = \sum_{i=0}^d H^i_t S^i_t
+    V_t(H) = \sum_{i=0}^n H^i_t S^i_t
 \end{equation}
 
 For the strategy to be economically meaningful, it must be \textbf{self-financing}. In the language of stochastic integration, this implies that changes in wealth are generated solely by the fluctuations of the asset prices, with no external injection or extraction of capital:
 \begin{equation}
-    dV_t(H) = \sum_{i=0}^d H^i_t \, dS^i_t
+    dV_t(H) = \sum_{i=0}^n H^i_t \, dS^i_t
 \end{equation}
-When working with discounted prices $X$, the self-financing condition simplifies. It can be shown that a strategy is self-financing if and only if the discounted wealth process $V_t/S^0_t$ satisfies:
+When working with discounted prices $X$, the self-financing condition simplifies. Applying Itô's product rule, it can be shown that a strategy is self-financing if and only if the discounted wealth process $V_t/S^0_t$ satisfies:
 \begin{equation}
-    \frac{V_t(H)}{S^0_t} = \frac{V_0(H)}{S^0_0} + \int_0^t \sum_{i=1}^d H^i_u \, dX^i_u = \frac{V_0}{S^0_0} + (H \cdot X)_t
+    \frac{V_t(H)}{S^0_t} = \frac{V_0(H)}{S^0_0} + \int_0^t \sum_{i=1}^n H^i_u \, dX^i_u = \frac{V_0}{S^0_0} + (H \cdot X)_t
 \end{equation}
 where $(H \cdot X)$ denotes the vector stochastic integral.
 
-\paragraph{Admissibility:}
-In continuous time, the standard definition of arbitrage is insufficient because "doubling strategies" (integrands with extremely large negative values) can technically generate profit from nothing in local time intervals. To preclude this, we restrict ourselves to \textbf{admissible strategies}.
+In continuous time, the standard definition of arbitrage is insufficient because "doubling strategies" (integrands with extremely large negative values) can technically generate profit from nothing in local time intervals. To preclude this, we restrict ourselves to certain strategies.
 \begin{definition}[Admissible Strategy]
 A self-financing strategy $H$ is called $a$-admissible if its discounted value process is uniformly bounded from below by a constant $-a$ almost surely (i.e., $(H \cdot X)_t \ge -a$ for all $t$). A strategy is admissible if it is $a$-admissible for some $a \ge 0$.
 \end{definition}
@@ -2338,6 +2324,7 @@ The market  satisfies (at least tries to) \textbf{NFLVR} if:
 \end{equation}
 where $\overline{C}$ is the closure of $C$ in the $L^\infty$ norm. Intuitively, this condition prevents not just exact arbitrage, but also sequences of strategies that approximate an arbitrage opportunity with risk converging to zero.
 
+\vspace{0.2cm}
 
 We are now equipped to state the core result linking market topology to measure theory.
 
@@ -2352,7 +2339,7 @@ A probability measure $\mathbb{Q}$ is an Equivalent Local Martingale Measure (EL
 \begin{theorem}[First Fundamental Theorem of Asset Pricing]
 Assume the process $X$ is locally bounded. The market satisfies the NFLVR condition if and only if there exists at least one Equivalent Local Martingale Measure $\mathbb{Q}$.
 \end{theorem}
-\noindent Note the necessity of \textit{local} martingales. For general semimartingales, true martingality is too strong a requirement. However, for pricing bounded claims, the local property suffices.
+
 
 
 The other reasonable question to ask ourselves is whether every contingent claim can be replicated by a self-financing strategy. Before stating the second theorem, we must rigorously define market completeness.
@@ -2373,9 +2360,9 @@ If the market is arbitrage-free and complete (i.e., there exists a unique $\math
     \frac{V_t}{S^0_t} = \mathbb{E}^\mathbb{Q} \left[ \frac{H_T}{S^0_T} \bigg| \mathcal{F}_t \right] \implies V_t = S^0_t \, \mathbb{E}^\mathbb{Q} \left[ \frac{H_T}{S^0_T} \bigg| \mathcal{F}_t \right]
 \end{equation}
 
-This formulation reveals that "risk-neutral probabilities" are not absolute; they are inextricably linked to the choice of numeraire.
+This formulation reveals that "risk-neutral probabilities" are not absolute; they are  linked to the choice of numeraire.
 
-\paragraph{Change of Numeraire}
+
 Let $N$ be a different numeraire (strictly positive semimartingale). Let $\mathbb{Q}^S$ be the measure associated with numeraire $S^0$, and $\mathbb{Q}^N$ be the measure associated with numeraire $N$.
 Prices must be consistent regardless of the unit of account. Therefore, for any asset $Z$:
 \begin{equation}
@@ -2388,7 +2375,8 @@ The change of measure from $\mathbb{Q}^S$ to $\mathbb{Q}^N$ is defined by the Ra
 \end{equation}
 This elegantly shows that changing the numeraire is mathematically equivalent to performing a change of probability measure. This technique is particularly powerful in interest rate theory (e.g., switching to the $T$-forward measure to efficiently price bond options and swaptions).
 
-\newpage
+\vspace{0.2cm}
+
 Finally, we can now state the Feynman-Kac formula, which provides a powerful link between the PDE approach and the probabilistic representation of derivative prices.
 
 \begin{theorem} \textbf{(Feynman-Kac Formula)}
@@ -2398,7 +2386,7 @@ Finally, we can now state the Feynman-Kac formula, which provides a powerful lin
     \end{equation}
     with initial condition $X_t = x$, where $W_\tau$ is a standard $n$-dimensional Brownian motion, and the diffusion matrix is given by $\Sigma(\tau, x) = \sigma(\tau,x)\sigma(\tau,x)^\top$. Let $h: \mathbb{R}^n \rightarrow \mathbb{R}$ be a Borel-measurable terminal payoff function, and $r: [0,T] \times \mathbb{R}^n \rightarrow \mathbb{R}$ be a continuous function representing the continuously compounded interest rate.
     
-    Suppose that $u(t,x)$ is a sufficiently regular function (typically $u \in C^{1,2}([0,T) \times \mathbb{R}^n) \cap C([0,T] \times \mathbb{R}^n)$) that satisfies the following linear parabolic partial differential equation:
+   Assume $u(t,x)$ is a sufficiently regular function (typically $u \in C^{1,2}([0,T) \times \mathbb{R}^n) \cap C([0,T] \times \mathbb{R}^n)$) that satisfies the following linear parabolic partial differential equation:
     \begin{equation}\label{FK_PDE}
         \frac{\partial u}{\partial t}(t,x) + \sum_{i=1}^n \mu_i(t,x) \frac{\partial u}{\partial x_i}(t,x) + \frac{1}{2} \sum_{i,j=1}^n \Sigma_{ij}(t,x) \frac{\partial^2 u}{\partial x_i \partial x_j}(t,x) - r(t,x)u(t,x) = 0,
     \end{equation}
@@ -2424,9 +2412,9 @@ Having established the general theory of arbitrage-free pricing and martingale m
 
 We assume a frictionless market with a constant risk-free rate $r$. The dynamics of the underlying asset $S_t$ under the physical measure $\mathbb{P}$ are typically modeled by a Geometric Brownian Motion (GBM). However, we have seen that pricing depends solely on the dynamics under the risk-neutral measure $\mathbb{Q}$.
 
-Let us assume the asset pays a continuous dividend yield $q$. Under $\mathbb{Q}$, the drift of the asset must be $r-q$ to ensure that the discounted gain process is a martingale. The SDE is:
+ Under $\mathbb{Q}$, the drift of the asset must be $r$ to ensure that the discounted gain process is a martingale. The SDE is:
 \begin{equation} \label{eq:BS_SDE}
-    dS_t = (r - q) S_t \, dt + \sigma S_t \, dW^\mathbb{Q}_t
+    dS_t = r S_t \, dt + \sigma S_t \, dW^\mathbb{Q}_t
 \end{equation}
 where $\sigma$ is a constant volatility parameter and $W^\mathbb{Q}_t$ is a standard Brownian motion under $\mathbb{Q}$.
 
@@ -2437,7 +2425,7 @@ Consider a derivative with price $V(S, t)$. We form a self-financing portfolio $
     \item One short position in the derivative $V$.
     \item $\Delta_t$ units of the underlying asset $S_t$.
 \end{itemize}
-The value of the portfolio is $\Pi_t = -V(S_t, t) + \Delta_t S_t$. The change in value over a time step $dt$ (including dividends $qS_t dt$ earned on the stock) is:
+The value of the portfolio is $\Pi_t = -V(S_t, t) + \Delta_t S_t$. The change in value over a time step $dt$  is:
 \begin{equation}
     d\Pi_t = -dV_t + \Delta_t dS_t + \Delta_t q S_t dt
 \end{equation}
@@ -2447,7 +2435,7 @@ Applying Itô's Lemma to $dV_t$:
 \end{equation}
 Substituting this into the portfolio dynamics and grouping the $dW_t$ terms:
 \begin{equation}
-    d\Pi_t = \left( -\frac{\partial V}{\partial t} - \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \Delta_t(r-q)S_t - \Delta_t q S_t \right) dt + \left( \Delta_t - \frac{\partial V}{\partial S} \right) \sigma S_t dW_t
+    d\Pi_t = \left( -\frac{\partial V}{\partial t} - \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \Delta_trS_t - \Delta_t q S_t \right) dt + \left( \Delta_t - \frac{\partial V}{\partial S} \right) \sigma S_t dW_t
 \end{equation}
 To make the portfolio risk-free (hedged), we must eliminate the stochastic term $dW_t$. This determines the \textit{Delta}:
 \begin{equation}
@@ -2455,25 +2443,25 @@ To make the portfolio risk-free (hedged), we must eliminate the stochastic term 
 \end{equation}
 With this choice, the portfolio evolves deterministically. To avoid arbitrage, it must earn the risk-free rate $r$: $d\Pi_t = r \Pi_t dt$. This leads to the celebrated Black-Scholes PDE:
 \begin{equation} \label{eq:BS_PDE}
-    \frac{\partial V}{\partial t} + (r-q)S \frac{\partial V}{\partial S} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} - rV = 0
+    \frac{\partial V}{\partial t} + rS \frac{\partial V}{\partial S} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} - rV = 0
 \end{equation}
 with terminal condition $V(S, T) = H(S_T)$.
 
 
-The standard Black-Scholes model assumes \textbf{Log-Normal} dynamics (prices cannot be negative). The closed-form solution for a European Call ($H(S_T) = (S_T - K)^+$) is:
+The standard Black-Scholes model yields \textit{log-normal} dynamics, so prices cannot be negative. The closed-form solution for a European Call ($H(S_T) = (S_T - K)^+$) is:
 \begin{equation}
-    C_{BS}(S, t) = S e^{-q(T-t)} N(d_1) - K e^{-r(T-t)} N(d_2)
+    C_{BS}(S, t) = S  N(d_1) - K e^{-r(T-t)} N(d_2)
 \end{equation}
-where $d_{1,2} = \frac{\ln(S/K) + (r-q \pm \sigma^2/2)\tau}{\sigma\sqrt{\tau}}$.
+where $d_{\pm} = \frac{\ln(S/K) + (r \pm \sigma^2/2)\tau}{\sigma\sqrt{\tau}}$.
 
-Alternatively, one might assume \textbf{Normal} (Gaussian) dynamics, often attributed to Bachelier ($dS_t = \sigma dW_t$). This allows for negative prices and is sometimes used in interest rate modelling or spread options. However, for equities, the Log-Normal model is the standard convention due to the limited liability of shareholders (stock prices bounded at 0).
+Alternatively, one might assume \textbf{Normal} (Gaussian) dynamics, first used by L. Bachelier ($dS_t =  \mu \, dt + \sigma dW_t$). This allows for negative prices and is sometimes used in interest rate modelling or spread options. However, for equities, the log-normal model is the standard convention due to the limited liability of shareholders (stock prices bounded at 0).
 
 \subsubsection{The Forward Measure and Black-76}
-It is often convenient to work with the Forward price $F_t = S_t e^{(r-q)(T-t)}$. Under the $T$-forward measure $\mathbb{Q}^T$, the forward price is a martingale:
+It is often convenient to work with the Forward price and corresponding measure, which is a process that basically accounts for the time value of dividends and other sources of appreciacion or depreciation of the underlying, conveniently calibrated to market data. Under the $T$-forward measure $\mathbb{Q}^T$, the forward price is a martingale:
 \begin{equation}
     dF_t = \sigma F_t \, dW^T_t
 \end{equation}
-This leads to the Black-76 formula, which is formally identical to Black-Scholes but utilizes $F_t$ instead of $S_t$ and $r=0$ inside the $N(\cdot)$ terms.
+This leads to the Black-76 formula, which is formally identical to Black-Scholes but utilizes $F_t$ instead of $S_t$ and $r=0$ for $d_\pm$.
 
 \subsubsection{The Inversion Problem and Implied Volatility}
 In professional markets, participants do not "price" options using Black-Scholes to find the dollar value. The market price $C^{mkt}$ is determined by supply and demand.
@@ -2482,7 +2470,8 @@ Instead, Black-Scholes is used as a translation mechanism. Since the pricing fun
 \begin{equation}
     C_{BS}(S, K, T, r, q, \sigma_{impl}) = C^{mkt}
 \end{equation}
-\textbf{Implied Volatility} is the true "price" quoted in the market. It represents the market's consensus on the average future volatility of the underlying asset over the life of the option.
+This 
+implied volatility is the true "price" quoted in the market. It represents the market's consensus on the average future volatility of the underlying asset over the life of the option.
 
 \subsection{Smile and Skewness}
 \label{subsec:smile_skew}
@@ -2509,17 +2498,16 @@ To account for the volatility smile and skew, we must extend the Black-Scholes f
 \subsection{Local Volatility Models}
 \label{subsec:local_vol}
 
-\subsubsection{Concept}
 The Local Volatility (LV) framework, introduced by Dupire (1994), posits that volatility is a deterministic function of the current asset price and time: $\sigma = \sigma(S_t, t)$. The dynamics under the risk-neutral measure are:
 \begin{equation}
-    dS_t = (r-q) S_t dt + \sigma(S_t, t) S_t dW_t
+    dS_t = r S_t dt + \sigma(S_t, t) S_t dW_t
 \end{equation}
 This model preserves the completeness of the market (there is only one source of randomness $W_t$) while allowing the model to fit \textit{any} observed arbitrage-free implied volatility surface exactly.
 
 \subsubsection{The Dupire Formula and Gatheral's Transformation}
 Dupire's great insight was to link the unknown function $\sigma(K, T)$ directly to observed market option prices $C(K, T)$. By applying the Fokker-Planck (forward Kolmogorov) equation to the transition density of the diffusion process, Dupire derived the following relation:
 \begin{equation} \label{eq:dupire}
-    \sigma_{loc}^2(K, T) = \frac{\frac{\partial C}{\partial T} + (r-q)K \frac{\partial C}{\partial K} + qC}{\frac{1}{2} K^2 \frac{\partial^2 C}{\partial K^2}}
+    \sigma_{loc}^2(K, T) = \frac{\frac{\partial C}{\partial T} + rK \frac{\partial C}{\partial K} }{\frac{1}{2} K^2 \frac{\partial^2 C}{\partial K^2}}
 \end{equation}
 This formula implies that if we have a dense continuum of option prices for all strikes and maturities, the local volatility function is uniquely determined.
 
@@ -2530,7 +2518,6 @@ While LV models fit the surface perfectly, they often produce unrealistic forwar
 \subsection{Stochastic Volatility Models}
 \label{subsec:stochastic_vol}
 
-\subsubsection{Concept}
 To capture realistic dynamics of the volatility surface itself, we introduce a second source of randomness. In Stochastic Volatility (SV) models, the variance $v_t = \sigma_t^2$ follows its own Stochastic Differential Equation. Under the risk-neutral measure $\mathbb{Q}$, the system is described by:
 \begin{equation}
     \begin{cases}
@@ -2555,376 +2542,68 @@ Unlike Local Volatility, Stochastic Volatility models render the market \textbf{
 
 
 
+\subsection{Path-Dependence and American Options}
+\label{subsec:american_options}
 
+We conclude this section by briefly discussing the challenges posed by path-dependent derivatives, focusing on the most liquid and prominent example: American Options. 
 
-\section{Financial Derivatives}
+Because American options hold the right to be exercised at any time up to maturity, merely knowing a single implied volatility is insufficient to price them; a single volatility parameter is compatible with an infinite set of potential asset dynamics. This distinction is critically important because options on \textit{single names} (i.e., individual corporate stocks) are almost exclusively American-style. Investors in single equities are reluctant to relinquish the flexibility of early exercise, particularly to capture discrete dividends or navigate corporate actions. In contrast, broad market indices are generally considered more stable and are traded via extremely liquid European options.
 
-In this section, we introduce the main ideas behind Mathematical Finance and the role played by Mathematics in this field. We first informally introduce the concept of \textit{derivative} and give some examples of the main quoted derivatives.
+We aim to show how a Local Volatility model can be adapted to price American options. However, we must first note a fundamental limitation: Local Volatility models do not perform perfectly for all types of path-dependent derivatives. In particular, because LV models assume volatility is a deterministic function perfectly correlated with the spot price, they often misprice derivatives with discontinuous payoffs (which often lead to ill-posed pricing problems) or derivatives whose strikes are set at a future date, such as forward-starting options and cliquets. 
 
-The rigorous mathematical treatment of hedging and market completeness is addressed afterwards.
-
-\subsection{The Concept of a Derivative}
-
-In the context of modern mathematical finance, a financial derivative is formally defined as a \textit{contingent claim}. Its value is derived from---or ``contingent'' upon---the state of some other underlying variables.
-
-Let us fix a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_t)_{t \in [0, T]}, \mathbb{P})$, where $\mathbb{P}$ represents the physical (or real-world) probability measure, and the filtration $(\mathcal{F}_t)_{t \geq 0}$ models the flow of information over time up to a finite time horizon $T$. Mathematically, a financial derivative with maturity $T$ is an $\mathcal{F}_T$-measurable random variable, denoted by $H_T$. There are certain derivatives, such as perpetual bonds, whose underlying time horizon is $T= \infty$, but they are not the object of this thesis, since they are not liquid and do not constitute a core part of the market.
-
-This measurability condition implies that the value of the derivative at maturity is fully determined by the information available at time $T$. The function determining this value is often referred to as the \textit{payoff function}, denoted by $\Phi_H$. The key idea behind the subsequent theory is being able to give \textit{fair prices} to those contingent claims, deduced by quoted (and liquid) market data.
-
-In order to motivate the following definitions, let's start by thinking of a linear expression of the form $ax+by=c$, given $a,b,c\in\mathbb{R}$ and $ab\neq 0$. It is clear that, if we know the value of $x$, the value of $y$ is determined by this linear relation.
-
-Something similar happens for market derivatives. Entangled by way more complicated relationships, the prices of certain claims are not independent of others. Modern markets are composed by a cohort of derivatives, bought and sold by banks, hedge funds and some other institutions, but these derivatives are just certain standard contracts that are liquid enough (that is, bought and sold with large amounts of money and with at least relatively high frequency).
-
-These standardized contracts give enough information to assess prices for more custom contracts, in such a way that these new derivatives must be priced consistently with the rest of market data. The key idea behind is that markets must (or at least, tend to) lack \textbf{arbitrage.}  An informal definition of arbitrage is the possibility of making profit in the market without carrying any risk. 
-
-For example, let's suppose a person is willing to buy a house by a certain amount $X$ in whatever currency, and another person is willing to sell it for another quantity $Y<X$. We could buy it from the latter and sell it to the former, obtaining the difference as profit without any risk.
-
-There are many possible critics for the previous example. Some of them can be related to the role played by taxes, but those can be included in our model relatively easily. Some others rely on the fact that we need $Y$ units of the underlying currency to buy the house in the first place, so the cost of borrowing money should be included. But the main problem, from a Finance perspective, relies on the fact that every house is different in many ways, so extracting information from the Real Estate market is much easier said than done.
-
-However, since modern markets deal with fungible assets (that is, all contracts with same characteristics are alike and we can buy or sell many of them), it became gradually clear that Mathematics had a lot to say here. Additionally, Mathematics is very helpful in order to address the underlying risks that market players assume, both quantifying it and enabling strategies to minimize it.
-
-\subsubsection*{The Underlying Asset}
-The stochastic process driving the derivative's value is known as the \textit{underlying asset}, denoted by $S = (S_t)_{0 \le t \le T}$. The underlying is defined as an $(\mathcal{F}_t)$-adapted stochastic process, and we can even have several underlyings. In financial markets, $S_t$ typically represents the price of:
-\begin{itemize}
-    \item \textbf{Equities:} Individual stocks or market indices.
-    \item \textbf{Fixed Income:} Bonds or interest rates (often modeled via a short-rate process $r_t$).
-    \item \textbf{Commodities:} Physical goods such as oil, gold, or electricity.
-    \item \textbf{Currencies (FX):} Exchange rates between two economies.
-\end{itemize}
-
-Derivatives are generally categorized by the functional form of their payoff $H_T$.
-
-\paragraph{1. Linear Derivatives (Forwards and Futures)}
-These instruments possess a payoff that is a linear function of the underlying asset price at maturity. A prime example is the \textbf{Forward Contract}, which is an agreement to buy or sell the asset at time $T$ for a pre-specified delivery price $K$. The payoff at time $T$ for the holder of a long position is:
+Nevertheless, to accurately price American options, we must acknowledge and model the entire volatility surface prior to maturity. The model we use, expressed in terms of the $T$-forward measure, is:
 \begin{equation}
-    H_T = S_T - K
+    dF_t = \sigma_{loc}(F_t, t) F_t \, dW^T_t
 \end{equation}
-Note that this payoff ranges over $\mathbb{R}$, implying a potential liability for the holder.
+where $F_t = S_t e^{(r-q)(T-t)}$ is the forward price. By changing the numeraire to the zero-coupon bond, the drift is removed. In equity modelling, utilizing the forward process naturally accounts for dividend discounting and the risk-neutral drift, rendering the dynamics purely diffusive and absorbing the discontinuities introduced by discrete dividends.
 
-\paragraph{2. Non-Linear Derivatives (Options)}
-Options provide the \textit{right}, but not the \textit{obligation}, to transact. This asymmetry introduces convexity (non-linearity) into the payoff structure.
-\begin{itemize}
-    \item \textbf{European Call Option:} The right to buy $S_T$ at strike price $K$. The payoff is defined as:
-    \begin{equation}
-        H_T = (S_T - K)^+ = \max(S_T - K, 0)
-    \end{equation}
-    \item \textbf{European Put Option:} The right to sell $S_T$ at strike price $K$. The payoff is defined as:
-    \begin{equation}
-        H_T = (K - S_T)^+ = \max(K - S_T, 0)
-    \end{equation}
-\end{itemize}
+\subsubsection{The Linear Complementarity Problem (LCP)}
 
-\paragraph{3. Other Derivatives (Exotics)}
-While standard \textit{vanilla} options depend only on the terminal value $S_T$, exotic derivatives may depend on the entire trajectory (path) of the process $(S_t)_{0 \le t \le T}$. Examples include:
-\begin{itemize}
-    \item \textbf{American Options:} American call or put options are alike their European counterparts, with the key difference that the claim can be performed anytime up to maturity.
-    \item \textbf{Barrier Options:} The payoff is contingent on whether $S_t$ crosses a specific barrier level $B$ during the interval $[0, T]$.
-\end{itemize}
+Pricing an American option is mathematically equivalent to an optimal stopping problem. In the PDE framework, this translates to a Free Boundary Problem, which is most rigorously expressed as a Linear Complementarity Problem (LCP). 
 
-From a theoretical standpoint, derivatives serve two primary functions in the market:
-\begin{enumerate}
-    \item \textbf{Hedging:} They allow agents to transfer specific risks (e.g., volatility risk) to those willing to bear them.
-    \item \textbf{Market Completeness:} In an idealized complete market, derivatives allow for the replication of any payoff profile, effectively spanning the state space of future uncertainties.
-\end{enumerate}
-
-These concepts will be rigorously defined in the next subsection. However, the main question remains unsolved: what price should these contracts hold? There are a couple of notions worth noticing before entering the mathematical details. These notions can be easily compared to some intuitions a physicist may have when examining some phenomena, regarding how energy or momentum should behave.
-\begin{itemize}
-    \item If $T=0$, that is, we are pricing some present claim, the price must be the payoff. In the case of a European Call Option  of strike $K$ and underlying $S_0$, its price must be $(S_0-K)^+.$
-    \item If an asset gives its buyer more optionality compared to other derivative, the price of the former must be greater than the price of the latter. For example, the price of an American Call Option is greater or equal than the price of an European Call Option (both of them with same strike and maturity).
-\end{itemize}
-
-
-
-\subsection{Derivative Pricing}
-
-We now turn to the rigorous problem of pricing contingent claims. While elementary treatments often assume asset prices follow geometric Brownian motions and interest rates are constant, these assumptions are insufficient for a general mathematical theory.
-
-We work in a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_t)_{0 \le t \le T}, \mathbb{P})$ satisfying the usual conditions (right-continuity and completeness). The time horizon $T$ is finite.
-
-
-Let the market consist of $d+1$ assets denoted by the vector process $S = (S^0, S^1, \dots, S^d)$. We assume that each component $S^i$ is a \textbf{semimartingale}. This is the most general class of processes for which a stochastic integral can be defined in a way that respects the geometric and physical intuition of trading. Despite stating the results in this generality, we will work with the special case of Itô processes, given their prevalence in financial modelling.
-
-We distinguish the $0$-th asset, $S^0$, as the \textbf{numeraire}.
-\begin{definition}[Numeraire]
-A numeraire is a price process $S^0$ that is strictly positive ($S^0_t > 0$ almost surely for all $t$) and non-dividend paying. It serves as the unit of account for the market.
-\end{definition}
-\noindent While $S^0$ is often chosen to be a bank account $B_t = \exp(\int_0^t r_s ds)$ with finite variation, the theory holds for \textit{any} semimartingale numeraire (e.g., a foreign currency or a commodity). From this point of view, the bank account is just a particular case, though it is rather convenient because it explicitly models the time value of money. 
-
-
-
-We define the \textbf{discounted price process} $X$ as the prices of the primary assets expressed in units of the numeraire:
-\begin{equation}
-    X_t = \left( 1, \frac{S^1_t}{S^0_t}, \dots, \frac{S^d_t}{S^0_t} \right)
-\end{equation}
-Since the ratio of semimartingales (with a non-vanishing denominator) is a semimartingale, $X$ is a vector semimartingale.
-
-\begin{proposition}
-    The ratio of semimartingales with non-vanishing denominator is a semimartingale.
-\end{proposition}
-\textbf{\textit{Proof:}} Let $Y$ and $Z$ be semimartingales such that $Z_t \neq 0$ almost surely for all $t$. By Itô's formula for semimartingales, \hl{REF REF REF REF} we have:
-\begin{equation}
-    d\left(\frac{Y_t}{Z_t}\right) = \frac{1}{Z_{t-}} \, dY_t - \frac{Y_{t-}}{(Z_{t-})^2} \, dZ_t + \frac{1}{(Z_{t-})^2} \, d\langle Y, Z \rangle_t - \frac{Y_{t-}}{(Z_{t-})^3} \, d\langle Z \rangle_t
-\end{equation}
-Each term on the right-hand side is a semimartingale, as it involves stochastic integrals with respect to semimartingales. Therefore, the ratio $Y_t / Z_t$ is itself a semimartingale. \hfill $\blacksquare$
-
-
-
-
-
-A trading strategy is a predictable process $H = (H^0, H^1, \dots, H^d)$, where $H^i_t$ represents the number of units of asset $i$ held at time $t$. The value of the portfolio at time $t$ is the scalar process:
-\begin{equation}
-    V_t(H) = \sum_{i=0}^d H^i_t S^i_t
-\end{equation}
-
-For the strategy to be economically meaningful, it must be \textbf{self-financing}. In the language of stochastic integration, this implies that changes in wealth are generated solely by the fluctuations of the asset prices:
-\begin{equation}
-    dV_t(H) = \sum_{i=0}^d H^i_t \, dS^i_t
-\end{equation}
-When working with discounted prices $X$, the self-financing condition simplifies. It can be shown (by Ito's Lemma for semimartingales) that a strategy is self-financing if and only if the discounted wealth process $V_t/S^0_t$ satisfies:
-\begin{equation}
-    \frac{V_t(H)}{S^0_t} = \frac{V_0(H)}{S^0_0} + \int_0^t \sum_{i=1}^d H^i_u \, dX^i_u = \frac{V_0}{S^0_0} + (H \cdot X)_t
-\end{equation}
-where $(H \cdot X)$ denotes the vector stochastic integral.
-
-\paragraph{Admissibility:}
-In continuous time, the standard definition of arbitrage is insufficient because "doubling strategies" (integrands with extremely large negative values) can technically generate profit from nothing in local time intervals. To preclude this, we restrict ourselves to \textbf{admissible strategies}.
-\begin{definition}[Admissible Strategy]
-A self-financing strategy $H$ is called $a$-admissible if its discounted value process is uniformly bounded from below by a constant $-a$ almost surely (i.e., $(H \cdot X)_t \ge -a$ for all $t$). A strategy is admissible if it is $a$-admissible for some $a \ge 0$.
-\end{definition}
-
-
-
-The classical definition of "No Arbitrage" fails to be closed in the topology of $L^\infty$. Delbaen and Schachermayer (1994) proved that the appropriate condition for the existence of an equivalent martingale measure is \textit{No Free Lunch with Vanishing Risk}.
-
-Let $K$ be the set of random variables representing the terminal wealth of all admissible strategies starting with zero capital:
-\begin{equation}
-    K = \{ (H \cdot X)_T \mid H \text{ is admissible and } H_0 = 0 \}
-\end{equation}
-Let $C$ be the cone of claims dominated by elements in $K$, i.e., $C = \{ g \in L^\infty(\mathcal{F}_T) \mid \exists f \in K, g \le f \}$.
-The market satisfies \textbf{NFLVR} if:
-\begin{equation}
-    \overline{C} \cap L_+^\infty = \{0\}
-\end{equation}
-where $\overline{C}$ is the closure of $C$ in the $L^\infty$ norm. Intuitively, this condition prevents not just exact arbitrage, but also sequences of strategies that approximate an arbitrage opportunity with risk converging to zero.
-
-
-
-We are now equipped to state the core result linking market topology to measure theory.
-
-\begin{definition}[Equivalent Local Martingale Measure]
-A probability measure $\mathbb{Q}$ is an Equivalent Local Martingale Measure (ELMM) for the numeraire $S^0$ if:
-\begin{enumerate}
-    \item $\mathbb{Q} \sim \mathbb{P}$ (they share the same null sets).
-    \item The discounted price process $X_t = S_t / S^0_t$ is a \textbf{local martingale} under $\mathbb{Q}$.
-\end{enumerate}
-\end{definition}
-
-\begin{theorem}[First Fundamental Theorem of Asset Pricing]
-Assume the process $X$ is locally bounded. The market satisfies the NFLVR condition if and only if there exists at least one Equivalent Local Martingale Measure $\mathbb{Q}$.
-\end{theorem}
-\noindent Note the necessity of \textit{local} martingales. For general semimartingales, true martingality is too strong a requirement. However, for pricing bounded claims, the local property suffices.
-
-
-
-The other reasonable question to ask ourselves is whether every contingent claim can be replicated by a self-financing strategy. Before stating the second theorem, we must rigorously define market completeness.
-
-\begin{definition}[Market Completeness]
-A market is \textbf{complete} if every contingent claim $\xi \in L^\infty(\mathcal{F}_T)$ is \textit{attainable}. That is, for every bounded random variable $\xi$, there exists an admissible self-financing strategy $H$ and an initial capital $x \in \mathbb{R}$ such that:
-\begin{equation}
-    \frac{\xi}{S^0_T} = x + (H \cdot X)_T \quad \mathbb{Q}\text{-almost surely.}
-\end{equation}
-\end{definition}
-
-\begin{theorem}[Second Fundamental Theorem of Asset Pricing]
-Assume that the set of equivalent local martingale measures $\mathcal{M}^e$ is non-empty (i.e., the market is arbitrage-free). The market is complete if and only if $\mathcal{M}^e$ is a singleton set (i.e., $\mathbb{Q}$ is unique).
-\end{theorem}
-
-
-
-If the market is arbitrage-free and complete (i.e., there exists a unique $\mathbb{Q}$), the fair price at time $t$ of a generic derivative paying $H_T$ at maturity is given by the expectation of the discounted payoff:
-\begin{equation}
-    \frac{V_t}{S^0_t} = \mathbb{E}^\mathbb{Q} \left[ \frac{H_T}{S^0_T} \bigg| \mathcal{F}_t \right] \implies V_t = S^0_t \, \mathbb{E}^\mathbb{Q} \left[ \frac{H_T}{S^0_T} \bigg| \mathcal{F}_t \right]
-\end{equation}
-
-This formulation reveals that "risk-neutral probabilities" are not absolute; they are inextricably linked to the choice of numeraire.
-
-\paragraph{Change of Numeraire}
-Let $N$ be a different numeraire (strictly positive semimartingale). Let $\mathbb{Q}^S$ be the measure associated with numeraire $S^0$, and $\mathbb{Q}^N$ be the measure associated with numeraire $N$.
-Prices must be consistent regardless of the unit of account. Therefore, for any asset $Z$:
-\begin{equation}
-    \frac{Z_t}{S^0_t} = \mathbb{E}^{\mathbb{Q}^S}\left[ \frac{Z_T}{S^0_T} \mid \mathcal{F}_t \right] \quad \text{and} \quad \frac{Z_t}{N_t} = \mathbb{E}^{\mathbb{Q}^N}\left[ \frac{Z_T}{N_T} \mid \mathcal{F}_t \right]
-\end{equation}
-
-The change of measure from $\mathbb{Q}^S$ to $\mathbb{Q}^N$ is defined by the Radon-Nikodym derivative, which turns out to be exactly the normalized ratio of the numeraires:
-\begin{equation}
-    \frac{d\mathbb{Q}^N}{d\mathbb{Q}^S}\bigg|_{\mathcal{F}_T} = \frac{N_T / S^0_T}{N_0 / S^0_0}
-\end{equation}
-This elegantly shows that changing the numeraire is mathematically equivalent to performing a change of probability measure. This technique is particularly powerful in interest rate theory (e.g., switching to the $T$-forward measure to price bond options).
-
-\newpage
-Finally, we can now state the Feynman-Kac formula, which provides a powerful link between the PDE approach and the probabilistic representation of derivative prices.
-\begin{theorem} \textbf{(Feynman-Kac Formula)}
-    Let $X_\tau$ be an $n$-dimensional Itô diffusion process on the interval $[t, T]$ driven by the stochastic differential equation
-    \begin{equation}
-        dX_\tau = \mu(\tau, X_\tau) d\tau + \sigma(\tau, X_\tau) dW_\tau, \quad \tau \in [t, T],
-    \end{equation}
-    with initial condition $X_t = x$, where $W_\tau$ is a standard $d$-dimensional Brownian motion, and the diffusion matrix is given by $\Sigma(\tau, x) = \sigma(\tau,x)\sigma(\tau,x)^T$. Let $h: \mathbb{R}^n \rightarrow \mathbb{R}$ be a Borel-measurable terminal payoff function, and $r: [0,T] \times \mathbb{R}^n \rightarrow \mathbb{R}$ be a continuous function representing the continuously compounded interest rate.
-    
-    Suppose that $u(t,x)$ is a sufficiently regular function (typically $u \in C^{1,2}([0,T) \times \mathbb{R}^n) \cap C([0,T] \times \mathbb{R}^n)$) that satisfies the following linear parabolic partial differential equation:
-    \begin{equation}\label{FK_PDE}
-        \frac{\partial u}{\partial t}(t,x) + \sum_{i=1}^n \mu_i(t,x) \frac{\partial u}{\partial x_i}(t,x) + \frac{1}{2} \sum_{i,j=1}^n \Sigma_{ij}(t,x) \frac{\partial^2 u}{\partial x_i \partial x_j}(t,x) - r(t,x)u(t,x) = 0,
-    \end{equation}
-    for all $(t,x) \in [0,T) \times \mathbb{R}^n$, subject to the terminal condition:
-    \begin{equation}
-        u(T,x) = h(x).
-    \end{equation}
-    
-    If $u(t,x)$ satisfies a suitable polynomial growth condition preventing the existence of explosive solutions, then $u(t,x)$ admits the stochastic representation:
-    \begin{equation}\label{FK_Expectation}
-        u(t,x) = \mathbb{E} \left[ \left. e^{-\int_t^T r(\tau, X_\tau) d\tau} h(X_T) \right| X_t = x \right].
-    \end{equation}
-\end{theorem}
-
-
-\section{The Black-Scholes Framework}
-\label{sec:black_scholes_framework}
-
-Having established the general theory of arbitrage-free pricing and martingale measures, we now specialize our market model to the most famous and widely used framework in financial history: the Black-Scholes-Merton model.
-
-\subsection{The Model}
-\label{subsec:bs_model}
-
-We assume a frictionless market with a constant risk-free rate $r$. The dynamics of the underlying asset $S_t$ under the physical measure $\mathbb{P}$ are typically modeled by a Geometric Brownian Motion (GBM). However, we have seen that pricing depends solely on the dynamics under the risk-neutral measure $\mathbb{Q}$.
-
-Let us assume the asset pays a continuous dividend yield $q$. Under $\mathbb{Q}$, the drift of the asset must be $r-q$ to ensure that the discounted gain process is a martingale. The SDE is:
-\begin{equation} \label{eq:BS_SDE}
-    dS_t = (r - q) S_t \, dt + \sigma S_t \, dW^\mathbb{Q}_t
-\end{equation}
-where $\sigma$ is a constant volatility parameter and $W^\mathbb{Q}_t$ is a standard Brownian motion under $\mathbb{Q}$.
-
-While we can price derivatives using the expectation operator $\mathbb{E}^\mathbb{Q}$, the original (and physically more insightful) derivation relies on the construction of a hedging portfolio. This demonstrates that the price is enforced by the absence of arbitrage, not merely by probabilistic expectation.
-
-Consider a derivative with price $V(S, t)$. We form a self-financing portfolio $\Pi_t$ consisting of:
-\begin{itemize}
-    \item One short position in the derivative $V$.
-    \item $\Delta_t$ units of the underlying asset $S_t$.
-\end{itemize}
-The value of the portfolio is $\Pi_t = -V(S_t, t) + \Delta_t S_t$. The change in value over a time step $dt$ (including dividends $qS_dt$ earned on the stock) is:
-\begin{equation}
-    d\Pi_t = -dV_t + \Delta_t dS_t + \Delta_t q S_t dt
-\end{equation}
-Applying Itô's Lemma to $dV_t$:
-\begin{equation}
-    dV_t = \frac{\partial V}{\partial t} dt + \frac{\partial V}{\partial S} dS_t + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} dt
-\end{equation}
-Substituting this into the portfolio dynamics and grouping the $dW_t$ terms:
-\begin{equation}
-    d\Pi_t = \left( -\frac{\partial V}{\partial t} - \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \Delta_t(r-q)S_t - \Delta_t q S_t \right) dt + \left( \Delta_t - \frac{\partial V}{\partial S} \right) \sigma S_t dW_t
-\end{equation}
-To make the portfolio risk-free (hedged), we must eliminate the stochastic term $dW_t$. This determines the \textit{Delta}:
-
-\begin{equation}
-    \Delta_t = \frac{\partial V}{\partial S}
-\end{equation}
-With this choice, the portfolio evolves deterministically. To avoid arbitrage, it must earn the risk-free rate $r$: $d\Pi_t = r \Pi_t dt$. This leads to the celebrated Black-Scholes PDE:
-\begin{equation} \label{eq:BS_PDE}
-    \frac{\partial V}{\partial t} + (r-q)S \frac{\partial V}{\partial S} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} - rV = 0
-\end{equation}
-with terminal condition $V(S, T) = H(S_T)$.
-
-
-The standard Black-Scholes model assumes \textbf{Log-Normal} dynamics (prices cannot be negative). The closed-form solution for a European Call ($H(S_T) = (S_T - K)^+$) is:
-\begin{equation}
-    C_{BS}(S, t) = S e^{-q(T-t)} N(d_1) - K e^{-r(T-t)} N(d_2)
-\end{equation}
-where $d_{1,2} = \frac{\ln(S/K) + (r-q \pm \sigma^2/2)\tau}{\sigma\sqrt{\tau}}$.
-
-Alternatively, one might assume \textbf{Normal} (Gaussian) dynamics, often attributed to Bachelier ($dS_t = \sigma dW_t$). This allows for negative prices and is sometimes used in interest rate modelling or spread options. However, for equities, the Log-Normal model is the standard convention due to the limited liability of shareholders (stock prices bounded at 0).
-
-\subsubsection{The Forward Measure and Black-76}
-It is often convenient to work with the Forward price $F_t = S_t e^{(r-q)(T-t)}$. Under the $T$-forward measure $\mathbb{Q}^T$, the forward price is a martingale:
-\begin{equation}
-    dF_t = \sigma F_t \, dW^T_t
-\end{equation}
-This leads to the Black-76 formula, which is formally identical to Black-Scholes but utilizes $F_t$ instead of $S_t$ and $r=0$ inside the $N(\cdot)$ terms.
-
-\subsubsection{The Inversion Problem and Implied Volatility}
-In professional markets, participants do not "price" options using Black-Scholes to find the dollar value. The market price $C^{mkt}$ is determined by supply and demand.
-
-Instead, Black-Scholes is used as a translation mechanism. Since the pricing function $C_{BS}(\sigma)$ is strictly monotonic in $\sigma$, we can invert it to find the unique parameter $\sigma_{impl}$ that matches the market price:
-\begin{equation}
-    C_{BS}(S, K, T, r, q, \sigma_{impl}) = C^{mkt}
-\end{equation}
-\textbf{Implied Volatility} is the true "price" quoted in the market. It represents the market's consensus on the average future volatility of the underlying asset over the life of the option.
-
-\subsection{Smile and Skewness}
-\label{subsec:smile_skew}
-
-If the assumptions of Black-Scholes were satisfied physically (i.e., if returns were truly log-normal with constant variance), the implied volatility $\sigma_{impl}$ would be constant across all strike prices $K$ and maturities $T$.
-
-Empirical data reveals this is not the case. When we plot $\sigma_{impl}(K)$ against $K$, we observe distinct shapes:
-\begin{itemize}
-    \item \textbf{The Skew (Smirk):} Typical in equity markets. $\sigma_{impl}$ decreases as $K$ increases. This reflects "Crash Phobia"---investors bid up the price of low-strike Puts (insurance against market drops), implying higher volatility for downside strikes.
-    \item \textbf{The Smile:} Typical in Forex markets. $\sigma_{impl}$ is lowest at the money ($K \approx S$) and increases for both deep ITM and OTM options. This reflects "Fat Tails" (leptokurtosis) in the return distribution---extreme moves are more probable than the Gaussian model predicts.
-\end{itemize}
-
-Mathematically, the existence of the smile $\sigma(K, T)$ implies that the risk-neutral probability density function $\psi(S_T)$ deviates from the log-normal density. Breeden and Litzenberger (1978) showed that the risk-neutral density can be recovered from the second derivative of the call price with respect to the strike:
-\begin{equation}
-    \psi(K) = e^{rT} \frac{\partial^2 C}{\partial K^2}
-\end{equation}
-This formula confirms that any curvature in the implied volatility surface corresponds to a non-Gaussian distribution of the underlying.
-
-\section{Other Important Models}
-\label{sec:other_models}
-
-To account for the volatility smile and skew, we must extend the Black-Scholes framework. There are two primary approaches: making volatility a deterministic function of the state (Local Volatility) or making it a stochastic process (Stochastic Volatility).
-
-\subsection{Local Volatility Models}
-\label{subsec:local_vol}
-
-\subsubsection{Concept}
-The Local Volatility (LV) framework, introduced by Dupire (1994), posits that volatility is a deterministic function of the current asset price and time: $\sigma = \sigma(S_t, t)$. The dynamics are:
-\begin{equation}
-    dS_t = (r-q) S_t dt + \sigma(S_t, t) S_t dW_t
-\end{equation}
-This model preserves the completeness of the market (there is only one source of randomness $W_t$) while allowing the model to fit \textit{any} observed arbitrage-free implied volatility surface exactly.
-
-\subsubsection{The Dupire Formula}
-Dupire's great insight was to link the unknown function $\sigma(K, T)$ directly to observed market option prices $C(K, T)$. By applying the Fokker-Planck (forward Kolmogorov) equation to the transition density of the diffusion process, Dupire derived the following relation:
-\begin{equation} \label{eq:dupire}
-    \sigma_{loc}^2(K, T) = \frac{\frac{\partial C}{\partial T} + (r-q)K \frac{\partial C}{\partial K} + qC}{\frac{1}{2} K^2 \frac{\partial^2 C}{\partial K^2}}
-\end{equation}
-This formula implies that if we have a dense continuum of option prices for all strikes and maturities, the local volatility function is uniquely determined.
-
-While LV models fit the surface perfectly, they often produce unrealistic forward volatility dynamics (the smile flattens as the spot price moves), making them less suitable for pricing path-dependent exotics like barriers or cliquets.
-
-\subsection{Stochastic Volatility Models}
-\label{subsec:stochastic_vol}
-
-\subsubsection{Concept}
-To capture realistic dynamics of the volatility surface itself, we introduce a second source of randomness. In Stochastic Volatility (SV) models, the variance $v_t = \sigma_t^2$ follows its own Stochastic Differential Equation (SDE).
-\begin{equation}
+Let $V(t, F)$ be the price of the American option, and let $H(F)$ denote its intrinsic payoff (e.g., $H(F) = (K - F)^+$ for a Put). To preclude arbitrage and account for early exercise, the price must satisfy three simultaneous conditions:
+\begin{equation}\label{eq:LCP_American}
     \begin{cases}
-        dS_t = \mu S_t dt + \sqrt{v_t} S_t dW_t^S \\
-        dv_t = \alpha(v_t, t) dt + \beta(v_t, t) dW_t^v
+        \frac{\partial V}{\partial t} + \frac{1}{2}\sigma_{loc}^2(F,t)F^2 \frac{\partial^2 V}{\partial F^2} - rV \le 0 & \text{(Supermartingale condition)} \\[6pt]
+        V(t, F) \ge H(F) & \text{(Arbitrage-free exercise bound)} \\[6pt]
+        \left( \frac{\partial V}{\partial t} + \frac{1}{2}\sigma_{loc}^2(F,t)F^2 \frac{\partial^2 V}{\partial F^2} - rV \right) \cdot \Big(V(t, F) - H(F)\Big) = 0 & \text{(Complementarity)}
     \end{cases}
 \end{equation}
-A critical parameter is the correlation $\rho$ between the two Brownian motions: $d\langle W^S, W^v \rangle_t = \rho dt$.
-\begin{itemize}
-    \item If $\rho < 0$, a drop in price ($S \downarrow$) is associated with an increase in volatility ($v \uparrow$), naturally generating the \textbf{skew} observed in equity markets.
-    \item The "vol of vol" parameter (in the diffusion of $v_t$) controls the convexity or \textbf{curvature} of the smile.
-\end{itemize}
+The complementarity condition ensures that the PDE holds exactly (equality to zero) whenever the option is kept alive (i.e., $V > H$), and that the price simply equals the payoff upon optimal early exercise.
 
-\subsubsection{The Heston Model}
-The most prominent SV model is the Heston Model (1993), which models the variance as a Cox-Ingersoll-Ross (CIR) process (mean-reverting square root process):
-\begin{equation}
-    dv_t = \kappa (\theta - v_t) dt + \xi \sqrt{v_t} dW_t^v
-\end{equation}
-where $\kappa$ is the mean reversion speed, $\theta$ is the long-run variance, and $\xi$ is the volatility of volatility.
+\subsubsection{Calibration to Single Names: De-Americanisation}
 
-Unlike Local Volatility, Stochastic Volatility models render the market \textbf{incomplete}, as there is no primary asset to hedge the volatility risk $dW^v$. Pricing requires specifying a market price of volatility risk, or simply calibrating the parameters $(\kappa, \theta, \xi, \rho, v_0)$ to liquid market options. The Heston model is particularly popular because it allows for a semi-closed form solution for European options via Fourier inversion characteristic functions.
+A major practical hurdle arises during calibration: Dupire’s formula (Equation \eqref{eq:dupire}) requires the partial derivatives of \textit{European} option prices, but single-name market quotes are American. We cannot apply Dupire directly to American prices. 
 
-\subsection{Path-dependent Models??} \label{cap4}
+Therefore, calibrating the local volatility surface to American options requires a short, iterative mapping procedure known as \textbf{De-Americanisation}:
+\begin{enumerate}
+    \item \textbf{Quote Extraction:} Obtain the market prices of the liquid American options and calculate their Black-Scholes implied volatilities using an American pricer (such as a Binomial Tree or a PDE solver).
+    \item \textbf{Pseudo-European Mapping:} Assume these implied volatilities approximate the volatilities of European options with the exact same strikes and maturities. Use these volatilities to generate a grid of "pseudo-European" option prices.
+    \item \textbf{Local Volatility Construction:} Apply a smoothing parameterization (e.g., SVI) to the pseudo-European surface to ensure it is free of static arbitrage, and then apply Gatheral's transformation of the Dupire formula to construct the Local Volatility surface, $\sigma_{loc}(F, t)$.
+    \item \textbf{Repricing and Verification:} Substitute this $\sigma_{loc}(F, t)$ back into the LCP (Equation \eqref{eq:LCP_American}) and solve it backwards using a finite difference method (such as Crank-Nicolson combined with a Projected Successive Over-Relaxation (PSOR) algorithm) to verify that the model accurately recovers the original American market quotes.
+\end{enumerate}
+
+This iterative procedure effectively bridges the theoretical gap between the European foundations of Local Volatility and the practical reality of American single-name markets, ensuring that our models reflect true market dynamics without introducing arbitrage.
+
+
+However, the de-Americanisation process can be inverted, and this must be of no suprise at this stage, by the so called PINNs (\textit{Physics-Informed Neural Networks}). Both in the construction of the Local Volatility and in pricing \label{eq:LCP_American}, we can use neural networks to get approximate yet extremely fast solutions. The constant and volatile value of the market parameters suggests that approximate and untractable solutions may suffice the market necessities. The also retain a key property, which is allowing for smooth derivatives, what is key for the hedge and portfolio management.
+
+We will dive further into this topic in the final chapter of the present dissertation.
+\subsection{References to Sections 1.3 to 1.5}
+
+The financial framework and pricing methodologies developed in the latter half of this chapter are built upon cornerstone texts in quantitative finance and stochastic analysis. The rigorous transition from abstract probability to continuous-time asset pricing, including the formulation of equivalent martingale measures and the \textit{No Free Lunch with Vanishing Risk} (NFLVR) condition, relies heavily on the definitive work by Delbaen and Schachermayer (\cite{DelbaenSchachermayer1994}). This abstract measure-theoretic approach is  bridged with continuous-time applications in the classic textbooks by Shreve (\cite{Shreve2004}), Øksendal (\cite{Oksendal2003}), and Björk (\cite{Bjork2009}).
+
+The explicit formulation of diffusion models is rooted in the foundational breakthroughs of Black and Scholes (\cite{BlackScholes1973}) and Merton (\cite{Merton1973}). To address the empirical shortcomings of this framework, Local Volatility was formalized by Dupire (\cite{Dupire1994}), with its practical translation into the implied volatility domain extensively covered by Gatheral (\cite{Gatheral2006}). For an exhaustive, practitioner-oriented treatment of volatility smile dynamics and Stochastic Volatility models (such as the Heston model \cite{Heston1993}), Bergomi (\cite{Bergomi2016}) serves as an indispensable reference. 
+
+
+
+
+
+
+
+
+
+
 
 \part{Modern approaches} \label{part:part2} 
 
@@ -2932,6 +2611,17 @@ Unlike Local Volatility, Stochastic Volatility models render the market \textbf{
 
 \chapter{Rough Paths} \label{ch:cap5} 
 \section{Introduction}
+
+
+IDEA:
+
+Series temporales y volatilidad: No nos vale con el movimiento browniano -> fractional brownian motion y principales modelos de tipo rough volatility
+
+siguiente sección: teoría de rough paths, con sus resultados fundamentales (integración, ecuaciones diferenciales, existencia, unicidad y continuidad) y la transformación de signature.
+
+Capítulo siguiente y final: un primer ejemplo de calibración de una superficie de volatilidad implícita y  obtención de volatilidad local consistente, con una red neuronal que haga de interpolador (ESTO YA LO TENGO HECHO Y TESTEADO, AL 100\%)
+
+Calibración de una serie histórica de algún tipo o algo semejante para 
 
 \section{Rough Paths}
 
@@ -2952,6 +2642,8 @@ Unlike Local Volatility, Stochastic Volatility models render the market \textbf{
 \subsection{Uniqueness and Continuity}
 
 \section{Signature Transformation}
+
+\
 
 %\section{Regularity Structures (?)}
 
