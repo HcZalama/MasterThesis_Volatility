@@ -1,0 +1,57 @@
+%======================================================================
+%  layout.tex — page geometry, headers, footers, spacing.
+%  UNCHANGED from the original preamble. Do not edit casually:
+%  the header/footer rules and the UNED logo placement are tuned.
+%======================================================================
+
+% ---------- Dedication environment ----------
+\newenvironment{dedication}
+  {%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+% ---------- Header / footer rules ----------
+\renewcommand{\headrulewidth}{0.4pt}% Line at the header invisible
+\renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+%\renewcommand{\plainheadrulewidth}{0pt}
+
+\fancypagestyle{fancyhdr}{%
+  \fancyhf{}%
+  \fancyhead[CE]{\leftmark}
+  \fancyhead[CO]{\rightmark}
+  \fancyfoot[LE]{\thepage}
+  \fancyfoot[RO]{\thepage}
+  \fancyfoot[LO]{\textsc{Héctor Zalama Alonso}}
+  \fancyfoot[RE]{\textsc{Universidad Nacional de Educación a Distancia}\quad \includegraphics[width=1.8em]{Images/LOGOUNEDDDD.png}}
+}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[LE]{\thepage}
+  \fancyfoot[RO]{\thepage}
+  \fancyfoot[LO]{\textsc{Héctor Zalama Alonso}}
+  \fancyfoot[RE]{\textsc{Universidad Nacional de Educación a Distancia}\quad \includegraphics[width=1.8em]{Images/LOGOUNEDDDD.png}}
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+
+\pagestyle{fancyhdr}
+
+% Part pages carry no footer
+\patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
+
+% ---------- Paragraph spacing ----------
+\setlength{\parskip}{0.68em}
+%\setlength{\parskip}{1em} %añadir espaciado entre parrafos. "em" es una unidad como cm o pt.
+\setlength{\parindent}{0em} %quitar identacion en todo
+
+% ---------- Equation numbering ----------
+\numberwithin{equation}{chapter}
+%\numberwithin{equation}{section}

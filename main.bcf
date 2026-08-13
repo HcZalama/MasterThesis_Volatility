@@ -2379,26 +2379,47 @@
     <bcf:citekey order="4" intorder="1">Biggy</bcf:citekey>
     <bcf:citekey order="5" intorder="1">RoydenFitzpatrick2010</bcf:citekey>
     <bcf:citekey order="6" intorder="1">Evans2010</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">durrett2019probability</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">Kuo2006</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">Kuo2006</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">falconer</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">Kuo2006</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">Brezis2011</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">Biggy</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">heyde1963</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">protter2005</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">rogers1997</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">durrett2019probability</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">falconer</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">karatzasshreve1991</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Kuo2006</bcf:citekey>
     <bcf:citekey order="14" intorder="1">Kuo2006</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">Brezis2011</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">DelbaenSchachermayer1994</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">Shreve2004</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">Oksendal2003</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">Bjork2009</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">BlackScholes1973</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">Merton1973</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">Dupire1994</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">Gatheral2006</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">Heston1993</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">Bergomi2016</bcf:citekey>
-    <bcf:citekey order="26" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">Kuo2006</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">yamada1971</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">feller1951</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">taylor1953</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">falconer</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">Kuo2006</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">Shreve2004</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Kuo2006</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Brezis2011</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">karatzasshreve1991</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">Biggy</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">Kuo2006</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">Brezis2011</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">black1976</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">breeden1978</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">lee2004</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">gatheral2014</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">carrmadan1999</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">peskirshiryaev2006</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">DelbaenSchachermayer1994</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">Shreve2004</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">Oksendal2003</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">Bjork2009</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">BlackScholes1973</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">Merton1973</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">Dupire1994</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">Gatheral2006</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">Heston1993</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">Bergomi2016</bcf:citekey>
+    <bcf:citekey order="44" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">Biggy</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">durrett2019probability</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">RoydenFitzpatrick2010</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

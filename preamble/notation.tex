@@ -1,0 +1,123 @@
+%======================================================================
+%  notation.tex — semantic macros.
+%
+%  RULE OF THUMB: never type \mathbb{E} or \mathcal{F}_t by hand again.
+%  Use the macros. If you later decide that, say, quadratic variation
+%  should be [X] rather than <X>, you change ONE line here and the whole
+%  thesis follows. That is the entire point of this file.
+%
+%  The choices below resolve the collisions flagged in the review:
+%    * W  is Brownian motion, always. (B is never used for it.)
+%    * mu is a drift, always. Abstract measures are nu, lambda.
+%    * rho is a correlation, always. Densities are p (transition) or f.
+%    * [0,T] is the time interval, always. (See the footnote in §1.1.)
+%======================================================================
+
+% ---------- Probability space ----------
+\newcommand{\PP}{\mathbb{P}}                 % physical / real-world measure
+\newcommand{\QQ}{\mathbb{Q}}                 % risk-neutral (pricing) measure
+\newcommand{\QT}{\QQ^{T}}                    % T-forward measure
+\newcommand{\E}{\mathbb{E}}                  % expectation
+\newcommand{\Ep}[1]{\E^{#1}}                 % expectation under a named measure
+\newcommand{\Var}{\mathbb{V}}                % variance
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
+\newcommand{\Prob}{\PP}
+\newcommand{\as}{\text{a.s.}}
+
+% ---------- Sigma-algebras and filtrations ----------
+\newcommand{\Fs}{\mathcal{F}}                % generic sigma-algebra
+\newcommand{\Ft}{\mathcal{F}_t}              % filtration at time t
+\newcommand{\Filt}{(\mathcal{F}_t)_{t\in[0,T]}}
+\newcommand{\FiltW}{(\mathcal{F}^{W}_t)_{t\in[0,T]}}
+\newcommand{\Gs}{\mathcal{G}}
+\newcommand{\Hs}{\mathcal{H}}
+\newcommand{\Borel}{\mathcal{B}}             % Borel sigma-algebra
+\newcommand{\Om}{\Omega}
+\newcommand{\PSpace}{(\Om,\Fs,\PP)}
+\newcommand{\FPSpace}{(\Om,\Fs,\Filt,\PP)}
+
+% ---------- Number sets ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Cx}{\mathbb{C}}
+\newcommand{\Tset}{\mathbb{T}}               % abstract index set (used only in §1.1)
+
+% ---------- Processes ----------
+\newcommand{\Wt}{W}                          % Brownian motion — ALWAYS W
+\newcommand{\Wvec}{\mathbf{W}}               % multidimensional Brownian motion
+\newcommand{\BH}{W^{H}}                      % fractional Brownian motion, Hurst H
+\newcommand{\Nt}{N}                          % Poisson process
+\newcommand{\qv}[1]{\langle #1 \rangle}      % predictable quadratic variation
+\newcommand{\qvv}[2]{\langle #1, #2 \rangle} % predictable quadratic covariation
+\newcommand{\rqv}[1]{[#1]}                   % realised (pathwise) quadratic variation
+\newcommand{\rqvv}[2]{[#1,#2]}
+\newcommand{\pvar}[1]{\|#1\|_{p\text{-var}}}
+\newcommand{\Holder}[1]{\mathcal{C}^{#1}}
+
+% ---------- Stochastic calculus ----------
+\newcommand{\dd}{\mathrm{d}}                 % upright differential (optional; see note)
+\newcommand{\Lad}[1]{L^{2}_{\mathrm{ad}}\!\left(#1\right)}
+\newcommand{\Lloc}[1]{\mathcal{L}\!\left(#1\right)}
+\newcommand{\Gen}{\mathcal{A}}               % infinitesimal generator
+\newcommand{\Genadj}{\mathcal{A}^{*}}        % its adjoint
+\newcommand{\Dom}{\mathcal{D}}
+\newcommand{\Expo}[1]{\mathcal{E}_{#1}}      % stochastic (Doleans-Dade) exponential
+\newcommand{\Ind}{\mathds{1}}                % indicator function
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\transp}{^{\!\top}}
+
+% ---------- Distributions ----------
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\LogNormal}{\mathcal{LN}}
+\newcommand{\charf}{\varphi}                 % characteristic function
+\newcommand{\convd}{\xrightarrow{\;d\;}}
+\newcommand{\convp}{\xrightarrow{\;\PP\;}}
+\newcommand{\convLp}[1]{\xrightarrow{\;L^{#1}\;}}
+
+% ---------- Finance ----------
+\newcommand{\Spot}{S}                        % spot price
+\newcommand{\Fwd}{F}                         % forward price
+\newcommand{\Num}{S^{0}}                     % numeraire
+\newcommand{\Bond}[2]{P(#1,#2)}              % zero-coupon bond price
+\newcommand{\Payoff}{H}                      % terminal payoff (random variable)
+\newcommand{\PayoffFn}{\Phi}                 % payoff function
+\newcommand{\Strike}{K}
+\newcommand{\Mat}{T}                         % maturity / time horizon (deliberately shared)
+\newcommand{\rf}{r}                          % risk-free short rate
+\newcommand{\divy}{q}                        % continuous dividend / repo yield
+\newcommand{\ivol}{\sigma_{\mathrm{imp}}}    % implied volatility
+\newcommand{\lvol}{\sigma_{\mathrm{loc}}}    % local volatility
+\newcommand{\tvar}{w}                        % total implied variance
+\newcommand{\lmon}{k}                        % log-moneyness
+\newcommand{\Carry}{\Theta}                  % spot-to-forward conversion factor (Ch. 1)
+\newcommand{\Snell}{U}                       % Snell envelope
+\newcommand{\Stop}[1]{\mathcal{T}_{#1}}      % set of stopping times
+
+\makeatletter
+% ---------- Editorial ----------
+% Yellow markers for open items. Remove all of these before the defence.
+%
+% IMPORTANT: these deliberately use \colorbox and NOT soul's \hl.
+% \hl re-tokenises its argument and therefore breaks on \ref, \cite, \eqref
+% and most other commands ("Package soul: Reconstruction failed").
+% \colorbox has no such restriction, so cross-references may be used freely
+% inside the notes below. Plain \hl{...} is still fine for bare text.
+%
+% \figurehere{...} : full-width highlighted block, wraps over several lines.
+% \todonote{...}   : same, labelled TODO. Both are block-level: \colorbox cannot
+%                    break across lines, so an inline version overflows the
+%                    margin whenever it lands near the end of a line.
+\newcommand{\thesis@marker}[2]{%
+  \par\medskip\noindent
+  \colorbox{Gold}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \textbf{[#1]}\ #2%
+    }%
+  }%
+  \par\medskip
+}
+\newcommand{\figurehere}[1]{\thesis@marker{FIGURE HERE}{#1}}
+\newcommand{\todonote}[1]{\thesis@marker{TODO}{#1}}
+\makeatother

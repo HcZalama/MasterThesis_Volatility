@@ -1,0 +1,96 @@
+\chapter{Auxiliary Results}\label{app:auxiliary}
+
+This appendix collects results which are used in the main text but whose statements
+would have interrupted the argument there. Nothing here is original, and nothing here
+is proved; references are given in each case. The organising principle is simple: a
+result belongs in the body if the argument cannot be followed without it, and belongs
+here if the argument merely \emph{invokes} it.
+
+\section{Complements on conditional expectation}\label{app:condexp}
+
+The following complete the list of Proposition \ref{def:conditional-expectation}. Throughout,
+$\mathcal{G} \subseteq \mathcal{F}$ is a sub-$\sigma$-algebra of a complete probability space
+$\PSpace$. Proofs may be found in \cite{Biggy} or \cite{durrett2019probability}.
+
+\begin{proposition}[Conditional Fatou lemma]\label{prop:condfatou}
+Let $X_n \geq 0$ with $X_n \in L^1(\Omega)$ for every $n \geq 1$, and suppose
+$\liminf_{n\to\infty} X_n \in L^1(\Omega)$. Then
+\[
+\mathbb{E}\Bigl[\liminf_{n \to \infty} X_n \,\Big|\, \mathcal{G}\Bigr]
+\leq \liminf_{n \to \infty} \mathbb{E}[X_n \mid \mathcal{G}] \qquad \text{almost surely.}
+\]
+\end{proposition}
+
+\begin{proposition}[Conditional monotone convergence]\label{prop:condmct}
+Let $0 \leq X_1 \leq X_2 \leq \cdots$ and suppose $X = \lim_{n\to\infty} X_n \in L^1(\Omega)$. Then
+$\mathbb{E}[X \mid \mathcal{G}] = \lim_{n \to \infty} \mathbb{E}[X_n \mid \mathcal{G}]$ almost surely.
+\end{proposition}
+
+\begin{proposition}[Conditional dominated convergence]\label{prop:conddct}
+Suppose $X_n \to X$ almost surely and $|X_n| \leq Y$ for every $n$, with $Y \in L^1(\Omega)$.
+Then $\mathbb{E}[X_n \mid \mathcal{G}] \to \mathbb{E}[X \mid \mathcal{G}]$ almost surely and in $L^1(\Omega)$.
+\end{proposition}
+
+\section{Characteristic functions}\label{app:charfn}
+
+Recall that the characteristic function of a real random variable $X$ is
+$\varphi_X(u) = \mathbb{E}[e^{iuX}]$, $u \in \mathbb{R}$. The following elementary
+properties are used without comment in the main text.
+
+\begin{proposition}\label{prop:charfnproperties}
+For any real random variable $X$:
+\begin{itemize}
+    \item[i)] $\varphi_X(0) = 1$ and $|\varphi_X(u)| \leq 1$ for all $u \in \mathbb{R}$;
+    \item[ii)] $\varphi_X$ is uniformly continuous on $\mathbb{R}$;
+    \item[iii)] $\varphi_X(-u) = \overline{\varphi_X(u)}$ (Hermitian symmetry);
+    \item[iv)] $\varphi_{aX+b}(u) = e^{iub}\varphi_X(au)$ for all $a,b \in \mathbb{R}$;
+    \item[v)] if $X$ and $Y$ are independent, then $\varphi_{X+Y}(u) = \varphi_X(u)\varphi_Y(u)$;
+    \item[vi)] if $\mathbb{E}[|X|^n] < \infty$, then $\varphi_X$ is $n$ times differentiable and
+    \[
+    \varphi_X^{(k)}(0) = i^k\,\mathbb{E}[X^k], \qquad 1 \leq k \leq n.
+    \]
+    Conversely, the existence of $2n$ continuous derivatives of $\varphi_X$ in a neighbourhood of
+    the origin implies $\mathbb{E}[|X|^{2n}] < \infty$.
+\end{itemize}
+\end{proposition}
+
+Property ii) deserves a word, since it is the reason the continuity hypothesis in the converse
+half of Lévy's continuity theorem (Theorem \ref{theorem:LevyContinuity}) is a genuine restriction
+rather than an automatic one: it constrains the \emph{limit} function, which is not assumed in
+advance to be a characteristic function.
+
+\section{Grönwall's inequality}\label{app:gronwall}
+
+The following is the standard comparison tool for integral inequalities. It is purely
+deterministic, and in the stochastic setting it is applied pathwise or to expectations.
+
+\begin{lemma}[Grönwall's inequality]\label{lem:gronwall}
+Let $g, \varphi \in L^1[0,T]$ and $\lambda > 0$ satisfy
+\[
+\varphi(t) \leq g(t) + \lambda \int_0^t \varphi(s)\,ds, \qquad 0 \leq t \leq T.
+\]
+Then
+\[
+\varphi(t) \leq g(t) + \lambda \int_0^t g(s)\,e^{\lambda(t-s)}\,ds, \qquad 0 \leq t \leq T.
+\]
+In particular, if $g \equiv \kappa$ is constant, then $\varphi(t) \leq \kappa e^{\lambda t}$ for all
+$0 \leq t \leq T$; and if $\kappa = 0$, then $\varphi \equiv 0$.
+\end{lemma}
+
+The final sentence is the one actually used. Uniqueness arguments for differential equations
+almost invariably reduce to showing that a suitable distance between two candidate solutions
+satisfies a Grönwall inequality with $\kappa = 0$, whence it vanishes identically.
+
+\section{Radon--Nikodym and the Jordan decomposition}\label{app:radonnikodym}
+
+For completeness we record the decomposition underlying Corollary
+\ref{cor:radon-nikodym-signed}.
+
+\begin{theorem}[Jordan decomposition]\label{thm:jordan}
+Every finite signed measure $\nu$ on a measurable space $(\Omega,\mathcal{F})$ admits a unique
+decomposition $\nu = \nu^+ - \nu^-$ into mutually singular finite positive measures. The measure
+$|\nu| := \nu^+ + \nu^-$ is called the total variation of $\nu$, and $\nu \ll \lambda$ if and only
+if $|\nu| \ll \lambda$.
+\end{theorem}
+
+See \cite{RoydenFitzpatrick2010} for a proof.

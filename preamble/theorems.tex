@@ -1,0 +1,27 @@
+%======================================================================
+%  theorems.tex — theorem-like environments.
+%  All share the counter 'result', numbered within section, exactly as
+%  in the original. Added: notation, assumption, convention.
+%======================================================================
+
+\newtheorem{result}{Result}[section]   % common counter named 'result'
+
+\theoremstyle{plain}                   % italic body — theorems, lemmas, etc.
+\newtheorem{theorem}[result]{Theorem}
+\newtheorem{lemma}[result]{Lemma}
+\newtheorem{proposition}[result]{Proposition}
+\newtheorem{corollary}[result]{Corollary}
+
+\theoremstyle{definition}              % upright body — definitions and examples
+\newtheorem{definition}[result]{Definition}
+\newtheorem{example}[result]{Example}
+\newtheorem{convention}[result]{Convention}
+\newtheorem{assumption}[result]{Assumption}
+
+\theoremstyle{remark}                  % upright body + italic header — remarks
+\newtheorem{remark}[result]{Remark}
+\newtheorem{notationbox}[result]{Notation}
+
+% Unnumbered variant, for restating a result proved elsewhere
+\theoremstyle{plain}
+\newtheorem*{theorem*}{Theorem}

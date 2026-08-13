@@ -1,0 +1,73 @@
+%======================================================================
+%  packages.tex — all package loads, in dependency order.
+%  Extracted verbatim from the original monolithic preamble.
+%======================================================================
+
+% ---------- Language ----------
+\usepackage[english]{babel}
+\selectlanguage{english}
+%spanish, es-tabla
+
+\makeatletter
+% ---------- Formatting ----------
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{array}
+\usepackage[svgnames]{xcolor}   % o [x11names]
+
+% soul provides \hl (yellow marker). Guarded so the document still builds on a
+% minimal TeX installation; on a full TeX Live the guard is a no-op.
+\newif\ifthesis@hassoul
+\IfFileExists{soul.sty}{\thesis@hassoultrue}{\thesis@hassoulfalse}
+\ifthesis@hassoul
+  \usepackage{soul}             % cargar después de xcolor
+  \sethlcolor{Gold}             % o Yellow, Gold, Khaki, etc.
+\else
+  \newcommand{\hl}[1]{\colorbox{Gold}{#1}}
+\fi
+
+\usepackage{empheq}
+\usepackage[margin=2cm]{geometry}
+\usepackage{fancyhdr}
+% dsfont provides \mathds{1} for the indicator. Guarded for portability.
+\newif\ifthesis@hasdsfont
+\IfFileExists{dsfont.sty}{\thesis@hasdsfonttrue}{\thesis@hasdsfontfalse}
+\ifthesis@hasdsfont
+  \usepackage{dsfont}
+\else
+  \newcommand{\mathds}[1]{\mathbf{#1}}
+\fi
+
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage[T1]{fontenc}
+
+\usepackage{emptypage}          % no number on empty odd pages (right-opening)
+\usepackage{etoolbox}
+
+% ---------- Mathematics ----------
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath, amsthm}
+
+% ---------- Bibliography ----------
+\newif\ifthesis@hasbiblatex
+\IfFileExists{biblatex.sty}{\thesis@hasbiblatextrue}{\thesis@hasbiblatexfalse}
+\ifthesis@hasbiblatex
+  \usepackage[style=numeric,backend=biber]{biblatex}
+  \addbibresource{Referencias/Bib.bib}
+\else
+  \newcommand{\addbibresource}[1]{}
+  \newcommand{\printbibliography}[1][]{\chapter*{Bibliography}}
+  \newcommand{\DefineBibliographyStrings}[2]{}
+\fi
+\DefineBibliographyStrings{english}{%
+  andothers = {\textit{et\addabbrvspace al\adddot}}
+}
+
+% ---------- Hyperlinks (load late) ----------
+\usepackage[pdfusetitle,colorlinks=false]{hyperref}
+\hyphenpenalty=100000
+% \usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+% \hyphenpenalty=1000000000
+\makeatother

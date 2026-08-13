@@ -1,0 +1,68 @@
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {part}{I\hspace {1em}Foundations and Classical Models}{1}{part.1}%
+\contentsline {section}{\numberline {0.1}A worthy note on context}{3}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Objective and Scope}{4}{section.0.2}%
+\contentsline {chapter}{\numberline {1}Stochastic and Financial Foundations}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Probabilistic Preliminaries}{6}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Fundamental Distributions}{10}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Markov Processes}{15}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Martingales, semimartingales and local martingales}{16}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Brownian Motion}{19}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}Path regularity}{22}{subsection.1.1.5}%
+\contentsline {section}{\numberline {1.2}Stochastic Calculus}{24}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}The Itô Integral}{25}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Itô's Chain Rule}{28}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Stochastic Differential Equations}{29}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}The multidimensional case}{32}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Probability measure changes}{35}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6} Itô Diffusions}{39}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}References to Section 1.2}{43}{subsection.1.2.7}%
+\contentsline {section}{\numberline {1.3}Financial Derivatives}{44}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}The Concept of a Derivative}{44}{subsection.1.3.1}%
+\contentsline {paragraph}{1. Linear Derivatives (Forwards and Futures)}{45}{section*.7}%
+\contentsline {paragraph}{2. Non-Linear Derivatives (Options)}{45}{section*.8}%
+\contentsline {subsection}{\numberline {1.3.2}Derivative Pricing}{46}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}The Black-Scholes Framework}{49}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}The Model}{49}{subsection.1.4.1}%
+\contentsline {subsubsection}{Dividends, and why the forward is the right variable}{51}{section*.11}%
+\contentsline {subsubsection}{The Forward Measure and Black-76}{52}{section*.12}%
+\contentsline {subsubsection}{The Inversion Problem and Implied Volatility}{52}{section*.14}%
+\contentsline {subsection}{\numberline {1.4.2}Smile and Skewness}{53}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Other Important Models}{53}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Local Volatility Models}{54}{subsection.1.5.1}%
+\contentsline {subsubsection}{The Dupire Formula and Gatheral's Transformation}{54}{section*.15}%
+\contentsline {subsection}{\numberline {1.5.2}Stochastic Volatility Models}{56}{subsection.1.5.2}%
+\contentsline {subsubsection}{The Heston Model}{56}{section*.18}%
+\contentsline {subsection}{\numberline {1.5.3}Path-Dependence and American Options}{57}{subsection.1.5.3}%
+\contentsline {subsubsection}{The Linear Complementarity Problem (LCP)}{59}{section*.21}%
+\contentsline {subsubsection}{Calibration to Single Names: De-Americanisation}{59}{section*.22}%
+\contentsline {subsection}{\numberline {1.5.4}References to Sections 1.3 to 1.5}{60}{subsection.1.5.4}%
+\contentsline {part}{II\hspace {1em}Modern Approaches}{61}{part.2}%
+\contentsline {chapter}{\numberline {2}Rough Paths}{63}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{63}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Rough Paths}{63}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Tensor Spaces}{63}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Multiplicative Property}{63}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Types of Rough Paths}{63}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Fundamental Results}{63}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Integration}{63}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Differential Equations}{63}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Existence}{63}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Uniqueness and Continuity}{63}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Signature Transformation}{63}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Applications}{65}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Calibration of a Volatility Surface}{65}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}The Model}{65}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Joint Calibration (?)}{65}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}The Challenge (?)}{65}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Calibration of a (???)}{65}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Implementation}{65}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Results}{65}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Conclusions}{67}{chapter.4}%
+\contentsline {chapter}{Bibliography}{69}{chapter*.23}%
+\contentsline {chapter}{\numberline {A}Auxiliary Results}{73}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Complements on conditional expectation}{73}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Characteristic functions}{73}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Grönwall's inequality}{74}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Radon--Nikodym and the Jordan decomposition}{74}{section.A.4}%
