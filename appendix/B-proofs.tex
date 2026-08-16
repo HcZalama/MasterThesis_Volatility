@@ -1,0 +1,177 @@
+\chapter{Deferred Proofs}\label{app:proofs}
+
+This appendix collects those proofs which are given in full but whose length would have interrupted
+the argument in the main text. The organising principle is the complement of the one governing
+Appendix \ref{app:auxiliary}: a result whose proof is short enough to be read in passing is proved
+where it is stated, a result we merely invoke is recorded without proof in Appendix
+\ref{app:auxiliary}, and a result we genuinely use but whose proof runs to more than a few lines is
+stated in the body and proved here.
+
+Each section below carries a pointer back to the statement it establishes, and a reference to
+\cite{Kuo2006}, whose treatment the arguments follow.
+
+\section{Doob's submartingale inequality}\label{app:proof:doobmaximal}
+We prove Proposition \ref{prop:doobmaximal} of Chapter \ref{ch:cap2}.
+
+\textbf{\textit{Proof:}} Let $Q$ be an enumeration of the rationals in $[0,T]$. Right-continuity gives
+$\sup_{0\leq t\leq T} Z_t = \sup_{r \in Q} Z_r$ almost surely, so it suffices to bound the maximum
+over a finite set $\{r_1 < \cdots < r_k\}$ and let $k \to \infty$. On such a set, decompose
+$\{\max_\nu Z_{r_\nu} \geq \varepsilon\}$ into the disjoint events $A_\nu$ on which $r_\nu$ is the
+\emph{first} index at which the level is reached. Each $A_\nu \in \mathcal{F}_{r_\nu}$, and on
+$A_\nu$ we have $Z_{r_\nu} \geq \varepsilon$, so the submartingale property gives
+\[
+\varepsilon\,\mathbb{P}(A_\nu) \;\leq\; \mathbb{E}\bigl[Z_{r_\nu}\mathds{1}_{A_\nu}\bigr]
+\;\leq\; \mathbb{E}\bigl[\mathbb{E}[Z_T \mid \mathcal{F}_{r_\nu}]\,\mathds{1}_{A_\nu}\bigr]
+\;=\; \mathbb{E}\bigl[Z_T\,\mathds{1}_{A_\nu}\bigr] \;\leq\; \mathbb{E}\bigl[\max\{Z_T,0\}\,\mathds{1}_{A_\nu}\bigr].
+\]
+Summing over $\nu$ and using disjointness bounds $\varepsilon\,\mathbb{P}(\max_\nu Z_{r_\nu}\geq\varepsilon)$
+by $\mathbb{E}[\max\{Z_T,0\}]$, uniformly in $k$. Letting $k \to \infty$ gives the claim. The
+martingale case follows by applying this to the submartingale $|X_t|$, which is one by the
+conditional Jensen inequality. \hfill $\blacksquare$
+
+\section{Density of step processes in $L^2_{ad}([0,T]\times\Omega)$}\label{app:proof:density}
+We prove Lemma \ref{lem:density} of Chapter \ref{ch:cap2}.
+
+\textbf{\textit{Proof:}} The argument proceeds by successive approximation in three steps, each
+enlarging the class of integrands. Write $\lVert f\rVert^2 := \int_0^T\mathbb{E}[f(t)^2]\,dt$ for the
+norm of $L^2_{ad}([0,T]\times\Omega)$, and recall that it suffices to approximate an arbitrary
+$f$ within $\varepsilon$ by a step process, since the step processes then form a dense subspace.
+
+\medskip
+\noindent\textbf{Step 1: $f$ bounded with continuous sample paths.} Let $|f| \leq M$ and let
+$\mathcal{P}_n = \{0 = t^n_0 < \cdots < t^n_{k_n} = T\}$ be partitions with
+$\lVert\mathcal{P}_n\rVert \to 0$. Put
+\[
+f_n(t) := \sum_{i=1}^{k_n} f(t^n_{i-1})\,\mathds{1}_{[t^n_{i-1},\,t^n_i)}(t).
+\]
+Each $f_n$ is a step process, and it is \emph{adapted} because the coefficient $f(t^n_{i-1})$ is
+$\mathcal{F}_{t^n_{i-1}}$-measurable and multiplies the indicator of an interval beginning at
+$t^n_{i-1}$ --- this is the left-endpoint choice, and it is the only reason adaptedness survives. For
+almost every $\omega$ the path $t \mapsto f(t,\omega)$ is continuous on the compact $[0,T]$, hence
+uniformly continuous, so $f_n(t,\omega) \to f(t,\omega)$ for every $t$. Since
+$|f_n - f|^2 \leq 4M^2$, which is integrable on $[0,T]\times\Omega$ (a finite measure space),
+dominated convergence gives $\lVert f_n - f\rVert \to 0$.
+
+\medskip
+\noindent\textbf{Step 2: $f$ bounded, sample paths not assumed continuous.} Let $|f| \leq M$. Extend
+$f$ by $0$ outside $[0,T]$ and mollify in time: for $n \in \mathbb{N}$ set
+\[
+g_n(t) := n\int_{t - 1/n}^{t} f(s)\,ds = \int_0^1 f\bigl(t - \tfrac{u}{n}\bigr)du .
+\]
+Each $g_n$ has continuous sample paths, since it is an indefinite integral, and $|g_n| \leq M$.
+Adaptedness is preserved because $g_n(t)$ averages $f$ over $[t-1/n,\,t]$ only, using no information
+after $t$; this is where averaging \emph{backwards} rather than symmetrically matters. By the
+Lebesgue differentiation theorem, $g_n(t,\omega) \to f(t,\omega)$ for almost every $t$, for almost
+every $\omega$, and dominated convergence again gives $\lVert g_n - f\rVert \to 0$. Step 1 now
+approximates each $g_n$ by step processes, and a diagonal argument produces step processes converging
+to $f$.
+
+\medskip
+\noindent\textbf{Step 3: general $f \in L^2_{ad}([0,T]\times\Omega)$.} Truncate at level $n$ by
+setting $f^{(n)} := (f \wedge n) \vee (-n)$. Each $f^{(n)}$ is bounded and remains adapted, being a
+composition of $f$ with a continuous deterministic function. Moreover $|f^{(n)} - f|^2 \leq f^2$
+pointwise and $f^{(n)} \to f$ pointwise, so dominated convergence --- with dominating function $f^2$,
+integrable precisely because $f \in L^2_{ad}$ --- yields $\lVert f^{(n)} - f\rVert \to 0$. Combining
+with Step 2 completes the proof.
+
+\medskip
+\noindent Adaptedness is the only delicate point throughout, and it is worth noting that each of the
+three steps preserves it for a different reason: the left-endpoint evaluation in Step 1, the backward
+averaging window in Step 2, and the deterministic truncation in Step 3. \hfill $\blacksquare$
+
+\section{Continuity of the sample paths of an Itô integral}\label{app:proof:itocontinuity}
+We prove Theorem \ref{thm:itocontinuity} of Chapter \ref{ch:cap2}.
+
+\textbf{\textit{Proof:}} Let $\{f_n\}$ be step processes converging to $f$ in
+$L^2_{ad}([0,T]\times\Omega)$; the associated processes $X^n_t = \int_0^t f_n\,dW$ have continuous
+paths by construction, being finite sums of continuous terms. By Theorem
+\ref{theorem:martingale_property} the difference $X^n - X^m$ is a martingale, so Doob's $L^2$
+maximal inequality (Proposition \ref{prop:dooblp}) together with Itô's isometry gives
+\[
+\mathbb{E}\Bigl[\sup_{0\leq t\leq T}\bigl|X^n_t - X^m_t\bigr|^2\Bigr]
+\;\leq\; 4\,\mathbb{E}\bigl[|X^n_T - X^m_T|^2\bigr]
+\;=\; 4\int_0^T \mathbb{E}\bigl[(f_n - f_m)^2\bigr]\,dt \longrightarrow 0 .
+\]
+Passing to a subsequence for which the right-hand side is summable, the Borel--Cantelli lemma yields
+$\sup_{t\leq T}|X^{n_k}_t - X_t| \to 0$ almost surely. A uniform limit of continuous functions is
+continuous, so almost all paths of $X$ are continuous on $[0,T]$. \hfill $\blacksquare$
+
+\section{The Itô integral as a limit of Riemann sums}\label{app:proof:riemannlimit}
+We prove Theorem \ref{theorem:riemannian_limit} of Chapter \ref{ch:cap2}.
+
+\textbf{\textit{Proof:}} Let $f_\mathcal{P}(t) = \sum_i f(t_{i-1})\mathds{1}_{[t_{i-1},t_i)}(t)$ be
+the left-endpoint step approximation, so that the Riemann sum is exactly $I(f_\mathcal{P})$. By Itô's
+isometry it suffices to show that $\int_0^T \mathbb{E}[(f - f_\mathcal{P})^2]\,dt \to 0$. Expanding
+the square, this integral is a sum of terms of the form
+$\mathbb{E}[f(t)^2] - 2\mathbb{E}[f(t)f(t_{i-1})] + \mathbb{E}[f(t_{i-1})^2]$, each built from the
+function $(s,t)\mapsto\mathbb{E}[f(t)f(s)]$ evaluated at points within $\lVert\mathcal{P}\rVert$ of
+the diagonal. That function is continuous by hypothesis, hence uniformly continuous on the compact
+$[0,T]^2$, so the whole expression tends to $0$ uniformly as $\lVert\mathcal{P}\rVert \to 0$. \hfill $\blacksquare$
+
+\section{Lévy's characterisation theorem}\label{app:proof:levy}
+We prove Theorem \ref{thm:levycharacterisation} of Chapter \ref{ch:cap2}.
+
+\textbf{\textit{Proof:}} The one-dimensional case is proved by applying Itô's rule to
+$t \mapsto e^{iuX_t}$ for fixed $u \in \mathbb{R}$. Since $X$ is a continuous local martingale with
+$\langle X\rangle_t = t$, the second-order term contributes $-\tfrac12 u^2 e^{iuX_t}\,dt$, and after
+localisation and taking conditional expectations one obtains, for $s<t$,
+\[
+\mathbb{E}\bigl[e^{iu(X_t - X_s)} \mid \mathcal{F}_s\bigr]
+= 1 - \tfrac12 u^2 \int_s^t \mathbb{E}\bigl[e^{iu(X_r-X_s)}\mid\mathcal{F}_s\bigr]\,dr .
+\]
+This is \emph{not} yet a deterministic equation: for each $r$ the quantity
+$\mathbb{E}[e^{iu(X_r-X_s)}\mid\mathcal{F}_s]$ is an $\mathcal{F}_s$-measurable random variable, so
+the unknown is a random function and no uniqueness theorem for integral equations applies to it as it
+stands. The standard device removes the randomness by testing. Fix $A \in \mathcal{F}_s$, multiply
+through by $\mathds{1}_A$, take expectations, and interchange expectation and the $dr$ integral,
+which is legitimate by Fubini since the integrand has modulus one. Writing
+\[
+h_A(t) := \mathbb{E}\bigl[\mathds{1}_A\,e^{iu(X_t-X_s)}\bigr],
+\]
+we obtain the genuinely deterministic linear integral equation
+\[
+h_A(t) = \mathbb{P}(A) - \tfrac12 u^2 \int_s^t h_A(r)\,dr, \qquad t \geq s,
+\]
+whose unique solution is $h_A(t) = \mathbb{P}(A)\,e^{-u^2(t-s)/2}$. Since this holds for every
+$A \in \mathcal{F}_s$ and the right-hand side is the integral over $A$ of the constant
+$e^{-u^2(t-s)/2}$, we conclude
+\[
+\mathbb{E}\bigl[e^{iu(X_t-X_s)} \mid \mathcal{F}_s\bigr] = e^{-u^2(t-s)/2} \qquad \text{almost surely.}
+\]
+The conditional characteristic function of $X_t - X_s$ given $\mathcal{F}_s$ is therefore
+deterministic and equal to that of $\mathcal{N}(0,t-s)$, which is simultaneously
+independence of the increment from $\mathcal{F}_s$ and the correct Gaussian law; Proposition
+\ref{prop:independent-increments} then supplies independence of increments. The multidimensional case
+is identical, applied to $e^{iu\transp X_t}$ with the cross-variations $\langle X^i,X^j\rangle_t
+= \delta_{ij}t$ making the exponent $-\tfrac12\lVert u\rVert^2(t-s)$. \hfill $\blacksquare$
+
+\section{Girsanov's theorem}\label{app:proof:girsanov}
+We prove Theorem \ref{girsanovtheorem} of Chapter \ref{ch:cap2}.
+
+\textbf{\textit{Proof:}} By Theorem \ref{thm:levycharacterisation} it suffices to show that, under
+$\mathbb{Q}$, the process $Z$ is a continuous local martingale null at the origin with
+$\langle Z\rangle_t = t$. Continuity and $Z_0=0$ are clear.
+
+For the martingale property we use Lemma \ref{lem:qmartingale}, which reduces the claim to showing that
+$Z(t)\mathcal{E}_\alpha(t)$ is a $\mathbb{P}$-martingale. Itô's product formula gives
+\[
+d\bigl(Z_t\mathcal{E}_\alpha(t)\bigr)
+= \mathcal{E}_\alpha(t)\,dZ_t + Z_t\,d\mathcal{E}_\alpha(t) + dZ_t\,d\mathcal{E}_\alpha(t) .
+\]
+Now $dZ_t = dW_t - \alpha(t)\,dt$ and $d\mathcal{E}_\alpha(t) = \alpha(t)\mathcal{E}_\alpha(t)\,dW_t$,
+so by the Itô table $dZ_t\,d\mathcal{E}_\alpha(t) = \alpha(t)\mathcal{E}_\alpha(t)\,dt$. Substituting,
+the two $dt$ terms cancel exactly:
+\[
+d\bigl(Z_t\mathcal{E}_\alpha(t)\bigr)
+= \mathcal{E}_\alpha(t)\bigl(dW_t - \alpha(t)dt\bigr) + Z_t\alpha(t)\mathcal{E}_\alpha(t)\,dW_t
++ \alpha(t)\mathcal{E}_\alpha(t)\,dt
+= \bigl(1 + Z_t\alpha(t)\bigr)\mathcal{E}_\alpha(t)\,dW_t .
+\]
+The right-hand side has no drift, so $Z\mathcal{E}_\alpha$ is a $\mathbb{P}$-local martingale, and
+under the stated integrability it is a martingale; hence $Z$ is a $\mathbb{Q}$-martingale.
+
+Finally, $\langle Z\rangle_t = \langle W\rangle_t = t$, because subtracting the finite-variation term
+$\int_0^t\alpha(s)ds$ does not change the quadratic variation, and because quadratic variation is a
+pathwise limit and is therefore unaffected by the passage to the equivalent measure $\mathbb{Q}$. The
+same argument applied to $Z^2_t - t$ confirms the compensator. Lévy's theorem now identifies $Z$ as a
+$\mathbb{Q}$-Brownian motion. \hfill $\blacksquare$

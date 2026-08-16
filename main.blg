@@ -1,19 +1,19 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[105] biber-MSWIN64:342> INFO - === 
-[146] Biber.pm:421> INFO - Reading 'main.bcf'
-[245] Biber.pm:999> INFO - Using all citekeys in bib section 0
-[256] Biber.pm:4487> INFO - Processing section 0
-[266] Biber.pm:4678> INFO - Looking for bibtex file 'Referencias/Bib.bib' for section 0
-[331] bibtex.pm:1713> INFO - LaTeX decoding ...
-[367] bibtex.pm:1519> INFO - Found BibTeX data source 'Referencias/Bib.bib'
-[535] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[535] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[536] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[536] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[567] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[583] bbl.pm:779> INFO - Output to main.bbl
-[583] Biber.pm:132> WARN - legacy month field 'Jul' in entry 'GuyonLekeufack2022' is not an integer - this will probably not sort properly.
-[583] Biber.pm:132> WARN - ISBN '978-3030810807' in entry 'kallenberg2021foundations' is invalid - run biber with '--validate_datamodel' for details.
-[583] Biber.pm:132> WARN - legacy month field 'Sep' in entry 'Parent2024' is not an integer - this will probably not sort properly.
-[583] Biber.pm:134> INFO - WARNINGS: 3
+[127] biber-MSWIN64:342> INFO - === 
+[182] Biber.pm:421> INFO - Reading 'main.bcf'
+[300] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[312] Biber.pm:4487> INFO - Processing section 0
+[323] Biber.pm:4678> INFO - Looking for bibtex file 'Referencias/Bib.bib' for section 0
+[383] bibtex.pm:1713> INFO - LaTeX decoding ...
+[420] bibtex.pm:1519> INFO - Found BibTeX data source 'Referencias/Bib.bib'
+[595] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[596] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[596] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[596] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[629] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[646] bbl.pm:779> INFO - Output to main.bbl
+[646] Biber.pm:132> WARN - legacy month field 'Jul' in entry 'GuyonLekeufack2022' is not an integer - this will probably not sort properly.
+[646] Biber.pm:132> WARN - legacy month field 'Sep' in entry 'Parent2024' is not an integer - this will probably not sort properly.
+[646] Biber.pm:132> WARN - ISBN '978-3030810807' in entry 'kallenberg2021foundations' is invalid - run biber with '--validate_datamodel' for details.
+[646] Biber.pm:134> INFO - WARNINGS: 3

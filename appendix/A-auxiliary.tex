@@ -4,13 +4,32 @@ This appendix collects results which are used in the main text but whose stateme
 would have interrupted the argument there. Nothing here is original, and nothing here
 is proved; references are given in each case. The organising principle is simple: a
 result belongs in the body if the argument cannot be followed without it, and belongs
-here if the argument merely \emph{invokes} it.
+here if the argument merely \emph{invokes} it. Results which we do prove, but whose proofs are too
+long to sit comfortably in the body, are deferred instead to Appendix \ref{app:proofs}.
 
 \section{Complements on conditional expectation}\label{app:condexp}
 
-The following complete the list of Proposition \ref{def:conditional-expectation}. Throughout,
-$\mathcal{G} \subseteq \mathcal{F}$ is a sub-$\sigma$-algebra of a complete probability space
-$\PSpace$. Proofs may be found in \cite{Biggy} or \cite{durrett2019probability}.
+Throughout, $\mathcal{G} \subseteq \mathcal{F}$ is a sub-$\sigma$-algebra of a complete probability
+space $\PSpace$, and all identities are understood to hold almost surely. Proofs may be found in
+\cite{Biggy} or \cite{durrett2019probability}. Items 8 and 9, which are used constantly in the main
+text, are stated there as Proposition \ref{def:conditional-expectation}; the numbering below is
+consistent with it.
+
+\begin{proposition}[Properties of conditional expectation]\label{prop:condexpproperties}
+Let $X, Y \in L^1(\Omega)$. Then:
+\begin{itemize}
+    \item[1.] $\mathbb{E}\!\left[\,\mathbb{E}[X \mid \mathcal{G}]\,\right] = \mathbb{E}[X]$; that is, $\mathbb{E}[X\mid\mathcal{G}]$ and $X$ have the same expectation.
+    \item[2.] If $X$ is $\mathcal{G}$-measurable, then $\mathbb{E}[X \mid \mathcal{G}] = X$.
+    \item[3.] If $X$ and $\mathcal{G}$ are independent --- that is, $\{X \in U\}$ and $A$ are independent events for every Borel $U \subseteq \mathbb{R}$ and every $A \in \mathcal{G}$ --- then $\mathbb{E}[X \mid \mathcal{G}] = \mathbb{E}[X]$.
+    \item[4.] (\textbf{Taking out what is known}) If $Y$ is $\mathcal{G}$-measurable and $\mathbb{E}[|XY|]<\infty$, then $\mathbb{E}[XY \mid \mathcal{G}] = Y\,\mathbb{E}[X \mid \mathcal{G}]$.
+    \item[5.] (\textbf{Tower property}) If $\mathcal{H}$ is a sub-$\sigma$-field of $\mathcal{G}$, then $\mathbb{E}[X \mid \mathcal{H}] = \mathbb{E}\!\left[\,\mathbb{E}[X \mid \mathcal{G}] \,\middle|\, \mathcal{H}\,\right]$.
+    \item[6.] If $X \leq Y$, then $\mathbb{E}[X \mid \mathcal{G}] \leq \mathbb{E}[Y \mid \mathcal{G}]$; consequently $\left| \mathbb{E}[X \mid \mathcal{G}] \right| \leq \mathbb{E}[\,|X| \mid \mathcal{G}]$.
+    \item[7.] For all $a,b \in \mathbb{R}$, $\mathbb{E}[aX + bY \mid \mathcal{G}] = a\,\mathbb{E}[X \mid \mathcal{G}] + b\,\mathbb{E}[Y \mid \mathcal{G}]$. In particular $\mathbb{E}[\,\cdot \mid \mathcal{G}]$ is a bounded linear operator from $L^{1}(\Omega,\mathcal{F})$ into $L^{1}(\Omega,\mathcal{G})$, a fact used to pass to limits in Theorem \ref{theorem:martingale_property}.
+\end{itemize}
+\end{proposition}
+
+The convergence theorems also carry over to the conditional setting, in exactly the form one would
+expect.
 
 \begin{proposition}[Conditional Fatou lemma]\label{prop:condfatou}
 Let $X_n \geq 0$ with $X_n \in L^1(\Omega)$ for every $n \geq 1$, and suppose
@@ -58,6 +77,34 @@ Property ii) deserves a word, since it is the reason the continuity hypothesis i
 half of Lévy's continuity theorem (Theorem \ref{theorem:LevyContinuity}) is a genuine restriction
 rather than an automatic one: it constrains the \emph{limit} function, which is not assumed in
 advance to be a characteristic function.
+
+\section{Moment indeterminacy of the log-normal law}\label{app:heyde}
+
+The following construction, due to Heyde \cite{heyde1963}, is referred to in Subsection
+\ref{subsec:martingales} and shows that a distribution possessing moments of all orders need not be
+determined by them.
+
+\begin{proposition}[Heyde]\label{prop:heyde}
+Let $f_X$ denote the density of the standard log-normal law, that is, the density of $e^{Z}$ with
+$Z \sim \mathcal{N}(0,1)$. For $a \in [-1,1]$ define
+\begin{equation}\label{eq:heyde}
+f_a(x) = f_X(x)\bigl(1 + a \sin(2\pi \log x)\bigr), \qquad x>0.
+\end{equation}
+Then every $f_a$ is a probability density on $(0,\infty)$, the laws are mutually distinct for
+distinct $a$, and all of them share the moment sequence of the log-normal distribution.
+\end{proposition}
+
+Non-negativity holds because $|a\sin(\cdot)| \leq 1$, and the moment identity reduces to showing that
+\[
+\int_0^\infty x^k f_X(x)\sin(2\pi \log x)\,dx = 0, \qquad k \in \mathbb{N}.
+\]
+Substituting $\log x = t + k$ turns the integrand into an odd function of $t$ multiplied by the
+Gaussian weight, and the integral vanishes. Taking $k=0$ shows in particular that each $f_a$
+integrates to $1$.
+
+The underlying obstruction is that the log-normal moments grow like $e^{k^2/2}$, which violates
+Carleman's condition $\sum_k m_{2k}^{-1/2k} = \infty$; when Carleman's condition holds, the moment
+problem is determinate. See \cite{durrett2019probability} for the general theory.
 
 \section{Grönwall's inequality}\label{app:gronwall}
 
