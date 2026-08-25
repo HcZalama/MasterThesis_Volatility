@@ -7,11 +7,13 @@ where it is stated, a result we merely invoke is recorded without proof in Appen
 \ref{app:auxiliary}, and a result we genuinely use but whose proof runs to more than a few lines is
 stated in the body and proved here.
 
-Each section below carries a pointer back to the statement it establishes, and a reference to
-\cite{Kuo2006}, whose treatment the arguments follow.
+Each section below carries a pointer back to the statement it establishes. The arguments of
+Sections \ref{app:proof:doobmaximal}--\ref{app:proof:girsanov} follow the treatment of
+\cite{kuo2006}; those of Sections \ref{app:proof:sewing}--\ref{app:proof:ult}, which concern
+Chapter \ref{ch:roughpaths}, follow \cite{frizhairer2020} and \cite{geng2021}.
 
 \section{Doob's submartingale inequality}\label{app:proof:doobmaximal}
-We prove Proposition \ref{prop:doobmaximal} of Chapter \ref{ch:cap2}.
+We prove Proposition \ref{prop:doobmaximal} of Chapter \ref{ch:foundations}.
 
 \textbf{\textit{Proof:}} Let $Q$ be an enumeration of the rationals in $[0,T]$. Right-continuity gives
 $\sup_{0\leq t\leq T} Z_t = \sup_{r \in Q} Z_r$ almost surely, so it suffices to bound the maximum
@@ -30,7 +32,7 @@ martingale case follows by applying this to the submartingale $|X_t|$, which is 
 conditional Jensen inequality. \hfill $\blacksquare$
 
 \section{Density of step processes in $L^2_{ad}([0,T]\times\Omega)$}\label{app:proof:density}
-We prove Lemma \ref{lem:density} of Chapter \ref{ch:cap2}.
+We prove Lemma \ref{lem:density} of Chapter \ref{ch:foundations}.
 
 \textbf{\textit{Proof:}} The argument proceeds by successive approximation in three steps, each
 enlarging the class of integrands. Write $\lVert f\rVert^2 := \int_0^T\mathbb{E}[f(t)^2]\,dt$ for the
@@ -80,7 +82,7 @@ three steps preserves it for a different reason: the left-endpoint evaluation in
 averaging window in Step 2, and the deterministic truncation in Step 3. \hfill $\blacksquare$
 
 \section{Continuity of the sample paths of an Itô integral}\label{app:proof:itocontinuity}
-We prove Theorem \ref{thm:itocontinuity} of Chapter \ref{ch:cap2}.
+We prove Theorem \ref{thm:itocontinuity} of Chapter \ref{ch:foundations}.
 
 \textbf{\textit{Proof:}} Let $\{f_n\}$ be step processes converging to $f$ in
 $L^2_{ad}([0,T]\times\Omega)$; the associated processes $X^n_t = \int_0^t f_n\,dW$ have continuous
@@ -97,7 +99,7 @@ $\sup_{t\leq T}|X^{n_k}_t - X_t| \to 0$ almost surely. A uniform limit of contin
 continuous, so almost all paths of $X$ are continuous on $[0,T]$. \hfill $\blacksquare$
 
 \section{The Itô integral as a limit of Riemann sums}\label{app:proof:riemannlimit}
-We prove Theorem \ref{theorem:riemannian_limit} of Chapter \ref{ch:cap2}.
+We prove Theorem \ref{theorem:riemannian_limit} of Chapter \ref{ch:foundations}.
 
 \textbf{\textit{Proof:}} Let $f_\mathcal{P}(t) = \sum_i f(t_{i-1})\mathds{1}_{[t_{i-1},t_i)}(t)$ be
 the left-endpoint step approximation, so that the Riemann sum is exactly $I(f_\mathcal{P})$. By Itô's
@@ -109,7 +111,7 @@ the diagonal. That function is continuous by hypothesis, hence uniformly continu
 $[0,T]^2$, so the whole expression tends to $0$ uniformly as $\lVert\mathcal{P}\rVert \to 0$. \hfill $\blacksquare$
 
 \section{Lévy's characterisation theorem}\label{app:proof:levy}
-We prove Theorem \ref{thm:levycharacterisation} of Chapter \ref{ch:cap2}.
+We prove Theorem \ref{thm:levycharacterisation} of Chapter \ref{ch:foundations}.
 
 \textbf{\textit{Proof:}} The one-dimensional case is proved by applying Itô's rule to
 $t \mapsto e^{iuX_t}$ for fixed $u \in \mathbb{R}$. Since $X$ is a continuous local martingale with
@@ -146,7 +148,7 @@ is identical, applied to $e^{iu\transp X_t}$ with the cross-variations $\langle 
 = \delta_{ij}t$ making the exponent $-\tfrac12\lVert u\rVert^2(t-s)$. \hfill $\blacksquare$
 
 \section{Girsanov's theorem}\label{app:proof:girsanov}
-We prove Theorem \ref{girsanovtheorem} of Chapter \ref{ch:cap2}.
+We prove Theorem \ref{girsanovtheorem} of Chapter \ref{ch:foundations}.
 
 \textbf{\textit{Proof:}} By Theorem \ref{thm:levycharacterisation} it suffices to show that, under
 $\mathbb{Q}$, the process $Z$ is a continuous local martingale null at the origin with
@@ -175,3 +177,299 @@ $\int_0^t\alpha(s)ds$ does not change the quadratic variation, and because quadr
 pathwise limit and is therefore unaffected by the passage to the equivalent measure $\mathbb{Q}$. The
 same argument applied to $Z^2_t - t$ confirms the compensator. Lévy's theorem now identifies $Z$ as a
 $\mathbb{Q}$-Brownian motion. \hfill $\blacksquare$
+
+\section{The sewing lemma}\label{app:proof:sewing}
+We prove the existence half of Lemma \ref{lem:sewing} of Chapter \ref{ch:roughpaths}; uniqueness was
+established where the lemma was stated.
+
+\textbf{\textit{Proof:}} Fix $s<t$ and let $\mathcal{P}^{k}$ denote the dyadic partition of $[s,t]$
+into $2^{k}$ intervals of equal length $2^{-k}(t-s)$. Write
+\[
+I^{k}_{s,t} := \sum_{[u,v]\in\mathcal{P}^k} \Xi_{u,v}
+\]
+for the associated approximation, so that $I^0_{s,t} = \Xi_{s,t}$. The whole proof consists in
+showing that $(I^k_{s,t})_k$ is Cauchy, and the mechanism is that passing from $\mathcal{P}^k$ to
+$\mathcal{P}^{k+1}$ splits each interval exactly once, so that the difference of consecutive
+approximations is a sum of defects of the form \eqref{eq:sewinghypothesis}.
+
+\medskip
+\noindent\textbf{Step 1: consecutive approximations.} Each interval $[u,v]$ of $\mathcal{P}^k$ is
+divided by $\mathcal{P}^{k+1}$ at its midpoint $w = (u+v)/2$, and the corresponding contribution to
+$I^{k+1}_{s,t}$ is $\Xi_{u,w}+\Xi_{w,v}$ in place of $\Xi_{u,v}$. Hence
+\[
+I^{k+1}_{s,t} - I^{k}_{s,t} = -\sum_{[u,v]\in\mathcal{P}^{k}} \increment{\Xi}_{u,w,v},
+\]
+and by the hypothesis \eqref{eq:sewinghypothesis}, since each of the $2^k$ intervals has length
+$2^{-k}(t-s)$,
+\begin{equation}\label{eq:sewingdyadic}
+\bigl| I^{k+1}_{s,t} - I^{k}_{s,t} \bigr| \;\leq\; 2^{k}\cdot C\bigl(2^{-k}(t-s)\bigr)^{\beta}
+\;=\; C\,|t-s|^{\beta}\,2^{-k(\beta-1)} .
+\end{equation}
+
+\medskip
+\noindent\textbf{Step 2: convergence.} Because $\beta>1$ the exponent $-(\beta-1)$ is negative, so
+the bounds \eqref{eq:sewingdyadic} form a convergent geometric series. Summing them,
+\[
+\bigl| I^{m}_{s,t} - I^{k}_{s,t} \bigr| \;\leq\; C\,|t-s|^{\beta}\sum_{j\geq k} 2^{-j(\beta-1)}
+\;=\; C\,|t-s|^{\beta}\,\frac{2^{-k(\beta-1)}}{1-2^{-(\beta-1)}}, \qquad m>k,
+\]
+so $(I^k_{s,t})_k$ is Cauchy and converges; call the limit $(\mathcal{I}\Xi)_{s,t}$. Taking $k=0$ in
+the display and recalling $I^0_{s,t}=\Xi_{s,t}$ gives
+\[
+\bigl| (\mathcal{I}\Xi)_{s,t} - \Xi_{s,t}\bigr| \;\leq\; \frac{C\,|t-s|^{\beta}}{1 - 2^{-(\beta-1)}}
+\;=\; \frac{C}{1-2^{\,1-\beta}}\,|t-s|^{\beta},
+\]
+which is exactly \eqref{eq:sewingconclusion}. Note that it is here, and only here, that $\beta>1$ is
+consumed: at $\beta=1$ the series in Step 2 diverges, and correspondingly the constant
+$(1-2^{1-\beta})^{-1}$ blows up.
+
+\medskip
+
+\noindent\textbf{Step 3: a uniform bound over arbitrary partitions.} The dyadic construction
+produces a limit along dyadic partitions; to know that every partition sequence produces the
+\emph{same} limit --- which is what additivity requires --- we need an estimate valid for all
+partitions at once.
+
+Let $\mathcal{P} = \{s = t_0 < t_1 < \cdots < t_n = t\}$ be arbitrary, with $n\geq2$. Since
+\[
+\sum_{j=1}^{n-1}\bigl(t_{j+1}-t_{j-1}\bigr) = \bigl(t_n + t_{n-1}\bigr) - \bigl(t_0 + t_1\bigr) \leq 2(t-s),
+\]
+some interior point $t_j$ satisfies $t_{j+1}-t_{j-1} \leq 2(t-s)/(n-1)$. Deleting it changes the
+sum by exactly one defect,
+\[
+\Bigl| \sum_{\mathcal{P}}\Xi - \sum_{\mathcal{P}\setminus\{t_j\}}\Xi \Bigr|
+= \bigl|\increment{\Xi}_{t_{j-1},t_j,t_{j+1}}\bigr|
+\leq C\Bigl(\frac{2(t-s)}{n-1}\Bigr)^{\beta}.
+\]
+Repeating until only $\{s,t\}$ remains and summing the resulting bounds,
+\begin{equation}\label{eq:sewinguniform}
+\Bigl| \sum_{\mathcal{P}}\Xi - \Xi_{s,t} \Bigr| \;\leq\; C\,\bigl(2|t-s|\bigr)^{\beta}\sum_{m\geq1} m^{-\beta}
+\;=\; 2^{\beta}\zeta(\beta)\,C\,|t-s|^{\beta},
+\end{equation}
+the series converging precisely because $\beta>1$. The bound \eqref{eq:sewinguniform} holds for
+every partition of every subinterval, with no reference to the dyadic scheme.
+
+\medskip
+
+\noindent\textbf{Step 4: partition-independence, additivity, and the Riemann-sum limit.} Let
+$\mathcal{P}$ be any partition of $[s,t]$ and $\mathcal{Q}$ any refinement of it. Applying
+\eqref{eq:sewinguniform} on each interval $[u,v]\in\mathcal{P}$ to the partition induced there by
+$\mathcal{Q}$,
+\[
+\Bigl| \sum_{\mathcal{Q}}\Xi - \sum_{\mathcal{P}}\Xi \Bigr|
+\leq 2^{\beta}\zeta(\beta)\,C \sum_{[u,v]\in\mathcal{P}} |v-u|^{\beta}
+\leq 2^{\beta}\zeta(\beta)\,C\,|\mathcal{P}|^{\beta-1}|t-s| .
+\]
+Given two partitions, comparing each with their common refinement shows that the sums
+$\sum_{\mathcal{P}}\Xi$ form a Cauchy family as $|\mathcal{P}|\to0$. The limit therefore exists,
+does not depend on the sequence of partitions chosen, and in particular coincides with the dyadic
+limit $(\mathcal{I}\Xi)_{s,t}$ constructed in Step 2 --- so the estimate
+\eqref{eq:sewingconclusion}, with its better constant, is retained. This also proves the final
+assertion of the lemma, that $(\mathcal{I}\Xi)_{s,t} = \lim_{|\mathcal{P}|\to0}\sum_{\mathcal{P}}\Xi$.
+
+Additivity is now immediate: for $s\leq u\leq t$, concatenating partitions of $[s,u]$ and of
+$[u,t]$ yields partitions of $[s,t]$ whose mesh tends to zero, and whose sums converge to
+$(\mathcal{I}\Xi)_{s,u} + (\mathcal{I}\Xi)_{u,t}$ by construction and to $(\mathcal{I}\Xi)_{s,t}$ by
+the preceding paragraph. \hfill $\blacksquare$
+
+\section{Gubinelli's integration theorem}\label{app:proof:gubinelli}
+We prove Theorem \ref{thm:gubinelli} of Chapter \ref{ch:roughpaths}.
+
+\textbf{\textit{Proof:}} The entire proof consists in applying Lemma \ref{lem:sewing} to the
+two-parameter function
+\begin{equation}\label{eq:xichoice}
+\Xi_{s,t} \;:=\; Y_s\,X_{s,t} \;+\; \Gub_s\,\lev_{s,t},
+\end{equation}
+which is exactly the summand appearing in the compensated Riemann sums \eqref{eq:roughintegral}. We
+must verify the hypothesis \eqref{eq:sewinghypothesis} with $\beta = 3\alpha > 1$.
+
+\medskip
+\noindent\textbf{Step 1: computing the defect.} Fix $s\leq u\leq t$. By definition,
+\[
+\increment{\Xi}_{s,u,t} = \Xi_{s,t}-\Xi_{s,u}-\Xi_{u,t}
+= Y_s X_{s,t} + \Gub_s\lev_{s,t} - Y_sX_{s,u} - \Gub_s\lev_{s,u} - Y_uX_{u,t} - \Gub_u\lev_{u,t}.
+\]
+Now use the two structural facts at our disposal. Additivity of the first level,
+$X_{s,t} = X_{s,u}+X_{u,t}$, collapses the terms in $Y_s$ to $Y_sX_{u,t}$; and Chen's relation
+\eqref{eq:chenaxiom}, in the form $\lev_{s,t}-\lev_{s,u} = \lev_{u,t} + X_{s,u}\otimes X_{u,t}$,
+collapses the terms in $\Gub_s$ to $\Gub_s\lev_{u,t} + \Gub_s X_{s,u}X_{u,t}$. Therefore
+\[
+\increment{\Xi}_{s,u,t} = \bigl(Y_s - Y_u\bigr)X_{u,t} + \Gub_sX_{s,u}X_{u,t} - \bigl(\Gub_u - \Gub_s\bigr)\lev_{u,t}
+= -\bigl(Y_{s,u} - \Gub_sX_{s,u}\bigr)X_{u,t} - \bigl(\Gub_u-\Gub_s\bigr)\lev_{u,t},
+\]
+and recognising the first bracket as the remainder $R^Y_{s,u}$ of Definition \ref{def:controlled}
+gives precisely \eqref{eq:xidefect}:
+\[
+-\increment{\Xi}_{s,u,t} = R^{Y}_{s,u}\,X_{u,t} + \bigl(\Gub_u - \Gub_s\bigr)\lev_{u,t}.
+\]
+It is worth pausing on this line, since it is the whole reason the theory is built as it is. The
+second-order term $\Gub_s\lev_{s,t}$ was inserted into \eqref{eq:xichoice} for no other purpose than
+to produce, via Chen's relation, the cross-term $\Gub_sX_{s,u}X_{u,t}$ which cancels the leading
+part of $(Y_s-Y_u)X_{u,t}$. Without it the defect would be of order $\alpha+\alpha = 2\alpha \leq 1$
+and the sewing lemma would not apply --- which is exactly the failure of the naïve Riemann sums.
+
+\medskip
+\noindent\textbf{Step 2: the estimate.} Bounding the two terms separately, using Definitions
+\ref{def:roughpath} and \ref{def:controlled} and $u-s, t-u \leq t-s$,
+\[
+\bigl|\increment{\Xi}_{s,u,t}\bigr|
+\leq \lVert R^Y\rVert_{2\alpha}|u-s|^{2\alpha}\,\lVert X\rVert_{\alpha}|t-u|^{\alpha}
++ \lVert \Gub\rVert_{\alpha}|u-s|^{\alpha}\,\lVert\lev\rVert_{2\alpha}|t-u|^{2\alpha}
+\leq C_\Xi\,|t-s|^{3\alpha},
+\]
+with $C_\Xi := \lVert X\rVert_\alpha\lVert R^Y\rVert_{2\alpha} + \lVert\lev\rVert_{2\alpha}\lVert \Gub\rVert_\alpha$.
+Since $\alpha>\tfrac13$ we have $3\alpha>1$, so Lemma \ref{lem:sewing} applies and yields a unique
+additive $\mathcal{I}\Xi$ with
+$|(\mathcal{I}\Xi)_{s,t}-\Xi_{s,t}| \leq C\,C_\Xi|t-s|^{3\alpha}$. By the last assertion of that
+lemma, $(\mathcal{I}\Xi)_{s,t}$ is the limit of $\sum_{\mathcal{P}}\Xi_{u,v}$, which is
+\eqref{eq:roughintegral}; and the displayed bound is \eqref{eq:roughintegralestimate}.
+
+\medskip
+\noindent\textbf{Step 3: the integral is controlled.} Write $Z_t := (\mathcal{I}\Xi)_{0,t}$, which is
+well defined by additivity. From the estimate just obtained,
+\[
+Z_{s,t} - Y_sX_{s,t} = \Gub_s\lev_{s,t} + O\bigl(|t-s|^{3\alpha}\bigr),
+\]
+so $R^{Z}_{s,t} := Z_{s,t}-Y_sX_{s,t}$ obeys
+$|R^Z_{s,t}| \leq \lVert\Gub\rVert_{\infty}\lVert\lev\rVert_{2\alpha}|t-s|^{2\alpha} + C\,C_\Xi|t-s|^{3\alpha}$,
+which is $O(|t-s|^{2\alpha})$ since $3\alpha>2\alpha$. Hence $\lVert R^Z\rVert_{2\alpha}<\infty$ and
+$(Z,Y)\in\Ctrl{X}$, which is \eqref{eq:integraliscontrolled}. That $Z$ is itself $\alpha$-Hölder
+follows from $|Z_{s,t}| \leq |Y_s||X_{s,t}| + |R^Z_{s,t}|$. \hfill $\blacksquare$
+
+\section{Existence and uniqueness for rough differential equations}\label{app:proof:rdeexistence}
+We prove Theorem \ref{thm:rdeexistence} of Chapter \ref{ch:roughpaths}.
+
+\textbf{\textit{Proof:}} Throughout, $C$ denotes a constant depending only on $\alpha$ and
+$\lVert f\rVert_{\mathcal{C}^3_b}$, allowed to change from line to line, and we abbreviate
+$M := \vertiii{\rpX}_{\alpha}$. Recall from Definition \ref{def:rde} that solutions on $[0,\tau]$
+are exactly the fixed points of
+\[
+\mathcal{M}(Y,\Gub) \;=\; \Bigl(\xi + \int_0^{\cdot} f(Y_r)\,\dd\rpX_r,\ f(Y)\Bigr),
+\]
+which is well defined on $\Ctrl{X}([0,\tau])$ by Example \ref{ex:controlledexamples} ii) together
+with Theorem \ref{thm:gubinelli}.
+
+\medskip
+\noindent\textbf{Step 1: the ball.} Since the space $\Ctrl{X}$ is affine rather than linear once the
+initial data are fixed, we centre the ball at the canonical first-order approximation
+\[
+\mathcal{W}_t := \xi + f(\xi)X_{0,t}, \qquad \mathcal{W}'_t := f(\xi), \qquad t\in[0,\tau],
+\]
+which lies in $\Ctrl{X}$ with $R^{\mathcal{W}}\equiv0$, and set
+\[
+B_\tau(R) := \bigl\{ (Y,\Gub)\in\Ctrl{X}([0,\tau]) \;:\; Y_0=\xi,\ \Gub_0 = f(\xi),\ \lVert (Y,\Gub)-(\mathcal{W},\mathcal{W}')\rVert_{X,2\alpha}\leq R \bigr\},
+\]
+a closed subset of a Banach space, hence a complete metric space.
+
+\medskip
+\noindent\textbf{Step 2: invariance.} Let $(Y,\Gub)\in B_\tau(R)$. Applying
+\eqref{eq:roughintegralestimate} to the integrand $\bigl(f(Y),Df(Y)\Gub\bigr)$, whose controlled
+norm is bounded by $C(1+R)$ by Example \ref{ex:controlledexamples} ii), one obtains
+\[
+\bigl\lVert \mathcal{M}(Y,\Gub) - (\mathcal{W},\mathcal{W}')\bigr\rVert_{X,2\alpha}
+\;\leq\; C\,\bigl|f(\xi)\bigr|\,M \;+\; C\,(1+R)\,M\,\tau^{\alpha}.
+\]
+The first summand does not involve $\tau$ and is bounded by $C\lVert f\rVert_{\infty}M$; choose
+$R := 2C\lVert f\rVert_{\infty}M$, so that this summand is at most $R/2$. Then choose $\tau$ small
+enough that $C(1+R)M\tau^{\alpha} \leq R/2$. With these choices
+$\mathcal{M}\bigl(B_\tau(R)\bigr)\subseteq B_\tau(R)$.
+
+Two features of this step are what make the theorem global, and they should be noted explicitly.
+First, the estimate \eqref{eq:roughintegralestimate} involves $\lVert \Gub\rVert_\alpha$ and
+$\lVert R^Y\rVert_{2\alpha}$ but never $|Y_0|$; and $f$ is bounded, so $|f(\xi)|\leq\lVert f\rVert_\infty$
+irrespective of $\xi$. Hence neither $R$ nor $\tau$ depends on the initial condition. Second, the
+factor $\tau^{\alpha}$ is produced by restricting the time horizon, and it is the only source of
+smallness available --- which is why the argument is local in time and not in space.
+
+\medskip
+\noindent\textbf{Step 3: contraction.} For $(Y,\Gub),(\widetilde Y,\widetilde\Gub) \in B_\tau(R)$,
+the same estimate applied to the difference of the integrands, together with the local Lipschitz
+property of $Y\mapsto f(Y)$ as a map of controlled paths --- this is where the third derivative of
+$f$ is used, and it is proved in \cite[Lem.\ 7.3]{frizhairer2020} --- gives
+\[
+\bigl\lVert \mathcal{M}(Y,\Gub)-\mathcal{M}(\widetilde Y,\widetilde\Gub)\bigr\rVert_{X,2\alpha}
+\;\leq\; C\,(1+R)\,M\,\tau^{\alpha}\,\bigl\lVert (Y,\Gub)-(\widetilde Y,\widetilde\Gub)\bigr\rVert_{X,2\alpha}.
+\]
+Reducing $\tau$ further so that $C(1+R)M\tau^{\alpha}\leq\tfrac12$ makes $\mathcal{M}$ a contraction
+of modulus $\tfrac12$ on $B_\tau(R)$. The Banach fixed point theorem supplies a unique fixed point,
+that is, a unique solution on $[0,\tau]$, and $\tau =: \Mat_0$ depends only on $\alpha$,
+$\lVert f\rVert_{\mathcal{C}^3_b}$ and $M$, as claimed.
+
+\medskip
+\noindent\textbf{Step 4: patching.} Because $\Mat_0$ is independent of the initial condition, the
+solution on $[0,\Mat_0]$ may be restarted at $Y_{\Mat_0}$ to produce a solution on
+$[\Mat_0, 2\Mat_0]$, and so on; after $\lceil \Mat/\Mat_0\rceil$ steps the interval $[0,\Mat]$ is
+exhausted. That the concatenation is again a controlled path, and that it solves
+\eqref{eq:rdeintegral} across the junctions, follows from the additivity of the rough integral.
+
+For global uniqueness, suppose $(\widetilde Y,\widetilde\Gub)$ is another solution on $[0,\Mat]$ and
+let $\sigma := \sup\{t : \widetilde Y = Y \text{ on } [0,t]\}$. The two agree at $\sigma$ by
+continuity, so applying Step 3 on $[\sigma,\sigma+\tau]$ --- legitimate since $\tau$ does not depend
+on the initial value $Y_\sigma$ --- forces them to agree there also, contradicting the maximality of
+$\sigma$ unless $\sigma=\Mat$. \hfill $\blacksquare$
+
+\section{Continuity of the Itô--Lyons map}\label{app:proof:ult}
+We prove Theorem \ref{thm:ult} of Chapter \ref{ch:roughpaths}.
+
+\textbf{\textit{Proof:}} Let $\rpX,\widetilde\rpX\in\RP{\alpha}$ with
+$\vertiii{\rpX}_\alpha,\vertiii{\widetilde\rpX}_\alpha\leq M$, and let $(Y,f(Y))$ and
+$(\widetilde Y, f(\widetilde Y))$ be the corresponding solutions started at $\xi$ and
+$\widetilde\xi$. The difficulty of the statement is that the two solutions live in \emph{different}
+Banach spaces, $\Ctrl{X}$ and $\Ctrl{\widetilde X}$, so no norm compares them directly; this is why
+Theorem \ref{thm:integralstability} was stated in terms of the quantity
+\[
+d_{X,\widetilde X,2\alpha}\bigl(Y,\Gub;\widetilde Y,\widetilde\Gub\bigr)
+:= \bigl\lVert \Gub - \widetilde\Gub\bigr\rVert_{\alpha} + \bigl\lVert R^{Y}-R^{\widetilde Y}\bigr\rVert_{2\alpha},
+\]
+which is not a metric but does compare the two, and it is this quantity that we estimate.
+
+\medskip
+\noindent\textbf{Step 1: transferring the estimate through the fixed point.} By Theorem
+\ref{thm:rdeexistence} the solutions are the fixed points of the respective maps
+\eqref{eq:picardmap}, so that
+$(Y,f(Y)) = \mathcal{M}(Y,f(Y))$ and likewise with tildes. Applying the stability of rough
+integration, Theorem \ref{thm:integralstability}, to the two integrals, and writing
+$\Xi := f(Y)$, $\widetilde\Xi := f(\widetilde Y)$ for the integrands,
+\begin{equation}\label{eq:ultstep1}
+d_{X,\widetilde X,2\alpha}\bigl(Y, f(Y); \widetilde Y, f(\widetilde Y)\bigr)
+\;\leq\; C\Bigl( \rpdist\bigl(\rpX,\widetilde\rpX\bigr) + \bigl|\xi-\widetilde\xi\bigr|
++ \tau^{\alpha}\,d_{X,\widetilde X,2\alpha}\bigl(\Xi,\Xi';\widetilde\Xi,\widetilde\Xi'\bigr)\Bigr).
+\end{equation}
+The last term is the price of the nonlinearity, and it is handled by the local Lipschitz estimate
+for composition with $f\in\mathcal{C}^3_b$ \cite[Thm.\ 7.6]{frizhairer2020}, which bounds it by
+\[
+d_{X,\widetilde X,2\alpha}\bigl(\Xi,\Xi';\widetilde\Xi,\widetilde\Xi'\bigr)
+\;\leq\; C\Bigl( \rpdist\bigl(\rpX,\widetilde\rpX\bigr) + \bigl|\xi-\widetilde\xi\bigr|
++ d_{X,\widetilde X,2\alpha}\bigl(Y,f(Y);\widetilde Y, f(\widetilde Y)\bigr) \Bigr).
+\]
+
+\medskip
+\noindent\textbf{Step 2: absorbing.} Substituting the second display into \eqref{eq:ultstep1} gives,
+with a new constant,
+\[
+d_{X,\widetilde X,2\alpha}\bigl(Y,f(Y);\widetilde Y,f(\widetilde Y)\bigr)
+\leq C\Bigl(\rpdist\bigl(\rpX,\widetilde\rpX\bigr)+\bigl|\xi-\widetilde\xi\bigr|\Bigr)
++ C\tau^{\alpha}\,d_{X,\widetilde X,2\alpha}\bigl(Y,f(Y);\widetilde Y,f(\widetilde Y)\bigr).
+\]
+Choosing $\tau$ small enough that $C\tau^{\alpha}\leq\tfrac12$ --- possible with $\tau$ depending
+only on $M$, $\alpha$ and $f$, exactly as in Theorem \ref{thm:rdeexistence} --- the final term may be
+absorbed into the left-hand side, leaving
+\[
+d_{X,\widetilde X,2\alpha}\bigl(Y,f(Y);\widetilde Y,f(\widetilde Y)\bigr)
+\;\leq\; 2C\Bigl(\rpdist\bigl(\rpX,\widetilde\rpX\bigr)+\bigl|\xi-\widetilde\xi\bigr|\Bigr)
+\]
+on $[0,\tau]$. This is the required bound in the comparison quantity.
+
+\medskip
+\noindent\textbf{Step 3: from the comparison quantity to the Hölder norm, and iteration.} Writing
+$Y_{s,t}-\widetilde Y_{s,t} = f(Y_s)X_{s,t} - f(\widetilde Y_s)\widetilde X_{s,t} + R^{Y}_{s,t}-R^{\widetilde Y}_{s,t}$
+and using the elementary inequality $|ab-\tilde a\tilde b|\leq|a||b-\tilde b|+|a-\tilde a||\tilde b|$
+on the first pair of terms, the bound of Step 2 converts into
+\[
+\bigl\lVert Y-\widetilde Y\bigr\rVert_{\alpha} \;\leq\; C\Bigl(\rpdist\bigl(\rpX,\widetilde\rpX\bigr)+\bigl|\xi-\widetilde\xi\bigr|\Bigr)
+\]
+on $[0,\tau]$, which is \eqref{eq:ult} on that interval. Since $\tau$ depends only on $M$ and not on
+the initial conditions, the argument may be restarted at $\tau$ with initial values $Y_\tau$ and
+$\widetilde Y_\tau$, whose difference is already controlled by the right-hand side; after finitely
+many such steps the estimate covers $[0,\Mat]$, with a constant that has been multiplied by a fixed
+factor at each step. \hfill $\blacksquare$

@@ -1,4 +1,4 @@
-\chapter{Applications} \label{ch:cap6} 
+\chapter{Applications} \label{ch:applications} 
 
 \section{Calibration of a Volatility Surface}
 \subsection{The Model}
@@ -7,6 +7,27 @@
 \subsection{The Challenge (?)}
 
 \subsection{Calibration of a (???)}
+
+\section{Calibration to Single Names: De-Americanisation}\label{sec:deamericanisation}
+
+The local volatility surface of Subsection \ref{subsec:localvol} was constructed from European
+quotes. Single-name options are American, and bridging that gap is the first practical step in any
+calibration on individual equities. This section carries out the procedure deferred in Chapter
+\ref{ch:foundations}.
+
+A major practical hurdle arises during calibration: Dupire's formula (Theorem \ref{thm:dupire}) requires the partial derivatives of \emph{European} option prices, but single-name market quotes are American. We cannot apply Dupire directly to American prices. 
+
+Therefore, calibrating the local volatility surface to American options requires a short, iterative mapping procedure known as \textbf{De-Americanisation}:
+\begin{enumerate}
+    \item \textbf{Quote Extraction:} Obtain the market prices of the liquid American options and calculate their Black-Scholes implied volatilities using an American pricer (such as a Binomial Tree or a PDE solver).
+    \item \textbf{Pseudo-European Mapping:} Assume these implied volatilities approximate the volatilities of European options with the exact same strikes and maturities. Use these volatilities to generate a grid of ``pseudo-European'' option prices.
+    \item \textbf{Local Volatility Construction:} Apply a smoothing parameterization (e.g., SVI) to the pseudo-European surface to ensure it is free of static arbitrage, and then apply Gatheral's form \eqref{eq:gatheral} of the Dupire formula to construct the local volatility surface $\lvol(\Fwd,t)$.
+    \item \textbf{Repricing and Verification:} Substitute this $\lvol(F, t)$ back into the LCP (Equation \eqref{eq:LCP_American}) and solve it backwards using a finite difference method (such as Crank-Nicolson combined with a Projected Successive Over-Relaxation (PSOR) algorithm) to verify that the model accurately recovers the original American market quotes.
+\end{enumerate}
+
+This iterative procedure effectively bridges the theoretical gap between the European foundations of Local Volatility and the practical reality of American single-name markets, ensuring that our models reflect true market dynamics without introducing arbitrage.
+
+However, the de-Americanisation process can be inverted, and this must be of no surprise at this stage, by the so called PINNs (\textit{Physics-Informed Neural Networks}). We will dive further into this topic in the final chapter of the present dissertation.
 
 \section{Implementation}
 

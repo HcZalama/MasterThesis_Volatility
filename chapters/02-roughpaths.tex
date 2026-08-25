@@ -1,37 +1,1445 @@
-\chapter{Rough Paths} \label{ch:cap5} % DUMMY TEST CHANGE
-\section{Introduction}
+\chapter{Rough Paths} \label{ch:roughpaths}
+
+\section{Introduction}\label{sec:roughintro}
+
+Remark \ref{rem:criticalexponent} closed Part \ref{part:part1} with a diagnosis rather than a
+theorem. Brownian motion has finite $p$-variation exactly for $p>2$; Young's integral requires
+$p<2$; and the Itô integral of Section \ref{sec:stochasticcalculus} bridges the gap not by refining
+an estimate but by \emph{spending probabilistic structure} --- adaptedness, an $L^2(\Omega)$ limit
+in place of a pathwise one, and a definition valid only up to null sets. That bargain is what
+Part \ref{part:part1} was built on, and it is worth being precise about the two circumstances in
+which it collapses.
+
+The first is that the driving signal may be rougher than Brownian. Itô's construction is not a
+general theory of integration against irregular paths: it is a theory of integration against
+\emph{semimartingales}, and Definition \ref{def:semimartingale} was recorded in Chapter
+\ref{ch:foundations} precisely so that we could mark its edge. The moment the integrator leaves that
+class, the entire apparatus --- the isometry of Theorem \ref{thm:itoisometry}, the martingale
+property, the localisation of Example \ref{example_stoppingTimes} --- becomes unavailable at once,
+and not merely inconvenient.
+
+The second is subtler and, in the end, more consequential. Even where Itô's theory applies, it
+delivers the solution of a stochastic differential equation as a measurable function on $\Om$,
+constructed through an $L^2$ limit that depends on the filtration and the measure. It does not
+tell us that the solution depends \emph{continuously} on the driving trajectory, and in fact, as
+we shall see in Subsection \ref{subsec:whatfails}, no such statement is true in the topology one
+would naïvely choose. This is not a technical blemish. A model whose output is a discontinuous
+function of its input is a model one cannot approximate, cannot discretise with confidence, and
+cannot calibrate stably.
+
+Rough path theory, introduced by Lyons \cite{lyons1998}, resolves both difficulties simultaneously,
+and by a single device: it enlarges the notion of ``path''. The remainder of this chapter develops
+that idea. We begin, however, with the process that forces the question upon us.
+
+\subsection{Fractional Brownian Motion}\label{subsec:fbm}
+
+Brownian motion is characterised, among Gaussian processes with stationary increments, by the
+independence of those increments. Relaxing exactly that requirement --- and nothing else --- yields
+the following one-parameter family, introduced by Kolmogorov and given its modern form by Mandelbrot
+and Van Ness \cite{mandelbrotvanness1968}.
+
+\begin{definition}[Fractional Brownian motion]\label{def:fbm}
+Let $\Hurst \in (0,1)$. A \textbf{fractional Brownian motion} with Hurst parameter $\Hurst$ is a
+centred Gaussian process $\BH = \{\BH_t\}_{t\geq0}$ with $\BH_0 = 0$ almost surely and covariance
+\begin{equation}\label{eq:fbmcovariance}
+\E\bigl[\BH_s \BH_t\bigr] \;=\; R_\Hurst(s,t) \;:=\; \tfrac12\Bigl( s^{2\Hurst} + t^{2\Hurst} - |t-s|^{2\Hurst} \Bigr),
+\qquad s,t \geq 0 .
+\end{equation}
+\end{definition}
+
+That \eqref{eq:fbmcovariance} is a legitimate covariance --- that is, symmetric and positive
+semi-definite --- is a genuine constraint on $\Hurst$, and it is the reason the parameter range is
+$(0,1)$ and not larger; a proof is in \cite[Ch.\ 7]{marcusrosen2006}. Granting it, the process
+exists by the standard Gaussian construction, and Kolmogorov's criterion (Theorem
+\ref{thm:kolmogorovcontinuity}) supplies a continuous modification, with which we always work in
+accordance with Remark \ref{rem:modification}.
+
+\begin{proposition}[Elementary properties]\label{prop:fbmproperties}
+Let $\BH$ be a fractional Brownian motion with Hurst parameter $\Hurst \in (0,1)$. Then:
+\begin{itemize}
+    \item[a)] $\BH$ has \emph{stationary increments}, with
+    \begin{equation}\label{eq:fbmincrement}
+        \E\bigl[\,|\BH_t - \BH_s|^2\,\bigr] = |t-s|^{2\Hurst}, \qquad \text{so } \BH_t - \BH_s \sim \Normal\bigl(0, |t-s|^{2\Hurst}\bigr).
+    \end{equation}
+    \item[b)] $\BH$ is \emph{self-similar of index $\Hurst$}: for every $\lambda>0$, the processes
+    $\{\BH_{\lambda t}\}_{t\geq0}$ and $\{\lambda^{\Hurst}\BH_t\}_{t \geq 0}$ have the same law.
+    \item[c)] Almost every sample path is locally $\gamma$-Hölder continuous for every
+    $\gamma < \Hurst$, and for no $\gamma \geq \Hurst$.
+    \item[d)] Almost surely, $V_p(\BH)_t < \infty$ for every $p > 1/\Hurst$ and $V_p(\BH)_t = \infty$
+    for every $p \leq 1/\Hurst$: the critical exponent of Remark \ref{rem:criticalexponent} is
+    $1/\Hurst$.
+    \item[e)] $\Hurst = \tfrac12$ recovers Brownian motion. For $\Hurst > \tfrac12$ the increments
+    over disjoint intervals are positively correlated, for $\Hurst < \tfrac12$ negatively, and in
+    neither case are they independent.
+\end{itemize}
+\end{proposition}
+
+\textbf{\textit{Proof:}} a) Expanding and using \eqref{eq:fbmcovariance},
+\[
+\E\bigl[(\BH_t-\BH_s)^2\bigr] = R_\Hurst(t,t) - 2R_\Hurst(s,t) + R_\Hurst(s,s)
+= t^{2\Hurst} - \bigl(s^{2\Hurst}+t^{2\Hurst}-|t-s|^{2\Hurst}\bigr) + s^{2\Hurst} = |t-s|^{2\Hurst}.
+\]
+Since the process is centred and Gaussian, the law of an increment is determined by this variance
+alone, and depends on $s,t$ only through $t-s$.
+
+b) $R_\Hurst(\lambda s, \lambda t) = \lambda^{2\Hurst}R_\Hurst(s,t)$ is immediate from
+\eqref{eq:fbmcovariance}. Two centred Gaussian processes with the same covariance have the same law.
+
+c) The Gaussian moments give $\E[|\BH_t-\BH_s|^{2m}] = c_m|t-s|^{2m\Hurst}$, so
+\eqref{eq:kolmogorovmoment} holds with $\alpha = 2m$ and $\beta = 2m\Hurst - 1$, and Theorem
+\ref{thm:kolmogorovcontinuity} yields Hölder exponents $\gamma < \Hurst - 1/2m$, which approach
+$\Hurst$ as $m\to\infty$. The negative half is the exact analogue of Theorem \ref{thm:bmregularity}
+i) and is proved by the same Paley--Wiener--Zygmund argument, adapted in \cite[Ch.\ 7]{marcusrosen2006}.
+
+d) Follows from c) together with the same competition between $p$-variation and modulus of
+continuity that produced Proposition \ref{prop:bmunboundedvariation}; see \cite[Ch.\ 15]{frizvictoir2010}
+for the details, which we do not repeat.
+
+e) For $\Hurst=\tfrac12$, \eqref{eq:fbmcovariance} collapses to $\min\{s,t\}$, which is Proposition
+\ref{prop:bm-properties} a); by Definition \ref{def:Brownian-motion} and the Gaussian
+characterisation this identifies the process. For the sign of the correlation, take
+$0\leq s\leq t\leq u\leq v$ and compute directly from \eqref{eq:fbmcovariance},
+\[
+2\,\E\bigl[(\BH_t-\BH_s)(\BH_v-\BH_u)\bigr] = |v-s|^{2\Hurst} + |u-t|^{2\Hurst} - |u-s|^{2\Hurst} - |v-t|^{2\Hurst},
+\]
+which is the second difference of the function $\tau \mapsto \tau^{2\Hurst}$, hence positive when
+that function is convex ($\Hurst>\tfrac12$) and negative when it is concave ($\Hurst<\tfrac12$).
+It vanishes identically only at $\Hurst = \tfrac12$. \hfill $\blacksquare$
+
+\medskip
+
+Part e) is the modelling content of the definition and deserves its name. For $\Hurst > \tfrac12$
+the process exhibits \emph{persistence}: an increase tends to be followed by an increase, and the
+correlations decay so slowly that they are not summable --- the phenomenon known as \emph{long
+memory}. For $\Hurst < \tfrac12$ it exhibits \emph{anti-persistence}, or mean reversion at every
+scale, and the paths are correspondingly rougher than Brownian. Part d) makes ``rougher'' precise:
+the critical exponent $1/\Hurst$ exceeds $2$ exactly when $\Hurst < \tfrac12$.
+
+That last observation is not a curiosity but an obstruction, and we state it as such.
+
+\begin{theorem}[Rogers]\label{thm:fbmnotsemimartingale}
+Fractional Brownian motion is a semimartingale in the sense of Definition \ref{def:semimartingale}
+if and only if $\Hurst = \tfrac12$. \hfill $\blacksquare$
+\end{theorem}
+
+The proof is in \cite{rogers1997}, and the mechanism is worth recording even though we do not
+reproduce the argument. For $\Hurst > \tfrac12$ the quadratic variation of Definition
+\ref{def:quadratic-variation} vanishes, while the total variation is infinite by part d); a
+continuous semimartingale with zero quadratic variation must be of finite variation, by the
+uniqueness of the decomposition, and this is a contradiction. For $\Hurst < \tfrac12$ the quadratic
+variation is instead infinite, which is incompatible with the decomposition from the other
+direction. Only the balance point $\Hurst = \tfrac12$ escapes.
+
+The consequence is severe and complete. \textbf{For $\Hurst \neq \tfrac12$ there is no Itô integral
+against $\BH$}, no Itô formula, no martingale representation, and no Girsanov theorem --- not
+because the constructions are difficult but because every one of them takes the semimartingale
+property as its hypothesis. This was anticipated in Chapter \ref{ch:foundations}, where Definition
+\ref{def:semimartingale} was described as marking ``the outer limit of the theory developed in this
+chapter''. We have now crossed it.
+
+\subsection{Volatility is Rough}\label{subsec:roughvol}
+
+Why should one wish to cross it? The answer, for this dissertation, is empirical, and although a
+thesis in mathematics is not the place for an econometric study, the finding that motivates
+everything below can be stated in one paragraph.
+
+Let $\sigma_t$ denote spot volatility, estimated from high-frequency returns over a grid of
+spacing $\Delta$, and consider the $q$-th absolute moment of the increments of its logarithm,
+\begin{equation}\label{eq:scalingmoment}
+m(q,\Delta) \;:=\; \frac{1}{N}\sum_{i=1}^{N} \bigl|\log\sigma_{i\Delta} - \log\sigma_{(i-1)\Delta}\bigr|^{q} .
+\end{equation}
+Gatheral, Jaisson and Rosenbaum \cite{gatheraljaissonrosenbaum2018} observe that, across equity
+indices and thousands of individual assets, $m(q,\Delta) \propto \Delta^{\zeta_q}$ with
+$\zeta_q = q\Hurst$ --- a linear, \emph{monofractal} scaling with no curvature in $q$ --- and that
+the increments are close to Gaussian. Comparison with \eqref{eq:fbmincrement} is immediate: these
+are exactly the scaling relations of a fractional Brownian motion. The estimated exponent is
+$\Hurst \approx 0.1$, and it is remarkably stable across assets and across decades.
+
+\figurehere{Log--log plot of $m(q,\Delta)$ against $\Delta$ for several values of $q$, showing the
+parallel straight lines whose slopes are $\zeta_q$, alongside the plot of $\zeta_q$ against $q$
+exhibiting the linear (monofractal) relation $\zeta_q = q\Hurst$. This is the visual statement of
+the empirical finding of \cite{gatheraljaissonrosenbaum2018}.}
+
+This inverts an earlier consensus. The fractional stochastic volatility model of Comte and Renault
+\cite{comterenault1998} also used fractional Brownian motion, but with $\Hurst > \tfrac12$, in order
+to reproduce the apparent long memory of realised volatility. The finding above says that the
+correct exponent is not merely below $\tfrac12$ but very close to $0$: volatility is not
+persistent, it is \emph{rough}. The resulting model, which we shall meet again in Chapter
+\ref{ch:applications}, replaces the Heston dynamics of Subsection \ref{subsec:stochvol} by
+\begin{equation}\label{eq:rfsv}
+\sigma_t = \exp(X_t), \qquad \dd X_t = \nu\,\dd \BH_t - \alpha\bigl(X_t - m\bigr)\dd t,
+\end{equation}
+with $\alpha$ so small that, over any horizon of practical interest, $X$ is indistinguishable from
+a fractional Brownian motion.
+
+For our purposes the decisive consequence is the one that concerns the object Chapter \ref{ch:foundations}
+spent its final sections constructing: the implied volatility surface. A model of the form
+\eqref{eq:rfsv} generates an at-the-money skew whose term structure behaves like
+\begin{equation}\label{eq:skewpowerlaw}
+\psi(\tau) \;:=\; \biggl|\frac{\partial \ivol}{\partial \lmon}(\tau,\lmon)\biggr|_{\lmon=0} \;\sim\; \tau^{\Hurst - 1/2}
+\qquad \text{as } \tau \downarrow 0 ,
+\end{equation}
+a power-law explosion at short maturities. Every model driven by a semimartingale volatility
+factor --- Heston included, and by Theorem \ref{thm:fbmnotsemimartingale} that is precisely the
+case $\Hurst = \tfrac12$ --- produces a skew that flattens as $\tau \downarrow 0$, and no choice of
+parameters repairs this. The observed surface does not flatten. Roughness is what the market
+implies, and $\eqref{eq:skewpowerlaw}$ is the cleanest statement of why.
+
+\begin{remark}
+The reader should note what \eqref{eq:rfsv} does and does not require. The equation is driven by
+$\BH$ but is \emph{linear} in $X$, so it can be solved explicitly, by a pathwise
+Riemann--Stieltjes argument, without any integration theory for $\BH$ at all. The difficulty
+arrives one level up, when one wishes to price --- that is, to integrate $\sigma_t$, a nonlinear
+functional of $\BH$, against the Brownian motion driving the asset price. That is a genuine
+stochastic integral against a rough signal, and it is the problem this chapter exists to address.
+\end{remark}
+
+\subsection{What Fails, and Why}\label{subsec:whatfails}
+
+Before constructing anything we should be clear that the obstruction is real, and in particular
+that it is not removed by any sharpening of the classical estimates. There are three layers to
+this, of increasing depth.
+
+\medskip
+
+\noindent\textbf{Young integration is out of reach.} Recall from Remark \ref{rem:criticalexponent}
+that $\int g\,\dd f$ exists pathwise as a limit of Riemann sums whenever $f$ has finite
+$p$-variation, $g$ finite $q$-variation, and $1/p + 1/q > 1$. In Hölder terms, if
+$f \in \Holder{\alpha}$ and $g \in \Holder{\beta}$ the condition reads $\alpha + \beta > 1$. Now the
+integrands we care about are of the form $g = F(f)$, which inherits the regularity $\alpha$ of $f$
+itself, so the condition becomes $2\alpha > 1$, that is $\alpha > \tfrac12$. By Proposition
+\ref{prop:fbmproperties} c) this holds for $\BH$ precisely when $\Hurst > \tfrac12$. Young's theory
+therefore covers exactly the persistent case that the data reject, and none of the rough one.
+
+\medskip
+
+\noindent\textbf{Itô integration is out of reach.} By Theorem \ref{thm:fbmnotsemimartingale},
+immediately and for all $\Hurst \neq \tfrac12$.
+
+\medskip
+
+\noindent\textbf{And the obstruction is not a matter of technique.} One might still hope that the
+map $(f,g)\mapsto \int g\,\dd f$, manifestly well defined for smooth paths, extends by continuity
+to the irregular ones --- that some cleverer topology on path space would do what the uniform
+topology fails to do. The following example, due to Lyons, shows that the uniform topology cannot.
+
+\begin{example}[The oscillation counterexample]\label{ex:lyonscounterexample}
+For $n \in \N$ define the smooth planar paths
+\begin{equation}\label{eq:lyonsexample}
+x^{(n)}_t := \frac{1}{n}\sin\bigl(n^2 t\bigr), \qquad
+y^{(n)}_t := \frac{1}{n}\cos\bigl(n^2 t\bigr), \qquad t \in [0,\Mat].
+\end{equation}
+Both converge to the zero path uniformly, since $|x^{(n)}|,|y^{(n)}| \leq 1/n$. Yet
+\[
+\int_0^t y^{(n)}_s\,\dd x^{(n)}_s = \int_0^t \frac{\cos(n^2s)}{n}\cdot n\cos(n^2 s)\,\dd s
+= \int_0^t \cos^2(n^2 s)\,\dd s = \frac{t}{2} + \frac{\sin(2n^2t)}{4n^2} \;\longrightarrow\; \frac{t}{2},
+\]
+which is not the integral of the zero path against itself. The integral is therefore \emph{not}
+continuous with respect to uniform convergence.
+\end{example}
+
+The picture behind the computation is worth holding on to, because it is the picture behind the
+whole theory. The paths $\bigl(x^{(n)},y^{(n)}\bigr)$ trace circles of radius $1/n$ traversed $n^2$
+times per unit time. The circles shrink to a point, which is why the paths converge uniformly to
+zero; but the \emph{area} swept out is $\pi/n^2$ per revolution and there are $n^2/2\pi$
+revolutions per unit time, so the total area accumulated per unit time is a constant, independent
+of $n$. Uniform convergence sees the shrinking radius. It does not see the accumulating area. And
+the integral, as the computation shows, depends on the area.
+
+One might now hope for some other norm. There is none.
+
+\begin{proposition}[Lyons]\label{prop:nonorm}
+Let $\mathcal{W}$ denote the space of continuous paths $[0,\Mat]\to\R^d$ and let
+$E^\infty \subseteq \mathcal{W}$ be the smooth paths. There is no norm $\lVert\cdot\rVert$ on
+$E^\infty$ such that, simultaneously, the closure $E$ of $E^\infty$ carries full Wiener measure and
+the map $(f,g)\mapsto\int g\,\dd f$ extends continuously from $E^\infty\times E^\infty$ to
+$E\times E$. \hfill $\blacksquare$
+\end{proposition}
+
+A proof is given in \cite[Ch.\ 1]{frizhairer2020}. The statement is a genuine impossibility
+theorem, not an admission of ignorance, and it forces a change of question. If no topology on
+\emph{paths} makes the integral continuous, then the integral is not a function of the path alone,
+and the object we should be topologising is not the path.
+
+Example \ref{ex:lyonscounterexample} tells us exactly what is missing. What distinguishes
+$\bigl(x^{(n)},y^{(n)}\bigr)$ from the zero path is the area it encloses --- equivalently, the
+iterated integral $\int\!\!\int \dd x\,\dd y$. So we shall carry that quantity along as part of the
+data, postulate it where it cannot be constructed, and topologise the enlarged object. That the
+resulting theory is not merely a device but the \emph{correct} formulation is the content of
+Theorem \ref{thm:ult}, and everything between here and there is the construction.
+
+\section{Rough Paths}\label{sec:roughpaths}
+
+\subsection{Tensor Spaces}\label{subsec:tensorspaces}
+
+The iterated integrals we must carry are indexed by pairs of coordinates, and the algebraic home
+for such objects is the tensor product. We recall only what is needed; the systematic treatment,
+which requires free Lie algebras and the theory of the free nilpotent group, is developed in
+\cite[Ch.\ 3]{geng2021} and \cite[Ch.\ 7]{frizvictoir2010}, and we shall not need it.
+
+Throughout this chapter $V := \R^d$ with its standard basis $\{e_1,\dots,e_d\}$.
+
+\begin{definition}[Tensor product]\label{def:tensorproduct}
+The \textbf{tensor product} $V \otimes V$ is the vector space generated by the symbols
+$v \otimes w$, for $v,w \in V$, subject to bilinearity:
+\begin{equation}\label{eq:bilinearity}
+(av_1 + v_2)\otimes w = a(v_1\otimes w) + v_2 \otimes w, \qquad
+v \otimes (aw_1 + w_2) = a(v\otimes w_1) + v\otimes w_2 ,
+\end{equation}
+for all $a \in \R$ and $v,v_i,w,w_i \in V$.
+\end{definition}
+
+Concretely $V\otimes V$ has dimension $d^2$ with basis $\{e_i\otimes e_j\}_{1\leq i,j\leq d}$, so
+that it may be identified with the space of $d\times d$ matrices, an element being written
+$\xi = \sum_{i,j}\xi^{ij}\,e_i\otimes e_j$. The point of the notation is that the product is
+\emph{not} commutative: $e_1\otimes e_2 \neq e_2\otimes e_1$. This is essential, since the two
+iterated integrals $\int\!\!\int \dd x^1\dd x^2$ and $\int\!\!\int \dd x^2 \dd x^1$ are genuinely
+different numbers, and it is exactly their difference that Example \ref{ex:lyonscounterexample}
+detected.
+
+\begin{definition}[Truncated tensor algebra]\label{def:tensoralgebra}
+The \textbf{truncated tensor algebra of order two} over $V$ is
+\begin{equation}\label{eq:tensoralgebra}
+\Tens{2}(V) \;:=\; \R \oplus V \oplus (V\otimes V),
+\end{equation}
+whose elements we write $\xi = (\xi_0,\xi_1,\xi_2)$, equipped with the multiplication
+\begin{equation}\label{eq:tensormultiplication}
+(\xi \otimes \eta)_n \;:=\; \sum_{k=0}^{n} \xi_k \otimes \eta_{n-k}, \qquad n = 0,1,2,
+\end{equation}
+all terms of order higher than two being discarded. We write
+$\Tone{2}(V) := \{\xi \in \Tens{2}(V) : \xi_0 = 1\}$.
+\end{definition}
+
+Written out, \eqref{eq:tensormultiplication} says
+$\xi\otimes\eta = (\xi_0\eta_0,\ \xi_0\eta_1 + \xi_1\eta_0,\ \xi_0\eta_2 + \xi_1\otimes\eta_1 + \xi_2\eta_0)$.
+The algebra is associative with unit $\mathbf{1} = (1,0,0)$, and although a general element has no
+inverse, every element of $\Tone{2}(V)$ does, namely
+\begin{equation}\label{eq:tensorinverse}
+(1,\xi_1,\xi_2)^{-1} = \bigl(1,\ -\xi_1,\ \xi_1\otimes\xi_1 - \xi_2\bigr),
+\end{equation}
+as one checks by multiplying out. Thus $\Tone{2}(V)$ is a group, and this is the structure in which
+the whole chapter takes place.
+
+The motivation is the following computation, which the reader should regard as the definition of
+everything that follows.
+
+\begin{example}[The canonical lift of a smooth path]\label{ex:smoothlift}
+Let $x : [0,\Mat]\to V$ be continuously differentiable. For $s \leq t$ set
+\begin{equation}\label{eq:smoothlift}
+X_{s,t} := x_t - x_s \in V, \qquad
+\lev_{s,t} := \int_s^t \bigl(x_r - x_s\bigr)\otimes \dd x_r = \int_s^t\!\!\int_s^r \dd x_u \otimes \dd x_r \in V\otimes V,
+\end{equation}
+both integrals being ordinary Riemann--Stieltjes integrals. In coordinates,
+$\lev^{ij}_{s,t} = \int_s^t (x^i_r - x^i_s)\,\dot x^j_r\,\dd r$. The pair
+$\rpX_{s,t} := \bigl(1, X_{s,t}, \lev_{s,t}\bigr)$ takes values in $\Tone{2}(V)$.
+\end{example}
+
+Two features of \eqref{eq:smoothlift} will survive the passage to irregular paths, and one will not.
+The two that survive are an algebraic identity, developed in the next subsection, and an analytic
+bound. The one that does not is the following, which is worth isolating now.
+
+\begin{proposition}[The symmetric part is determined]\label{prop:symmetricpart}
+With the notation of Example \ref{ex:smoothlift},
+\begin{equation}\label{eq:symmetricpart}
+\Sym \lev_{s,t} \;:=\; \tfrac12\bigl(\lev_{s,t} + \lev_{s,t}^{\top}\bigr) \;=\; \tfrac12\,X_{s,t}\otimes X_{s,t}.
+\end{equation}
+\end{proposition}
+
+\textbf{\textit{Proof:}} In coordinates the claim is
+$\lev^{ij}_{s,t} + \lev^{ji}_{s,t} = X^i_{s,t}X^j_{s,t}$. Since $x$ is differentiable, the ordinary
+product rule gives
+\[
+\frac{\dd}{\dd r}\Bigl[ \bigl(x^i_r - x^i_s\bigr)\bigl(x^j_r-x^j_s\bigr) \Bigr]
+= \bigl(x^i_r-x^i_s\bigr)\dot x^j_r + \bigl(x^j_r-x^j_s\bigr)\dot x^i_r ,
+\]
+and integrating from $s$ to $t$, where the left-hand side vanishes at $r=s$, yields exactly the
+claim. \hfill $\blacksquare$
+
+\medskip
+
+So for a smooth path the symmetric part of the iterated integral carries no information beyond the
+increment itself: only the \emph{antisymmetric} part, the Lévy area
+\begin{equation}\label{eq:levyarea}
+A_{s,t} := \tfrac12\bigl(\lev_{s,t} - \lev^{\top}_{s,t}\bigr),
+\end{equation}
+is new. Geometrically $A^{ij}_{s,t}$ is the signed area enclosed between the chord joining
+$(x^i_s,x^j_s)$ to $(x^i_t,x^j_t)$ and the arc of the path between them --- precisely the quantity
+that Example \ref{ex:lyonscounterexample} showed to be invisible to uniform convergence. Whether
+\eqref{eq:symmetricpart} continues to hold once $x$ is no longer differentiable is exactly the
+distinction between the two classes of rough path introduced in Subsection \ref{subsec:typesofrp},
+and it is the precise mathematical location of the difference between Itô and Stratonovich calculus.
+
+\subsection{The Multiplicative Property}\label{subsec:multiplicative}
+
+The algebraic identity announced above is the following, and it is the axiom on which the entire
+theory rests.
+
+\begin{proposition}[Chen's relation for smooth paths]\label{prop:chensmooth}
+With the notation of Example \ref{ex:smoothlift}, for all $s \leq u \leq t$,
+\begin{equation}\label{eq:chen}
+\lev_{s,t} - \lev_{s,u} - \lev_{u,t} \;=\; X_{s,u}\otimes X_{u,t},
+\end{equation}
+equivalently $\rpX_{s,t} = \rpX_{s,u}\otimes\rpX_{u,t}$ in the group $\Tone{2}(V)$.
+\end{proposition}
+
+\textbf{\textit{Proof:}} Split the outer integral in \eqref{eq:smoothlift} at $u$:
+\[
+\lev_{s,t} = \int_s^u (x_r - x_s)\otimes \dd x_r + \int_u^t (x_r-x_s)\otimes \dd x_r
+= \lev_{s,u} + \int_u^t \bigl[(x_r - x_u) + (x_u - x_s)\bigr]\otimes \dd x_r .
+\]
+The first term of the bracket integrates to $\lev_{u,t}$. The second is constant in $r$, so it
+factors out of the integral, leaving $X_{s,u}\otimes\int_u^t \dd x_r = X_{s,u}\otimes X_{u,t}$. That
+the resulting three identities --- one at each level --- are precisely the statement
+$\rpX_{s,t} = \rpX_{s,u}\otimes\rpX_{u,t}$ is immediate from \eqref{eq:tensormultiplication}.
+\hfill $\blacksquare$
+
+\medskip
+
+Relation \eqref{eq:chen} is worth reading twice. At the first level it is the triviality
+$X_{s,t} = X_{s,u} + X_{u,t}$, the additivity of increments. At the second level it is a genuine
+constraint, and it says that $\lev$ is \emph{not} additive: concatenating two intervals produces a
+cross-term $X_{s,u}\otimes X_{u,t}$ which is the area contributed by the interaction of the two
+pieces. The relation is thus the algebraic residue of the additivity of integration, and it is what
+makes $\lev$ a coherent object rather than an arbitrary two-parameter function.
+
+\begin{notationbox}
+Throughout, $\lev$ is a function of \emph{two} time variables and is never a path. There is no
+``$\lev_t$''. This is not a notational accident: by \eqref{eq:chen} the increments of $\lev$ do not
+telescope, so no single-variable function generates it. The first level, by contrast, may be
+regarded either way, and we write $X_{s,t} = x_t - x_s$ when convenient.
+\end{notationbox}
+
+We can now give the central definition. From this point onwards we fix
+\begin{equation}\label{eq:alpharange}
+\alpha \in \bigl(\tfrac13, \tfrac12\bigr],
+\end{equation}
+a restriction whose necessity will become visible in Theorem \ref{thm:gubinelli} and which we
+discuss in Remark \ref{rem:whyonethird}.
+
+\begin{definition}[Rough path]\label{def:roughpath}
+An \textbf{$\alpha$-Hölder rough path} over $V$ is a pair $\rpX = (X,\lev)$ consisting of
+$X \in \Holder{\alpha}\bigl([0,\Mat],V\bigr)$ and a two-parameter function
+$\lev : \{0\leq s\leq t\leq \Mat\} \to V\otimes V$ such that:
+\begin{itemize}
+    \item[i)] (\textbf{Chen's relation}) for all $s\leq u\leq t$,
+    \begin{equation}\label{eq:chenaxiom}
+    \lev_{s,t} - \lev_{s,u} - \lev_{u,t} = X_{s,u}\otimes X_{u,t};
+    \end{equation}
+    \item[ii)] (\textbf{analytic bound}) the seminorms
+    \begin{equation}\label{eq:rpnorms}
+    \lVert X\rVert_{\alpha} := \sup_{s\neq t}\frac{|X_{s,t}|}{|t-s|^{\alpha}}, \qquad
+    \lVert \lev\rVert_{2\alpha} := \sup_{s\neq t}\frac{|\lev_{s,t}|}{|t-s|^{2\alpha}}
+    \end{equation}
+    are both finite.
+\end{itemize}
+We write $\rpX \in \RP{\alpha}\bigl([0,\Mat],V\bigr)$, abbreviated $\RP{\alpha}$, and set
+$\vertiii{\rpX}_{\alpha} := \lVert X\rVert_\alpha + \lVert\lev\rVert_{2\alpha}^{1/2}$.
+\end{definition}
+
+The exponent $2\alpha$ in \eqref{eq:rpnorms} is not a convention but a necessity: $\lev$ is
+formally a double integral of increments of size $|t-s|^\alpha$, so any object deserving the name
+must scale that way. Note also that the two conditions pull in opposite directions --- i) is
+algebraic and rigid, ii) is analytic and merely quantitative --- and that neither alone would
+suffice.
+
+\begin{definition}[The rough path metric]\label{def:rpmetric}
+For $\rpX = (X,\lev)$ and $\widetilde{\rpX} = (\widetilde X, \widetilde\lev)$ in $\RP{\alpha}$ set
+\begin{equation}\label{eq:rpmetric}
+\rpdist\bigl(\rpX,\widetilde{\rpX}\bigr) \;:=\; \bigl\lVert X - \widetilde X\bigr\rVert_{\alpha} \;+\; \bigl\lVert \lev - \widetilde\lev\bigr\rVert_{2\alpha}.
+\end{equation}
+\end{definition}
+
+\begin{remark}[$\RP{\alpha}$ is not a vector space]\label{rem:notvectorspace}
+The set of rough paths is closed under neither addition nor scalar multiplication, since
+\eqref{eq:chenaxiom} is quadratic in $X$: if $\rpX$ and $\widetilde\rpX$ satisfy it, their sum does
+not. It is a complete metric space under $\rpdist$, and a closed subset of the Banach space
+$\Holder{\alpha}\oplus \Holder{2\alpha}_2$ in which it naturally sits, but it is neither a linear
+space nor separable. The correct picture is a nonlinear ``fibre bundle'': over each $\alpha$-Hölder
+path $X$ sits the set of admissible second levels, which we now describe. See \cite[Ch.\ 2]{frizhairer2020}.
+\end{remark}
+
+\begin{proposition}[The lift is not unique]\label{prop:liftnotunique}
+Let $\rpX = (X,\lev) \in \RP{\alpha}$ and let $f : [0,\Mat] \to V\otimes V$ belong to
+$\Holder{2\alpha}$. Then $\widetilde\rpX := \bigl(X,\ \lev + \increment{f}\bigr)$, where
+$\increment{f}_{s,t} := f_t - f_s$, is again an element of $\RP{\alpha}$. Conversely, if
+$(X,\lev)$ and $(X,\widetilde\lev)$ both lie in $\RP{\alpha}$, then
+$\widetilde\lev - \lev = \increment{f}$ for some $f \in \Holder{2\alpha}$.
+\end{proposition}
+
+\textbf{\textit{Proof:}} For the first claim, note that increments telescope: $\increment{f}_{s,t} -
+\increment{f}_{s,u} - \increment{f}_{u,t} = 0$, so adding $\increment{f}$ to $\lev$ leaves
+\eqref{eq:chenaxiom} unchanged, while $\lVert\increment{f}\rVert_{2\alpha} = \lVert f\rVert_{2\alpha}
+< \infty$ preserves the bound. Conversely, set $\Delta_{s,t} := \widetilde\lev_{s,t} - \lev_{s,t}$.
+Subtracting the two instances of \eqref{eq:chenaxiom}, which share the same right-hand side because
+the first levels agree, gives $\Delta_{s,t} = \Delta_{s,u} + \Delta_{u,t}$ for all $s\leq u\leq t$.
+Taking $s=u$ shows $\Delta_{s,s}=0$, and then $f_t := \Delta_{0,t}$ satisfies
+$\increment{f}_{s,t} = \Delta_{0,t}-\Delta_{0,s} = \Delta_{s,t}$, with
+$\lVert f\rVert_{2\alpha} = \lVert\Delta\rVert_{2\alpha} < \infty$ by the triangle inequality.
+\hfill $\blacksquare$
+
+\medskip
+
+This is the single most important structural fact in the subject, and it should be dwelt on.
+\textbf{A rough path is not a path.} The second level is genuine additional data, undetermined by
+the trajectory, and the space of admissible choices over a fixed $X$ is an affine copy of
+$\Holder{2\alpha}$. The theory does not \emph{discover} $\lev$; it takes $\lev$ as given and
+proceeds. Different choices are different rough paths, and --- as Remark \ref{rem:integraldepends}
+will make precise --- they yield different integrals and different solutions to differential
+equations. Far from being a defect, this is what allows a single formalism to contain both the Itô
+and the Stratonovich calculus of Chapter \ref{ch:foundations} as special cases, distinguished by nothing
+other than the choice of $\lev$.
+
+\subsection{Types of Rough Paths}\label{subsec:typesofrp}
+
+Proposition \ref{prop:symmetricpart} held automatically for smooth paths. Promoting it to a
+definition isolates the class on which ordinary calculus survives.
+
+\begin{definition}[Geometric rough paths]\label{def:geometric}
+A rough path $\rpX = (X,\lev) \in \RP{\alpha}$ is \textbf{weakly geometric} if
+\begin{equation}\label{eq:weaklygeometric}
+\Sym\lev_{s,t} = \tfrac12\, X_{s,t}\otimes X_{s,t} \qquad \text{for all } s \leq t ,
+\end{equation}
+and \textbf{geometric} if it is the limit, in the metric $\rpdist$, of canonical lifts of smooth
+paths in the sense of Example \ref{ex:smoothlift}. We write $\RPwg{\alpha}$ and $\RPg{\alpha}$
+respectively.
+\end{definition}
+
+\begin{proposition}\label{prop:geometricinclusion}
+$\RPg{\alpha} \subseteq \RPwg{\alpha}$.
+\end{proposition}
+
+\textbf{\textit{Proof:}} Each canonical lift satisfies \eqref{eq:weaklygeometric} by Proposition
+\ref{prop:symmetricpart}. The condition is a closed one: if $\rpdist(\rpX^{(n)},\rpX)\to0$ then in
+particular $\lev^{(n)}_{s,t}\to\lev_{s,t}$ and $X^{(n)}_{s,t}\to X_{s,t}$ for each fixed pair $s,t$,
+and both sides of \eqref{eq:weaklygeometric} pass to the limit. \hfill $\blacksquare$
+
+\medskip
+
+The inclusion is strict, but only just, and for our purposes harmlessly: a weakly geometric
+$\alpha$-Hölder rough path is a geometric $\beta$-Hölder rough path for every $\beta<\alpha$, a
+result of Friz and Victoir \cite[Ch.\ 8]{frizvictoir2010}. Since our hypotheses always tolerate a
+slightly smaller exponent, we shall use the two notions interchangeably and say simply
+\emph{geometric}, flagging the distinction only where it does work.
+
+The content of \eqref{eq:weaklygeometric} is best seen through what it makes true. If $\rpX$ is
+geometric then the chain rule takes its classical form, with no second-order correction: geometric
+rough paths are exactly those for which the calculus is ordinary calculus. We are not yet in a
+position to say this precisely --- the statement involves an integral we have not built --- but it
+is proved as Proposition \ref{prop:roughchainrule} below, and the reader may wish to read that
+result as the true definition of ``geometric''. Non-geometric rough paths are those for which the
+calculus is not ordinary --- and the canonical example is one we have already met at length.
+
+\begin{example}[Brownian motion as a rough path]\label{ex:brownianroughpath}
+Let $W$ be a $d$-dimensional Brownian motion. Define, for $s\leq t$,
+\begin{equation}\label{eq:itolift}
+\levW^{\mathrm{It\hat o}}_{s,t} := \int_s^t \bigl(W_r - W_s\bigr)\otimes \dd W_r ,
+\end{equation}
+the integral being the Itô integral of Definition \ref{def:stochastic_integral}, and
+\begin{equation}\label{eq:stratlift}
+\levW^{\mathrm{Strat}}_{s,t} := \levW^{\mathrm{It\hat o}}_{s,t} + \tfrac12 (t-s)\,\mathrm{Id},
+\end{equation}
+where $\mathrm{Id} = \sum_i e_i \otimes e_i$. Then, for every $\alpha \in (\tfrac13,\tfrac12)$, both
+$\mathbf{W}^{\mathrm{It\hat o}} := (W,\levW^{\mathrm{It\hat o}})$ and
+$\mathbf{W}^{\mathrm{Strat}} := (W,\levW^{\mathrm{Strat}})$ are almost surely rough paths in the
+sense of Definition \ref{def:roughpath}. The second is geometric; the first is not.
+\end{example}
+
+\textbf{\textit{Proof:}} Chen's relation \eqref{eq:chenaxiom} for $\levW^{\mathrm{It\hat o}}$ is the
+computation of Proposition \ref{prop:chensmooth} verbatim, the splitting of the outer integral at
+$u$ and the extraction of the constant $W_u - W_s$ being valid for the Itô integral by linearity.
+For \eqref{eq:stratlift} it holds because the added term $\tfrac12(t-s)\mathrm{Id}$ is an increment
+and therefore telescopes, exactly as in Proposition \ref{prop:liftnotunique}. The analytic bound
+\eqref{eq:rpnorms} follows from the Itô isometry (Theorem \ref{thm:itoisometry}), which gives
+$\E\bigl[|\levW^{\mathrm{It\hat o}}_{s,t}|^2\bigr] \leq C|t-s|^2$, hence
+$\E\bigl[|\levW_{s,t}|^{2m}\bigr] \leq C_m |t-s|^{2m}$ by Gaussian hypercontractivity, followed by a
+two-parameter version of Kolmogorov's criterion; the details are in \cite[Ch.\ 3]{frizhairer2020}.
+
+For the geometric assertion, apply the Itô rule (Theorem \ref{theorem:itorule}) to the product
+$W^i_{s,t}W^j_{s,t}$ using the Itô multiplication table of Chapter \ref{ch:foundations}:
+\[
+W^i_{s,t}W^j_{s,t} = \int_s^t W^i_{s,r}\,\dd W^j_r + \int_s^t W^j_{s,r}\,\dd W^i_r + \delta_{ij}(t-s),
+\]
+the last term being $\langle W^i, W^j\rangle_{s,t}$ by Proposition \ref{prop:qvcoincide}. In tensor
+notation this reads $2\,\Sym\levW^{\mathrm{It\hat o}}_{s,t} = W_{s,t}\otimes W_{s,t} - (t-s)\mathrm{Id}$,
+so \eqref{eq:weaklygeometric} fails for the Itô lift by exactly $-\tfrac12(t-s)\mathrm{Id}$ --- and
+holds for the Stratonovich lift, which was defined by adding precisely that discrepancy back.
+\hfill $\blacksquare$
+
+\medskip
+
+The reader should pause over what has just happened. The Itô--Stratonovich correction of Chapter
+\ref{ch:foundations}, which appeared there as a consequence of the left-endpoint convention in the
+construction of the integral, has reappeared here as the difference between two \emph{elements of
+the same space} $\RP{\alpha}$, lying over the same first level and differing by the increment of
+$f_t = \tfrac12 t\,\mathrm{Id} \in \Holder{1} \subset \Holder{2\alpha}$. Proposition
+\ref{prop:liftnotunique} predicted that such pairs exist; Example \ref{ex:brownianroughpath} says
+that the two calculi of Part \ref{part:part1} are an instance. The choice between them is not
+forced by the trajectory. It never was.
+
+We turn to the process that motivated the chapter.
+
+\begin{theorem}[Coutin--Qian]\label{thm:fbmlift}
+Let $\BH$ be a $d$-dimensional fractional Brownian motion with $\Hurst \in (\tfrac13,\tfrac12]$ and
+independent components, and let $W^{\Hurst,(n)}$ denote its piecewise-linear interpolation over the
+dyadic partition of mesh $2^{-n}$, canonically lifted as in Example \ref{ex:smoothlift}. Then, for
+every $\alpha < \Hurst$, the lifts converge in probability in the metric $\rpdist$ to a limit
+$\boldsymbol{W}^{\Hurst} = \bigl(\BH,\lev^{\Hurst}\bigr) \in \RPg{\alpha}$, which is therefore a geometric
+rough path. \hfill $\blacksquare$
+\end{theorem}
+
+The result is due to Coutin and Qian \cite{coutinqian2002}; a modern proof, via the
+$\varrho$-variation of the covariance \eqref{eq:fbmcovariance}, is given in
+\cite[Ch.\ 10]{frizhairer2020}. The mechanism is instructive: one shows that
+$R_\Hurst$ has finite two-dimensional $\varrho$-variation with $\varrho = 1/(2\Hurst)$, and the
+construction requires $\varrho < \tfrac32$, which is exactly $\Hurst > \tfrac13$.
+
+\begin{remark}[The empirical exponent lies outside]\label{rem:H01outside}
+Theorem \ref{thm:fbmlift} covers $\Hurst > \tfrac13$; by admitting a third iterated integral --- a
+level we have deliberately excluded from Definition \ref{def:roughpath} --- the range extends to
+$\Hurst > \tfrac14$, and no further, since for $\Hurst \leq \tfrac14$ the piecewise-linear lifts
+fail to converge at all. The exponent $\Hurst \approx 0.1$ reported in Subsection \ref{subsec:roughvol} therefore lies
+outside the reach of the canonical construction, at any number of levels. The precise statement
+worth remembering is not that no lift exists --- non-canonical liftings of $\BH$ below $\tfrac14$
+have been constructed by other means --- but that no lift exists which is the limit of the
+piecewise-linear approximations. That is the property one actually needs: a lift that no
+discretisation converges to is a lift that cannot be simulated, cannot be estimated from data, and
+carries no guarantee that a numerical scheme is approximating it rather than something else. The
+obstruction is thus not an absence of objects but an absence of \emph{canonical} ones.
+
+This is not a gap in the exposition but a real boundary, and it would be dishonest to leave it
+unmarked. Section \ref{sec:beyond} says what lies beyond it. Two remarks temper the difficulty in
+the meantime. First, the model \eqref{eq:rfsv} is linear in $X$ and needs no integration theory for
+$\BH$; the rough integral is required for the \emph{pricing} equation, where the integrator is the
+Brownian motion driving the asset and $\Hurst$ does not enter the regularity of the integrator at
+all. Second, and more importantly for Chapter \ref{ch:applications}, the signature of Section
+\ref{sec:signature} is a transform of an \emph{observed} data stream, and observed data streams are
+piecewise linear. No lifting theorem is needed to compute it, and no value of $\Hurst$ obstructs it.
+\end{remark}
+
+\section{Fundamental Results}\label{sec:fundamentalresults}
+
+\subsection{Integration}\label{subsec:roughintegration}
+
+We now construct the integral. The strategy has three steps: an abstract lemma which converts local
+estimates into a global object; a class of admissible integrands; and the theorem that puts them
+together.
+
+\medskip
+
+\noindent\textbf{Step one: sewing.} Every construction of an integral in this dissertation has had
+the same shape --- propose a Riemann sum, show it converges. The following lemma, due in this form
+to Gubinelli, extracts the mechanism once and for all.
+
+\begin{lemma}[Sewing Lemma]\label{lem:sewing}
+Let $\beta > 1$ and let $\Xi : \{0 \leq s \leq t \leq \Mat\} \to \R^m$ be continuous with
+$\Xi_{t,t}=0$ and
+\begin{equation}\label{eq:sewinghypothesis}
+\bigl| \increment{\Xi}_{s,u,t} \bigr| \;\leq\; C\,|t-s|^{\beta}, \qquad \text{where }
+\increment{\Xi}_{s,u,t} := \Xi_{s,t} - \Xi_{s,u} - \Xi_{u,t},
+\end{equation}
+for all $s\leq u\leq t$. Then there exists a unique function $\mathcal{I}\Xi$, of the same two
+variables, which is \emph{additive} --- that is, $(\mathcal{I}\Xi)_{s,t} = (\mathcal{I}\Xi)_{s,u} +
+(\mathcal{I}\Xi)_{u,t}$ for all $s\leq u\leq t$ --- and satisfies
+\begin{equation}\label{eq:sewingconclusion}
+\bigl| (\mathcal{I}\Xi)_{s,t} - \Xi_{s,t} \bigr| \;\leq\; \frac{C}{1 - 2^{\,1-\beta}}\,|t-s|^{\beta}.
+\end{equation}
+Moreover $(\mathcal{I}\Xi)_{s,t} = \lim_{|\mathcal{P}|\to0}\sum_{[u,v]\in\mathcal{P}} \Xi_{u,v}$,
+the limit being over partitions $\mathcal{P}$ of $[s,t]$ with mesh tending to zero.
+\end{lemma}
+
+\textbf{\textit{Proof (uniqueness):}} Suppose $A$ and $\widetilde A$ are both additive and both
+satisfy \eqref{eq:sewingconclusion}, with constants $C_1$ and $C_2$. Then $D := A - \widetilde A$ is
+additive and $|D_{s,t}| \leq (C_1+C_2)|t-s|^\beta =: K|t-s|^\beta$. Fix $s<t$ and let
+$\mathcal{P}_n$ be the uniform partition of $[s,t]$ into $n$ pieces. Additivity gives
+\[
+|D_{s,t}| = \Bigl|\sum_{[u,v]\in\mathcal{P}_n} D_{u,v}\Bigr| \leq \sum_{[u,v]\in\mathcal{P}_n} K\,|v-u|^\beta
+= n \cdot K \Bigl(\frac{t-s}{n}\Bigr)^{\beta} = K\,|t-s|^{\beta}\,n^{1-\beta}.
+\]
+Since $\beta>1$ the right-hand side tends to $0$ as $n\to\infty$, so $D \equiv 0$. The existence
+half, which proceeds by dyadic refinement, is proved in Appendix \ref{app:proof:sewing}.
+\hfill $\blacksquare$
+
+\medskip
+
+The hypothesis \eqref{eq:sewinghypothesis} is the exact quantitative statement of ``$\Xi$ is almost
+additive'', and the conclusion is that an almost additive function is uniformly close to a unique
+genuinely additive one. The strictness of $\beta>1$ is what the counting argument above consumes,
+and it is not improvable: at $\beta=1$ the factor $n^{1-\beta}$ is $1$ and the argument collapses.
+Everything in this section is an application of the lemma with a specific $\Xi$, and the whole
+difficulty is arranging for $\beta>1$ to hold.
+
+\medskip
+
+\noindent\textbf{Step two: admissible integrands.} We cannot integrate an arbitrary path against
+$\rpX$; the integrand must be compatible with the integrator in a sense that Chapter \ref{ch:foundations}
+would have called adaptedness, but which is here entirely deterministic.
+
+\begin{definition}[Controlled rough path]\label{def:controlled}
+Let $\rpX = (X,\lev)\in\RP{\alpha}$. A pair $(Y,\Gub)$ of paths
+$Y \in \Holder{\alpha}([0,\Mat],W)$ and
+$\Gub \in \Holder{\alpha}\bigl([0,\Mat],\Lloc{V,W}\bigr)$ is a path \textbf{controlled by} $\rpX$ if
+the remainder defined by
+\begin{equation}\label{eq:controlleddef}
+R^{Y}_{s,t} \;:=\; Y_{s,t} - \Gub_s\,X_{s,t}, \qquad Y_{s,t} := Y_t - Y_s,
+\end{equation}
+satisfies $\lVert R^Y\rVert_{2\alpha} < \infty$. We write $(Y,\Gub) \in \Ctrl{X}$ and call $\Gub$
+the \textbf{Gubinelli derivative} of $Y$ with respect to $X$.
+\end{definition}
+
+Equation \eqref{eq:controlleddef} is a first-order Taylor expansion of $Y$ along $X$: the path $Y$
+is required to look, locally, like a linear image of $X$, with an error of order $2\alpha$ rather
+than the $\alpha$ that mere Hölder continuity would give. The pair $\bigl(\Ctrl{X}, \lVert\cdot\rVert\bigr)$
+with $\lVert (Y,\Gub)\rVert_{X,2\alpha} := \lVert \Gub\rVert_\alpha + \lVert R^Y\rVert_{2\alpha}$ is
+a Banach space once the initial values are fixed \cite[Ch.\ 4]{frizhairer2020}.
+
+\begin{remark}[$\Gub$ is data, not a derivative]\label{rem:gubinellinotunique}
+The notation $\Gub$ is suggestive but must not be taken literally: in general $\Gub$ is \emph{not}
+determined by $Y$ and $X$. If $X$ happens to be smooth, say $X_t = t$, then any $\Gub$ whatsoever
+satisfies \eqref{eq:controlleddef} with a remainder of the required order, since
+$\Gub_s X_{s,t} = O(|t-s|)$ is itself $2\alpha$-small when $2\alpha \leq 1$. Uniqueness holds only
+when $X$ is genuinely irregular --- ``truly rough'' in the terminology of \cite[Ch.\ 6]{frizhairer2020}
+--- which is the case almost surely for Brownian motion and for $\BH$. Like the second level $\lev$
+itself, $\Gub$ is part of the given data. The theory is consistently one in which one carries more
+information than the classical objects contain.
+\end{remark}
+
+\begin{example}\label{ex:controlledexamples}
+i) The integrator controls itself: $(X, \mathrm{Id}) \in \Ctrl{X}$, with $R^X \equiv 0$.
+
+ii) If $F \in \mathcal{C}^2_b(W,\widetilde W)$ and $(Y,\Gub) \in \Ctrl{X}$, then
+$\bigl(F(Y),\,DF(Y)\Gub\bigr) \in \Ctrl{X}$. Indeed, Taylor's theorem with integral remainder gives
+\[
+F(Y_t)-F(Y_s) = DF(Y_s)Y_{s,t} + O\bigl(|Y_{s,t}|^2\bigr)
+= DF(Y_s)\Gub_s X_{s,t} + DF(Y_s)R^Y_{s,t} + O\bigl(|t-s|^{2\alpha}\bigr),
+\]
+and the last two terms are both of order $2\alpha$. This closes the class under the nonlinearities
+that appear in differential equations, and is the reason Definition \ref{def:controlled} is the
+right one.
+\end{example}
+
+\medskip
+
+\noindent\textbf{Step three: the integral.} The naïve Riemann sum $\sum Y_u X_{u,v}$ does not
+converge: its defect is of order $|t-s|^{2\alpha}$, and $2\alpha \leq 1$, so Lemma \ref{lem:sewing}
+does not apply. The remedy is to add a second-order term, and the expansion \eqref{eq:controlleddef}
+tells us precisely which one.
+
+\begin{theorem}[Gubinelli]\label{thm:gubinelli}
+Let $\alpha \in (\tfrac13,\tfrac12]$, let $\rpX = (X,\lev)\in\RP{\alpha}$ and let
+$(Y,\Gub) \in \Ctrl{X}$. Then the \textbf{compensated Riemann sums}
+\begin{equation}\label{eq:roughintegral}
+\int_s^t Y_r\,\dd\rpX_r \;:=\; \lim_{|\mathcal{P}|\to0} \sum_{[u,v]\in\mathcal{P}} \Bigl( Y_u\,X_{u,v} \;+\; \Gub_u\,\lev_{u,v} \Bigr)
+\end{equation}
+converge, and the limit satisfies
+\begin{equation}\label{eq:roughintegralestimate}
+\biggl| \int_s^t Y_r\,\dd\rpX_r - Y_s X_{s,t} - \Gub_s \lev_{s,t} \biggr|
+\;\leq\; C\Bigl( \lVert X\rVert_\alpha \lVert R^Y\rVert_{2\alpha} + \lVert \lev\rVert_{2\alpha}\lVert \Gub\rVert_\alpha \Bigr)\,|t-s|^{3\alpha},
+\end{equation}
+for a constant $C = C(\alpha)$. Moreover the indefinite integral is itself controlled by $\rpX$:
+\begin{equation}\label{eq:integraliscontrolled}
+\Bigl( \int_0^{\cdot} Y_r\,\dd\rpX_r,\ Y \Bigr) \;\in\; \Ctrl{X}.
+\end{equation}
+\end{theorem}
+
+The proof, an application of Lemma \ref{lem:sewing} to
+$\Xi_{s,t} := Y_sX_{s,t} + \Gub_s\lev_{s,t}$, is given in Appendix \ref{app:proof:gubinelli}.
+
+\begin{remark}[Where $\alpha>\tfrac13$ comes from]\label{rem:whyonethird}
+The exponent $3\alpha$ in \eqref{eq:roughintegralestimate} is the whole story. Computing
+$\increment{\Xi}_{s,u,t}$ for the choice above, and using Chen's relation \eqref{eq:chenaxiom} to
+cancel the leading terms --- this is the computation in the appendix, and it is the only place
+where \eqref{eq:chenaxiom} is used --- one finds
+\begin{equation}\label{eq:xidefect}
+-\increment{\Xi}_{s,u,t} = R^{Y}_{s,u}X_{u,t} + \bigl(\Gub_u - \Gub_s\bigr)\lev_{u,t},
+\end{equation}
+whose two terms are of order $2\alpha + \alpha$ and $\alpha + 2\alpha$ respectively. So
+$\beta = 3\alpha$, and Lemma \ref{lem:sewing} demands $\beta > 1$, that is $\alpha > \tfrac13$.
+Below that threshold the second level no longer suffices and a third iterated integral must be
+carried; below $\tfrac14$, a fourth; and in general $\lfloor 1/\alpha\rfloor$ levels are required.
+We have restricted to \eqref{eq:alpharange} precisely to avoid the algebra that the general case
+demands, at no cost to the ideas.
+\end{remark}
+
+\begin{theorem}[Stability of the integral]\label{thm:integralstability}
+Fix $M<\infty$ and consider $\rpX,\widetilde\rpX \in \RP{\alpha}$ and $(Y,\Gub)\in\Ctrl{X}$,
+$(\widetilde Y,\widetilde\Gub)\in\Ctrl{\widetilde X}$, all of norm at most $M$. Then, with
+$C = C(M,\alpha)$,
+\begin{equation}\label{eq:integralstability}
+\Bigl\lVert \int_0^{\cdot} Y\,\dd\rpX - \int_0^{\cdot} \widetilde Y\,\dd\widetilde\rpX \Bigr\rVert_{\alpha}
+\;\leq\; C\Bigl( \rpdist\bigl(\rpX,\widetilde\rpX\bigr) + \bigl|Y_0 - \widetilde Y_0\bigr| + \bigl|\Gub_0 - \widetilde\Gub_0\bigr| + \lVert Y,\Gub;\widetilde Y,\widetilde \Gub\rVert \Bigr).
+\end{equation}
+\hfill $\blacksquare$
+\end{theorem}
+
+This is proved in \cite[Thm.\ 4.17]{frizhairer2020} by re-running the proof of Theorem
+\ref{thm:gubinelli} on differences. We record it because it, and not Theorem \ref{thm:gubinelli}
+itself, is what makes the continuity statement of Subsection \ref{subsec:ult} possible.
+
+The construction would be worthless if it disagreed with the theory of Part \ref{part:part1} where
+both apply. It does not.
+
+\begin{proposition}[Consistency]\label{prop:consistency}
+Let $W$ be a Brownian motion and let $F \in \mathcal{C}^3_b$. Then, almost surely,
+\begin{equation}\label{eq:consistency}
+\int_0^t F(W_r)\,\dd\mathbf{W}^{\mathrm{It\hat o}}_r = \int_0^t F(W_r)\,\dd W_r,
+\qquad
+\int_0^t F(W_r)\,\dd\mathbf{W}^{\mathrm{Strat}}_r = \int_0^t F(W_r)\circ \dd W_r,
+\end{equation}
+the right-hand sides being the Itô integral of Definition \ref{def:stochastic_integral} and the
+Stratonovich integral respectively. If $X$ is smooth, the rough integral against its canonical lift
+is the Riemann--Stieltjes integral. \hfill $\blacksquare$
+\end{proposition}
+
+See \cite[Ch.\ 5]{frizhairer2020}. The first identity is the one to appreciate: the left-hand side
+is a deterministic limit of Riemann sums, computed path by path with no reference to the filtration,
+and the right-hand side is an $L^2(\Om)$ limit that exists only up to null sets. That they agree
+means the Itô integral, for this class of integrands, admits a pathwise description after all --- at
+the price of carrying $\levW^{\mathrm{It\hat o}}$, an object which is itself defined only through
+Itô's construction. Rough path theory does not eliminate probability; it isolates it into a single
+step, performed once, after which everything is deterministic.
+
+\begin{remark}[The integral depends on the lift]\label{rem:integraldepends}
+
+We can now make precise the claim of Subsection \ref{subsec:typesofrp}, that geometric rough paths
+are those on which ordinary calculus survives. The following quantity measures the failure of
+\eqref{eq:weaklygeometric}, and turns out to be exactly the correction term in the chain rule.
+
+\end{remark}
+
+\begin{definition}[Bracket of a rough path]\label{def:bracket}
+For $\rpX = (X,\lev) \in \RP{\alpha}$ define
+\begin{equation}\label{eq:bracket}
+[\rpX]_t \;:=\; X_{0,t}\otimes X_{0,t} \;-\; 2\,\Sym\lev_{0,t} \;\in\; V\otimes V .
+\end{equation}
+\end{definition}
+
+\begin{lemma}\label{lem:bracketincrement}
+The bracket is a genuine path, in the sense that its increments are given by the corresponding
+two-parameter expression:
+\begin{equation}\label{eq:bracketincrement}
+[\rpX]_t - [\rpX]_s \;=\; X_{s,t}\otimes X_{s,t} - 2\,\Sym\lev_{s,t} ,
+\end{equation}
+and $[\rpX] \in \Holder{2\alpha}$.
+\end{lemma}
+
+\textbf{\textit{Proof:}} Expanding $X_{0,t} = X_{0,s}+X_{s,t}$ in the first term of
+\eqref{eq:bracket},
+\[
+X_{0,t}\otimes X_{0,t} - X_{0,s}\otimes X_{0,s}
+= X_{0,s}\otimes X_{s,t} + X_{s,t}\otimes X_{0,s} + X_{s,t}\otimes X_{s,t},
+\]
+while Chen's relation \eqref{eq:chenaxiom} gives
+$\lev_{0,t}-\lev_{0,s} = \lev_{s,t} + X_{0,s}\otimes X_{s,t}$, so that
+\[
+2\Sym\lev_{0,t} - 2\Sym\lev_{0,s} = 2\Sym\lev_{s,t} + X_{0,s}\otimes X_{s,t} + X_{s,t}\otimes X_{0,s}.
+\]
+Subtracting, the two cross terms cancel and \eqref{eq:bracketincrement} follows. The regularity is
+then immediate from Definition \ref{def:roughpath}, both terms on the right of
+\eqref{eq:bracketincrement} being of order $|t-s|^{2\alpha}$. \hfill $\blacksquare$
+
+\medskip
+
+By construction $\rpX$ is weakly geometric precisely when $[\rpX] \equiv 0$; Definition
+\ref{def:geometric} could equally well have been phrased that way.
+
+\begin{proposition}[Rough chain rule]\label{prop:roughchainrule}
+Let $\rpX = (X,\lev) \in \RP{\alpha}$ with $\alpha\in(\tfrac13,\tfrac12]$, and let
+$F \in \mathcal{C}^3_b(V,W)$. Then $\bigl(F(X), DF(X)\bigr) \in \Ctrl{X}$, the rough integral
+$\int_0^t DF(X_r)\,\dd\rpX_r$ is defined by Theorem \ref{thm:gubinelli}, and
+\begin{equation}\label{eq:roughchainrule}
+F(X_t) - F(X_0) \;=\; \int_0^t DF(X_r)\,\dd\rpX_r \;+\; \frac12\int_0^t D^2F(X_r)\,\dd[\rpX]_r ,
+\end{equation}
+the second integral being a Young integral, well defined since $D^2F(X)\in\Holder{\alpha}$,
+$[\rpX]\in\Holder{2\alpha}$ and $3\alpha>1$.
+
+In particular, if $\rpX$ is weakly geometric then $[\rpX]\equiv0$ and \eqref{eq:roughchainrule}
+reduces to the classical chain rule
+\begin{equation}\label{eq:classicalchainrule}
+F(X_t) - F(X_0) \;=\; \int_0^t DF(X_r)\,\dd\rpX_r .
+\end{equation}
+\hfill $\blacksquare$
+\end{proposition}
+
+A proof is in \cite[Ch.\ 7]{frizhairer2020}; the mechanism is a second-order Taylor expansion of
+$F$ along the partition, in which the symmetric part of $\lev$ is exactly what the quadratic term
+of the expansion produces, so that the two agree and cancel precisely when
+\eqref{eq:weaklygeometric} holds.
+
+The corollary is the one we have been aiming at since Subsection \ref{subsec:typesofrp}.
+
+\begin{corollary}[It\^o's formula]\label{cor:itoformula}
+Let $W$ be a $d$-dimensional Brownian motion and $F\in\mathcal{C}^3_b$. Applying
+\eqref{eq:roughchainrule} to the two lifts of Example \ref{ex:brownianroughpath}:
+\begin{itemize}
+    \item[i)] for $\mathbf{W}^{\mathrm{Strat}}$, which is geometric, one obtains
+    $F(W_t)-F(W_0) = \int_0^t DF(W_r)\circ\dd W_r$, the classical chain rule of Stratonovich
+    calculus;
+    \item[ii)] for $\mathbf{W}^{\mathrm{It\hat o}}$ one computes from \eqref{eq:bracketincrement}
+    and the identity $2\Sym\levW^{\mathrm{It\hat o}}_{s,t} = W_{s,t}\otimes W_{s,t} - (t-s)\mathrm{Id}$
+    established in Example \ref{ex:brownianroughpath} that
+    $[\mathbf{W}^{\mathrm{It\hat o}}]_t = t\,\mathrm{Id}$, whence
+    \begin{equation}\label{eq:itofromrough}
+    F(W_t)-F(W_0) = \int_0^t DF(W_r)\,\dd W_r + \frac12\int_0^t \Delta F(W_r)\,\dd r ,
+    \end{equation}
+    which is the case $\theta(t,x) = F(x)$, $X = W$ of Theorem \ref{theorem:itorule} of Chapter
+    \ref{ch:foundations}.
+\end{itemize}
+\end{corollary}
+
+The qualification matters, and the accounting is worth making explicit. Theorem
+\ref{theorem:itorule} covers $\theta(t,X_t)$ for a general Itô process and asks only that
+$\theta \in \mathcal{C}^{1,2}$; what we have recovered is the time-homogeneous case, driven by
+Brownian motion, under the stronger hypothesis $F \in \mathcal{C}^3_b$. The rough-path route is
+therefore not a strengthening of Itô's formula but a \emph{re-derivation of a special case of it on
+different foundations}, and the extra derivative is the price of those foundations, exactly as in
+Remark \ref{rem:c3}. What is bought in exchange is that \eqref{eq:itofromrough} now holds pathwise,
+for a fixed trajectory and its lift, with both sides continuous in the rough path metric --- neither
+of which the classical statement provides.
+
+\medskip
+
+It is worth being explicit about what has just been shown, because it is the cleanest summary of
+the chapter's thesis. In Chapter \ref{ch:foundations}, the second-order term of It\^o's formula arose from
+the non-vanishing quadratic variation of Brownian motion, and appeared as an irreducible feature of
+stochastic calculus --- the price of integrating against a martingale. Here it has arisen from the
+bracket \eqref{eq:bracket} of a particular \emph{lift}, and the Stratonovich lift of the same
+trajectory has no such term at all. The correction was never a property of Brownian motion. It was
+a property of a choice, made implicitly in Subsection \ref{subsec:itointegral} when the integrand
+was evaluated at the left endpoint of each subinterval, and made explicitly here by writing down
+$\levW^{\mathrm{It\hat o}}$ rather than $\levW^{\mathrm{Strat}}$.
+
+Let $\rpX = (X,\lev)$ and $\widetilde\rpX = (X, \lev + \increment{f})$ be two lifts of the same
+path, as in Proposition \ref{prop:liftnotunique}. Directly from \eqref{eq:roughintegral},
+\begin{equation}\label{eq:integraldifference}
+\int_s^t Y\,\dd\widetilde\rpX = \int_s^t Y\,\dd\rpX + \int_s^t \Gub_r\,\dd f_r ,
+\end{equation}
+the last integral existing in the Young sense since $\Gub \in \Holder{\alpha}$,
+$f\in\Holder{2\alpha}$ and $3\alpha>1$. Taking $f_t = \tfrac12 t\,\mathrm{Id}$ and $\Gub = DF(W)$
+recovers, by Example \ref{ex:brownianroughpath}, the classical relation
+$\int F(W)\circ\dd W = \int F(W)\,\dd W + \tfrac12\int F'(W)\,\dd r$ of Chapter \ref{ch:foundations}. The
+Itô--Stratonovich correction is thus not a feature of stochastic calculus at all: it is the general
+formula \eqref{eq:integraldifference} evaluated at a particular $f$.
 
 
-IDEA:
+\subsection{Differential Equations}\label{subsec:rdes}
 
-Series temporales y volatilidad: No nos vale con el movimiento browniano -> fractional brownian motion y principales modelos de tipo rough volatility
+With an integral in hand, differential equations are defined in the only way available: as integral
+equations. What requires care is that the unknown is now a \emph{pair}.
 
-siguiente sección: teoría de rough paths, con sus resultados fundamentales (integración, ecuaciones diferenciales, existencia, unicidad y continuidad) y la transformación de signature.
+\begin{definition}[Rough differential equation]\label{def:rde}
+Let $\rpX \in \RP{\alpha}$, let $\xi \in W$ and let $f : W \to \Lloc{V,W}$. A pair
+$(Y,\Gub) \in \Ctrl{X}$ is a \textbf{solution} of the rough differential equation
+\begin{equation}\label{eq:rde}
+\dd Y_t = f(Y_t)\,\dd\rpX_t, \qquad Y_0 = \xi,
+\end{equation}
+if $\Gub = f(Y)$ and, for every $t \in [0,\Mat]$,
+\begin{equation}\label{eq:rdeintegral}
+Y_t = \xi + \int_0^t f(Y_r)\,\dd\rpX_r ,
+\end{equation}
+the integral being that of Theorem \ref{thm:gubinelli}, which is well defined because
+$\bigl(f(Y), Df(Y)\Gub\bigr) \in \Ctrl{X}$ by Example \ref{ex:controlledexamples} ii).
+\end{definition}
 
-Capítulo siguiente y final: un primer ejemplo de calibración de una superficie de volatilidad implícita y  obtención de volatilidad local consistente, con una red neuronal que haga de interpolador (ESTO YA LO TENGO HECHO Y TESTEADO, AL 100\%)
+\begin{remark}[Why $\Gub = f(Y)$ is imposed]\label{rem:whygubisf}
+The constraint is not cosmetic; without it uniqueness fails outright. Consider $X\in\Holder{1}$
+lifted canonically, so that $|X_{s,t}| \lesssim |t-s|$. Then for \emph{any} choice of $\Gub$ the
+term $\Gub_s X_{s,t}$ is $O(|t-s|)$ and can be absorbed into a $2\alpha$-remainder, so every $\Gub$
+makes $(Y,\Gub)$ controlled and \eqref{eq:rdeintegral} carries no information about it. Requiring
+$\Gub = f(Y)$ pins the derivative to the equation and restores well-posedness. The reader may
+compare Definition \ref{def:sdesolution}, where the analogous role is played by the requirement
+that the solution be adapted.
+\end{remark}
 
-Calibración de una serie histórica de algún tipo o algo semejante para 
+There is an equivalent formulation, due to Davie, which dispenses with controlled paths entirely
+and which is the one a numerical analyst would write down.
 
-\section{Rough Paths}
+\begin{proposition}[Davie's formulation]\label{prop:davie}
+A path $Y \in \Holder{\alpha}$ solves \eqref{eq:rde} in the sense of Definition \ref{def:rde} if and
+only if
+\begin{equation}\label{eq:davie}
+Y_{s,t} \;=\; f(Y_s)\,X_{s,t} \;+\; Df(Y_s)f(Y_s)\,\lev_{s,t} \;+\; o\bigl(|t-s|\bigr)
+\end{equation}
+uniformly in $s\leq t$. \hfill $\blacksquare$
+\end{proposition}
 
-\subsection{Tensor Spaces}
+The proof is in \cite[Prop.\ 8.8]{frizhairer2020}. Expression \eqref{eq:davie} is worth recognising:
+truncated after the first term it is the Euler scheme, and as it stands it is the \emph{Milstein
+scheme}, with $\lev_{s,t}$ playing the role of the iterated integral that the Milstein correction
+requires. Rough path theory therefore does not merely license the numerical schemes used in
+practice; it identifies the object those schemes were always approximating, and Theorem
+\ref{thm:ult} will supply their convergence. We shall use this in Chapter \ref{ch:applications}.
 
-\subsection{Multiplicative Property}
+\subsection{Existence}\label{subsec:rdeexistence}
 
-\subsection{Types of Rough Paths}
+\begin{theorem}[Local existence and uniqueness]\label{thm:rdeexistence}
+Let $\alpha\in(\tfrac13,\tfrac12]$, let $\rpX \in \RP{\alpha}([0,\Mat],V)$ and let
+$f \in \mathcal{C}^3_b\bigl(W,\Lloc{V,W}\bigr)$. Then for every $\xi \in W$ there exist
+$\Mat_0 \in (0,\Mat]$ and a unique $(Y,\Gub) \in \Ctrl{X}$ on $[0,\Mat_0]$ solving \eqref{eq:rde}.
+The time $\Mat_0$ depends only on $\alpha$, $\lVert f\rVert_{\mathcal{C}^3_b}$ and
+$\vertiii{\rpX}_\alpha$, and \emph{not} on $\xi$; consequently the solution extends to a unique
+global solution on $[0,\Mat]$.
+\end{theorem}
 
-\section{Fundamental Results}
+The proof is given in Appendix \ref{app:proof:rdeexistence}. Because the mechanism matters more
+than the estimates, we describe its shape here.
 
-\subsection{Integration}
+One defines the map
+\begin{equation}\label{eq:picardmap}
+\mathcal{M}(Y,\Gub) \;:=\; \Bigl( \xi + \int_0^{\cdot} f(Y_r)\,\dd\rpX_r,\ f(Y) \Bigr)
+\end{equation}
+on the Banach space $\Ctrl{X}$, whose fixed points are by Definition \ref{def:rde} exactly the
+solutions. One then shows that $\mathcal{M}$ maps a suitable closed ball into itself and is a
+contraction on it, provided the time horizon is small; the Banach fixed point theorem does the rest.
+This is precisely the Picard iteration by which Theorem \ref{thm:sdeexistence} was proved in Chapter
+\ref{ch:foundations}, and the analogy is exact --- but the argument is now entirely deterministic, and
+takes place in the space of controlled paths rather than in $L^2(\Om)$.
 
-\subsection{Differential Equations}
+The contraction factor comes from the horizon. Every estimate in Theorem \ref{thm:gubinelli} carries
+a factor $\Mat_0^{\,\alpha}$ when restricted to $[0,\Mat_0]$, and choosing $\Mat_0$ small makes that
+factor as small as desired. The subtle point --- and the reason the theorem is stated as it is --- is
+that the admissible $\Mat_0$ must be \emph{independent of the initial condition}, since otherwise the
+successive restarts used to reach $\Mat$ might have horizons shrinking to zero and the solution would
+fail to be global. That independence is secured by the fact, visible in \eqref{eq:roughintegralestimate},
+that the estimates involve $\lVert \Gub\rVert_\alpha$ and $\lVert R^Y\rVert_{2\alpha}$ but never
+$|Y_0|$, together with the boundedness of $f$. With $\Mat_0$ uniform, one solves on $[0,\Mat_0]$,
+restarts at $Y_{\Mat_0}$, and repeats finitely often.
 
-\subsection{Existence}
+\begin{remark}[On the regularity of $f$]\label{rem:c3}
+Three bounded derivatives are required, one more than the two that Example
+\ref{ex:controlledexamples} ii) needs to make $f(Y)$ controlled. The extra derivative is spent on
+the contraction estimate, where one must compare $f(Y)$ with $f(\widetilde Y)$ \emph{as controlled
+paths}, which involves $Df$ and its Lipschitz constant. This is the analogue of the Lipschitz
+hypothesis in Definition \ref{def:lipschitzgrowth}; that a rougher driver should demand a smoother
+coefficient is the recurring trade of this subject. Without boundedness one still obtains a maximal
+solution, which may explode in finite time exactly as in the ODE case.
+\end{remark}
 
-\subsection{Uniqueness and Continuity}
+\subsection{Uniqueness and Continuity}\label{subsec:ult}
 
-\section{Signature Transformation}
+We arrive at the theorem for which the whole apparatus was built. It answers the question raised in
+Subsection \ref{subsec:whatfails}, and it answers it affirmatively.
 
-\
+\begin{theorem}[Universal Limit Theorem; continuity of the Itô--Lyons map]\label{thm:ult}
+Let $\alpha \in (\tfrac13,\tfrac12]$ and $f \in \mathcal{C}^3_b$. For $\rpX \in \RP{\alpha}$ and
+$\xi \in W$ let $\Phi(\xi,\rpX) := Y$ denote the unique solution of \eqref{eq:rde} given by Theorem
+\ref{thm:rdeexistence}. Then $\Phi$ is \emph{locally Lipschitz continuous}: for every $M<\infty$
+there is $C = C(M,\alpha,f)$ such that, whenever
+$\vertiii{\rpX}_\alpha, \vertiii{\widetilde\rpX}_\alpha \leq M$,
+\begin{equation}\label{eq:ult}
+\bigl\lVert \Phi(\xi,\rpX) - \Phi(\widetilde\xi,\widetilde\rpX) \bigr\rVert_{\alpha}
+\;\leq\; C\Bigl( \bigl|\xi - \widetilde\xi\bigr| \;+\; \rpdist\bigl(\rpX,\widetilde\rpX\bigr) \Bigr).
+\end{equation}
+\end{theorem}
 
-%\section{Regularity Structures (?)}
+The proof is given in Appendix \ref{app:proof:ult}; it combines the stability of rough integration
+(Theorem \ref{thm:integralstability}) with the stability of composition, applied to the fixed point
+characterisation \eqref{eq:picardmap}.
+
+\medskip
+
+The significance of \eqref{eq:ult} is best measured against what Part \ref{part:part1} could say.
+There, the solution of an SDE was produced as an equivalence class of random variables, obtained
+through an $L^2(\Om)$ limit; the map from the driving Brownian path to the solution path existed
+only as a measurable map defined up to null sets, and Example \ref{ex:lyonscounterexample} showed
+that it could not be continuous in the uniform topology. Theorem \ref{thm:ult} says that once the
+driving signal is \emph{enhanced} --- once we carry $\lev$ alongside $X$ and measure distance with
+$\rpdist$ --- the solution map becomes not merely continuous but locally Lipschitz, and entirely
+deterministic. All the probability in the theory of stochastic differential equations has been
+compressed into the single measurable step of constructing $\levW$, performed once in Example
+\ref{ex:brownianroughpath}. Everything downstream of it is analysis.
+
+Three consequences deserve mention.
+
+\begin{corollary}[Wong--Zakai]\label{cor:wongzakai}
+Let $W$ be a Brownian motion, $W^{(n)}$ its piecewise-linear interpolation over a partition of mesh
+tending to zero, and let $Y^{(n)}$ solve the ordinary differential equation
+$\dd Y^{(n)} = f(Y^{(n)})\,\dd W^{(n)}$. Then $Y^{(n)}$ converges, almost surely and in
+$\alpha$-Hölder norm, to the solution of the \emph{Stratonovich} equation
+$\dd Y = f(Y)\circ \dd W$. \hfill $\blacksquare$
+\end{corollary}
+
+\textbf{\textit{Proof:}} The canonical lifts of $W^{(n)}$ converge in $\rpdist$ to
+$\mathbf{W}^{\mathrm{Strat}}$ --- this is the content of \cite[Ch.\ 3]{frizhairer2020}, and the
+Stratonovich rather than the Itô lift appears because each $W^{(n)}$ is smooth, hence its lift is
+geometric, hence so is the limit by Proposition \ref{prop:geometricinclusion}. Theorem
+\ref{thm:ult} then transfers the convergence to the solutions, and Proposition
+\ref{prop:consistency} identifies the limit. \hfill $\blacksquare$
+
+\medskip
+
+This is a genuinely non-trivial classical theorem, and here it is a two-line corollary. It also
+explains the phenomenon that made it famous: approximating Brownian motion by smooth paths and
+solving the resulting ODEs does \emph{not} converge to the Itô solution, because the lifts converge
+to the geometric one. In the language of this chapter, the limit remembers the area, and the area of
+a smooth approximation is the Stratonovich one.
+
+Second, Theorem \ref{thm:ult} makes numerical analysis possible. The Milstein scheme
+\eqref{eq:davie} converges because the map is continuous, and the rate is controlled by
+\eqref{eq:ult}; no such argument is available within Itô theory, where discretisation error must be
+estimated afresh in $L^2(\Om)$ for each scheme.
+
+Third --- and this is the reason the theory is called \emph{universal} --- nothing in Theorem
+\ref{thm:ult} refers to Brownian motion, to a filtration, or to a probability measure. Any process
+that can be lifted to $\RP{\alpha}$ inherits the entire theory at once: fractional Brownian motion
+for $\Hurst>\tfrac13$ by Theorem \ref{thm:fbmlift}, Gaussian processes with sufficiently regular
+covariance, Markov processes, and the piecewise-linear paths formed from observed data. The
+existence, uniqueness and continuity results of this section were obtained \emph{once}, and they
+apply to all of them.
+
+\section{The Signature Transform}\label{sec:signature}
+
+The rough paths of Definition \ref{def:roughpath} carry two levels because two are what an
+$\alpha \in (\tfrac13,\tfrac12]$ integrand requires. Nothing prevents us from carrying more, and if
+we carry all of them we obtain an object of independent interest, and the one that will drive the
+applications of Chapter \ref{ch:applications}.
+
+\begin{theorem}[Lyons' extension theorem]\label{thm:lyonsextension}
+Let $\rpX = (X,\lev) \in \RP{\alpha}$ with $\alpha \in (\tfrac13,\tfrac12]$. Then there is a unique
+extension of $\rpX$ to a family
+$\bigl(1, X^1_{s,t}, X^2_{s,t}, X^3_{s,t},\dots\bigr)$, with $X^1 = X$, $X^2 = \lev$ and
+$X^n_{s,t} \in V^{\otimes n}$, which satisfies Chen's relation at every level,
+\begin{equation}\label{eq:chenalllevels}
+X^{n}_{s,t} = \sum_{k=0}^{n} X^{k}_{s,u}\otimes X^{n-k}_{u,t}, \qquad s\leq u\leq t,
+\end{equation}
+and the bounds $|X^n_{s,t}| \leq C_n\,|t-s|^{n\alpha}$ for every $n$. \hfill $\blacksquare$
+\end{theorem}
+
+The theorem is Lyons' \cite{lyons1998}; see also \cite[Ch.\ 3]{geng2021}. Its content is that the
+higher levels are \emph{not} additional data: once two are given, the rest are determined, and
+determined by a construction which is again an instance of the sewing lemma. This is the precise
+sense in which Definition \ref{def:roughpath} loses nothing by truncating.
+
+\begin{definition}[Signature]\label{def:signature}
+The \textbf{signature} of a rough path $\rpX$ over $[0,\Mat]$ is the full collection of its iterated
+integrals over the whole interval,
+\begin{equation}\label{eq:signature}
+\Sig(\rpX) \;:=\; \bigl(1,\ X^1_{0,\Mat},\ X^2_{0,\Mat},\ X^3_{0,\Mat},\ \dots\bigr),
+\end{equation}
+and its \textbf{truncation at level $N$}, written $\Sig^N(\rpX)$, is the finite collection
+$\bigl(1, X^1_{0,\Mat},\dots,X^N_{0,\Mat}\bigr) \in \Tens{N}(V)$. For a path $x$ of bounded
+variation these are the ordinary iterated integrals
+\begin{equation}\label{eq:signaturesmooth}
+X^n_{0,\Mat} = \int_{0<t_1<\cdots<t_n<\Mat} \dd x_{t_1}\otimes\cdots\otimes \dd x_{t_n}.
+\end{equation}
+\end{definition}
+
+\begin{example}\label{ex:signatureonedim}
+For $d=1$ the tensor products are ordinary products and \eqref{eq:signaturesmooth} evaluates to
+$X^n_{0,\Mat} = (x_\Mat - x_0)^n/n!$, independently of the trajectory. The signature of a scalar
+path is therefore $\exp(x_\Mat - x_0)$ and carries no information beyond the total increment. All
+the content of the transform lies in the non-commutativity of $\otimes$, which is to say in
+dimension $d\geq2$.
+\end{example}
+
+Three properties make the signature useful, and they are worth stating separately because each
+answers a different practical objection.
+
+\begin{proposition}[Factorial decay]\label{prop:factorialdecay}
+For a path $x$ of bounded variation with total variation $L := V_1(x)_\Mat$,
+\begin{equation}\label{eq:factorialdecay}
+\bigl| X^n_{0,\Mat} \bigr| \;\leq\; \frac{L^n}{n!} .
+\end{equation}
+\end{proposition}
+
+\textbf{\textit{Proof:}} Bounding \eqref{eq:signaturesmooth} termwise, the integrand has modulus at
+most $|\dd x_{t_1}|\cdots|\dd x_{t_n}|$, and the domain of integration is the simplex
+$0<t_1<\cdots<t_n<\Mat$, which is the $1/n!$ fraction of the cube on which the unrestricted product
+integrates to $L^n$. \hfill $\blacksquare$
+
+\medskip
+
+The estimate answers the objection that \eqref{eq:signature} is an infinite object: the terms decay
+factorially, so a truncation at modest $N$ --- in practice $N \in \{3,4,5\}$ --- retains almost all
+of the information. This is what makes $\Sig^N$ a usable feature set.
+
+\begin{proposition}[Shuffle product and linearisation]\label{prop:shuffle}
+Let $\rpX$ be geometric. Then for any two words $I = (i_1,\dots,i_m)$ and $J = (j_1,\dots,j_n)$ in
+the letters $\{1,\dots,d\}$,
+\begin{equation}\label{eq:shuffle}
+X^{m;I}_{0,\Mat}\cdot X^{n;J}_{0,\Mat} \;=\; \sum_{K \,\in\, I \shuffle J} X^{m+n;K}_{0,\Mat},
+\end{equation}
+the sum being over all $\binom{m+n}{m}$ interleavings of $I$ and $J$ preserving the internal order
+of each. \hfill $\blacksquare$
+\end{proposition}
+
+Relation \eqref{eq:shuffle} --- the \emph{shuffle product formula}, proved in \cite[Lem.\ 1.15]{geng2021}
+by splitting the product of two simplices into the disjoint union of the simplices indexed by the
+shuffles --- has a consequence out of all proportion to its appearance. It says that the product of
+two coordinates of the signature is a \emph{linear combination} of other coordinates. Hence every
+polynomial in the entries of $\Sig(\rpX)$ is again a linear functional of $\Sig(\rpX)$, and any
+continuous functional of the path can be approximated, by Stone--Weierstrass, by a \emph{linear}
+functional of its signature. A nonlinear problem on path space becomes a linear problem on signature
+space. This is the theoretical basis for the use of signatures as features in statistical learning,
+and Chapter \ref{ch:applications} will exploit it directly; see \cite{chevyrevkormilitzin2016} and \cite{levinlyonsni2013}.
+
+It remains to be shown that nothing is lost.
+
+\begin{definition}[Tree-like paths]\label{def:treelike}
+A \emph{real tree} is a metric space in which any two points are joined by a unique
+non-self-intersecting path, which is moreover a geodesic. A continuous path $x:[0,\Mat]\to V$ is
+\textbf{tree-like} if there exist a real tree $\mathcal{T}$ and continuous maps
+$\phi : [0,\Mat]\to\mathcal{T}$ and $\psi:\mathcal{T}\to V$ with $\phi(0)=\phi(\Mat)$ and
+$x = \psi\circ\phi$. A path is \textbf{tree-reduced} if it contains no tree-like piece.
+\end{definition}
+
+Informally, a tree-like path is one that retraces its own steps and thereby cancels itself: it goes
+out along some route and returns along the same route, enclosing no area. Such excursions contribute
+nothing to any iterated integral, and the following theorem says that they are the \emph{only} thing
+the signature forgets.
+
+\begin{theorem}[Uniqueness of the signature]\label{thm:signatureuniqueness}
+Let $\rpX$ be a weakly geometric rough path. Then $\Sig(\rpX) = \mathbf{1}$ if and only if
+$t\mapsto X_{0,t}$ is tree-like. Consequently two weakly geometric rough paths have the same
+signature if and only if they coincide up to tree-like pieces. \hfill $\blacksquare$
+\end{theorem}
+
+The bounded-variation case is due to Hambly and Lyons \cite{hamblylyons2010}; the extension to rough
+paths is due to Boedihardjo, Geng, Lyons and Yang \cite{boedihardjo2016}. A sketch of the argument,
+which proceeds by showing that the space of signatures is itself a real tree, is in
+\cite[§4.3]{geng2021}.
+
+\medskip
+
+We can now close a loop opened in Chapter \ref{ch:foundations}. There, discussing the log-normal
+distribution, we observed that a probability law need not be determined by its moments --- Heyde's
+construction, recorded in Appendix \ref{app:heyde}, exhibits distinct densities sharing every
+moment with the log-normal --- and remarked that ``knowing every moment of an object is strictly
+weaker than knowing the object'', promising that for \emph{paths} the analogous statement could be
+made to go the right way. Theorem \ref{thm:signatureuniqueness} is that statement. The iterated
+integrals are the moments of a path; unlike the moments of a random variable, they determine it,
+and the only ambiguity is the geometrically trivial one of tree-like excursions, which can be
+removed outright by the standard device of \emph{time augmentation} --- replacing $x_t$ by
+$(t, x_t)$, whose first coordinate is strictly increasing and which therefore admits no tree-like
+piece at all. The same device removes the invariance of \eqref{eq:signaturesmooth} under
+reparametrisation, which is otherwise a genuine loss of information whenever the speed at which a
+path is traversed carries meaning --- as it does, emphatically, for a price series.
+
+The analogy can in fact be pushed one step further, and it is worth doing so, because the promise
+made in Chapter \ref{ch:foundations} was about \emph{laws} and Theorem \ref{thm:signatureuniqueness} is
+about a fixed path. The statement that genuinely corresponds to ``the moments determine the
+distribution'' is obtained by averaging.
+
+\begin{definition}[Expected signature]\label{def:expectedsignature}
+Let $\rpX$ be a random geometric rough path, that is, a random variable with values in
+$\RPg{\alpha}([0,\Mat],V)$. Its \textbf{expected signature} is the element of $T((V))$ obtained by
+averaging the signature level by level,
+\begin{equation}\label{eq:expectedsignature}
+\E\bigl[\Sig(\rpX)\bigr] \;=\; \Bigl(1,\ \E\bigl[X^1_{0,\Mat}\bigr],\ \E\bigl[X^2_{0,\Mat}\bigr],\ \dots\Bigr),
+\end{equation}
+whenever each expectation exists.
+\end{definition}
+
+\begin{theorem}[Chevyrev--Lyons]\label{thm:expectedsignature}
+Let $\rpX$ be a random geometric rough path whose expected signature \eqref{eq:expectedsignature}
+has infinite radius of convergence, in the sense that
+$\sum_{n\geq0}\lambda^{n}\,\bigl|\E[X^n_{0,\Mat}]\bigr| < \infty$ for every $\lambda>0$. Then
+$\E[\Sig(\rpX)]$ determines the law of $\rpX$, up to the tree-like equivalence of Theorem
+\ref{thm:signatureuniqueness}. \hfill $\blacksquare$
+\end{theorem}
+
+The result is due to Chevyrev and Lyons \cite{chevyrevlyons2016}. It is the precise analogue, for
+measures on path space, of the elementary fact that a compactly supported law on $\R$ is determined
+by its moment sequence --- and the growth hypothesis plays exactly the role that Carleman's condition
+played in Chapter \ref{ch:foundations}. The parallel is worth stating in full, since it closes the loop
+opened there on the nose rather than approximately:
+
+\begin{center}
+\begin{tabular}{@{}p{0.44\linewidth}p{0.44\linewidth}@{}}
+\hline
+\textbf{Random variables (Ch.\ \ref{ch:foundations})} & \textbf{Paths (this chapter)} \\
+\hline
+moments $\E[X^k]$ & iterated integrals $X^n_{0,\Mat}$ \\
+moment generating function & signature $\Sig(\rpX)$ \\
+Carleman's condition $\sum_k m_{2k}^{-1/2k}=\infty$ & infinite radius of convergence of $\E[\Sig(\rpX)]$ \\
+\emph{fails} for the log-normal (App.\ \ref{app:heyde}) & holds for a wide class, including Brownian motion on a bounded interval \\
+\hline
+\end{tabular}
+\end{center}
+
+The log-normal law of Chapter \ref{ch:foundations} was not determined by its moments because those moments
+grew as $e^{k^2\sigma^2/2}$, too fast for Carleman. The signature, by contrast, decays factorially
+(Proposition \ref{prop:factorialdecay}), so the corresponding series converges for every $\lambda$
+whenever the path length has enough integrability, and the hypothesis of Theorem
+\ref{thm:expectedsignature} is satisfied rather than violated. That is the sense in which, for
+paths, the analogous statement goes the right way.
+
+\begin{remark}[Why this matters for calibration]\label{rem:signaturecalibration}
+The three results above are what make the signature usable as a feature map for path-dependent
+problems. Theorem \ref{thm:signatureuniqueness} guarantees that no information is discarded by the
+transform; Proposition \ref{prop:factorialdecay} guarantees that truncation is cheap; Proposition
+\ref{prop:shuffle} guarantees that any continuous functional of the path is, to arbitrary accuracy,
+a \emph{linear} functional of the truncated signature, so that a learning problem on path space
+becomes a regression. And, as noted in Remark \ref{rem:H01outside}, none of the three requires a
+lifting theorem: an observed data stream, joined by line segments, is a bounded-variation path, and
+\eqref{eq:signaturesmooth} applies to it directly, whatever the regularity of the process it
+samples. We do not pursue signature-based calibration in this dissertation --- Chapter
+\ref{ch:applications} takes a different route --- but we record the transform here because it is the point
+at which rough path theory becomes a practical tool rather than a structural one, and because it is
+the natural direction in which the present work extends.
+\end{remark}
+
+
+
+\section{Rough Volatility Models}\label{sec:roughvolmodels}
+
+Subsection \ref{subsec:roughvol} recorded the empirical finding and wrote down the RFSV model
+\eqref{eq:rfsv}, which is the natural time-series description of a rough log-volatility. For
+pricing one wants something else: a model specified directly under the pricing measure, rich enough
+to fit an implied volatility surface, and tractable enough to be calibrated. The model that meets
+these requirements is the one that pays the debt incurred in Subsection \ref{subsec:stochvol}, where
+the affine structure of the Heston model was described as ``a structural property rather than a
+happy accident'' and its rough generalisation promised.
+
+\begin{definition}[Rough Heston]\label{def:roughheston}
+Let $\Hurst\in(0,\tfrac12)$ and set $\alpha_{\Hurst} := \Hurst + \tfrac12 \in (\tfrac12,1)$. The
+\textbf{rough Heston model} is
+\begin{equation}\label{eq:roughheston}
+\begin{cases}
+\dd \Spot_t = (\rf-\divy)\,\Spot_t\,\dd t + \sqrt{v_t}\,\Spot_t\,\dd \Wt^{\Spot}_t, \\[4pt]
+\displaystyle v_t = v_0 + \frac{1}{\Gamma(\alpha_\Hurst)}\int_0^t (t-s)^{\alpha_\Hurst-1}
+\Bigl[ \kappa(\theta - v_s)\,\dd s + \xi\sqrt{v_s}\,\dd \Wt^{v}_s \Bigr],
+\end{cases}
+\end{equation}
+with $\dd\langle \Wt^{\Spot},\Wt^{v}\rangle_t = \rho\,\dd t$ in the sense of Definition
+\ref{def:correlatedbm}.
+\end{definition}
+
+Setting $\alpha_\Hurst = 1$, that is $\Hurst = \tfrac12$, collapses the convolution kernel to a
+constant and recovers the classical Heston system \eqref{eq:heston} exactly. For
+$\alpha_\Hurst<1$ the kernel $(t-s)^{\alpha_\Hurst-1}$ is singular at $s=t$, and it is this
+singularity --- a fractional integral of order $\alpha_\Hurst$ --- that roughens the variance
+path to H\"older regularity $\Hurst^{-}$, in accordance with Proposition \ref{prop:fbmproperties} c).
+
+Two structural consequences follow immediately, and they pull in opposite directions.
+
+The first is a loss. The convolution in \eqref{eq:roughheston} makes $v_t$ depend on the entire
+history of $\Wt^v$ and not merely on $v_s$, so \textbf{the variance process is no longer Markov},
+and neither is the pair $(\Spot,v)$. Every tool of Subsection \ref{section:itoDiff} therefore
+becomes unavailable at once: there is no infinitesimal generator, no Kolmogorov equation, no
+Feynman--Kac representation. This is precisely the failure anticipated at the end of that
+subsection, where the semigroup identity $P_{t+s} = P_t\circ P_s$ was described as a restatement of
+the Markov property and as ``the first of the three approaches to fail'' under memory. It has now
+failed.
+
+The second is a survival, and it is what makes the model usable. The \emph{affine} structure ---
+the fact that the drift and the squared diffusion coefficient are affine in $v$ --- is untouched by
+the convolution. Affineness was what produced the Riccati system \eqref{eq:hestonriccati} in the
+classical case, and it produces its analogue here.
+
+\begin{theorem}[El Euch--Rosenbaum]\label{thm:roughhestoncf}
+Let $\Fwd$ denote the forward price and write $\tau = T-t$. Under \eqref{eq:roughheston} the
+characteristic function of the centred log-forward is
+\begin{equation}\label{eq:roughhestoncf}
+\charf(u,\tau) \;=\; \Ep{\QQ}\Bigl[ \exp\Bigl(iu \log\tfrac{\Fwd_T}{\Fwd_t}\Bigr)\,\Big|\,\Ft \Bigr]
+\;=\; \exp\Bigl( \kappa\theta \int_0^{\tau}\psi(u,s)\,\dd s \;+\; v_t\, I^{1-\alpha_\Hurst}\psi(u,\tau) \Bigr),
+\end{equation}
+where $I^{1-\alpha_\Hurst}$ denotes the Riemann--Liouville fractional integral of order
+$1-\alpha_\Hurst$ and $\psi(u,\cdot)$ is the unique continuous solution of the \textbf{fractional
+Riccati equation}
+\begin{equation}\label{eq:fractionalriccati}
+D^{\alpha_\Hurst}\psi(u,\tau) \;=\; \frac{\xi^2}{2}\,\psi(u,\tau)^2 \;+\; \bigl(\rho\xi\, i u - \kappa\bigr)\psi(u,\tau) \;-\; \frac{u^2+iu}{2},
+\qquad I^{1-\alpha_\Hurst}\psi(u,0) = 0,
+\end{equation}
+$D^{\alpha_\Hurst}$ being the Riemann--Liouville fractional derivative of order $\alpha_\Hurst$.
+\hfill $\blacksquare$
+\end{theorem}
+
+The result is due to El Euch and Rosenbaum \cite{eleucrosenbaum2019}. Comparison with Chapter
+\ref{ch:foundations} is the point of stating it. Equation \eqref{eq:fractionalriccati} is
+\eqref{eq:hestonriccati} \emph{term for term}: the same quadratic in $\psi$, the same linear
+coefficient $\rho\xi iu - \kappa$, the same inhomogeneity $-\tfrac12(u^2+iu)$. The single
+difference is that the ordinary derivative $\partial_\tau$ has been replaced by a fractional
+derivative of order $\alpha_\Hurst = \Hurst+\tfrac12$, and at $\Hurst = \tfrac12$ the two coincide.
+The promise made in Subsection \ref{subsec:stochvol} --- that the generalisation would be ``a short
+step rather than a fresh start'' --- is discharged by this observation, and the Fourier inversion
+\eqref{eq:fourierinversion} carries over verbatim, since it depends on the characteristic function
+and on nothing else.
+
+\begin{remark}[What is gained and what it costs]\label{rem:roughhestoncost}
+Three comments, in decreasing order of comfort.
+
+\emph{The model reproduces the skew.} By construction the variance has regularity $\Hurst$, so the
+short-maturity at-the-money skew behaves as $\tau^{\Hurst-1/2}$ by \eqref{eq:skewpowerlaw}. This is
+the empirical shape, and no classical stochastic volatility model produces it.
+
+\emph{The equation is non-local, hence expensive.} Because $D^{\alpha_\Hurst}$ is an integral
+operator, \eqref{eq:fractionalriccati} cannot be advanced by a local time-stepping scheme: each
+step requires the entire computed history of $\psi$, so a discretisation over $n$ steps costs
+$O(n^2)$ rather than $O(n)$. The standard solver is the Adams predictor--corrector scheme. Since
+calibration evaluates \eqref{eq:roughhestoncf} at hundreds of strikes for every trial parameter
+vector, this cost is the practical bottleneck, and it is the main reason rough Heston is harder to
+deploy than its classical counterpart.
+
+\emph{It is not a theorem of this chapter.} Theorem \ref{thm:roughhestoncf} is proved by
+techniques from affine Volterra processes and fractional calculus, not by rough path theory, and
+nothing in Sections \ref{sec:roughpaths} to \ref{sec:signature} is used in its proof. This is not
+an inconsistency but a division of labour, and Section \ref{sec:beyond} explains why it is
+unavoidable: at $\Hurst\approx0.1$ the lifting theorems are not available, so a route that does not
+require them is not merely convenient but necessary. What rough path theory supplies here is the
+vocabulary --- the regularity exponent, the $p$-variation scale, the precise sense in which the
+Markov property has been traded away --- rather than the machinery.
+\end{remark}
+
+
+
+
+\section{The Boundary of the Theory}\label{sec:beyond}
+
+It would be a poor advertisement for a chapter on roughness to conclude without saying where its
+own methods give out, particularly since Remark \ref{rem:H01outside} has already located the point.
+
+Rough path theory lifts fractional Brownian motion for $\Hurst > \tfrac14$. The volatility data
+suggest $\Hurst \approx 0.1$. The gap is not an artefact of the level-two restriction
+\eqref{eq:alpharange} that we adopted for clarity: for $\Hurst \leq \tfrac14$ the piecewise-linear
+approximations fail to converge at \emph{any} level, and the canonical lift does not exist.
+
+The difficulty is visible in the pricing problem itself. Writing $\widehat W_t = \int K^{\Hurst}(t-s)\,\dd W_s$
+for the Riemann--Liouville form of the driving noise in \eqref{eq:rfsv}, with kernel
+$K^{\Hurst}(u) = u^{\Hurst - 1/2}\mathds{1}_{u>0}$, one must make sense of integrals of the type
+\begin{equation}\label{eq:roughvolintegral}
+\int_0^{\Mat} F\bigl(\widehat W_t\bigr)\,\dd W_t .
+\end{equation}
+The integrator $W$ is a perfectly good Brownian rough path. The integrand, however, has Hölder
+regularity $\Hurst^{-}$, which for $\Hurst<\tfrac12$ is \emph{worse} than that of $W$, so
+$F(\widehat W)$ is not a path controlled by $W$ in the sense of Definition \ref{def:controlled}, and
+Theorem \ref{thm:gubinelli} does not apply. The Taylor expansion \eqref{eq:controlleddef} is simply
+the wrong ansatz.
+
+What replaces it is Hairer's theory of \emph{regularity structures}, of which rough path theory is
+the one-dimensional special case. There, the fixed local expansion \eqref{eq:controlleddef} in
+powers of $X_{s,t}$ is replaced by an expansion in an abstract, problem-dependent basis of symbols,
+and the products which fail to converge are repaired by \emph{renormalisation} --- subtracting
+divergent constants in a manner constrained by the algebra rather than chosen by hand. Applied to
+\eqref{eq:roughvolintegral} the construction requires four symbols, corresponding to the powers
+$(\widehat W_{s,t})^m$ for $m \leq 3$, and yields a renormalised Wong--Zakai theorem of the form
+\begin{equation}\label{eq:renormalisedwz}
+\int_0^t F\bigl(\widehat W^{\varepsilon}\bigr)\,\dd W^{\varepsilon} \;-\; c^{\varepsilon}\!\int_0^t F'\bigl(\widehat W^{\varepsilon}\bigr)\,\dd s
+\;\longrightarrow\; \int_0^t F\bigl(\widehat W\bigr)\,\dd W ,
+\end{equation}
+valid for $\Hurst > \tfrac18$ and with a constant $c^\varepsilon$ which \emph{diverges} as the
+mollification parameter $\varepsilon$ tends to zero.
+
+The reader who has been keeping score will object that $\tfrac18 = 0.125$ exceeds the
+$\Hurst \approx 0.1$ reported in Subsection \ref{subsec:roughvol}, so that this construction misses
+the empirical exponent as well. That is correct, and the resolution is favourable: the threshold
+$\tfrac18$ is an artefact of stopping at four symbols, not a limit of the method. The number of
+symbols required is governed by the smallest $M$ with $(M+1)\Hurst + \tfrac12 > 1$, so admitting
+more symbols lowers the threshold, and the construction extends to every
+$\Hurst \in (0,\tfrac12)$ at the cost of a regularity structure whose size grows as
+$\Hurst \downarrow 0$. Roughness is therefore expensive rather than prohibitive --- which is the
+honest summary, and a different statement from the genuine obstruction of Remark
+\ref{rem:H01outside}, where no number of levels suffices because the lift itself fails to exist. At $\Hurst = \tfrac12$ the constant is
+$\tfrac12$ and \eqref{eq:renormalisedwz} degenerates into the Itô--Stratonovich correction of
+Chapter \ref{ch:foundations}, which is a pleasing consistency check and a fair summary of the whole
+subject: the corrections that stochastic calculus treats as fixed constants are, at lower
+regularity, divergent quantities held in place by an algebraic structure.
+
+We shall not develop any of this. The construction is set out in \cite[Ch.\ 13--14]{frizhairer2020},
+and the rough volatility literature built on it is surveyed in \cite{bayerfrizfukasawa2023} and
+\cite{dinunno2023}. It is recorded here for the same reason Definition \ref{def:semimartingale} was recorded in Chapter
+\ref{ch:foundations}: to mark honestly the edge of what has been proved. The applications of Chapter
+\ref{ch:applications} are constructed so as not to depend on a lifting theorem that is unavailable at the
+exponent the data demand --- the local volatility surface of Section \ref{sec:roughvolmodels} being
+a classical diffusion, and the rough Heston model of Definition \ref{def:roughheston} being
+tractable through the affine route of Theorem \ref{thm:roughhestoncf} rather than through rough
+integration.

@@ -1,8 +1,8 @@
 \chapter{Auxiliary Results}\label{app:auxiliary}
 
 This appendix collects results which are used in the main text but whose statements
-would have interrupted the argument there. Nothing here is original, and nothing here
-is proved; references are given in each case. The organising principle is simple: a
+would have interrupted the argument there. Nothing here is original, and proofs are given
+only where they run to a line or two; references are given in every case. The organising principle is simple: a
 result belongs in the body if the argument cannot be followed without it, and belongs
 here if the argument merely \emph{invokes} it. Results which we do prove, but whose proofs are too
 long to sit comfortably in the body, are deferred instead to Appendix \ref{app:proofs}.
@@ -11,8 +11,8 @@ long to sit comfortably in the body, are deferred instead to Appendix \ref{app:p
 
 Throughout, $\mathcal{G} \subseteq \mathcal{F}$ is a sub-$\sigma$-algebra of a complete probability
 space $\PSpace$, and all identities are understood to hold almost surely. Proofs may be found in
-\cite{Biggy} or \cite{durrett2019probability}. Items 8 and 9, which are used constantly in the main
-text, are stated there as Proposition \ref{def:conditional-expectation}; the numbering below is
+\cite{billingsley1995} or \cite{durrett2019}. Items 8 and 9, which are used constantly in the main
+text, are stated there as Proposition \ref{prop:condjensenl2}; the numbering below is
 consistent with it.
 
 \begin{proposition}[Properties of conditional expectation]\label{prop:condexpproperties}
@@ -81,7 +81,7 @@ advance to be a characteristic function.
 \section{Moment indeterminacy of the log-normal law}\label{app:heyde}
 
 The following construction, due to Heyde \cite{heyde1963}, is referred to in Subsection
-\ref{subsec:martingales} and shows that a distribution possessing moments of all orders need not be
+\ref{subsec:FundamentalDistr} and shows that a distribution possessing moments of all orders need not be
 determined by them.
 
 \begin{proposition}[Heyde]\label{prop:heyde}
@@ -104,7 +104,7 @@ integrates to $1$.
 
 The underlying obstruction is that the log-normal moments grow like $e^{k^2/2}$, which violates
 Carleman's condition $\sum_k m_{2k}^{-1/2k} = \infty$; when Carleman's condition holds, the moment
-problem is determinate. See \cite{durrett2019probability} for the general theory.
+problem is determinate. See \cite{durrett2019} for the general theory.
 
 \section{Grönwall's inequality}\label{app:gronwall}
 
@@ -140,4 +140,60 @@ $|\nu| := \nu^+ + \nu^-$ is called the total variation of $\nu$, and $\nu \ll \l
 if $|\nu| \ll \lambda$.
 \end{theorem}
 
-See \cite{RoydenFitzpatrick2010} for a proof.
+See \cite{roydenfitzpatrick2010} for a proof.
+
+
+\section{Uniform integrability and the class (D)}\label{app:ui}
+
+Two integrability notions are invoked in the main text --- in the hypotheses of Theorem
+\ref{thm:optionalstopping} and of Theorem \ref{thm:snell} respectively --- and are recorded here.
+
+\begin{definition}[Uniform integrability]\label{def:ui}
+A family $\{X_i\}_{i \in I}$ of integrable random variables is \textbf{uniformly integrable} if
+\begin{equation}\label{eq:ui}
+\lim_{c \to \infty}\ \sup_{i \in I}\ \E\bigl[\,|X_i|\,\Ind_{\{|X_i| > c\}}\,\bigr] \;=\; 0 .
+\end{equation}
+\end{definition}
+
+The condition says that no member of the family carries a non-negligible amount of its mass
+arbitrarily far out in the tail, \emph{uniformly in $i$}. It is strictly stronger than
+$\sup_i \E|X_i| < \infty$ and strictly weaker than domination by a single integrable variable: if
+$|X_i| \leq Y$ for all $i$ with $Y \in L^1$, then \eqref{eq:ui} follows from dominated convergence,
+which is why hypothesis iii) of Theorem \ref{thm:optionalstopping} implies hypothesis ii). Its role
+is that it is exactly the extra assumption converting convergence in probability into convergence in
+$L^1$, and exactly what is needed for a martingale to be closed by a terminal variable. See
+\cite[Ch.\ 4]{durrett2019}.
+
+\begin{definition}[Class (D)]\label{def:classD}
+A process $X$ is of \textbf{class (D)} if the family $\{X_\tau : \tau \text{ a stopping time}\}$,
+indexed by all stopping times of the filtration, is uniformly integrable.
+\end{definition}
+
+The class is named for Doob. It is the hypothesis under which the Doob--Meyer decomposition
+(Theorem \ref{thm:doobmeyer}) produces an \emph{integrable} increasing process rather than merely a
+local one, and under which the Snell envelope of Theorem \ref{thm:snell} is well defined. Any
+process dominated by an integrable variable is of class (D); in particular, so is any bounded
+process, which covers every application in this dissertation.
+
+\section{The essential supremum of a family of random variables}\label{app:esssup}
+
+\begin{definition}[Essential supremum]\label{def:esssup}
+Let $\{X_i\}_{i \in I}$ be a family of random variables on $\PSpace$, indexed by an arbitrary and
+possibly uncountable set $I$. An \textbf{essential supremum} of the family, written
+$\operatorname*{ess\,sup}_{i \in I} X_i$, is a random variable $X^*$ such that
+\begin{itemize}
+    \item[i)] $X_i \leq X^*$ almost surely, for every $i \in I$; and
+    \item[ii)] if $Y$ satisfies i) in place of $X^*$, then $X^* \leq Y$ almost surely.
+\end{itemize}
+Such an $X^*$ exists and is unique up to null sets.
+\end{definition}
+
+The construction, for which see \cite[Appendix A]{karatzasshreve1991}, produces $X^*$ as the
+pointwise supremum of a \emph{countable} subfamily, and that is the whole point of the notion. The
+pointwise supremum $\sup_{i \in I} X_i(\omega)$ over an uncountable $I$ need not be measurable, and
+even when it is it may exceed every $X_i$ on a set of positive probability in a way that carries no
+information --- an uncountable union of null sets need not be null, which is the same phenomenon
+that separates modification from indistinguishability in Remark \ref{rem:modification}. The
+essential supremum repairs this by taking the supremum in the almost-sure order rather than
+pointwise, and it is the correct object in \eqref{eq:optimalstopping}, where the family is indexed
+by the uncountably many stopping times available to the holder of an American option.

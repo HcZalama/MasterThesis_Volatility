@@ -45,7 +45,35 @@
       \field{title}{Fractal Geometry}
       \field{year}{2003}
     \endentry
-    \entry{BayerFrizFukasawa2023}{book}{}{}
+    \entry{bachelier1900}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=cf3b72acd9c2b0193404b5f6490d3e77}{%
+           family={Bachelier},
+           familyi={B\bibinitperiod},
+           given={Louis},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {École Normale Supérieure}%
+      }
+      \strng{namehash}{cf3b72acd9c2b0193404b5f6490d3e77}
+      \strng{fullhash}{cf3b72acd9c2b0193404b5f6490d3e77}
+      \strng{fullhashraw}{cf3b72acd9c2b0193404b5f6490d3e77}
+      \strng{bibnamehash}{cf3b72acd9c2b0193404b5f6490d3e77}
+      \strng{authorbibnamehash}{cf3b72acd9c2b0193404b5f6490d3e77}
+      \strng{authornamehash}{cf3b72acd9c2b0193404b5f6490d3e77}
+      \strng{authorfullhash}{cf3b72acd9c2b0193404b5f6490d3e77}
+      \strng{authorfullhashraw}{cf3b72acd9c2b0193404b5f6490d3e77}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Annales scientifiques de l'É.N.S., 3e série, tome 17, pp.\ 21--86}
+      \field{title}{Théorie de la spéculation}
+      \field{type}{phdthesis}
+      \field{year}{1900}
+    \endentry
+    \entry{bayerfrizfukasawa2023}{book}{}{}
       \name{author}{6}{}{%
         {{hash=d578598916e59b87ed4952cd57856013}{%
            family={Bayer},
@@ -101,11 +129,10 @@
       \field{series}{Financial Mathematics}
       \field{title}{Rough Volatility}
       \field{year}{2023}
-      \true{nocite}
       \field{pages}{291}
       \range{pages}{1}
     \endentry
-    \entry{Bergomi2016}{book}{}{}
+    \entry{bergomi2016}{book}{}{}
       \name{author}{1}{}{%
         {{hash=21a0b05dab9d88c3d8f905034593e16d}{%
            family={Bergomi},
@@ -138,7 +165,7 @@
       \field{pages}{522}
       \range{pages}{1}
     \endentry
-    \entry{Biggy}{book}{}{}
+    \entry{billingsley1995}{book}{}{}
       \name{author}{1}{}{%
         {{hash=1510894b195c898f61d6cbd12bfaf118}{%
            family={Billingsley},
@@ -168,7 +195,7 @@
       \field{title}{Probability and Measure}
       \field{year}{1995}
     \endentry
-    \entry{Bjork2009}{book}{}{}
+    \entry{bjork2009}{book}{}{}
       \name{author}{1}{}{%
         {{hash=d5d277f4ab9e48882e00b7491800991f}{%
            family={Björk},
@@ -226,7 +253,7 @@
       \field{pages}{167\bibrangedash 179}
       \range{pages}{13}
     \endentry
-    \entry{BlackScholes1973}{article}{}{}
+    \entry{blackscholes1973}{article}{}{}
       \name{author}{2}{}{%
         {{hash=93277dfc1ebe8d44428e74799781e4d7}{%
            family={Black},
@@ -262,6 +289,48 @@
       \field{pages}{637\bibrangedash 654}
       \range{pages}{18}
     \endentry
+    \entry{boedihardjo2016}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=2172b73571c3ac3914ff972e1d0a6361}{%
+           family={Boedihardjo},
+           familyi={B\bibinitperiod},
+           given={Horatio},
+           giveni={H\bibinitperiod}}}%
+        {{hash=8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}{%
+           family={Geng},
+           familyi={G\bibinitperiod},
+           given={Xi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=250da9bbbdb97dcfa01b57e8f50794a8}{%
+           family={Lyons},
+           familyi={L\bibinitperiod},
+           given={Terry},
+           giveni={T\bibinitperiod}}}%
+        {{hash=bd66d8ea318198ed02ca6f2285a71ce9}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Danyu},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{386b6b16622ae062fc146baf5b29eb4d}
+      \strng{fullhash}{fc74a641ef18ba45cf6e86cbed8ed8ca}
+      \strng{fullhashraw}{fc74a641ef18ba45cf6e86cbed8ed8ca}
+      \strng{bibnamehash}{386b6b16622ae062fc146baf5b29eb4d}
+      \strng{authorbibnamehash}{386b6b16622ae062fc146baf5b29eb4d}
+      \strng{authornamehash}{386b6b16622ae062fc146baf5b29eb4d}
+      \strng{authorfullhash}{fc74a641ef18ba45cf6e86cbed8ed8ca}
+      \strng{authorfullhashraw}{fc74a641ef18ba45cf6e86cbed8ed8ca}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Mathematics}
+      \field{title}{The Signature of a Rough Path: Uniqueness}
+      \field{volume}{293}
+      \field{year}{2016}
+      \field{pages}{720\bibrangedash 737}
+      \range{pages}{18}
+    \endentry
     \entry{breeden1978}{article}{}{}
       \name{author}{2}{}{%
         {{hash=4f844f5106b47947356f4b20ad0470e4}{%
@@ -295,7 +364,7 @@
       \field{pages}{621\bibrangedash 651}
       \range{pages}{31}
     \endentry
-    \entry{Brezis2011}{book}{}{}
+    \entry{brezis2011}{book}{}{}
       \name{author}{1}{}{%
         {{hash=31e0c25a6fb0297f0536bede27a04cd4}{%
            family={Brezis},
@@ -358,7 +427,36 @@
       \field{pages}{61\bibrangedash 73}
       \range{pages}{13}
     \endentry
-    \entry{Chevyrev2016}{article}{}{}
+    \entry{chen1957}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=369b82d5c9e19ede291c591e327a4cc3}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Kuo-Tsai},
+           giveni={K\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{fullhash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{fullhashraw}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{bibnamehash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{authorbibnamehash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{authornamehash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{authorfullhash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{authorfullhashraw}{369b82d5c9e19ede291c591e327a4cc3}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Mathematics}
+      \field{number}{1}
+      \field{title}{Integration of Paths, Geometric Invariants and a Generalized {B}aker--{H}ausdorff Formula}
+      \field{volume}{65}
+      \field{year}{1957}
+      \true{nocite}
+      \field{pages}{163\bibrangedash 178}
+      \range{pages}{16}
+    \endentry
+    \entry{chevyrevkormilitzin2016}{article}{}{}
       \name{author}{2}{}{%
         {{hash=c84a8f3c991b4c4edff0e0bd0a1d0c8c}{%
            family={Chevyrev},
@@ -386,7 +484,6 @@
       \field{journaltitle}{arXiv preprint arXiv:1603.03788}
       \field{title}{A Primer on the Signature Method in Machine Learning}
       \field{year}{2016}
-      \true{nocite}
       \verb{urlraw}
       \verb https://arxiv.org/abs/1603.03788
       \endverb
@@ -394,7 +491,109 @@
       \verb https://arxiv.org/abs/1603.03788
       \endverb
     \endentry
-    \entry{Cuchiero2025}{article}{}{}
+    \entry{chevyrevlyons2016}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c84a8f3c991b4c4edff0e0bd0a1d0c8c}{%
+           family={Chevyrev},
+           familyi={C\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=250da9bbbdb97dcfa01b57e8f50794a8}{%
+           family={Lyons},
+           familyi={L\bibinitperiod},
+           given={Terry},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{77c6ae845dcedb299922ef8fa85630ce}
+      \strng{fullhash}{77c6ae845dcedb299922ef8fa85630ce}
+      \strng{fullhashraw}{77c6ae845dcedb299922ef8fa85630ce}
+      \strng{bibnamehash}{77c6ae845dcedb299922ef8fa85630ce}
+      \strng{authorbibnamehash}{77c6ae845dcedb299922ef8fa85630ce}
+      \strng{authornamehash}{77c6ae845dcedb299922ef8fa85630ce}
+      \strng{authorfullhash}{77c6ae845dcedb299922ef8fa85630ce}
+      \strng{authorfullhashraw}{77c6ae845dcedb299922ef8fa85630ce}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Annals of Probability}
+      \field{number}{6}
+      \field{title}{Characteristic Functions of Measures on Geometric Rough Paths}
+      \field{volume}{44}
+      \field{year}{2016}
+      \field{pages}{4049\bibrangedash 4082}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1214/15-AOP1068
+      \endverb
+    \endentry
+    \entry{comterenault1998}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f76956c4f8dbdf1c1c97a730d512829b}{%
+           family={Comte},
+           familyi={C\bibinitperiod},
+           given={Fabienne},
+           giveni={F\bibinitperiod}}}%
+        {{hash=140a29ec147c9017d71696f00e3f819f}{%
+           family={Renault},
+           familyi={R\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{63e3707f0d64839af20a62a9e59ee139}
+      \strng{fullhash}{63e3707f0d64839af20a62a9e59ee139}
+      \strng{fullhashraw}{63e3707f0d64839af20a62a9e59ee139}
+      \strng{bibnamehash}{63e3707f0d64839af20a62a9e59ee139}
+      \strng{authorbibnamehash}{63e3707f0d64839af20a62a9e59ee139}
+      \strng{authornamehash}{63e3707f0d64839af20a62a9e59ee139}
+      \strng{authorfullhash}{63e3707f0d64839af20a62a9e59ee139}
+      \strng{authorfullhashraw}{63e3707f0d64839af20a62a9e59ee139}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical Finance}
+      \field{number}{4}
+      \field{title}{Long Memory in Continuous-Time Stochastic Volatility Models}
+      \field{volume}{8}
+      \field{year}{1998}
+      \field{pages}{291\bibrangedash 323}
+      \range{pages}{33}
+    \endentry
+    \entry{coutinqian2002}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e0fd75c63bda6d882954d25a224e86c0}{%
+           family={Coutin},
+           familyi={C\bibinitperiod},
+           given={Laure},
+           giveni={L\bibinitperiod}}}%
+        {{hash=324e4a7f6a4d20824e25f9efdfa87794}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Zhongmin},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e8c0ec67311eb7d2f0c4579d2de3720}
+      \strng{fullhash}{4e8c0ec67311eb7d2f0c4579d2de3720}
+      \strng{fullhashraw}{4e8c0ec67311eb7d2f0c4579d2de3720}
+      \strng{bibnamehash}{4e8c0ec67311eb7d2f0c4579d2de3720}
+      \strng{authorbibnamehash}{4e8c0ec67311eb7d2f0c4579d2de3720}
+      \strng{authornamehash}{4e8c0ec67311eb7d2f0c4579d2de3720}
+      \strng{authorfullhash}{4e8c0ec67311eb7d2f0c4579d2de3720}
+      \strng{authorfullhashraw}{4e8c0ec67311eb7d2f0c4579d2de3720}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Probability Theory and Related Fields}
+      \field{number}{1}
+      \field{title}{Stochastic Analysis, Rough Path Analysis and Fractional {B}rownian Motions}
+      \field{volume}{122}
+      \field{year}{2002}
+      \field{pages}{108\bibrangedash 140}
+      \range{pages}{33}
+    \endentry
+    \entry{cuchiero2025}{article}{}{}
       \name{author}{4}{}{%
         {{hash=64fb2fa55e95db41a74d9e72b25c918e}{%
            family={Cuchiero},
@@ -447,7 +646,7 @@
       \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/mafi.12442
       \endverb
     \endentry
-    \entry{DelbaenSchachermayer1994}{article}{}{}
+    \entry{delbaenschachermayer1994}{article}{}{}
       \name{author}{2}{}{%
         {{hash=1af76fc6ac243ee12ea3e2cb593750ee}{%
            family={Delbaen},
@@ -483,7 +682,7 @@
       \field{pages}{463\bibrangedash 520}
       \range{pages}{58}
     \endentry
-    \entry{Dupire1994}{article}{}{}
+    \entry{dupire1994}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9a88af8a4cf0b0a8b5072b916a82c45a}{%
            family={Dupire},
@@ -511,7 +710,7 @@
       \field{pages}{18\bibrangedash 20}
       \range{pages}{3}
     \endentry
-    \entry{durrett2019probability}{book}{}{}
+    \entry{durrett2019}{book}{}{}
       \name{author}{1}{}{%
         {{hash=175a15e34b656dab74bea645e2ed84d0}{%
            family={Durrett},
@@ -542,7 +741,40 @@
       \field{title}{Probability: Theory and Examples}
       \field{year}{2019}
     \endentry
-    \entry{Evans2010}{book}{}{}
+    \entry{eleucrosenbaum2019}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=77c3606b9f5a7ec911e42237b1e66c3c}{%
+           family={Euch},
+           familyi={E\bibinitperiod},
+           given={Omar\bibnamedelima El},
+           giveni={O\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=5a373e5be0134cb25af59b896a57531d}{%
+           family={Rosenbaum},
+           familyi={R\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b2b09100b839f8e78ed09181bda86d1}
+      \strng{fullhash}{5b2b09100b839f8e78ed09181bda86d1}
+      \strng{fullhashraw}{5b2b09100b839f8e78ed09181bda86d1}
+      \strng{bibnamehash}{5b2b09100b839f8e78ed09181bda86d1}
+      \strng{authorbibnamehash}{5b2b09100b839f8e78ed09181bda86d1}
+      \strng{authornamehash}{5b2b09100b839f8e78ed09181bda86d1}
+      \strng{authorfullhash}{5b2b09100b839f8e78ed09181bda86d1}
+      \strng{authorfullhashraw}{5b2b09100b839f8e78ed09181bda86d1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical Finance}
+      \field{number}{1}
+      \field{title}{The Characteristic Function of Rough {H}eston Models}
+      \field{volume}{29}
+      \field{year}{2019}
+      \field{pages}{3\bibrangedash 38}
+      \range{pages}{36}
+    \endentry
+    \entry{evans2010}{book}{}{}
       \name{author}{1}{}{%
         {{hash=0d72932a7775f85a51622d3af75ae26e}{%
            family={Evans},
@@ -602,7 +834,82 @@
       \field{pages}{173\bibrangedash 182}
       \range{pages}{10}
     \endentry
-    \entry{Gatheral2006}{book}{}{}
+    \entry{frizhairer2020}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=5cbead282f4ab5a5d0c2cad164682e96}{%
+           family={Friz},
+           familyi={F\bibinitperiod},
+           given={Peter\bibnamedelima K.},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=77a6aeb5159cb51c26b716e066c282e8}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{9b66260c89997d41f502fd1140d083a9}
+      \strng{fullhash}{9b66260c89997d41f502fd1140d083a9}
+      \strng{fullhashraw}{9b66260c89997d41f502fd1140d083a9}
+      \strng{bibnamehash}{9b66260c89997d41f502fd1140d083a9}
+      \strng{authorbibnamehash}{9b66260c89997d41f502fd1140d083a9}
+      \strng{authornamehash}{9b66260c89997d41f502fd1140d083a9}
+      \strng{authorfullhash}{9b66260c89997d41f502fd1140d083a9}
+      \strng{authorfullhashraw}{9b66260c89997d41f502fd1140d083a9}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{series}{Universitext}
+      \field{title}{A Course on Rough Paths: With an Introduction to Regularity Structures}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1007/978-3-030-41556-3
+      \endverb
+    \endentry
+    \entry{frizvictoir2010}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=5cbead282f4ab5a5d0c2cad164682e96}{%
+           family={Friz},
+           familyi={F\bibinitperiod},
+           given={Peter\bibnamedelima K.},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=09177a5eaf066cb878c838063489c195}{%
+           family={Victoir},
+           familyi={V\bibinitperiod},
+           given={Nicolas\bibnamedelima B.},
+           giveni={N\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{2749e7a80a483074d3a7c03f6d595309}
+      \strng{fullhash}{2749e7a80a483074d3a7c03f6d595309}
+      \strng{fullhashraw}{2749e7a80a483074d3a7c03f6d595309}
+      \strng{bibnamehash}{2749e7a80a483074d3a7c03f6d595309}
+      \strng{authorbibnamehash}{2749e7a80a483074d3a7c03f6d595309}
+      \strng{authornamehash}{2749e7a80a483074d3a7c03f6d595309}
+      \strng{authorfullhash}{2749e7a80a483074d3a7c03f6d595309}
+      \strng{authorfullhashraw}{2749e7a80a483074d3a7c03f6d595309}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Cambridge Studies in Advanced Mathematics}
+      \field{title}{Multidimensional Stochastic Processes as Rough Paths: Theory and Applications}
+      \field{volume}{120}
+      \field{year}{2010}
+    \endentry
+    \entry{gatheral2006}{book}{}{}
       \name{author}{1}{}{%
         {{hash=5b59e77d6545ce779ff6f43a5f68bc96}{%
            family={Gatheral},
@@ -664,7 +971,102 @@
       \field{pages}{59\bibrangedash 71}
       \range{pages}{13}
     \endentry
-    \entry{GuyonLekeufack2022}{misc}{}{}
+    \entry{gatheraljaissonrosenbaum2018}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=5b59e77d6545ce779ff6f43a5f68bc96}{%
+           family={Gatheral},
+           familyi={G\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9c1de9315b32077f6f0cd09abcb384db}{%
+           family={Jaisson},
+           familyi={J\bibinitperiod},
+           given={Thibault},
+           giveni={T\bibinitperiod}}}%
+        {{hash=5a373e5be0134cb25af59b896a57531d}{%
+           family={Rosenbaum},
+           familyi={R\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{02d6046d90976ca3b4e6efca08291fbd}
+      \strng{fullhash}{02d6046d90976ca3b4e6efca08291fbd}
+      \strng{fullhashraw}{02d6046d90976ca3b4e6efca08291fbd}
+      \strng{bibnamehash}{02d6046d90976ca3b4e6efca08291fbd}
+      \strng{authorbibnamehash}{02d6046d90976ca3b4e6efca08291fbd}
+      \strng{authornamehash}{02d6046d90976ca3b4e6efca08291fbd}
+      \strng{authorfullhash}{02d6046d90976ca3b4e6efca08291fbd}
+      \strng{authorfullhashraw}{02d6046d90976ca3b4e6efca08291fbd}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Quantitative Finance}
+      \field{number}{6}
+      \field{title}{Volatility Is Rough}
+      \field{volume}{18}
+      \field{year}{2018}
+      \field{pages}{933\bibrangedash 949}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1080/14697688.2017.1393551
+      \endverb
+    \endentry
+    \entry{geng2021}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}{%
+           family={Geng},
+           familyi={G\bibinitperiod},
+           given={Xi},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}
+      \strng{fullhash}{8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}
+      \strng{fullhashraw}{8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}
+      \strng{bibnamehash}{8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}
+      \strng{authorbibnamehash}{8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}
+      \strng{authornamehash}{8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}
+      \strng{authorfullhash}{8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}
+      \strng{authorfullhashraw}{8a8d857cf2b9cd13ecf7d3dcfd6f5c8a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Lecture notes, short summer course}
+      \field{note}{University of Melbourne}
+      \field{title}{An Introduction to the Theory of Rough Paths}
+      \field{year}{2021}
+    \endentry
+    \entry{gubinelli2004}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=53ead5fa51e3a7a4edfcdedc97130b16}{%
+           family={Gubinelli},
+           familyi={G\bibinitperiod},
+           given={Massimiliano},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{fullhash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{fullhashraw}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{bibnamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{authorbibnamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{authornamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{authorfullhash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{authorfullhashraw}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Functional Analysis}
+      \field{number}{1}
+      \field{title}{Controlling Rough Paths}
+      \field{volume}{216}
+      \field{year}{2004}
+      \true{nocite}
+      \field{pages}{86\bibrangedash 140}
+      \range{pages}{55}
+    \endentry
+    \entry{guyonlekeufack2022}{misc}{}{}
       \name{author}{2}{}{%
         {{hash=ae97945971d3482f04991e10218f030e}{%
            family={Guyon},
@@ -709,7 +1111,69 @@
       \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4174589
       \endverb
     \endentry
-    \entry{Heston1993}{article}{}{}
+    \entry{hairer2014}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=77a6aeb5159cb51c26b716e066c282e8}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{fullhash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{fullhashraw}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{bibnamehash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{authorbibnamehash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{authornamehash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{authorfullhash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{authorfullhashraw}{77a6aeb5159cb51c26b716e066c282e8}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Inventiones Mathematicae}
+      \field{number}{2}
+      \field{title}{A Theory of Regularity Structures}
+      \field{volume}{198}
+      \field{year}{2014}
+      \true{nocite}
+      \field{pages}{269\bibrangedash 504}
+      \range{pages}{236}
+    \endentry
+    \entry{hamblylyons2010}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=6d9dd5545b1baec4468e75511074ebd7}{%
+           family={Hambly},
+           familyi={H\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=250da9bbbdb97dcfa01b57e8f50794a8}{%
+           family={Lyons},
+           familyi={L\bibinitperiod},
+           given={Terry},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{66c0992c7751069e87e63641aa774f7f}
+      \strng{fullhash}{66c0992c7751069e87e63641aa774f7f}
+      \strng{fullhashraw}{66c0992c7751069e87e63641aa774f7f}
+      \strng{bibnamehash}{66c0992c7751069e87e63641aa774f7f}
+      \strng{authorbibnamehash}{66c0992c7751069e87e63641aa774f7f}
+      \strng{authornamehash}{66c0992c7751069e87e63641aa774f7f}
+      \strng{authorfullhash}{66c0992c7751069e87e63641aa774f7f}
+      \strng{authorfullhashraw}{66c0992c7751069e87e63641aa774f7f}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Mathematics}
+      \field{number}{1}
+      \field{title}{Uniqueness for the Signature of a Path of Bounded Variation and the Reduced Path Group}
+      \field{volume}{171}
+      \field{year}{2010}
+      \field{pages}{109\bibrangedash 167}
+      \range{pages}{59}
+    \endentry
+    \entry{heston1993}{article}{}{}
       \name{author}{1}{}{%
         {{hash=da886e16f39671df2e1cc9208589b67d}{%
            family={Heston},
@@ -768,7 +1232,7 @@
       \field{pages}{392\bibrangedash 393}
       \range{pages}{2}
     \endentry
-    \entry{AbiJaber2024}{article}{}{}
+    \entry{abijaber2024}{article}{}{}
       \name{author}{3}{}{%
         {{hash=3f462a39879e7b101ece6071fa5b0f9a}{%
            family={Jaber},
@@ -809,7 +1273,7 @@
       \verb https://arxiv.org/abs/2407.04956
       \endverb
     \endentry
-    \entry{kallenberg2021foundations}{book}{}{}
+    \entry{kallenberg2021}{book}{}{}
       \name{author}{1}{}{%
         {{hash=f6bb1091b9da51c1ac66f8a4a75fcba9}{%
            family={Kallenberg},
@@ -877,7 +1341,7 @@
       \field{volume}{113}
       \field{year}{1991}
     \endentry
-    \entry{Kuo2006}{book}{}{}
+    \entry{kuo2006}{book}{}{}
       \name{author}{1}{}{%
         {{hash=3d0bfbf52f863fcd5ebf3e52ae20a94e}{%
            family={Kuo},
@@ -935,7 +1399,7 @@
       \field{pages}{469\bibrangedash 480}
       \range{pages}{12}
     \endentry
-    \entry{Levin2013}{article}{}{}
+    \entry{levinlyonsni2013}{article}{}{}
       \name{author}{3}{}{%
         {{hash=8e315c725f303b9d2799c701fe6aa400}{%
            family={Levin},
@@ -968,7 +1432,6 @@
       \field{journaltitle}{arXiv preprint arXiv:1309.0260}
       \field{title}{Learning from the Past, Predicting the Statistics for the Future, Learning an Evolving System}
       \field{year}{2013}
-      \true{nocite}
       \verb{urlraw}
       \verb https://arxiv.org/abs/1309.0260
       \endverb
@@ -976,7 +1439,68 @@
       \verb https://arxiv.org/abs/1309.0260
       \endverb
     \endentry
-    \entry{MarcusRosen2006}{book}{}{}
+    \entry{lyons1998}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=aee122f9b0e1e036173ab23f437232c8}{%
+           family={Lyons},
+           familyi={L\bibinitperiod},
+           given={Terry\bibnamedelima J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{aee122f9b0e1e036173ab23f437232c8}
+      \strng{fullhash}{aee122f9b0e1e036173ab23f437232c8}
+      \strng{fullhashraw}{aee122f9b0e1e036173ab23f437232c8}
+      \strng{bibnamehash}{aee122f9b0e1e036173ab23f437232c8}
+      \strng{authorbibnamehash}{aee122f9b0e1e036173ab23f437232c8}
+      \strng{authornamehash}{aee122f9b0e1e036173ab23f437232c8}
+      \strng{authorfullhash}{aee122f9b0e1e036173ab23f437232c8}
+      \strng{authorfullhashraw}{aee122f9b0e1e036173ab23f437232c8}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Matemática Iberoamericana}
+      \field{number}{2}
+      \field{title}{Differential Equations Driven by Rough Signals}
+      \field{volume}{14}
+      \field{year}{1998}
+      \field{pages}{215\bibrangedash 310}
+      \range{pages}{96}
+    \endentry
+    \entry{mandelbrotvanness1968}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d1efa9919078b1d84e99492d760dcc14}{%
+           family={Mandelbrot},
+           familyi={M\bibinitperiod},
+           given={Benoit\bibnamedelima B.},
+           giveni={B\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=5c1371932221ea0bce701882e22b6858}{%
+           family={Ness},
+           familyi={N\bibinitperiod},
+           given={John\bibnamedelimb W.\bibnamedelimi Van},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{bcba9439a7c22744d20be55c1dca43d0}
+      \strng{fullhash}{bcba9439a7c22744d20be55c1dca43d0}
+      \strng{fullhashraw}{bcba9439a7c22744d20be55c1dca43d0}
+      \strng{bibnamehash}{bcba9439a7c22744d20be55c1dca43d0}
+      \strng{authorbibnamehash}{bcba9439a7c22744d20be55c1dca43d0}
+      \strng{authornamehash}{bcba9439a7c22744d20be55c1dca43d0}
+      \strng{authorfullhash}{bcba9439a7c22744d20be55c1dca43d0}
+      \strng{authorfullhashraw}{bcba9439a7c22744d20be55c1dca43d0}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM Review}
+      \field{number}{4}
+      \field{title}{Fractional {B}rownian Motions, Fractional Noises and Applications}
+      \field{volume}{10}
+      \field{year}{1968}
+      \field{pages}{422\bibrangedash 437}
+      \range{pages}{16}
+    \endentry
+    \entry{marcusrosen2006}{book}{}{}
       \name{author}{2}{}{%
         {{hash=17ea1a05aecf900022948fe89666752a}{%
            family={Marcus},
@@ -1012,12 +1536,11 @@
       \field{title}{Markov Processes, Gaussian Processes, and Local Times}
       \field{volume}{100}
       \field{year}{2006}
-      \true{nocite}
       \verb{doi}
       \verb 10.1017/CBO9780511617997
       \endverb
     \endentry
-    \entry{Merton1973}{article}{}{}
+    \entry{merton1973}{article}{}{}
       \name{author}{1}{}{%
         {{hash=b1e2894bce14479f5a711418ce8f8ffa}{%
            family={Merton},
@@ -1036,6 +1559,7 @@
       \strng{authornamehash}{b1e2894bce14479f5a711418ce8f8ffa}
       \strng{authorfullhash}{b1e2894bce14479f5a711418ce8f8ffa}
       \strng{authorfullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
+      \field{extraname}{1}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
@@ -1048,7 +1572,36 @@
       \field{pages}{141\bibrangedash 183}
       \range{pages}{43}
     \endentry
-    \entry{DiNunno2023}{article}{}{}
+    \entry{merton1973rational}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1e2894bce14479f5a711418ce8f8ffa}{%
+           family={Merton},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{fullhash}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{fullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{bibnamehash}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{authorbibnamehash}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{authornamehash}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{authorfullhash}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{authorfullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Bell Journal of Economics and Management Science}
+      \field{number}{1}
+      \field{title}{Theory of Rational Option Pricing}
+      \field{volume}{4}
+      \field{year}{1973}
+      \field{pages}{141\bibrangedash 183}
+      \range{pages}{43}
+    \endentry
+    \entry{dinunno2023}{article}{}{}
       \name{author}{4}{}{%
         {{hash=aec4ecb142ecd9eb5806fe28300fd8e9}{%
            family={Nunno},
@@ -1087,7 +1640,6 @@
       \field{note}{Accessed: 2025-08-20}
       \field{title}{From constant to rough: A survey of continuous volatility modeling}
       \field{year}{2023}
-      \true{nocite}
       \verb{urlraw}
       \verb https://arxiv.org/abs/2309.01033
       \endverb
@@ -1095,7 +1647,7 @@
       \verb https://arxiv.org/abs/2309.01033
       \endverb
     \endentry
-    \entry{Oksendal2003}{book}{}{}
+    \entry{oksendal2003}{book}{}{}
       \name{author}{1}{}{%
         {{hash=08c642070d573e8ec607ded1724116ab}{%
            family={Øksendal},
@@ -1126,7 +1678,7 @@
       \field{title}{Stochastic Differential Equations: An Introduction with Applications}
       \field{year}{2003}
     \endentry
-    \entry{Parent2024}{misc}{}{}
+    \entry{parent2024}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=03d4d5c2fc3b913033ceaabdaad3e23e}{%
            family={Parent},
@@ -1231,7 +1783,7 @@
       \field{volume}{21}
       \field{year}{2005}
     \endentry
-    \entry{Raissi2019}{article}{}{}
+    \entry{raissi2019}{article}{}{}
       \name{author}{3}{}{%
         {{hash=95a17c39168b9e6b8812f207b4e036c1}{%
            family={Raissi},
@@ -1300,7 +1852,7 @@
       \field{pages}{95\bibrangedash 105}
       \range{pages}{11}
     \endentry
-    \entry{RoydenFitzpatrick2010}{book}{}{}
+    \entry{roydenfitzpatrick2010}{book}{}{}
       \name{author}{2}{}{%
         {{hash=eb545494ba09d1335ae8bea900ccb65d}{%
            family={Royden},
@@ -1335,7 +1887,7 @@
       \field{title}{Real Analysis}
       \field{year}{2010}
     \endentry
-    \entry{Shreve2004}{book}{}{}
+    \entry{shreve2004}{book}{}{}
       \name{author}{1}{}{%
         {{hash=9e110e7c548ab825117ed32cb12bdfd3}{%
            family={Shreve},
@@ -1394,7 +1946,7 @@
       \field{pages}{31\bibrangedash 39}
       \range{pages}{9}
     \endentry
-    \entry{Wilmott1995}{book}{}{}
+    \entry{wilmott1995}{book}{}{}
       \name{author}{3}{}{%
         {{hash=b4eae05c5ac84581289f65180c29143e}{%
            family={Wilmott},
@@ -1466,6 +2018,34 @@
       \field{year}{1971}
       \field{pages}{155\bibrangedash 167}
       \range{pages}{13}
+    \endentry
+    \entry{young1936}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=167c60c9f6f9d31e787d5515a84e042f}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Laurence\bibnamedelima C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{fullhash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{fullhashraw}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{bibnamehash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{authorbibnamehash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{authornamehash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{authorfullhash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{authorfullhashraw}{167c60c9f6f9d31e787d5515a84e042f}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acta Mathematica}
+      \field{title}{An Inequality of the Hölder Type, Connected with {S}tieltjes Integration}
+      \field{volume}{67}
+      \field{year}{1936}
+      \true{nocite}
+      \field{pages}{251\bibrangedash 282}
+      \range{pages}{32}
     \endentry
   \enddatalist
 \endrefsection

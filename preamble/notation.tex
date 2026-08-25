@@ -95,6 +95,40 @@
 \newcommand{\Snell}{U}                       % Snell envelope
 \newcommand{\Stop}[1]{\mathcal{T}_{#1}}      % set of stopping times
 
+% ---------- Rough paths (Ch. 5) ----------
+%  Script capitals are unavailable (mathrsfs is not loaded, deliberately: the
+%  package list is guarded for portability). Upright bold C therefore denotes
+%  the SPACE of rough paths, plain \mathcal{C} the space of Holder paths, and
+%  blackboard X the second level of a rough path. The three are never confused
+%  because the first two carry a superscript and the third does not.
+\newcommand{\RP}[1]{\mathbf{C}^{#1}}            % alpha-Holder rough paths
+\newcommand{\RPg}[1]{\mathbf{C}_{g}^{#1}}       % geometric rough paths
+\newcommand{\RPwg}[1]{\mathbf{C}_{wg}^{#1}}     % weakly geometric rough paths
+\newcommand{\Ctrl}[1]{\mathcal{D}^{2\alpha}_{#1}} % paths controlled by #1
+\newcommand{\rpX}{\mathbf{X}}                   % a rough path (X, second level)
+\newcommand{\rpY}{\mathbf{Y}}
+\newcommand{\lev}{\mathbb{X}}                   % its second level
+\newcommand{\levW}{\mathbb{W}}                  % second level of Brownian motion
+\newcommand{\Tens}[1]{T^{(#1)}}                 % truncated tensor algebra
+\newcommand{\Tone}[1]{T_{1}^{(#1)}}             % its subgroup {x_0 = 1}
+\newcommand{\Sig}{\mathrm{S}}                   % signature transform
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Anti}{\operatorname{Anti}}
+\newcommand{\Hurst}{H}                          % Hurst parameter — always H
+\newcommand{\rpdist}{\varrho_{\alpha}}          % rough path metric
+\newcommand{\increment}[1]{\delta #1}           % the increment operator
+\newcommand{\Gub}{Y'}                           % Gubinelli derivative (mnemonic)
+
+%  Triple bar, for the homogeneous rough path norm. Defined by hand rather than
+%  taken from mathtools (\DeclarePairedDelimiter) so that the package list stays
+%  as it is; the spacing below is the standard one.
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+%  Shuffle product. Neither amssymb nor amsmath provides the usual symbol, so we
+%  build it from \sqcup, which is what most of the literature uses in any case.
+\newcommand{\shuffle}{\mathbin{\sqcup\mkern-6.5mu\sqcup}}
+
 \makeatletter
 % ---------- Editorial ----------
 % Yellow markers for open items. Remove all of these before the defence.
