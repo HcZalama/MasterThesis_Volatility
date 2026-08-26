@@ -15,20 +15,22 @@ $(\R,\mathcal{B}(\R))$ in most of our applications.
 
 \begin{convention}
 Every probability space in this dissertation is assumed \emph{complete}: if $A \in \mathcal{F}$ has
-$\PP(A)=0$, then every $B \subseteq A$ lies in $\mathcal{F}$ and has $\PP(B) = 0$.
+$\PP(A)=0$, then every $B \subseteq A$ lies in $\mathcal{F}$ and has $\PP(B) = 0$. Completeness is not a formality, and we shall see in Definition \ref{def:usualconditions} exactly
+what it buys.
 \end{convention}
 
-Completeness is not a formality, and we shall see in Definition \ref{def:usualconditions} exactly
-what it buys. For the moment it is enough to record that this is the first of several points at which
-the measure-theoretic language earns its place: it is not a technical convenience but the only
-setting in which path regularity, filtrations and martingale properties can be discussed at all.
+%  For the moment it is enough to record that this is the first of several points at which
+% the measure-theoretic language earns its place: it is not a technical convenience but the only
+% setting in which path regularity, filtrations and martingale properties can be discussed at all.
 
-\begin{convention}[The symbol $\blacksquare$]\label{conv:blacksquare}
-A result whose statement ends with $\blacksquare$ is quoted \textbf{without proof}, a reference
-being given in every case. A result without the symbol is one we prove, either immediately below it
-or --- when the argument is routine but too long for the body --- in Appendix \ref{app:proofs}. The
-convention is followed throughout Part \ref{part:part1} and Part \ref{part:part2}.
-\end{convention}
+% \begin{convention}[The symbol $\blacksquare$]\label{conv:blacksquare}
+% A result whose statement ends with $\blacksquare$ is quoted \textbf{without proof}, a reference
+% being given in every case. A result without the symbol is one we prove, either immediately below it
+% or --- when the argument is routine but too long for the body --- in Appendix \ref{app:proofs}. The
+% convention is followed throughout Part \ref{part:part1} and Part \ref{part:part2}.
+% \end{convention}
+
+
 \section{Probabilistic Preliminaries}\label{sec:preliminaries}
 
 The notion of \emph{stochastic process} generalizes that of a single random variable by allowing evolution in an external parameter, usually interpreted as time. To accommodate both discrete-time and continuous-time settings in a unified framework, we let \(\Tset\) denote the \textbf{index set}, representing time. Typically, \(\Tset\) is a subset of \(\R\), such as:
@@ -38,7 +40,7 @@ The notion of \emph{stochastic process} generalizes that of a single random vari
 depending on the application.
 
 \begin{definition}
-Let \((\Omega, \mathcal{F}, \PP)\) be a complete probability space, and let \(\Tset \) be a time index set. A \textbf{stochastic process} is a collection of random variables \(\{ X_t : t \in \Tset \}\) defined on \((\Omega, \mathcal{F}, \PP)\) with values in a measurable space \((E, \mathcal{E})\), such that the map
+Let \((\Omega, \mathcal{F}, \PP)\) be a (complete) probability space, and let \(\Tset \) be a time index set. A \textbf{stochastic process} is a collection of random variables \(\{ X_t : t \in \Tset \}\) defined on \((\Omega, \mathcal{F}, \PP)\) with values in a measurable space \((E, \mathcal{E})\), such that the map
 \[
 X : \Tset \times \Omega \to E, \quad (t, \omega) \mapsto X_t(\omega)
 \]
@@ -65,7 +67,7 @@ This formulation includes many important examples such as Markov chains, Poisson
 This function \(f\) is called the \emph{Radon--Nikodym derivative} of \(\nu\) with respect to \(\lambda\), and is denoted by $f = d\nu/d\lambda$. \hfill $\blacksquare$
 \end{theorem}
 
-The letter $\mu$ is deliberately avoided here. From Section \ref{sec:stochasticcalculus} onwards it will denote a drift coefficient and nothing else; abstract measures are $\nu$ and $\lambda$ throughout.
+% The letter $\mu$ is deliberately avoided here. From Section \ref{sec:stochasticcalculus} onwards it will denote a drift coefficient and nothing else; abstract measures are $\nu$ and $\lambda$ throughout.
 
 We shall need the statement in slightly greater generality than above, since the measure we are about to construct is not positive.
 
@@ -102,22 +104,23 @@ combined and are stated here.
 \begin{proposition}[Conditional Jensen and the $L^2$ projection]\label{prop:condjensenl2}
 Let $\mathcal{G} \subseteq \mathcal{F}$ be a sub-$\sigma$-field. Then, almost surely:
 \begin{itemize}
-    \item[8.] (\textbf{Conditional Jensen's inequality}) If $\phi : \R \to \R$ is convex and both $X$ and $\phi(X)$ are integrable, then
+    \item[i)] (\textbf{Conditional Jensen's inequality}) If $\phi : \R \to \R$ is convex and both $X$ and $\phi(X)$ are integrable, then
     \[
         \phi\bigl(\E[X \mid \mathcal{G}]\bigr) \leq \E[\phi(X) \mid \mathcal{G}].
     \]
 
-    \item[9.] (\textbf{$L^2$ projection}) If $X \in L^2(\Omega,\mathcal{F},\PP)$, then $\E[X \mid \mathcal{G}]$ is the orthogonal projection of $X$ onto the closed subspace $L^2(\Omega,\mathcal{G},\PP)$. Equivalently, it is the unique $\mathcal{G}$-measurable $Y$ minimising $\E[(X-Y)^2]$, and
+    \item[ii)] (\textbf{$L^2$ projection}) If $X \in L^2(\Omega,\mathcal{F},\PP)$, then $\E[X \mid \mathcal{G}]$ is the orthogonal projection of $X$ onto the closed subspace $L^2(\Omega,\mathcal{G},\PP)$. Equivalently, it is the unique $\mathcal{G}$-measurable $Y$ minimising $\E[(X-Y)^2]$, and
     \[
         \E\bigl[(X - \E[X\mid\mathcal{G}])\,Z\bigr] = 0 \quad \text{for every } Z \in L^2(\Omega,\mathcal{G},\PP).
     \] \hfill $\blacksquare$
 \end{itemize}
 \end{proposition}
 
-The numbering is retained from Proposition \ref{prop:condexpproperties} for ease of reference.
-Property 8 is what guarantees that $X^2$ is a submartingale whenever $X$ is a martingale --- a fact invoked twice in what follows, in Subsection \ref{subsec:martingales} and again in the Doob-Meyer decomposition --- and it is the reason convexity is such a persistent theme in option pricing.
+% The numbering is retained from Proposition \ref{prop:condexpproperties} for ease of reference.
 
-Property 9 deserves more than emphasis. It says that conditioning is nothing more exotic than orthogonal projection in a Hilbert space, and once this is seen, a good deal of what follows stops looking like a series of coincidences. The Itô isometry of Theorem \ref{thm:itoisometry} will be an isometry between two Hilbert spaces; the density argument that extends the stochastic integral from step processes to all of $L^2_{\mathrm{ad}}$ is the standard extension of a bounded operator from a dense subspace; and the Martingale Representation Theorem of Subsection \ref{subsec:measurechanges} will say that a certain family of stochastic integrals is not merely orthogonal but \emph{complete}. The geometry is the same throughout.
+Property \textit{i)} is what guarantees that $X^2$ is a submartingale whenever $X$ is a martingale, a fact invoked twice in what follows, in Subsection \ref{subsec:martingales} and again in the Doob-Meyer decomposition, and it is the reason convexity is such a persistent theme in option pricing.
+
+Property \textit{ii)} deserves more than emphasis. It says that conditioning is nothing more exotic than orthogonal projection in a Hilbert space, and once this is seen, a good deal of what follows stops looking like a series of coincidences. The Itô isometry of Theorem \ref{thm:itoisometry} will be an isometry between two Hilbert spaces; the density argument that extends the stochastic integral from step processes to all of $L^2_{\mathrm{ad}}$ is the standard extension of a bounded operator from a dense subspace; and the Martingale Representation Theorem of Subsection \ref{subsec:measurechanges} will say that a certain family of stochastic integrals is not merely orthogonal but \emph{complete}. The geometry is the same throughout.
 
 There is one final structural component that needs to be described. In the study of stochastic processes, it is essential to formalize how information accumulates over time. This is done through the concept of a \textbf{filtration}, which models the \emph{evolution of knowledge} or \emph{information available} up to each time \(t\).
 
@@ -129,7 +132,7 @@ Let \((\Omega, \mathcal{F}, \PP)\) be a probability space and let \(\Tset\) be a
 That is, the filtration is \emph{increasing} in \(t\). We interpret \(\mathcal{F}_t\) as the collection of events whose outcomes are known or observable up to  \(t\). A stochastic process \(X = \{X_t\}_{t \in \Tset}\) is said to be \textbf{adapted} to the filtration \(\{\mathcal{F}_t\}\) if, for each \(t \in \Tset\), the random variable \(X_t\) is measurable with respect to \(\mathcal{F}_t\).  We say that $\FPSpace$ is a \textbf{filtered probability space}.
 \end{definition}
 
-Bare adaptedness turns out to be slightly too weak for comfort. Two further requirements are so universally imposed that they have acquired a name of their own, and we impose them here once and for all rather than invoking them piecemeal later.
+% Bare adaptedness turns out to be slightly too weak for comfort. Two further requirements are so universally imposed that they have acquired a name of their own, and we impose them here once and for all rather than invoking them piecemeal later.
 
 \begin{definition}[The usual conditions]\label{def:usualconditions}
 A filtered probability space $\FPSpace$ is said to satisfy the \textbf{usual conditions} if
@@ -143,14 +146,16 @@ A filtered probability space $\FPSpace$ is said to satisfy the \textbf{usual con
 \end{definition}
 
 \begin{convention}\label{conv:usualconditions}
-\textbf{From this point onwards, every filtered probability space is assumed to satisfy the usual conditions,} and this will not be restated.
+From this point onwards, every filtered probability space is assumed to satisfy the usual conditions.
 \end{convention}
 
-Neither requirement is cosmetic. Completeness is what allows us to modify a process on a null set --- as we shall do whenever we choose a continuous version of an object defined only up to indistinguishability --- without leaving the filtration. Right-continuity is what makes first hitting times of open sets stopping times, and it is used explicitly in Proposition \ref{prop:stoppingtimechar} below and again in the Doob-Meyer decomposition of Subsection \ref{subsec:measurechanges}. Neither is automatic for a natural filtration $\mathcal{F}^X_t$, but both can always be arranged: one replaces $\mathcal{F}^X_t$ by the $\PP$-completion of $\mathcal{F}^X_{t^+}$, the so-called \emph{augmented} filtration, and for the filtrations generated by the processes we shall study this augmentation changes nothing of substance.
+Completeness is what allows us to modify a process on a null set without leaving the filtration, as we shall do whenever we choose a continuous version of an object defined only up to indistinguishability. Right-continuity is what makes first hitting times of open sets stopping times, and it is used explicitly in Proposition \ref{prop:stoppingtimechar} below and again in the Doob-Meyer decomposition of Subsection \ref{subsec:measurechanges}. 
 
-\begin{remark}[Modification versus indistinguishability]\label{rem:modification}
-A related piece of hygiene, which we shall need whenever a theorem produces ``a continuous version'' of a process. Two processes $X$ and $Y$ on the same space are said to be \emph{modifications} of each other if $\PP(X_t = Y_t) = 1$ for every fixed $t$, and \emph{indistinguishable} if $\PP(X_t = Y_t \text{ for all } t) = 1$. The second is strictly stronger: the exceptional null set is allowed to depend on $t$ in the first case, and a union of uncountably many null sets need not be null. The two notions do coincide when both processes have right-continuous paths, which is the situation we shall almost always be in --- but the coincidence is a small theorem, not a definition, and we shall be careful to say which of the two we mean.
-\end{remark}
+% Neither is automatic for a natural filtration $\mathcal{F}^X_t$, but both can always be arranged: one replaces $\mathcal{F}^X_t$ by the $\PP$-completion of $\mathcal{F}^X_{t^+}$, the so-called \emph{augmented} filtration, and for the filtrations generated by the processes we shall study this augmentation changes nothing of substance.
+
+% \begin{remark}[Modification versus indistinguishability]\label{rem:modification}
+% A related piece of hygiene, which we shall need whenever a theorem produces ``a continuous version'' of a process. Two processes $X$ and $Y$ on the same space are said to be \emph{modifications} of each other if $\PP(X_t = Y_t) = 1$ for every fixed $t$, and \emph{indistinguishable} if $\PP(X_t = Y_t \text{ for all } t) = 1$. The second is strictly stronger: the exceptional null set is allowed to depend on $t$ in the first case, and a union of uncountably many null sets need not be null. The two notions do coincide when both processes have right-continuous paths, which is the situation we shall almost always be in --- but the coincidence is a small theorem, not a definition, and we shall be careful to say which of the two we mean.
+% \end{remark}
 
 Recall that if \(\chi\) is a real-valued random variable on a probability space \((\Omega, \mathcal{F}, \PP)\), then the \(\sigma\)-algebra generated by \(\chi\) is denoted \(\sigma(\chi)\) and defined as:
 \begin{equation}
@@ -172,10 +177,10 @@ Let $(\Omega,\mathcal{F}, \PP)$ be a probability space carrying a filtration $\{
 \]
 \end{definition}
 
-Stating the definition on a general index set costs nothing and saves a parenthesis. Throughout this dissertation $\Tset = [0,T]$, so that every stopping time is automatically bounded by $T$; the single place where the infinite horizon $\Tset = [0,\infty)$ is needed is Theorem \ref{thm:optionalstopping}, which says so explicitly, and the reason it is needed there is exactly that boundedness is what would otherwise make its hypotheses vacuous.
+% Stating the definition on a general index set costs nothing and saves a parenthesis. Throughout this dissertation $\Tset = [0,T]$, so that every stopping time is automatically bounded by $T$; the single place where the infinite horizon $\Tset = [0,\infty)$ is needed is Theorem \ref{thm:optionalstopping}, which says so explicitly, and the reason it is needed there is exactly that boundedness is what would otherwise make its hypotheses vacuous.
 
 \begin{proposition}\label{prop:stoppingtimechar}
- Let \(\Filt\) be a right-continuous filtration. A random variable \(\tau : \Omega \to [0, T]\) is a stopping time with respect to \(\Filt\) if and only if  
+ Let \(\Filt\) be a right-continuous filtration. Then, a random variable \(\tau : \Omega \to [0, T]\) is a stopping time with respect to \(\Filt\) if and only if  
 \[
 \{ \, \omega \in \Omega : \tau(\omega) < t \, \} \in \mathcal{F}_t, 
 \quad \text{for all } t \in [0, T].
@@ -196,9 +201,10 @@ the last equality being exactly the right-continuity \eqref{eq:rightcontinuous}.
 
 \medskip
 
-Note where the work was done: the converse consumes right-continuity in full, and fails without it.
-This is the first of several places where the usual conditions of Definition
-\ref{def:usualconditions} do real work rather than merely tidy up.
+Note that the converse consumes right-continuity in full, and fails without it.
+
+% This is the first of several places where the usual conditions of Definition
+% \ref{def:usualconditions} do real work rather than merely tidy up.
 
 \begin{example}\label{example_stoppingTimes}
     Let $X$ be a measurable adapted process on $[0,T]$ with $\int_0^T |X_s|^2\,ds < \infty$ almost surely. For $n \in \N$ set
@@ -211,7 +217,7 @@ This is the first of several places where the usual conditions of Definition
     \end{equation}
     whereas $\{\tau_n < 0\} = \emptyset \in \mathcal{F}_0$. By Proposition \ref{prop:stoppingtimechar}, $\tau_n$ is a stopping time.
 
-    This sequence is not an idle illustration. It is exactly the localising sequence that will allow us, in Subsection \ref{subsec:itointegral}, to define the stochastic integral for integrands that are square-integrable pathwise but not in expectation, and it is the prototype of every localisation argument in this chapter.
+     It is exactly the localising sequence that will allow us, in Subsection \ref{subsec:itointegral}, to define the stochastic integral for integrands that are square-integrable pathwise but not in expectation, and it is the prototype of every localisation argument in this chapter.
 \end{example}
 
 \begin{example}[First hitting time]\label{example:hittingtime}
@@ -226,7 +232,7 @@ This is the first of several places where the usual conditions of Definition
     and Proposition \ref{prop:stoppingtimechar} applies.
 \end{example}
 
-The hypotheses are doing real work, and it is worth seeing where. Openness of $U$ is what allows the union to be taken over a \emph{countable} set of times: for a \emph{closed} target the same argument fails, since a path may touch a closed set at a single irrational instant and at no rational one, and one needs continuity of the paths rather than mere right-continuity to recover the conclusion. For a general Borel $U$ neither hypothesis suffices, and that $\tau_U$ is a stopping time at all is the \emph{début theorem} --- a genuinely deep result resting on the measurable projection theorem, and one of the few places in this subject where the measure-theoretic machinery is not merely bookkeeping. We shall need only the open case, which is the elementary one.
+% The hypotheses are doing real work, and it is worth seeing where. Openness of $U$ is what allows the union to be taken over a \emph{countable} set of times: for a \emph{closed} target the same argument fails, since a path may touch a closed set at a single irrational instant and at no rational one, and one needs continuity of the paths rather than mere right-continuity to recover the conclusion. For a general Borel $U$ neither hypothesis suffices, and that $\tau_U$ is a stopping time at all is the \emph{début theorem} --- a genuinely deep result resting on the measurable projection theorem, and one of the few places in this subject where the measure-theoretic machinery is not merely bookkeeping. We shall need only the open case, which is the elementary one.
 
     
     
@@ -237,11 +243,11 @@ Before presenting some cornerstone distributions, recall that the \textbf{charac
 \begin{equation}
 \charf_X(u) := \E[e^{i u X}], \quad u \in \R.
 \end{equation}
-It is the Fourier transform of the probability distribution of $X$, and it uniquely determines the law of $X$.
+It is the Fourier transform of the probability distribution of $X$.
 
-Its elementary properties --- normalisation, uniform continuity, Hermitian symmetry, behaviour under
+Its elementary properties (normalisation, uniform continuity, Hermitian symmetry, behaviour under
 affine maps and under sums of independent variables, and the correspondence between differentiability
-at the origin and existence of moments --- are collected in Proposition \ref{prop:charfnproperties}
+at the origin and existence of moments) are collected in Proposition \ref{prop:charfnproperties}
 of Appendix \ref{app:auxiliary}, and are used below without further comment.
 
 \begin{theorem}[Fourier inversion]\label{thm:fourierinversion}
@@ -256,7 +262,7 @@ In the general case, without assuming a density, the distribution function $F_X$
 \begin{equation}\label{levyInversionFormula}
 F_X(\beta) - F_X(\alpha) = \lim_{R \to \infty} \frac{1}{2\pi} \int_{-R}^R \frac{e^{-i \alpha u} - e^{-i \beta u}}{i u} \, \charf_X(u) \, du.
 \end{equation}
-The restriction to continuity points is necessary and not a technicality: at a jump of $F_X$ the right-hand side converges to the average of the left and right limits rather than to $F_X$ itself. Since $F_X$ is monotone it has at most countably many discontinuities, so continuity points are dense and the formula determines $F_X$ everywhere by right-continuity. Note also that the truncation parameter $R$ is unrelated to the time horizon $T$ fixed in the notation table; the symbol has been changed to avoid the collision.
+The restriction to continuity points is necessary and not a technicality: at a jump of $F_X$ the right-hand side converges to the average of the left and right limits rather than to $F_X$ itself. Since $F_X$ is monotone it has at most countably many discontinuities, so continuity points are dense and the formula determines $F_X$ everywhere by right-continuity.
 
 We deduce that if two random variables $X$ and $Y$ have the same characteristic function, i.e.\ $\charf_X(u) = \charf_Y(u)$ for all $u \in \R$, then $X$ and $Y$ have the same distribution.
 
@@ -268,7 +274,7 @@ Let $\{X_n\}_{n \in \N}$ be a sequence of random variables with characteristic f
 \end{itemize}
 \end{theorem}
 
-The asymmetry between the two halves is deliberate and is where the theorem earns its keep. In the converse direction one is \emph{not} allowed to assume that the limit $\charf$ is a characteristic function --- that is the conclusion, not a hypothesis. Continuity at the origin is what rules out mass escaping to infinity, and it is a genuine restriction on $\charf$; note that if one already knew $\charf$ to be a characteristic function the requirement would be vacuous, since characteristic functions are automatically uniformly continuous. It is precisely this form of the statement that makes the Central Limit Theorem below a two-line computation: one expands $\charf_{X_n}$, observes that the limit is $e^{-u^2/2}$, and only then concludes that the limit is Gaussian.
+ In the converse direction one is \emph{not} allowed to assume that the limit $\charf$ is a characteristic function; that is the conclusion, not a hypothesis. Continuity at the origin is what rules out mass escaping to infinity, and it is a genuine restriction on $\charf$; note that if one already knew $\charf$ to be a characteristic function the requirement would be vacuous, since characteristic functions are automatically uniformly continuous. It is precisely this form of the statement that makes the Central Limit Theorem below a two-line computation.
 
 We now describe certain distributions of widespread importance and usefulness. The first place must be given to the normal distribution.
 
@@ -280,50 +286,8 @@ that is, $X$ has the probability density function
 \begin{equation}
 f_X(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2} \right), \quad x \in \R.
 \end{equation}
-Then $X$ is said to be normally distributed with mean $\mu$ and variance $\sigma^2$; thus, a normal distribution is characterized by its first two moments.
+Then $X$ is said to be normally distributed with mean $\mu$ and variance $\sigma^2$. Thus, a normal distribution is characterized by its first two moments.
 \end{example}
-
-The normal distribution is fundamental in probability theory and statistics. It appears as the limiting distribution in the Central Limit Theorem and models many naturally occurring phenomena. Its characteristic function adopts the form
-\begin{equation}
-\charf_X(u) = \exp\left( i u \mu - \tfrac{1}{2} \sigma^2 u^2 \right).
-\end{equation}
-Its resemblance to the \textit{heat kernel} (see \cite{evans2010}) is not a coincidence and will be explored in the next section.
-
-Let $X \sim \Normal(\mu_X, \sigma_X^2)$ and $Y \sim \Normal(\mu_Y, \sigma_Y^2)$ be two \emph{independent} normal random variables. The following are easily verified through Theorem \ref{theorem:LevyContinuity}:
-
-\begin{itemize}
-    \item For $a, b \in \R$, $aX + bY \sim \Normal(a\mu_X+b\mu_Y,\, a^2\sigma_X^2+b^2 \sigma_Y^2)$; if instead $X$ and $Y$ are jointly normal with correlation $\rho$, the variance becomes $a^2\sigma_X^2+b^2\sigma_Y^2+2ab\rho\,\sigma_X\sigma_Y$. We write $Z \sim \Normal(\mu,0)$ for the constant variable $\mu$, so that the identity persists when constants are combined with normal variables.
-    \item Its characteristic function is entire analytic, and $X_n \sim \Normal(\mu_n,\sigma_n^2)$ converges in distribution to $\Normal(\mu,\sigma^2)$ with $\sigma>0$ if and only if $\mu_n\to\mu$ and $\sigma_n^2\to\sigma^2$.
-    \item The normal distribution maximises \textbf{entropy} among distributions with fixed first two moments, making it the \textit{least informative} among them.
-    \item Independence implies zero correlation, as always; for normal variables the converse holds too, \emph{provided the pair is jointly normal}.
-\end{itemize}
-
-The independence and joint-normality hypotheses above deserve a word, because the two statements they guard are among the most frequently misquoted in the subject, and a single counterexample disposes of both at once.
-
-\begin{remark}\label{rem:gaussiantraps}
-Let $X \sim \Normal(0,1)$ and let $\varepsilon$ be independent of $X$ with $\PP(\varepsilon = 1) = \PP(\varepsilon = -1) = \tfrac12$. Put $Y := \varepsilon X$. Conditioning on $\varepsilon$ shows at once that $Y \sim \Normal(0,1)$, and
-\[
-\E[XY] = \E[\varepsilon]\,\E[X^2] = 0,
-\]
-so $X$ and $Y$ are uncorrelated standard normal variables. They are very far from independent: $|X| = |Y|$ almost surely. Moreover $X + Y = (1+\varepsilon)X$ vanishes with probability $\tfrac12$, hence is not normal at all.
-
-The moral is that ``normal'' is a property of a \emph{law on $\R^d$}, not a property of a list of marginals. The pair $(X,Y)$ above has normal marginals but its joint law is not multivariate normal in the sense of Example \ref{example:multivariatenormal}, and every statement in the list above fails for it. Whenever we invoke Gaussianity for several variables at once --- as we shall constantly do for the increments of Brownian motion, and for the driving noises of the multi-factor models of Section \ref{sec:othermodels} --- it is joint normality that is meant.
-\end{remark}
-
-However, the most compelling reason why the normal distribution is so important rests on the following fundamental result, in a relatively weak form:
-
-\begin{theorem}[Central Limit Theorem]
-    Let $\{X_n\}_{n=1}^\infty$ be a sequence of independent, identically distributed (hereafter, \emph{i.i.d.}) random variables  with finite mean $\mu$ and variance $\sigma^2 > 0$. Then
-    \begin{equation}
-    \frac{\sum_{k=1}^n X_k - n\mu}{\sigma \sqrt{n}} \xrightarrow{d} \Normal(0,1). \text{\hspace{0.6cm}} \blacksquare
-    \end{equation}
-\end{theorem}
-
-The multivariate case is the one we shall actually need, since Brownian increments and multi-factor
-noises are always Gaussian several variables at a time. It is obtained from the one-dimensional
-statement by the following device, which also explains why Example \ref{example:multivariatenormal}
-below defines multivariate normality through one-dimensional projections rather than through a
-density.
 
 \begin{example}[Multivariate Normal Distribution]\label{example:multivariatenormal}
 An $\R^d$-valued random vector $X$ follows a \textbf{multivariate normal distribution} with
@@ -340,6 +304,84 @@ characteristic function is
 \begin{equation}\label{eq:mvncharfn}
 \charf_X(u) = \E[e^{i u\transp X}] = \exp\left( i u\transp \mu - \tfrac{1}{2} u\transp \Sigma u \right), \quad u \in \R^d.
 \end{equation}
+
+
+The normal distribution is fundamental in probability theory and statistics. It appears as the limiting distribution in the Central Limit Theorem and models many naturally occurring phenomena. Its characteristic function adopts the form
+\begin{equation}
+\charf_X(u) = \exp\left( i u \mu - \tfrac{1}{2} \sigma^2 u^2 \right).
+\end{equation}
+Its resemblance to the \textit{heat kernel} (see \cite{evans2010}) is not a coincidence and will be explored in the next section.
+
+Let $X \sim \Normal(\mu_X, \sigma_X^2)$ and $Y \sim \Normal(\mu_Y, \sigma_Y^2)$ be two \emph{independent} normal random variables. The following are easily verified through Theorem \ref{theorem:LevyContinuity}:
+
+\begin{itemize}
+    \item For $a, b \in \R$, $aX + bY \sim \Normal(a\mu_X+b\mu_Y,\, a^2\sigma_X^2+b^2 \sigma_Y^2)$; if instead $X$ and $Y$ are jointly normal with correlation $\rho$, the variance becomes $a^2\sigma_X^2+b^2\sigma_Y^2+2ab\rho\,\sigma_X\sigma_Y$. We write $Z \sim \Normal(\mu,0)$ for the constant variable $\mu$, so that the identity persists when constants are combined with normal variables.
+    \item Its characteristic function is entire analytic, and $X_n \sim \Normal(\mu_n,\sigma_n^2)$ converges in distribution to $\Normal(\mu,\sigma^2)$ with $\sigma>0$ if and only if $\mu_n\to\mu$ and $\sigma_n^2\to\sigma^2$.
+    \item The normal distribution maximises \textbf{entropy} among distributions with fixed first two moments, making it the \textit{least informative} among them.
+    \item Independence implies zero correlation, as always; for normal variables the converse holds too, \emph{provided the pair is jointly normal}.
+\end{itemize}
+
+
+
+\begin{remark}\label{rem:gaussiantraps}
+Let $X \sim \Normal(0,1)$ and let $\varepsilon$ be independent of $X$ with $\PP(\varepsilon = 1) = \PP(\varepsilon = -1) = \tfrac12$. Put $Y := \varepsilon X$. Conditioning on $\varepsilon$ shows at once that $Y \sim \Normal(0,1)$, and
+\[
+\E[XY] = \E[\varepsilon]\,\E[X^2] = 0,
+\]
+so $X$ and $Y$ are uncorrelated standard normal variables. They are very far from independent: $|X| = |Y|$ almost surely. Moreover $X + Y = (1+\varepsilon)X$ vanishes with probability $\tfrac12$, hence is not normal at all.
+
+The moral is that ``normal'' is a property of a \emph{law on $\R^d$}, not a property of a list of marginals. The pair $(X,Y)$ above has normal marginals but its joint law is not multivariate normal in the sense of Example \ref{example:multivariatenormal}, and every statement in the list above fails for it. Whenever we invoke Gaussianity for several variables at once, as we shall constantly do for the increments of Brownian motion, and for the driving noises of the multi-factor models of Section \ref{sec:othermodels}, it is joint normality that is meant.
+\end{remark}
+
+However, the most compelling reason why the normal distribution is so important rests on the following fundamental result, in a relatively weak form:
+
+\begin{theorem}[Central Limit Theorem]\label{thm:clt}
+    Let $\{X_n\}_{n=1}^\infty$ be a sequence of independent, identically distributed (hereafter, \emph{i.i.d.}) random variables  with finite mean $\mu$ and variance $\sigma^2 > 0$. Then
+    \begin{equation}\label{eq:clt}
+    S_n := \frac{\sum_{k=1}^n X_k - n\mu}{\sigma \sqrt{n}} \xrightarrow{d} \Normal(0,1).
+    \end{equation}
+\end{theorem}
+
+\textbf{\textit{Proof:}} Put $Y_k := (X_k - \mu)/\sigma$, so that the $Y_k$ are i.i.d.\ with
+$\E[Y_1] = 0$ and $\E[Y_1^2]=1$, and $S_n = n^{-1/2}\sum_{k=1}^n Y_k$. Write $\charf$ for the common
+characteristic function of the $Y_k$.
+
+Since $\E[Y_1^2] < \infty$, Proposition \ref{prop:charfnproperties} vi) makes $\charf$ twice
+differentiable with $\charf(0)=1$, $\charf'(0) = i\,\E[Y_1] = 0$ and
+$\charf''(0) = i^2\,\E[Y_1^2] = -1$. Taylor's theorem with Peano remainder therefore gives
+\begin{equation}\label{eq:clttaylor}
+\charf(u) = 1 - \tfrac{1}{2}u^2 + o(u^2), \qquad u \to 0 .
+\end{equation}
+By independence and items iv) and v) of the same proposition, $\charf_{S_n}(u) = \charf(u/\sqrt n)^n$.
+
+Fix $u \in \R$ and set $z_n := \charf(u/\sqrt n)$ and $w_n := 1 - u^2/(2n)$. Both have modulus at
+most $1$ once $n \geq u^2$, the first because characteristic functions are bounded by $1$ and the
+second because $0 \leq w_n \leq 1$ for such $n$. The elementary estimate
+$|z^n - w^n| \leq n\,|z-w|$, valid for $|z|,|w|\leq1$ and obtained by telescoping
+$z^n - w^n = \sum_{j=0}^{n-1} z^{j}(z-w)w^{n-1-j}$, then yields
+\[
+\bigl| \charf_{S_n}(u) - w_n^{\,n} \bigr| \;\leq\; n\,\bigl|\charf(u/\sqrt n) - w_n\bigr|
+\;=\; n \cdot o\!\left(\frac{u^2}{n}\right) \;\longrightarrow\; 0 ,
+\]
+the middle equality being \eqref{eq:clttaylor} applied at $u/\sqrt n \to 0$. Since
+$w_n^{\,n} = (1-u^2/2n)^n \to e^{-u^2/2}$, we conclude that
+$\charf_{S_n}(u) \to e^{-u^2/2}$ for every $u \in \R$.
+
+The limit is continuous at the origin, so Theorem \ref{theorem:LevyContinuity} applies and
+$S_n$ converges in distribution to the law with characteristic function $e^{-u^2/2}$, which is
+$\Normal(0,1)$. \hfill $\blacksquare$
+
+\medskip
+
+\noindent Observe where the hypotheses enter. Finiteness of the variance is what licenses the
+second-order expansion \eqref{eq:clttaylor}, and it is the only place the assumption is used;
+this is the precise sense in which the limit ignores everything about the law of $X_1$ beyond its
+first two moments. Note also that the argument never assumes in advance that $e^{-u^2/2}$ is a
+characteristic function --- that it is one is supplied by Lévy's theorem, which is exactly the form
+of the statement discussed after Theorem \ref{theorem:LevyContinuity}.
+
+
+
 \begin{theorem}[Cramér--Wold device]\label{thm:cramerwold}
 Let $X_n, X$ be $\R^d$-valued random vectors. Then $X_n \xrightarrow{d} X$ if and only if
 $a\transp X_n \xrightarrow{d} a\transp X$ for every $a \in \R^d$.
@@ -361,13 +403,13 @@ covariance $\Sigma$. Then
 
 \textbf{\textit{Proof:}} Fix $a \in \R^d$. The variables $a\transp X_k$ are i.i.d.\ real,
 with mean $a\transp\mu$ and variance $a\transp\Sigma a$, so the one-dimensional Central Limit
-Theorem gives $n^{-1/2}\sum_k a\transp(X_k-\mu) \xrightarrow{d} \Normal(0, a\transp\Sigma a)$. By
+Theorem \ref{thm:clt} gives $n^{-1/2}\sum_k a\transp(X_k-\mu) \xrightarrow{d} \Normal(0, a\transp\Sigma a)$. By
 Example \ref{example:multivariatenormal} that limit is the law of $a\transp Z$ for
 $Z \sim \Normal_d(0,\Sigma)$. Since $a$ was arbitrary, Theorem \ref{thm:cramerwold} yields
 \eqref{eq:multivariateclt}. The degenerate case $a\transp\Sigma a = 0$ is included, the limit then
 being the constant $0$. \hfill $\blacksquare$
 
-For a multivariate normal vector --- and, as Remark \ref{rem:gaussiantraps} showed, only then --- uncorrelatedness does imply independence. Indeed, if $\Sigma$ is block-diagonal then \eqref{eq:mvncharfn} factorises as a product of the characteristic functions of the corresponding sub-vectors, which is exactly independence.
+For a multivariate normal vector (and, as Remark \ref{rem:gaussiantraps} showed, only then) uncorrelatedness does imply independence. Indeed, if $\Sigma$ is block-diagonal then \eqref{eq:mvncharfn} factorises as a product of the characteristic functions of the corresponding sub-vectors, which is exactly independence.
 
 \begin{example}[Log-Normal Distribution]
 A random variable \( X \) is said to follow a \textbf{log-normal distribution} with parameters \( \mu \in \R \) and \( \sigma > 0 \), denoted
@@ -389,22 +431,23 @@ The formula $\E[X^k] = \exp(k\mu + \tfrac12 k^2\sigma^2)$ holds for every $k \in
 not merely for $k \in \N$: it is obtained by writing $X^k = e^{kZ}$ with
 $Z \sim \Normal(\mu,\sigma^2)$ and evaluating the Gaussian moment generating function, which is
 finite for every real argument. Moments of \emph{all} real orders, negative ones included, therefore
-exist and are finite --- a point worth making explicitly, since it is what makes the failure below so
-surprising. In particular $\E[X] = e^{\mu+\sigma^2/2}$ and
+exist and are finite. In particular $\E[X] = e^{\mu+\sigma^2/2}$ and
 $\Var[X] = (e^{\sigma^2}-1)e^{2\mu+\sigma^2}$. And yet the
 log-normal distribution has two unpleasant analytical features that will matter later.
 
-The first is that its characteristic function admits no closed-form expression. This is a genuine inconvenience --- it is precisely why the Black-Scholes model, despite its explicit pricing formula, is not amenable to the Fourier techniques that make the Heston model of Subsection \ref{subsec:stochvol} tractable --- but it is not a pathology. Note that $\charf_X$ is defined and bounded by $1$ for every \emph{real} $u$, as it is for any random variable; what fails is the \emph{moment generating function} $\E[e^{uX}]$, which is infinite for every $u > 0$. The two objects are easily confused and we shall keep them apart.
+The first is that its characteristic function admits no closed-form expression. This is a genuine inconvenience. It is precisely why the Black-Scholes model, despite its explicit pricing formula, is not amenable to the Fourier techniques that make the Heston model of Subsection \ref{subsec:stochvol} tractable, but this is not a pathology. Note that $\charf_X$ is defined and bounded by $1$ for every \emph{real} $u$, as it is for any random variable; what fails is the \emph{moment generating function} $\E[e^{uX}]$, which is infinite for every $u > 0$. The two objects are easily confused and we shall keep them apart.
 
-The second is more surprising. Despite having moments of all orders, \textbf{the log-normal distribution is not determined by them}: there is an explicit one-parameter family of mutually distinct densities on $(0,\infty)$ sharing every moment with it, exhibited by Heyde \cite{heyde1963} and reproduced in Appendix \ref{app:heyde}. It is worth being precise about what does \emph{not} fail here, since the point is easy to garble. Lévy's inversion formula \eqref{levyInversionFormula} holds without exception, and the characteristic function does determine the log-normal law uniquely; what fails is the passage from the \emph{moment sequence} to the characteristic function.
+ Despite having moments of all orders, \textbf{the log-normal distribution is not determined by them}: there is an explicit one-parameter family of mutually distinct densities on $(0,\infty)$ sharing every moment with it, exhibited by Heyde \cite{heyde1963} and reproduced in Appendix \ref{app:heyde}. It is worth being precise about what does \emph{not} fail here. Lévy's inversion formula \eqref{levyInversionFormula} holds without exception, and the characteristic function does determine the log-normal law uniquely. What fails is the passage from the \emph{moment sequence} to the characteristic function.
 
-The logical status of that failure deserves care, because it is routinely overstated. Carleman's condition $\sum_k m_{2k}^{-1/2k} = \infty$ is \emph{sufficient} for a law to be determined by its moments, not necessary. The log-normal moments grow as $e^{k^2\sigma^2/2}$, which is fast enough to violate the condition --- but a violated sufficient condition establishes only that the criterion is silent, never that the conclusion is false. What establishes indeterminacy here is nothing to do with growth rates: it is Heyde's explicit exhibition of a one-parameter family of distinct densities sharing the moment sequence. The growth rate tells us why no elementary criterion could have saved us; the construction tells us that nothing could.
+% The logical status of that failure deserves care, because it is routinely overstated. Carleman's condition $\sum_k m_{2k}^{-1/2k} = \infty$ is \emph{sufficient} for a law to be determined by its moments, not necessary. The log-normal moments grow as $e^{k^2\sigma^2/2}$, which is fast enough to violate the condition --- but a violated sufficient condition establishes only that the criterion is silent, never that the conclusion is false. What establishes indeterminacy here is nothing to do with growth rates: it is Heyde's explicit exhibition of a one-parameter family of distinct densities sharing the moment sequence. The growth rate tells us why no elementary criterion could have saved us; the construction tells us that nothing could.
 
 The lesson is one we shall meet again in Chapter \ref{ch:roughpaths}: knowing every moment of an object is strictly weaker than knowing the object, and the signature transform will be interesting precisely because, for paths, the analogous sufficient condition is \emph{satisfied} rather than violated, so that the corresponding statement can be made to go the right way.
 
 Two elementary processes will be needed later, and we record them together.
 
 \begin{example}[Random walk and Poisson process]\label{example:randomwalk}
+
+
 i) Let $\{\xi_n\}$ be i.i.d.\ with $\PP(\xi_n = 1) = \PP(\xi_n=-1)=\tfrac12$. The
 \textbf{simple symmetric random walk} is $X_0 := 0$, $X_n := \sum_{k=1}^n \xi_k$: a discrete-time,
 integer-valued process with stationary and independent increments. Since
@@ -424,8 +467,7 @@ $\charf_{N_t}(u) = e^{\lambda t(e^{iu}-1)}$.
 We shall return to i) in Theorem \ref{thm:donsker}, where the jump size and the waiting time between
 jumps are adjusted simultaneously and a new process emerges in the limit. Part ii) will serve
 throughout as the standard example of a process which is \emph{continuous in time}, since
-$\Tset = [0,\infty)$, while having discontinuous sample paths --- a distinction worth keeping
-straight. It is the elementary building block for markets in which prices genuinely jump, such as
+$\Tset = [0,\infty)$, while having discontinuous sample paths. It is the elementary building block for markets in which prices genuinely jump, such as
 electricity, and it will reappear as the canonical process that is \emph{not} a diffusion.
 
 \begin{remark}
@@ -448,11 +490,11 @@ The \textbf{transition probability} of a Markov process is $\PP(X_t \in A \mid X
 
 There is a rather sharp distinction between finite-state Markov processes and those with infinitely many states. In the finite case, the theory is built around transition matrices: the probability of moving from one state to another in a single step is recorded in a matrix $P_t$, so that the evolution is the product $\prod_{i=1}^n P_i$, and long-run behaviour can be analysed by classical linear-algebraic tools, especially in the stationary case, that is, when the transition probability is independent of $t$.
 
-In the infinite-state setting the dynamics are instead described by operators acting on spaces of functions or measures, so that the study of these processes relies on functional analysis and differential equations as much as on probability. That apparatus --- the transition semigroup $(P_t)_{t\geq0}$, its infinitesimal generator, and the Kolmogorov equations they satisfy --- is developed in Subsection \ref{section:itoDiff}, once diffusions are available to make it concrete; we do not anticipate it here.
+In the infinite-state setting the dynamics are instead described by operators acting on spaces of functions or measures, so that the study of these processes relies on functional analysis and differential equations as much as on probability. That apparatus, the transition semigroup $(P_t)_{t\geq0}$, its infinitesimal generator, and the Kolmogorov equations they satisfy is developed in Subsection \ref{section:itoDiff}, once diffusions are available to make it concrete.
 
 \subsection{Martingales, semimartingales and local martingales}\label{subsec:martingales}
 
-Martingales are processes for which the expected value of a future instant is precisely the state of the process up to present time. Martingales are absolutely key in the study of stochastic processes. Some generalizations are needed as well. We keep the notation used in the previous section.
+Martingales are processes for which the expected value of a future instant is precisely the state of the process up to present time. Martingales are absolutely key in the study of stochastic processes and some generalizations are needed as well.
 
 \begin{definition}[Martingale] 
     Let $X_t$ be a stochastic process, adapted to a given filtration $\mathcal{F}_t$. We say it is a \textbf{martingale} provided:
@@ -502,7 +544,9 @@ In particular $\E[X_\tau] = \E[X_0]$. The corresponding statements with $=$ repl
 by $\leq$ or $\geq$ hold for sub- and supermartingales respectively. \hfill $\blacksquare$
 \end{theorem}
 
-Two remarks on the hypotheses before we use the theorem. They are not independent: iii) implies ii), 
+Equation \eqref{eq:optionalstopping} is the assertion that a martingale remains a martingale when 
+observed along a random clock, and it is one of those results whose hypotheses are more instructive 
+than its conclusion. Two remarks on the hypotheses before we use the theorem. They are not independent: iii) implies ii), 
 since a family dominated by a single integrable variable is uniformly integrable, so iii) is 
 recorded only because it is the form in which the hypothesis is usually easiest to check. More 
 importantly, under the finite-horizon convention of Definition \ref{stoppingTime} --- which is in 
@@ -511,25 +555,25 @@ $\tau \leq T$ --- hypothesis i) holds automatically, and the theorem applies unc
 hypotheses do work only on an infinite horizon, and that is precisely why the theorem has been 
 stated there: the phenomenon they exclude is invisible on $[0,T]$.
 
-Equation \eqref{eq:optionalstopping} is the assertion that a martingale remains a martingale when 
-observed along a random clock, and it is one of those results whose hypotheses are more instructive 
-than its conclusion. That some hypothesis is indispensable is shown by the following example, which 
-requires the infinite horizon and is the reason for the convention adopted in the theorem. Let $W$ be a Brownian motion and 
-$\tau = \inf\{t : W_t = 1\}$, which is finite almost surely. Then $W_\tau = 1$ identically, so 
-$\E[W_\tau] = 1 \neq 0 = \E[W_0]$, and \eqref{eq:optionalstopping} fails. Nothing is 
-wrong with the theorem; the stopping time is simply unbounded and $W_{t\wedge\tau}$ is not uniformly 
-integrable. The financial reading of this example is exact and worth stating: a strategy that waits 
-however long is necessary to be up by one unit does indeed win with certainty, and it is not an 
-arbitrage only because executing it may require unbounded losses along the way. That is precisely 
-what the admissibility constraint of Definition \ref{def:admissible} will forbid.
+%  Because $\{X_{t\wedge\tau}\}$ is a martingale whenever $X$ is --- which is case i) applied at each 
+% $t$ --- optional stopping is also the mechanism behind localisation. A local martingale is by 
+% Definition \ref{def:localmartingale} a process which becomes a martingale after stopping; the content 
+% of that definition is that all the martingale machinery, including \eqref{eq:optionalstopping} and 
+% Proposition \ref{prop:doobmaximal}, remains available on each piece.
 
-Because $\{X_{t\wedge\tau}\}$ is a martingale whenever $X$ is --- which is case i) applied at each 
-$t$ --- optional stopping is also the mechanism behind localisation. A local martingale is by 
-Definition \ref{def:localmartingale} a process which becomes a martingale after stopping; the content 
-of that definition is that all the martingale machinery, including \eqref{eq:optionalstopping} and 
-Proposition \ref{prop:doobmaximal}, remains available on each piece.
+% That some hypothesis is indispensable is shown by the following example, which 
+% requires the infinite horizon and is the reason for the convention adopted in the theorem. Let $W$ be a Brownian motion and 
+% $\tau = \inf\{t : W_t = 1\}$, which is finite almost surely. Then $W_\tau = 1$ identically, so 
+% $\E[W_\tau] = 1 \neq 0 = \E[W_0]$, and \eqref{eq:optionalstopping} fails. Nothing is 
+% wrong with the theorem; the stopping time is simply unbounded and $W_{t\wedge\tau}$ is not uniformly 
+% integrable. The financial reading of this example is exact and worth stating: a strategy that waits 
+% however long is necessary to be up by one unit does indeed win with certainty, and it is not an 
+% arbitrage only because executing it may require unbounded losses along the way. That is precisely 
+% what the admissibility constraint of Definition \ref{def:admissible} will forbid.
 
-The following result will be useful when constructing stochastic processes from Itô integrals. Notice that if $X_t$ is a martingale, then by Jensen's inequality (Proposition \ref{prop:condjensenl2}, item 8) $X_t^2$ is a submartingale.
+
+
+The following result will be useful when constructing stochastic processes from Itô integrals. Notice that if $X_t$ is a martingale, then by Jensen's inequality (Proposition \ref{prop:condjensenl2}, item i)) $X_t^2$ is a submartingale.
  
 \begin{proposition}[Doob's submartingale inequality]\label{prop:doobmaximal}
     Let $Z = \{Z_t\}_{t\in[0,T]}$ be a right-continuous submartingale. Then, for any $\varepsilon > 0$,
@@ -561,6 +605,56 @@ A process $X = \{X_t\}_{t \in [0,T]}$ is a \textbf{local martingale} if there ex
 
 The idea is that $X$ behaves like a martingale, but only up to random horizons. An analogy could be drawn from ODEs: there are solutions that explode to infinity in finite time, and those that can be extended to all times. Here, the integrability condition can be somewhat replaced if we work with sequences of stopping times. This mathematical object deserves its own study but lies beyond the scope of this dissertation.
 
+Before introducing the last class of processes, we record two ways of measuring how much a function
+moves. Both are needed to state the definition that follows, and both will be with us for the rest
+of the chapter.
+
+\begin{definition}[Total variation]\label{def:totalvariation}
+The \textbf{total variation} of $f : [0,T]\to\R$ on $[0,t]$ is
+\begin{equation}
+V_1(f)_t := \sup_{\mathcal{P}} \sum_{k=1}^n \bigl| f(t_k) - f(t_{k-1}) \bigr|,
+\end{equation}
+the supremum being over all partitions $\mathcal{P} = \{0=t_0<\cdots<t_n=t\}$ of $[0,t]$. If
+$V_1(f)_t < \infty$ we say $f$ has \textbf{bounded variation} on $[0,t]$.
+\end{definition}
+
+Bounded variation is exactly the condition under which the Riemann--Stieltjes integral
+$\int_0^t g\,df$ is defined for every continuous $g$; equivalently, it is the condition under
+which $f$ induces a signed measure $df$. It is therefore the natural first thing to ask of a
+prospective integrator.
+
+\begin{definition}[Quadratic Variation] \label{def:quadratic-variation}
+Let \(f : [0,T] \to \R\) and let \(\mathcal{P} = \{0=t_0 < t_1 < \dots < t_n=t\}\) be a partition of
+\([0,t]\). Write
+\begin{equation}
+\lVert \mathcal{P} \rVert = \max_{1 \leq k \leq n} (t_k - t_{k-1}).
+\end{equation}
+If the limit
+\begin{equation}\label{eq:qvdef}
+[f]_t := \lim_{\lVert \mathcal{P} \rVert \to 0}
+\sum_{k=1}^n \big( f(t_k) - f(t_{k-1}) \big)^2
+\end{equation}
+exists, it is called the \textbf{quadratic variation} of \(f\) on \([0,t]\).
+\end{definition}
+
+Two cautions are in order. First, the limit in \eqref{eq:qvdef} need not exist for an arbitrary $f$, which is why the definition is phrased conditionally. Second, for a \emph{stochastic} process the sums in \eqref{eq:qvdef} are random variables, and the limit must be specified as a limit of random variables. We shall always understand it in $L^2(\Omega)$, which for our purposes is both the easiest to obtain and strong enough to imply convergence in probability, and hence almost sure convergence along a subsequence.
+
+It is worth pausing on how strange \eqref{eq:qvdef} is from the point of view of ordinary calculus. If $f$ is continuously differentiable, then $|f(t_k)-f(t_{k-1})| \leq C\,(t_k - t_{k-1})$ and the sum is bounded by $C^2 \lVert\mathcal{P}\rVert \, t \to 0$: smooth functions have zero quadratic variation. The same computation applies to any continuous function of bounded variation. A non-zero quadratic variation is therefore a certificate of irregularity, and Proposition \ref{prop:bm-properties}(e) below will assert that Brownian motion carries exactly such a certificate.
+
+For a martingale there is a second and less elementary route to the same object, which we state here
+in advance because the notation is needed almost immediately. We shall see in Theorem
+\ref{thm:doobmeyer} that if $M$ is a square-integrable martingale, then $M^2$ admits a unique
+decomposition
+\begin{equation}\label{eq:compensatorannounce}
+M_t^2 = R_t + \qv{M}_t ,
+\end{equation}
+in which $R$ is a martingale and $\qv{M}$ is predictable, increasing and null at the origin. The
+process $\qv{M}$ is called the \textbf{compensator} of $M^2$, or the \emph{predictable quadratic
+variation} of $M$. Proposition \ref{prop:qvcoincide} will show that for continuous $M$ it coincides
+with the pathwise $[M]$ of Definition \ref{def:quadratic-variation}, so that no ambiguity arises
+from writing $\qv{M}$ throughout, as we shall. Nothing in the present subsection depends on the
+proof of either statement; only the notation is being borrowed.
+
 \noindent
 Finally, there is another related concept, broad enough to serve as a class of \textit{good integrators}. In particular, it extends the role played by Brownian motion as a canonical integrator, while retaining enough structure to allow a general theory of stochastic calculus.
 
@@ -569,7 +663,7 @@ A process $X$ is called a \textbf{semimartingale} if it can be decomposed as
 \[
 X_t = M_t + A_t,
 \]
-where $M_t$ is a local martingale and $A_t$ is adapted,  \textit{continue à droite, avec limite à gauche} (càdlàg), of locally bounded variation and $A_0$ = 0.
+where $M_t$ is a local martingale and $A_t$ is adapted,  \textit{continue à droite, avec limites à gauche} (càdlàg), of locally bounded variation and $A_0$ = 0.
 \end{definition}
 
 This last definition is the correct level of generality for stochastic integration, and it is 
@@ -581,33 +675,33 @@ the construction of Section \ref{sec:stochasticcalculus} is carried out for $M =
 uses $\E[(W_{t_i}-W_{t_{i-1}})^2] = t_i - t_{i-1}$ at its one essential step, the isometry of 
 Theorem \ref{thm:itoisometry}. For a general continuous local martingale the same construction goes 
 through with $\int_0^T \E[f^2]\,dt$ replaced throughout by 
-$\E\int_0^T f^2\,d\langle M\rangle_t$, the compensator supplied by Theorem 
-\ref{thm:doobmeyer} and identified with the pathwise quadratic variation by Proposition 
-\ref{prop:qvcoincide}; localisation then removes the integrability hypotheses. We do not carry this 
-out, and shall integrate only against Brownian motion.
+$\E\int_0^T f^2\,d\qv{M}_t$, the compensator of \eqref{eq:compensatorannounce}; localisation then
+removes the integrability hypotheses. We do not carry this out, and shall integrate only against
+Brownian motion.
+
 
 Granting it, a semimartingale is precisely a process that can be integrated against by splitting the 
 work between deterministic analysis and probability, and the Bichteler--Dellacherie theorem makes 
 the converse precise: semimartingales are, in a suitable topological sense, the \emph{only} 
 processes admitting a reasonable theory of stochastic integration; see \cite{protter2005}.
 
-We shall not develop that general theory --- every integrator in Part I is continuous, and for 
-continuous processes the decomposition is unique --- but the definition is recorded because of what 
-happens when it fails. The uniqueness just invoked is worth a line, since Chapter \ref{ch:roughpaths} 
-will lean on it: if $M + A = \widetilde M + \widetilde A$ are two such decompositions, then 
-$M - \widetilde M = \widetilde A - A$ is simultaneously a continuous local martingale and a 
-continuous process of finite variation, hence has vanishing quadratic variation; a continuous local
-martingale with vanishing quadratic variation and null initial value is identically zero, by
-Proposition \ref{prop:qvcoincide} and the fact that $M^2 - \langle M\rangle$ is a local martingale.
-(That last fact is Theorem \ref{thm:doobmeyer} localised: the decomposition is stated there for
-square-integrable martingales, and one recovers the local statement by stopping along a localising
-sequence and using uniqueness of the decomposition on each piece.) Not every process of interest is a semimartingale: fractional Brownian 
-motion with Hurst parameter $H \neq \tfrac12$ is not one, a result of Rogers \cite{rogers1997}, and consequently 
-neither the Itô integral nor any of the machinery built on it is available for it. Since such 
-processes are exactly what the empirical evidence on volatility will point towards, the reader 
-should register Definition \ref{def:semimartingale} less as a technical generalisation than as a 
-boundary: it marks the outer limit of the theory developed in this chapter, and Part 
-\ref{part:part2} begins where it ends.
+% We shall not develop that general theory --- every integrator in Part I is continuous, and for 
+% continuous processes the decomposition is unique --- but the definition is recorded because of what 
+% happens when it fails. The uniqueness just invoked is worth a line, since Chapter \ref{ch:roughpaths} 
+% will lean on it: if $M + A = \widetilde M + \widetilde A$ are two such decompositions, then 
+% $M - \widetilde M = \widetilde A - A$ is simultaneously a continuous local martingale and a 
+% continuous process of finite variation, hence has vanishing quadratic variation; a continuous local
+% martingale with vanishing quadratic variation and null initial value is identically zero, by
+% Proposition \ref{prop:qvcoincide} and the fact that $M^2 - \langle M\rangle$ is a local martingale.
+% (That last fact is Theorem \ref{thm:doobmeyer} localised: the decomposition is stated there for
+% square-integrable martingales, and one recovers the local statement by stopping along a localising
+% sequence and using uniqueness of the decomposition on each piece.) Not every process of interest is a semimartingale: fractional Brownian 
+% motion with Hurst parameter $H \neq \tfrac12$ is not one, a result of Rogers \cite{rogers1997}, and consequently 
+% neither the Itô integral nor any of the machinery built on it is available for it. Since such 
+% processes are exactly what the empirical evidence on volatility will point towards, the reader 
+% should register Definition \ref{def:semimartingale} less as a technical generalisation than as a 
+% boundary: it marks the outer limit of the theory developed in this chapter, and Part 
+% \ref{part:part2} begins where it ends.
 
 \subsection{Brownian Motion}\label{subsec:brownianmotion}
 
@@ -642,86 +736,9 @@ A stochastic process \(W : \R^+ \times \Omega \to \R\) is called a
 \end{itemize}
 \end{definition}
 
-Some properties of Brownian motion follow immediately from the definition 
-and are presented below. The last one illustrates the property known as 
-\emph{stochastic self-similarity}. 
 
-\medskip
 
-In order to work with the broadest possible class of stochastic processes, 
-we introduce the following general result.
 
-\begin{proposition} \label{prop:independent-increments}
-Let \(S(t), \, t \geq 0\), be a process adapted to the filtration 
-\((\mathcal{F}_t)_{t \geq 0}\) such that for any \(0 \leq s < t\),
-the increment \(S(t)-S(s)\) is independent of \(\mathcal{F}_s\). 
-Then \(S(t)\) has independent increments.
-\end{proposition}
-
-\textit{\textbf{Proof}.} Let $0 \leq t_1 < t_2 < \cdots < t_n$ and write
-$\Delta_k = S(t_k) - S(t_{k-1})$. We show by induction on $n$ that the vector
-$(\Delta_1,\dots,\Delta_n)$ has independent components. For $n=1$ there is nothing to prove.
-Assume the claim for $n-1$. Each of $\Delta_1, \dots, \Delta_{n-1}$ is
-$\mathcal{F}_{t_{n-1}}$-measurable, since $S$ is adapted and $t_k \leq t_{n-1}$ for $k \leq n-1$;
-hence so is any Borel function of them. By hypothesis $\Delta_n$ is independent of
-$\mathcal{F}_{t_{n-1}}$, and therefore independent of $(\Delta_1,\dots,\Delta_{n-1})$. For bounded
-Borel $g_1,\dots,g_n$ this gives
-\[
-\E\Bigl[\prod_{k=1}^n g_k(\Delta_k)\Bigr]
-= \E\bigl[g_n(\Delta_n)\bigr]\;\E\Bigl[\prod_{k=1}^{n-1} g_k(\Delta_k)\Bigr]
-= \prod_{k=1}^n \E\bigl[g_k(\Delta_k)\bigr],
-\]
-the last equality by the induction hypothesis. Since this holds for all such $g_k$, the increments
-are independent. \hfill $\blacksquare$
-
-\medskip
-
-Proposition \ref{prop:independent-increments} suggests the notion we shall actually work with. 
-Definition \ref{def:Brownian-motion} describes a process in isolation; every statement in the 
-remainder of this chapter, however, involves a filtration as well --- the martingale property, the 
-construction of the Itô integral, Lévy's characterisation and Girsanov's theorem are all assertions 
-about a process \emph{relative to a flow of information}. We therefore fix the compound notion once.
-
-\begin{definition}[Brownian motion with respect to a filtration]\label{def:filtbm}
-Let $\FPSpace$ be a filtered probability space. A process $W$ is a 
-\textbf{$\Filt$-Brownian motion} if
-\begin{itemize}
-    \item[i)] $W$ is adapted to $\Filt$, with $W_0 = 0$ almost surely and almost all paths continuous; and
-    \item[ii)] for all $s \leq t$, the increment $W_t - W_s$ is independent of $\mathcal{F}_s$ and has law $\Normal(0,t-s)$.
-\end{itemize}
-\end{definition}
-
-By Proposition \ref{prop:independent-increments}, condition ii) already forces the independence of 
-increments demanded in Definition \ref{def:Brownian-motion} iv), so a $\Filt$-Brownian motion is in 
-particular a Brownian motion; the content of the definition is the \emph{relative} independence, 
-which iv) alone does not give. Conversely, any Brownian motion is a $\Filt$-Brownian motion for its 
-own natural filtration $\FiltW$, augmented as in Convention \ref{conv:usualconditions}, and this is 
-the filtration we use unless another is named.\footnote{
-Analogous considerations hold for a Poisson process; see \cite{durrett2019}.} 
-The distinction is not idle: Girsanov's theorem (Theorem \ref{girsanovtheorem}) changes the measure 
-while keeping the filtration fixed, and its conclusion is exactly that a certain process is a 
-$\Filt$-Brownian motion under the new measure.
-
-The next definition and proposition highlight some of the structural richness 
-of such processes. In particular, the last property quantifies the 
-\emph{roughness} of sample paths, a key feature of Brownian motion.
-
-\begin{definition}[Quadratic Variation] \label{def:quadratic-variation}
-Let \(f : [0,T] \to \R\), and for a partition \(\mathcal{P} = \{0=t_0 < t_1 < \dots < t_n=t\}\) of \([0,t]\) write
-\begin{equation}
-\lVert \mathcal{P} \rVert = \max_{1 \leq k \leq n} (t_k - t_{k-1}).
-\end{equation}
-If the limit
-\begin{equation}\label{eq:qvdef}
-[f]_t := \lim_{\lVert \mathcal{P} \rVert \to 0} 
-\sum_{k=1}^n \big( f(t_k) - f(t_{k-1}) \big)^2
-\end{equation}
-exists, it is called the \textbf{quadratic variation} of \(f\) on \([0,t]\).
-\end{definition}
-
-Two cautions are in order. First, the limit in \eqref{eq:qvdef} need not exist for an arbitrary $f$, which is why the definition is phrased conditionally. Second --- and this is the point that will matter --- for a \emph{stochastic} process the sums in \eqref{eq:qvdef} are random variables, and the limit must be specified as a limit of random variables. We shall always understand it in $L^2(\Omega)$, which for our purposes is both the easiest to obtain and strong enough to imply convergence in probability, and hence almost sure convergence along a subsequence.
-
-It is worth pausing on how strange \eqref{eq:qvdef} is from the point of view of ordinary calculus. If $f$ is continuously differentiable, then $|f(t_k)-f(t_{k-1})| \leq C\,(t_k - t_{k-1})$ and the sum is bounded by $C^2 \lVert\mathcal{P}\rVert \, t \to 0$: smooth functions have zero quadratic variation. The same computation applies to any function of bounded variation that is continuous. A non-zero quadratic variation is therefore a certificate of irregularity, and the following proposition asserts that Brownian motion carries exactly such a certificate.
 
 \begin{proposition} \label{prop:bm-properties}
 Let \((W_t)_{t \geq 0}\) be a Brownian motion. Then:
@@ -801,16 +818,13 @@ so $\E[W_t^2 - t \mid \mathcal{F}_s] = W_s^2 - s$. \hfill $\blacksquare$
 \medskip
 
 One might wonder whether such a process actually exists, given the strong 
-set of requirements in Definition~\ref{def:Brownian-motion}. The question is not idle: 
-we have demanded independent Gaussian increments \emph{and} continuity of every sample path, 
+set of requirements in Definition~\ref{def:Brownian-motion}. We have demanded independent Gaussian increments \emph{and} continuity of every sample path, 
 and there is no reason a priori why the two should be compatible. A full construction would 
-take us too far afield, but it would be unsatisfying to leave the matter entirely unaddressed, 
-so we indicate the results which settle it --- each of which we shall have occasion to use 
-again for its own sake.
+take us too far, but it would be unsatisfying to leave the matter entirely unaddressed, 
+so we indicate the results which settle it.
 
-The construction proceeds in two stages, and the division of labour between them is worth naming in 
-advance, because it is exactly the division between the finite-dimensional and the pathwise. The 
-first stage produces a process with the right finite-dimensional distributions and says nothing 
+The construction proceeds in two stages. The 
+first one produces a process with the right finite-dimensional distributions and says nothing 
 whatever about its paths; the second repairs the paths without disturbing the distributions.
 
 The first stage is the Daniell--Kolmogorov extension theorem. Conditions iii) and iv) of Definition 
@@ -818,13 +832,13 @@ The first stage is the Daniell--Kolmogorov extension theorem. Conditions iii) an
 law of $(W_{t_1},\dots,W_{t_n})$: it is the centred Gaussian law on $\R^n$ with covariance 
 $\min\{t_i,t_j\}$, which is positive semi-definite and therefore legitimate. These laws are 
 \emph{consistent}, in the sense that the law prescribed for a larger set of times marginalises to 
-the law prescribed for a smaller one --- an immediate consequence of the Gaussian algebra. The 
+the law prescribed for a smaller one. The 
 extension theorem then asserts that any consistent family of finite-dimensional distributions is 
 realised by some process on the product space $\R^{[0,\infty)}$; see 
 \cite[Thm.\ 2.2.2]{karatzasshreve1991} or \cite[Ch.\ 8]{durrett2019}.
 
 What this stage cannot deliver is condition ii). The set of continuous paths is not measurable in 
-the product $\sigma$-algebra --- membership in it depends on uncountably many coordinates at once --- 
+the product $\sigma$-algebra since membership in it depends on uncountably many coordinates at once, 
 so continuity is invisible to the finite-dimensional data and must be obtained separately. That is 
 the second stage, and it does so from a moment condition alone.
 
@@ -847,18 +861,94 @@ exponents $\gamma < (m-1)/2m$, which as $m \to \infty$ approach $1/2$ from below
 it. That the supremum is exactly $1/2$, and that it is not attained, is the subject of the next 
 subsection.
 
-Note the word \emph{modification}: what Theorem \ref{thm:kolmogorovcontinuity} produces is a 
-process agreeing with $X$ at each fixed time almost surely, not one agreeing with $X$ along whole 
-paths (Remark \ref{rem:modification}). This is not a defect of the theorem but a necessity, since 
-\eqref{eq:kolmogorovmoment} constrains only two-dimensional distributions and cannot possibly 
-determine path behaviour on its own. As is customary, we shall always work with the continuous 
-modification and cease to mention the distinction.
 
-That settles existence. But Brownian motion is not merely \emph{a} process meeting the requirements 
-of Definition \ref{def:Brownian-motion}; it is the process that an enormous class of unrelated 
-constructions converges to. The statement is the following, and it is the promised return to the simple symmetric random walk of 
-Example \ref{example:randomwalk}, where we said we would come back once the jump size and the 
-waiting time between jumps had been adjusted together.
+\begin{remark}[Modification versus indistinguishability]\label{rem:modification}
+What Theorem \ref{thm:kolmogorovcontinuity} produces is a process agreeing with $X$ at each fixed
+time almost surely, not one agreeing with $X$ along whole paths, and the distinction has a name.
+Two processes $X$ and $Y$ on the same space are \textbf{modifications} of each other if
+$\PP(X_t = Y_t) = 1$ for every fixed $t$, and \textbf{indistinguishable} if
+$\PP(X_t = Y_t \text{ for all } t) = 1$. The second is strictly stronger: in the first the
+exceptional null set is allowed to depend on $t$, and an uncountable union of null sets need not be
+null. The two notions do coincide when both processes have right-continuous paths, which is the
+situation we shall almost always be in --- but the coincidence is a small theorem, not a definition,
+and we shall be careful to say which of the two we mean.
+
+That the theorem delivers only the weaker of the two is not a defect but a necessity, since
+\eqref{eq:kolmogorovmoment} constrains only two-dimensional distributions and cannot possibly
+determine path behaviour on its own. What matters for the construction at hand is the other side of
+the coin: a modification has, by definition, the same finite-dimensional distributions as the
+process it modifies. As is customary, we shall always work with the continuous modification and
+cease to mention the distinction.
+\end{remark}
+
+The two stages now fit together. Daniell--Kolmogorov supplies a process whose finite-dimensional
+distributions are the prescribed Gaussian ones, hence a process satisfying conditions i), iii) and
+iv) of Definition \ref{def:Brownian-motion} and saying nothing about ii); Kolmogorov's criterion
+replaces it by a modification with continuous paths, which by Remark \ref{rem:modification} carries
+the same finite-dimensional distributions and therefore retains i), iii) and iv) while acquiring
+ii). Since the criterion is stated on a compact interval, one applies it on each $[0,n]$ and patches,
+the modifications so obtained agreeing almost surely on overlaps. Existence is settled.
+
+Brownian motion is, however, not merely \emph{a} process meeting the requirements
+of Definition \ref{def:Brownian-motion}; it is the process that an enormous class of unrelated
+constructions converges to. Before making that precise we record a general fact about increments
+relative to a filtration, together with the version of Definition \ref{def:Brownian-motion} that it
+suggests, since every statement in the remainder of this chapter is of that relative kind.
+
+\begin{proposition} \label{prop:independent-increments}
+Let \(S(t), \, t \geq 0\), be a process adapted to the filtration 
+\((\mathcal{F}_t)_{t \geq 0}\) such that for any \(0 \leq s < t\),
+the increment \(S(t)-S(s)\) is independent of \(\mathcal{F}_s\). 
+Then \(S(t)\) has independent increments.
+\end{proposition}
+
+\textit{\textbf{Proof}.} Let $0 \leq t_1 < t_2 < \cdots < t_n$ and write
+$\Delta_k = S(t_k) - S(t_{k-1})$. We show by induction on $n$ that the vector
+$(\Delta_1,\dots,\Delta_n)$ has independent components. For $n=1$ there is nothing to prove.
+Assume the claim for $n-1$. Each of $\Delta_1, \dots, \Delta_{n-1}$ is
+$\mathcal{F}_{t_{n-1}}$-measurable, since $S$ is adapted and $t_k \leq t_{n-1}$ for $k \leq n-1$;
+hence so is any Borel function of them. By hypothesis $\Delta_n$ is independent of
+$\mathcal{F}_{t_{n-1}}$, and therefore independent of $(\Delta_1,\dots,\Delta_{n-1})$. For bounded
+Borel $g_1,\dots,g_n$ this gives
+\[
+\E\Bigl[\prod_{k=1}^n g_k(\Delta_k)\Bigr]
+= \E\bigl[g_n(\Delta_n)\bigr]\;\E\Bigl[\prod_{k=1}^{n-1} g_k(\Delta_k)\Bigr]
+= \prod_{k=1}^n \E\bigl[g_k(\Delta_k)\bigr],
+\]
+the last equality by the induction hypothesis. Since this holds for all such $g_k$, the increments
+are independent. \hfill $\blacksquare$
+
+\medskip
+
+Proposition \ref{prop:independent-increments} suggests the notion we shall actually work with. 
+Definition \ref{def:Brownian-motion} describes a process in isolation; every statement in the 
+remainder of this chapter, however, involves a filtration as well: the martingale property, the 
+construction of the Itô integral, Lévy's characterisation and Girsanov's theorem are all assertions 
+about a process \emph{relative to a flow of information}.
+
+\begin{definition}[Brownian motion with respect to a filtration]\label{def:filtbm}
+Let $\FPSpace$ be a filtered probability space. A process $W$ is a 
+\textbf{$\Filt$-Brownian motion} if
+\begin{itemize}
+    \item[i)] $W$ is adapted to $\Filt$, with $W_0 = 0$ almost surely and almost all paths continuous; and
+    \item[ii)] for all $s \leq t$, the increment $W_t - W_s$ is independent of $\mathcal{F}_s$ and has law $\Normal(0,t-s)$.
+\end{itemize}
+\end{definition}
+
+By Proposition \ref{prop:independent-increments}, condition ii) already forces the independence of 
+increments demanded in Definition \ref{def:Brownian-motion} iv), so a $\Filt$-Brownian motion is in 
+particular a Brownian motion; the content of the definition is the \emph{relative} independence, 
+which iv) alone does not give. Conversely, any Brownian motion is a $\Filt$-Brownian motion for its 
+own natural filtration $\FiltW$, augmented as in Convention \ref{conv:usualconditions}, and this is 
+the filtration we use unless another is named.\footnote{
+Analogous considerations hold for a Poisson process; see \cite{durrett2019}.} 
+The distinction is not idle: Girsanov's theorem (Theorem \ref{girsanovtheorem}) changes the measure 
+while keeping the filtration fixed, and its conclusion is exactly that a certain process is a 
+$\Filt$-Brownian motion under the new measure.
+
+We can now state the promised return to the simple symmetric random walk of Example
+\ref{example:randomwalk}, where we said we would come back to it once the jump size and the waiting
+time between jumps had been adjusted together.
 
 \begin{theorem}[Donsker's invariance principle]\label{thm:donsker}
 Let $\{\xi_k\}_{k\geq1}$ be i.i.d.\ with $\E[\xi_1]=0$ and $\Var[\xi_1]=1$, and let 
@@ -887,11 +977,11 @@ no warrant at all for the shocks being independent --- a point the empirical evi
 
 \subsubsection*{The reflection principle and the running maximum}
 
-One consequence of the Markov property is worth recording in full, both because it is the
-cleanest illustration of what independence of increments buys and because it is the only tool we
-shall have for pricing a contract that looks at the whole path rather than at its endpoint.
+% One consequence of the Markov property is worth recording in full, both because it is the
+% cleanest illustration of what independence of increments buys and because it is the only tool we
+% shall have for pricing a contract that looks at the whole path rather than at its endpoint.
 
-What is needed is the Markov property not at a fixed time but at a \emph{stopping} time.
+% What is needed is the Markov property not at a fixed time but at a \emph{stopping} time.
 
 \begin{theorem}[Strong Markov property]\label{thm:strongmarkov}
 Let $W$ be a Brownian motion and $\tau$ an almost surely finite stopping time. Then the shifted
@@ -914,7 +1004,7 @@ same law, and it exchanges the events $\{W_t > a\}$ and $\{W_t < a\}$ while fixi
 $\{\tau_a \leq t\}$.
 
 \begin{theorem}[Reflection principle]\label{thm:reflection}
-Let $W$ be a Brownian motion and write $\overline{W}_t := \max_{0\leq s\leq t} W_s$ for its
+Let $W$ be a Brownian motion. Let $\overline{W}_t := \max_{0\leq s\leq t} W_s$ be its
 \textbf{running maximum}. Then for every $a \geq 0$,
 \begin{equation}\label{eq:reflection}
 \PP\bigl( \overline{W}_t \geq a \bigr) \;=\; \PP\bigl(\tau_a \leq t\bigr) \;=\; 2\,\PP\bigl(W_t > a\bigr) \;=\; \PP\bigl(|W_t| > a\bigr),
@@ -936,8 +1026,7 @@ differentiates in both arguments; see \cite[Sec.\ 2.6]{karatzasshreve1991} or \c
 
 Two things follow that we shall want later. First, $\E[\overline{W}_t] = \E|W_t| = \sqrt{2t/\pi}$, which
 already says that the expected high-water mark of a driftless price over $[0,t]$ grows like
-$\sqrt{t}$, on the same scale as the fluctuation itself. Second --- and this is the reason the
-subsection is here --- \eqref{eq:jointmaxdensity} is a \emph{joint} law across the whole interval,
+$\sqrt{t}$, on the same scale as the fluctuation itself. Second, \eqref{eq:jointmaxdensity} is a \emph{joint} law across the whole interval,
 not a terminal marginal, and it is therefore exactly the object that Breeden--Litzenberger
 (Proposition \ref{prop:breedenlitzenberger}) cannot supply. Barrier options, whose payoff depends on
 whether $\overline{W}_T$ crossed a level, are priced from \eqref{eq:jointmaxdensity} in the Black--Scholes
@@ -953,22 +1042,9 @@ chapter: the construction of the Itô integral in Section \ref{sec:stochasticcal
 \emph{response} to what follows, and the theory developed in Part \ref{part:part2} is a response 
 to what happens when these estimates are pushed slightly further.
 
-We begin with the observation that quadratic variation and total variation are in direct 
-competition.
-
-\begin{definition}[Total variation]\label{def:totalvariation}
-The \textbf{total variation} of $f : [0,T]\to\R$ on $[0,t]$ is
-\begin{equation}
-V_1(f)_t := \sup_{\mathcal{P}} \sum_{k=1}^n \bigl| f(t_k) - f(t_{k-1}) \bigr|,
-\end{equation}
-the supremum being over all partitions $\mathcal{P} = \{0=t_0<\cdots<t_n=t\}$. If 
-$V_1(f)_t < \infty$ we say $f$ has \textbf{bounded variation} on $[0,t]$.
-\end{definition}
-
-Bounded variation is exactly the condition under which the Riemann--Stieltjes integral 
-$\int_0^t g\,df$ is defined for every continuous $g$; equivalently, it is the condition under 
-which $f$ induces a signed measure $df$. It is therefore the natural first thing to ask of a 
-prospective integrator.
+We begin with the observation that the two notions of variation introduced in Subsection
+\ref{subsec:martingales}, the quadratic variation of Definition \ref{def:quadratic-variation} and
+the total variation of Definition \ref{def:totalvariation}, are in direct competition.
 
 \begin{proposition}\label{prop:bmunboundedvariation}
 Let $W$ be a Brownian motion. Then, almost surely, $V_1(W)_t = \infty$ for every $t > 0$.
@@ -1049,7 +1125,7 @@ finite $p$-variation, $g$ has finite $q$-variation, and
 The threshold $2$ is not part of \eqref{eq:youngcondition} but a consequence of it in the case that 
 matters to us. The integrands we shall meet are of the form $g = F(f)$ for smooth $F$, which 
 inherits the regularity of $f$ itself, so $q = p$ and \eqref{eq:youngcondition} collapses to 
-$2/p > 1$, that is $p < 2$. Brownian motion misses this regime --- but only just, and by an amount 
+$2/p > 1$, that is $p < 2$. Brownian motion misses this regime by an amount 
 that no refinement of the estimate can recover, since $V_2(W)_t = \infty$.
 
 The Itô integral of Section \ref{sec:stochasticcalculus} is precisely the tool that bridges this 
@@ -1062,14 +1138,15 @@ even $p = 2$ is out of reach, and neither Young nor Itô applies. The theory tha
 regime is the subject of Part \ref{part:part2}.
 \end{remark}
 
-\figurehere{Simulated Brownian path with, alongside it, the partition sums for total variation 
-(diverging) and quadratic variation (converging to $t$) as the mesh is refined. This is the visual 
-statement of Proposition \ref{prop:bmunboundedvariation}.}
+% \figurehere{Simulated Brownian path with, alongside it, the partition sums for total variation 
+% (diverging) and quadratic variation (converging to $t$) as the mesh is refined. This is the visual 
+% statement of Proposition \ref{prop:bmunboundedvariation}.}
 
-Finally, we record the relation between the pathwise quadratic variation of Definition 
-\ref{def:quadratic-variation} and the predictable version produced by the Doob--Meyer 
-decomposition of Subsection \ref{subsec:measurechanges}, since both notations occur in the 
-literature and we shall use them interchangeably.
+Finally, we can make good on the announcement of Subsection \ref{subsec:martingales} and record the
+precise relation between the pathwise quadratic variation of Definition \ref{def:quadratic-variation}
+and the predictable version \eqref{eq:compensatorannounce} produced by the Doob--Meyer decomposition
+of Subsection \ref{subsec:measurechanges}, since both notations occur in the literature and we shall
+use them interchangeably.
 
 \begin{proposition}\label{prop:qvcoincide}
 Let $M$ be a continuous square-integrable martingale. Then the pathwise quadratic variation 
@@ -1095,6 +1172,8 @@ meaning to the off-diagonal entries $\rho_{ij}\,dt$ of the multiplication table 
 \ref{subsec:multidimensional}, and it is the object that the correlation parameter of a stochastic 
 volatility model actually controls.
 
+
+
     
     
     
@@ -1106,11 +1185,11 @@ Stochastic Calculus is a wide area in Mathematics that allows, for example, the 
 dX_t = a(t,X_t)\,dt + b(t,X_t)\,dW_t, 
 \quad X_0 \in \R.
 \end{equation}
-Here $dW_t$ will be specified in the next subsection. Notice that this generalizes the deterministic case: if $b \equiv 0$, then $X_t$ reduces to the solution of the ODE $dY_t = a(t,Y_t)\,dt$.
+Here $dW_t$ will be specified in the next subsection. Notice that this generalizes the deterministic case: if $b \equiv 0$, then $X_t$ reduces to the solution of the ODE $dY_t = a(t,Y_t)\,dt$. In a sense, instead of modeling a proper trajectory, a ''position" as a function of time, we will model a probability distribution per time. This makes much more sense in many applications, such as finance and quantum mechanics.
 
-We shall first construct a rigorous integral interpretation of such expressions, providing concrete meaning to the stochastic term. Afterwards, we will introduce the stochastic chain rule (Itô's Lemma), which differs from the classical one in a somewhat surprising way, and then proceed to study the existence and uniqueness of solutions, and some of their properties.
+We shall first construct a rigorous integral interpretation of such expressions, providing concrete meaning to the stochastic term. Afterwards, we will introduce the stochastic chain rule (Itô's Lemma), which differs from the classical one in a somewhat surprising yet elegant way, and then proceed to study the existence and uniqueness of solutions and some of their properties.
 
-It must be highlighted that the following dissertation can be expanded up to the most general setting, however we will stick to the most classical presentation of the subject, leaving the most general case a worthy space at the end, but without letting the trees hide the forest.
+It must be highlighted that the following dissertation can be expanded up to the most general setting anticipated with semimartingales (Definition \ref{def:semimartingale}), however we will stick to the most classical presentation of the subject, leaving the most general case a worthy space at the end, but without letting the trees hide the forest.
 
 \subsection{The Itô Integral}\label{subsec:itointegral}
 
@@ -1239,7 +1318,7 @@ polarisation. \hfill $\blacksquare$
 
 \medskip
 
-\noindent In the language of Proposition \ref{prop:condjensenl2}, item 9, this is precisely
+\noindent In the language of Proposition \ref{prop:condjensenl2}, item ii), this is precisely
 the statement that $I$ is an isometry from $L^2_{ad}([0,T]\times\Omega)$ into $L^2(\Omega)$, extended
 from a dense subspace by continuity --- the standard extension of a bounded operator, and the reason
 the construction works at all.
@@ -2051,7 +2130,7 @@ $\mathcal{L}(\Omega,L^2[0,T])$. \hfill $\blacksquare$
 The theorem should be read as a converse to Theorem \ref{theorem:martingale_property}. There we 
 showed that every Itô integral is a martingale; here we learn that, provided the filtration is the 
 one generated by $\mathbf{W}$ and nothing more, \emph{every} martingale is an Itô integral. In the 
-language of Proposition \ref{prop:condjensenl2}, item 9, the stochastic integrals do not 
+language of Proposition \ref{prop:condjensenl2}, item ii), the stochastic integrals do not 
 merely sit inside the space of martingales: they exhaust it.
 
 Two aspects of the hypothesis deserve to be underlined, because both will be load-bearing.
@@ -2109,7 +2188,7 @@ $L^\infty(\mathcal{F}_T)$, which is the Delbaen--Schachermayer convention and th
 Fundamental Theorems: boundedness is what makes the separating-hyperplane argument work in a dual
 pair. The Martingale Representation Theorem, by contrast, is an $L^2$ statement, because it is
 ultimately a statement about an orthogonal projection in a Hilbert space --- Proposition
-\ref{prop:condjensenl2}, item 9. The two are reconciled by the inclusion
+\ref{prop:condjensenl2}, item ii). The two are reconciled by the inclusion
 $L^\infty(\mathcal{F}_T) \subset L^2(\mathcal{F}_T)$, valid because $\PP$ is a finite measure: every
 bounded claim is square-integrable, so the representation above applies to every claim the
 completeness definition quantifies over. We use whichever space the argument at hand requires, and
@@ -2687,7 +2766,7 @@ $\Gamma$ and $\mathcal{V}$ are proportional,
 as one verifies immediately from \eqref{eq:deltagamma} and \eqref{eq:vegatheta}. Convexity in the
 spot and sensitivity to volatility are therefore the \emph{same} exposure, measured in two units ---
 which is the analytic content of the informal statement that an option buyer is long volatility
-precisely because the payoff is convex, and the reason Proposition \ref{prop:condjensenl2}, item 8,
+precisely because the payoff is convex, and the reason Proposition \ref{prop:condjensenl2}, item i),
 has been such a persistent theme.
 
 The second is that substituting \eqref{eq:deltagamma} into the Black--Scholes equation
@@ -3203,7 +3282,7 @@ with the same strike and maturity.
 
 \textbf{\textit{Proof:}} Write $C(t)$ for the European call value at time $t$. Under $\QQ$ the
 discounted spot is a martingale, so for any $t \leq T$, using the conditional Jensen inequality
-(Proposition \ref{prop:condjensenl2}, item 8) applied to the convex function $x \mapsto (x-\Strike)^+$,
+(Proposition \ref{prop:condjensenl2}, item i)) applied to the convex function $x \mapsto (x-\Strike)^+$,
 \[
 C(t) = e^{-\rf(T-t)}\,\Ep{\QQ}\bigl[(\Spot_T-\Strike)^+ \mid \Ft\bigr]
 \;\geq\; e^{-\rf(T-t)}\bigl(\Ep{\QQ}[\Spot_T\mid\Ft]-\Strike\bigr)^{+}
@@ -3218,7 +3297,7 @@ It remains to convert this pointwise domination into a statement about stopping 
 not follow from it directly. The chain above, read at a general $t$, says precisely that the
 discounted payoff process $Z_t := e^{-\rf t}(\Spot_t-\Strike)^+$ satisfies
 $\Ep{\QQ}[Z_T \mid \Ft] \geq Z_t$; that is, $Z$ is a $\QQ$-\emph{sub}martingale --- as it must be,
-being a convex function of a martingale, by Proposition \ref{prop:condjensenl2}, item 8, together
+being a convex function of a martingale, by Proposition \ref{prop:condjensenl2}, item i), together
 with $\rf \geq 0$. Doob's optional stopping theorem (Theorem \ref{thm:optionalstopping}, case i --- every stopping time being bounded by $T$ under Definition \ref{stoppingTime}) applied to a
 submartingale gives, for every $\tau \in \Stop{[t,T]}$,
 \[

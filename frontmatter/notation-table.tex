@@ -5,14 +5,12 @@
 \vspace{0.6cm}
 
 A recurring difficulty in a text of this kind is that probabilists and practitioners
-often write the same object in different ways, and occasionally write different
-objects in the same way. The following conventions are fixed once and used
-without exception throughout. Where a financial convention differs from the
-probabilistic one, the discrepancy is pointed out in a footnote at the place where
-it first matters.
+do not agree on the notations they use. The following conventions are fixed once and used throughout. 
 
-\vspace{0.4cm}
+%\vspace{0.4cm}
 
+
+{ \small
 \begin{center}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabular}{@{}p{0.20\textwidth}p{0.74\textwidth}@{}}
@@ -31,7 +29,7 @@ $\Ind_A$ & Indicator function of the event $A$.\\
 \hline
 \multicolumn{2}{@{}l}{\textbf{Time}}\\
 \hline
-$[0,T]$ & Time interval. Always anchored at $0$; $T$ is simultaneously the time horizon and the maturity of the contract under consideration, which is exactly why the same letter is used.\footnotemark\\
+$[0,T]$ & Time interval. $T$ is simultaneously the time horizon and the maturity of the contract under consideration.\\%\footnotemark\\
 $\tau$ & A stopping time; $\Stop{[t,T]}$ is the set of stopping times valued in $[t,T]$.\\
 \hline
 \multicolumn{2}{@{}l}{\textbf{Processes}}\\
@@ -61,12 +59,13 @@ $V$ & The value of a derivative. (Not to be confused with $\Var$, variance.)\\
 \hline
 \end{tabular}
 \end{center}
+}
 
-\footnotetext{Probability texts customarily work on a generic interval $[a,b]$.
-We deliberately fix $a=0$: in a financial context the present instant is the natural
-origin, every quoted quantity is a function of time-to-maturity, and carrying an
-arbitrary left endpoint through the pricing formulas obscures rather than
-generalises. Nothing is lost, since any statement on $[a,b]$ transfers by
-translation.}
+% \footnotetext{Probability texts customarily work on a generic interval $[a,b]$.
+% We deliberately fix $a=0$: in a financial context the present instant is the natural
+% origin, every quoted quantity is a function of time-to-maturity, and carrying an
+% arbitrary left endpoint through the pricing formulas obscures rather than
+% generalises. Nothing is lost, since any statement on $[a,b]$ transfers by
+% translation.}
 
 \newpage

@@ -1,9 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.24)  26 AUG 2026 12:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.24)  26 AUG 2026 19:17
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**./main.tex
-(main.tex
+**c:/Users/hecto/source/repos/HcZalama/MasterThesis_Volatility/main.tex
+(c:/Users/hecto/source/repos/HcZalama/MasterThesis_Volatility/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -23,30 +24,19 @@ File: bk12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-)
-(preamble/packages.tex
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
-TeX and XeLaTeX
+) (preamble/packages.tex (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count284
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
-ne 2068.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
-ne 2070.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
-e 2072.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
-e 2073.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
-on input line 2074.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
-on input line 2076.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
-on input line 2101.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2068.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2070.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2072.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2073.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2074.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2076.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2101.
 \U@D=\dimen149
 \l@unhyphenated=\language79
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count285
 Package babel Info: Configuration files are deprecated, as
@@ -57,16 +47,11 @@ Package babel Info: Configuration files are deprecated, as
 * Local config file bblopts.cfg used
 *
 (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel
--english.tex)
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex)
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 4320.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.l
-df
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
@@ -74,34 +59,27 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 108.
-))
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+)) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
-fg
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen150
 \Gin@req@width=\dimen151
 ) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen152
 \captionmargin=\dimen153
@@ -115,16 +93,14 @@ Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count286
 \c@continuedfloat=\count287
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count288
 \float@exts=\toks18
 \float@box=\box53
 \@float@everytoks=\toks19
 \@floatcapt=\box54
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen160
 \ar@mcellbox=\box55
@@ -133,15 +109,13 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \extratabsurround=\skip51
 \backup@length=\skip52
 \ar@cellbox=\box56
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -153,11 +127,9 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\svgnam.def
 File: svgnam.def 2024/09/29 v3.02 Predefined colors according to SVG 1.1 (UK)
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul.sty
 Package: soul 2026-03-06 v3.2 Permit use of UTF-8 characters in soul (HO)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul-ori.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul-ori.sty
 Package: soul-ori 2026-03-06 v3.2 letterspacing/underlining (mf)
 \SOUL@word=\toks21
 \SOUL@lasttoken=\toks22
@@ -179,25 +151,19 @@ Package: soul-ori 2026-03-06 v3.2 letterspacing/underlining (mf)
 \SOUL@ttwidth=\dimen168
 \SOUL@uldp=\dimen169
 \SOUL@ulht=\dimen170
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
-ty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
-)))
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\empheq.sty
+))) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\empheq.sty
 Package: empheq 2024/08/09 v2.17 Emphasizing equations
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count293
 \calc@Bcount=\count294
@@ -209,25 +175,21 @@ LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
 \calc@Ccount=\count295
 \calc@Cskip=\skip56
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip57
 
 For additional information on amsmath, use the `?' option.
 (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks27
 \ex@=\dimen173
-))
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen174
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count296
@@ -306,11 +268,9 @@ LaTeX Info: Redefining \] on input line 2951.
 \EQ_mathdisplay_box=\box60
 \EQ_tag_box=\box61
 \g_EQ_temprow_int=\count312
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count313
@@ -325,11 +285,8 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen262
 \Gm@layoutvoffset=\dimen263
 \Gm@dimlist=\toks32
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
-
 \f@nch@headwidth=\skip61
 \f@nch@offset@elh=\skip62
 \f@nch@offset@erh=\skip63
@@ -345,8 +302,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip73
 \f@nch@widthR=\skip74
 \@temptokenb=\toks33
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\dsfont.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 ) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
@@ -382,18 +338,13 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
-6.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 116.
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/emptypage\emptypage.sty
-Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
-pages
+)) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/emptypage\emptypage.sty
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty pages
 ) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count316
@@ -417,38 +368,28 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@postskip=\skip76
 \thm@headsep=\skip77
 \dth@everypar=\toks39
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
-.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count317
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+)) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -511,8 +452,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@mincompwidth=\count363
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
@@ -603,8 +543,7 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip99
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
@@ -627,24 +566,18 @@ File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bb
-x
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
 File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
-bx
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count441
 \c@bbx:relatedtotal=\count442
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cb
-x
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
 File: numeric.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -660,18 +593,14 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2025-12-24 L3 programming layer (loader) 
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
-tex.def
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count443
 ))
@@ -679,43 +608,28 @@ Package biblatex Info: ... and expl3
 (biblatex)             2025-12-24 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
-.sty
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
-e.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
-))
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+)) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
-keys.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
-ty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 ) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 ) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
-lestring.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count444
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
-ty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
-)
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen264
 \Hy@linkcounter=\count445
@@ -745,14 +659,10 @@ Package hyperref Info: Bookmarks ON on input line 4462.
 \c@Hy@tempcnt=\count448
 LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen265
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
-.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count449
 \Field@Width=\dimen266
@@ -769,28 +679,21 @@ Package hyperref Info: PDF/A mode OFF on input line 6108.
 \c@Hfootnote=\count452
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
 \Fld@listcount=\count453
 \c@bookmark@seq@number=\count454
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
-echeck.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
-ounter.sty
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-84.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip100
 )) (preamble/layout.tex) (preamble/theorems.tex
 \c@result=\count455
-)
-(preamble/notation.tex)
+) (preamble/notation.tex)
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
@@ -801,10 +704,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 LaTeX Warning: Unused global option(s):
     [openrigth,margin].
 
-(main.aux (chapters/00-introduction.aux) (chapters/01-foundations.aux)
-(chapters/02-roughpaths.aux) (chapters/03-applications.aux)
-(chapters/04-conclusions.aux) (appendix/A-auxiliary.aux) (appendix/B-proofs.aux
-))
+(main.aux (chapters/00-introduction.aux) (chapters/01-foundations.aux) (chapters/02-roughpaths.aux) (chapters/03-applications.aux) (chapters/04-conclusions.aux) (appendix/A-auxiliary.aux) (appendix/B-proofs.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -825,9 +725,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count458
 \scratchdimen=\dimen268
@@ -840,15 +738,10 @@ ii
 \MPnumerator=\count462
 \makeMPintoPDFobject=\count463
 \everyMPtoPDFconversion=\toks41
-)
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
+) (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
-fg
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
@@ -892,9 +785,7 @@ Package caption Info: End \AtBeginDocument code.
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lb
-x
+(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
 File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -921,53 +812,40 @@ Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 11.
  [1
 
 
-{C:/Users/hecto/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/hect
-o/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./Images/LOGOUNE
-DDDD.png>])
-[2
+{C:/Users/hecto/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./Images/LOGOUNEDDDD.png>]) [2
 
 ] (frontmatter/dedication.tex [1]) [2
 
 
 ] (frontmatter/preface.tex)
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.44 \newpage
               [1
 
 ]
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.45 \tableofcontents
                       [2
 
 ] (main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4.
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4.
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-4.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 4.
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-4.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 4.
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -977,46 +855,27 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 4.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Underfull \vbox (badness 2913) has occurred while \output is active []
 
- [3]
-[4])
+ [3] [4])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [5{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.e
-nc}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{
-C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
- (frontmatter/notation-table.tex
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 3
-0.
-
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
+ [5{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] (frontmatter/notation-table.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 16.
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 28.
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 70.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 70.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 70.
-
-[7{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
-c}])
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+) [6{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}])
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.57 \part{Foundations and Classical Models}
@@ -1024,32 +883,28 @@ l.57 \part{Foundations and Classical Models}
 
 
 ]
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.57 \part{Foundations and Classical Models}
                                              \label{part:part1} [2]
 \openout2 = `chapters/00-introduction.aux'.
 
-
-(chapters/00-introduction.tex
+ (chapters/00-introduction.tex
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 9.
 
 
 Overfull \hbox (0.74715pt too wide) in paragraph at lines 22--23
-\T1/lmr/m/n/12 math-e-mat-i-cal ob-ject took shape grad-u-ally, but it was Kiyo
-shi Itô's work on \T1/lmr/m/it/12 stochas-tic in-te-gra-tion
+\T1/lmr/m/n/12 math-e-mat-i-cal ob-ject took shape grad-u-ally, but it was Kiyoshi Itô's work on \T1/lmr/m/it/12 stochas-tic in-te-gra-tion
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.38 
@@ -1069,8 +924,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 48.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.48 \newpage
@@ -1079,29 +933,22 @@ l.48 \newpage
 
  (chapters/01-foundations.tex
 Chapter 1.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.47     \item F
-                or each fixed \(t \in \Tset\), the function \(\omega \mapsto...
-[5
-
-
-
-
-]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-7.
- (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 49.
+(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (7.48824pt too wide) in paragraph at lines 56--57
-[][]\T1/lmr/bx/n/12 Theorem 1.1.2 \T1/lmr/m/n/12 (Radon--Nikodym)\T1/lmr/bx/n/1
-2 . []\T1/lmr/m/it/12 Let $\OML/lmm/m/it/12 ^^W$ \T1/lmr/m/it/12 and $\OML/lmm/
-m/it/12 ^^U$ \T1/lmr/m/it/12 be two $\OML/lmm/m/it/12 ^^[$\T1/lmr/m/it/12 -fini
-te mea-sures on the same mea-sur-able
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 \end{definition}
+                      [5
+
+
+
+
+{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+Overfull \hbox (7.48824pt too wide) in paragraph at lines 58--59
+[][]\T1/lmr/bx/n/12 Theorem 1.1.2 \T1/lmr/m/n/12 (Radon--Nikodym)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 Let $\OML/lmm/m/it/12 ^^W$ \T1/lmr/m/it/12 and $\OML/lmm/m/it/12 ^^U$ \T1/lmr/m/it/12 be two $\OML/lmm/m/it/12 ^^[$\T1/lmr/m/it/12 -finite mea-sures on the same mea-sur-able
  []
 
 
@@ -1113,16 +960,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 88.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 103.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.88 \begin{equation}
-                      [6{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc
-/dvips/lm/lm-ts1.enc}]
+l.103 
+       [6]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1130,13 +975,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.130 \end{definition}
-                       [7]
+[7]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1146,7 +985,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 172.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 217.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [8]
 
@@ -1166,9 +1005,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 261.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 314.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [10]
+Overfull \hbox (11.31688pt too wide) in paragraph at lines 339--340
+[][]\T1/lmr/bx/n/12 Theorem 1.1.18 \T1/lmr/m/n/12 (Cen-tral Limit The-o-rem)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 Let $\OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 X[]\OMS/lmsy/m/n/12 g[]$ \T1/lmr/m/it/12 be a se-quence of in-de-pen-dent, iden-ti-cally
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1177,13 +1020,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-Overfull \hbox (11.31688pt too wide) in paragraph at lines 316--317
-[][]\T1/lmr/bx/n/12 Theorem 1.1.18 \T1/lmr/m/n/12 (Cen-tral Limit The-o-rem)\T1
-/lmr/bx/n/12 . []\T1/lmr/m/it/12 Let $\OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 X[]\OM
-S/lmsy/m/n/12 g[]$ \T1/lmr/m/it/12 be a se-quence of in-de-pen-dent, iden-ti-ca
-lly
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1193,14 +1029,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 342.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 422.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [12]
-Overfull \hbox (1.76979pt too wide) in paragraph at lines 370--371
-[]\T1/lmr/m/n/12 For a mul-ti-vari-ate nor-mal vec-tor --- and, as Re-mark []1.
-1.17[] showed, only then --- un-cor-re-lat-ed-ness
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1209,11 +1040,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13]
-Overfull \hbox (21.02487pt too wide) in paragraph at lines 399--400
-[]\T1/lmr/m/n/12 The sec-ond is more sur-pris-ing. De-spite hav-ing mo-ments of
- all or-ders, \T1/lmr/bx/n/12 the log-normal dis-tri-bu-tion
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1223,9 +1049,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 438.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 506.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [14]
+Overfull \hbox (8.2357pt too wide) in paragraph at lines 579--580
+[][]\T1/lmr/bx/n/12 Proposition 1.1.28 \T1/lmr/m/n/12 (Doob's sub-martin-gale in-equal-ity)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 Let $\OML/lmm/m/it/12 Z \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 Z[]\OMS/lmsy/m/n/12 g[]$ \T1/lmr/m/it/12 be a right-continuous
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1243,14 +1073,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 533.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 626.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [16]
-Overfull \hbox (8.2357pt too wide) in paragraph at lines 535--536
-[][]\T1/lmr/bx/n/12 Proposition 1.1.29 \T1/lmr/m/n/12 (Doob's sub-martin-gale i
-n-equal-ity)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 Let $\OML/lmm/m/it/12 Z \OT1/lm
-r/m/n/12 = \OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 Z[]\OMS/lmsy/m/n/12 g[]$ \T1/lmr/
-m/it/12 be a right-continuous
+Overfull \hbox (1.47598pt too wide) in paragraph at lines 669--681
+\U/msb/m/n/12 E [][] \OML/lmm/m/it/12 f[] d\OMS/lmsy/m/n/12 h\OML/lmm/m/it/12 M\OMS/lmsy/m/n/12 i[]$\T1/lmr/m/n/12 , the com-pen-sator of []; lo-cal-i-sa-tion then re-moves the in-te-gra-bil-ity hy-pothe-ses.
  []
 
 
@@ -1270,7 +1097,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 627.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 765.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [18]
 
@@ -1281,29 +1108,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
+Overfull \hbox (3.48653pt too wide) in paragraph at lines 830--839
+[]\T1/lmr/m/n/12 The first stage is the Daniell--Kolmogorov ex-ten-sion the-o-rem. Con-di-tions iii) and iv) of Def-i-ni-tion
+ []
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 748.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[20]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[21]
-Overfull \hbox (3.48653pt too wide) in paragraph at lines 816--825
-[]\T1/lmr/m/n/12 The first stage is the Daniell--Kolmogorov ex-ten-sion the-o-r
-em. Con-di-tions iii) and iv) of Def-i-ni-tion
+Overfull \hbox (2.86693pt too wide) in paragraph at lines 884--891
+[]\T1/lmr/m/n/12 The two stages now fit to-gether. Daniell--Kolmogorov sup-plies a pro-cess whose finite-dimensional
  []
 
 
@@ -1315,7 +1126,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 873.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 891.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[20]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 944.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 944.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 944.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1016.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [22]
 
@@ -1326,9 +1164,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-Overfull \hbox (17.69753pt too wide) in paragraph at lines 956--958
-[]\T1/lmr/m/n/12 We be-gin with the ob-ser-va-tion that quadratic vari-a-tion a
-nd to-tal vari-a-tion are in di-rect com-pe-ti-tion. 
+Overfull \hbox (2.29619pt too wide) in paragraph at lines 1077--1079
+[]\T1/lmr/m/n/12 The same com-pe-ti-tion can be ex-pressed more finely by ask-ing, not whether the sum of in-cre-ments
  []
 
 
@@ -1340,14 +1177,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1000.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1139.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [24]
-Overfull \hbox (2.29619pt too wide) in paragraph at lines 1001--1003
-[]\T1/lmr/m/n/12 The same com-pe-ti-tion can be ex-pressed more finely by ask-i
-ng, not whether the sum of in-cre-ments
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1356,6 +1188,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25]
+Overfull \hbox (23.78447pt too wide) in paragraph at lines 1207--1208
+[][]\T1/lmr/bx/n/12 Definition 1.2.1 \T1/lmr/m/n/12 (Adapted square-in-te-grable pro-cesses)\T1/lmr/bx/n/12 . []\T1/lmr/m/n/12 Let ($\OT1/lmr/m/n/12 
+\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 F\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 fF[]g\OML/lmm/m/it/12 ; \U/msb/m/n/12 P$\T1/lmr/m/n/12 ) be a fil-tered prob-a-bil-ity
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1365,17 +1202,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1113.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1249.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [26]
-Overfull \hbox (23.78447pt too wide) in paragraph at lines 1128--1129
-[][]\T1/lmr/bx/n/12 Definition 1.2.1 \T1/lmr/m/n/12 (Adapted square-in-te-grabl
-e pro-cesses)\T1/lmr/bx/n/12 . []\T1/lmr/m/n/12 Let ($\OT1/lmr/m/n/12 
-\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 F\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 fF[]g\
-OML/lmm/m/it/12 ; \U/msb/m/n/12 P$\T1/lmr/m/n/12 ) be a fil-tered prob-a-bil-it
-y
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1393,7 +1222,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1234.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1368.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [28]
 
@@ -1413,7 +1242,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1351.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1480.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [30]
 
@@ -1433,9 +1262,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1464.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1586.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [32]
+Overfull \hbox (41.0243pt too wide) detected at line 1620
+\U/msb/m/n/12 E [] \OT1/lmr/m/n/12 = [][] \U/msb/m/n/12 E[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^[\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 s; X[]\OT1/lmr/m/n/12 ) \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 ^^[\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 s; Y[]\OT1/lmr/m/n/12 ))[] \U/dsrom/m/n/12 1[][]\OML/lmm/m/it/12 ds \OMS/lmsy/m/n/12 ^^T \OML/lmm/m/it/12 K[]  [][] \U/msb/m/n/12 E[]\OML/lmm/m/it/12 Z[] \U/dsrom/m/n/12 1[][]\OML/lmm/m/it/12 ds:
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1444,13 +1277,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [33]
-Overfull \hbox (41.0243pt too wide) detected at line 1541
-\U/msb/m/n/12 E [] \OT1/lmr/m/n/12 = [][] \U/msb/m/n/12 E[]\OT1/lmr/m/n/12 (\OM
-L/lmm/m/it/12 ^^[\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 s; X[]\OT1/lmr/m/n/12 ) \OMS
-/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 ^^[\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 s; Y[]\O
-T1/lmr/m/n/12 ))[] \U/dsrom/m/n/12 1[][]\OML/lmm/m/it/12 ds \OMS/lmsy/m/n/12 ^^
-T \OML/lmm/m/it/12 K[]  [][] \U/msb/m/n/12 E[]\OML/lmm/m/it/12 Z[] \U/dsrom/m/n
-/12 1[][]\OML/lmm/m/it/12 ds:
+Overfull \hbox (2.97092pt too wide) in paragraph at lines 1661--1662
+[]\T1/lmr/m/n/12 Second, the square-integrability of the ini-tial con-di-tion is not dec-o-ra-tion. The whole con-struc-tion
  []
 
 
@@ -1462,12 +1290,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1561.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1677.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [34]
-Overfull \hbox (2.97092pt too wide) in paragraph at lines 1582--1583
-[]\T1/lmr/m/n/12 Second, the square-integrability of the ini-tial con-di-tion i
-s not dec-o-ra-tion. The whole con-struc-tion
+Overfull \hbox (20.7999pt too wide) in paragraph at lines 1696--1698
+[][]\T1/lmr/bx/n/12 Theorem 1.2.20 \T1/lmr/m/n/12 (Ya-mada--Watan-abe)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 Con-sider the one-dimensional equa-tion $\OML/lmm/m/it/12 dX[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 ^^V\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; X[]\OT1/lmr/m/n/12 ) \OML/lmm/m/it/12 dt \OT1/lmr/m/n/12 +
  []
 
 
@@ -1478,13 +1305,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [35]
-Overfull \hbox (20.7999pt too wide) in paragraph at lines 1617--1619
-[][]\T1/lmr/bx/n/12 Theorem 1.2.20 \T1/lmr/m/n/12 (Ya-mada--Watan-abe)\T1/lmr/b
-x/n/12 . []\T1/lmr/m/it/12 Con-sider the one-dimensional equa-tion $\OML/lmm/m/
-it/12 dX[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 ^^V\OT1/lmr/m/n/12 (\OML/lmm/m/it
-/12 t; X[]\OT1/lmr/m/n/12 ) \OML/lmm/m/it/12 dt \OT1/lmr/m/n/12 +
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1494,7 +1314,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1667.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1784.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [36]
 
@@ -1506,6 +1326,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [37]
 
+Package caption Warning: \setcaptiontype
+(caption)                outside box or environment on input line 1881.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1881.
+See the caption package documentation for explanation.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1514,19 +1344,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1775.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1915.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [38]
-
-Package caption Warning: \setcaptiontype
-(caption)                outside box or environment on input line 1802.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1802.
-See the caption package documentation for explanation.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1544,7 +1364,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1884.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2027.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [40]
 
@@ -1564,7 +1384,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2018.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2154.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [42]
 
@@ -1575,6 +1395,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [43]
+Overfull \hbox (3.4876pt too wide) detected at line 2224
+\OML/lmm/m/it/12 ^^V\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; x\OT1/lmr/m/n/12 ) = [] []\U/msb/m/n/12 E [] \OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 ^^F(\OML/lmm/m/it/12 t; x\OT1/lmr/m/n/12 ) = [] []\U/msb/m/n/12 E [] \OML/lmm/m/it/12 :
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1584,15 +1408,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2133.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2262.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [44]
-Overfull \hbox (3.4876pt too wide) detected at line 2145
-\OML/lmm/m/it/12 ^^V\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; x\OT1/lmr/m/n/12 ) = [
-] []\U/msb/m/n/12 E [] \OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 ^^F(\OML/lmm/m/it/12
- t; x\OT1/lmr/m/n/12 ) = [] []\U/msb/m/n/12 E [] \OML/lmm/m/it/12 :
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1610,7 +1428,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2234.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2361.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [46]
 
@@ -1630,7 +1448,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2334.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2452.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [48]
 
@@ -1650,7 +1468,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2412.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2535.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [50]
 
@@ -1670,7 +1488,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2508.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2641.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [52]
 
@@ -1690,7 +1508,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2627.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2765.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [54]
 
@@ -1710,7 +1528,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2744.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2888.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [56]
 
@@ -1730,7 +1548,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2867.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2995.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [58]
 
@@ -1741,6 +1559,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [59]
+Underfull \hbox (badness 2478) in paragraph at lines 3068--3073
+[]\T1/lmr/m/n/12 In prac-tice one first fits a para-met-ric form guar-an-tee-ing i)--iii) --- Gatheral's SVI
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1750,14 +1572,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2968.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 3119.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [60]
-Underfull \hbox (badness 2478) in paragraph at lines 2989--2994
-[]\T1/lmr/m/n/12 In prac-tice one first fits a para-met-ric form guar-an-tee-in
-g i)--iii) --- Gatheral's SVI
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1775,7 +1592,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 3090.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 3230.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [62]
 
@@ -1795,19 +1612,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 3199.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 3340.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [64]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[65]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 328
-4.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 3363.
  (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
@@ -1818,19 +1626,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 3323.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[66]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[67])
+[65]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1840,13 +1636,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 61.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 3440.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[68] [69
+[66])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[67] [68
 
 
 
-] [70]
+] [69] [70]
 \openout2 = `chapters/02-roughpaths.aux'.
 
  (chapters/02-roughpaths.tex
@@ -2093,8 +1897,7 @@ Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 67.
 Chapter 3.
 
 Underfull \hbox (badness 1215) in paragraph at lines 28--29
-[]\T1/lmr/m/n/12 This it-er-a-tive pro-ce-dure ef-fec-tively bridges the the-o-
-ret-i-cal gap be-tween the Eu-ro-pean
+[]\T1/lmr/m/n/12 This it-er-a-tive pro-ce-dure ef-fec-tively bridges the the-o-ret-i-cal gap be-tween the Eu-ro-pean
  []
 
 [95
@@ -2130,18 +1933,15 @@ Chapter 4.
 
 ]
 Underfull \hbox (badness 1112) in paragraph at lines 73--73
-[]\T1/lmr/m/n/12 Fischer Black. ``The Pric-ing of Com-mod-ity Con-tracts''. In:
- \T1/lmr/m/it/12 Jour-nal of Fi-nan-cial
+[]\T1/lmr/m/n/12 Fischer Black. ``The Pric-ing of Com-mod-ity Con-tracts''. In: \T1/lmr/m/it/12 Jour-nal of Fi-nan-cial
  []
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
-3.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 73.
 (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [99]
 Underfull \hbox (badness 1442) in paragraph at lines 73--73
-[]\T1/lmr/m/n/12 Eduardo Abi Jaber, Louis-Amand Gérard, and Yux-ing Huang. ``Pa
-th-Dependent
+[]\T1/lmr/m/n/12 Eduardo Abi Jaber, Louis-Amand Gérard, and Yux-ing Huang. ``Path-Dependent
  []
 
 
@@ -2157,15 +1957,12 @@ Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 73.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [100]
 Underfull \hbox (badness 1496) in paragraph at lines 73--73
-[]\T1/lmr/m/n/12 Michael B. Mar-cus and Jay Rosen. \T1/lmr/m/it/12 Markov Pro-c
-esses, Gaus-sian Pro-cesses, and
+[]\T1/lmr/m/n/12 Michael B. Mar-cus and Jay Rosen. \T1/lmr/m/it/12 Markov Pro-cesses, Gaus-sian Pro-cesses, and
  []
 
 
 Underfull \hbox (badness 1888) in paragraph at lines 73--73
-\T1/lmr/m/n/12 UK: Cam-bridge Uni-ver-sity Press, 2006. \T1/lmr/m/sc/12 isbn\T1
-/lmr/m/n/12 : 9780521863001. \T1/lmr/m/sc/12 doi\T1/lmr/m/n/12 : []$\T1/lmtt/m/
-n/12 10 . 1017 /
+\T1/lmr/m/n/12 UK: Cam-bridge Uni-ver-sity Press, 2006. \T1/lmr/m/sc/12 isbn\T1/lmr/m/n/12 : 9780521863001. \T1/lmr/m/sc/12 doi\T1/lmr/m/n/12 : []$\T1/lmtt/m/n/12 10 . 1017 /
  []
 
 
@@ -2177,8 +1974,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [101]
 Underfull \hbox (badness 1264) in paragraph at lines 73--73
-[]\T1/lmr/m/n/12 Paul Wilmott, Sam How-i-son, and Jeff Dewynne. \T1/lmr/m/it/12
- The Math-e-mat-ics of Fi-nan-cial
+[]\T1/lmr/m/n/12 Paul Wilmott, Sam How-i-son, and Jeff Dewynne. \T1/lmr/m/it/12 The Math-e-mat-ics of Fi-nan-cial
  []
 
 
@@ -2210,14 +2006,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 114.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 115.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
 [104]
-Underfull \hbox (badness 1354) in paragraph at lines 168--170
-[][]\T1/lmr/bx/n/12 Definition A.6.2 \T1/lmr/m/n/12 (Class (D))\T1/lmr/bx/n/12 
-. []\T1/lmr/m/n/12 A pro-cess $\OML/lmm/m/it/12 X$ \T1/lmr/m/n/12 is of \T1/lmr
-/bx/n/12 class (D) \T1/lmr/m/n/12 if the fam-ily $\OMS/lmsy/m/n/12 f\OML/lmm/m/
-it/12 X[] \OT1/lmr/m/n/12 :
+Underfull \hbox (badness 1354) in paragraph at lines 169--171
+[][]\T1/lmr/bx/n/12 Definition A.6.2 \T1/lmr/m/n/12 (Class (D))\T1/lmr/bx/n/12 . []\T1/lmr/m/n/12 A pro-cess $\OML/lmm/m/it/12 X$ \T1/lmr/m/n/12 is of \T1/lmr/bx/n/12 class (D) \T1/lmr/m/n/12 if the fam-ily $\OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 X[] \OT1/lmr/m/n/12 :
  []
 
 
@@ -2351,10 +2144,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 78.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[114] (main.aux (chapters/00-introduction.aux) (chapters/01-foundations.aux)
-(chapters/02-roughpaths.aux) (chapters/03-applications.aux)
-(chapters/04-conclusions.aux) (appendix/A-auxiliary.aux) (appendix/B-proofs.aux
-))
+[114] (main.aux (chapters/00-introduction.aux) (chapters/01-foundations.aux) (chapters/02-roughpaths.aux) (chapters/03-applications.aux) (chapters/04-conclusions.aux) (appendix/A-auxiliary.aux) (appendix/B-proofs.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -2366,43 +2156,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24505 strings out of 467871
- 436337 string characters out of 5418376
- 1317800 words of memory out of 5000000
- 52305 multiletter control sequences out of 15000+600000
- 742122 words of font info for 120 fonts, out of 8000000 for 9000
+ 24523 strings out of 467871
+ 436766 string characters out of 5418376
+ 1317996 words of memory out of 5000000
+ 52319 multiletter control sequences out of 15000+600000
+ 759425 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,18n,96p,1165b,2243s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke
-/dsrom12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/euler/eufm10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/lm/lmbx12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/lm/lmbx8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/lm/lmbxi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/lm/lmcsc10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/lm/lmex10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/lm/lmmi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/lm/lmmi12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/lm/lmmi6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/lm/lmmi7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/lm/lmmi8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/lm/lmr10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/lm/lmr12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/lm/lmr17.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/lm/lmr6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmr7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmr8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmri12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmsy10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmsy6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmsy7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmsy8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmtt12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/symbols/msam10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (125 pages, 1665329 bytes).
+ 89i,18n,96p,1224b,2243s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (124 pages, 1715155 bytes).
 PDF statistics:
- 2600 PDF objects out of 2984 (max. 8388607)
+ 2611 PDF objects out of 2984 (max. 8388607)
  678 named destinations out of 1000 (max. 500000)
  622 words of extra memory for PDF output out of 10000 (max. 10000000)
 
