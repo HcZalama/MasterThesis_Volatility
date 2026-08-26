@@ -19,32 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{falconer}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=047b43187a3e42dfa84e0990423807de}{%
-           family={[3.]\bibnamedelima Falconer},
-           familyi={[\bibinitperiod\bibinitdelim F\bibinitperiod},
-           given={Kenneth},
-           giveni={K\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {University of St Andrews}%
-      }
-      \strng{namehash}{047b43187a3e42dfa84e0990423807de}
-      \strng{fullhash}{047b43187a3e42dfa84e0990423807de}
-      \strng{fullhashraw}{047b43187a3e42dfa84e0990423807de}
-      \strng{bibnamehash}{047b43187a3e42dfa84e0990423807de}
-      \strng{authorbibnamehash}{047b43187a3e42dfa84e0990423807de}
-      \strng{authornamehash}{047b43187a3e42dfa84e0990423807de}
-      \strng{authorfullhash}{047b43187a3e42dfa84e0990423807de}
-      \strng{authorfullhashraw}{047b43187a3e42dfa84e0990423807de}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Fractal Geometry}
-      \field{year}{2003}
-    \endentry
     \entry{bachelier1900}{thesis}{}{}
       \name{author}{1}{}{%
         {{hash=cf3b72acd9c2b0193404b5f6490d3e77}{%
@@ -806,6 +780,32 @@
       \field{volume}{19}
       \field{year}{2010}
     \endentry
+    \entry{falconer}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=a4ba140e6ae5f4adf516028893d7e733}{%
+           family={Falconer},
+           familyi={F\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of St Andrews}%
+      }
+      \strng{namehash}{a4ba140e6ae5f4adf516028893d7e733}
+      \strng{fullhash}{a4ba140e6ae5f4adf516028893d7e733}
+      \strng{fullhashraw}{a4ba140e6ae5f4adf516028893d7e733}
+      \strng{bibnamehash}{a4ba140e6ae5f4adf516028893d7e733}
+      \strng{authorbibnamehash}{a4ba140e6ae5f4adf516028893d7e733}
+      \strng{authornamehash}{a4ba140e6ae5f4adf516028893d7e733}
+      \strng{authorfullhash}{a4ba140e6ae5f4adf516028893d7e733}
+      \strng{authorfullhashraw}{a4ba140e6ae5f4adf516028893d7e733}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fractal Geometry}
+      \field{year}{2003}
+    \endentry
     \entry{feller1951}{article}{}{}
       \name{author}{1}{}{%
         {{hash=0dc1084389f176f601af7787031a22f1}{%
@@ -1300,7 +1300,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{3}
-      \field{isbn}{978-3030810807}
       \field{title}{Foundations of Modern Probability}
       \field{year}{2021}
     \endentry
@@ -1467,6 +1466,42 @@
       \field{pages}{215\bibrangedash 310}
       \range{pages}{96}
     \endentry
+    \entry{lyonsvictoir2007}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=aee122f9b0e1e036173ab23f437232c8}{%
+           family={Lyons},
+           familyi={L\bibinitperiod},
+           given={Terry\bibnamedelima J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=29837bf056e600300c6b16e32b927442}{%
+           family={Victoir},
+           familyi={V\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0fcfc6a5bb84d736c1e32b4d339168e}
+      \strng{fullhash}{f0fcfc6a5bb84d736c1e32b4d339168e}
+      \strng{fullhashraw}{f0fcfc6a5bb84d736c1e32b4d339168e}
+      \strng{bibnamehash}{f0fcfc6a5bb84d736c1e32b4d339168e}
+      \strng{authorbibnamehash}{f0fcfc6a5bb84d736c1e32b4d339168e}
+      \strng{authornamehash}{f0fcfc6a5bb84d736c1e32b4d339168e}
+      \strng{authorfullhash}{f0fcfc6a5bb84d736c1e32b4d339168e}
+      \strng{authorfullhashraw}{f0fcfc6a5bb84d736c1e32b4d339168e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annales de l'Institut Henri Poincaré (C) Analyse Non Linéaire}
+      \field{number}{5}
+      \field{title}{An extension theorem to rough paths}
+      \field{volume}{24}
+      \field{year}{2007}
+      \field{pages}{835\bibrangedash 847}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.anihpc.2006.07.004
+      \endverb
+    \endentry
     \entry{mandelbrotvanness1968}{article}{}{}
       \name{author}{2}{}{%
         {{hash=d1efa9919078b1d84e99492d760dcc14}{%
@@ -1559,36 +1594,6 @@
       \strng{authornamehash}{b1e2894bce14479f5a711418ce8f8ffa}
       \strng{authorfullhash}{b1e2894bce14479f5a711418ce8f8ffa}
       \strng{authorfullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
-      \field{extraname}{1}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The Bell Journal of Economics and Management Science}
-      \field{number}{1}
-      \field{title}{Theory of Rational Option Pricing}
-      \field{volume}{4}
-      \field{year}{1973}
-      \field{pages}{141\bibrangedash 183}
-      \range{pages}{43}
-    \endentry
-    \entry{merton1973rational}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=b1e2894bce14479f5a711418ce8f8ffa}{%
-           family={Merton},
-           familyi={M\bibinitperiod},
-           given={Robert\bibnamedelima C.},
-           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \strng{namehash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{fullhash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{fullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{bibnamehash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{authorbibnamehash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{authornamehash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{authorfullhash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{authorfullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
-      \field{extraname}{2}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}

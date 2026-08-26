@@ -57,7 +57,12 @@
 \newcommand{\Holder}[1]{\mathcal{C}^{#1}}
 
 % ---------- Stochastic calculus ----------
-\newcommand{\dd}{\mathrm{d}}                 % upright differential (optional; see note)
+% The differential. Chapter 1 was written with a bare italic d and Chapter 2 with
+% \dd; rather than rewrite one of them, \dd is defined to BE the italic d, so the
+% two chapters typeset identically. Change the line below to \mathrm{d} if the
+% upright convention is ever wanted -- it will then apply to both chapters at once
+% only after Chapter 1 has been converted to use the macro.
+\newcommand{\dd}{d}                          % differential (italic; see note above)
 \newcommand{\Lad}[1]{L^{2}_{\mathrm{ad}}\!\left(#1\right)}
 \newcommand{\Lloc}[1]{\mathcal{L}\!\left(#1\right)}
 \newcommand{\Gen}{\mathcal{A}}               % infinitesimal generator
