@@ -1,8 +1,27 @@
 \chapter{Financial Foundations and Classical Models} \label{ch:finance}
 
+Chapter \ref{ch:foundations} built a machine and said almost nothing about what it is for. This
+chapter is the answer. Everything below rests on the stochastic calculus developed there --- Itô's
+rule, Girsanov's theorem and the martingale representation theorem are used constantly, and the
+square-root process of Example \ref{example:cirwellposed} reappears as the variance of the Heston
+model --- but the questions being asked are of a different kind. They are questions about
+\emph{prices}, and the answers are constrained not by what is provable but by what the absence of
+arbitrage permits.
+
+The chapter is nonetheless mathematical throughout, and deliberately so. The claim we shall keep
+returning to is that the financial content of this subject is not a layer of interpretation applied
+on top of the probability: it \emph{is} the probability, read in a particular way. A change of
+numeraire is a change of measure; a hedging strategy is the integrand supplied by a representation
+theorem; a risk-neutral density is a second derivative of observed option prices. Where that
+correspondence is exact we say so, and where the modelling outruns what has been proved --- as it
+does, in a precise and instructive way, at the end of Section \ref{sec:othermodels} --- we say that
+too, because it is where Part \ref{part:part2} begins.
+
+\medskip
+
 \section{Financial Derivatives}\label{sec:derivatives}
 
-In this section, we introduce the main ideas behind Mathematical Finance and the role played by Mathematics in this field. We first informally introduce the concept of \textit{derivative} and give some examples of the main quoted derivatives. The rigorous mathematical treatment of hedging and market completeness is addressed afterwards.
+We first introduce the concept of a \textit{derivative} informally and give some examples of the main quoted contracts. The rigorous mathematical treatment of hedging and market completeness is addressed afterwards.
 
 \subsection{The Concept of a Derivative}
 
@@ -73,7 +92,7 @@ Options provide the \textit{right}, but not the \textit{obligation}, to transact
     \begin{equation}
         \Payoff_T = (\Strike - \Spot_T)^+ = \max(\Strike - \Spot_T, 0)
     \end{equation}
-        \item \textbf{American options:} American call or put options are similar to their European counterparts, with the key difference being that the option can be \textit{exercised} at any time up to maturity $T$.
+        \item \textbf{American options:} as their European counterparts, except that the option may be \textit{exercised} at any time up to maturity $T$.
 \end{itemize}
 
 Derivatives enable \textbf{hedging}, that is,  allow agents to transfer specific risks (e.g., volatility or tail risk) to those willing to bear them. In an idealized complete market, derivatives allow for the replication of any payoff profile. In a sense, liquid derivatives markets provide information to the market. Some market participants may be willing to join for pure speculation, while others genuinely need to hedge their positions, looking for a safer and more efficient way to transfer risk. Collectively, markets (and especially derivatives markets) act as an information network, where the price of a derivative reflects the market's consensus on the underlying asset's future distribution, given the payoffs involved.
@@ -163,7 +182,8 @@ where $\overline{\mathcal{C}}$ is the closure of $\mathcal{C}$ in the $L^\infty$
 We are now equipped to state the core result linking market topology to measure theory.
 
 \begin{definition}[Equivalent Local Martingale Measure]
-A probability measure $\QQ$ is an Equivalent Local Martingale Measure (ELMM) for the numeraire $S^0$ if:
+A probability measure $\QQ$ is an \emph{equivalent local martingale measure} (ELMM) for the
+numeraire $\Num$ if:
 \begin{enumerate}
     \item $\QQ \sim \PP$ (they share the same null sets).
     \item The discounted price process $X_t = S_t / S^0_t$ is a \textbf{local martingale} under $\QQ$.
@@ -240,7 +260,21 @@ expectation under \emph{the measure making $X$ solve the stated equation} --- th
 under which the drift is $\mu$ --- and nothing in the theorem says which measure that is. When the
 theorem is applied to option pricing in Section \ref{sec:blackscholes}, the drift supplied is
 $\rf\Spot$ rather than $\mu\Spot$, so the measure in question is the risk-neutral $\QQ$ and
-emphatically not the physical $\PP$. For further details on the Feynman--Kac formula, see \cite{karatzasshreve1991}.
+emphatically not the physical $\PP$.
+
+Two further remarks fix the place of the theorem. The first is that it subsumes material already
+derived: the Kolmogorov backward equation \eqref{Kolmogorov_backward} of Chapter
+\ref{ch:foundations} is exactly \eqref{FK_PDE} with $\rf \equiv 0$ and terminal condition
+$\PayoffFn = \mathds{1}_{\{\,\cdot\, \le y\}}$, so the transition distribution function of a
+diffusion is itself a Feynman--Kac representation --- one in which the ``payoff'' is the indicator of
+ending below a level and the ``price'' is the probability of doing so. The second is what makes the
+theorem a cornerstone of this chapter rather than a technical lemma. Read from
+\eqref{FK_PDE} to \eqref{FK_Expectation} it turns a pricing equation into a discounted expectation
+under a martingale measure; read in the opposite direction it turns the expectation
+\eqref{eq:riskneutralpricing}, which is what the absence of arbitrage delivers, into a deterministic
+PDE that the price must satisfy. The two descriptions of a derivative's value --- the probabilistic
+one and the analytic one --- are therefore the same object seen from two sides, and both directions
+will be used below.
 
 \section{The Black--Scholes Framework}\label{sec:blackscholes}
 
@@ -360,8 +394,8 @@ what follows --- the PDE when we want to compute, the expectation when we want t
 
 Finally, the market is complete: by Theorem \ref{thm:mrt} and Remark \ref{rem:mrtpricing}, the 
 filtration is generated by the single Brownian motion driving the single traded asset, so every 
-square-integrable claim is attainable and $\QQ$ is unique. The delta \eqref{eq:delta} is the 
-integrand $\varphi$ whose abstract existence the representation theorem guarantees; here we have it 
+square-integrable claim is attainable and $\QQ$ is unique. The delta \eqref{eq:delta} is the
+integrand $\pi$ whose abstract existence the representation theorem guarantees; here we have it
 explicitly.
 
 \subsubsection*{The closed-form solution}
@@ -384,7 +418,7 @@ liability of shareholders.
 \subsubsection*{The Greeks}
 
 The delta \eqref{eq:delta} was singled out above as the hedge, and identified in Remark
-\ref{rem:mrtpricing} with the integrand $\varphi$ whose existence the Martingale Representation
+\ref{rem:mrtpricing} with the integrand $\pi$ whose existence the Martingale Representation
 Theorem guarantees. It is not the only sensitivity that matters, and since the whole of Subsection
 \ref{subsec:smile_skew} is an argument about one of the others, we record them here. Write
 $\tau = T-t$ and let $N'(x) = e^{-x^2/2}/\sqrt{2\pi}$ be the standard normal density.
@@ -717,9 +751,9 @@ short. Condition ii) is convexity of the call price in strike, expressed in the 
 its violation is a butterfly spread with negative cost and non-negative payoff. Condition iii) 
 prevents the extrapolated wings from implying infinite moments of $\Spot_T$.
 
-In practice one first fits a parametric form guaranteeing i)--iii) --- Gatheral's SVI 
-parameterisation \cite{gatheral2014} being the standard choice, with SABR common in rates markets --- and only then 
-differentiates. Since the fitted surface is smooth and arbitrage-free by construction, the 
+In practice one first fits a parametric form guaranteeing i)--iii) --- Gatheral's SVI
+parameterisation \cite{gatheral2014} is the standard choice, with SABR common in rates
+markets --- and only then differentiates. Since the fitted surface is smooth and arbitrage-free by construction, the 
 differentiation is stable and the local variance is automatically non-negative. This yields 
 Gatheral's form of the Dupire formula, which is the version actually implemented.
 
@@ -785,7 +819,7 @@ observation is what motivates the next subsection.
 
 Throughout this subsection, and in Subsection \ref{subsec:american} which follows it, interest rates and dividend yields are taken to be \emph{deterministic}. The assumption is worth stating once rather than repeating: it is what makes the $T$-forward measure coincide with the risk-neutral one, $\QT = \QQ$, so that expectations below may be written under $\QQ$ while still exploiting the $\QT$-martingale property of the forward; and it is what allows the discounting term in the American pricing operator of \eqref{eq:LCP_American} to be a deterministic function of time. With stochastic rates both statements require the change of numeraire of Subsection \ref{subsec:dividends} to be carried through explicitly.
 
-To capture realistic dynamics of the volatility surface itself, we introduce a second source of randomness. In Stochastic Volatility (SV) models, the variance $v_t = \sigma_t^2$ follows its own Stochastic Differential Equation. Under the risk-neutral measure $\QQ$, the system is described by:
+To capture realistic dynamics of the volatility surface itself, we introduce a second source of randomness. In Stochastic Volatility (SV) models, the variance $v_t = \sigma_t^2$ follows its own stochastic differential equation. Under the risk-neutral measure $\QQ$, the system is described by:
 \begin{equation}
     \begin{cases}
         d\Spot_t = (\rf-\divy)\,\Spot_t\,dt + \sqrt{v_t}\,\Spot_t\,d\Wt_t^{\Spot} \\
@@ -915,7 +949,7 @@ of calibration but of the driving noise. This is the empirical observation from 
 
 \subsection{Path-Dependence and American Options}\label{subsec:american}
 
-We conclude this section by briefly discussing the challenges posed by path-dependent derivatives, focusing on the most liquid and prominent example: American options. 
+We conclude this chapter by briefly discussing the challenges posed by path-dependent derivatives, focusing on the most liquid and prominent example: American options. 
 
 Because an American option may be exercised at any time up to maturity, its value depends on the law of the underlying at \emph{every} intermediate date, not merely at $T$. A single implied volatility --- which by Subsection \ref{subsec:impliedvol} encodes one number extracted from one European quote --- therefore does not determine it: infinitely many dynamics reproduce that one quote while disagreeing about the intermediate marginals, and hence about the exercise boundary. This distinction is critically important because options on \textit{single names} (i.e., individual corporate stocks) are almost exclusively American-style. Investors in single equities are reluctant to relinquish the flexibility of early exercise, particularly to capture discrete dividends or navigate corporate actions. In contrast, broad market indices are generally considered more stable and are traded via extremely liquid European options.
 
@@ -1087,7 +1121,10 @@ free-boundary rather than merely parabolic, and what rules out any closed-form s
 % \subsubsection{Calibration to Single Names}
 
 % A practical hurdle arises at exactly this point. Dupire's formula (Theorem \ref{thm:dupire}) requires derivatives of \emph{European} prices, whereas single-name quotes are American, so the surface cannot be calibrated directly from the market. The standard remedy --- a short iterative mapping known as \textbf{de-Americanisation} --- is a calibration procedure rather than a piece of the theory, and we defer it to Section \ref{sec:deamericanisation} of Chapter \ref{ch:applications}, where the numerical machinery it needs is available.
-\noindent\textbf{Sections \ref{sec:derivatives}--\ref{sec:othermodels}.}
-The financial framework and pricing methodologies developed in the latter half of this chapter are built upon cornerstone texts in quantitative finance and stochastic analysis. The rigorous transition from abstract probability to continuous-time asset pricing, including the formulation of equivalent martingale measures and the \textit{No Free Lunch with Vanishing Risk} (NFLVR) condition, relies heavily on the definitive work by Delbaen and Schachermayer \cite{delbaenschachermayer1994}. This abstract measure-theoretic approach is bridged with continuous-time applications in the classic textbooks by Shreve \cite{shreve2004}, Øksendal \cite{oksendal2003}, and Björk \cite{bjork2009}.
+\section*{Notes and references}
+\addcontentsline{toc}{section}{Notes and references}
 
-The explicit formulation of diffusion models is rooted in the foundational breakthroughs of Black and Scholes \cite{blackscholes1973} and Merton \cite{merton1973}. To address the empirical shortcomings of this framework, Local Volatility was formalized by Dupire \cite{dupire1994}, with its practical translation into the implied volatility domain extensively covered by Gatheral \cite{gatheral2006}. For an exhaustive, practitioner-oriented treatment of volatility smile dynamics and Stochastic Volatility models (such as the Heston model \cite{heston1993}), Bergomi \cite{bergomi2016} serves as an indispensable reference. Finally, the Fourier pricing route of \eqref{eq:fourierinversion}, which is what makes calibrating an affine model such as Heston computationally feasible at all, originates with Carr and Madan \cite{carrmadan1999}; the particular form used here, symmetric in $\Fwd$ and $\Strike$ and integrated along the line $\mathrm{Im}\,u = -\tfrac12$, is the variant that is numerically best behaved, and the arbitrage-free interpolation it is calibrated against is Gatheral's SVI \cite{gatheral2014}, with the wing bounds supplied by Lee's moment formula \cite{lee2004}.
+\noindent
+The financial framework and pricing methodologies developed in this chapter are built upon cornerstone texts in quantitative finance and stochastic analysis. The rigorous transition from abstract probability to continuous-time asset pricing, including the formulation of equivalent martingale measures and the \textit{No Free Lunch with Vanishing Risk} (NFLVR) condition, relies heavily on the definitive work by Delbaen and Schachermayer \cite{delbaenschachermayer1994}. This abstract measure-theoretic approach is bridged with continuous-time applications in the classic textbooks by Shreve \cite{shreve2004}, Øksendal \cite{oksendal2003}, and Björk \cite{bjork2009}. The Feynman--Kac formula of Theorem \ref{thm:feynmankac}, which supplies the bridge between the pricing expectation and the pricing equation and is used in both directions throughout the chapter, is treated in \cite[Sec.\ 4.4 and 5.7]{karatzasshreve1991}.
+
+The explicit formulation of diffusion models is rooted in the foundational breakthroughs of Black and Scholes \cite{blackscholes1973} and Merton \cite{merton1973}. To address the empirical shortcomings of this framework, local volatility was formalised by Dupire \cite{dupire1994}, with its practical translation into the implied volatility domain extensively covered by Gatheral \cite{gatheral2006}. For an exhaustive, practitioner-oriented treatment of volatility smile dynamics and stochastic volatility models (such as the Heston model \cite{heston1993}), Bergomi \cite{bergomi2016} serves as an indispensable reference. Finally, the Fourier pricing route of \eqref{eq:fourierinversion}, which is what makes calibrating an affine model such as Heston computationally feasible at all, originates with Carr and Madan \cite{carrmadan1999}; the particular form used here, symmetric in $\Fwd$ and $\Strike$ and integrated along the line $\mathrm{Im}\,u = -\tfrac12$, is the variant that is numerically best behaved, and the arbitrage-free interpolation it is calibrated against is Gatheral's SVI \cite{gatheral2014}, with the wing bounds supplied by Lee's moment formula \cite{lee2004}.

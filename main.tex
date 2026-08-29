@@ -13,7 +13,7 @@
 %      appendix/   auxiliary results
 %======================================================================
 
-\documentclass[12pt, a4paper, hidelinks, openrigth, margin=2cm]{book}
+\documentclass[12pt, a4paper, hidelinks, openright, margin=2cm]{book}
 
 \input{preamble/packages}
 \input{preamble/layout}
@@ -23,7 +23,7 @@
 % ---------- Metadata ----------
 \title{Classical and Rough Volatility Models}
 \author{Héctor Zalama Alonso}
-\date{April 2026}
+\date{September 2026}   % must agree with frontmatter/titlepage.tex
 
 %======================================================================
 \begin{document}
@@ -31,15 +31,28 @@
 
 \input{frontmatter/titlepage}
 
+%----------------------------------------------------------------------
+%  FRONT MATTER.  \frontmatter numbers these pages i, ii, iii, ...
+%  Do NOT reset the page counter by hand here: \mainmatter below restarts
+%  the numbering at arabic 1 on its own.  (The previous arrangement issued
+%  \mainmatter first and then forced \setcounter{page}{1}, which made the
+%  front matter and the body both claim pages 1-6 and produced a string of
+%  "destination with the same identifier (page.1)" warnings from pdfTeX,
+%  with the corresponding table-of-contents links pointing at the wrong
+%  pages.)
+%----------------------------------------------------------------------
 \frontmatter
 \input{frontmatter/dedication}
 
-\mainmatter
-\newpage
 \clearpage
 \pagestyle{empty}
 
 \input{frontmatter/preface}
+
+% Abstract and Resumen.  UNED requires a summary of the work; it is given in
+% English and in Spanish, each with its keyword list.
+\clearpage
+\input{frontmatter/abstract}
 
 \newpage
 \tableofcontents
@@ -48,33 +61,43 @@
 
 \input{frontmatter/notation-table}
 
+% The Introduction belongs to the front matter: it is unnumbered, it surveys
+% both Parts, and it therefore sits outside Part I rather than inside it.
 \clearpage
-\pagenumbering{arabic}   % Start with arabic numbers (1, 2, 3...)
-\setcounter{page}{1}     % Start counting from 1
-\pagestyle{fancy}        % Activate the fancyhdr styling
+\pagestyle{fancy}
+\include{chapters/00-introduction}
 
 %----------------------------------------------------------------------
+%  MAIN MATTER.  Page 1 is the Part I title page.
+%----------------------------------------------------------------------
+\mainmatter
+\pagestyle{fancy}
+
 \part{Foundations and Classical Models} \label{part:part1}
 \thispagestyle{empty}
 
-\include{chapters/00-introduction}
+% Part I is two chapters: the probabilistic machinery first, the financial
+% theory built on top of it second.  They were originally a single chapter;
+% the split keeps each of the two audiences this thesis addresses able to
+% read the half it needs without wading through sixty pages.
 \include{chapters/01-foundations}
+\include{chapters/02-financial}
 
 %----------------------------------------------------------------------
 \part{Modern Approaches} \label{part:part2}
 \thispagestyle{empty}
 
-\include{chapters/02-roughpaths}
-\include{chapters/03-applications}
-\include{chapters/04-conclusions}
-
-%----------------------------------------------------------------------
-\nocite{*}
-\printbibliography[heading=bibintoc]
+\include{chapters/03-roughpaths}
+\include{chapters/04-applications}
+\include{chapters/05-conclusions}
 
 %----------------------------------------------------------------------
 \appendix
 \include{appendix/A-auxiliary}
 \include{appendix/B-proofs}
+
+%----------------------------------------------------------------------
+% Only works actually cited appear; \nocite{*} would print the whole .bib.
+\printbibliography[heading=bibintoc]
 
 \end{document}

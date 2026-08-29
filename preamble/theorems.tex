@@ -1,10 +1,18 @@
 %======================================================================
 %  theorems.tex — theorem-like environments.
-%  All share the counter 'result', numbered within section, exactly as
-%  in the original. Added: notation, assumption, convention.
+%  All share the counter 'result', numbered within CHAPTER: results run
+%  1.1, 1.2, ..., 1.n through Chapter 1, then restart at 2.1, and so on.
+%
+%  Numbering within *section* was the original scheme, but it collided
+%  with the sectional numbering: "Proposition 1.1.36" and "Subsection
+%  1.1.4" occupied the same number space and were told apart only by the
+%  word in front of them. Per-chapter numbering separates the two --
+%  results carry two components, sectional units three -- and is the
+%  usual arrangement in a thesis of this length.
+%  Added: notation, assumption, convention.
 %======================================================================
 
-\newtheorem{result}{Result}[section]   % common counter named 'result'
+\newtheorem{result}{Result}[chapter]   % common counter named 'result'
 
 \theoremstyle{plain}                   % italic body — theorems, lemmas, etc.
 \newtheorem{theorem}[result]{Theorem}
@@ -25,3 +33,35 @@
 % Unnumbered variant, for restating a result proved elsewhere
 \theoremstyle{plain}
 \newtheorem*{theorem*}{Theorem}
+
+% Unnumbered convention, for the two global conventions stated before Section 1.1.
+% These are standing conventions rather than results, and are never cross-referenced
+% by number, so they are deliberately left out of the 'result' sequence.
+\theoremstyle{definition}
+\newtheorem*{convention*}{Convention}
+
+%======================================================================
+%  End-of-statement / end-of-proof markers.
+%
+%  Writing a bare "\hfill $\square$" after \end{equation} opens a fresh
+%  paragraph, so the marker lands on a line of its own with a full
+%  \parskip above it and reads as stranded. \qedopen and \qedfilled pull
+%  it back up so that it sits snugly under the closing display, still
+%  flush right (that is what the \hfill is doing). After ordinary text
+%  they behave exactly like the old "\hfill $\square$".
+%
+%  Usage:  ... \end{equation}
+%          \qedopen        % quoted without proof
+%  and     \qedfilled      % end of an argument
+%======================================================================
+\makeatletter
+\newcommand{\thesis@endmark}[1]{%
+  \par\nobreak
+  \vskip -\parskip
+  \vskip -0.9\baselineskip
+  \noindent\hfill$#1$%
+  \par
+}
+\newcommand{\qedopen}{\thesis@endmark{\square}}
+\newcommand{\qedfilled}{\thesis@endmark{\blacksquare}}
+\makeatother

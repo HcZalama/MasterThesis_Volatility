@@ -23,10 +23,11 @@ Let $X, Y \in L^1(\Omega)$. Then:
     \item[2.] If $X$ is $\mathcal{G}$-measurable, then $\mathbb{E}[X \mid \mathcal{G}] = X$.
     \item[3.] If $X$ and $\mathcal{G}$ are independent --- that is, $\{X \in U\}$ and $A$ are independent events for every Borel $U \subseteq \mathbb{R}$ and every $A \in \mathcal{G}$ --- then $\mathbb{E}[X \mid \mathcal{G}] = \mathbb{E}[X]$.
     \item[4.] (\textbf{Taking out what is known}) If $Y$ is $\mathcal{G}$-measurable and $\mathbb{E}[|XY|]<\infty$, then $\mathbb{E}[XY \mid \mathcal{G}] = Y\,\mathbb{E}[X \mid \mathcal{G}]$.
-    \item[5.] (\textbf{Tower property}) If $\mathcal{H}$ is a sub-$\sigma$-field of $\mathcal{G}$, then $\mathbb{E}[X \mid \mathcal{H}] = \mathbb{E}\!\left[\,\mathbb{E}[X \mid \mathcal{G}] \,\middle|\, \mathcal{H}\,\right]$.
+    \item[5.] (\textbf{Tower property}) If $\mathcal{H}$ is a sub-$\sigma$-algebra of $\mathcal{G}$, then $\mathbb{E}[X \mid \mathcal{H}] = \mathbb{E}\!\left[\,\mathbb{E}[X \mid \mathcal{G}] \,\middle|\, \mathcal{H}\,\right]$.
     \item[6.] If $X \leq Y$, then $\mathbb{E}[X \mid \mathcal{G}] \leq \mathbb{E}[Y \mid \mathcal{G}]$; consequently $\left| \mathbb{E}[X \mid \mathcal{G}] \right| \leq \mathbb{E}[\,|X| \mid \mathcal{G}]$.
     \item[7.] For all $a,b \in \mathbb{R}$, $\mathbb{E}[aX + bY \mid \mathcal{G}] = a\,\mathbb{E}[X \mid \mathcal{G}] + b\,\mathbb{E}[Y \mid \mathcal{G}]$. In particular $\mathbb{E}[\,\cdot \mid \mathcal{G}]$ is a bounded linear operator from $L^{1}(\Omega,\mathcal{F})$ into $L^{1}(\Omega,\mathcal{G})$, a fact used to pass to limits in Theorem \ref{theorem:martingale_property}.
 \end{itemize}
+\hfill $\square$
 \end{proposition}
 
 The convergence theorems also carry over to the conditional setting, in exactly the form one would
@@ -39,39 +40,43 @@ $\liminf_{n\to\infty} X_n \in L^1(\Omega)$. Then
 \mathbb{E}\Bigl[\liminf_{n \to \infty} X_n \,\Big|\, \mathcal{G}\Bigr]
 \leq \liminf_{n \to \infty} \mathbb{E}[X_n \mid \mathcal{G}] \qquad \text{almost surely.}
 \]
+\qedopen
 \end{proposition}
 
 \begin{proposition}[Conditional monotone convergence]\label{prop:condmct}
 Let $0 \leq X_1 \leq X_2 \leq \cdots$ and suppose $X = \lim_{n\to\infty} X_n \in L^1(\Omega)$. Then
 $\mathbb{E}[X \mid \mathcal{G}] = \lim_{n \to \infty} \mathbb{E}[X_n \mid \mathcal{G}]$ almost surely.
+\hfill $\square$
 \end{proposition}
 
 \begin{proposition}[Conditional dominated convergence]\label{prop:conddct}
 Suppose $X_n \to X$ almost surely and $|X_n| \leq Y$ for every $n$, with $Y \in L^1(\Omega)$.
 Then $\mathbb{E}[X_n \mid \mathcal{G}] \to \mathbb{E}[X \mid \mathcal{G}]$ almost surely and in $L^1(\Omega)$.
+\hfill $\square$
 \end{proposition}
 
 \section{Characteristic functions}\label{app:charfn}
 
 Recall that the characteristic function of a real random variable $X$ is
-$\varphi_X(u) = \mathbb{E}[e^{iuX}]$, $u \in \mathbb{R}$. The following elementary
+$\charf_X(u) = \mathbb{E}[e^{iuX}]$, $u \in \mathbb{R}$. The following elementary
 properties are used without comment in the main text.
 
 \begin{proposition}\label{prop:charfnproperties}
 For any real random variable $X$:
 \begin{itemize}
-    \item[i)] $\varphi_X(0) = 1$ and $|\varphi_X(u)| \leq 1$ for all $u \in \mathbb{R}$;
-    \item[ii)] $\varphi_X$ is uniformly continuous on $\mathbb{R}$;
-    \item[iii)] $\varphi_X(-u) = \overline{\varphi_X(u)}$ (Hermitian symmetry);
-    \item[iv)] $\varphi_{aX+b}(u) = e^{iub}\varphi_X(au)$ for all $a,b \in \mathbb{R}$;
-    \item[v)] if $X$ and $Y$ are independent, then $\varphi_{X+Y}(u) = \varphi_X(u)\varphi_Y(u)$;
-    \item[vi)] if $\mathbb{E}[|X|^n] < \infty$, then $\varphi_X$ is $n$ times differentiable and
+    \item[i)] $\charf_X(0) = 1$ and $|\charf_X(u)| \leq 1$ for all $u \in \mathbb{R}$;
+    \item[ii)] $\charf_X$ is uniformly continuous on $\mathbb{R}$;
+    \item[iii)] $\charf_X(-u) = \overline{\charf_X(u)}$ (Hermitian symmetry);
+    \item[iv)] $\charf_{aX+b}(u) = e^{iub}\charf_X(au)$ for all $a,b \in \mathbb{R}$;
+    \item[v)] if $X$ and $Y$ are independent, then $\charf_{X+Y}(u) = \charf_X(u)\charf_Y(u)$;
+    \item[vi)] if $\mathbb{E}[|X|^n] < \infty$, then $\charf_X$ is $n$ times differentiable and
     \[
-    \varphi_X^{(k)}(0) = i^k\,\mathbb{E}[X^k], \qquad 1 \leq k \leq n.
+    \charf_X^{(k)}(0) = i^k\,\mathbb{E}[X^k], \qquad 1 \leq k \leq n.
     \]
-    Conversely, the existence of $2n$ continuous derivatives of $\varphi_X$ in a neighbourhood of
+    Conversely, the existence of $2n$ continuous derivatives of $\charf_X$ in a neighbourhood of
     the origin implies $\mathbb{E}[|X|^{2n}] < \infty$.
 \end{itemize}
+\hfill $\square$
 \end{proposition}
 
 Property ii) deserves a word, since it is the reason the continuity hypothesis in the converse
@@ -95,17 +100,21 @@ Then every $f_a$ is a probability density on $(0,\infty)$, the laws are mutually
 distinct $a$, and all of them share the moment sequence of the log-normal distribution.
 \end{proposition}
 
-Non-negativity holds because $|a\sin(\cdot)| \leq 1$, and the moment identity reduces to showing that
+\textbf{\textit{Proof:}} Non-negativity holds because $|a\sin(\cdot)| \leq 1$, and the moment identity reduces to showing that
 \[
 \int_0^\infty x^k f_X(x)\sin(2\pi \log x)\,dx = 0, \qquad k \in \mathbb{N}.
 \]
 Substituting $\log x = t + k$ turns the integrand into an odd function of $t$ multiplied by the
 Gaussian weight, and the integral vanishes. Taking $k=0$ shows in particular that each $f_a$
-integrates to $1$.
+integrates to $1$. \hfill $\blacksquare$
 
-The underlying obstruction is that the log-normal moments grow like $e^{k^2/2}$, which violates
-Carleman's condition $\sum_k m_{2k}^{-1/2k} = \infty$; when Carleman's condition holds, the moment
-problem is determinate. See \cite{durrett2019} for the general theory.
+It is worth being precise about the logical status of this. Carleman's condition
+$\sum_k m_{2k}^{-1/2k} = \infty$ is \emph{sufficient} for a law to be determined by its moments, and
+the log-normal moments, growing like $e^{k^2/2}$, violate it. A violated sufficient condition
+establishes only that the criterion is silent, never that the conclusion is false: what settles the
+matter here is Proposition \ref{prop:heyde} itself, which exhibits the competing densities
+explicitly. The growth rate merely explains why no elementary criterion could have helped. See
+\cite{durrett2019} for the general theory.
 
 \section{Grönwall's inequality}\label{app:gronwall}
 
@@ -113,16 +122,17 @@ The following is the standard comparison tool for integral inequalities. It is p
 deterministic, and in the stochastic setting it is applied pathwise or to expectations.
 
 \begin{lemma}[Grönwall's inequality]\label{lem:gronwall}
-Let $g, \varphi \in L^1[0,T]$ and $\lambda > 0$ satisfy
+Let $g, u \in L^1[0,T]$ and $\lambda > 0$ satisfy
 \[
-\varphi(t) \leq g(t) + \lambda \int_0^t \varphi(s)\,ds, \qquad 0 \leq t \leq T.
+u(t) \leq g(t) + \lambda \int_0^t u(s)\,ds, \qquad 0 \leq t \leq T.
 \]
 Then
 \[
-\varphi(t) \leq g(t) + \lambda \int_0^t g(s)\,e^{\lambda(t-s)}\,ds, \qquad 0 \leq t \leq T.
+u(t) \leq g(t) + \lambda \int_0^t g(s)\,e^{\lambda(t-s)}\,ds, \qquad 0 \leq t \leq T.
 \]
-In particular, if $g \equiv \kappa$ is constant, then $\varphi(t) \leq \kappa e^{\lambda t}$ for all
-$0 \leq t \leq T$; and if $\kappa = 0$, then $\varphi \equiv 0$.
+In particular, if $g \equiv \kappa$ is constant, then $u(t) \leq \kappa e^{\lambda t}$ for all
+$0 \leq t \leq T$; and if $\kappa = 0$, then $u \equiv 0$.
+\hfill $\square$
 \end{lemma}
 
 The final sentence is the one actually used. Uniqueness arguments for differential equations
@@ -139,6 +149,7 @@ Every finite signed measure $\nu$ on a measurable space $(\Omega,\mathcal{F})$ a
 decomposition $\nu = \nu^+ - \nu^-$ into mutually singular finite positive measures. The measure
 $|\nu| := \nu^+ + \nu^-$ is called the total variation of $\nu$, and $\nu \ll \lambda$ if and only
 if $|\nu| \ll \lambda$.
+\hfill $\square$
 \end{theorem}
 
 See \cite{roydenfitzpatrick2010} for a proof.

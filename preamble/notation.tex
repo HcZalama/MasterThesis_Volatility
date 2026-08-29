@@ -9,7 +9,9 @@
 %  The choices below resolve the collisions flagged in the review:
 %    * W  is Brownian motion, always. (B is never used for it.)
 %    * mu is a drift, always. Abstract measures are nu, lambda.
-%    * rho is a correlation, always. Densities are p (transition) or f.
+%    * rho is a correlation, always. Densities are p (transition), f or psi.
+%    * B(t,T) is the zero-coupon bond. The letter P is left to transition
+%      probabilities, correlation matrices and put prices.
 %    * [0,T] is the time interval, always. (See the footnote in §1.1.)
 %======================================================================
 
@@ -85,8 +87,15 @@
 \newcommand{\Spot}{S}                        % spot price
 \newcommand{\Fwd}{F}                         % forward price
 \newcommand{\Num}{S^{0}}                     % numeraire
-\newcommand{\Bond}[2]{P(#1,#2)}              % zero-coupon bond price
-\newcommand{\Payoff}{H}                      % terminal payoff (random variable)
+\newcommand{\Bond}[2]{B(#1,#2)}              % zero-coupon bond price
+\newcommand{\Disc}[2]{D(#1,#2)}              % deterministic discount factor
+% The terminal payoff is G, and NOT H: the letter H is reserved for the Hurst
+% parameter (\Hurst below), which is the organising symbol of Part II and appears
+% already in Subsection "Stochastic Volatility Models", i.e. in the same chapter as
+% the payoff. G is free throughout the financial chapters; it doubles as a generic
+% event G in \mathcal{G} in the conditional-expectation material of Chapter 1, but
+% the two never occur in the same chapter, let alone the same argument.
+\newcommand{\Payoff}{G}                      % terminal payoff (random variable)
 \newcommand{\PayoffFn}{\Phi}                 % payoff function
 \newcommand{\Strike}{K}
 \newcommand{\Mat}{T}                         % maturity / time horizon (deliberately shared)
@@ -96,7 +105,9 @@
 \newcommand{\lvol}{\sigma_{\mathrm{loc}}}    % local volatility
 \newcommand{\tvar}{w}                        % total implied variance
 \newcommand{\lmon}{k}                        % log-moneyness
-\newcommand{\Carry}{\Theta}                  % spot-to-forward conversion factor (Ch. 1)
+% (The spot-to-forward relation is now written affinely, F = a_t S + b_t, in
+%  Subsection "Dividends, and why the forward is the right variable"; no macro
+%  is needed and \Theta stays free.)
 \newcommand{\Snell}{U}                       % Snell envelope
 \newcommand{\Stop}[1]{\mathcal{T}_{#1}}      % set of stopping times
 

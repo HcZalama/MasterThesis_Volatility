@@ -31,12 +31,12 @@ by $\mathbb{E}[\max\{Z_T,0\}]$, uniformly in $k$. Letting $k \to \infty$ gives t
 martingale case follows by applying this to the submartingale $|X_t|$, which is one by the
 conditional Jensen inequality. \hfill $\blacksquare$
 
-\section{Density of step processes in $L^2_{ad}([0,T]\times\Omega)$}\label{app:proof:density}
+\section{Density of step processes in $L^2_{\mathrm{ad}}([0,T]\times\Omega)$}\label{app:proof:density}
 We prove Lemma \ref{lem:density} of Chapter \ref{ch:foundations}.
 
 \textbf{\textit{Proof:}} The argument proceeds by successive approximation in three steps, each
 enlarging the class of integrands. Write $\lVert f\rVert^2 := \int_0^T\mathbb{E}[f(t)^2]\,dt$ for the
-norm of $L^2_{ad}([0,T]\times\Omega)$, and recall that it suffices to approximate an arbitrary
+norm of $L^2_{\mathrm{ad}}([0,T]\times\Omega)$, and recall that it suffices to approximate an arbitrary
 $f$ within $\varepsilon$ by a step process, since the step processes then form a dense subspace.
 
 \medskip
@@ -69,11 +69,11 @@ approximates each $g_n$ by step processes, and a diagonal argument produces step
 to $f$.
 
 \medskip
-\noindent\textbf{Step 3: general $f \in L^2_{ad}([0,T]\times\Omega)$.} Truncate at level $n$ by
+\noindent\textbf{Step 3: general $f \in L^2_{\mathrm{ad}}([0,T]\times\Omega)$.} Truncate at level $n$ by
 setting $f^{(n)} := (f \wedge n) \vee (-n)$. Each $f^{(n)}$ is bounded and remains adapted, being a
 composition of $f$ with a continuous deterministic function. Moreover $|f^{(n)} - f|^2 \leq f^2$
 pointwise and $f^{(n)} \to f$ pointwise, so dominated convergence --- with dominating function $f^2$,
-integrable precisely because $f \in L^2_{ad}$ --- yields $\lVert f^{(n)} - f\rVert \to 0$. Combining
+integrable precisely because $f \in L^2_{\mathrm{ad}}$ --- yields $\lVert f^{(n)} - f\rVert \to 0$. Combining
 with Step 2 completes the proof.
 
 \medskip
@@ -85,7 +85,7 @@ averaging window in Step 2, and the deterministic truncation in Step 3. \hfill $
 We prove Theorem \ref{thm:itocontinuity} of Chapter \ref{ch:foundations}.
 
 \textbf{\textit{Proof:}} Let $\{f_n\}$ be step processes converging to $f$ in
-$L^2_{ad}([0,T]\times\Omega)$; the associated processes $X^n_t = \int_0^t f_n\,dW$ have continuous
+$L^2_{\mathrm{ad}}([0,T]\times\Omega)$; the associated processes $X^n_t = \int_0^t f_n\,dW$ have continuous
 paths by construction, being finite sums of continuous terms. By Theorem
 \ref{theorem:martingale_property} the difference $X^n - X^m$ is a martingale, so Doob's $L^2$
 maximal inequality (Proposition \ref{prop:dooblp}) together with Itô's isometry gives

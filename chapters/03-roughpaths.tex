@@ -12,9 +12,8 @@ which it collapses.
 
 The first is that the driving signal may be rougher than Brownian. Itô's construction is not a
 general theory of integration against irregular paths: it is a theory of integration against
-\emph{semimartingales}, and Definition \ref{def:semimartingale} was recorded in Chapter
-\ref{ch:foundations} precisely so that we could mark its edge. The moment the integrator leaves that
-class, the entire apparatus --- the isometry of Theorem \ref{thm:itoisometry}, the martingale
+\emph{semimartingales}, in the sense of Definition \ref{def:semimartingale}. The moment the
+integrator leaves that class, the entire apparatus --- the isometry of Theorem \ref{thm:itoisometry}, the martingale
 property, the localisation of Example \ref{example_stoppingTimes} --- becomes unavailable at once,
 and not merely inconvenient.
 
@@ -119,7 +118,7 @@ That last observation is not a curiosity but an obstruction, and we state it as 
 
 \begin{theorem}[Rogers]\label{thm:fbmnotsemimartingale}
 Fractional Brownian motion is a semimartingale in the sense of Definition \ref{def:semimartingale}
-if and only if $\Hurst = \tfrac12$. \hfill $\blacksquare$
+if and only if $\Hurst = \tfrac12$. \hfill $\square$
 \end{theorem}
 
 The proof is in \cite{rogers1997}, and the mechanism is worth recording even though we do not
@@ -133,9 +132,8 @@ direction. Only the balance point $\Hurst = \tfrac12$ escapes.
 The consequence is severe and complete. \textbf{For $\Hurst \neq \tfrac12$ there is no Itô integral
 against $\BH$}, no Itô formula, no martingale representation, and no Girsanov theorem --- not
 because the constructions are difficult but because every one of them takes the semimartingale
-property as its hypothesis. This was anticipated in Chapter \ref{ch:foundations}, where Definition
-\ref{def:semimartingale} was described as marking ``the outer limit of the theory developed in this
-chapter''. We have now crossed it.
+property as its hypothesis. Definition \ref{def:semimartingale} therefore marks the outer limit of
+the theory developed in Chapter \ref{ch:foundations}, and we have now crossed it.
 
 \subsection{Volatility is Rough}\label{subsec:roughvol}
 
@@ -174,8 +172,8 @@ a fractional Brownian motion.\footnote{The mean-reversion speed is written $\alp
 \cite{gatheraljaissonrosenbaum2018}; we use $a$, since $\alpha$ is reserved throughout this chapter
 for the H\"older exponent fixed in \eqref{eq:alpharange}.}
 
-For our purposes the decisive consequence is the one that concerns the object Chapter \ref{ch:foundations}
-spent its final sections constructing: the implied volatility surface. A model of the form
+For our purposes the decisive consequence is the one that concerns the object Chapter \ref{ch:finance}
+was built to construct: the implied volatility surface. A model of the form
 \eqref{eq:rfsv} generates an at-the-money skew whose term structure behaves like
 \begin{equation}\label{eq:skewpowerlaw}
 \psi(\tau) \;:=\; \biggl|\frac{\partial \ivol}{\partial \lmon}(\tau,\lmon)\biggr|_{\lmon=0} \;\sim\; \tau^{\Hurst - 1/2}
@@ -255,7 +253,7 @@ Let $\mathcal{W}$ denote the space of continuous paths $[0,\Mat]\to\R^d$ and let
 $E^\infty \subseteq \mathcal{W}$ be the smooth paths. There is no norm $\lVert\cdot\rVert$ on
 $E^\infty$ such that, simultaneously, the closure $E$ of $E^\infty$ carries full Wiener measure and
 the map $(f,g)\mapsto\int g\,\dd f$ extends continuously from $E^\infty\times E^\infty$ to
-$E\times E$. \hfill $\blacksquare$
+$E\times E$. \hfill $\square$
 \end{proposition}
 
 A proof is given in \cite[Ch.\ 1]{frizhairer2020}. The statement is a genuine impossibility
@@ -273,16 +271,16 @@ Theorem \ref{thm:ult}, and everything between here and there is the construction
 \medskip
 
 One word on how the chapter is to be read, since its architecture is deliberate and easy to miss.
-What follows is not a survey of an unrelated theory placed alongside Part \ref{part:part1}. Three of
-the central results of Chapter \ref{ch:foundations} --- Itô's formula, the Itô--Stratonovich
-correction, and the Wong--Zakai approximation theorem --- will be \emph{re-derived} here on
+What follows is not a survey of an unrelated theory placed alongside Part \ref{part:part1}. Three
+classical results --- Itô's formula and the Itô--Stratonovich correction, both obtained in Chapter
+\ref{ch:foundations}, together with the Wong--Zakai approximation theorem, which belongs to the same
+classical circle of ideas but was not needed there --- will be \emph{re-derived} here on
 different foundations, and in each case we shall state explicitly what the new derivation costs in
 hypotheses and what it buys in conclusions. That accounting is the real argument of this chapter.
 The results themselves are not new, and the rough-path versions are in two of the three cases
 strictly weaker than the classical ones; what is new is that they are obtained pathwise,
-deterministically, and with a continuity statement attached --- and that the second-order term which
-Chapter \ref{ch:foundations} presented as an irreducible feature of stochastic calculus turns out to
-be a consequence of a choice. The coda closing the chapter collects the three and draws the moral.
+deterministically, and with a continuity statement attached. The coda closing the chapter collects
+the three and draws the moral.
 
 \section{Rough Paths}\label{sec:roughpaths}
 
@@ -642,7 +640,7 @@ independent components, and let $W^{\Hurst,(n)}$ denote its piecewise-linear int
 dyadic partition of mesh $2^{-n}$, canonically lifted as in Example \ref{ex:smoothlift}. Then, for
 every $\alpha < \Hurst$, the lifts converge in probability in the metric $\rpdist$ to a limit
 $\mathbf{B}^{\Hurst} = \bigl(\BH,\lev^{\Hurst}\bigr) \in \RPg{\alpha}$, which is therefore a geometric
-rough path. \hfill $\blacksquare$
+rough path. \hfill $\square$
 \end{theorem}
 
 The boldface letter is $\mathbf{B}$ and not $\mathbf{W}$ deliberately: the first level of
@@ -842,7 +840,7 @@ rough paths,
 \end{equation}
 with $R^Y_{s,t} = Y_{s,t} - \Gub_sX_{s,t}$ and
 $R^{\widetilde Y}_{s,t} = \widetilde Y_{s,t} - \widetilde\Gub_s\widetilde X_{s,t}$ as in
-\eqref{eq:controlleddef}. \hfill $\blacksquare$
+\eqref{eq:controlleddef}. \hfill $\square$
 \end{theorem}
 
 The quantity \eqref{eq:controlleddistance} requires a word, since $(Y,\Gub)$ and
@@ -869,7 +867,7 @@ Let $W$ be a Brownian motion and let $F \in \mathcal{C}^3_b$. Then, almost surel
 \end{equation}
 the right-hand sides being the Itô integral of Definition \ref{def:stochastic_integral} and the
 Stratonovich integral of Definition \ref{def:stratonovich} respectively. If $X$ is smooth, the rough integral against its canonical lift
-is the Riemann--Stieltjes integral. \hfill $\blacksquare$
+is the Riemann--Stieltjes integral. \hfill $\square$
 \end{proposition}
 
 See \cite[Ch.\ 5]{frizhairer2020}. The first identity is the one to appreciate: the left-hand side
@@ -939,7 +937,7 @@ reduces to the classical chain rule
 \begin{equation}\label{eq:classicalchainrule}
 F(X_t) - F(X_0) \;=\; \int_0^t DF(X_r)\,\dd\rpX_r .
 \end{equation}
-\hfill $\blacksquare$
+\qedopen
 \end{proposition}
 
 A proof is in \cite[Ch.\ 7]{frizhairer2020}; the mechanism is a second-order Taylor expansion of
@@ -963,7 +961,7 @@ Let $W$ be a $d$-dimensional Brownian motion and $F\in\mathcal{C}^3_b$. Applying
     \begin{equation}\label{eq:itofromrough}
     F(W_t)-F(W_0) = \int_0^t DF(W_r)\,\dd W_r + \frac12\int_0^t \Delta F(W_r)\,\dd r ,
     \end{equation}
-    which is the case $\theta(t,x) = F(x)$, $X = W$ of Theorem \ref{thm:itomulti} of Chapter
+    which is the case $V(t,x) = F(x)$, $X = W$ of Theorem \ref{thm:itomulti} of Chapter
     \ref{ch:foundations}.
 \end{itemize}
 \end{corollary}
@@ -1041,7 +1039,7 @@ only if
 \begin{equation}\label{eq:davie}
 Y_{s,t} \;=\; f(Y_s)\,X_{s,t} \;+\; Df(Y_s)f(Y_s)\,\lev_{s,t} \;+\; o\bigl(|t-s|\bigr)
 \end{equation}
-uniformly in $s\leq t$. \hfill $\blacksquare$
+uniformly in $s\leq t$. \hfill $\square$
 \end{proposition}
 
 The proof is in \cite[Prop.\ 8.8]{frizhairer2020}. Expression \eqref{eq:davie} is worth recognising:
@@ -1184,7 +1182,7 @@ $X^n_{s,t} \in V^{\otimes n}$, which satisfies Chen's relation at every level,
 \begin{equation}\label{eq:chenalllevels}
 X^{n}_{s,t} = \sum_{k=0}^{n} X^{k}_{s,u}\otimes X^{n-k}_{u,t}, \qquad s\leq u\leq t,
 \end{equation}
-and the bounds $|X^n_{s,t}| \leq C_n\,|t-s|^{n\alpha}$ for every $n$. \hfill $\blacksquare$
+and the bounds $|X^n_{s,t}| \leq C_n\,|t-s|^{n\alpha}$ for every $n$. \hfill $\square$
 \end{theorem}
 
 The theorem is Lyons' \cite{lyons1998}; see also \cite[Ch.\ 3]{geng2021}. Its content is that the
@@ -1244,7 +1242,7 @@ the letters $\{1,\dots,d\}$,
 X^{m;I}_{0,\Mat}\cdot X^{n;J}_{0,\Mat} \;=\; \sum_{K \,\in\, I \shuffle J} X^{m+n;K}_{0,\Mat},
 \end{equation}
 the sum being over all $\binom{m+n}{m}$ interleavings of $I$ and $J$ preserving the internal order
-of each. \hfill $\blacksquare$
+of each. \hfill $\square$
 \end{proposition}
 
 Relation \eqref{eq:shuffle} --- the \emph{shuffle product formula}, proved in \cite[Lem.\ 1.15]{geng2021}
@@ -1282,7 +1280,7 @@ $t\mapsto X_{0,t}$ is tree-like. Consequently --- applying this to
 $\rpX \star \widetilde\rpX^{-1}$, the concatenation of $\rpX$ with the time-reversal of
 $\widetilde\rpX$, whose signature is $\Sig(\rpX)\otimes\Sig(\widetilde\rpX)^{-1}$ by the group
 structure of $T((V))$ --- two weakly geometric rough paths have the same
-signature if and only if they coincide up to tree-like pieces. \hfill $\blacksquare$
+signature if and only if they coincide up to tree-like pieces. \hfill $\square$
 \end{theorem}
 
 The bounded-variation case is due to Hambly and Lyons \cite{hamblylyons2010}; the extension to rough
@@ -1327,7 +1325,7 @@ Let $\rpX$ be a random geometric rough path whose expected signature \eqref{eq:e
 has infinite radius of convergence, in the sense that
 $\sum_{n\geq0}\lambda^{n}\,\bigl|\E[X^n_{0,\Mat}]\bigr| < \infty$ for every $\lambda>0$. Then
 $\E[\Sig(\rpX)]$ determines the law of $\rpX$, up to the tree-like equivalence of Theorem
-\ref{thm:signatureuniqueness}. \hfill $\blacksquare$
+\ref{thm:signatureuniqueness}. \hfill $\square$
 \end{theorem}
 
 The result is due to Chevyrev and Lyons \cite{chevyrevlyons2016}. It is the precise analogue, for
@@ -1450,11 +1448,11 @@ D^{\alpha_\Hurst}\psi(u,\tau) \;=\; \frac{\xi^2}{2}\,\psi(u,\tau)^2 \;+\; \bigl(
 \qquad I^{1-\alpha_\Hurst}\psi(u,0) = 0,
 \end{equation}
 $D^{\alpha_\Hurst}$ being the Riemann--Liouville fractional derivative of order $\alpha_\Hurst$.
-\hfill $\blacksquare$
+\hfill $\square$
 \end{theorem}
 
 The result is due to El Euch and Rosenbaum \cite{eleucrosenbaum2019}. Comparison with Chapter
-\ref{ch:foundations} is the point of stating it. Equation \eqref{eq:fractionalriccati} is
+\ref{ch:finance} is the point of stating it. Equation \eqref{eq:fractionalriccati} is
 \eqref{eq:hestonriccati} \emph{term for term}: the same quadratic in $\psi$, the same linear
 coefficient $\rho\xi iu - \kappa$, the same inhomogeneity $-\tfrac12(u^2+iu)$. The single
 difference is that the ordinary derivative $\partial_\tau$ has been replaced by a fractional
@@ -1545,8 +1543,7 @@ regularity, divergent quantities held in place by an algebraic structure.
 
 We shall not develop any of this. The construction is set out in \cite[Ch.\ 13--14]{frizhairer2020},
 and the rough volatility literature built on it is surveyed in \cite{bayerfrizfukasawa2023} and
-\cite{dinunno2023}. It is recorded here for the same reason Definition \ref{def:semimartingale} was recorded in Chapter
-\ref{ch:foundations}: to mark honestly the edge of what has been proved. The applications of Chapter
+\cite{dinunno2023}. It is recorded here to mark honestly the edge of what has been proved. The applications of Chapter
 \ref{ch:applications} are constructed so as not to depend on a lifting theorem that is unavailable at the
 exponent the data demand --- the local volatility surface of Subsection \ref{subsec:localvol} being
 a classical diffusion, and the rough Heston model of Definition \ref{def:roughheston} being
@@ -1582,9 +1579,10 @@ appeared:
     lifts, and the limit remembers the area.
 \end{itemize}
 
-Taken together these say something the classical theory cannot. In Chapter \ref{ch:foundations} the
-second-order term of Itô's rule, the $\tfrac12\int F'$ of the Itô--Stratonovich dictionary, and the
-failure of smooth approximation to converge to the Itô solution appear as three separate facts,
+Taken together these say something the classical theory cannot. In the classical account --- that of
+Chapter \ref{ch:foundations}, extended by the Wong--Zakai theorem --- the second-order term of Itô's
+rule, the $\tfrac12\int F'$ of the Itô--Stratonovich dictionary, and the failure of smooth
+approximation to converge to the Itô solution are three separate facts,
 each proved by its own argument and each attributable to the non-vanishing quadratic variation of
 Brownian motion. Here they are one fact, seen three times: the trajectory does not determine its own
 iterated integrals, a choice must be made, and every one of the three phenomena is that choice

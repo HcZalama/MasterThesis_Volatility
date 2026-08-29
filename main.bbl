@@ -401,35 +401,6 @@
       \field{pages}{61\bibrangedash 73}
       \range{pages}{13}
     \endentry
-    \entry{chen1957}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=369b82d5c9e19ede291c591e327a4cc3}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Kuo-Tsai},
-           giveni={K\bibinithyphendelim T\bibinitperiod}}}%
-      }
-      \strng{namehash}{369b82d5c9e19ede291c591e327a4cc3}
-      \strng{fullhash}{369b82d5c9e19ede291c591e327a4cc3}
-      \strng{fullhashraw}{369b82d5c9e19ede291c591e327a4cc3}
-      \strng{bibnamehash}{369b82d5c9e19ede291c591e327a4cc3}
-      \strng{authorbibnamehash}{369b82d5c9e19ede291c591e327a4cc3}
-      \strng{authornamehash}{369b82d5c9e19ede291c591e327a4cc3}
-      \strng{authorfullhash}{369b82d5c9e19ede291c591e327a4cc3}
-      \strng{authorfullhashraw}{369b82d5c9e19ede291c591e327a4cc3}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Annals of Mathematics}
-      \field{number}{1}
-      \field{title}{Integration of Paths, Geometric Invariants and a Generalized {B}aker--{H}ausdorff Formula}
-      \field{volume}{65}
-      \field{year}{1957}
-      \true{nocite}
-      \field{pages}{163\bibrangedash 178}
-      \range{pages}{16}
-    \endentry
     \entry{chevyrevkormilitzin2016}{article}{}{}
       \name{author}{2}{}{%
         {{hash=c84a8f3c991b4c4edff0e0bd0a1d0c8c}{%
@@ -566,59 +537,6 @@
       \field{year}{2002}
       \field{pages}{108\bibrangedash 140}
       \range{pages}{33}
-    \endentry
-    \entry{cuchiero2025}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=64fb2fa55e95db41a74d9e72b25c918e}{%
-           family={Cuchiero},
-           familyi={C\bibinitperiod},
-           given={Christa},
-           giveni={C\bibinitperiod}}}%
-        {{hash=c1e30133fb898dfe3fa94e23b47a3095}{%
-           family={Gazzani},
-           familyi={G\bibinitperiod},
-           given={Guido},
-           giveni={G\bibinitperiod}}}%
-        {{hash=0751a13fff90da1ce331ab57f16e98a1}{%
-           family={Möller},
-           familyi={M\bibinitperiod},
-           given={Janka},
-           giveni={J\bibinitperiod}}}%
-        {{hash=d624c4119e82128ac097fec1bef6c379}{%
-           family={Svaluto-Ferro},
-           familyi={S\bibinithyphendelim F\bibinitperiod},
-           given={Sara},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{b134bb6bf89a687bdb1f6a35943ebf78}
-      \strng{fullhash}{92784eff6f8b56d166d2612f23b4bfd9}
-      \strng{fullhashraw}{92784eff6f8b56d166d2612f23b4bfd9}
-      \strng{bibnamehash}{b134bb6bf89a687bdb1f6a35943ebf78}
-      \strng{authorbibnamehash}{b134bb6bf89a687bdb1f6a35943ebf78}
-      \strng{authornamehash}{b134bb6bf89a687bdb1f6a35943ebf78}
-      \strng{authorfullhash}{92784eff6f8b56d166d2612f23b4bfd9}
-      \strng{authorfullhashraw}{92784eff6f8b56d166d2612f23b4bfd9}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Mathematical Finance}
-      \field{number}{1}
-      \field{title}{Joint Calibration to SPX and VIX Options with Signature-Based Models}
-      \field{volume}{35}
-      \field{year}{2025}
-      \true{nocite}
-      \field{pages}{161\bibrangedash 213}
-      \range{pages}{53}
-      \verb{doi}
-      \verb 10.1111/mafi.12442
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/mafi.12442
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/mafi.12442
-      \endverb
     \endentry
     \entry{delbaenschachermayer1994}{article}{}{}
       \name{author}{2}{}{%
@@ -1037,109 +955,6 @@
       \field{title}{An Introduction to the Theory of Rough Paths}
       \field{year}{2021}
     \endentry
-    \entry{gubinelli2004}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=53ead5fa51e3a7a4edfcdedc97130b16}{%
-           family={Gubinelli},
-           familyi={G\bibinitperiod},
-           given={Massimiliano},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{53ead5fa51e3a7a4edfcdedc97130b16}
-      \strng{fullhash}{53ead5fa51e3a7a4edfcdedc97130b16}
-      \strng{fullhashraw}{53ead5fa51e3a7a4edfcdedc97130b16}
-      \strng{bibnamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
-      \strng{authorbibnamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
-      \strng{authornamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
-      \strng{authorfullhash}{53ead5fa51e3a7a4edfcdedc97130b16}
-      \strng{authorfullhashraw}{53ead5fa51e3a7a4edfcdedc97130b16}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Functional Analysis}
-      \field{number}{1}
-      \field{title}{Controlling Rough Paths}
-      \field{volume}{216}
-      \field{year}{2004}
-      \true{nocite}
-      \field{pages}{86\bibrangedash 140}
-      \range{pages}{55}
-    \endentry
-    \entry{guyonlekeufack2022}{misc}{}{}
-      \name{author}{2}{}{%
-        {{hash=ae97945971d3482f04991e10218f030e}{%
-           family={Guyon},
-           familyi={G\bibinitperiod},
-           given={Julien},
-           giveni={J\bibinitperiod}}}%
-        {{hash=5e2d0e03c61756f580b783c7cb8a252b}{%
-           family={Lekeufack},
-           familyi={L\bibinitperiod},
-           given={Jordan},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{institution}{2}{%
-        {École des Ponts ParisTech}%
-        {University of California, Berkeley}%
-      }
-      \list{location}{2}{%
-        {Paris, France}%
-        {Berkeley, CA, USA}%
-      }
-      \strng{namehash}{433547497aee729c6f9c51787c24f6c8}
-      \strng{fullhash}{433547497aee729c6f9c51787c24f6c8}
-      \strng{fullhashraw}{433547497aee729c6f9c51787c24f6c8}
-      \strng{bibnamehash}{433547497aee729c6f9c51787c24f6c8}
-      \strng{authorbibnamehash}{433547497aee729c6f9c51787c24f6c8}
-      \strng{authornamehash}{433547497aee729c6f9c51787c24f6c8}
-      \strng{authorfullhash}{433547497aee729c6f9c51787c24f6c8}
-      \strng{authorfullhashraw}{433547497aee729c6f9c51787c24f6c8}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{7}
-      \field{note}{Available at SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4174589}}
-      \field{title}{Volatility Is (Mostly) Path-Dependent}
-      \field{year}{2022}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4174589
-      \endverb
-      \verb{url}
-      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4174589
-      \endverb
-    \endentry
-    \entry{hairer2014}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=77a6aeb5159cb51c26b716e066c282e8}{%
-           family={Hairer},
-           familyi={H\bibinitperiod},
-           given={Martin},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{77a6aeb5159cb51c26b716e066c282e8}
-      \strng{fullhash}{77a6aeb5159cb51c26b716e066c282e8}
-      \strng{fullhashraw}{77a6aeb5159cb51c26b716e066c282e8}
-      \strng{bibnamehash}{77a6aeb5159cb51c26b716e066c282e8}
-      \strng{authorbibnamehash}{77a6aeb5159cb51c26b716e066c282e8}
-      \strng{authornamehash}{77a6aeb5159cb51c26b716e066c282e8}
-      \strng{authorfullhash}{77a6aeb5159cb51c26b716e066c282e8}
-      \strng{authorfullhashraw}{77a6aeb5159cb51c26b716e066c282e8}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Inventiones Mathematicae}
-      \field{number}{2}
-      \field{title}{A Theory of Regularity Structures}
-      \field{volume}{198}
-      \field{year}{2014}
-      \true{nocite}
-      \field{pages}{269\bibrangedash 504}
-      \range{pages}{236}
-    \endentry
     \entry{hamblylyons2010}{article}{}{}
       \name{author}{2}{}{%
         {{hash=6d9dd5545b1baec4468e75511074ebd7}{%
@@ -1231,47 +1046,6 @@
       \field{year}{1963}
       \field{pages}{392\bibrangedash 393}
       \range{pages}{2}
-    \endentry
-    \entry{abijaber2024}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=3f462a39879e7b101ece6071fa5b0f9a}{%
-           family={Jaber},
-           familyi={J\bibinitperiod},
-           given={Eduardo\bibnamedelima Abi},
-           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=1a2ddf6443328fdb2c2bb2ea152c5cf0}{%
-           family={Gérard},
-           familyi={G\bibinitperiod},
-           given={Louis-Amand},
-           giveni={L\bibinithyphendelim A\bibinitperiod}}}%
-        {{hash=98638ffe1c4b139674c1b416716182f3}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={Yuxing},
-           giveni={Y\bibinitperiod}}}%
-      }
-      \strng{namehash}{b26bd18c5d293af369380617de45c113}
-      \strng{fullhash}{b26bd18c5d293af369380617de45c113}
-      \strng{fullhashraw}{b26bd18c5d293af369380617de45c113}
-      \strng{bibnamehash}{b26bd18c5d293af369380617de45c113}
-      \strng{authorbibnamehash}{b26bd18c5d293af369380617de45c113}
-      \strng{authornamehash}{b26bd18c5d293af369380617de45c113}
-      \strng{authorfullhash}{b26bd18c5d293af369380617de45c113}
-      \strng{authorfullhashraw}{b26bd18c5d293af369380617de45c113}
-      \field{sortinit}{J}
-      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:2407.04956}
-      \field{title}{Path-Dependent Processes from Signatures}
-      \field{year}{2024}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2407.04956
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2407.04956
-      \endverb
     \endentry
     \entry{kallenberg2021}{book}{}{}
       \name{author}{1}{}{%
@@ -1683,44 +1457,6 @@
       \field{title}{Stochastic Differential Equations: An Introduction with Applications}
       \field{year}{2003}
     \endentry
-    \entry{parent2024}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=03d4d5c2fc3b913033ceaabdaad3e23e}{%
-           family={Parent},
-           familyi={P\bibinitperiod},
-           given={Léo},
-           giveni={L\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {PRISM Sorbonne}%
-      }
-      \list{location}{1}{%
-        {Paris, France}%
-      }
-      \strng{namehash}{03d4d5c2fc3b913033ceaabdaad3e23e}
-      \strng{fullhash}{03d4d5c2fc3b913033ceaabdaad3e23e}
-      \strng{fullhashraw}{03d4d5c2fc3b913033ceaabdaad3e23e}
-      \strng{bibnamehash}{03d4d5c2fc3b913033ceaabdaad3e23e}
-      \strng{authorbibnamehash}{03d4d5c2fc3b913033ceaabdaad3e23e}
-      \strng{authornamehash}{03d4d5c2fc3b913033ceaabdaad3e23e}
-      \strng{authorfullhash}{03d4d5c2fc3b913033ceaabdaad3e23e}
-      \strng{authorfullhashraw}{03d4d5c2fc3b913033ceaabdaad3e23e}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{9}
-      \field{note}{Available at SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5002182}}
-      \field{title}{Essays on Asset Price Dynamics Modeling}
-      \field{year}{2024}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5002182
-      \endverb
-      \verb{url}
-      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5002182
-      \endverb
-    \endentry
     \entry{peskirshiryaev2006}{book}{}{}
       \name{author}{2}{}{%
         {{hash=65401738aa9a9dfb00978dd69ed75dd2}{%
@@ -1787,47 +1523,6 @@
       \field{title}{Stochastic Integration and Differential Equations}
       \field{volume}{21}
       \field{year}{2005}
-    \endentry
-    \entry{raissi2019}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=95a17c39168b9e6b8812f207b4e036c1}{%
-           family={Raissi},
-           familyi={R\bibinitperiod},
-           given={Maziar},
-           giveni={M\bibinitperiod}}}%
-        {{hash=197d71332633e07aa578718628fdc405}{%
-           family={Perdikaris},
-           familyi={P\bibinitperiod},
-           given={Paris},
-           giveni={P\bibinitperiod}}}%
-        {{hash=bfaf154b1f300f885a75adce4c6b773e}{%
-           family={Karniadakis},
-           familyi={K\bibinitperiod},
-           given={George\bibnamedelima Em},
-           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{767366a7d0fdde767496da8385111e76}
-      \strng{fullhash}{767366a7d0fdde767496da8385111e76}
-      \strng{fullhashraw}{767366a7d0fdde767496da8385111e76}
-      \strng{bibnamehash}{767366a7d0fdde767496da8385111e76}
-      \strng{authorbibnamehash}{767366a7d0fdde767496da8385111e76}
-      \strng{authornamehash}{767366a7d0fdde767496da8385111e76}
-      \strng{authorfullhash}{767366a7d0fdde767496da8385111e76}
-      \strng{authorfullhashraw}{767366a7d0fdde767496da8385111e76}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Computational Physics}
-      \field{title}{Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations}
-      \field{volume}{378}
-      \field{year}{2019}
-      \true{nocite}
-      \field{pages}{686\bibrangedash 707}
-      \range{pages}{22}
     \endentry
     \entry{rogers1997}{article}{}{}
       \name{author}{1}{}{%
@@ -1951,45 +1646,33 @@
       \field{pages}{31\bibrangedash 39}
       \range{pages}{9}
     \endentry
-    \entry{wilmott1995}{book}{}{}
-      \name{author}{3}{}{%
-        {{hash=b4eae05c5ac84581289f65180c29143e}{%
-           family={Wilmott},
+    \entry{wigner1960}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b68c34c3f76a4c27126c15b8f7d72d08}{%
+           family={Wigner},
            familyi={W\bibinitperiod},
-           given={Paul},
-           giveni={P\bibinitperiod}}}%
-        {{hash=5ca9f9a0adad60ff4535be5f4784f6e7}{%
-           family={Howison},
-           familyi={H\bibinitperiod},
-           given={Sam},
-           giveni={S\bibinitperiod}}}%
-        {{hash=cc7795390a9c9c35acf5cdc147256a0e}{%
-           family={Dewynne},
-           familyi={D\bibinitperiod},
-           given={Jeff},
-           giveni={J\bibinitperiod}}}%
+           given={Eugene\bibnamedelima P.},
+           giveni={E\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Cambridge, UK}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{b12f466975c70f26bf0ec5ee874fec0e}
-      \strng{fullhash}{b12f466975c70f26bf0ec5ee874fec0e}
-      \strng{fullhashraw}{b12f466975c70f26bf0ec5ee874fec0e}
-      \strng{bibnamehash}{b12f466975c70f26bf0ec5ee874fec0e}
-      \strng{authorbibnamehash}{b12f466975c70f26bf0ec5ee874fec0e}
-      \strng{authornamehash}{b12f466975c70f26bf0ec5ee874fec0e}
-      \strng{authorfullhash}{b12f466975c70f26bf0ec5ee874fec0e}
-      \strng{authorfullhashraw}{b12f466975c70f26bf0ec5ee874fec0e}
+      \strng{namehash}{b68c34c3f76a4c27126c15b8f7d72d08}
+      \strng{fullhash}{b68c34c3f76a4c27126c15b8f7d72d08}
+      \strng{fullhashraw}{b68c34c3f76a4c27126c15b8f7d72d08}
+      \strng{bibnamehash}{b68c34c3f76a4c27126c15b8f7d72d08}
+      \strng{authorbibnamehash}{b68c34c3f76a4c27126c15b8f7d72d08}
+      \strng{authornamehash}{b68c34c3f76a4c27126c15b8f7d72d08}
+      \strng{authorfullhash}{b68c34c3f76a4c27126c15b8f7d72d08}
+      \strng{authorfullhashraw}{b68c34c3f76a4c27126c15b8f7d72d08}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{The Mathematics of Financial Derivatives: A Student Introduction}
-      \field{year}{1995}
-      \true{nocite}
+      \field{journaltitle}{Communications on Pure and Applied Mathematics}
+      \field{number}{1}
+      \field{title}{The Unreasonable Effectiveness of Mathematics in the Natural Sciences}
+      \field{volume}{13}
+      \field{year}{1960}
+      \field{pages}{1\bibrangedash 14}
+      \range{pages}{14}
     \endentry
     \entry{yamada1971}{article}{}{}
       \name{author}{2}{}{%
@@ -2048,7 +1731,6 @@
       \field{title}{An Inequality of the Hölder Type, Connected with {S}tieltjes Integration}
       \field{volume}{67}
       \field{year}{1936}
-      \true{nocite}
       \field{pages}{251\bibrangedash 282}
       \range{pages}{32}
     \endentry

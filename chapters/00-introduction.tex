@@ -1,33 +1,13 @@
 \chapter*{Introduction} \label{ch:introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{Introduction}{Introduction}
 
-
-
-
-
-
-
-\section{A worthy note on context}
-
-\begin{center}
-    \centering
-    \textit{The miracle of the appropriateness of the language of mathematics for the formulation of the laws of physics is a gift which we neither understand nor deserve.}
-\end{center}
-
-Eugene Wigner expressed his admiration in his 1960 article in \textit{Communications in Pure and Applied Mathematics.} It is a sentiment many would agree with: the effectiveness of mathematics in describing Nature is both remarkable and fascinating. Moreover, over the last century its branches have reached into areas where, not so long ago, mathematicians were considered too abstract to be of much use in business terms.
-
-In 1827, Robert Brown, while studying the behaviour of pollen grains suspended in water, noticed something unexpected: the grains wandered along irregular, hard-to-describe paths. Physics was not prepared to tackle such a problem yet. What was needed belonged to what we now call \textit{statistical mechanics}, the study of collective behaviour of particles and molecules, intimately tied to \textit{thermodynamics.} The decisive step came later, in 1905, when Albert Einstein provided a theory of this motion — the same year he also explained the photoelectric effect, introduced the Special Relativity theory and provided the first appearance of the mass-energy equivalence formula, $E=mc^2$. What a year.
-
-Regarding the polen grains, a parallel story took place in finance. Louis Bachelier, a doctoral student of Henri Poincaré, was interested in modelling stock prices. His model, which we now recognise as essentially Gaussian, worked with some shaky concepts on probability theory (Kolmogorov and his peers were not born yet, even Lebesgue had not published his work on measure theory yet). Worse, it allowed negative prices — a point critics did not miss.
-
-The common thread in both stories is \emph{Brownian motion}. This stochastic process is a central object in probability: geometers find its fractal dimension fascinating, while probabilists value the rich family of processes built upon it. The idea of treating “random noise” as a genuine mathematical object took shape gradually, but it was Kiyoshi Itô’s work on \emph{stochastic integration} that truly changed the picture.
-
-Finance joined somewhat later, but with undeniable impact. Today mathematics is everywhere in banks, consultancy and audit firms, underpinning the valuation of derivatives, that is, assigning a \emph{fair price} (according to market data) to contracts involving random future cash flows. This pricing orientation  will be the focus of the present thesis, among many other applications in finance, such as risk management and portfolio optimization.
-
-
-
-
-
-
+% The Introduction is not a numbered chapter, so its sections are numbered on
+% their own count (1, 2, ...) rather than inheriting a chapter prefix, which
+% would render them as 0.1, 0.2. The standard scheme is restored at the end of
+% this file, before Chapter 1 begins.
+\setcounter{section}{0}
+\renewcommand{\thesection}{\arabic{section}}
 
 
 
@@ -39,12 +19,38 @@ The primary objective of this Thesis is to provide a solid review of \textit{Vol
 
 
 
-\hyperref[part:part1]{Part I} aims to provide a thorough introduction to the subject. The core mathematical ideas, rooted in Probability Theory and forming the basis of modern Financial Theory and basic Pricing Theory, are presented in Chapter \ref{ch:foundations}. Particular attention is paid there to the regularity of Brownian trajectories, since it is precisely the delicate balance between roughness and tractability --- non-vanishing quadratic variation on the one hand, unbounded total variation on the other --- that both makes Itô's theory necessary and marks the limits of its reach.
+\hyperref[part:part1]{Part I} aims to provide a thorough introduction to the subject, and is divided along exactly the line the Thesis sets out to bridge. Chapter \ref{ch:foundations} develops the probabilistic machinery: measure-theoretic preliminaries, Brownian motion, the Itô integral and stochastic differential equations. Particular attention is paid there to the regularity of Brownian trajectories, since it is precisely the delicate balance between roughness and tractability --- non-vanishing quadratic variation on the one hand, unbounded total variation on the other --- that both makes Itô's theory necessary and marks the limits of its reach. Chapter \ref{ch:finance} then builds the financial theory on top of it: contingent claims and arbitrage, the fundamental theorems of asset pricing, the Black--Scholes framework, and the local and stochastic volatility models that were devised to repair it. A reader already fluent in stochastic calculus may begin at Chapter \ref{ch:finance}; a reader who wants only the mathematics may stop before it.
 
 \hyperref[part:part2]{Part II} is devoted to more recent developments in volatility modelling, including Rough Paths and Rough Volatility theories (Chapter \ref{ch:roughpaths}). The latter is introduced from a general and mathematical perspective: although it finds direct applications in Finance, the theory of rough paths has far-reaching implications in other areas of mathematics as well. These chapters aim to highlight the necessity of more sophisticated tools to describe and operate in the market.
 
 Finally, these theoretical constructs are brought to practice in Chapter \ref{ch:applications}, where a calibration of \hl{XXX} is performed. Here, the models are numerically implemented and compared, providing an applied perspective and illustrating the strengths and challenges associated with each approach. Some final conclusions are left for Chapter \ref{ch:conclusions}, where a general overview of the work done will be given, along with reflections on possible directions for further research.
 
+
 \newpage
 %\rule{0.95\textwidth}{1.5pt}
 
+
+
+
+
+\section{A note on context}
+
+\begin{center}
+    \centering
+    \textit{The miracle of the appropriateness of the language of mathematics for the formulation of the laws of physics is a wonderful gift which we neither understand nor deserve.}
+\end{center}
+
+Eugene Wigner expressed his admiration in \textit{The Unreasonable Effectiveness of Mathematics in the Natural Sciences}, his 1960 article in \textit{Communications on Pure and Applied Mathematics} \cite{wigner1960}. It is a sentiment many would agree with: the effectiveness of mathematics in describing Nature is both remarkable and fascinating. Moreover, over the last century its branches have reached into areas where, not so long ago, mathematicians were considered too abstract to be of much use in business terms.
+
+In 1827, Robert Brown, observing under a microscope the minute particles released by pollen grains suspended in water, noticed something unexpected: the particles wandered along irregular, hard-to-describe paths. Physics was not prepared to tackle such a problem yet. What was needed belonged to what we now call \textit{statistical mechanics}, the study of collective behaviour of particles and molecules, intimately tied to \textit{thermodynamics.} The decisive step came later, in 1905, when Albert Einstein provided a theory of this motion — the same year he also explained the photoelectric effect, introduced the Special Relativity theory and provided the first appearance of the mass-energy equivalence formula, $E=mc^2$. What a year.
+
+Far from pollen grains, a parallel story was unfolding in finance. Louis Bachelier, a doctoral student of Henri Poincaré, was interested in modelling stock prices. His model, which we now recognise as essentially Gaussian, worked with some shaky concepts on probability theory (Kolmogorov and his peers were not born yet, even Lebesgue had not published his work on measure theory yet). Worse, it allowed negative prices — a point critics did not miss.
+
+The common thread in both stories is \emph{Brownian motion}. This stochastic process is a central object in probability: geometers find its fractal dimension fascinating, while probabilists value the rich family of processes built upon it. The idea of treating “random noise” as a genuine mathematical object took shape gradually, but it was Kiyoshi Itô’s work on \emph{stochastic integration} that truly changed the picture.
+
+Finance joined somewhat later, but with undeniable impact. Today mathematics is everywhere in banks, consultancy and audit firms, underpinning the valuation of derivatives, that is, assigning a \emph{fair price} (according to market data) to contracts involving random future cash flows. Pricing is the orientation of the present thesis. It is only one of several uses of the same machinery --- risk management and portfolio optimisation are others --- but it is the one in which the mathematics is most visible.
+
+% Restore the ordinary chapter-based section numbering for Chapter 1 onwards.
+% NOTE: this MUST come after the last section of the Introduction. Placed earlier,
+% the second section is typeset as "0.2" while the first is typeset as "1".
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
