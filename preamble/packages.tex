@@ -52,6 +52,11 @@
 \usepackage{amsmath, amsthm}
 
 % ---------- Bibliography ----------
+% csquotes must be loaded BEFORE biblatex: with babel active, biblatex warns
+% ("'babel/polyglossia' detected but 'csquotes' missing") and falls back to
+% language-insensitive quotation marks in the bibliography without it.
+% Guarded in the same way as the other optional packages.
+\IfFileExists{csquotes.sty}{\usepackage{csquotes}}{}
 \newif\ifthesis@hasbiblatex
 \IfFileExists{biblatex.sty}{\thesis@hasbiblatextrue}{\thesis@hasbiblatexfalse}
 \ifthesis@hasbiblatex

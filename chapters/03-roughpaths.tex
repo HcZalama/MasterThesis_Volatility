@@ -103,7 +103,7 @@ $0\leq s\leq t\leq u\leq v$ and compute directly from \eqref{eq:fbmcovariance},
 \]
 which is the second difference of the function $\tau \mapsto \tau^{2\Hurst}$, hence positive when
 that function is convex ($\Hurst>\tfrac12$) and negative when it is concave ($\Hurst<\tfrac12$).
-It vanishes identically only at $\Hurst = \tfrac12$. \hfill $\blacksquare$
+It vanishes identically only at $\Hurst = \tfrac12$. \qedfilledtext
 
 \medskip
 
@@ -118,7 +118,7 @@ That last observation is not a curiosity but an obstruction, and we state it as 
 
 \begin{theorem}[Rogers]\label{thm:fbmnotsemimartingale}
 Fractional Brownian motion is a semimartingale in the sense of Definition \ref{def:semimartingale}
-if and only if $\Hurst = \tfrac12$. \hfill $\square$
+if and only if $\Hurst = \tfrac12$. \qedopentext
 \end{theorem}
 
 The proof is in \cite{rogers1997}, and the mechanism is worth recording even though we do not
@@ -253,7 +253,7 @@ Let $\mathcal{W}$ denote the space of continuous paths $[0,\Mat]\to\R^d$ and let
 $E^\infty \subseteq \mathcal{W}$ be the smooth paths. There is no norm $\lVert\cdot\rVert$ on
 $E^\infty$ such that, simultaneously, the closure $E$ of $E^\infty$ carries full Wiener measure and
 the map $(f,g)\mapsto\int g\,\dd f$ extends continuously from $E^\infty\times E^\infty$ to
-$E\times E$. \hfill $\square$
+$E\times E$. \qedopentext
 \end{proposition}
 
 A proof is given in \cite[Ch.\ 1]{frizhairer2020}. The statement is a genuine impossibility
@@ -371,7 +371,7 @@ product rule gives
 = \bigl(x^i_r-x^i_s\bigr)\dot x^j_r + \bigl(x^j_r-x^j_s\bigr)\dot x^i_r ,
 \]
 and integrating from $s$ to $t$, where the left-hand side vanishes at $r=s$, yields exactly the
-claim. \hfill $\blacksquare$
+claim. \qedfilledtext
 
 \medskip
 
@@ -409,7 +409,7 @@ The first term of the bracket integrates to $\lev_{u,t}$. The second is constant
 factors out of the integral, leaving $X_{s,u}\otimes\int_u^t \dd x_r = X_{s,u}\otimes X_{u,t}$. That
 the resulting three identities --- one at each level --- are precisely the statement
 $\rpX_{s,t} = \rpX_{s,u}\otimes\rpX_{u,t}$ is immediate from \eqref{eq:tensormultiplication}.
-\hfill $\blacksquare$
+\qedfilledtext
 
 \medskip
 
@@ -513,7 +513,7 @@ the first levels agree, gives $\Delta_{s,t} = \Delta_{s,u} + \Delta_{u,t}$ for a
 Taking $s=u$ shows $\Delta_{s,s}=0$, and then $f_t := \Delta_{0,t}$ satisfies
 $\increment{f}_{s,t} = \Delta_{0,t}-\Delta_{0,s} = \Delta_{s,t}$, with
 $\lVert f\rVert_{2\alpha} = \lVert\Delta\rVert_{2\alpha} < \infty$ by the triangle inequality.
-\hfill $\blacksquare$
+\qedfilledtext
 
 \medskip
 
@@ -549,7 +549,7 @@ $\RPg{\alpha} \subseteq \RPwg{\alpha}$.
 \textbf{\textit{Proof:}} Each canonical lift satisfies \eqref{eq:weaklygeometric} by Proposition
 \ref{prop:symmetricpart}. The condition is a closed one: if $\rpdist(\rpX^{(n)},\rpX)\to0$ then in
 particular $\lev^{(n)}_{s,t}\to\lev_{s,t}$ and $X^{(n)}_{s,t}\to X_{s,t}$ for each fixed pair $s,t$,
-and both sides of \eqref{eq:weaklygeometric} pass to the limit. \hfill $\blacksquare$
+and both sides of \eqref{eq:weaklygeometric} pass to the limit. \qedfilledtext
 
 \medskip
 
@@ -601,7 +601,7 @@ the last term being $\langle W^i, W^j\rangle_{s,t}$ by Proposition \ref{prop:qvc
 notation this reads $2\,\Sym\levW^{\mathrm{It\hat o}}_{s,t} = W_{s,t}\otimes W_{s,t} - (t-s)\mathrm{Id}$,
 so \eqref{eq:weaklygeometric} fails for the Itô lift by exactly $-\tfrac12(t-s)\mathrm{Id}$ --- and
 holds for the Stratonovich lift, which was defined by adding precisely that discrepancy back.
-\hfill $\blacksquare$
+\qedfilledtext
 
 \medskip
 
@@ -640,7 +640,7 @@ independent components, and let $W^{\Hurst,(n)}$ denote its piecewise-linear int
 dyadic partition of mesh $2^{-n}$, canonically lifted as in Example \ref{ex:smoothlift}. Then, for
 every $\alpha < \Hurst$, the lifts converge in probability in the metric $\rpdist$ to a limit
 $\mathbf{B}^{\Hurst} = \bigl(\BH,\lev^{\Hurst}\bigr) \in \RPg{\alpha}$, which is therefore a geometric
-rough path. \hfill $\square$
+rough path. \qedopentext
 \end{theorem}
 
 The boldface letter is $\mathbf{B}$ and not $\mathbf{W}$ deliberately: the first level of
@@ -721,7 +721,7 @@ $\mathcal{P}_n$ be the uniform partition of $[s,t]$ into $n$ pieces. Additivity 
 \]
 Since $\beta>1$ the right-hand side tends to $0$ as $n\to\infty$, so $D \equiv 0$. The existence
 half, which proceeds by dyadic refinement, is proved in Appendix \ref{app:proof:sewing}.
-\hfill $\blacksquare$
+\qedfilledtext
 
 \medskip
 
@@ -840,7 +840,7 @@ rough paths,
 \end{equation}
 with $R^Y_{s,t} = Y_{s,t} - \Gub_sX_{s,t}$ and
 $R^{\widetilde Y}_{s,t} = \widetilde Y_{s,t} - \widetilde\Gub_s\widetilde X_{s,t}$ as in
-\eqref{eq:controlleddef}. \hfill $\square$
+\eqref{eq:controlleddef}. \qedopentext
 \end{theorem}
 
 The quantity \eqref{eq:controlleddistance} requires a word, since $(Y,\Gub)$ and
@@ -867,7 +867,7 @@ Let $W$ be a Brownian motion and let $F \in \mathcal{C}^3_b$. Then, almost surel
 \end{equation}
 the right-hand sides being the Itô integral of Definition \ref{def:stochastic_integral} and the
 Stratonovich integral of Definition \ref{def:stratonovich} respectively. If $X$ is smooth, the rough integral against its canonical lift
-is the Riemann--Stieltjes integral. \hfill $\square$
+is the Riemann--Stieltjes integral. \qedopentext
 \end{proposition}
 
 See \cite[Ch.\ 5]{frizhairer2020}. The first identity is the one to appreciate: the left-hand side
@@ -915,7 +915,7 @@ $\lev_{0,t}-\lev_{0,s} = \lev_{s,t} + X_{0,s}\otimes X_{s,t}$, so that
 \]
 Subtracting, the two cross terms cancel and \eqref{eq:bracketincrement} follows. The regularity is
 then immediate from Definition \ref{def:roughpath}, both terms on the right of
-\eqref{eq:bracketincrement} being of order $|t-s|^{2\alpha}$. \hfill $\blacksquare$
+\eqref{eq:bracketincrement} being of order $|t-s|^{2\alpha}$. \qedfilledtext
 
 \medskip
 
@@ -1039,7 +1039,7 @@ only if
 \begin{equation}\label{eq:davie}
 Y_{s,t} \;=\; f(Y_s)\,X_{s,t} \;+\; Df(Y_s)f(Y_s)\,\lev_{s,t} \;+\; o\bigl(|t-s|\bigr)
 \end{equation}
-uniformly in $s\leq t$. \hfill $\square$
+uniformly in $s\leq t$. \qedopentext
 \end{proposition}
 
 The proof is in \cite[Prop.\ 8.8]{frizhairer2020}. Expression \eqref{eq:davie} is worth recognising:
@@ -1143,7 +1143,7 @@ $\mathbf{W}^{\mathrm{Strat}}$ --- this is the content of \cite[Ch.\ 3]{frizhaire
 Stratonovich rather than the Itô lift appears because each $W^{(n)}$ is smooth, hence its lift is
 geometric, hence so is the limit by Proposition \ref{prop:geometricinclusion}. Theorem
 \ref{thm:ult} then transfers the convergence to the solutions, and Proposition
-\ref{prop:consistency} identifies the limit. \hfill $\blacksquare$
+\ref{prop:consistency} identifies the limit. \qedfilledtext
 
 \medskip
 
@@ -1182,7 +1182,7 @@ $X^n_{s,t} \in V^{\otimes n}$, which satisfies Chen's relation at every level,
 \begin{equation}\label{eq:chenalllevels}
 X^{n}_{s,t} = \sum_{k=0}^{n} X^{k}_{s,u}\otimes X^{n-k}_{u,t}, \qquad s\leq u\leq t,
 \end{equation}
-and the bounds $|X^n_{s,t}| \leq C_n\,|t-s|^{n\alpha}$ for every $n$. \hfill $\square$
+and the bounds $|X^n_{s,t}| \leq C_n\,|t-s|^{n\alpha}$ for every $n$. \qedopentext
 \end{theorem}
 
 The theorem is Lyons' \cite{lyons1998}; see also \cite[Ch.\ 3]{geng2021}. Its content is that the
@@ -1225,7 +1225,7 @@ For a path $x$ of bounded variation with total variation $L := V_1(x)_\Mat$,
 \textbf{\textit{Proof:}} Bounding \eqref{eq:signaturesmooth} termwise, the integrand has modulus at
 most $|\dd x_{t_1}|\cdots|\dd x_{t_n}|$, and the domain of integration is the simplex
 $0<t_1<\cdots<t_n<\Mat$, which is the $1/n!$ fraction of the cube on which the unrestricted product
-integrates to $L^n$. \hfill $\blacksquare$
+integrates to $L^n$. \qedfilledtext
 
 \medskip
 
@@ -1242,7 +1242,7 @@ the letters $\{1,\dots,d\}$,
 X^{m;I}_{0,\Mat}\cdot X^{n;J}_{0,\Mat} \;=\; \sum_{K \,\in\, I \shuffle J} X^{m+n;K}_{0,\Mat},
 \end{equation}
 the sum being over all $\binom{m+n}{m}$ interleavings of $I$ and $J$ preserving the internal order
-of each. \hfill $\square$
+of each. \qedopentext
 \end{proposition}
 
 Relation \eqref{eq:shuffle} --- the \emph{shuffle product formula}, proved in \cite[Lem.\ 1.15]{geng2021}
@@ -1280,7 +1280,7 @@ $t\mapsto X_{0,t}$ is tree-like. Consequently --- applying this to
 $\rpX \star \widetilde\rpX^{-1}$, the concatenation of $\rpX$ with the time-reversal of
 $\widetilde\rpX$, whose signature is $\Sig(\rpX)\otimes\Sig(\widetilde\rpX)^{-1}$ by the group
 structure of $T((V))$ --- two weakly geometric rough paths have the same
-signature if and only if they coincide up to tree-like pieces. \hfill $\square$
+signature if and only if they coincide up to tree-like pieces. \qedopentext
 \end{theorem}
 
 The bounded-variation case is due to Hambly and Lyons \cite{hamblylyons2010}; the extension to rough
@@ -1325,7 +1325,7 @@ Let $\rpX$ be a random geometric rough path whose expected signature \eqref{eq:e
 has infinite radius of convergence, in the sense that
 $\sum_{n\geq0}\lambda^{n}\,\bigl|\E[X^n_{0,\Mat}]\bigr| < \infty$ for every $\lambda>0$. Then
 $\E[\Sig(\rpX)]$ determines the law of $\rpX$, up to the tree-like equivalence of Theorem
-\ref{thm:signatureuniqueness}. \hfill $\square$
+\ref{thm:signatureuniqueness}. \qedopentext
 \end{theorem}
 
 The result is due to Chevyrev and Lyons \cite{chevyrevlyons2016}. It is the precise analogue, for
@@ -1448,7 +1448,7 @@ D^{\alpha_\Hurst}\psi(u,\tau) \;=\; \frac{\xi^2}{2}\,\psi(u,\tau)^2 \;+\; \bigl(
 \qquad I^{1-\alpha_\Hurst}\psi(u,0) = 0,
 \end{equation}
 $D^{\alpha_\Hurst}$ being the Riemann--Liouville fractional derivative of order $\alpha_\Hurst$.
-\hfill $\square$
+\qedopentext
 \end{theorem}
 
 The result is due to El Euch and Rosenbaum \cite{eleucrosenbaum2019}. Comparison with Chapter
@@ -1490,6 +1490,973 @@ Markov property has been traded away --- rather than the machinery.
 
 
 
+\section{A Purely Rough Model}\label{sec:roughexample}
+
+Everything in this chapter has so far been either machinery or, in the case of Definition
+\ref{def:roughheston}, a model whose tractability comes from elsewhere: Remark
+\ref{rem:roughhestoncost} was explicit that no result of Sections \ref{sec:roughpaths} to
+\ref{sec:signature} enters the proof of Theorem \ref{thm:roughhestoncf}. It is worth closing with
+the opposite kind of object --- the smallest model that is \emph{purely} rough, containing no
+semimartingale anywhere, on which every construction of the chapter can be exercised once and every
+answer written down in closed form.
+
+\begin{definition}[Purely rough asset]\label{def:purelyrough}
+Fix $\Hurst \in (\tfrac13,\tfrac12]$, $\sigma>0$ and $\Spot_0>0$, and take $\rf = \divy = 0$, so
+that discounting is trivial. Let $\BH$ be a scalar fractional Brownian motion, let
+$\mathbf{B}^{\Hurst} = (\BH,\lev^{\Hurst}) \in \RPg{\alpha}$ with $\alpha<\Hurst$ be its
+Coutin--Qian lift (Theorem \ref{thm:fbmlift}), and write
+$\sigma\mathbf{B}^{\Hurst} := (\sigma\BH,\ \sigma^2\lev^{\Hurst})$ for its dilation, which is again a
+geometric rough path by the scaling recorded after Definition \ref{def:rpmetric} and which we shall
+need in Subsection \ref{subsec:roughexamplesignature}. The \textbf{purely rough asset} is the
+solution, in the sense of Definition \ref{def:rde}, of the linear rough differential equation
+\begin{equation}\label{eq:purelyrough}
+\dd \Spot_t \;=\; \sigma\,\Spot_t\,\dd\mathbf{B}^{\Hurst}_t , \qquad \Spot_0 > 0 .
+\end{equation}
+\end{definition}
+
+Since the driver is scalar, one ambiguity of the theory is absent here and it is worth noticing
+which. By \eqref{eq:weaklygeometric} a geometric lift must satisfy
+$\Sym\lev^{\Hurst}_{s,t} = \tfrac12(\BH_{s,t})^2$, and in one dimension $\lev^{\Hurst}$ \emph{is} its
+own symmetric part, so the geometric lift of a scalar path is unique: the choice which Proposition
+\ref{prop:liftnotunique} identified as the central structural fact of the subject is, for
+\eqref{eq:purelyrough}, no choice at all. Everything below is therefore canonical, and the
+comparison with the It\^o lift made in Proposition \ref{prop:purelyroughsolution} is a comparison
+with a \emph{non}-geometric object.
+
+Two caveats, both honest rather than technical. The vector field $f(y) = \sigma y$ is not
+$\mathcal{C}^3_b$, so Theorem \ref{thm:rdeexistence} does not apply as stated; linear equations are
+covered by a separate and entirely standard argument, in which the solution is constructed on a
+large ball and the ball is then exhausted --- the same localisation performed in the proof of
+Theorem \ref{thm:sdeexistence} of Chapter \ref{ch:foundations}, and carried out for rough equations
+in \cite[Ch.\ 10]{frizhairer2020}. And the range $\Hurst>\tfrac13$ is forced by Theorem
+\ref{thm:fbmlift}, whereas Subsection \ref{subsec:roughvol} reports $\Hurst\approx0.1$, where by
+Remark \ref{rem:H01outside} no canonical lift exists at all. Equation \eqref{eq:purelyrough} is
+therefore an illustration of the theory and not a proposal for a market model --- and the second
+half of this section shows that it could not be one at any value of $\Hurst$ whatever.
+
+\subsection{The solution, and where Black--Scholes comes from}\label{subsec:roughexamplesolution}
+
+\begin{proposition}\label{prop:purelyroughsolution}
+The unique solution of \eqref{eq:purelyrough} is
+\begin{equation}\label{eq:purelyroughsolution}
+\Spot_t \;=\; \Spot_0\,\exp\bigl(\sigma\BH_t\bigr), \qquad t \in [0,\Mat],
+\end{equation}
+with no second-order correction, and consequently
+\begin{equation}\label{eq:purelyroughmean}
+\E\bigl[\Spot_t\bigr] \;=\; \Spot_0\,\exp\Bigl(\tfrac12\,\sigma^2 t^{2\Hurst}\Bigr).
+\end{equation}
+If instead the driver is the It\^o lift $\mathbf{W}^{\mathrm{It\hat o}}$ of Example
+\ref{ex:brownianroughpath} --- that is, if $\Hurst = \tfrac12$ and the geometric lift is exchanged
+for the non-geometric one lying over the \emph{same} trajectory --- the solution becomes
+$\Spot_0\exp\bigl(\sigma W_t - \tfrac12\sigma^2 t\bigr)$.
+\end{proposition}
+
+\textbf{\textit{Proof:}} Put $F(x) := \Spot_0 e^{\sigma x}$, so that $F' = \sigma F$ and
+$F'' = \sigma^2F$. The lift is geometric, so its bracket \eqref{eq:bracket} vanishes identically and
+the rough chain rule of Proposition \ref{prop:roughchainrule} takes its classical form
+\eqref{eq:classicalchainrule},
+\[
+F\bigl(\BH_t\bigr) - F\bigl(\BH_0\bigr) \;=\; \int_0^t \sigma F\bigl(\BH_r\bigr)\,\dd\mathbf{B}^{\Hurst}_r ,
+\]
+which is exactly the integral equation \eqref{eq:rdeintegral} for \eqref{eq:purelyrough}; uniqueness
+is the linear case of Theorem \ref{thm:rdeexistence}. For \eqref{eq:purelyroughmean}, Proposition
+\ref{prop:fbmproperties} a) gives $\BH_t \sim \Normal(0,t^{2\Hurst})$, and
+$\E[e^{\sigma Z}] = e^{\sigma^2\Var[Z]/2}$ is the Gaussian moment generating function already used
+for the log-normal law in Subsection \ref{subsec:FundamentalDistr}.
+
+It is worth seeing the same computation in Davie's formulation \eqref{eq:davie}, since there it
+becomes a Taylor expansion and nothing else. With $f(y) = \sigma y$ one has $f'f = \sigma^2 y$, and
+the scalar geometric lift is $\lev^{\Hurst}_{s,t} = \tfrac12(\BH_{s,t})^2$ as noted above, so the
+right-hand side of \eqref{eq:davie} reads
+\[
+\sigma\Spot_s\,\BH_{s,t} \;+\; \tfrac12\sigma^2\Spot_s\bigl(\BH_{s,t}\bigr)^2 ,
+\]
+which is precisely the second-order Taylor expansion of $\Spot_0e^{\sigma\BH_t}$ about $s$; the
+neglected term is $O\bigl(|t-s|^{3\alpha}\bigr) = o(|t-s|)$ because $3\alpha>1$. The Milstein
+correction of \eqref{eq:davie} is here the second term of an exponential series.
+
+For the last claim, Proposition \ref{prop:consistency} identifies the rough integral against
+$\mathbf{W}^{\mathrm{It\hat o}}$ with the It\^o integral, so \eqref{eq:purelyrough} reads
+$\dd\Spot_t = \sigma\Spot_t\,\dd W_t$ and Example \ref{example:blackscholessde} supplies the
+solution. The instructive route is the other one: the bracket of the It\^o lift is
+$[\mathbf{W}^{\mathrm{It\hat o}}]_t = t\,\mathrm{Id}$ by Corollary \ref{cor:itoformula} ii), so
+\eqref{eq:roughchainrule} retains its second-order term and gives
+$\dd\bigl(\Spot_0e^{\sigma W_t}\bigr) = \sigma\bigl(\Spot_0e^{\sigma W_t}\bigr)\dd W_t
++ \tfrac12\sigma^2\bigl(\Spot_0e^{\sigma W_t}\bigr)\dd t$. The exponential therefore acquires a
+drift it was not asked for, and the factor $e^{-\sigma^2t/2}$ exists to remove it.
+\qedfilledtext
+
+\medskip
+
+Three things are worth extracting, in increasing order of importance.
+
+\emph{The Black--Scholes correction is a property of the lift, not of the model.} The two solutions
+in Proposition \ref{prop:purelyroughsolution} come from the \emph{same} differential equation, and
+the whole difference between them is the $-\tfrac12\sigma^2t$ that Chapter \ref{ch:foundations}
+obtained in Example \ref{example:blackscholessde} by applying It\^o's rule to $\log\Spot$. That term
+has now been exhibited three times: as a consequence of evaluating the integrand at the left endpoint
+(Subsection \ref{subsec:itointegral}), as the bracket of a chosen lift (Corollary
+\ref{cor:itoformula}), and here as the sole discrepancy between two solutions of one equation. It is
+the same fact on each occasion.
+
+\emph{There is no drift, and yet the mean grows.} Equation \eqref{eq:purelyroughmean} has
+$\E[\Spot_t]$ increasing like $e^{\sigma^2t^{2\Hurst}/2}$ although \eqref{eq:purelyrough} contains no
+$\dd t$ term whatever. There is no contradiction, because the decomposition of a process into drift
+and martingale is a \emph{semimartingale} notion and $\Spot$ is not a semimartingale: were it one,
+then $\log$ being $\mathcal{C}^2$ on $(0,\infty)$ and $\Spot$ strictly positive, It\^o's formula
+would make $\BH = \sigma^{-1}\log(\Spot/\Spot_0)$ a semimartingale too, contradicting Theorem
+\ref{thm:fbmnotsemimartingale}.
+
+\emph{And therefore the model cannot be traded.} The semimartingale property is preserved under an
+equivalent change of measure, so $\Spot$ fails to be a semimartingale under \emph{every} $\QQ\sim\PP$
+and is in particular a local martingale under none: no equivalent local martingale measure exists.
+By the First Fundamental Theorem \ref{thm:firstFTAP} the model violates NFLVR, and Rogers
+\cite{rogers1997} --- the same paper that supplies Theorem \ref{thm:fbmnotsemimartingale} ---
+exhibits the arbitrage explicitly. It is realised by strategies which trade at unboundedly high
+frequency, and it disappears once a minimal delay between transactions is imposed
+\cite{cheridito2003}, in the same spirit as the admissibility constraint of Definition
+\ref{def:admissible}.
+
+\medskip
+
+That last paragraph explains a design decision which, seen from outside, looks arbitrary.
+\textbf{Roughness cannot be placed in the price.} A rough price is not a semimartingale, and a
+market whose price is not a semimartingale is not arbitrage-free. Roughness must therefore be placed
+one level down, in the \emph{volatility}, where it alters the law of the price without disturbing its
+semimartingale property. That is exactly the shape of Definition \ref{def:roughheston}: there the
+asset is driven by an ordinary Brownian motion and remains a semimartingale, while the fractional
+kernel acts only on the variance. The architecture of every rough volatility model in the literature
+is a consequence of the three paragraphs above.
+
+\subsection{The expected signature}\label{subsec:roughexamplesignature}
+
+The model is simple enough that the transform of Section \ref{sec:signature} can be computed
+outright, and doing so exhibits in a few lines each the two facts that section stated abstractly:
+that a scalar signature is blind, and that the growth hypothesis of Theorem
+\ref{thm:expectedsignature} is a genuine condition which here happens to hold.
+
+\begin{proposition}[Expected signature of the driver]\label{prop:roughexpectedsig}
+Let $\sigma\mathbf{B}^{\Hurst}$ be as in Definition \ref{def:purelyrough} and let $X^n_{0,\Mat}$
+denote the level-$n$ term of its signature over $[0,\Mat]$. Then
+\begin{equation}\label{eq:roughexpectedsiglevels}
+\E\bigl[X^n_{0,\Mat}\bigr] \;=\;
+\begin{cases}
+\dfrac{\sigma^{2m}\,\Mat^{2m\Hurst}}{2^{m}\,m!}, & n = 2m, \\[10pt]
+0, & n \text{ odd},
+\end{cases}
+\end{equation}
+and, summing the levels,
+\begin{equation}\label{eq:roughexpectedsig}
+\E\bigl[\Sig(\sigma\mathbf{B}^{\Hurst})_{0,\Mat}\bigr]
+\;=\; \exp\Bigl(\tfrac12\sigma^2\Mat^{2\Hurst}\Bigr)
+\;=\; \frac{\E[\Spot_\Mat]}{\Spot_0} .
+\end{equation}
+Moreover
+$\sum_{n\geq0}\lambda^{n}\bigl|\E[X^n_{0,\Mat}]\bigr| = \exp\bigl(\tfrac12\lambda^2\sigma^2\Mat^{2\Hurst}\bigr)$
+is finite for every $\lambda>0$, so the hypothesis of Theorem \ref{thm:expectedsignature} is
+satisfied.
+\end{proposition}
+
+\textbf{\textit{Proof:}} The path is scalar, so Example \ref{ex:signatureonedim} gives
+$X^n_{0,\Mat} = \sigma^n(\BH_\Mat)^n/n!$. Since $\BH_\Mat\sim\Normal(0,\Mat^{2\Hurst})$ the odd
+moments vanish, while $\E[(\BH_\Mat)^{2m}] = (2m-1)!!\,\Mat^{2m\Hurst}$; dividing by $(2m)!$ and
+using $(2m)! = 2^m\,m!\,(2m-1)!!$ yields \eqref{eq:roughexpectedsiglevels}. Summing over $m$ produces
+the exponential series, which \eqref{eq:purelyroughmean} identifies with
+$\E[\Spot_\Mat]/\Spot_0$. Replacing $\sigma$ by $\lambda\sigma$ throughout gives the last claim.
+\qedfilledtext
+
+\medskip
+
+What one is entitled to conclude from \eqref{eq:roughexpectedsig} is, however, almost nothing, and
+the reason is instructive. Example \ref{ex:signatureonedim} showed that the signature of a scalar
+path depends on its terminal increment alone; by Theorem \ref{thm:signatureuniqueness} every scalar
+path is therefore equivalent, up to tree-like pieces, to the straight line joining its endpoints. The
+law which Theorem \ref{thm:expectedsignature} recovers from \eqref{eq:roughexpectedsig} is thus the
+law of $\Spot_\Mat$ and nothing more: a single log-normal marginal, carrying no information about the
+trajectory that produced it. This is precisely the loss that Section \ref{sec:signature} warned of,
+and it is repaired there by the same device --- time augmentation.
+
+\begin{proposition}[Expected signature after time augmentation]\label{prop:roughexpectedsigaug}
+Let $\widehat{X}_t := \bigl(t,\ \sigma\BH_t\bigr) \in \R^2$ and let
+$\widehat{\rpX} = (\widehat X,\widehat\lev)$ be its geometric lift, which exists because the second
+component is lifted by Theorem \ref{thm:fbmlift} while the remaining entries are Young integrals
+against a path of bounded variation. Then
+\begin{equation}\label{eq:augsiglevelone}
+\E\bigl[\widehat X_{0,\Mat}\bigr] \;=\; \bigl(\Mat,\; 0\bigr),
+\end{equation}
+and, writing $\widehat\lev^{ij}$ for the component of $\widehat\lev$ along $e_i\otimes e_j$,
+\begin{equation}\label{eq:augsigleveltwo}
+\E\bigl[\widehat\lev_{0,\Mat}\bigr] \;=\; \frac12
+\begin{pmatrix}
+\Mat^{2} & 0 \\[3pt]
+0 & \sigma^2\Mat^{2\Hurst}
+\end{pmatrix}.
+\end{equation}
+\end{proposition}
+
+\textbf{\textit{Proof:}} The first level is the increment
+$\widehat X_{0,\Mat} = (\Mat,\ \sigma\BH_\Mat)$, and $\E[\BH_\Mat]=0$. For the second level,
+geometricity \eqref{eq:weaklygeometric} determines the symmetric part outright and pathwise,
+\[
+\Sym\widehat\lev_{0,\Mat} \;=\; \tfrac12\,\widehat X_{0,\Mat}\otimes\widehat X_{0,\Mat}
+\;=\; \frac12\begin{pmatrix} \Mat^2 & \sigma\Mat\,\BH_\Mat \\[2pt] \sigma\Mat\,\BH_\Mat & \sigma^2(\BH_\Mat)^2 \end{pmatrix},
+\]
+so the two diagonal entries are already identified, and taking expectations with
+$\E[(\BH_\Mat)^2] = \Mat^{2\Hurst}$ gives the diagonal of \eqref{eq:augsigleveltwo}. For the
+off-diagonal, the first coordinate has bounded variation, so
+$\widehat\lev^{21}_{0,\Mat} = \sigma\int_0^{\Mat}\BH_r\,\dd r$ is an ordinary Riemann integral;
+Fubini applies, since
+$\E\int_0^{\Mat}|\BH_r|\,\dd r = \sqrt{2/\pi}\int_0^{\Mat} r^{\Hurst}\,\dd r < \infty$, and yields
+$\E\bigl[\widehat\lev^{21}_{0,\Mat}\bigr] = \sigma\int_0^\Mat \E[\BH_r]\,\dd r = 0$. The remaining
+entry follows from the symmetric part, since
+$\widehat\lev^{12}_{0,\Mat} + \widehat\lev^{21}_{0,\Mat} = \sigma\Mat\,\BH_\Mat$ has expectation
+zero. \qedfilledtext
+
+\begin{remark}[Where the Hurst parameter lives]\label{rem:Hlivesatleveltwo}
+Compare \eqref{eq:augsiglevelone} with \eqref{eq:augsigleveltwo}. The first level of the expected
+signature is $(\Mat,0)$ for \emph{every} value of $\Hurst$: it cannot tell a rough asset from a
+smooth one. The parameter appears for the first time at level two, in the single entry
+$\tfrac12\sigma^2\Mat^{2\Hurst}$, and it appears there as an exponent of the time horizon.
+
+This is the structural reason behind an estimator that Subsection \ref{subsec:roughvol} presented as
+an empirical recipe. The scaling relation $m(q,\Delta)\propto\Delta^{q\Hurst}$ of
+\eqref{eq:scalingmoment} identifies $\Hurst$ from a \emph{second} moment of increments when $q=2$;
+what \eqref{eq:augsigleveltwo} adds is that this is not a matter of convenience but of necessity,
+since no first-order functional of the path carries the exponent at all. Roughness is a level-two
+phenomenon, in the same sense in which the second level of a rough path was the genuinely new data of
+Proposition \ref{prop:liftnotunique}.
+
+Two checks close the discussion. At $\Hurst=\tfrac12$ the entry reads $\tfrac12\sigma^2\Mat$, which
+is the level-two term of Fawcett's formula
+$\E\bigl[\Sig(\mathbf{W}^{\mathrm{Strat}})_{0,\Mat}\bigr] = \exp\bigl(\tfrac12\Mat\,\mathrm{Id}\bigr)$
+for Brownian motion under the Stratonovich lift \cite{frizvictoir2010}. And beyond level two no
+formula of Fawcett's type is known for $\Hurst\neq\tfrac12$: the closed forms of this section stop
+exactly where the independence of increments stops, which is a fair measure of what the fractional
+case costs.
+\end{remark}
+
+The example has now used the chapter once through. The lift came from Theorem \ref{thm:fbmlift};
+geometricity removed the second-order term from the chain rule, and its failure for the It\^o lift
+put the term back and returned Black--Scholes; the equation was solved in the sense of Definition
+\ref{def:rde}; the signature of Section \ref{sec:signature} was computed, found blind in one
+dimension and informative after time augmentation; and the growth hypothesis of Theorem
+\ref{thm:expectedsignature} was verified rather than assumed.
+
+What the example does \emph{not} supply is a model one could price against, and it is worth being
+careful about how much that concedes. The obstruction is sharp, but it is also narrow: what fails is
+the existence of an equivalent local martingale measure, and an equivalent local martingale measure
+is an object required by \emph{pricing} and by nothing else. It is tempting to read Theorem
+\ref{thm:fbmnotsemimartingale} as a verdict on the usefulness of rough paths in finance. It is not.
+It is a statement about \emph{where} in finance they may be used, and the next section takes that
+statement literally: it poses a problem in which no pricing measure appears anywhere, drives it with
+a price as illegitimate as \eqref{eq:purelyrough}, and solves it in closed form.
+
+
+
+\section{What Rough Paths Are For: Optimal Execution}\label{sec:execution}
+
+Section \ref{sec:roughexample} ended on an obstruction, and it is worth being exact about what the
+obstruction forbids. The First Fundamental Theorem \ref{thm:firstFTAP} is a statement about
+\emph{pricing measures}: it says that a market admits no free lunch precisely when an equivalent
+local martingale measure exists. A rough price has none, so a rough price cannot be the underlying
+of an arbitrage-free pricing theory. That is the whole of the damage.
+
+It is not, however, the whole of finance. A large part of the subject consists of problems posed
+under the physical measure $\PP$, or under no measure at all, in which no expectation is ever taken
+against a pricing kernel: the execution of a large order, the attribution of a hedging profit and
+loss, the measurement of risk, the estimation of a parameter, the choice of a portfolio. None of
+these is a pricing problem, none of them requires an equivalent local martingale measure, and none
+of them is touched by Theorem \ref{thm:fbmnotsemimartingale}. Roughness, meanwhile, is an empirical
+fact (Subsection \ref{subsec:roughvol}). The natural conclusion is that rough path theory is a
+$\PP$-tool applied to a $\QQ$-innocent class of problems, and this section works one such problem
+through to a closed-form answer.
+
+\begin{remark}[Where the lift is, and is not, needed]\label{rem:noliftneeded}
+One preliminary observation removes the restriction $\Hurst>\tfrac13$ from everything that follows,
+and it is the reason the applications below are unaffected by Section \ref{sec:beyond}. In practice
+the signature is computed from an \emph{observed}, discretely sampled trajectory, linearly
+interpolated between ticks. Such a path has bounded variation, its iterated integrals
+\eqref{eq:signaturesmooth} are ordinary Riemann--Stieltjes integrals, and no lift is required at
+all. What rough path theory supplies in that setting is not the construction of the object but the
+guarantees attached to it: factorial decay (Proposition \ref{prop:factorialdecay}) is what licenses
+truncation, the shuffle relation (Proposition \ref{prop:shuffle}) is what linearises the problem,
+Theorem \ref{thm:signatureuniqueness} is what says nothing has been discarded, and the Universal
+Limit Theorem \ref{thm:ult} is what says the answer is stable as the sampling refines rather than an
+artefact of the grid. The continuum model below is stated with a lift because we wish to compute
+expectations in closed form; the procedure it justifies does not need one.
+\end{remark}
+
+% ---------------------------------------------------------------------------
+\subsection{The execution problem}\label{subsec:executionproblem}
+
+A trader must liquidate $Q_0>0$ shares over a horizon $[0,\Mat]$ --- hours, not years. Selling fast
+moves the price against them; selling slowly exposes them to the market. This is the
+\emph{optimal execution} problem of Almgren and Chriss \cite{almgrenchriss2001}, and it is the
+canonical example of a financial problem in which no pricing measure appears: the objective is an
+expected cost under $\PP$, and the trader is not valuing a claim but choosing a schedule.
+
+\begin{definition}[Execution problem]\label{def:execution}
+Let $\Spot$ denote the \emph{unaffected} price, let $Q_t$ be the inventory remaining at time $t$ and
+let $\pi_t = -\dot Q_t$ be the trading rate, so that $Q_t = Q_0-\int_0^t\pi_r\,\dd r$. Selling at
+rate $\pi_t$ realises the price $\Spot_t-\eta\,\pi_t$ with $\eta>0$ the \emph{temporary impact}
+coefficient, and any inventory $Q_\Mat$ left at the horizon is liquidated in a block at
+$\Spot_\Mat-\zeta\,Q_\Mat$, with $\zeta>0$. The \textbf{implementation shortfall} of the schedule
+$\pi$ is
+\begin{equation}\label{eq:shortfalldef}
+  \mathcal{C}(\pi) \;=\; Q_0\Spot_0
+  \;-\;\int_0^{\Mat}\pi_t\bigl(\Spot_t-\eta\pi_t\bigr)\dd t
+  \;-\;Q_\Mat\bigl(\Spot_\Mat-\zeta Q_\Mat\bigr),
+\end{equation}
+the arrival value of the position less what the liquidation actually raises.
+\end{definition}
+
+Here $\pi$ is a trading strategy in exactly the sense fixed in the table of notation, and the letter
+carries no other meaning in this section; the constant $\pi$ appears only inside Gaussian
+normalisations, and never with a time subscript. The coefficient $\zeta$ is a cost, and is
+unrelated to the scaling exponents $\zeta_q$ of Subsection \ref{subsec:roughvol}, which always carry
+their subscript.
+
+\begin{lemma}[Reduction of the shortfall]\label{lem:shortfall}
+For any $C^{1}$ inventory path $Q$ with $Q_0$ given,
+\begin{equation}\label{eq:shortfallreduced}
+  \mathcal{C}(\pi)\;=\;-\int_0^{\Mat}Q_t\,\dd\Spot_t
+  \;+\;\eta\int_0^{\Mat}\pi_t^{2}\,\dd t
+  \;+\;\zeta\,Q_\Mat^{2}.
+\end{equation}
+\end{lemma}
+
+\textbf{\textit{Proof:}} Since $Q$ is $C^{1}$ it has bounded variation, so $\int_0^\Mat Q\,\dd\Spot$
+is a Young integral --- the criterion of Remark \ref{rem:criticalexponent} reads
+$1+\alpha>1$ here, since $Q$ is Lipschitz and $\Spot\in\Holder{\alpha}$ --- and integration by parts
+is available:
+$\int_0^{\Mat}\dot Q_t\Spot_t\,\dd t = Q_\Mat\Spot_\Mat-Q_0\Spot_0-\int_0^{\Mat}Q_t\,\dd\Spot_t$.
+With $\pi=-\dot Q$ this gives
+$\int_0^{\Mat}\pi_t\Spot_t\,\dd t = Q_0\Spot_0-Q_\Mat\Spot_\Mat+\int_0^{\Mat}Q_t\,\dd\Spot_t$.
+Substituting into \eqref{eq:shortfalldef}, the two occurrences of $Q_0\Spot_0$ cancel and so do the
+two of $Q_\Mat\Spot_\Mat$, leaving \eqref{eq:shortfallreduced}. \qedfilledtext
+
+\medskip
+
+The three terms of \eqref{eq:shortfallreduced} are, in order, the market risk carried by the
+unliquidated inventory, the impact paid for trading, and the cost of the terminal block. Only the
+first involves the price path, and it involves it through an integral against $\dd\Spot$ --- which is
+where the regularity of $\Spot$ enters, and where a semimartingale would ordinarily be assumed.
+
+\begin{definition}[Rough execution model]\label{def:roughexecution}
+Fix $\Hurst\in(\tfrac13,\tfrac12]$ and $\sigma>0$, let $\BH$ be a scalar fractional Brownian motion
+and set
+\begin{equation}\label{eq:arithmeticrough}
+  \Spot_t \;=\; \Spot_0+\sigma\,\BH_t ,\qquad t\in[0,\Mat].
+\end{equation}
+The \textbf{time-augmented driver} is $\widehat X_t=(t,\ \sigma\BH_t)\in\R^{2}$, lifted to the
+geometric rough path $\widehat\rpX$ of Proposition \ref{prop:roughexpectedsigaug}. We write
+$\mathbb{S}^{I}_t$ for the coordinate of $\Sig(\widehat\rpX)_{0,t}$ along the word $I$ in the letters
+$\{1,2\}$, indexed as in Proposition \ref{prop:shuffle}, so that $\mathbb{S}^{1}_t=t$ and
+$\mathbb{S}^{2}_t=\sigma\BH_t$.
+\end{definition}
+
+The price \eqref{eq:arithmeticrough} is arithmetic rather than exponential, as is standard over an
+intraday horizon, and it is exactly as illegitimate a \emph{pricing} model as \eqref{eq:purelyrough}:
+it is not a semimartingale, so by the argument of Subsection \ref{subsec:roughexamplesolution} it
+admits no equivalent local martingale measure. That is the point. Nothing in Definition
+\ref{def:execution} asked for one.
+
+% ---------------------------------------------------------------------------
+\subsection{Schedules as linear functionals of the signature}\label{subsec:sigstrategies}
+
+We now restrict the schedule to the class in which the problem linearises.
+
+\begin{definition}[Signature schedule]\label{def:sigschedule}
+Let $N\in\N$ and let $\ell$ be a linear functional on $\Tens{N}(\R^{2})$, that is, a finite family of
+coefficients $(\ell_I)_{|I|\leq N}$ indexed by words. The associated \textbf{signature schedule} is
+\begin{equation}\label{eq:sigschedule}
+  \pi_t \;=\; \ell\bigl(\Sig^{N}(\widehat\rpX)_{0,t}\bigr)\;=\;\sum_{|I|\leq N}\ell_I\,\mathbb{S}^{I}_t .
+\end{equation}
+\end{definition}
+
+The class is not as special as it looks. By Proposition \ref{prop:shuffle} and Stone--Weierstrass,
+linear functionals of the signature are dense in the continuous functionals of the path; the family
+\eqref{eq:sigschedule} therefore approximates \emph{any} continuous non-anticipative schedule, and
+Proposition \ref{prop:factorialdecay} bounds the error committed by stopping at level $N$. What the
+restriction buys is that the two operations the objective \eqref{eq:shortfallreduced} performs on
+$\pi$ --- integrating it, and squaring it --- both stay inside the class. That is the content of the
+next two observations, and everything afterwards is bookkeeping.
+
+\begin{lemma}[Integration is concatenation]\label{lem:concatenation}
+For any word $I$ and either letter $j\in\{1,2\}$,
+$\mathbb{S}^{Ij}_t=\int_0^t\mathbb{S}^{I}_r\,\dd\widehat X^{\,j}_r$. In particular, writing $\ell j$ for the
+functional with coefficients $(\ell j)_{Ij}=\ell_I$ and zero on words not ending in $j$,
+\begin{equation}\label{eq:concatenation}
+  \int_0^t \pi_r\,\dd r \;=\; (\ell 1)\bigl(\mathbb{S}^{N+1}_t\bigr),
+  \qquad
+  \int_0^t \pi_r\,\dd\Spot_r \;=\; (\ell 2)\bigl(\mathbb{S}^{N+1}_t\bigr).
+\end{equation}
+\end{lemma}
+
+\textbf{\textit{Proof:}} The first assertion is the definition \eqref{eq:signaturesmooth} of the
+iterated integral read one level at a time. The two displays follow by linearity, using
+$\dd\widehat X^{1}_r=\dd r$ and $\dd\widehat X^{2}_r=\sigma\,\dd\BH_r=\dd\Spot_r$.
+\qedfilledtext
+
+\medskip
+
+Lemma \ref{lem:concatenation} is the reason the time coordinate was adjoined in Proposition
+\ref{prop:roughexpectedsigaug}. Adjoining $t$ does more than break the blindness of a scalar
+signature recorded in Example \ref{ex:signatureonedim}: it makes \emph{time integration} an
+operation on words, namely right-concatenation with the letter $1$. The inventory, which is the time
+integral of the schedule, is therefore again a linear functional of the signature --- one level
+higher.
+
+\begin{proposition}[The objective is a quadratic form in the signature]\label{prop:quadform}
+Let $\pi$ be the signature schedule \eqref{eq:sigschedule} and write
+$\mathbb{S}:=\Sig^{N+2}(\widehat\rpX)_{0,\Mat}$ for the truncated signature of the realised
+trajectory. Then, \emph{on that trajectory},
+\begin{equation}\label{eq:quadform}
+  \mathcal{C}(\pi)\;=\;\ell\transp\!\mathfrak{A}(\mathbb{S})\,\ell\;+\;\mathfrak{b}(\mathbb{S})\transp\ell\;+\;c(\mathbb{S}),
+\end{equation}
+where, writing $e_I$ for the functional dual to the word $I$,
+\begin{align}
+  \mathfrak{A}_{IJ}(\mathbb{S}) &= \eta\,\bigl((e_I\shuffle e_J)1\bigr)(\mathbb{S})
+            \;+\;\zeta\,\bigl((e_I1)\shuffle(e_J1)\bigr)(\mathbb{S}),\label{eq:Adef}\\
+  \mathfrak{b}_{I}(\mathbb{S}) &= (e_I12)(\mathbb{S})\;-\;2\zeta Q_0\,(e_I1)(\mathbb{S}),\label{eq:bdef}
+\end{align}
+and $c(\mathbb{S})=\zeta Q_0^{2}-Q_0\,\mathbb{S}^{2}$ does not involve $\ell$. Both $\mathfrak{A}$ and
+$\mathfrak{b}$ are \emph{linear} in $\mathbb{S}$.
+\end{proposition}
+
+\begin{corollary}\label{cor:quadformexpectation}
+Writing $\overline{\mathbb{S}}:=\E[\mathbb{S}]$ and taking expectations in \eqref{eq:quadform},
+\begin{equation}\label{eq:quadformE}
+  \E\bigl[\mathcal{C}(\pi)\bigr]\;=\;\ell\transp\!\mathfrak{A}(\overline{\mathbb{S}})\,\ell
+  \;+\;\mathfrak{b}(\overline{\mathbb{S}})\transp\ell\;+\;\zeta Q_0^{2},
+\end{equation}
+the term $Q_0\E[\mathbb{S}^{2}]$ vanishing because $\E[\BH_\Mat]=0$. The matrix
+$\mathfrak{A}(\overline{\mathbb{S}})$ is symmetric and positive definite for $\eta,\zeta>0$, so the minimiser is
+unique and is
+\begin{equation}\label{eq:optimalell}
+  \ell^{*}\;=\;-\tfrac12\,\mathfrak{A}(\overline{\mathbb{S}})^{-1}\,\mathfrak{b}(\overline{\mathbb{S}}).
+\end{equation}
+\end{corollary}
+
+\textbf{\textit{Proof:}} Take the three terms of \eqref{eq:shortfallreduced} in turn. By Lemma
+\ref{lem:concatenation}, $Q_t=Q_0-(\ell 1)(\mathbb{S}_t)$, so
+\[
+  \int_0^{\Mat}Q_t\,\dd\Spot_t = Q_0\,\mathbb{S}^{2}_\Mat-(\ell 12)(\mathbb{S}_\Mat),
+\]
+a second application of the lemma with $j=2$. For the impact term, Proposition \ref{prop:shuffle}
+gives $\pi_t^{2}=(\ell\shuffle\ell)(\mathbb{S}_t)$, whence
+$\int_0^{\Mat}\pi_t^{2}\dd t=\bigl((\ell\shuffle\ell)1\bigr)(\mathbb{S}_\Mat)$, again by Lemma
+\ref{lem:concatenation}. For the terminal term,
+$Q_\Mat^{2}=Q_0^{2}-2Q_0(\ell1)(\mathbb{S}_\Mat)+\bigl((\ell1)\shuffle(\ell1)\bigr)(\mathbb{S}_\Mat)$. Every
+resulting expression is a linear functional of $\mathbb{S}^{N+2}_\Mat$ whose coefficients are quadratic or
+linear in $\ell$; taking expectations replaces $\mathbb{S}_\Mat$ by $\overline{\mathbb{S}}$ and collects the terms
+into \eqref{eq:Adef}--\eqref{eq:bdef}, the contribution $Q_0\E[\mathbb{S}^{2}_\Mat]$ vanishing because
+$\E[\BH_\Mat]=0$. Positive definiteness holds because
+$\ell\transp \mathfrak{A}\ell=\eta\,\E\int_0^{\Mat}\pi_t^{2}\dd t+\zeta\,\E\bigl[(\ell1)(\mathbb{S}_\Mat)^{2}\bigr]\geq0$,
+with equality only if $\pi\equiv0$ almost surely, which forces $\ell=0$ by the uniqueness of Theorem
+\ref{thm:signatureuniqueness}. \qedfilledtext
+
+\medskip
+
+The order of these two statements is the point, and it is worth insisting on. Proposition
+\ref{prop:quadform} is an \emph{identity}, valid on each trajectory separately: no expectation is
+taken, no measure is used, and the shuffle relation on which it rests is itself pathwise. The
+expectation \eqref{eq:quadformE} is a corollary of it and not the other way round. Everything the
+method needs is therefore available from realised paths, and the probabilistic model enters only if
+one chooses to compute $\overline{\mathbb{S}}$ in closed form rather than measure it.
+
+Three further features are worth naming. The problem is finite-dimensional: the unknown is a vector
+of $\sum_{n\leq N}2^{n}$ numbers, and \eqref{eq:optimalell} is a linear solve. It is
+\emph{model-free in the coefficients}: $\mathfrak{A}$ and $\mathfrak{b}$ depend on the market only through
+$\overline{\mathbb{S}}$, so a change of model is a change of one vector of constants and not a change
+of method. And it requires the signature two levels beyond the schedule, since the objective
+integrates $\pi$ once against $\dd t$ and once against $\dd\Spot$.
+
+\begin{remark}[Calibration is an average]\label{rem:erm}
+Because \eqref{eq:quadform} holds path by path, the coefficients need not be computed from a model at
+all. Given $M$ historical liquidation windows with realised signatures
+$\mathbb{S}^{(1)},\dots,\mathbb{S}^{(M)}$, put
+$\widehat{\mathbb{S}}=\tfrac1M\sum_{m}\mathbb{S}^{(m)}$ and
+$\widehat\ell^{*}=-\tfrac12\mathfrak{A}(\widehat{\mathbb{S}})^{-1}\mathfrak{b}(\widehat{\mathbb{S}})$. By the
+linearity of $\mathfrak{A}$ and $\mathfrak{b}$ this is exactly the empirical risk minimiser over the class
+\eqref{eq:sigschedule}, and it is what \cite{kalsi2020} implements.
+
+The whole of ``calibration'' is therefore an \emph{average of signatures} followed by one linear
+solve. There is no parametric family, no likelihood, and no measure: no $\Hurst$ is estimated, no
+$\PP$ is posited, and the question of whether the market admits arbitrage --- Remark
+\ref{rem:isitarbitrage} --- does not arise, because nothing in the procedure presumes it does not.
+By Remark \ref{rem:noliftneeded} the signatures are those of sampled, piecewise-linear paths and no
+lift is involved. This should be contrasted with the calibration of Chapter
+\ref{ch:applications}, which fits a cross-section of option \emph{prices} at one date under $\QQ$
+and to which none of the above applies: the two procedures use different data, answer different
+questions, and are available in different markets.
+\end{remark}
+
+% ---------------------------------------------------------------------------
+\subsection{A worked instance, in closed form}\label{subsec:executionclosed}
+
+Take $N=1$, so that the schedule is
+\begin{equation}\label{eq:worked}
+  \pi_t \;=\; \ell_\emptyset+\ell_2\,\sigma\BH_t ,
+\end{equation}
+a constant rate plus a term proportional to the price move so far: sell faster when the price has
+risen, or slower, according to the sign of $\ell_2$. By Proposition \ref{prop:quadform} the objective
+needs the expected signature to level three. The level-one and level-two entries are supplied by
+Proposition \ref{prop:roughexpectedsigaug}; the one new entry is the following, and it is where the
+whole answer lives.
+
+\begin{proposition}[A level-three entry]\label{prop:levelthree}
+With $\widehat\rpX$ as in Definition \ref{def:roughexecution},
+\begin{equation}\label{eq:levelthree}
+  \E\bigl[\mathbb{S}^{212}_\Mat\bigr]\;=\;\frac{(2\Hurst-1)\,\sigma^{2}\,\Mat^{2\Hurst+1}}{2\,(2\Hurst+1)} ,
+\end{equation}
+which vanishes if and only if $\Hurst=\tfrac12$, and is strictly negative for $\Hurst<\tfrac12$.
+Moreover
+\begin{equation}\label{eq:levelthreeaux}
+  \E\Bigl[\bigl(\mathbb{S}^{21}_\Mat\bigr)^{2}\Bigr]=\frac{\sigma^{2}\Mat^{2\Hurst+2}}{2\Hurst+2},
+  \qquad
+  \E\bigl[\mathbb{S}^{221}_\Mat\bigr]=\frac{\sigma^{2}\Mat^{2\Hurst+1}}{2(2\Hurst+1)} .
+\end{equation}
+\end{proposition}
+
+\textbf{\textit{Proof:}} Write $G_t:=\int_0^t\BH_r\,\dd r$, so that $\mathbb{S}^{21}_\Mat=\sigma G_\Mat$
+and, by Lemma \ref{lem:concatenation}, $\mathbb{S}^{212}_\Mat=\sigma^{2}\int_0^{\Mat}G_t\,\dd\BH_t$. Since
+$G$ is $C^{1}$ the integral is a Young integral and integration by parts applies:
+\[
+  \int_0^{\Mat}G_t\,\dd\BH_t \;=\; G_\Mat\BH_\Mat-\int_0^{\Mat}\BH_t\,\dd G_t
+  \;=\; G_\Mat\BH_\Mat-\int_0^{\Mat}\bigl(\BH_t\bigr)^{2}\dd t .
+\]
+By Proposition \ref{prop:fbmproperties} a) the covariance is
+$\E[\BH_s\BH_t]=\tfrac12\bigl(s^{2\Hurst}+t^{2\Hurst}-|t-s|^{2\Hurst}\bigr)$, so Fubini gives
+\[
+  \E\bigl[G_\Mat\BH_\Mat\bigr]=\int_0^{\Mat}\!\E[\BH_s\BH_\Mat]\,\dd s
+  =\tfrac12\Bigl(\tfrac{\Mat^{2\Hurst+1}}{2\Hurst+1}+\Mat^{2\Hurst+1}-\tfrac{\Mat^{2\Hurst+1}}{2\Hurst+1}\Bigr)
+  =\tfrac12\Mat^{2\Hurst+1},
+\]
+while $\E\int_0^{\Mat}(\BH_t)^{2}\dd t=\int_0^{\Mat}t^{2\Hurst}\dd t=\Mat^{2\Hurst+1}/(2\Hurst+1)$.
+Subtracting and multiplying by $\sigma^{2}$ yields \eqref{eq:levelthree}. For the first identity in
+\eqref{eq:levelthreeaux},
+\[
+  \E\bigl[G_\Mat^{2}\bigr]=\int_0^{\Mat}\!\!\int_0^{\Mat}\!\E[\BH_s\BH_r]\,\dd s\,\dd r
+  =\frac{\Mat^{2\Hurst+2}}{2\Hurst+1}-\frac{\Mat^{2\Hurst+2}}{(2\Hurst+1)(2\Hurst+2)}
+  =\frac{\Mat^{2\Hurst+2}}{2\Hurst+2},
+\]
+using $\int_0^{\Mat}\!\int_0^{\Mat}|s-r|^{2\Hurst}\dd s\,\dd r=2\Mat^{2\Hurst+2}/[(2\Hurst+1)(2\Hurst+2)]$.
+The last identity is immediate from $\mathbb{S}^{22}_t=\tfrac12(\mathbb{S}^{2}_t)^{2}$, which is geometricity
+\eqref{eq:weaklygeometric} in one dimension, followed by Lemma \ref{lem:concatenation}.
+\qedfilledtext
+
+\medskip
+
+\begin{remark}[Two consistency checks]\label{rem:levelthreechecks}
+At $\Hurst=\tfrac12$ the driver is Brownian, $G$ is adapted and square-integrable, and
+$\int_0^\Mat G\,\dd\Wt$ is a true It\^o integral of mean zero; formula \eqref{eq:levelthree} returns
+exactly $0$. Independently, the shuffle relation \eqref{eq:shuffle} applied to the words $(2)$ and
+$(2,1)$ gives $\mathbb{S}^{2}\mathbb{S}^{21}=2\,\mathbb{S}^{221}+\mathbb{S}^{212}$, and the three
+expectations computed above
+satisfy it: $\tfrac12\sigma^{2}\Mat^{2\Hurst+1}$ on the left, and on the right
+$\sigma^{2}\Mat^{2\Hurst+1}/(2\Hurst+1)+(2\Hurst-1)\sigma^{2}\Mat^{2\Hurst+1}/[2(2\Hurst+1)]$, which
+is the same number. The second check is a genuine one: it uses a structural identity of the
+signature to verify a computation performed by Fubini, and the two routes share no step.
+\end{remark}
+
+The two entries of Proposition \ref{prop:levelthree} differ by the factor $2\Hurst-1$ and by nothing
+else, which has a use of its own.
+
+\begin{corollary}[A scale-free estimator of the Hurst parameter]\label{cor:Hestimator}
+With the notation of Proposition \ref{prop:levelthree},
+\begin{equation}\label{eq:Hratio}
+  \frac{\E\bigl[\mathbb{S}^{212}_\Mat\bigr]}{\E\bigl[\mathbb{S}^{221}_\Mat\bigr]}\;=\;2\Hurst-1,
+  \qquad\text{that is}\qquad
+  \Hurst\;=\;\frac12\left(1+\frac{\E\bigl[\mathbb{S}^{212}_\Mat\bigr]}{\E\bigl[\mathbb{S}^{221}_\Mat\bigr]}\right).
+\end{equation}
+\end{corollary}
+
+\textbf{\textit{Proof:}} Divide \eqref{eq:levelthree} by the second identity of
+\eqref{eq:levelthreeaux}; the denominator is strictly positive. \qedfilledtext
+
+\medskip
+
+Both the scale $\sigma$ and the horizon $\Mat$ cancel, so \eqref{eq:Hratio} identifies $\Hurst$ from
+two level-three entries measured over a \emph{single} window, without the regression across
+$\Delta$ that the scaling relation \eqref{eq:scalingmoment} of Subsection \ref{subsec:roughvol}
+requires. Both entries are Riemann sums on a sampled path --- $\mathbb{S}^{221}$ is
+$\tfrac12\int_0^{\Mat}(\text{level})^{2}\dd t$ and $\mathbb{S}^{212}$ is the Young integral of
+Proposition \ref{prop:levelthree} --- so by Remark \ref{rem:noliftneeded} no lift is needed to
+evaluate either. The ratio maps $\Hurst\in(0,1)$ affinely onto $(-1,1)$ and equals zero exactly at
+$\Hurst=\tfrac12$, so it is simultaneously an estimator and a test of the Brownian null.
+
+\begin{remark}[What it should be applied to, and what may go wrong]\label{rem:Hestimatorscope}
+Three cautions, and the first is the one that matters.
+
+\emph{The rough object is the volatility, not the price.} Applied to a price series
+\eqref{eq:arithmeticrough} the estimator is a statement about a model this chapter has repeatedly
+described as untradeable, and empirically it would return $\Hurst\approx\tfrac12$, since log-prices
+are close to martingales. The series to which \eqref{eq:Hratio} is properly applied is the
+log-volatility $X$ of \eqref{eq:rfsv}, where the roughness of Subsection \ref{subsec:roughvol}
+actually lives and where the vol-of-vol $\nu$ cancels in the ratio exactly as $\sigma$ does here.
+
+\emph{It is a ratio of averages, not an average of ratios.} Each expectation must be estimated across
+non-overlapping windows before dividing; the estimator is consistent by the law of large numbers but
+biased at finite sample, as any ratio estimator is.
+
+\emph{It is a method of moments inside the fractional family.} Equation \eqref{eq:Hratio} is derived
+for \eqref{eq:arithmeticrough} and is not model-free: it identifies $\Hurst$ on the assumption that
+the series is fractional Brownian over the window. That assumption, together with the sensitivity of
+all high-frequency estimators of $\Hurst$ to microstructure noise, is the subject of an active
+literature, and the reported $\Hurst\approx0.1$ has been argued to be in part an artefact of it. The
+estimator above inherits that debate rather than settling it.
+\end{remark}
+
+\begin{proposition}[Optimal signature schedule]\label{prop:optimalschedule}
+For the model of Definition \ref{def:roughexecution} and the schedule class \eqref{eq:worked}, the
+objective \eqref{eq:quadformE} separates,
+\begin{equation}\label{eq:separated}
+  \E\bigl[\mathcal{C}\bigr]
+  =\underbrace{\eta\,\ell_\emptyset^{2}\Mat+\zeta\bigl(Q_0-\ell_\emptyset\Mat\bigr)^{2}}_{\text{schedule}}
+  \;+\;\underbrace{\E\bigl[\mathbb{S}^{212}_\Mat\bigr]\,\ell_2+\mathcal{K}_{\Hurst}\,\ell_2^{2}}_{\text{signal}},
+\end{equation}
+with
+$\mathcal{K}_{\Hurst}=\sigma^{2}\Mat^{2\Hurst+1}\bigl(\tfrac{\eta}{2\Hurst+1}+\tfrac{\zeta\Mat}{2\Hurst+2}\bigr)>0$,
+and the minimisers are
+\begin{equation}\label{eq:optimalpair}
+  \ell_\emptyset^{*}=\frac{\zeta\,Q_0}{\eta+\zeta\Mat},
+  \qquad
+  \ell_2^{*}=\frac{1-2\Hurst}{4\,\eta^{\mathrm{eff}}_{\Hurst}},
+  \qquad
+  \eta^{\mathrm{eff}}_{\Hurst}:=\eta+\frac{(2\Hurst+1)\,\zeta\Mat}{2\Hurst+2}.
+\end{equation}
+The gain from the path-dependent term over the best deterministic schedule is
+\begin{equation}\label{eq:gain}
+  \E\bigl[\mathcal{C}(\ell^{*})\bigr]-\E\bigl[\mathcal{C}(\ell_\emptyset^{*},0)\bigr]
+  \;=\;-\,\frac{(1-2\Hurst)^{2}\,\sigma^{2}\,\Mat^{2\Hurst+1}}{16\,(2\Hurst+1)\,\eta^{\mathrm{eff}}_{\Hurst}}\;\leq\;0,
+\end{equation}
+with equality if and only if $\Hurst=\tfrac12$.
+\end{proposition}
+
+\textbf{\textit{Proof:}} Expand the three terms of \eqref{eq:shortfallreduced} for the schedule
+\eqref{eq:worked}. The inventory is $Q_t=Q_0-\ell_\emptyset t-\ell_2\mathbb{S}^{21}_t$, so
+$\int_0^{\Mat}Q_t\dd\Spot_t=Q_0\mathbb{S}^{2}_\Mat-\ell_\emptyset\mathbb{S}^{12}_\Mat-\ell_2\mathbb{S}^{212}_\Mat$. Now
+$\E[\mathbb{S}^{2}_\Mat]=0$, and $\E[\mathbb{S}^{12}_\Mat]=\sigma\,\E\bigl[\Mat\BH_\Mat-G_\Mat\bigr]=0$
+by parts, so the first term of \eqref{eq:shortfallreduced} contributes
+$\E[\mathbb{S}^{212}_\Mat]\,\ell_2$ and nothing else. The impact term is
+$\eta\,\E\int_0^{\Mat}(\ell_\emptyset+\ell_2\sigma\BH_t)^{2}\dd t
+=\eta\bigl(\ell_\emptyset^{2}\Mat+\ell_2^{2}\sigma^{2}\Mat^{2\Hurst+1}/(2\Hurst+1)\bigr)$, the cross
+term vanishing with $\E[\BH_t]$. The terminal term is
+$\zeta\,\E\bigl[(Q_0-\ell_\emptyset\Mat-\ell_2\mathbb{S}^{21}_\Mat)^{2}\bigr]
+=\zeta\bigl((Q_0-\ell_\emptyset\Mat)^{2}+\ell_2^{2}\sigma^{2}\Mat^{2\Hurst+2}/(2\Hurst+2)\bigr)$,
+using $\E[\mathbb{S}^{21}_\Mat]=0$ and the first identity of \eqref{eq:levelthreeaux}. Collecting gives
+\eqref{eq:separated}, in which $\ell_\emptyset$ and $\ell_2$ appear in separate blocks. Each block is
+a strictly convex scalar quadratic. Setting derivatives to zero,
+$2\eta\Mat\ell_\emptyset=2\zeta\Mat(Q_0-\ell_\emptyset\Mat)$ gives $\ell_\emptyset^{*}$, and
+$\ell_2^{*}=-\E[\mathbb{S}^{212}_\Mat]/(2\mathcal{K}_{\Hurst})$ gives, after substituting
+\eqref{eq:levelthree} and simplifying, the stated form. The gain is
+$-\E[\mathbb{S}^{212}_\Mat]^{2}/(4\mathcal{K}_{\Hurst})$, which is \eqref{eq:gain}. \qedfilledtext
+
+\medskip
+
+Three readings of Proposition \ref{prop:optimalschedule}, in increasing order of interest.
+
+\emph{The classical answer is the $\Hurst=\tfrac12$ case.} As $\zeta\to\infty$ the terminal penalty
+becomes a hard liquidation constraint and $\ell_\emptyset^{*}\to Q_0/\Mat$: the schedule is the
+time-weighted average price, the standard execution benchmark and the Almgren--Chriss solution in the
+absence of risk aversion \cite{almgrenchriss2001}. Simultaneously $\ell_2^{*}\to0$ when
+$\Hurst=\tfrac12$. The rough machinery does not overturn the classical answer; it contains it, in the
+same way that Proposition \ref{prop:purelyroughsolution} contained Black--Scholes.
+
+\emph{The value of the signal is proportional to $(1-2\Hurst)^{2}$.} By \eqref{eq:gain} the
+path-dependent term is worth exactly nothing in a Brownian market and strictly something in a rough
+one, and what it is worth grows as $\Hurst$ falls away from $\tfrac12$. This is a quantitative
+statement about a tradeable quantity, derived in closed form, and it is false in every model with
+independent increments. It also has the right sign: for $\Hurst<\tfrac12$ we get $\ell_2^{*}>0$, that
+is, sell faster when the price has risen --- which is the correct response to the mean reversion that
+anti-persistence $\Hurst<\tfrac12$ encodes, and which Proposition \ref{prop:fbmproperties} b)
+describes.
+
+\emph{And the gain is not a scheduling improvement.} It is tempting to observe that no pricing
+measure was used anywhere and to conclude that the obstruction of Subsection
+\ref{subsec:roughexamplesolution} is irrelevant here. It is not irrelevant: it is the \emph{source}
+of the gain, and the accounting is exact. Were $\Spot$ a martingale under $\PP$, we would have
+$\E\int_0^{\Mat}Q_t\,\dd\Spot_t=0$ for every adapted $Q$, the first term of
+\eqref{eq:shortfallreduced} would vanish identically, and
+\[
+  \E\bigl[\mathcal{C}\bigr]\;=\;\eta\,\E\!\int_0^{\Mat}\pi_t^{2}\,\dd t\;+\;\zeta\,\E\bigl[Q_\Mat^{2}\bigr]
+\]
+would not involve the price path at all. The optimal schedule would then be \emph{deterministic},
+and no path-dependent rule could beat it in expectation --- which is precisely why the classical
+treatment \cite{almgrenchriss2001} must adjoin a variance penalty before the problem becomes
+interesting. What \eqref{eq:gain} measures is the failure of exactly that martingale property, since
+$\E[\mathbb{S}^{212}_\Mat]\neq0$ \emph{is} the statement that $\E\int Q\,\dd\Spot\neq0$ for
+path-dependent $Q$.
+
+\begin{remark}[Is this an arbitrage?]\label{rem:isitarbitrage}
+The model admits one, and it should be said plainly. Theorem \ref{thm:fbmnotsemimartingale} applies
+to \eqref{eq:arithmeticrough} verbatim, so there is no equivalent local martingale measure and, by
+Theorem \ref{thm:firstFTAP}, NFLVR fails; Rogers \cite{rogers1997} exhibits the arbitrage. Our own
+computation displays a symptom of it: setting $Q_0=0$ and $\eta=\zeta=0$ in \eqref{eq:worked} leaves
+the position $Q_t=-\ell_2\sigma\int_0^t\BH_s\,\dd s$, which starts from nothing and has expected
+profit $-\ell_2\,\E[\mathbb{S}^{212}_\Mat]>0$ for every $\ell_2>0$ when $\Hurst<\tfrac12$, unbounded
+under scaling of $\ell_2$. A positive expected return is not by itself an arbitrage, but here it is
+produced by the same anti-persistence that Rogers' construction exploits.
+
+Three consequences, which are worth keeping apart.
+
+\emph{The execution problem remains well posed; the pricing problem would not.} This is the real
+distinction, and it is sharper than the absence of a measure. Absence of arbitrage is a
+\emph{hypothesis} of pricing: without an equivalent local martingale measure the valuation framework
+of Subsection \ref{subsec:derivativepricing} has nothing to compute with, and the problem has no answer
+rather than a wrong one. Execution is a strictly convex minimisation, and by Corollary
+\ref{cor:quadformexpectation} it has a unique solution whenever $\eta,\zeta>0$, whether or not the market it is
+posed in happens to be arbitrageable. For execution, absence of arbitrage is a modelling preference.
+
+\emph{The result should be read structurally.} What Proposition \ref{prop:optimalschedule}
+establishes is not a trading recommendation but a statement about separation: in a semimartingale
+market, execution and alpha decouple, since expected cost is schedule-independent and scheduling is
+purely a trade-off of impact against risk. Roughness couples them, and \eqref{eq:gain} is the
+strength of the coupling.
+
+\emph{The magnitude should not be trusted.} The schedule \eqref{eq:worked} rebalances continuously,
+and by Cheridito \cite{cheridito2003} the arbitrage is removed by any minimum delay between
+transactions, exactly as recorded in Subsection \ref{subsec:roughexamplesolution}. The economic
+content survives discretisation --- an anti-persistent price mean-reverts, and that is worth
+something to a trader who must sell in any case --- but the number \eqref{eq:gain} is a
+continuous-time idealisation and inherits the artefact along with the closed form.
+\end{remark}
+
+\begin{remark}[Where the Hurst parameter lives, continued]\label{rem:Hlevelthree}
+Remark \ref{rem:Hlivesatleveltwo} observed that $\Hurst$ first appears at level \emph{two} of the
+expected signature, in the entry $\tfrac12\sigma^{2}\Mat^{2\Hurst}$, and that this is the structural
+reason the estimators of Subsection \ref{subsec:roughvol} are built from second moments. Proposition
+\ref{prop:levelthree} adds the next instalment, and it is a different statement. Level two knows
+that the path is rough; it does not know that roughness is worth anything, because
+$\tfrac12\sigma^{2}\Mat^{2\Hurst}$ is positive for every $\Hurst$ and takes no distinguished value at
+$\Hurst=\tfrac12$. The first entry that vanishes exactly at $\Hurst=\tfrac12$ is the level-three
+entry \eqref{eq:levelthree}, and it is precisely the coefficient of the tradeable signal in
+\eqref{eq:separated}.
+
+So the two facts sit one level apart. \emph{Roughness is a level-two phenomenon; the value of
+roughness is a level-three phenomenon.} A truncation at level two would detect that the market is
+rough and would find nothing to do about it. This is the concrete answer to the question of how far
+up the signature one must go, and it is the reason the practical truncations quoted after Proposition
+\ref{prop:factorialdecay} are $N\in\{3,4,5\}$ rather than $N=2$.
+\end{remark}
+
+\begin{remark}[What is and is not special about this example]\label{rem:executionscope}
+Two honest limitations. The schedule class \eqref{eq:worked} is small --- one constant and one linear
+term --- and was chosen so that \eqref{eq:optimalpair} could be written down; at larger $N$ the
+solve \eqref{eq:optimalell} is still exact but is a matrix inversion rather than a formula, and the
+expected-signature entries beyond level three are not available in closed form for
+$\Hurst\neq\tfrac12$, as Remark \ref{rem:Hlivesatleveltwo} records. In practice $\overline{\mathbb{S}}$ is
+estimated from historical paths, which is the route taken in \cite{kalsi2020}, and by Remark
+\ref{rem:noliftneeded} that route needs no lift and is therefore indifferent to the restriction
+$\Hurst>\tfrac13$.
+
+What is \emph{not} special is the architecture. Lemma \ref{lem:concatenation} and Proposition
+\ref{prop:shuffle} turn any objective built from time integrals, integrals against the price, and
+polynomials of the control into a quadratic form in $\overline{\mathbb{S}}$; the execution problem is only
+the simplest financially serious instance. The same reduction underlies signature-based pricing and
+hedging of path-dependent claims \cite{lyonsnejadperez2020} and the signature market models used for
+joint calibration in \cite{cuchiero2025}, which is where this circle of ideas re-enters Chapter
+\ref{ch:applications}.
+\end{remark}
+
+% ---------------------------------------------------------------------------
+\subsection{Two assets: the L\'evy area}\label{subsec:levyarea}
+
+Everything so far has used a scalar asset, and by Example \ref{ex:signatureonedim} a scalar path
+carries no level-two information of its own: the time coordinate had to be adjoined before the
+signature said anything at all. With two assets the situation changes qualitatively, and the change
+is not a matter of degree. This subsection is about the object that appears, which is the one the
+whole theory is named after.
+
+Let $X=(X^{1},X^{2})$ be the two-dimensional path of a pair of assets --- in practice
+$X^{i}_{t}=\log \Spot^{i}_{t}-\log\Spot^{i}_{0}$, the cumulative log-return since the window opened
+--- lifted to a geometric rough path $\rpX=(X,\lev)$. The time coordinate may be adjoined as in
+Definition \ref{def:roughexecution} whenever it is wanted; it plays no role in what follows and is
+suppressed. Throughout, $\theta$ denotes a lead--lag coefficient; the Heston parameter of Definition
+\ref{def:roughheston} does not occur in this subsection.
+
+\subsubsection*{One number per pair}
+
+\begin{proposition}[The free data at level two]\label{prop:leveltwofree}
+Let $\rpX$ be weakly geometric and $d$-dimensional. Then $\lev_{s,t}$ is determined by the increment
+$X_{s,t}$ together with the $\tfrac12 d(d-1)$ entries $A^{ij}_{s,t}$, $i<j$, of the L\'evy area
+\eqref{eq:levyarea}. In particular, for $d=1$ there are none, and for $d=2$ there is exactly one.
+\end{proposition}
+
+\textbf{\textit{Proof:}} Decompose $\lev=\Sym\lev+\Anti\lev$, the second summand being $A_{s,t}$ by
+\eqref{eq:levyarea}. Proposition \ref{prop:symmetricpart} identified $\Sym\lev_{s,t}$ with
+$\tfrac12X_{s,t}\otimes X_{s,t}$ for smooth paths, and \eqref{eq:weaklygeometric} is exactly the
+requirement that this survive; so the symmetric part is a function of the increment alone. The
+antisymmetric part is determined by its entries above the diagonal, of which there are
+$\tfrac12d(d-1)$. \qedfilledtext
+
+\medskip
+
+Subsection \ref{subsec:tensorspaces} recorded this as the reason the second level is genuinely new
+data, and Remark \ref{rem:levyarealaw} confirmed it for Brownian motion by exhibiting a law that is
+not Gaussian. Read as a statement about \emph{financial} data it says something sharper. Over a
+single window $\Sym\lev^{12}_{0,\Mat}=\tfrac12X^{1}_{0,\Mat}X^{2}_{0,\Mat}$ is the product of the two
+total returns: it is known to anyone who has looked only at the endpoints, and averaged across
+windows it is the realised covariance. Everything else level two contains --- the whole of what
+depends on the \emph{trajectory} rather than on where it began and ended --- is one number, the
+scalar
+\begin{equation}\label{eq:pairarea}
+  A_{s,t}\;=\;\tfrac12\Bigl(\lev^{12}_{s,t}-\lev^{21}_{s,t}\Bigr)
+  \;=\;\tfrac12\left(\int_s^t X^{1}_{s,r}\,\dd X^{2}_{r}-\int_s^t X^{2}_{s,r}\,\dd X^{1}_{r}\right)
+\end{equation}
+of Remark \ref{rem:levyarealaw}, now carried by a pair of assets rather than by a planar Brownian
+motion. It vanishes when the two components move proportionally, a straight line enclosing no area.
+
+\begin{remark}[The area is a profit and loss]\label{rem:areaispnl}
+The reading that matters here is not geometric. The integral $\int_s^tX^{1}_{s,r}\,\dd X^{2}_{r}$ is
+the profit of a strategy holding, at each instant, a position in asset $2$ equal to the move asset
+$1$ has made since the window opened; and symmetrically for the other term. So $A_{s,t}$
+is one half the difference of two crossed pairs strategies --- long the laggard against the leader,
+in whichever direction the pair has been moving --- and it is a quantity a desk can actually realise.
+Level-two information is not an abstraction: for a pair of assets it \emph{is} the return of a
+specific long--short book.
+\end{remark}
+
+\begin{remark}[Two conventions that do not matter, and one that does]\label{rem:areaconventions}
+The area is insensitive to the It\^o--Stratonovich choice. Passing from one to the other adds
+$\tfrac12\qvv{X^{1}}{X^{2}}$ to each of the two integrals in \eqref{eq:levyarea}, and the two
+additions cancel in the difference; the ambiguity of Chapter \ref{ch:foundations} lives entirely in
+$\Sym\lev$, which is the quadratic covariation, and not in $\Anti\lev$. What the area \emph{is}
+sensitive to is the choice of lift itself: by Proposition \ref{prop:liftnotunique} a path does not
+determine its own second level, and by Proposition \ref{prop:leveltwofree} the whole of that freedom,
+for a pair, is the single number $A$. Two markets with identical realised price paths and
+identical realised covariances but different areas are different rough paths, and by the Universal
+Limit Theorem \ref{thm:ult} they produce different solutions to any rough differential equation
+driven by them --- that is, different profit and loss for any path-dependent book. Correlation is not
+merely an incomplete description of a pair; it is provably the part of level two that carries nothing
+new.
+\end{remark}
+
+\subsubsection*{Aggregation is not additive}
+
+Returns add across adjacent windows. Areas do not, and the defect is exactly Chen's relation.
+
+\begin{proposition}[Chen's relation for the area]\label{prop:chenarea}
+For $s\leq u\leq t$,
+\begin{equation}\label{eq:chenarea}
+  A_{s,t}\;=\;A_{s,u}+A_{u,t}
+  \;+\;\tfrac12\det\begin{pmatrix} X^{1}_{s,u} & X^{1}_{u,t}\\[2pt] X^{2}_{s,u} & X^{2}_{u,t}\end{pmatrix}.
+\end{equation}
+\end{proposition}
+
+\textbf{\textit{Proof:}} Chen's relation \eqref{eq:chenaxiom} reads
+$\lev_{s,t}=\lev_{s,u}+\lev_{u,t}+X_{s,u}\otimes X_{u,t}$. Taking the antisymmetric part of the
+$(1,2)$ entry, the last term contributes
+$\tfrac12\bigl(X^{1}_{s,u}X^{2}_{u,t}-X^{2}_{s,u}X^{1}_{u,t}\bigr)$, which is the stated
+determinant. \qedfilledtext
+
+\medskip
+
+The correction term is the signed area of the triangle spanned by the two chord returns, and it is
+zero exactly when the two sub-period returns are collinear. Financially: the profit of the pairs book
+of Remark \ref{rem:areaispnl} over a month is \emph{not} the sum of its profits over the constituent
+weeks, and the discrepancy is a determinant of weekly returns. Nothing in a return-based description
+of a pair has an analogue of \eqref{eq:chenarea}; it is a structural constraint on how path
+information aggregates, and it is exact rather than approximate.
+
+\subsubsection*{A computable lead--lag model}
+
+\begin{definition}[Lead--lag pair]\label{def:leadlag}
+Let $\BH$ and $\widetilde{W}^{\Hurst}$ be independent scalar fractional Brownian motions with the same
+$\Hurst\in(\tfrac13,\tfrac12]$, let $\sigma_{1},\sigma_{2}>0$, $\rho\in[-1,1]$ and $\theta\in\R$, and
+set
+\begin{equation}\label{eq:leadlagmodel}
+  X^{1}_{t}=\sigma_{1}\BH_{t},
+  \qquad
+  X^{2}_{t}=\sigma_{2}\Bigl(\rho\,\BH_{t}+\sqrt{1-\rho^{2}}\,\widetilde{W}^{\Hurst}_{t}\Bigr)
+  \;+\;\theta\int_{0}^{t}\BH_{s}\,\dd s .
+\end{equation}
+The second asset moves with the first contemporaneously, through $\rho$, and responds to its
+\emph{past} through $\theta$: asset $1$ leads.
+\end{definition}
+
+\begin{proposition}[Expected area of a lead--lag pair]\label{prop:leadlagarea}
+For the pair \eqref{eq:leadlagmodel},
+\begin{equation}\label{eq:leadlagarea}
+  \E\bigl[A_{0,\Mat}\bigr]
+  \;=\;\frac{\sigma_{1}\,\theta\,(3-2\Hurst)\,\Mat^{2\Hurst+1}}{4\,(2\Hurst+1)} .
+\end{equation}
+Neither $\rho$ nor $\sigma_{2}$ appears.
+\end{proposition}
+
+\textbf{\textit{Proof:}} Write $G_{t}=\int_{0}^{t}\BH_{s}\,\dd s$ and expand the two integrals of
+\eqref{eq:levyarea}. Using $\dd X^{2}=\sigma_{2}\rho\,\dd\BH+\sigma_{2}\sqrt{1-\rho^{2}}\,\dd\widetilde
+W^{\Hurst}+\theta\,\BH_{t}\,\dd t$,
+\[
+  \int_{0}^{\Mat}X^{1}\,\dd X^{2}
+  =\sigma_{1}\sigma_{2}\rho\!\int_{0}^{\Mat}\!\BH\dd\BH
+  +\sigma_{1}\sigma_{2}\sqrt{1-\rho^{2}}\!\int_{0}^{\Mat}\!\BH\,\dd\widetilde W^{\Hurst}
+  +\sigma_{1}\theta\!\int_{0}^{\Mat}\!\bigl(\BH_{t}\bigr)^{2}\dd t,
+\]
+while $\dd X^{1}=\sigma_{1}\dd\BH$ gives
+\[
+  \int_{0}^{\Mat}X^{2}\,\dd X^{1}
+  =\sigma_{1}\sigma_{2}\rho\!\int_{0}^{\Mat}\!\BH\dd\BH
+  +\sigma_{1}\sigma_{2}\sqrt{1-\rho^{2}}\!\int_{0}^{\Mat}\!\widetilde W^{\Hurst}\dd\BH
+  +\sigma_{1}\theta\!\int_{0}^{\Mat}\!G_{t}\,\dd\BH_{t}.
+\]
+The two $\rho$ terms are \emph{identical} and cancel in the difference \eqref{eq:levyarea}. The two
+mixed terms have expectation zero: the law of $\widetilde W^{\Hurst}$ is invariant under
+$\widetilde W^{\Hurst}\mapsto-\widetilde W^{\Hurst}$, which commutes with the piecewise-linear
+approximations defining the joint geometric lift and reverses the sign of each mixed integral, so
+each is symmetrically distributed. There remain
+$\E\int_{0}^{\Mat}(\BH_{t})^{2}\dd t=\Mat^{2\Hurst+1}/(2\Hurst+1)$ and, by Proposition
+\ref{prop:levelthree} with $\sigma=1$,
+$\E\int_{0}^{\Mat}G_{t}\dd\BH_{t}=(2\Hurst-1)\Mat^{2\Hurst+1}/\bigl(2(2\Hurst+1)\bigr)$. Hence
+\[
+  \E\bigl[A_{0,\Mat}\bigr]
+  =\frac{\sigma_{1}\theta}{2}\,\Mat^{2\Hurst+1}\left(\frac{1}{2\Hurst+1}-\frac{2\Hurst-1}{2(2\Hurst+1)}\right)
+  =\frac{\sigma_{1}\theta\,\Mat^{2\Hurst+1}}{2(2\Hurst+1)}\cdot\frac{3-2\Hurst}{2},
+\]
+which is \eqref{eq:leadlagarea}. \qedfilledtext
+
+\medskip
+
+At $\Hurst=\tfrac12$ the expression reduces to $\sigma_{1}\theta\Mat^{2}/4$, which is checked
+directly: there $\int G\,\dd\Wt$ is an It\^o integral of mean zero and only the first term survives.
+At $\theta=0$ it vanishes for every $\rho$, as it must, the L\'evy area of a correlated Brownian pair
+having mean zero.
+
+\begin{remark}[Correlation is invisible to the area]\label{rem:rhocancels}
+The cancellation of $\rho$ in the proof is the whole content of this subsection, written as a
+formula. Proposition \ref{prop:leveltwofree} said that the symmetric part of level two is the
+endpoints and the antisymmetric part is everything else; Proposition \ref{prop:leadlagarea} exhibits
+a pair in which the contemporaneous coupling $\rho$ and the lagged coupling $\theta$ are separately
+adjustable, and shows that the area sees the second and is \emph{exactly blind} to the first. A
+correlation estimate and an area estimate are therefore not two views of the same quantity; they are
+measurements of orthogonal components of the same tensor.
+
+Inverting \eqref{eq:leadlagarea} estimates the lead--lag coefficient,
+\[
+  \widehat\theta\;=\;\frac{4(2\Hurst+1)\,\widehat{\E}\bigl[A_{0,\Mat}\bigr]}
+  {\sigma_{1}(3-2\Hurst)\,\Mat^{2\Hurst+1}},
+\]
+from a single level-two entry. The classical route to the same conclusion is a cross-correlogram
+scanned over a grid of lags; \eqref{eq:levyarea} aggregates that scan into one number, at the cost of
+committing to the shape \eqref{eq:leadlagmodel} in exchange for not having to choose a maximum lag.
+\end{remark}
+
+\begin{remark}[What is computable, and how]\label{rem:areacomputable}
+Every object in this subsection is a Riemann--Stieltjes sum on sampled data. With observations at
+$0=t_{0}<\dots<t_{n}=\Mat$,
+\[
+  \lev^{12}_{0,\Mat}\;\approx\;\sum_{k}X^{1}_{0,t_{k}}\bigl(X^{2}_{t_{k+1}}-X^{2}_{t_{k}}\bigr),
+\]
+and $A$ is half the difference of that and its transpose. By Remark
+\ref{rem:noliftneeded} no lift is involved: the interpolated data has bounded variation. Two exact
+identities are available as checks on any implementation, and both hold to machine precision rather
+than statistically --- antisymmetry, $A^{12}=-A^{21}$, and geometricity,
+$\lev^{12}_{0,\Mat}+\lev^{21}_{0,\Mat}=X^{1}_{0,\Mat}X^{2}_{0,\Mat}$, the latter being Proposition
+\ref{prop:leveltwofree} read as an assertion about numbers. Chen's relation \eqref{eq:chenarea}
+supplies a third, across any splitting of the window.
+\end{remark}
+
 \section{The Boundary of the Theory}\label{sec:beyond}
 
 It would be a poor advertisement for a chapter on roughness to conclude without saying where its
@@ -1511,6 +2478,28 @@ regularity $\Hurst^{-}$, which for $\Hurst<\tfrac12$ is \emph{worse} than that o
 $F(\widehat W)$ is not a path controlled by $W$ in the sense of Definition \ref{def:controlled}, and
 Theorem \ref{thm:gubinelli} does not apply. The Taylor expansion \eqref{eq:controlleddef} is simply
 the wrong ansatz.
+
+It is worth locating \eqref{eq:roughvolintegral} precisely, because without it the model is not hard
+at all. Let the price be driven by $\Wt^{\Spot}=\rho\,\Wt+\sqrt{1-\rho^{2}}\,\Wt^{\perp}$, with
+$\Wt$ the Brownian motion generating $\widehat W$ and $\Wt^{\perp}$ independent of it, and condition
+on the volatility path. This is the device of Romano and Touzi \cite{romanotouzi1997}: the value of a
+European claim becomes a mixture of Black--Scholes values \eqref{eq:bscall}, taken over the realised
+variance, and the mixture depends on the trajectory through exactly two quantities. The first is the
+realised variance $\int_0^{\Mat}v_s\,\dd s$, an ordinary Riemann integral of a continuous process,
+which requires no integration theory whatever. The second is the \emph{leverage} term
+\begin{equation}\label{eq:leverageterm}
+  \rho\int_0^{\Mat}\sqrt{v_s}\,\dd\Wt_s,\qquad v_s=F\bigl(\widehat W_s\bigr),
+\end{equation}
+which is \eqref{eq:roughvolintegral} with $F$ replaced by $F^{1/2}$. At $\rho=0$ the term is absent
+and a rough volatility model is analytically no harder than a model with deterministic volatility.
+Every difficulty catalogued in this section lives in \eqref{eq:leverageterm} and nowhere else.
+
+That localisation is not a technicality, because the correlation is not a technicality. A negative
+$\rho$ is what produces the skew of Subsection \ref{subsec:smile_skew}, and by
+\eqref{eq:skewpowerlaw} it is what produces the short-dated power law that motivated Part
+\ref{part:part2} in the first place. The feature which makes a rough volatility model worth having
+is precisely the feature which puts it beyond the integration theory of Chapter
+\ref{ch:foundations}.
 
 What replaces it is Hairer's theory of \emph{regularity structures}, of which rough path theory is
 the one-dimensional special case. There, the fixed local expansion \eqref{eq:controlleddef} in
@@ -1541,8 +2530,34 @@ Chapter \ref{ch:foundations}, which is a pleasing consistency check and a fair s
 subject: the corrections that stochastic calculus treats as fixed constants are, at lower
 regularity, divergent quantities held in place by an algebraic structure.
 
-We shall not develop any of this. The construction is set out in \cite[Ch.\ 13--14]{frizhairer2020},
-and the rough volatility literature built on it is surveyed in \cite{bayerfrizfukasawa2023} and
+It is worth being exact about what this machinery is needed \emph{for}, since the honest answer is
+narrower than the apparatus suggests, and sharper than a general appeal to roughness. The integrand
+$F(\widehat W)$ is adapted to the filtration of $\Wt$ and square-integrable, so
+\eqref{eq:roughvolintegral} exists as an ordinary It\^o integral by Section
+\ref{sec:stochasticcalculus} and nothing further: neither rough paths nor regularity structures are
+required in order to \emph{define} a rough volatility model, nor to simulate one. What they are
+required for is threefold, and each item is load-bearing.
+
+\begin{itemize}
+  \item[i)] \emph{A pathwise construction.} The It\^o integral is an $L^{2}$ limit defined off a null
+    set, and is not a continuous function of the trajectory of $\Wt$; no statement about an
+    individual realisation is available from it.
+  \item[ii)] \emph{The limit of a discretisation.} Equation \eqref{eq:renormalisedwz} says that a
+    smoothed approximation converges to the wrong object unless the divergent counterterm is
+    subtracted. A naive scheme can therefore converge, cleanly and without any numerical symptom, to
+    a model other than the one intended. This is the item with practical consequences.
+  \item[iii)] \emph{Asymptotics.} The contraction principle requires a continuous map, so a
+    small-time large deviation principle for the price --- and with it the short-dated smile and the
+    exponent of \eqref{eq:skewpowerlaw} --- becomes available only after the lift. It is here, rather
+    than in the construction of the model, that the continuity of the It\^o--Lyons map, Theorem
+    \ref{thm:ult}, does financial work, and it is the answer to the debt acknowledged in Remark
+    \ref{rem:roughhestoncost}.
+\end{itemize}
+
+We shall not develop any of this. The regularity structure for rough volatility is constructed in
+\cite{bayerfrizgassiat2020}, from which the count of symbols and the threshold $\Hurst>\tfrac18$
+quoted above are taken; the general theory is set out in \cite[Ch.\ 13--14]{frizhairer2020}, and the
+rough volatility literature built on it is surveyed in \cite{bayerfrizfukasawa2023} and
 \cite{dinunno2023}. It is recorded here to mark honestly the edge of what has been proved. The applications of Chapter
 \ref{ch:applications} are constructed so as not to depend on a lifting theorem that is unavailable at the
 exponent the data demand --- the local volatility surface of Subsection \ref{subsec:localvol} being

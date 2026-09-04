@@ -103,6 +103,10 @@
 \newcommand{\divy}{q}                        % continuous dividend / repo yield
 \newcommand{\ivol}{\sigma_{\mathrm{imp}}}    % implied volatility
 \newcommand{\lvol}{\sigma_{\mathrm{loc}}}    % local volatility
+% Realised volatility: a statistic of the path under P, as opposed to \ivol, which is
+% read off a price and therefore lives under Q. The three subscripts imp/loc/real are
+% deliberately parallel so that the reader can tell at a glance which object is meant.
+\newcommand{\rvol}{\sigma_{\mathrm{real}}}   % realised volatility
 \newcommand{\tvar}{w}                        % total implied variance
 \newcommand{\lmon}{k}                        % log-moneyness
 % (The spot-to-forward relation is now written affinely, F = a_t S + b_t, in
@@ -171,3 +175,32 @@
 \newcommand{\figurehere}[1]{\thesis@marker{FIGURE HERE}{#1}}
 \newcommand{\todonote}[1]{\thesis@marker{TODO}{#1}}
 \makeatother
+
+% ---------- Applications (Ch. 4): the PINN implied-volatility surface ----------
+%
+%  Chapter 4 is derivative-dense: the wing algebra carries three k-derivatives
+%  and a T-derivative in almost every display, and the \partial_\lmon form used
+%  in Chapter 2 becomes unreadable there. The partials of the surface are
+%  therefore written as COMMA SUBSCRIPTS on \ivol, and \ivd is the single line
+%  that fixes that convention. Reverting to \partial notation is one edit here.
+%
+%  The letters chosen below were forced by the collisions the notation table
+%  already legislates. In particular:
+%    * the core network is \Core = \mathcal{M} and NOT F, which is the forward;
+%    * the analytic wing is \Wing = \mathcal{W} and NOT W, which is Brownian
+%      motion always. The wing is calligraphic and always carries a side
+%      subscript L or R; that is what tells the two apart, exactly as the two
+%      time arguments identify the bond B(t,T).
+%    * the normalised skew is \nskew = \mathfrak{s} and NOT \varphi, which is
+%      the characteristic function and is needed in this very chapter for the
+%      rough Heston calibration. Its relation to the wing slope s is
+%      \nskew_0 = |k^*| s / a, i.e. it IS the dimensionless s; the shared
+%      letter in two fonts is deliberate.
+\newcommand{\ivd}[1]{\sigma_{\mathrm{imp},#1}}  % \ivd{k}, \ivd{kk}, \ivd{x}, \ivd{T}
+\newcommand{\Core}{\mathcal{M}}                 % the core network (parameters \Theta)
+\newcommand{\Wing}{\mathcal{W}}                 % the analytic wing
+\newcommand{\Winf}{\mathcal{W}_{\infty}}        % its asymptote, a + b
+\newcommand{\nskew}{\mathfrak{s}}               % normalised skew, k \ivd{k} / \ivol
+\newcommand{\Sseven}{\mathcal{S}_{7}}           % the septic smoothstep
+\newcommand{\Caldrift}{\Upsilon}                % the wing calendar profile
+\newcommand{\elas}[1]{\lambda_{#1}}             % log-elasticity d log(#1) / d log T

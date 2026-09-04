@@ -1,21 +1,137 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Applications}{99}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Applications}{117}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:applications}{{4}{99}{Applications}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Calibration of a Volatility Surface}{99}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}The Model}{99}{subsection.4.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Joint Calibration (?)}{99}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}The Challenge (?)}{99}{subsection.4.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Calibration of a (???)}{99}{subsection.4.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Calibration to Single Names: De-Americanisation}{99}{section.4.3}\protected@file@percent }
-\newlabel{sec:deamericanisation}{{4.3}{99}{Calibration to Single Names: De-Americanisation}{section.4.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Implementation}{100}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Results}{100}{section.4.5}\protected@file@percent }
+\newlabel{ch:applications}{{4}{117}{Applications}{chapter.4}{}}
+\newlabel{not:applications}{{4.1}{117}{Symbols of this chapter}{result.4.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Calibration of an Implied Volatility Surface with a PINN}{118}{section.4.1}\protected@file@percent }
+\newlabel{sec:pinn}{{4.1}{118}{Calibration of an Implied Volatility Surface with a PINN}{section.4.1}{}}
+\newlabel{eq:gatheralrecall}{{4.1}{118}{Calibration of an Implied Volatility Surface with a PINN}{equation.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}No-Arbitrage in Volatility Coordinates}{119}{subsection.4.1.1}\protected@file@percent }
+\newlabel{subsec:volcoords}{{4.1.1}{119}{No-Arbitrage in Volatility Coordinates}{subsection.4.1.1}{}}
+\newlabel{prop:gvol}{{4.2}{119}{The butterfly quantity in volatility coordinates}{result.4.2}{}}
+\newlabel{eq:gvol}{{4.2}{119}{The butterfly quantity in volatility coordinates}{equation.4.2}{}}
+\newlabel{eq:calvol}{{4.3}{119}{The butterfly quantity in volatility coordinates}{equation.4.3}{}}
+\newlabel{eq:gsplit}{{4.4}{120}{No-Arbitrage in Volatility Coordinates}{equation.4.4}{}}
+\newlabel{prop:shortdated}{{4.3}{120}{Short maturities are governed by the skew alone}{result.4.3}{}}
+\newlabel{eq:shortdatedbound}{{4.5}{120}{Short maturities are governed by the skew alone}{equation.4.5}{}}
+\newlabel{prop:curvlinear}{{4.4}{120}{The curvature enters linearly and benignly}{result.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}The Model}{120}{subsection.4.1.2}\protected@file@percent }
+\newlabel{subsec:the-model}{{4.1.2}{120}{The Model}{subsection.4.1.2}{}}
+\newlabel{eq:outward}{{4.6}{121}{The functional form}{equation.4.6}{}}
+\newlabel{eq:surface}{{4.7}{121}{The functional form}{equation.4.7}{}}
+\newlabel{eq:wing}{{4.8}{121}{The functional form}{equation.4.8}{}}
+\newlabel{eq:collarcoord}{{4.9}{121}{The functional form}{equation.4.9}{}}
+\newlabel{eq:twoconditions}{{4.10}{121}{What is imposed}{equation.4.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}The Analytic Wings}{122}{subsection.4.1.3}\protected@file@percent }
+\newlabel{subsec:wings}{{4.1.3}{122}{The Analytic Wings}{subsection.4.1.3}{}}
+\newlabel{eq:wingjet}{{4.11}{122}{The Analytic Wings}{equation.4.11}{}}
+\newlabel{eq:sjoin}{{4.12}{122}{The Analytic Wings}{equation.4.12}{}}
+\newlabel{eq:joinbutterfly}{{4.13}{122}{The butterfly condition at the join}{equation.4.13}{}}
+\newlabel{eq:ellmin}{{4.14}{122}{The butterfly condition at the join}{equation.4.14}{}}
+\newlabel{eq:phiquadratic}{{4.15}{122}{The butterfly condition at the join}{equation.4.15}{}}
+\newlabel{eq:phidagger}{{4.16}{122}{The butterfly condition at the join}{equation.4.16}{}}
+\newlabel{eq:asymptotefloor}{{4.17}{123}{The butterfly condition at the join}{equation.4.17}{}}
+\newlabel{eq:collarpos}{{4.18}{123}{The butterfly condition at the join}{equation.4.18}{}}
+\newlabel{rem:softmin}{{4.7}{123}{Smooth projections}{result.4.7}{}}
+\newlabel{lem:master}{{4.8}{124}{Monotone density along a rising tail}{result.4.8}{}}
+\newlabel{eq:ellcap}{{4.19}{124}{Monotone density along a rising tail}{equation.4.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{The calendar condition on the wings}{124}{section*.34}\protected@file@percent }
+\newlabel{subsec:tailcalendar}{{4.1.3}{124}{The calendar condition on the wings}{section*.34}{}}
+\newlabel{eq:G}{{4.20}{124}{The calendar condition on the wings}{equation.4.20}{}}
+\newlabel{eq:Gcoeffs}{{4.21}{124}{The calendar condition on the wings}{equation.4.21}{}}
+\newlabel{eq:threescalars}{{4.22}{124}{The calendar condition on the wings}{equation.4.22}{}}
+\newlabel{thm:wingreduction}{{4.9}{124}{Wing calendar reduction}{result.4.9}{}}
+\newlabel{eq:cond12}{{4.23}{124}{Wing calendar reduction}{equation.4.23}{}}
+\newlabel{eq:cond3}{{4.24}{124}{Wing calendar reduction}{equation.4.24}{}}
+\newlabel{eq:twoscalars}{{4.25}{124}{Wing calendar reduction}{equation.4.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Smoothness Across the Frontiers}{125}{subsection.4.1.4}\protected@file@percent }
+\newlabel{subsec:smoothness}{{4.1.4}{125}{Smoothness Across the Frontiers}{subsection.4.1.4}{}}
+\newlabel{eq:septic}{{4.28}{125}{Smoothness Across the Frontiers}{equation.4.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}The Core Network and Exact Derivatives}{126}{subsection.4.1.5}\protected@file@percent }
+\newlabel{subsec:network}{{4.1.5}{126}{The Core Network and Exact Derivatives}{subsection.4.1.5}{}}
+\newlabel{eq:coreoutput}{{4.29}{126}{The Core Network and Exact Derivatives}{equation.4.29}{}}
+\newlabel{eq:features}{{4.30}{126}{Features}{equation.4.30}{}}
+\newlabel{eq:featuredefs}{{4.31}{126}{Features}{equation.4.31}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.6}The Objective}{127}{subsection.4.1.6}\protected@file@percent }
+\newlabel{subsec:objective}{{4.1.6}{127}{The Objective}{subsection.4.1.6}{}}
+\newlabel{eq:fitresidual}{{4.32}{127}{Market fit}{equation.4.32}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Shape}{128}{section*.38}\protected@file@percent }
+\newlabel{subsec:shape}{{4.1.6}{128}{Shape}{section*.38}{}}
+\newlabel{eq:bendrate}{{4.33}{128}{Shape}{equation.4.33}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.7}Collocation, Sampling and the Optimiser}{128}{subsection.4.1.7}\protected@file@percent }
+\newlabel{subsec:collocation}{{4.1.7}{128}{Collocation, Sampling and the Optimiser}{subsection.4.1.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.8}Hyperparameters}{129}{subsection.4.1.8}\protected@file@percent }
+\newlabel{subsec:hyper}{{4.1.8}{129}{Hyperparameters}{subsection.4.1.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.9}Diagnostics}{129}{subsection.4.1.9}\protected@file@percent }
+\newlabel{subsec:diagnostics}{{4.1.9}{129}{Diagnostics}{subsection.4.1.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Hyperparameters carrying an argument.}}{130}{table.caption.40}\protected@file@percent }
+\newlabel{tab:hyper}{{4.1}{130}{Hyperparameters carrying an argument}{table.caption.40}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Calibration to Rough Heston}{131}{section.4.2}\protected@file@percent }
+\newlabel{sec:roughcalib}{{4.2}{131}{Calibration to Rough Heston}{section.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}The quotes}{131}{subsection.4.2.1}\protected@file@percent }
+\newlabel{subsec:rhdata}{{4.2.1}{131}{The quotes}{subsection.4.2.1}{}}
+\newlabel{eq:cone}{{4.34}{131}{The quotes}{equation.4.34}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Solving the fractional Riccati}{132}{subsection.4.2.2}\protected@file@percent }
+\newlabel{subsec:riccatisolver}{{4.2.2}{132}{Solving the fractional Riccati}{subsection.4.2.2}{}}
+\newlabel{prop:noquadrature}{{4.11}{132}{Both terms of the exponent are ordinary integrals}{result.4.11}{}}
+\newlabel{eq:noquadrature}{{4.35}{132}{Both terms of the exponent are ordinary integrals}{equation.4.35}{}}
+\newlabel{eq:lewis}{{4.36}{132}{The pricing contour}{equation.4.36}{}}
+\newlabel{eq:ustab}{{4.37}{133}{Where the explicit scheme breaks, and why}{equation.4.37}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}The objective}{133}{subsection.4.2.3}\protected@file@percent }
+\newlabel{subsec:rhobjective}{{4.2.3}{133}{The objective}{subsection.4.2.3}{}}
+\newlabel{eq:rhobjective}{{4.38}{133}{The objective}{equation.4.38}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Validating the pricer}{133}{subsection.4.2.4}\protected@file@percent }
+\newlabel{subsec:rhvalidation}{{4.2.4}{133}{Validating the pricer}{subsection.4.2.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces The optimisation box. Only $\rho $ is sign-constrained; the Hurst index is free over the whole admissible range, including its classical endpoint.}}{134}{table.caption.44}\protected@file@percent }
+\newlabel{tab:rhbounds}{{4.2}{134}{The optimisation box. Only $\rho $ is sign-constrained; the Hurst index is free over the whole admissible range, including its classical endpoint}{table.caption.44}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Results}{135}{subsection.4.2.5}\protected@file@percent }
+\newlabel{subsec:rhresults}{{4.2.5}{135}{Results}{subsection.4.2.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Rough Heston calibrated to $2415$ SPX quotes inside the cone \eqref  {eq:cone}, all six parameters free. The Hurst index lands on the boundary of its admissible range.}}{135}{table.caption.45}\protected@file@percent }
+\newlabel{tab:rhfit}{{4.3}{135}{Rough Heston calibrated to $2415$ SPX quotes inside the cone \eqref {eq:cone}, all six parameters free. The Hurst index lands on the boundary of its admissible range}{table.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Rough Heston fit by maturity}}{136}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:rhsmiles}{{4.1}{136}{Rough Heston fit by maturity}{figure.caption.46}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Fit by maturity at the parameters of Table \ref {tab:rhfit}. The last two columns are the share of the objective $\Phi $ contributed by each maturity, and that maturity's share of the gap $\Phi (H{=}0.107)-\Phi (H{=}0.49)$. In volatility the error grows with maturity; weighted by the spread the order reverses, and the shortest maturity carries both a quarter of the objective and well over half of the preference for the smooth kernel.}}{136}{table.caption.47}\protected@file@percent }
+\newlabel{tab:rhpermat}{{4.4}{136}{Fit by maturity at the parameters of Table \ref {tab:rhfit}. The last two columns are the share of the objective $\Phi $ contributed by each maturity, and that maturity's share of the gap $\Phi (\Hurst {=}0.107)-\Phi (\Hurst {=}0.49)$. In volatility the error grows with maturity; weighted by the spread the order reverses, and the shortest maturity carries both a quarter of the objective and well over half of the preference for the smooth kernel}{table.caption.47}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces The objective profiled in $H$. Entries marked $^{*}$ sit on the upper bound of $\theta $. The profile is strictly monotone: every rougher kernel fits strictly worse.}}{137}{table.caption.48}\protected@file@percent }
+\newlabel{tab:rhprofile}{{4.5}{137}{The objective profiled in $\Hurst $. Entries marked $^{*}$ sit on the upper bound of $\theta $. The profile is strictly monotone: every rougher kernel fits strictly worse}{table.caption.48}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}What the surface can and cannot identify}{137}{subsection.4.2.6}\protected@file@percent }
+\newlabel{subsec:rhidentification}{{4.2.6}{137}{What the surface can and cannot identify}{subsection.4.2.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.6}{\ignorespaces The skew power law estimated over the available maturity range, applied to the market and to two calibrated models whose true Hurst indices differ by a factor of nearly five. The estimator cannot tell them apart.}}{138}{table.caption.49}\protected@file@percent }
+\newlabel{tab:rhskewexponent}{{4.6}{138}{The skew power law estimated over the available maturity range, applied to the market and to two calibrated models whose true Hurst indices differ by a factor of nearly five. The estimator cannot tell them apart}{table.caption.49}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces What the surface identifies}}{138}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:rhidentification}{{4.2}{138}{What the surface identifies}{figure.caption.50}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}The L\'evy Area of an Index Pair}{139}{section.4.3}\protected@file@percent }
+\newlabel{sec:levyresults}{{4.3}{139}{The L\'evy Area of an Index Pair}{section.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}The data}{140}{subsection.4.3.1}\protected@file@percent }
+\newlabel{subsec:levydata}{{4.3.1}{140}{The data}{subsection.4.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}The three exact identities}{140}{subsection.4.3.2}\protected@file@percent }
+\newlabel{subsec:levyidentities}{{4.3.2}{140}{The three exact identities}{subsection.4.3.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.7}{\ignorespaces The identities of Subsection \ref {subsec:levyarea}, evaluated on $2849$ daily observations of the index pair. All three are satisfied at the level of double-precision rounding.}}{141}{table.caption.51}\protected@file@percent }
+\newlabel{tab:levyidentities}{{4.7}{141}{The identities of Subsection \ref {subsec:levyarea}, evaluated on $2849$ daily observations of the index pair. All three are satisfied at the level of double-precision rounding}{table.caption.51}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}The measurement}{141}{subsection.4.3.3}\protected@file@percent }
+\newlabel{subsec:levymeasurement}{{4.3.3}{141}{The measurement}{subsection.4.3.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.8}{\ignorespaces Mean L\'evy area over non-overlapping windows of $n$ observations. ``scale'' is $\bigl  (\mathbb  {E}[(X^{1}_{0,T})^{2}]\,\mathbb  {E}[(X^{2}_{0,T})^{2}]\bigr  )^{1/2}$, which renders the third column dimensionless; the last column compares the area with the symmetric part of the same tensor.}}{141}{table.caption.52}\protected@file@percent }
+\newlabel{tab:levysync}{{4.8}{141}{Mean L\'evy area over non-overlapping windows of $n$ observations. ``scale'' is $\bigl (\E [(X^{1}_{0,\Mat })^{2}]\,\E [(X^{2}_{0,\Mat })^{2}]\bigr )^{1/2}$, which renders the third column dimensionless; the last column compares the area with the symmetric part of the same tensor}{table.caption.52}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Calibrating the instrument: a lag scan}{141}{subsection.4.3.4}\protected@file@percent }
+\newlabel{subsec:levylag}{{4.3.4}{141}{Calibrating the instrument: a lag scan}{subsection.4.3.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.9}{\ignorespaces Mean L\'evy area under an imposed lag of $\ell $ trading days, monthly windows ($n=21$, $135$ windows). The function is odd in $\ell $ and changes sign exactly at $\ell =0$.}}{142}{table.caption.53}\protected@file@percent }
+\newlabel{tab:levylag}{{4.9}{142}{Mean L\'evy area under an imposed lag of $\ell $ trading days, monthly windows ($n=21$, $135$ windows). The function is odd in $\ell $ and changes sign exactly at $\ell =0$}{table.caption.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces The L\'evy area and the lag scan}}{142}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:levylag}{{4.3}{142}{The L\'evy area and the lag scan}{figure.caption.54}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}What the experiment establishes}{143}{subsection.4.3.5}\protected@file@percent }
+\newlabel{subsec:levyconclusion}{{4.3.5}{143}{What the experiment establishes}{subsection.4.3.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Calibration to Single Names: De-Americanisation}{143}{section.4.4}\protected@file@percent }
+\newlabel{sec:deamericanisation}{{4.4}{143}{Calibration to Single Names: De-Americanisation}{section.4.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Implementation}{144}{section.4.5}\protected@file@percent }
+\newlabel{sec:implementation}{{4.5}{144}{Implementation}{section.4.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Results}{144}{section.4.6}\protected@file@percent }
+\newlabel{sec:results}{{4.6}{144}{Results}{section.4.6}{}}
+\@writefile{toc}{\contentsline {section}{Notes and references}{144}{section*.55}\protected@file@percent }
 \@setckpt{chapters/04-applications}{
-\setcounter{page}{101}
-\setcounter{equation}{0}
+\setcounter{page}{146}
+\setcounter{equation}{38}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -24,13 +140,13 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{2}
 \setcounter{chapter}{4}
-\setcounter{section}{5}
+\setcounter{section}{6}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{0}
-\setcounter{table}{0}
+\setcounter{figure}{3}
+\setcounter{table}{9}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
 \setcounter{float@type}{4}
@@ -46,7 +162,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{114}
+\setcounter{instcount}{154}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -60,7 +176,7 @@
 \setcounter{refsegment}{0}
 \setcounter{maxextratitle}{0}
 \setcounter{maxextratitleyear}{0}
-\setcounter{maxextraname}{0}
+\setcounter{maxextraname}{2}
 \setcounter{maxextradate}{0}
 \setcounter{maxextraalpha}{0}
 \setcounter{abbrvpenalty}{50}
@@ -152,8 +268,8 @@
 \setcounter{bbx:relatedcount}{0}
 \setcounter{bbx:relatedtotal}{0}
 \setcounter{section@level}{1}
-\setcounter{Item}{6}
+\setcounter{Item}{14}
 \setcounter{Hfootnote}{5}
-\setcounter{bookmark@seq@number}{61}
-\setcounter{result}{0}
+\setcounter{bookmark@seq@number}{89}
+\setcounter{result}{11}
 }

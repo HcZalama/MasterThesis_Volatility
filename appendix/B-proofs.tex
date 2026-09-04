@@ -29,7 +29,7 @@ $A_\nu$ we have $Z_{r_\nu} \geq \varepsilon$, so the submartingale property give
 Summing over $\nu$ and using disjointness bounds $\varepsilon\,\mathbb{P}(\max_\nu Z_{r_\nu}\geq\varepsilon)$
 by $\mathbb{E}[\max\{Z_T,0\}]$, uniformly in $k$. Letting $k \to \infty$ gives the claim. The
 martingale case follows by applying this to the submartingale $|X_t|$, which is one by the
-conditional Jensen inequality. \hfill $\blacksquare$
+conditional Jensen inequality. \qedfilledtext
 
 \section{Density of step processes in $L^2_{\mathrm{ad}}([0,T]\times\Omega)$}\label{app:proof:density}
 We prove Lemma \ref{lem:density} of Chapter \ref{ch:foundations}.
@@ -79,7 +79,7 @@ with Step 2 completes the proof.
 \medskip
 \noindent Adaptedness is the only delicate point throughout, and it is worth noting that each of the
 three steps preserves it for a different reason: the left-endpoint evaluation in Step 1, the backward
-averaging window in Step 2, and the deterministic truncation in Step 3. \hfill $\blacksquare$
+averaging window in Step 2, and the deterministic truncation in Step 3. \qedfilledtext
 
 \section{Continuity of the sample paths of an Itô integral}\label{app:proof:itocontinuity}
 We prove Theorem \ref{thm:itocontinuity} of Chapter \ref{ch:foundations}.
@@ -96,7 +96,7 @@ maximal inequality (Proposition \ref{prop:dooblp}) together with Itô's isometry
 \]
 Passing to a subsequence for which the right-hand side is summable, the Borel--Cantelli lemma yields
 $\sup_{t\leq T}|X^{n_k}_t - X_t| \to 0$ almost surely. A uniform limit of continuous functions is
-continuous, so almost all paths of $X$ are continuous on $[0,T]$. \hfill $\blacksquare$
+continuous, so almost all paths of $X$ are continuous on $[0,T]$. \qedfilledtext
 
 \section{The Itô integral as a limit of Riemann sums}\label{app:proof:riemannlimit}
 We prove Theorem \ref{theorem:riemannian_limit} of Chapter \ref{ch:foundations}.
@@ -108,7 +108,7 @@ the square, this integral is a sum of terms of the form
 $\mathbb{E}[f(t)^2] - 2\mathbb{E}[f(t)f(t_{i-1})] + \mathbb{E}[f(t_{i-1})^2]$, each built from the
 function $(s,t)\mapsto\mathbb{E}[f(t)f(s)]$ evaluated at points within $\lVert\mathcal{P}\rVert$ of
 the diagonal. That function is continuous by hypothesis, hence uniformly continuous on the compact
-$[0,T]^2$, so the whole expression tends to $0$ uniformly as $\lVert\mathcal{P}\rVert \to 0$. \hfill $\blacksquare$
+$[0,T]^2$, so the whole expression tends to $0$ uniformly as $\lVert\mathcal{P}\rVert \to 0$. \qedfilledtext
 
 \section{Lévy's characterisation theorem}\label{app:proof:levy}
 We prove Theorem \ref{thm:levycharacterisation} of Chapter \ref{ch:foundations}.
@@ -145,7 +145,7 @@ deterministic and equal to that of $\mathcal{N}(0,t-s)$, which is simultaneously
 independence of the increment from $\mathcal{F}_s$ and the correct Gaussian law; Proposition
 \ref{prop:independent-increments} then supplies independence of increments. The multidimensional case
 is identical, applied to $e^{iu\transp X_t}$ with the cross-variations $\langle X^i,X^j\rangle_t
-= \delta_{ij}t$ making the exponent $-\tfrac12\lVert u\rVert^2(t-s)$. \hfill $\blacksquare$
+= \delta_{ij}t$ making the exponent $-\tfrac12\lVert u\rVert^2(t-s)$. \qedfilledtext
 
 \section{Girsanov's theorem}\label{app:proof:girsanov}
 We prove Theorem \ref{girsanovtheorem} of Chapter \ref{ch:foundations}.
@@ -176,7 +176,7 @@ Finally, $\langle Z\rangle_t = \langle W\rangle_t = t$, because subtracting the 
 $\int_0^t\alpha(s)ds$ does not change the quadratic variation, and because quadratic variation is a
 pathwise limit and is therefore unaffected by the passage to the equivalent measure $\mathbb{Q}$. The
 same argument applied to $Z^2_t - t$ confirms the compensator. Lévy's theorem now identifies $Z$ as a
-$\mathbb{Q}$-Brownian motion. \hfill $\blacksquare$
+$\mathbb{Q}$-Brownian motion. \qedfilledtext
 
 \section{The sewing lemma}\label{app:proof:sewing}
 We prove the existence half of Lemma \ref{lem:sewing} of Chapter \ref{ch:roughpaths}; uniqueness was
@@ -270,7 +270,7 @@ assertion of the lemma, that $(\mathcal{I}\Xi)_{s,t} = \lim_{|\mathcal{P}|\to0}\
 Additivity is now immediate: for $s\leq u\leq t$, concatenating partitions of $[s,u]$ and of
 $[u,t]$ yields partitions of $[s,t]$ whose mesh tends to zero, and whose sums converge to
 $(\mathcal{I}\Xi)_{s,u} + (\mathcal{I}\Xi)_{u,t}$ by construction and to $(\mathcal{I}\Xi)_{s,t}$ by
-the preceding paragraph. \hfill $\blacksquare$
+the preceding paragraph. \qedfilledtext
 
 \section{Gubinelli's integration theorem}\label{app:proof:gubinelli}
 We prove Theorem \ref{thm:gubinelli} of Chapter \ref{ch:roughpaths}.
@@ -334,7 +334,7 @@ so $R^{Z}_{s,t} := Z_{s,t}-Y_sX_{s,t}$ obeys
 $|R^Z_{s,t}| \leq \lVert\Gub\rVert_{\infty}\lVert\lev\rVert_{2\alpha}|t-s|^{2\alpha} + C\,C_\Xi|t-s|^{3\alpha}$,
 which is $O(|t-s|^{2\alpha})$ since $3\alpha>2\alpha$. Hence $\lVert R^Z\rVert_{2\alpha}<\infty$ and
 $(Z,Y)\in\Ctrl{X}$, which is \eqref{eq:integraliscontrolled}. That $Z$ is itself $\alpha$-Hölder
-follows from $|Z_{s,t}| \leq |Y_s||X_{s,t}| + |R^Z_{s,t}|$. \hfill $\blacksquare$
+follows from $|Z_{s,t}| \leq |Y_s||X_{s,t}| + |R^Z_{s,t}|$. \qedfilledtext
 
 \section{Existence and uniqueness for rough differential equations}\label{app:proof:rdeexistence}
 We prove Theorem \ref{thm:rdeexistence} of Chapter \ref{ch:roughpaths}.
@@ -406,7 +406,7 @@ For global uniqueness, suppose $(\widetilde Y,\widetilde\Gub)$ is another soluti
 let $\sigma := \sup\{t : \widetilde Y = Y \text{ on } [0,t]\}$. The two agree at $\sigma$ by
 continuity, so applying Step 3 on $[\sigma,\sigma+\tau]$ --- legitimate since $\tau$ does not depend
 on the initial value $Y_\sigma$ --- forces them to agree there also, contradicting the maximality of
-$\sigma$ unless $\sigma=\Mat$. \hfill $\blacksquare$
+$\sigma$ unless $\sigma=\Mat$. \qedfilledtext
 
 \section{Continuity of the Itô--Lyons map}\label{app:proof:ult}
 We prove Theorem \ref{thm:ult} of Chapter \ref{ch:roughpaths}.
@@ -472,4 +472,85 @@ on $[0,\tau]$, which is \eqref{eq:ult} on that interval. Since $\tau$ depends on
 the initial conditions, the argument may be restarted at $\tau$ with initial values $Y_\tau$ and
 $\widetilde Y_\tau$, whose difference is already controlled by the right-hand side; after finitely
 many such steps the estimate covers $[0,\Mat]$, with a constant that has been multiplied by a fixed
-factor at each step. \hfill $\blacksquare$
+factor at each step. \qedfilledtext
+
+\section{Monotone density along a rising wing}\label{app:proof:master}
+We prove Lemma \ref{lem:master} of Chapter \ref{ch:applications}.
+
+\textbf{\textit{Proof:}} The butterfly quantity \eqref{eq:gvol} is invariant under the reflection
+$\lmon\mapsto-\lmon$, under which $\ivd{k}\mapsto-\ivd{k}$ and $\ivd{kk}\mapsto\ivd{kk}$: the product
+$\lmon\,\ivd{k}$ is unchanged, and so are the remaining two terms. It therefore suffices to treat the
+right wing, where $\lmon^{*}>0$ and $\lmon=\lmon^{*}+x$ with $x\ge0$, so that $\ivd{k}=\ivd{x}$ and
+$\ivd{kk}=\ivd{xx}$.
+
+Introduce the substitution
+\[
+  u \;=\; e^{-x/\ell}\;\in\;(0,1],
+\]
+which is a strictly decreasing bijection from $[0,\infty)$ onto $(0,1]$, with $u=1$ at $x=0$. By
+\eqref{eq:wing} and \eqref{eq:wingjet},
+\begin{equation}\label{eq:appmasterjet}
+  \ivol \;=\; \Winf-b\,u,\qquad \ivd{k}=s\,u,\qquad \ivd{kk}=-\tfrac{s}{\ell}\,u,
+  \qquad \lmon=\lmon^{*}-\ell\log u,
+\end{equation}
+where $\Winf=a+b$ and $s>0$, $b=s\ell>0$ by hypothesis. We show that each of the three terms of
+\eqref{eq:gvol} attains its minimum over $x\ge0$ at the endpoint $x=0$.
+
+\medskip
+\noindent\textbf{Step 1: the hypothesis \eqref{eq:ellcap} bounds the lift.} From \eqref{eq:sjoin},
+$s=\nskew_{0}a/\lmon^{*}$, so
+\begin{equation}\label{eq:appliftbound}
+  b \;=\; s\,\ell \;=\; \frac{\nskew_{0}\,a\,\ell}{\lmon^{*}} \;\le\; \nskew_{0}\,a\,c_{\ell}\;\le\;\nskew_{0}\,a \;<\; a,
+\end{equation}
+using $\ell\le c_{\ell}\lmon^{*}$, $c_{\ell}\le1$ and $\nskew_{0}<1$. The wing may not lift the
+volatility by more than its own level at the join. This single inequality drives Steps 2 and 3.
+
+\medskip
+\noindent\textbf{Step 2: the second and third terms.} Both are governed by the same function. Set
+\[
+  \mathcal{J}(u)\;:=\;\ivol\,\ivd{k}/s\;=\;\bigl(\Winf-bu\bigr)u\;=\;\Winf u-b u^{2},
+  \qquad u\in(0,1].
+\]
+Then $\mathcal{J}>0$ on $(0,1]$, since $\Winf-bu\ge\Winf-b=a>0$, and $\mathcal{J}'(u)=\Winf-2bu$. By
+\eqref{eq:appliftbound} we have $b<a$, hence $\Winf=a+b>2b\ge2bu$ for every $u\le1$, so $\mathcal{J}'>0$ on
+$(0,1]$: the function $\mathcal{J}$ is strictly increasing there and attains its maximum at $u=1$, where
+$\mathcal{J}(1)=\Winf-b=a$. Therefore
+\begin{equation}\label{eq:apppimax}
+  0\;<\;\mathcal{J}(u)\;\le\;\mathcal{J}(1)\;=\;a \qquad\text{for all } u\in(0,1].
+\end{equation}
+Now the second term of \eqref{eq:gvol} is
+$-\tfrac14T^{2}\ivol^{2}\ivd{k}^{2}=-\tfrac14T^{2}s^{2}\mathcal{J}(u)^{2}$, which by \eqref{eq:apppimax} is
+minimised exactly where $\mathcal{J}$ is maximal, that is at $u=1$; and the third term is
+$T\ivol\,\ivd{kk}=-\tfrac{Ts}{\ell}\mathcal{J}(u)$, which is likewise minimised at $u=1$. Since $u=1$
+corresponds to $x=0$, both terms are bounded below by their values at the join.
+
+\medskip
+\noindent\textbf{Step 3: the first term.} By \eqref{eq:appmasterjet} the normalised skew along the
+wing is
+\[
+  \nskew(x)\;=\;\frac{\lmon\,\ivd{k}}{\ivol}\;=\;\frac{s\,\bigl(\lmon^{*}+x\bigr)e^{-x/\ell}}{\ivol(x)} .
+\]
+The numerator is $s\,\mathcal{R}(x)$ with $\mathcal{R}(x)=(\lmon^{*}+x)e^{-x/\ell}$, and
+\[
+  \mathcal{R}'(x)\;=\;e^{-x/\ell}\Bigl(1-\frac{\lmon^{*}+x}{\ell}\Bigr)\;\le\;e^{-x/\ell}\Bigl(1-\frac{\lmon^{*}}{\ell}\Bigr)\;\le\;0
+  \qquad\text{for } x\ge0,
+\]
+the last inequality being exactly the hypothesis $\ell\le c_{\ell}\lmon^{*}\le\lmon^{*}$. The
+denominator $\ivol(x)=\Winf-be^{-x/\ell}$ is strictly increasing in $x$, since $b>0$. A non-increasing
+positive numerator over an increasing positive denominator is non-increasing, so $\nskew$ is
+non-increasing on $[0,\infty)$, with $\nskew(0)=\nskew_{0}$ and $\nskew\ge0$ throughout. Hence
+$0\le\nskew(x)\le\nskew_{0}<1$, and since $\nskew\mapsto(1-\nskew)^{2}$ is decreasing on $[0,1]$,
+\[
+  \bigl(1-\nskew(x)\bigr)^{2}\;\ge\;\bigl(1-\nskew_{0}\bigr)^{2}\qquad\text{for all }x\ge0 .
+\]
+
+\medskip
+\noindent\textbf{Conclusion.} Each of the three terms of \eqref{eq:gvol} is bounded below by its
+value at $x=0$, whence $g(x)\ge g(0)$ for all $x\ge0$.
+
+The hypothesis $c_{\ell}\le1$ is sharp in the following sense. At $c_{\ell}=1$, that is
+$\ell=\lmon^{*}$, one has $\mathcal{R}'(0)=0$: the first term is stationary at the join, and the argument of
+Step 3 has no slack left. For $c_{\ell}>1$ we get $\mathcal{R}'(0)=1-\lmon^{*}/\ell>0$, so $\nskew$ increases
+initially, $(1-\nskew)^{2}$ decreases, and $g(x)<g(0)$ for small $x>0$ unless the gain from Step 2
+happens to compensate. This is what the numerical sweep reported after Lemma \ref{lem:master}
+measures. \qedfilledtext

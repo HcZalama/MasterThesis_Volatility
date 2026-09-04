@@ -24,14 +24,15 @@ what it buys.
 % setting in which path regularity, filtrations and martingale properties can be discussed at all.
 
 \begin{convention*}[The symbols $\square$ and $\blacksquare$]\label{conv:blacksquare}
-A result whose \emph{statement} ends with a hollow $\square$ is quoted \textbf{without proof}, a
-reference being given in every case. A filled $\blacksquare$ closes an \emph{argument}: it marks the
+A result whose \emph{statement} ends with a hollow $\square$ is quoted \textbf{without proof}; a
+reference is given whenever the result is not entirely standard. A filled $\blacksquare$ closes an \emph{argument}: it marks the
 end of a proof, whether that proof is given in full, reduced to a sketch, or deferred to Appendix
 \ref{app:proofs}. The convention is followed throughout.
 \end{convention*}
 
-
 \section{Probabilistic Preliminaries}\label{sec:preliminaries}
+
+\subsection{Processes, filtrations and stopping times}\label{subsec:processesfiltrations}
 
 The notion of \emph{stochastic process} generalises that of a single random variable by allowing evolution in an external parameter, usually interpreted as time. To accommodate both discrete-time and continuous-time settings in a unified framework, we let \(\Tset\) denote the \textbf{index set}, representing time. Typically, \(\Tset\) is a subset of \(\R\), such as:
 \[
@@ -66,7 +67,7 @@ This formulation includes many important examples such as Markov chains, Poisson
 \begin{equation} \label{eq:radonnikodym}
 \nu(A) = \int_A f \, d\lambda.
 \end{equation}
-This function \(f\) is called the \emph{Radon--Nikodym derivative} of \(\nu\) with respect to \(\lambda\), and is denoted by $f = d\nu/d\lambda$. \hfill $\square$
+This function \(f\) is called the \emph{Radon--Nikodym derivative} of \(\nu\) with respect to \(\lambda\), and is denoted by $f = d\nu/d\lambda$. \qedopentext
 \end{theorem}
 
 % The letter $\mu$ is deliberately avoided here. From Section \ref{sec:stochasticcalculus} onwards it will denote a drift coefficient and nothing else; abstract measures are $\nu$ and $\lambda$ throughout.
@@ -79,7 +80,7 @@ Let $\nu$ be a finite \emph{signed} measure on $(\Omega,\mathcal{F})$ and $\lamb
 
 \vspace{-0.1cm}
 
-\textbf{\textit{Proof:}} Apply the Jordan decomposition $\nu = \nu^+ - \nu^-$ into mutually singular finite positive measures. Both $\nu^{\pm} \ll \lambda$, so Theorem \ref{thm:radon-nikodym} yields non-negative densities $f^{\pm}$, and $f := f^+ - f^-$ works; integrability follows from $\int (f^+ + f^-)\,d\lambda = |\nu|(\Omega) < \infty$. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} Apply the Jordan decomposition $\nu = \nu^+ - \nu^-$ into mutually singular finite positive measures. Both $\nu^{\pm} \ll \lambda$, so Theorem \ref{thm:radon-nikodym} yields non-negative densities $f^{\pm}$, and $f := f^+ - f^-$ works; integrability follows from $\int (f^+ + f^-)\,d\lambda = |\nu|(\Omega) < \infty$. \qedfilledtext
 
 As a consequence, if \(X \in L^1(\Omega, \mathcal{F}, \PP)\) (that is, $\int |X| \, d\PP$ is finite) and \(\mathcal{G} \subseteq \mathcal{F}\) is a sub-\(\sigma\)-algebra, the \emph{conditional expectation} of \(X\) given \(\mathcal{G}\), denoted \(\E[X \mid \mathcal{G}]\), is the unique (up to \(\PP\)-a.e. equality) \(\mathcal{G}\)-measurable function satisfying
 \begin{equation}\label{eq:condexpdefining}
@@ -93,8 +94,6 @@ That such a function exists at all is exactly an application of the corollary ju
 \nu(G) := \int_G X \, d\PP, \quad \text{for } G \in \mathcal{G}.
 \end{equation}
 Since \(X\) is integrable, \(\nu\) is a finite \emph{signed} measure on \((\Omega, \mathcal{G})\), and it is absolutely continuous with respect to \(\PP|_{\mathcal{G}}\), the restriction of \(\PP\) to \(\mathcal{G}\). By Corollary \ref{cor:radon-nikodym-signed} it therefore admits a \(\mathcal{G}\)-measurable density with respect to \(\PP|_{\mathcal{G}}\), and that density is precisely the object characterised by \eqref{eq:condexpdefining}.
-
-
 
 Conditional expectation inherits the properties one would expect of an averaging operator: it
 preserves expectations and order, it is linear, it acts as the identity on $\mathcal{G}$-measurable
@@ -120,7 +119,7 @@ Let $\mathcal{G} \subseteq \mathcal{F}$ be a sub-$\sigma$-algebra. Then:
         \E\bigl[(X - \E[X\mid\mathcal{G}])\,Z\bigr] = 0 \quad \text{for every } Z \in L^2(\Omega,\mathcal{G},\PP).
     \]
 \end{itemize}
-\hfill $\square$
+\qedopen
 \end{proposition}
 
 % The numbering is retained from Proposition \ref{prop:condexpproperties} for ease of reference.
@@ -207,11 +206,11 @@ $\{\tau < t + 1/n\} \in \mathcal{F}_{t+1/n}$, and since $\{\tau \leq t\} = \bigc
 \[
 \{\tau \leq t\} \;\in\; \bigcap_{n \geq 1}\mathcal{F}_{t+1/n} \;=\; \mathcal{F}_{t^+} \;=\; \mathcal{F}_t,
 \]
-the last equality being exactly the right-continuity \eqref{eq:rightcontinuous}. \hfill $\blacksquare$
+the last equality being exactly the right-continuity \eqref{eq:rightcontinuous}. \qedfilledtext
 
 \medskip
 
-Note that the converse consumes right-continuity in full, and fails without it.
+Note that the converse uses right-continuity essentially, and fails without it.
 
 % This is the first of several places where the usual conditions of Definition
 % \ref{def:usualconditions} do real work rather than merely tidy up.
@@ -227,7 +226,7 @@ Note that the converse consumes right-continuity in full, and fails without it.
     \end{equation}
     whereas $\{\tau_n < 0\} = \emptyset \in \mathcal{F}_0$. By Proposition \ref{prop:stoppingtimechar}, $\tau_n$ is a stopping time.
 
-     The sequence $(\tau_n)_{n\in\N}$ just constructed is the \emph{localising sequence} that will allow us, in Subsection \ref{subsec:itointegral}, to define the stochastic integral for integrands that are square-integrable pathwise but not in expectation; it is the prototype of every localisation argument in this chapter.
+     The sequence $(\tau_n)_{n\in\N}$ just constructed is a \emph{localising sequence}, and it is the prototype of every localisation argument in this chapter: one stops the process at the first time it leaves a bounded region, works in the well-behaved class available there, and lets the region exhaust the space. It is used in exactly this way in the proof of Theorem \ref{thm:sdeexistence}.
 \end{example}
 
 \begin{example}[First hitting time]\label{example:hittingtime}
@@ -235,7 +234,7 @@ Note that the converse consumes right-continuity in full, and fails without it.
     \begin{equation}\label{eq:hittingtime}
         \tau_U(\omega) = \inf\{t>0 : X_t(\omega) \in U\}
     \end{equation}
-    is a stopping time. Indeed, since $U$ is open and $X$ is right-continuous, the path enters $U$ strictly before $t$ if and only if it lies in $U$ at some \emph{rational} time strictly before $t$: if $X_r \in U$ for some $r<t$, right-continuity places $X$ in the open set $U$ throughout a nonempty interval $[r,r+\epsilon)$, which contains a rational. Hence
+    is a stopping time. Indeed, since $U$ is open and $X$ is right-continuous, the path enters $U$ strictly before $t$ if and only if it lies in $U$ at some \emph{rational} time strictly before $t$: if $X_r \in U$ for some $r<t$, right-continuity places $X$ in the open set $U$ throughout a nonempty interval $[r,r+\varepsilon)$, which contains a rational. Hence
     \begin{equation}
         \{\tau_U < t\} = \bigcup_{\substack{0<r<t \\ r \in \mathbb{Q}}} \{X_r \in U\} \;\in\; \mathcal{F}_t ,
     \end{equation}
@@ -268,9 +267,9 @@ f_X(x) = \frac{1}{2\pi} \int_{\R} e^{-i u x} \charf_X(u) \, du.
 \qedopen
 \end{theorem}
 
-In the general case, without assuming a density, the distribution function $F_X$ can still be recovered via the \emph{Lévy inversion formula}: for any $\alpha < \beta$ that are \emph{continuity points} of $F_X$,
+In the general case, without assuming a density, the distribution function $F_X$ can still be recovered via the \emph{Lévy inversion formula}: for any $a < b$ that are \emph{continuity points} of $F_X$,
 \begin{equation}\label{levyInversionFormula}
-F_X(\beta) - F_X(\alpha) = \lim_{R \to \infty} \frac{1}{2\pi} \int_{-R}^R \frac{e^{-i \alpha u} - e^{-i \beta u}}{i u} \, \charf_X(u) \, du.
+F_X(b) - F_X(a) = \lim_{R \to \infty} \frac{1}{2\pi} \int_{-R}^R \frac{e^{-i a u} - e^{-i b u}}{i u} \, \charf_X(u) \, du.
 \end{equation}
 The restriction to continuity points is necessary and not a technicality: at a jump of $F_X$ the right-hand side converges to the average of the left and right limits rather than to $F_X$ itself. Since $F_X$ is monotone it has at most countably many discontinuities, so continuity points are dense and the formula determines $F_X$ everywhere by right-continuity.
 
@@ -280,7 +279,7 @@ We deduce that if two random variables $X$ and $Y$ have the same characteristic 
 Let $\{X_n\}_{n \in \N}$ be a sequence of random variables with characteristic functions $\charf_{X_n}$.
 \begin{itemize}
   \item If $X_n \xrightarrow{d} X$ for some random variable $X$, then $\charf_{X_n}(u) \to \charf_X(u)$ for every $u \in \R$.
-  \item Conversely, suppose $\charf_{X_n}(u) \to \charf(u)$ for every $u \in \R$, where $\charf : \R\to\Cx$ is \emph{some} function continuous at $u=0$. Then $\charf$ is the characteristic function of a random variable $X$, and $X_n \xrightarrow{d} X$. \hfill $\square$
+  \item Conversely, suppose $\charf_{X_n}(u) \to \charf(u)$ for every $u \in \R$, where $\charf : \R\to\Cx$ is \emph{some} function continuous at $u=0$. Then $\charf$ is the characteristic function of a random variable $X$, and $X_n \xrightarrow{d} X$. \qedopentext
 \end{itemize}
 \end{theorem}
 
@@ -299,7 +298,7 @@ f_X(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2
 Then $X$ is said to be normally distributed with mean $\mu$ and variance $\sigma^2$. Thus, a normal distribution is characterised by its first two moments.
 \end{example}
 
-The normal distribution is fundamental in probability theory and statistics. It appears as the limiting distribution in the Central Limit Theorem and models many naturally occurring phenomena. Its characteristic function adopts the form
+The normal distribution is fundamental in probability theory and statistics. It appears as the limiting distribution in the Central Limit Theorem and models many naturally occurring phenomena. Its characteristic function takes the form
 \begin{equation}
 \charf_X(u) = \exp\left( i u \mu - \tfrac{1}{2} \sigma^2 u^2 \right).
 \end{equation}
@@ -323,7 +322,7 @@ characteristic function is
 
 The characteristic function $\charf_X$ of \eqref{eq:mvncharfn} extends to an entire analytic function on $\mathbb{C}^d$. Moreover, a sequence of random vectors $X_n \sim \Normal_d(\mu_n, \Sigma_n)$ converges in distribution to $\Normal_d(\mu, \Sigma)$ if and only if $\mu_n \to \mu$ in $\R^d$ and $\Sigma_n \to \Sigma$ entrywise.
 
-Any symmetric positive semi-definite matrix $\Sigma$ admits a matrix factor $\Sigma = L L^{\top}$ (e.g., via Cholesky or spectral decomposition), yielding the representation $X \stackrel{d}{=} \mu + L Z$ for $Z \sim \mathcal{N}_d(0, I_d)$. What sets the multivariate case apart from 1D is spatial geometry: $L$ acts as an anisotropic scaling and rotation, deforming standard spherical contours into oriented ellipsoids therefore introducing directional cross-correlations.
+Any symmetric positive semi-definite matrix $\Sigma$ admits a matrix factor $\Sigma = L L^{\top}$ (e.g., via Cholesky or spectral decomposition), yielding the representation $X \stackrel{d}{=} \mu + L Z$ for $Z \sim \mathcal{N}_d(0, I_d)$. What sets the multivariate case apart from the one-dimensional one is geometry: $L$ acts as an anisotropic scaling followed by a rotation, deforming the spherical contours of $Z$ into oriented ellipsoids and thereby introducing directional cross-correlations.
 
 The following are easily verified through Theorem \ref{theorem:LevyContinuity} (or by evaluating characteristic functions directly via \eqref{eq:mvncharfn}):
 
@@ -342,38 +341,19 @@ The following are easily verified through Theorem \ref{theorem:LevyContinuity} (
 \end{itemize}
 
 \begin{remark}[Normal marginals do not make a normal vector]\label{rem:gaussiantraps}
-Let $X \sim \mathcal{N}(0,1)$ and let $\varepsilon$ be independent of $X$ with $\mathbb{P}(\varepsilon = 1) = \mathbb{P}(\varepsilon = -1) = \tfrac{1}{2}$. Put $Y := \varepsilon X$. Conditioning on $\varepsilon$ shows at once that $Y \sim \mathcal{N}(0,1)$, and
+Let $X \sim \mathcal{N}(0,1)$ and let $\xi$ be a random sign independent of $X$, so that $\mathbb{P}(\xi = 1) = \mathbb{P}(\xi = -1) = \tfrac{1}{2}$. Put $Y := \xi X$. Conditioning on $\xi$ shows at once that $Y \sim \mathcal{N}(0,1)$, and
 \[
-\mathbb{E}[XY] = \mathbb{E}[\varepsilon]\,\mathbb{E}[X^2] = 0,
+\mathbb{E}[XY] = \mathbb{E}[\xi]\,\mathbb{E}[X^2] = 0,
 \]
-so $X$ and $Y$ are uncorrelated standard normal variables. They are very far from independent: $|X| = |Y|$ almost surely. Moreover, the sum $X + Y = (1+\varepsilon)X$ vanishes with probability $\tfrac{1}{2}$, hence is not normal at all.
+so $X$ and $Y$ are uncorrelated standard normal variables. They are very far from independent: $|X| = |Y|$ almost surely. Moreover, the sum $X + Y = (1+\xi)X$ vanishes with probability $\tfrac{1}{2}$, hence is not normal at all.
 
-The moral is that ``normal'' is a property of a \emph{joint law on $\mathbb{R}^d$}, not a property of a list of marginals. The pair $(X,Y)$ above has normal marginals on $\mathbb{R}$, but the vector $(X,Y)^{\top}$ is not multivariate normal in $\mathbb{R}^2$ in the sense of Example \ref{example:multivariatenormal}, and the standard linear-combination and independence properties fail for it. Whenever we invoke Gaussianity for several variables at once---as we shall constantly do for the increments of Brownian motion and for the driving noises of the multi-factor models of Section \ref{sec:othermodels}---it is strictly joint normality that is meant.
+The moral is that ``normal'' is a property of a \emph{joint law on $\mathbb{R}^d$}, not a property of a list of marginals. The pair $(X,Y)$ above has normal marginals on $\mathbb{R}$, but the vector $(X,Y)^{\top}$ is not multivariate normal in $\mathbb{R}^2$ in the sense of Example \ref{example:multivariatenormal}, and the standard linear-combination and independence properties fail for it. Whenever we invoke Gaussianity for several variables at once --- as we shall constantly do for the increments of Brownian motion and for the driving noises of the multi-factor models of Section \ref{sec:othermodels} --- it is strictly joint normality that is meant.
 \end{remark}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 The normal distribution owes its central place to the following result, which we state in a weak form:
 
 \begin{theorem}[Central Limit Theorem]\label{thm:clt}
-    Let $\{X_n\}_{n=1}^\infty$ be independent, identically distributed (\emph{i.i.d.}) random variables  with finite mean $\mu$ and variance $\sigma^2 > 0$. Then
+    Let $\{X_n\}_{n=1}^\infty$ be independent, identically distributed (\emph{i.i.d.}) random variables with finite mean $\mu$ and variance $\sigma^2 > 0$. Then
     \begin{equation}\label{eq:clt}
     S_n := \frac{\sum_{k=1}^n X_k - n\mu}{\sigma \sqrt{n}} \xrightarrow{d} \Normal(0,1).
     \end{equation}
@@ -406,8 +386,7 @@ $\charf_{S_n}(u) \to e^{-u^2/2}$ for every $u \in \R$.
 
 The limit is continuous at the origin, so Theorem \ref{theorem:LevyContinuity} applies and
 $S_n$ converges in distribution to the law with characteristic function $e^{-u^2/2}$, which is
-$\Normal(0,1)$. \hfill $\blacksquare$
-
+$\Normal(0,1)$. \qedfilledtext
 
 % \noindent Observe where the hypotheses enter. Finiteness of the variance is what licenses the
 % second-order expansion \eqref{eq:clttaylor}, and it is the only place the assumption is used;
@@ -415,8 +394,6 @@ $\Normal(0,1)$. \hfill $\blacksquare$
 % first two moments. Note also that the argument never assumes in advance that $e^{-u^2/2}$ is a
 % characteristic function --- that it is one is supplied by Lévy's theorem, which is exactly the form
 % of the statement discussed after Theorem \ref{theorem:LevyContinuity}.
-
-
 
 \begin{theorem}[Cramér--Wold device]\label{thm:cramerwold}
 Let $X_n, X$ be $\R^d$-valued random vectors. Then, the limit $X_n \xrightarrow{d} X$ holds if and only if
@@ -426,7 +403,9 @@ $a\transp X_n \xrightarrow{d} a\transp X$ for every $a \in \R^d$.
 The proof is immediate from Theorem \ref{theorem:LevyContinuity}: the characteristic function of
 $a\transp X_n$ evaluated at $1$ is $\charf_{X_n}(a)$, so convergence of all one-dimensional
 projections is precisely pointwise convergence of $\charf_{X_n}$, and the limit is continuous at the
-origin because it is a characteristic function. Combining this with the one-dimensional Central Limit
+origin because it is a characteristic function. \qedfilledtext
+
+Combining this with the one-dimensional Central Limit
 Theorem gives the form we shall use.
 
 \begin{corollary}[Multivariate Central Limit Theorem]\label{cor:multivariateclt}
@@ -443,7 +422,7 @@ Theorem \ref{thm:clt} gives $n^{-1/2}\sum_k a\transp(X_k-\mu) \xrightarrow{d} \N
 Example \ref{example:multivariatenormal} that limit is the law of $a\transp Z$ for
 $Z \sim \Normal_d(0,\Sigma)$. Since $a$ was arbitrary, Theorem \ref{thm:cramerwold} yields
 \eqref{eq:multivariateclt}. The degenerate case $a\transp\Sigma a = 0$ is included, the limit then
-being the constant $0$. \hfill $\blacksquare$
+being the constant $0$. \qedfilledtext
 
 For a multivariate normal vector (and, as Remark \ref{rem:gaussiantraps} showed, only then) uncorrelatedness does imply independence. Indeed, if $\Sigma$ is block-diagonal then \eqref{eq:mvncharfn} factorises as a product of the characteristic functions of the corresponding sub-vectors, which is exactly independence.
 
@@ -482,7 +461,6 @@ The lesson is one we shall meet again in Chapter \ref{ch:roughpaths}: knowing ev
 We present two more elementary processes.
 
 \begin{example}[Random walk and Poisson process]\label{example:randomwalk}
-
 
 i) Let $\{\xi_n\}$ be i.i.d.\ with $\PP(\xi_n = 1) = \PP(\xi_n=-1)=\tfrac12$. The
 \textbf{simple symmetric random walk} is $X_0 := 0$, $X_n := \sum_{k=1}^n \xi_k$: a discrete-time,
@@ -533,7 +511,7 @@ In the infinite-state setting the dynamics are instead described by operators ac
 A martingale is a process whose expected future value, conditional on everything observed so far, is its present value: a fair game. Martingales are central to the study of stochastic processes, and two weakenings of the notion are needed alongside it.
 
 \begin{definition}[Martingale] 
-    Let $X_t$ be a stochastic process, adapted to a given filtration $\mathcal{F}_t$. We say it is a \textbf{martingale} provided:
+    Let $X_t$ be a stochastic process, adapted to a given filtration $\mathcal{F}_t$. We say it is a \textbf{martingale} if:
     \begin{itemize}
         \item $\E[|X_t|]<\infty$ for all $t.$
         \item $X_s = \E[X_t | \mathcal{F}_s]$ for $s<t.$
@@ -550,7 +528,7 @@ The following result will be useful when constructing stochastic processes from 
     $$
     In particular, for a right-continuous martingale $X$, $\PP(\sup_{0\leq t\leq T} |X_t| \geq \varepsilon) \leq \E[|X_T|]/\varepsilon.$
 \end{proposition}
-\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:doobmaximal}; see also \cite[Thm.\ 4.5.1]{kuo2006}. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:doobmaximal}; see also \cite[Thm.\ 4.5.1]{kuo2006}. \qedfilledtext
 
 The bound is in terms of the \emph{terminal} value $X_T$, not of a running $X_t$; this is the whole content of the inequality, since it converts information at a single time into control of the entire path. For the $L^2$ theory of the Itô integral we shall need the following stronger, $L^p$ form, which is proved by integrating the tail estimate above.
 
@@ -559,11 +537,10 @@ Let $X$ be a right-continuous martingale and let $p > 1$. Then
 \[
 \E\Bigl[\sup_{0 \leq t \leq T}|X_t|^p\Bigr] \leq \left(\frac{p}{p-1}\right)^{p} \E\bigl[|X_T|^p\bigr].
 \]
-In particular, for $p=2$, $\E\bigl[\sup_{t\leq T}|X_t|^2\bigr] \leq 4\,\E[|X_T|^2]$. \hfill $\square$
+In particular, for $p=2$, $\E\bigl[\sup_{t\leq T}|X_t|^2\bigr] \leq 4\,\E[|X_T|^2]$. \qedopentext
 \end{proposition}
 
 The case $p=2$ is the one we shall use repeatedly. It says that for a square-integrable martingale, controlling the terminal second moment controls the second moment of the whole trajectory --- which is exactly what is needed to upgrade convergence of the Itô integral in $L^2(\Omega)$, at each fixed time, to uniform convergence along a subsequence, and hence to continuity of sample paths (Theorem \ref{thm:itocontinuity}).
-
 
 The martingale property is stated at deterministic times, but
 localisation in Section \ref{sec:stochasticcalculus} involves evaluating processes at \emph{random} times. For this 
@@ -602,7 +579,7 @@ holds ---
 \end{equation}
 In particular, taking $\tau_1 \equiv 0$, $\E[X_{\tau_2}] = \E[X_0]$. The corresponding statements
 with $=$ replaced by $\geq$ or $\leq$ hold for sub- and supermartingales respectively.
-\hfill $\square$
+\qedopentext
 \end{theorem}
 
 Equation \eqref{eq:optionalstopping} is the assertion that a martingale remains a martingale when
@@ -637,24 +614,29 @@ stopping never destroys the martingale property, and only evaluation at an unbou
 can. This is the mechanism behind localisation, and Definition \ref{def:localmartingale} below is
 built on it. Second, the sub- and supermartingale forms are the ones that carry the financial
 content: applied to a discounted option payoff in Subsection \ref{subsec:american} of the next
-chapter, the submartingale inequality is precisely the statement that early exercise cannot pay.
+chapter, the submartingale form of \eqref{eq:optionalstopping} is precisely the statement that early
+exercise cannot pay.
 
 That they do genuine work is best seen from an example, and the example is one we shall have
 occasion to recall in Chapter \ref{ch:finance}. Let $W$ be a Brownian motion, let $a>0$, and let
-\[
-\tau_a = \inf\{t \geq 0 : W_t = a\} .
-\]
-This stopping time is finite almost surely: by the reflection principle proved below (Theorem
+\begin{equation}\label{eq:taua}
+\tau_a := \inf\{t \geq 0 : W_t > a\} ,
+\end{equation}
+which is a stopping time by Example \ref{example:hittingtime}, the set $(a,\infty)$ being open.
+It is finite almost surely: by the reflection principle proved below (Theorem
 \ref{thm:reflection}), $\PP(\tau_a \leq t) = \PP(|W_t| > a)$, and $|W_t|$ has the law of
 $\sqrt{t}\,|Z|$ with $Z \sim \Normal(0,1)$, so the right-hand side tends to $1$ as $t \to \infty$.
-But the path sits at the level $a$ at the moment it stops, so $W_{\tau_a} = a$ identically, and
+The paths being continuous, $W$ cannot pass the level $a$ without first touching it, so
+$W_{\tau_a} = a$ almost surely, and
 therefore
 \[
 \E\bigl[W_{\tau_a}\bigr] = a \;\neq\; 0 \;=\; \E[W_0] .
 \]
-Equation \eqref{eq:optionalstopping} fails outright. Nothing is wrong with the theorem: $\tau_a$ is
-unbounded, so i) does not apply, and the stopped family $\{W_{t\wedge\tau_a}\}_{t\geq0}$ is not
-uniformly integrable, so neither does ii). The conclusion is genuinely lost without a hypothesis of
+Equation \eqref{eq:optionalstopping} fails outright. Nothing is wrong with the theorem: applied to
+$X = W$ with $\tau_1 \equiv 0$ and $\tau_2 = \tau_a$, none of its hypotheses holds. The time
+$\tau_a$ is unbounded, so i) fails; and $W$ is not uniformly integrable on $[0,\infty)$, since
+$|W_t|$ has the law of $\sqrt{t}\,|Z|$ and its tail contribution grows with $t$, so ii) fails and
+with it the stronger iii). The conclusion is genuinely lost without a hypothesis of
 this kind --- and this is precisely the phenomenon that a finite horizon $[0,T]$ conceals, since
 there every stopping time is bounded by $T$ and i) holds for free.
 
@@ -679,10 +661,6 @@ strategies is the whole purpose of the admissibility constraint of Definition \r
 % however long is necessary to be up by one unit does indeed win with certainty, and it is not an 
 % arbitrage only because executing it may require unbounded losses along the way. That is precisely 
 % what the admissibility constraint of Definition \ref{def:admissible} will forbid.
-
-
-
-
 
 \noindent
 The notion of a martingale is often too restrictive, particularly when considering processes such as stochastic exponentials or certain diffusion models. A relaxation is therefore introduced.
@@ -732,8 +710,7 @@ provided this limit exists, so that $[f]_t = [f,f]_t$.
 
 Two cautions are in order. First, the limit in \eqref{eq:qvdef} need not exist for an arbitrary $f$. Second, for a \emph{stochastic} process the sums in \eqref{eq:qvdef} are random variables, and the limit must be specified as a limit of random variables. We shall always understand it in $L^2(\Omega)$, which for our purposes is both the easiest to obtain and strong enough to imply convergence in probability, and hence almost sure convergence along a subsequence. 
 
-
- If $f$ is continuously differentiable, then $|f(t_k)-f(t_{k-1})| \leq C\,(t_k - t_{k-1})$ and the sum is bounded by $C^2 \lVert\mathcal{P}\rVert \, t \to 0$: smooth functions have zero quadratic variation. The same computation applies to any continuous function of bounded variation. A non-zero quadratic variation is therefore a certificate of irregularity, and Proposition \ref{prop:bm-properties}(e) below will assert that Brownian motion carries exactly such a certificate. Quadratic variation acts as a measure of the ``roughness'' of the path. We will see that, for Brownian Motion, $[W]_t = t$. Should we then write $dW_t \approx \sqrt{dt}$? As a mnemonic, yes: this is exactly the entry $dW_t\,dW_t = dt$ of the It\^o table of Table \ref{tab:ItoTableScalar}, and Subsection \ref{subsec:itointegral} onwards is the disciplined version of the guess.
+ If $f$ is continuously differentiable, then $|f(t_k)-f(t_{k-1})| \leq C\,(t_k - t_{k-1})$ and the sum is bounded by $C^2 \lVert\mathcal{P}\rVert \, t \to 0$: smooth functions have zero quadratic variation. The conclusion holds more generally for any continuous $f$ of bounded variation, by a different route: bounding one factor of each square by the largest increment gives $\sum_k (f(t_k)-f(t_{k-1}))^2 \leq \bigl(\max_k |f(t_k)-f(t_{k-1})|\bigr)\,V_1(f)_t$, and uniform continuity on $[0,t]$ sends the maximum to $0$ while $V_1(f)_t$ stays finite. This is the estimate \eqref{eq:qvtvbound} that Proposition \ref{prop:bmunboundedvariation} will run in reverse. A non-zero quadratic variation is therefore a certificate of irregularity, and Proposition \ref{prop:bm-properties}(e) below will assert that Brownian motion carries exactly such a certificate. Quadratic variation acts as a measure of the ``roughness'' of the path. We will see that, for Brownian motion, $[W]_t = t$. Should we then write $dW_t \approx \sqrt{dt}$? As a mnemonic, yes: this is exactly the entry $dW_t\,dW_t = dt$ of the It\^o table of Table \ref{tab:ItoTableScalar}, and Subsection \ref{subsec:itointegral} onwards is the disciplined version of the guess.
 
 There is a second notion of quadratic variation, obtained not by refining partitions but by
 subtracting from $M^2$ its martingale part, and it is the one the theory will actually run on. It is
@@ -799,13 +776,11 @@ The distinction between $[M]$ and $\langle M\rangle$ is genuine for processes wi
 two differ by the accumulated squared jumps;\footnote{For the compensated Poisson process
 $M_t = \Nt_t - \lambda t$ one has $[M]_t = \Nt_t$, which is random, while $\langle M\rangle_t = \lambda t$
 is deterministic: every jump of $\Nt$ has size $1$, so each contributes $1$ to $[M]$.} for the continuous processes of this dissertation it
-is empty, and we shall write $\langle M \rangle$ throughout. Quadratic covariation is what gives 
+is empty. We therefore use the two notations interchangeably, writing $[M]$ where the pathwise limit
+over partitions is the object in view and $\langle M\rangle$ where the compensator is. Quadratic covariation is what gives
 meaning to the off-diagonal entries $\rho_{ij}\,dt$ of the multiplication table in Subsection 
 \ref{subsec:multidimensional}, and it is the object that the correlation parameter of a stochastic 
 volatility model actually controls.
-
-
-
 
 \noindent
 Finally, there is another related concept, broad enough to serve as a class of \textit{good integrators}. In particular, it extends the role played by Brownian motion as a canonical integrator, while retaining enough structure to allow a general theory of stochastic calculus.
@@ -830,7 +805,6 @@ through with $\int_0^T \E[f^2]\,dt$ replaced throughout by
 $\E\int_0^T f^2\,d\qv{M}_t$, the compensator of \eqref{eq:compensatorannounce}; localisation then
 removes the integrability hypotheses. We do not carry this out, and shall integrate only against
 Brownian motion.
-
 
 Granting it, a semimartingale is precisely a process that can be integrated against by splitting the 
 work between deterministic analysis and probability, and the Bichteler--Dellacherie theorem makes 
@@ -889,10 +863,6 @@ A stochastic process \(W : \R^+ \times \Omega \to \R\) is called a
 \end{itemize}
 \end{definition}
 
-
-
-
-
 \begin{proposition} \label{prop:bm-properties}
 Let \((W_t)_{t \geq 0}\) be a Brownian motion. Then:
 \begin{itemize}
@@ -906,12 +876,13 @@ Let \((W_t)_{t \geq 0}\) be a Brownian motion. Then:
         Y(t) = W(t+t_0) - W(t_0)
     \end{equation}
     is also a Brownian motion.
-    \item[c)] For any \(\lambda > 0\), the process
+    \item[c)] For any \(c > 0\), the process
     \begin{equation}
-        Z(t) = \frac{1}{\sqrt{\lambda}} W(\lambda t)
+        Z(t) = \frac{1}{\sqrt{c}} W(c\,t)
     \end{equation}
     is also a Brownian motion.
-    \item[d)] Brownian motion is both a Markov process and a martingale. 
+    \item[d)] With respect to its own natural filtration $\FiltW$, Brownian motion is both a Markov
+    process and a martingale.
     \item[e)] The quadratic variation of \(W\) over \([0,t]\) exists and equals
     \begin{equation}\label{eq:bmqv}
         [W]_t = t \qquad \text{the limit being taken in } L^2(\Omega).
@@ -934,11 +905,21 @@ $Y_t - Y_s = W_{t+t_0} - W_{s+t_0} \sim \Normal(0,t-s)$, and increments of $Y$ o
 intervals are increments of $W$ over disjoint intervals, hence independent.
 
 c) Again $Z_0=0$ and the paths are continuous. For $s<t$,
-$Z_t - Z_s = \lambda^{-1/2}(W_{\lambda t} - W_{\lambda s})$ is normal with mean $0$ and variance
-$\lambda^{-1}(\lambda t - \lambda s) = t-s$; independence of increments is inherited from $W$ because
-$s \mapsto \lambda s$ preserves disjointness of intervals.
+$Z_t - Z_s = c^{-1/2}(W_{c t} - W_{c s})$ is normal with mean $0$ and variance
+$c^{-1}(c t - c s) = t-s$; independence of increments is inherited from $W$ because
+$s \mapsto c s$ preserves disjointness of intervals.
 
-d) Integrability is clear from a). For $s<t$, using independence of $W_t-W_s$ from $\mathcal{F}_s$
+d) Write $\mathcal{F}_s := \mathcal{F}^W_s = \sigma(W_u : u \leq s)$. One step has to be taken
+first, since condition iv) of Definition \ref{def:Brownian-motion} asserts independence of the
+increments \emph{from one another}, and what is needed here is independence of $W_t - W_s$ from the
+whole of $\mathcal{F}^W_s$. The two are the same statement: the sets
+$\{W_{u_1}\in A_1,\dots,W_{u_k}\in A_k\}$ with $u_1<\cdots<u_k\leq s$ form a $\pi$-system generating
+$\mathcal{F}^W_s$, each such set is described by the increments up to time $s$, and independence
+verified on a generating $\pi$-system extends to the $\sigma$-algebra it generates. It is exactly
+this step that makes every Brownian motion a Brownian motion for its own natural filtration, as
+recorded after Definition \ref{def:filtbm} below.
+
+Granting it, integrability is clear from a). For $s<t$, using independence of $W_t-W_s$ from $\mathcal{F}_s$
 and $\mathcal{F}_s$-measurability of $W_s$,
 \[
 \E[W_t \mid \mathcal{F}_s] = \E[W_t - W_s \mid \mathcal{F}_s] + \E[W_s\mid\mathcal{F}_s]
@@ -968,7 +949,7 @@ and conditioning,
 \[
 \E[W_t^2 \mid \mathcal{F}_s] = (t-s) + 2W_s\cdot 0 + W_s^2,
 \]
-so $\E[W_t^2 - t \mid \mathcal{F}_s] = W_s^2 - s$. \hfill $\blacksquare$
+so $\E[W_t^2 - t \mid \mathcal{F}_s] = W_s^2 - s$. \qedfilledtext
 
 \medskip
 
@@ -1004,7 +985,7 @@ $\alpha, \beta, C > 0$ with
 Then $X$ admits a continuous modification $\tilde{X}$. Moreover, the paths of $\tilde{X}$ are
 almost surely locally $\gamma$-Hölder continuous for every $\gamma \in (0,\beta/\alpha)$; see
 \cite[Thm.\ 2.2.8]{karatzasshreve1991}.
-\hfill $\square$
+\qedopentext
 \end{theorem}
 
 Applied to Brownian motion the criterion is immediate. Since $W_t - W_s \sim \Normal(0,t-s)$, 
@@ -1014,7 +995,6 @@ modification therefore exists, which is what was needed; and the Hölder conclus
 exponents $\gamma < (m-1)/2m$, which as $m \to \infty$ approach $1/2$ from below but never reach 
 it. That the supremum is exactly $1/2$, and the fact that it is not attained, is the subject of the next 
 subsection.
-
 
 \begin{remark}[Modification versus indistinguishability]\label{rem:modification}
 What Theorem \ref{thm:kolmogorovcontinuity} produces is a process agreeing with $X$ at each fixed
@@ -1037,8 +1017,6 @@ the same finite-dimensional distributions and therefore retains i), iii) and iv)
 ii). Since the criterion is stated on a compact interval, one applies it on each $[0,n]$ and patches,
 the modifications so obtained agreeing almost surely on overlaps. Existence is settled. We now give a more constructive approach.
 
-
-
 Turning back to Example
 \ref{example:randomwalk} on random walk, the following result shows how a piecewise linear interpolation of a rescaled random walk converges to Brownian motion.
 
@@ -1051,7 +1029,7 @@ W^{(n)}_t := \frac{1}{\sqrt{n}}\Bigl( X_{\lfloor nt \rfloor} + (nt - \lfloor nt 
 \end{equation}
 Then $W^{(n)} \xrightarrow{d} W$ as $n \to \infty$, where the convergence is in distribution on the 
 space $C[0,T]$ of continuous functions with the uniform topology, and $W$ is a Brownian motion. 
-\hfill $\square$
+\qedopentext
 \end{theorem}
 
 This gives a constructive route to Brownian motion. The scaling in \eqref{eq:donskerscaling} is the whole content of the theorem: space is scaled down
@@ -1088,7 +1066,7 @@ Borel $g_1,\dots,g_n$ this gives
 = \prod_{k=1}^n \E\bigl[g_k(\Delta_k)\bigr],
 \]
 the last equality by the induction hypothesis. Since this holds for all such $g_k$, the increments
-are independent. \hfill $\blacksquare$
+are independent. \qedfilledtext
 
 \medskip
 
@@ -1118,7 +1096,6 @@ The distinction is not idle: Girsanov's theorem (Theorem \ref{girsanovtheorem}) 
 while keeping the filtration fixed, and its conclusion is exactly that a certain process is a 
 $\Filt$-Brownian motion under the new measure.
 
-
 % One consequence of the Markov property is worth recording in full, both because it is the
 % cleanest illustration of what independence of increments buys and because it is the only tool we
 % shall have for pricing a contract that looks at the whole path rather than at its endpoint.
@@ -1131,11 +1108,11 @@ process $\widetilde{W}_s := W_{\tau+s} - W_\tau$, $s \geq 0$, is a Brownian moti
 $\mathcal{F}_\tau$ (Definition \ref{def:Ftau}). 
 \end{theorem}
 
-\textbf{\textit{Proof:}} See \cite[Thm.\ 2.6.16]{karatzasshreve1991}. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} See \cite[Thm.\ 2.6.16]{karatzasshreve1991}. \qedfilledtext
 
 The statement genuinely strengthens Proposition \ref{prop:bm-properties}(d), where the Markov
-property was asserted at deterministic times only. Fix $a>0$ and let $\tau_a := \inf\{t \geq 0 : W_t > a\}$ be the first hitting time of the level $a$,
-a stopping time by Example \ref{example:hittingtime}. The \emph{reflection principle} is the
+property was asserted at deterministic times only. Fix $a>0$ and let $\tau_a$ be the passage time
+of the level $a$ introduced in \eqref{eq:taua}. The \emph{reflection principle} is the
 observation that, on the event $\{\tau_a \leq t\}$, the post-$\tau_a$ increments form a Brownian
 motion independent of $\mathcal{F}_{\tau_a}$, and that a Brownian motion has the same law as its
 negative. Reflecting the path in the level $a$ after time $\tau_a$ therefore produces a path of the
@@ -1155,19 +1132,18 @@ f_{(W_t,\overline{W}_t)}(x,m) \;=\; \frac{2(2m-x)}{\sqrt{2\pi t^{3}}}\,\exp\left
 \end{equation}
 \end{theorem}
 
-\textbf{\textit{Proof:}} (Sketch.) The first chain of equalities is the argument just given: $\{\overline{W}_t \geq a\} = \{\tau_a \leq t\}$
-because the path is continuous, and conditionally on $\tau_a \leq t$ the reflected path is as likely
+\textbf{\textit{Proof:}} (Sketch.) The first chain of equalities is the argument just given:
+$\{\overline{W}_t \geq a\} = \{\tau_a \leq t\}$ up to a null set, since a continuous path attaining
+the level $a$ exceeds it immediately afterwards except on the event $\{\overline{W}_t = a\}$, which
+has probability zero; and conditionally on $\tau_a \leq t$ the reflected path is as likely
 to finish above $a$ as below, so $\PP(\tau_a \leq t) = 2\PP(W_t > a)$ --- the boundary case
 $W_t = a$ having probability zero. For \eqref{eq:jointmaxdensity} one applies the same reflection to
 obtain $\PP(W_t \leq x,\ \overline{W}_t \geq m) = \PP(W_t \geq 2m - x)$ for $m \geq \max\{x,0\}$, and
-differentiates in both arguments; see \cite[Sec.\ 2.6]{karatzasshreve1991} or \cite{shreve2004}. \hfill $\blacksquare$
+differentiates in both arguments; see \cite[Sec.\ 2.6]{karatzasshreve1991} or \cite{shreve2004}. \qedfilledtext
 
-The construction is shown in Figure \ref{fig:reflection}: up to $\tau_a$ the two paths coincide,
-and after it the reflected one is the mirror image of the original in the level $a$. Since the
-post-$\tau_a$ increments are a Brownian motion independent of $\mathcal{F}_{\tau_a}$, and a Brownian
-motion has the same law as its negative, the reflected path is as likely as the original --- which
-is exactly what turns the count of paths finishing above $a$ into the count of those that ever
-reached it.
+The construction is shown in Figure \ref{fig:reflection}: up to $\tau_a$ the two paths coincide, and
+after it the reflected one is the mirror image of the original in the level $a$. This is what turns
+the count of paths finishing above $a$ into the count of those that ever reached it.
 
 \begin{figure}[htbp]
 \centering
@@ -1218,7 +1194,7 @@ paths of $W$ are continuous, hence uniformly continuous on the compact $[0,t]$, 
 increment on the right of \eqref{eq:qvtvbound} tends to $0$ as $\lVert\mathcal{P}_n\rVert \to 0$. 
 The whole right-hand side therefore tends to $0$, forcing $[W]_t = 0$ on that event. This 
 contradicts \eqref{eq:bmqv}, which gives $[W]_t = t > 0$ in $L^2(\Omega)$ and hence almost surely 
-along a subsequence. \hfill $\blacksquare$
+along a subsequence. \qedfilledtext
 
 This result is key because it shows that \textbf{the integral $\int_0^t f\,dW$ cannot be defined pathwise as a
 Riemann--Stieltjes integral}, for any non-trivial class of integrands, because $W$ does not induce
@@ -1230,7 +1206,7 @@ a measure on $[0,t]$ along any path. Figure \ref{fig:bmvariation} shows the two 
 \centering
 \includegraphics[width=\textwidth]{Images/bm-variation.pdf}
 \caption[Total variation against quadratic variation]{A Brownian path on $[0,1]$ (left) and its
-partition sums (right, logarithmic on both axes) over the dyadic partitions
+partition sums (right, logarithmic on both axes) over the uniform partitions
 $\mathcal{P}_n$ with $\lVert\mathcal{P}_n\rVert = 1/n$. The sum of absolute increments grows without
 bound, with slope $\tfrac12$ on these axes, so that it diverges like $\sqrt{n}$ --- while the sum of squared
 increments settles at $t=1$. This is Proposition \ref{prop:bmunboundedvariation} and
@@ -1247,8 +1223,6 @@ converges, but for which exponent $p$ the sum of $p$-th powers does.
 % chain rule --- traces back to \eqref{eq:qvtvbound}. Itô's construction is not one possible approach 
 % among several; it is a way of exploiting probabilistic structure to recover an object which 
 % deterministic analysis cannot reach.
-
-
 
 \begin{definition}[$p$-variation]\label{def:pvariation}
 Let $p \geq 1$. The \textbf{$p$-variation} of $f : [0,T] \to \R$ on $[0,t]$ is
@@ -1278,7 +1252,7 @@ Let $W$ be a Brownian motion. Then, almost surely:
     \item[ii)] $V_p(W)_t < \infty$ for every $p > 2$ and every $t$, whereas $V_p(W)_t = \infty$ for 
     every $p \leq 2$;
     \item[iii)] the sample path is nowhere differentiable: for almost every $\omega$, there is no 
-    $t$ at which $t \mapsto W_t(\omega)$ possesses a finite derivative. \hfill $\square$
+    $t$ at which $t \mapsto W_t(\omega)$ possesses a finite derivative. \qedopentext
 \end{itemize}
 \end{theorem}
 
@@ -1288,8 +1262,6 @@ Paley, Wiener and Zygmund, and proofs of all three may be found in \cite{falcone
 which is differentiable nowhere is already a celebrated pathology in real analysis, exhibited with 
 some effort by Weierstrass; the theorem says that if one picks a Brownian path at random one 
 obtains such a function with probability one. The pathological case is the meaningful case for integration.
-
-
 
 \begin{remark}[The critical exponent]\label{rem:criticalexponent}
 Brownian motion has finite $p$-variation exactly for $p > 2$. The number $2$ is a threshold in a 
@@ -1319,8 +1291,6 @@ regime is the subject of Part \ref{part:part2}.
 % (diverging) and quadratic variation (converging to $t$) as the mesh is refined. This is the visual 
 % statement of Proposition \ref{prop:bmunboundedvariation}.}
 
-
-
     
     
     
@@ -1336,7 +1306,7 @@ Here $dW_t$ will be specified in the next subsection. Notice that this generalis
 
 We shall first construct a rigorous integral interpretation of such expressions, providing concrete meaning to the stochastic term. Afterwards, we will introduce the stochastic chain rule (Itô's Lemma), which differs from the classical one in a somewhat surprising yet elegant way, and then proceed to study the existence and uniqueness of solutions and some of their properties.
 
-The exposition below could be carried out in the full generality anticipated by the semimartingales of Definition \ref{def:semimartingale}. We keep instead to the classical presentation, integrating against Brownian motion alone, and record at the end of the section what the general case would require. The aim is to reach the results we actually need without losing sight of them along the way.
+The exposition below could be carried out in the full generality anticipated by the semimartingales of Definition \ref{def:semimartingale}. We keep instead to the classical presentation, integrating against Brownian motion alone; what the general case would require was recorded after Definition \ref{def:semimartingale} itself. The aim is to reach the results we actually need without losing sight of them along the way.
 
 \subsection{The Itô Integral}\label{subsec:itointegral}
 
@@ -1359,8 +1329,10 @@ Let $\FPSpace$ be a filtered probability space.
     \]
     will be denoted by $L^2_{\mathrm{ad}}([0,T]\times \Omega)$. This is a Hilbert space with the inner product
     \[
-    \langle f,g \rangle = \int_0^T \E[f(t)g(t)]\,dt.
+    (f,g)_{\mathrm{ad}} = \int_0^T \E[f(t)g(t)]\,dt ,
     \]
+    written with round brackets to keep it apart from the quadratic covariation $\langle M,N\rangle$
+    of Proposition \ref{prop:qvcoincide}.
 
     \item[ii)] We say $f \in L^2_{\mathrm{ad}}([0,T]\times \Omega)$ is a \textbf{step stochastic process} if
     \[
@@ -1403,7 +1375,7 @@ terms give, using independence of $\Delta_i W$ from $\mathcal{F}_{t_{i-1}}$ once
 = \E\bigl[\psi(t_{i-1})^2\bigr](t_i - t_{i-1}) = \int_{t_{i-1}}^{t_i}\E[f(t)^2]\,dt,
 \]
 since $f \equiv \psi(t_{i-1})$ on $[t_{i-1},t_i)$. Summing over $i$ gives
-$\E[I(f)^2] = \int_0^T \E[f(t)^2]\,dt$. \hfill $\blacksquare$
+$\E[I(f)^2] = \int_0^T \E[f(t)^2]\,dt$. \qedfilledtext
 
 \medskip
 
@@ -1418,7 +1390,7 @@ For every $f \in L^2_{\mathrm{ad}}([0,T]\times \Omega)$, there exists a sequence
 \]
 That is, step processes are dense in $L^2_{\mathrm{ad}}([0,T]\times \Omega)$.
 \end{lemma}
-\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:density}; see also \cite[Lemma 4.3.3]{kuo2006}. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:density}; see also \cite[Lemma 4.3.3]{kuo2006}. \qedfilledtext
 
 \medskip
 
@@ -1461,7 +1433,7 @@ $\E[I(f_n)^2] = \int_0^T\E[f_n^2]\,dt$ pass to the limit.
 ii) Apply i) to $f+g$ and expand:
 $\E[I(f+g)^2] = \E[I(f)^2] + 2\E[I(f)I(g)] + \E[I(g)^2]$ by linearity
 of $I$, while the right-hand side expands identically. Cancelling the square terms gives the stated
-polarisation. \hfill $\blacksquare$
+polarisation. \qedfilledtext
 
 \medskip
 
@@ -1479,7 +1451,7 @@ For $0\leq t \leq T$, we have $\int_0^t \E[f(s)^2]\,ds \leq \int_0^T \E[f(s)^2]\
 
 \begin{theorem}[Martingale property]\label{theorem:martingale_property}
 
-Take $f\in L^2_{\mathrm{ad}}([0,T]\times\Omega). $ Then the process given by $X_t = I(f \mathds{1}_{[0,t]}) $ is a martingale with respect to the   filtration $\mathcal{F}_t.$
+Take $f\in L^2_{\mathrm{ad}}([0,T]\times\Omega).$ Then the process given by $X_t = I(f \mathds{1}_{[0,t]})$ is a martingale with respect to the filtration $\mathcal{F}_t.$
     
 \end{theorem}
 
@@ -1503,14 +1475,47 @@ integrals. Itô's isometry gives $X^n_t \to X_t$ in $L^2(\Omega)$, hence in $L^1
 conditional expectation is a contraction on $L^1$ (Proposition \ref{prop:condexpproperties},
 item 7), so $\E[X^n_t \mid \mathcal{F}_s] \to \E[X_t \mid \mathcal{F}_s]$ in
 $L^1(\Omega)$. The left-hand side equals $X^n_s \to X_s$, and the martingale identity passes to the
-limit. \hfill $\blacksquare$
+limit. \qedfilledtext
+
+\medskip
+
+Being a square-integrable martingale, $X$ has a compensator in the sense of Theorem
+\ref{thm:doobmeyer}, and the isometry identifies it at once. This is the form in which the isometry
+is used from Chapter \ref{ch:finance} onwards, so we record it.
+
+\begin{corollary}[Quadratic variation of an It\^o integral]\label{cor:qvitointegral}
+Let $f \in L^2_{\mathrm{ad}}([0,T]\times\Omega)$ and $X_t = \int_0^t f(s)\,dW_s$. Then
+\begin{equation}\label{eq:qvitointegral}
+\qv{X}_t = \int_0^t f(s)^2\,ds, \qquad t \in [0,T].
+\end{equation}
+\end{corollary}
+
+\textbf{\textit{Proof:}} Run the computation of Lemma \ref{lem:isometry_step} conditionally on
+$\mathcal{F}_s$ instead of under $\E$ --- the cross terms vanish for exactly the same reason, the
+integrand being evaluated before the increment it multiplies --- and pass to the limit as in Theorem
+\ref{thm:itoisometry}. This gives
+$\E[(X_t-X_s)^2\mid\mathcal{F}_s] = \E\bigl[\int_s^t f(u)^2\,du \mid \mathcal{F}_s\bigr]$ for
+$s<t$. Expanding $X_t^2 - X_s^2 = (X_t-X_s)^2 + 2X_s(X_t-X_s)$ and using
+$\E[X_t - X_s\mid\mathcal{F}_s]=0$ then yields
+\[
+\E\Bigl[X_t^2 - \int_0^t f^2\,du \;\Big|\; \mathcal{F}_s\Bigr] = X_s^2 - \int_0^s f^2\,du ,
+\]
+so $X^2 - \int_0^\cdot f^2\,du$ is a martingale. The process $\int_0^\cdot f^2\,du$ is continuous,
+adapted, increasing and null at $0$, hence predictable, and the uniqueness in Theorem
+\ref{thm:doobmeyer} identifies it with $\qv{X}$. \qedfilledtext
+
+\medskip
+
+Taking $f\equiv 1$ recovers Proposition \ref{prop:bm-properties}(f). Written differentially,
+\eqref{eq:qvitointegral} reads $d\qv{X}_t = f(t)^2\,dt$, which is the entry
+$dW_t\,dW_t = dt$ of Table \ref{tab:ItoTableScalar} in its precise form.
 
 The Markov property also holds, but we will return to that when we see these processes as diffusions in Subsection \ref{section:itoDiff}.  We shall now address the continuity of the process $X_t$. We must keep in mind that this integral is not defined for each $\omega$ in a Riemann sense. The following result is therefore not as elementary as in real analysis.
 
 \begin{theorem}[Continuity property]\label{thm:itocontinuity}
     Suppose $f\in L^2_{\mathrm{ad}}([0,T]\times\Omega). $ Then the process $X_t = \int_0^t f(s)dW(s)$ admits a continuous modification, with which we shall always work.
 \end{theorem}
-\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:itocontinuity}; see also \cite[Thm.\ 4.6.2]{kuo2006}. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:itocontinuity}; see also \cite[Thm.\ 4.6.2]{kuo2006}. \qedfilledtext
 
 \medskip
 
@@ -1521,7 +1526,7 @@ subsequence, and hence $L^2$ convergence to a pathwise statement.
 Finally, a result that actually links Riemann sums with stochastic integrals will be helpful in the next subsection.
 
 \begin{theorem}\label{theorem:riemannian_limit}
-    Suppose $f\in L^2_{\mathrm{ad}}([0,T]\times\Omega)$ and assume that $\E[f(t)f(s)]$ is a continuous function of $t$ and $s$. Then, for  partitions of $[0,T] $, given by $\mathcal{P}=\{0=t_0<t_1<\cdots<t_n=T\}$,
+    Suppose $f\in L^2_{\mathrm{ad}}([0,T]\times\Omega)$ and assume that $\E[f(t)f(s)]$ is a continuous function of $t$ and $s$. Then, for partitions of $[0,T]$ given by $\mathcal{P}=\{0=t_0<t_1<\cdots<t_n=T\}$,
 
 \begin{equation}
 \int_0^T f(t)\, dW(t)
@@ -1529,7 +1534,7 @@ Finally, a result that actually links Riemann sums with stochastic integrals wil
 \end{equation}
 in $L^2(\Omega),$ where the limit is taken as in Definition \ref{def:quadratic-variation}.
 \end{theorem}
-\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:riemannlimit}; see also \cite[Thm.\ 4.7.1]{kuo2006}. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:riemannlimit}; see also \cite[Thm.\ 4.7.1]{kuo2006}. \qedfilledtext
 
 \medskip
 
@@ -1542,9 +1547,9 @@ construction, and it is worth naming the alternative, because Chapter \ref{ch:ro
 the two are on an equal footing.
 
 \begin{definition}[Stratonovich integral]\label{def:stratonovich}
-The \textbf{Stratonovich integral} is defined, under the hypotheses of Theorem
-\ref{theorem:riemannian_limit}, as the limit of the same Riemann sums with the integrand
-evaluated at the \emph{midpoint} of each subinterval rather than at the left endpoint:
+Let $F \in \mathcal{C}^1(\R)$ and put $f = F(W)$. The \textbf{Stratonovich integral} of $f$ against
+$W$ is the limit of the same Riemann sums as in Theorem \ref{theorem:riemannian_limit}, with the
+integrand evaluated at the \emph{midpoint} of each subinterval rather than at the left endpoint:
 \begin{equation}\label{eq:stratonovich}
 \int_0^T f(t)\circ dW(t) := \lim_{\lVert\mathcal{P}\rVert\to0}\sum_{i=1}^{n}
 f\Bigl(\tfrac{t_{i-1}+t_i}{2}\Bigr)\bigl(W(t_i)-W(t_{i-1})\bigr),
@@ -1552,7 +1557,10 @@ f\Bigl(\tfrac{t_{i-1}+t_i}{2}\Bigr)\bigl(W(t_i)-W(t_{i-1})\bigr),
 the limit again being taken in $L^2(\Omega)$.
 \end{definition}
 
-For integrands of the form $f = F(W)$ with $F$ smooth the two integrals both exist and differ by a
+The restriction to integrands of the form $F(W)$ is not cosmetic. The midpoint value
+$f(\tfrac{t_{i-1}+t_i}{2})$ is not $\mathcal{F}_{t_{i-1}}$-measurable, so it is correlated with the
+increment it multiplies, and for a general adapted $f$ the sums in \eqref{eq:stratonovich} need not
+converge at all. For $f = F(W)$ they do, and the two integrals differ by a
 computable amount,
 \begin{equation}\label{eq:itostratonovich}
 \int_0^T F(W_t)\circ dW_t = \int_0^T F(W_t)\,dW_t + \tfrac12\int_0^T F'(W_t)\,dt ,
@@ -1570,7 +1578,7 @@ choice of convention.
 
 More generally, we can consider a larger family of integrands. Let $\mathcal{L}(\Omega,L^2[0,T])$ be the family of processes $f$ such that
 \begin{itemize}
-    \item $f(t)$ is $\mathcal{F}_t-$adapted.
+    \item $f(t)$ is $\mathcal{F}_t$-adapted.
     \item $\int_0^T |f(t)| ^2 \, dt < \infty$ almost surely.
 \end{itemize}
 The class $\mathcal{L}(\Omega,L^1[0,T])$, which we shall also need, is defined in exactly the same
@@ -1587,28 +1595,28 @@ Notice how we dropped the condition of having finite expectation, so that we hav
 
 Hence $\int_0^1 e^{W(t)^2}\, dW_t$ does not make sense with the previous construction. These processes are nonetheless worth retaining, and the following holds; its proof lies beyond our scope.
 
-\begin{theorem}[Local Martingale Property] Let $f\in \mathcal{L}(\Omega,L^2[0,T])$ and $t \in [0,T]$. Then 
+\begin{theorem}[Local Martingale Property]\label{thm:localmartingaleproperty} Let $f\in \mathcal{L}(\Omega,L^2[0,T])$ and $t \in [0,T]$. Then
 $$
 X_ t = \int_0^t f(s) \,dW_s
 $$
-    is a local martingale. Furthermore, it has a continuous realisation. \hfill $\square$
+    is a local martingale. Furthermore, it has a continuous realisation. \qedopentext
 \end{theorem}
 
 \subsection{Itô's Chain Rule}
 
-One of the most striking features of this new integration is a modified chain rule, generalising the familiar expression $d (f(g))(x) = f'(g(x))dg(x)$. The key underlying fact for this new integration rule is the non-zero quadratic variation of Brownian motion. This new calculus allows us to find some new relations and solve new equations that naturally generalise the already rich world of differential equations.
+One of the most striking features of this new integration is a modified chain rule, generalising the familiar expression $d(f\circ g)(x) = f'(g(x))\,dg(x)$. The fact underlying the modification is the non-zero quadratic variation of Brownian motion. The resulting calculus lets us evaluate integrals and solve equations that generalise the already rich world of differential equations.
 
-\begin{definition}[Itô process]
+\begin{definition}[Itô process]\label{def:itoprocess}
 
-Given an initial random variable $X_0$, an Itô process is a stochastic process on $[0,T]$ of the form 
+Given an initial random variable $X_0$, an Itô process is a stochastic process on $[0,T]$ of the form
 
 $$
-X_t = X_0 + \int_0^t g(s) \,ds  +\int_0^t f(s) \, dW_s  \iff dX_t = g(t) \,dt + f(t) \, dW_t, \text{ } \text{ } X(0) = X_0
+X_t = X_0 + \int_0^t \mu(s) \,ds  +\int_0^t \sigma(s) \, dW_s  \iff dX_t = \mu(t) \,dt + \sigma(t) \, dW_t, \qquad X_0 \text{ given,}
 $$
-    where we emphasise the equivalent formulations, since the latter is just a way of writing the former. We impose $X_0$ being $\mathcal F_0$-measurable, $g \in \mathcal{L}(\Omega,L^1[0,T])$ and $f \in \mathcal{L}(\Omega,L^2[0,T]).$ Note how the first integral is just a Lebesgue integral for each $\omega$, that is, for each path of $W$. The second is a proper Itô integral.
+    where we emphasise the equivalent formulations, since the latter is just a way of writing the former. We impose $X_0$ being $\mathcal F_0$-measurable, $\mu \in \mathcal{L}(\Omega,L^1[0,T])$ and $\sigma \in \mathcal{L}(\Omega,L^2[0,T]).$ The letters are those of the notation table: $\mu$ is a drift and $\sigma$ a diffusion coefficient, here allowed to be arbitrary adapted processes rather than functions of $(t,X_t)$ --- that specialisation comes in Subsection \ref{subsec:sdes}. Note how the first integral is just a Lebesgue integral for each $\omega$, that is, for each path of $W$. The second is a proper Itô integral.
 \end{definition}
 
-We directly state the more general form of Itô's new calculus rule, in the convenient \textit{differential formulation}. A complete proof is beyond the scope of this Thesis. However, such a renowned Theorem has been addressed by several authors, for example in \cite{kuo2006}.
+We state Itô's rule directly in its general form, using the convenient \textit{differential formulation}. A complete proof is beyond the scope of this dissertation, but a result so well known has been treated by many authors; see for instance \cite{kuo2006}.
 
 \begin{theorem}[Itô's Rule]\label{theorem:itorule}
     Let $dX_t = \mu(t)\,dt + \sigma(t)\,dW_t$ be an Itô process, and let 
@@ -1670,20 +1678,20 @@ We stress that the computation just performed is a \emph{mnemonic}, not a proof:
 As with the ordinary chain rule, this opens the way to evaluating stochastic integrals in terms of others.
 
 \begin{example}
- We can use this result to obtain a closed form for the integral $\int_0^t W_s\,dW_s$. Take $g(x) = x^2$ and define $Y_t = g(W_t)$, so that
+ We can use this result to obtain a closed form for the integral $\int_0^t W_s\,dW_s$. Take $\phi(x) = x^2$ and define $Y_t = \phi(W_t)$, so that
  \begin{equation}
-     dY_t = 2W_t\,dW_t + \frac 2 2 \,(dW_t)^2 = dt + 2 W_t\,dW_t
+     dY_t = 2W_t\,dW_t + \tfrac{1}{2}\,\phi''(W_t)\,(dW_t)^2 = 2 W_t\,dW_t + dt
  \end{equation}
  so that $\int_0^t W_s\,dW_s = \frac 1 2 \left( W_t^2 - t\right)$, which is a much simpler expression, and clearly a martingale.
 \end{example}
 
 \begin{example}\label{example:blackscholessde}
-    In Finance, the Black--Scholes model relies on the \textit{log-normal} equation, given by $dS_t = rS_t \, dt + \sigma S_t \, dW_t$, where $r, \sigma \in \R$ and $\sigma > 0$. It can be solved by taking $Y_t = \ln (S_t),$ so that
+    In finance, the Black--Scholes model relies on the \textit{log-normal} equation, given by $dS_t = \mu S_t \, dt + \sigma S_t \, dW_t$, where $\mu, \sigma \in \R$ and $\sigma > 0$. Here $\mu$ is the drift of the asset; the same equation with $\mu$ replaced by the short rate $\rf$ is the one that will govern pricing, and the passage between the two is the change of measure of Subsection \ref{subsec:measurechanges}. The equation is solved by taking $Y_t = \log (S_t),$ so that
     \begin{equation}
-        dY_t = \frac 1 S_t dS_t -\frac{1}{2S_t^2}(dS_t)^2 = r\,dt + \sigma\, dW_t -  \frac 1 2 \sigma^2 \, dt
+        dY_t = \frac 1 S_t dS_t -\frac{1}{2S_t^2}(dS_t)^2 = \mu\,dt + \sigma\, dW_t -  \frac 1 2 \sigma^2 \, dt
     \end{equation}
 
-    obtaining $Y_t = Y_0 + (r-\sigma^2 / 2) \, t + \sigma W_t \implies S_t = S_0e^{(r-\sigma^2/ 2)\, t + \sigma \, W_t} $.
+    obtaining $Y_t = Y_0 + (\mu-\sigma^2 / 2) \, t + \sigma W_t \implies S_t = S_0e^{(\mu-\sigma^2/ 2)\, t + \sigma \, W_t} $.
 \end{example}
 
 \begin{example}[Lamperti's Transform]
@@ -1694,7 +1702,7 @@ As with the ordinary chain rule, this opens the way to evaluating stochastic int
     \end{equation}
 The reference point must be a constant and not, say, $X_0$: Itô's rule requires a deterministic
 $\mathcal{C}^{1,2}$ function, and changing $x_0$ shifts $\Gamma$ by a function of $t$ alone, which
-alters the drift below but not the conclusion. Consider now the process $Y_t = \Gamma(t,X_t).$ After a few calculations, we arrive to
+alters the drift below but not the conclusion. Consider now the process $Y_t = \Gamma(t,X_t).$ After a few calculations, we arrive at
 \begin{equation}
     \begin{aligned}
         dY_t &= \left( \frac{\partial \Gamma}{\partial t} + \mu(t,X_t)\frac{\partial \Gamma}{\partial x} + \frac{1}{2}\sigma^2(t,X_t)\frac{\partial^2 \Gamma}{\partial x^2} \right) dt + \underbrace{\sigma(t,X_t)\frac{\partial \Gamma}{\partial x}}_{=1} \, dW_t \\
@@ -1719,7 +1727,7 @@ The main aim of this subsection is to give conditions under which an Itô proces
 Given an $\mathcal{F}_0$-measurable random variable $X_0$ of finite variance, consider the following formal equation on $[0,T]$: 
 
 \begin{equation}\label{sde_template}
-    dX_t = \mu(t,X_t) \, dt + \sigma ( t, X_t) \, dW_t \text{ }\text{ }\text{ }\text{ }\text{ }\text{ } X(0)= X_0.
+    dX_t = \mu(t,X_t) \, dt + \sigma ( t, X_t) \, dW_t , \qquad X_0 \text{ given.}
 \end{equation}
 
 \begin{definition}[Solution of an SDE]\label{def:sdesolution}
@@ -1732,18 +1740,18 @@ Given an $\mathcal{F}_0$-measurable random variable $X_0$ of finite variance, co
      \end{itemize}
 \end{definition}
 
-We need to establish some growth conditions on $\mu$ and $\sigma$ for the equation to make sense on, at least, an open interval, just like in ordinary differential equations. Let us define the following conditions:
+We need to establish some growth conditions on $\mu$ and $\sigma$ for the equation to admit a solution on the whole of $[0,T]$, just as in ordinary differential equations. Let us define the following conditions:
 
 \begin{definition}\label{def:lipschitzgrowth}
-    Let $g(t,x)$  a measurable function on $[0,T] \times \R$.
+    Let $g(t,x)$ be a measurable function on $[0,T] \times \R$.
 
     \begin{itemize}
-        \item It is said to satisfy a Lipschitz condition (or simply called Lipschitz) in $x$ if there exists $K>0$ such that $|g(t,x)-g(t,y) |\leq K |x-y| $ for all $0 \leq t \leq T,$ $x,y\in\R.$
-        \item Similarly, it is said to satisfy a linear growth condition in x if there exists $K>0$ such that $|g(t,x)|\leq K(1+|x|)$ for all $0 \leq t \leq T,$ $x\in\R.$
+        \item It is said to satisfy a Lipschitz condition (or simply called Lipschitz) in $x$ if there exists $C>0$ such that $|g(t,x)-g(t,y) |\leq C |x-y| $ for all $0 \leq t \leq T,$ $x,y\in\R.$
+        \item Similarly, it is said to satisfy a linear growth condition in $x$ if there exists $C>0$ such that $|g(t,x)|\leq C(1+|x|)$ for all $0 \leq t \leq T,$ $x\in\R.$
     \end{itemize}
 \end{definition}
 
-Now, notice that for $x\geq 0$, it holds that $1+x^2 \leq (1+x) ^2 \leq 2(1+x^2)$  so that the linear growth condition can be restated in terms of a new constant $M$ such that $|g(t,x)| \leq M \sqrt{1+x^2}.$ 
+The constant is written $C$ and not $K$, which from Chapter \ref{ch:finance} onwards denotes a strike price. Notice that for $x\geq 0$ we have $1+x^2 \leq (1+x) ^2 \leq 2(1+x^2)$, so that the linear growth condition can be restated, for a new constant $C'$, as $|g(t,x)| \leq C' \sqrt{1+x^2}.$
 
 The proof of existence and uniqueness rests on a Picard iteration, exactly as for ordinary differential equations, and the comparison step is furnished by Grönwall's inequality (Lemma \ref{lem:gronwall} in Appendix \ref{app:auxiliary}); since the argument is deterministic and entirely standard we do not reproduce it here.
 
@@ -1765,12 +1773,15 @@ nothing. Both obstructions are removed by the same device. Define, for $n \in \N
 \begin{equation}\label{eq:sdelocalising}
 \tau_n := \inf\bigl\{t \in [0,T] : |X_t| \geq n \ \text{ or } \ |Y_t| \geq n\bigr\} \wedge T ,
 \end{equation}
-which is a stopping time by Proposition \ref{prop:stoppingtimechar}, since $X$ and $Y$ are continuous
-and adapted. As their paths are continuous, they are bounded on $[0,T]$ for almost every $\omega$,
-whence $\tau_n \uparrow T$ almost surely.
+which is a stopping time. Here the target set $\{|x|\geq n\}$ is \emph{closed}, so Example
+\ref{example:hittingtime} does not apply and continuity of the paths has to be used instead:
+$\{\tau_n \leq t\} = \bigl\{\sup_{s\leq t}\bigl(|X_s|\vee|Y_s|\bigr) \geq n\bigr\}$, and by continuity
+the supremum may be taken over the rationals of $[0,t]$ together with $t$ itself, which exhibits the
+event as a countable operation on members of $\mathcal{F}_t$. As the paths are continuous they are
+bounded on $[0,T]$ for almost every $\omega$, whence $\tau_n \uparrow T$ almost surely.
 
 Fix $n$ and stop the identity above at $\tau_n$. On $\{s \leq \tau_n\}$ the Lipschitz condition gives
-$|\sigma(s,X_s)-\sigma(s,Y_s)| \leq K|Z_s| \leq 2Kn$, so the stopped integrand
+$|\sigma(s,X_s)-\sigma(s,Y_s)| \leq C|Z_s| \leq 2Cn$, so the stopped integrand
 $\mathds{1}_{[0,\tau_n]}(s)\bigl[\sigma(s,X_s)-\sigma(s,Y_s)\bigr]$ is bounded, adapted, and hence
 genuinely an element of $L^2_{\mathrm{ad}}([0,T]\times\Omega)$. Itô's isometry now applies to it, and together
 with the Lipschitz condition yields
@@ -1778,7 +1789,7 @@ with the Lipschitz condition yields
 \begin{aligned}
 \E\left[\left(\int_0^{t\wedge\tau_n} \bigl[\sigma(s,X_s)-\sigma(s,Y_s)\bigr]dW_s\right)^{\!2}\right]
 &= \int_0^{t} \E\bigl[(\sigma(s,X_s)-\sigma(s,Y_s))^2\,\mathds{1}_{\{s\leq\tau_n\}}\bigr]ds \\[2pt]
-&\leq K^2\!\int_0^t \E\bigl[Z_s^2\,\mathds{1}_{\{s\leq\tau_n\}}\bigr]ds .
+&\leq C^2\!\int_0^t \E\bigl[Z_s^2\,\mathds{1}_{\{s\leq\tau_n\}}\bigr]ds .
 \end{aligned}
 \]
 For the Lebesgue term, the Cauchy--Schwarz inequality followed by the Lipschitz condition gives,
@@ -1786,12 +1797,12 @@ pathwise,
 \[
 \left(\int_0^{t\wedge\tau_n} \bigl[\mu(s,X_s)-\mu(s,Y_s)\bigr]ds\right)^{\!2}
 \leq T\int_0^{t} \bigl(\mu(s,X_s)-\mu(s,Y_s)\bigr)^2 \mathds{1}_{\{s\leq\tau_n\}}\,ds
-\leq T K^2\!\int_0^t Z_s^2\,\mathds{1}_{\{s\leq\tau_n\}}\,ds .
+\leq T C^2\!\int_0^t Z_s^2\,\mathds{1}_{\{s\leq\tau_n\}}\,ds .
 \]
 Write $u_n(t) := \E\bigl[Z_{t\wedge\tau_n}^2\bigr]$. Since $|Z_{t\wedge\tau_n}| \leq 2n$ we
 have $u_n(t) \leq 4n^2 < \infty$ for every $t$, which is the finiteness the argument was missing.
 Moreover $Z_s^2\,\mathds{1}_{\{s\leq\tau_n\}} \leq Z_{s\wedge\tau_n}^2$ pointwise, so combining the
-two estimates through $(a+b)^2 \leq 2(a^2+b^2)$ and setting $\lambda := 2K^2(1+T)$ gives
+two estimates through $(a+b)^2 \leq 2(a^2+b^2)$ and setting $\lambda := 2C^2(1+T)$ gives
 \[
 u_n(t) \;\leq\; \lambda \int_0^t u_n(s)\,ds, \qquad 0 \leq t \leq T .
 \]
@@ -1806,7 +1817,7 @@ depends on $t$ (Remark \ref{rem:modification}). Let $\{r_n\}$ enumerate the rati
 let $\Omega_0$ be the intersection of the full-measure events $\{Z_{r_n}=0\}$ with the full-measure
 event on which $Z$ has continuous paths. Then $\PP(\Omega_0)=1$, and for $\omega \in \Omega_0$
 the function $t \mapsto Z_t(\omega)$ is continuous and vanishes on a dense set, hence vanishes
-identically. Thus $X$ and $Y$ are indistinguishable. \hfill $\blacksquare$
+identically. Thus $X$ and $Y$ are indistinguishable. \qedfilledtext
 
 \medskip
 
@@ -1867,7 +1878,7 @@ such that for all $t$ and all $x,y$
 \bigl|\sigma(t,x)-\sigma(t,y)\bigr| \leq \eta\bigl(|x-y|\bigr), \qquad
 \bigl|\mu(t,x)-\mu(t,y)\bigr| \leq \zeta\bigl(|x-y|\bigr).
 \]
-Then pathwise uniqueness holds for the equation \cite{yamada1971}. \hfill $\square$
+Then pathwise uniqueness holds for the equation \cite{yamada1971}. \qedopentext
 \end{theorem}
 
 The two moduli are written $\eta$ and $\zeta$ rather than the $h$ and $\varrho$ of the original
@@ -1888,9 +1899,10 @@ dv_t = \kappa(\theta - v_t)\,dt + \xi\sqrt{v_t}\,dW_t, \qquad v_0 > 0,
 with $\kappa,\theta,\xi>0$. The drift is affine, hence Lipschitz. The diffusion coefficient 
 $\sigma(v)=\xi\sqrt{v}$ is not Lipschitz at the origin, but it satisfies 
 $|\sqrt{x}-\sqrt{y}| \leq \sqrt{|x-y|}$, so Theorem \ref{thm:yamadawatanabe} applies with
-$\eta(u)=\xi\sqrt{u}$, and pathwise uniqueness holds. A non-negative solution exists, and 
-\eqref{eq:cir} is therefore well posed --- but by Yamada--Watanabe, not by Theorem 
-\ref{thm:sdeexistence}.
+$\eta(u)=\xi\sqrt{u}$, and pathwise uniqueness holds. A non-negative weak solution exists, so the
+implication recorded above applies and \eqref{eq:cir} admits a unique \emph{strong} solution, in the
+sense of Definition \ref{def:strongweak}(i), with uniqueness in law. The equation is therefore well
+posed --- but by Yamada--Watanabe, not by Theorem \ref{thm:sdeexistence}.
 \end{example}
 
 Well-posedness is not the end of the story for \eqref{eq:cir}, because we also need the solution to 
@@ -1906,7 +1918,7 @@ Let $v$ solve \eqref{eq:cir} with $v_0>0$. If
 \end{equation}
 then $\PP(v_t > 0 \text{ for all } t \in [0,T]) = 1$. If $2\kappa\theta < \xi^2$, the process 
 reaches $0$ with positive probability, though it is instantaneously reflecting and does not become 
-negative \cite{feller1951}. \hfill $\square$
+negative \cite{feller1951}. \qedopentext
 \end{proposition}
 
 Condition \eqref{eq:fellercondition} has a transparent reading: mean reversion must be strong 
@@ -1923,9 +1935,9 @@ what can be done in Chapter \ref{ch:applications}, rather than a technicality to
 
 % For the time being, we have only addressed processes in dimension 1. Almost every result already covered can be restated for multidimensional processes or has a direct analogue.
 
-By a multidimensional Brownian motion on $\R^n$ we mean a stochastic process of the form  $\mathbf{W}(t) = (W_1(t),W_2(t),\dots,W_n(t))$ formed by $n$ independent Brownian motions on $\R$. Similarly, we can set them to start at $x_0\in \R^n$ just by a simple translation. It is a martingale and a Markov process that, starting at $\vec{0}$, has a transition density function given by $p_t(x) = (2\pi t)^{-n/2}e^{-\lVert x \rVert^2 / 2t}.$
+By a multidimensional Brownian motion on $\R^n$ we mean a stochastic process of the form  $\mathbf{W}(t) = (W_1(t),W_2(t),\dots,W_n(t))$ formed by $n$ independent Brownian motions on $\R$. Similarly, we can set them to start at $x_0\in \R^n$ just by a simple translation. It is a martingale and a Markov process that, starting at the origin, has a transition density function given by $p_t(x) = (2\pi t)^{-n/2}e^{-\lVert x \rVert^2 / 2t}.$
 
-There are certain properties of these processes that dramatically change with dimension. For example, for $n= 1$, it returns to 0 infinitely often, and for $n= 2$ enters arbitrarily small neighbourhoods of $0$ infinitely often with probability 1, however the probability that it reaches $\vec 0$ is 0. For $n\geq 3$, the process is \emph{transient}, satisfying $\lim_{t\rightarrow \infty } \lVert \mathbf{W}(t) \rVert = \infty$ almost surely. 
+There are certain properties of these processes that dramatically change with dimension. For example, for $n= 1$, it returns to 0 infinitely often, and for $n= 2$ enters arbitrarily small neighbourhoods of $0$ infinitely often with probability 1, however the probability that it reaches $\mathbf{0}$ is $0$. For $n\geq 3$, the process is \emph{transient}, satisfying $\lim_{t\rightarrow \infty } \lVert \mathbf{W}(t) \rVert = \infty$ almost surely. 
 
 In terms of fractal dimensions, the \emph{range} $\mathbf{W}([0,t])$ has Hausdorff dimension $2$ for $n \geq 2$, and dimension $1$ for $n=1$ (where it is simply an interval). The \emph{graph} $\{(s,\mathbf{W}(s)) : s\in [0,t]\} \subset \R^{1+n}$ behaves differently: it has dimension $3/2$ for $n = 1$, a classical result of Taylor \cite{taylor1953}, and dimension $2$ for $n \geq 2$. These fascinating properties of Brownian motion can be found in \cite{falconer}.
 
@@ -1974,9 +1986,9 @@ machinery where it is used a second time, because it is needed already in the co
     \]
     where $\delta_{ij}$ is the Kronecker delta. Then $X$ is an $n$-dimensional $\Filt$-Brownian motion with independent components.
 \end{theorem}
-\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:levy}; see also \cite[Thm.\ 8.4.2]{kuo2006}. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:levy}; see also \cite[Thm.\ 8.4.2]{kuo2006}. \qedfilledtext
 
-The statement deserves to be read slowly, because it is considerably stronger than it looks. Being a Brownian motion is, by Definition \ref{def:Brownian-motion}, a statement about the \emph{joint law} of the whole family $\{X_t\}$: independent, stationary, Gaussian increments. Lévy's theorem says that all of this is already implied by two facts about second moments --- that $X$ is a local martingale and that its quadratic variation is exactly $t$. Gaussianity is not assumed anywhere; it is a conclusion.
+The statement is considerably stronger than it looks. Being a Brownian motion is, by Definition \ref{def:Brownian-motion}, a statement about the \emph{joint law} of the whole family $\{X_t\}$: independent, stationary, Gaussian increments. Lévy's theorem says that all of this is already implied by two facts about second moments --- that $X$ is a local martingale and that its quadratic variation is exactly $t$. Gaussianity is not assumed anywhere; it is a conclusion.
 
 The multidimensional form, with the condition $\langle X^i,X^j\rangle_t = \delta_{ij}t$, is the one we shall actually need, and it will be used twice. Immediately below it produces a correlated Brownian motion from an independent one. Later, in the proof of Girsanov's theorem, it will allow us to recognise a process as a Brownian motion under a \emph{new} measure without recomputing any distributions --- one need only check that quadratic variation is preserved, which it is, since quadratic variation is a pathwise notion and equivalent measures agree on which paths occur.
 
@@ -2099,13 +2111,13 @@ The following generalisation holds.
 \begin{theorem} \label{theorem:solutions:ndimensional_sde}
     Let $\sigma(t,x)$ be an $n\times m$ matrix-valued function and $\mu(t,x)$ an $\R^n$-valued function. Assume there exists $C>0$ such that for all $t\in[0,T]$ and $x,y \in \R^n$, 
     $$
-    \lVert \sigma (t,x) - \sigma(t,y) \rVert \leq C | x - y| \text{ } \text{ , } \text{ } |\mu(t,x) - \mu(t,y)| \leq C|x-y|
+    \lVert \sigma (t,x) - \sigma(t,y) \rVert \leq C \lVert x - y\rVert , \qquad \lVert\mu(t,x) - \mu(t,y)\rVert \leq C\lVert x-y\rVert
     $$
-    and 
+    and
     $$
-    \lVert \sigma(t,x)\rVert ^2 \leq C(1+|x|^2 ) \text{ } \text{ , } \text{ } |\mu(t,x)| ^2 \leq C(1+|x|^2 ) 
-    $$ 
-    where $\lVert \sigma \rVert^2 = \sum_i \sum_j \sigma_{ij}^2$. For any $\mathcal{F}_0$-measurable random vector $X_0$ of finite variance, the SDE $dX_t = \mu(t,X_t) \, dt +  \sigma(t,X_t) \, dW_t$ has a unique continuous solution. \hfill $\square$
+    \lVert \sigma(t,x)\rVert ^2 \leq C\bigl(1+\lVert x\rVert^2\bigr) , \qquad \lVert\mu(t,x)\rVert ^2 \leq C\bigl(1+\lVert x\rVert^2\bigr)
+    $$
+    where $\lVert\cdot\rVert$ is the Euclidean norm on $\R^n$ and, for matrices, the Frobenius norm $\lVert \sigma \rVert^2 = \sum_i \sum_j \sigma_{ij}^2$. For any $\mathcal{F}_0$-measurable random vector $X_0$ of finite variance, the SDE $dX_t = \mu(t,X_t) \, dt +  \sigma(t,X_t) \, dW_t$ has a unique continuous solution. \qedopentext
 \end{theorem}
 
 \subsection{Probability measure changes}\label{subsec:measurechanges}
@@ -2144,70 +2156,70 @@ $s<t$,
 Both sides are non-negative and, by hypothesis, have the same expectation, namely $1$. A
 non-negative random variable dominated by another of equal expectation is almost surely equal to it,
 so the inequality is an equality and $\mathcal{E}_\alpha$ is a martingale. See
-\cite[Thm.\ 8.7.3]{kuo2006}. \hfill $\blacksquare$
+\cite[Thm.\ 8.7.3]{kuo2006}. \qedfilledtext
 
 The criterion just proved is exact, but it is not one that can be checked directly: verifying $\E[\mathcal E _\alpha (t)]= 1$ is very nearly as hard as verifying the martingale property itself. What is wanted is a condition on $\alpha$ alone, and the following supplies one.
 
 \begin{theorem}[Novikov's condition]\label{thm:novikov}
-    Let $\alpha \in \mathcal{L}(\Omega, L^2[0,T])$. If $\E\left[ e^{\frac 1 2 \int_0^T \alpha^2(s) ds} \right] < \infty$, then $\mathcal E_\alpha(t)$ is a martingale. A proof may be found in \cite[Sec.~8.7]{kuo2006}. \hfill $\square$
+    Let $\alpha \in \mathcal{L}(\Omega, L^2[0,T])$. If $\E\left[ e^{\frac 1 2 \int_0^T \alpha^2(s) ds} \right] < \infty$, then $\mathcal E_\alpha(t)$ is a martingale. A proof may be found in \cite[Sec.~8.7]{kuo2006}. \qedopentext
 
 \end{theorem}
 
 This is a much more practical way to check whether $\mathcal E_\alpha(t)$ is a martingale, and therefore whether we can construct a new probability $\QQ$ such that $d\QQ = \mathcal E_\alpha(T)\, d\PP$. For the following Theorem, we need to make use of two auxiliary lemmas.
 
 \begin{lemma}[Conditional expectation under a change of measure]\label{lem:condexpchange}
-    Let $\gamma$ be a nonnegative integrable random variable, so that $d\QQ = \gamma\, d \PP$ defines a new probability measure (see \eqref{eq:radonnikodym}). Then, for any $\sigma$-algebra $\mathcal{G} \subset \mathcal{F}$ and $Y$ such that $\E_{\QQ}[|Y|] < \infty$, it follows that
+    Let $\Lambda$ be a nonnegative integrable random variable with $\E[\Lambda]=1$, so that $d\QQ = \Lambda\, d \PP$ defines a new probability measure (see \eqref{eq:radonnikodym}). Then, for any $\sigma$-algebra $\mathcal{G} \subset \mathcal{F}$ and $Y$ such that $\Ep{\QQ}[|Y|] < \infty$, it follows that
     \begin{equation}
-        \E_{\QQ}[Y \,|\, \mathcal G] = \frac{\E_{\PP}[\gamma Y  \,|\, \mathcal G] }{\E_{\PP}[\gamma \,|\, \mathcal G] }, \, \, \QQ\text{-almost surely.}
+        \Ep{\QQ}[Y \,|\, \mathcal G] = \frac{\Ep{\PP}[\Lambda Y  \,|\, \mathcal G] }{\Ep{\PP}[\Lambda \,|\, \mathcal G] }, \, \, \QQ\text{-almost surely.}
     \end{equation}
 \end{lemma}
 
 \textbf{\textit{Proof:}} Integrability holds because
-$\E_\PP[|Y|\gamma] = \E_\QQ[|Y|] < \infty$, so
-$\E_\PP[\gamma Y\mid\mathcal{G}]$ is defined. Fix $G \in \mathcal{G}$. By the
+$\Ep{\PP}[|Y|\Lambda] = \Ep{\QQ}[|Y|] < \infty$, so
+$\Ep{\PP}[\Lambda Y\mid\mathcal{G}]$ is defined. Fix $G \in \mathcal{G}$. By the
 defining property of conditional expectation under $\PP$ and the definition of $\QQ$,
 \[
-\int_G \E_\PP[\gamma Y \mid \mathcal{G}]\,d\PP
-= \int_G \gamma Y\,d\PP = \int_G Y \,d\QQ
-= \int_G \E_\QQ[Y\mid\mathcal{G}]\,d\QQ.
+\int_G \Ep{\PP}[\Lambda Y \mid \mathcal{G}]\,d\PP
+= \int_G \Lambda Y\,d\PP = \int_G Y \,d\QQ
+= \int_G \Ep{\QQ}[Y\mid\mathcal{G}]\,d\QQ.
 \]
-On the other hand, writing $d\QQ = \gamma\,d\PP$ and using that
-$\E_\QQ[Y\mid\mathcal{G}]$ is $\mathcal{G}$-measurable, so that it may be taken
+On the other hand, writing $d\QQ = \Lambda\,d\PP$ and using that
+$\Ep{\QQ}[Y\mid\mathcal{G}]$ is $\mathcal{G}$-measurable, so that it may be taken
 out of a conditional expectation given $\mathcal{G}$ (Proposition
 \ref{prop:condexpproperties}, item 4),
 \[
-\int_G \E_\QQ[Y\mid\mathcal{G}]\,d\QQ
-= \int_G \E_\QQ[Y\mid\mathcal{G}]\,\gamma\,d\PP
-= \int_G \E_\QQ[Y\mid\mathcal{G}]\;\E_\PP[\gamma\mid\mathcal{G}]\,d\PP.
+\int_G \Ep{\QQ}[Y\mid\mathcal{G}]\,d\QQ
+= \int_G \Ep{\QQ}[Y\mid\mathcal{G}]\,\Lambda\,d\PP
+= \int_G \Ep{\QQ}[Y\mid\mathcal{G}]\;\Ep{\PP}[\Lambda\mid\mathcal{G}]\,d\PP.
 \]
 The two displays agree for every $G \in \mathcal{G}$, and both integrands are
 $\mathcal{G}$-measurable, so they coincide almost surely. Dividing by
-$\E_\PP[\gamma\mid\mathcal{G}]$, which is strictly positive $\QQ$-almost
-surely, gives the result \cite[Lemma 8.9.2]{kuo2006}. \hfill $\blacksquare$
+$\Ep{\PP}[\Lambda\mid\mathcal{G}]$, which is strictly positive $\QQ$-almost
+surely, gives the result \cite[Lemma 8.9.2]{kuo2006}. \qedfilledtext
 
-Then, if $\alpha \in \mathcal{L}(\Omega, L^2[0,T])$ satisfies the condition on Theorem \ref{thm:exponentialmartingale}, it follows that $\mathcal E_\alpha(t)$ is a $\PP$-martingale. Let $\QQ$ be defined by $d\QQ = \mathcal E_\alpha(T)\,d\PP$, that is, $\QQ(A) = \int_A \mathcal E_\alpha (T) \, d\PP \text{ for every  } A\in \mathcal F$.
+Suppose then that $\alpha \in \mathcal{L}(\Omega, L^2[0,T])$ is such that $\mathcal E_\alpha$ is a $\PP$-martingale --- because $\E[\mathcal E_\alpha(t)] = 1$ for every $t$, which by Theorem \ref{thm:exponentialmartingale} is equivalent to it, or because Novikov's condition of Theorem \ref{thm:novikov} holds, which is the criterion one checks in practice. Let $\QQ$ be defined by $d\QQ = \mathcal E_\alpha(T)\,d\PP$, that is, $\QQ(A) = \int_A \mathcal E_\alpha (T) \, d\PP$ for every $A\in \mathcal F$.
 
 \begin{lemma}[Martingale transfer]\label{lem:qmartingale}
 Let $\alpha \in \mathcal{L}(\Omega, L^2[0,T])$.   Then a $\{\mathcal F_t \}$-adapted process $X_t$, $t\in[0,T]$ is a $\QQ$-martingale if, and only if, $X(t) \mathcal E_\alpha(t)$  is a $\PP$-martingale.
 \end{lemma}
 \textbf{\textit{Proof:}} Apply Lemma \ref{lem:condexpchange} with $\gamma = \mathcal{E}_\alpha(T)$ and
 $\mathcal{G} = \mathcal{F}_s$. Since $\mathcal{E}_\alpha$ is a $\PP$-martingale,
-$\E_\PP[\mathcal{E}_\alpha(T)\mid\mathcal{F}_s] = \mathcal{E}_\alpha(s)$, so for
+$\Ep{\PP}[\mathcal{E}_\alpha(T)\mid\mathcal{F}_s] = \mathcal{E}_\alpha(s)$, so for
 $s \leq t$
 \begin{equation}
-\E_\QQ\bigl[X(t) \mid \mathcal{F}_s\bigr]
-= \frac{\E_\PP\bigl[X(t)\mathcal{E}_\alpha(T)\mid\mathcal{F}_s\bigr]}{\mathcal{E}_\alpha(s)} .
+\Ep{\QQ}\bigl[X(t) \mid \mathcal{F}_s\bigr]
+= \frac{\Ep{\PP}\bigl[X(t)\mathcal{E}_\alpha(T)\mid\mathcal{F}_s\bigr]}{\mathcal{E}_\alpha(s)} .
 \end{equation}
 The numerator simplifies by conditioning on $\mathcal{F}_t$ first and using that $X(t)$ is
 $\mathcal{F}_t$-measurable:
 \[
-\E_\PP\bigl[X(t)\mathcal{E}_\alpha(T)\mid\mathcal{F}_s\bigr]
-= \E_\PP\Bigl[X(t)\,\E_\PP[\mathcal{E}_\alpha(T)\mid\mathcal{F}_t]\,\Big|\,\mathcal{F}_s\Bigr]
-= \E_\PP\bigl[X(t)\mathcal{E}_\alpha(t)\mid\mathcal{F}_s\bigr].
+\Ep{\PP}\bigl[X(t)\mathcal{E}_\alpha(T)\mid\mathcal{F}_s\bigr]
+= \Ep{\PP}\Bigl[X(t)\,\Ep{\PP}[\mathcal{E}_\alpha(T)\mid\mathcal{F}_t]\,\Big|\,\mathcal{F}_s\Bigr]
+= \Ep{\PP}\bigl[X(t)\mathcal{E}_\alpha(t)\mid\mathcal{F}_s\bigr].
 \]
-Hence $\E_\QQ[X(t)\mid\mathcal{F}_s] = X(s)$ if and only if
-$\E_\PP[X(t)\mathcal{E}_\alpha(t)\mid\mathcal{F}_s] = X(s)\mathcal{E}_\alpha(s)$,
-which is the assertion \cite[Lemma 8.9.3]{kuo2006}. \hfill $\blacksquare$
+Hence $\Ep{\QQ}[X(t)\mid\mathcal{F}_s] = X(s)$ if and only if
+$\Ep{\PP}[X(t)\mathcal{E}_\alpha(t)\mid\mathcal{F}_s] = X(s)\mathcal{E}_\alpha(s)$,
+which is the assertion \cite[Lemma 8.9.3]{kuo2006}. \qedfilledtext
 
 Finally, the following key result holds from Lemmas \ref{lem:condexpchange} and \ref{lem:qmartingale}.
 
@@ -2219,7 +2231,7 @@ Let $\alpha \in \mathcal{L}(\Omega, L^2[0,T])$ such that $\mathcal E_\alpha$ is 
 \end{equation}
 is a Brownian motion with respect to the measure $d\QQ  = \mathcal E_\alpha (T) d\PP$.
 \end{theorem}
-\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:girsanov}; see also \cite[Thm.\ 8.9.4]{kuo2006}. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:girsanov}; see also \cite[Thm.\ 8.9.4]{kuo2006}. \qedfilledtext
 
 Girsanov's theorem is the formal statement of something we shall use constantly: \emph{changing the 
 measure changes the drift and leaves the volatility alone}. The Brownian motion $Z$ under 
@@ -2248,7 +2260,7 @@ probability measure equivalent to $\PP$, and
 \begin{equation}
 \mathbf{Z}(t) = \mathbf{W}(t) - \int_0^t \alpha(s)\,ds, \qquad t \in [0,T],
 \end{equation}
-is an $n$-dimensional $\QQ$-Brownian motion with independent components. \hfill $\square$
+is an $n$-dimensional $\QQ$-Brownian motion with independent components. \qedopentext
 \end{theorem}
 
 That the components of $\mathbf{Z}$ remain independent under $\QQ$ deserves emphasis, since 
@@ -2276,7 +2288,7 @@ $dt\otimes d\PP$-null sets, such that
 M_t = M_0 + \int_0^t \pi(s)\transp \, d\mathbf{W}(s), \qquad t \in [0,T],
 \end{equation}
 almost surely. If $M$ is only a local martingale, the same holds with $\pi$ in the larger class 
-$\mathcal{L}(\Omega,L^2[0,T])$. \hfill $\square$
+$\mathcal{L}(\Omega,L^2[0,T])$. \qedopentext
 \end{theorem}
 
 The theorem should be read as a converse to Theorem \ref{theorem:martingale_property}. We 
@@ -2285,14 +2297,12 @@ one generated by $\mathbf{W}$ and nothing more, \emph{every} martingale is an It
 language of Proposition \ref{prop:condjensenl2}, item ii), the stochastic integrals do not 
 merely sit inside the space of martingales: they exhaust it.
 
-
-
 Two aspects of the hypothesis deserve to be underlined, because both will be load-bearing. The first is that the filtration must be generated by the Brownian motion itself. If 
 $\Filt$ carries additional information --- like another independent Brownian motion or an independent random variable revealed at time $T$ --- the conclusion fails 
-outright, and it fails for an obvious reason: a martingale driven by that extra randomness cannot be 
-written as an integral against $\mathbf{W}$, because the integral would be measurable with respect 
-to the wrong $\sigma$-algebra: \emph{no more randomness 
-in the model than the driving Brownian motion supplies}.
+outright, and it fails for an obvious reason: a martingale driven by that extra randomness cannot be
+written as an integral against $\mathbf{W}$, because the integral would be measurable with respect
+to the wrong $\sigma$-algebra. The rule to carry forward is therefore \emph{no more randomness in
+the model than the driving Brownian motion supplies}.
 
 The second is that $\pi$ is not constructed. The proof is an orthogonality argument: one shows 
 that the stochastic integrals form a closed subspace of $L^2(\Omega,\mathcal{F}_T)$ whose orthogonal 
@@ -2347,7 +2357,7 @@ information alone, which is exactly what makes the two theorems composable.
 % the inclusion is the only thing needed to pass between them.
 \end{remark}
 
-\subsection{Itô Diffusions}\label{section:itoDiff}
+\subsection{Diffusions and the Kolmogorov Equations}\label{section:itoDiff}
 
 Recall that, for a Markov process, the \textit{transition probability} $P_{s,x}(t,A) = \PP(X_t \in A \, | \, X_s = x)$, for $A$ measurable, $0\leq s\leq t \leq T$ and $x\in \R^n$. The Chapman--Kolmogorov equation states that 
 $$
@@ -2393,7 +2403,7 @@ Note how condition i) forbids the process from having jumps: it is precisely the
 The following result finally connects the previous concepts and gives an unambiguous meaning to $\mu.$
 
 \begin{theorem}\label{thm:sdeisdiffusion}
-    Let $\sigma(t,x)$ and $\mu(t,x)$ be functions as in Theorem \ref{theorem:solutions:ndimensional_sde}. Assume they are also continuous on $[0,T] \times \R^n$. The solution to the SDE there defined is a diffusion process where $\mu(t,x)$ is identified and $\Sigma(t,x)= \sigma(t,x)\,\sigma(t,x)\transp$. \hfill $\square$
+    Let $\sigma(t,x)$ and $\mu(t,x)$ be functions as in Theorem \ref{theorem:solutions:ndimensional_sde}. Assume they are also continuous on $[0,T] \times \R^n$. The solution to the SDE there defined is a diffusion process where $\mu(t,x)$ is identified and $\Sigma(t,x)= \sigma(t,x)\,\sigma(t,x)\transp$. \qedopentext
 \end{theorem}
 
 The proof of this Theorem is beyond the scope of our purposes and can be found in \cite{kuo2006}.
@@ -2465,9 +2475,7 @@ together with the terminal condition
     \lim_{s\uparrow t} F_{s,x}(t,y) = \mathds{1}_{\{x \le y\}}.
 \end{equation}
 
-
-
-Equation (\ref{Kolmogorov_backward}) is called the \textbf{Kolmogorov backward equation}, because the
+Equation \eqref{Kolmogorov_backward} is called the \textbf{Kolmogorov backward equation}, because the
 variable $s$ is the starting time, effectively moving backwards from the terminal time $t.$ It has a
 converse that we shall not need until the next chapter but may as well announce here: equations of
 this type are solved by expectations along the diffusion, which is the content of the Feynman--Kac
@@ -2486,11 +2494,11 @@ so that the Chapman--Kolmogorov equation takes the form
 By using this identity and some auxiliary test functions (integration by parts), it can be proven that
 
 \begin{equation}
-    \frac{\partial p_{s_0,x_0}(t,y)}{\partial t}  = -\frac{\partial (\mu(t,y) p_{s_0,x_0}(t,y))}{\partial y} +\frac 1 2 \frac{\partial^2 (\Sigma(t,y)p_{s_0,x_0}(t,y))}{\partial y^2} \label{eq:fokkerplanck}
+    \frac{\partial p_{s,x}(t,y)}{\partial t}  = -\frac{\partial \bigl(\mu(t,y)\, p_{s,x}(t,y)\bigr)}{\partial y} +\frac 1 2 \frac{\partial^2 \bigl(\Sigma(t,y)\,p_{s,x}(t,y)\bigr)}{\partial y^2} \label{eq:fokkerplanck}
 \end{equation}
 which, together with the initial condition
 \begin{equation}
-    \lim_{t\downarrow s_0}p_{s_0,x_0}(t,y) = \delta_{x_0}(y)
+    \lim_{t\downarrow s}p_{s,x}(t,y) = \delta_{x}(y)
 \end{equation}
 is known as either the \textbf{Kolmogorov forward equation} or the \textbf{Fokker--Planck equation.} This equation is much more useful in a financial context because it allows calculations \textit{forward} in time, i.e., evolving from known current market variables.
 
@@ -2502,10 +2510,10 @@ for all $w\in \R^n$ (uniform ellipticity). Then:
     \item[a)] The Kolmogorov backward equation has a unique solution $F_{s,x}(t,y)$. Moreover, there exists a continuous Markov process $X_t$ whose transition probabilities are recovered from it, $P_{s,x}(t,dy) = d_y F_{s,x}(t,y)$, the differential being taken in the second spatial argument.
     \item[b)] Assume additionally that the derivatives of $\mu$ and $\Sigma$ up to second order satisfy the Lipschitz and linear growth conditions. Then the Kolmogorov forward equation has a unique solution.
 \end{itemize}
-\hfill $\square$
+\qedopen
 \end{theorem}
 
-In terms of the infinitesimal generator, we can summarise the previous discussion in the following table:
+In terms of the infinitesimal generator, we can summarise the previous discussion in Table \ref{tab:forwardbackward}.
 
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -2516,15 +2524,17 @@ $\displaystyle \partial p/\partial t = \mathcal A^* p$ &
 $\displaystyle -\partial u/\partial s = \mathcal A u$ \\
 \hline
 \end{tabular}
+{\captionof{table}{The two Kolmogorov equations in terms of the generator.}%
+\label{tab:forwardbackward}}
 \end{center}
-where $\mathcal A^*$ represents the adjoint of the generator $\mathcal A$; see \cite{karatzasshreve1991} for the functional-analytic details. The duality is worth reading off the table: the backward equation propagates a \emph{payoff} backwards from maturity and is the natural object for pricing a single contract, whereas the forward equation propagates a \emph{density} forwards from today and is the natural object for calibration, since it evolves from known current market data. Dupire's formula in the next chapter (Subsection \ref{subsec:localvol}) is precisely an application of the second.
+Here $\mathcal A^*$ represents the adjoint of the generator $\mathcal A$; see \cite{karatzasshreve1991} for the functional-analytic details. The duality is worth reading off the table: the backward equation propagates a \emph{payoff} backwards from maturity and is the natural object for pricing a single contract, whereas the forward equation propagates a \emph{density} forwards from today and is the natural object for calibration, since it evolves from known current market data. Dupire's formula in the next chapter (Subsection \ref{subsec:localvol}) is precisely an application of the second.
 Figure \ref{fig:forwardbackward} shows the two evolutions for the geometric Brownian motion of the
 example below.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{Images/forward-backward.pdf}
-\caption[The forward and backward equations]{The two equations of the table, for geometric Brownian
+\caption[The forward and backward equations]{The two equations of Table \ref{tab:forwardbackward}, for geometric Brownian
 motion with $\sigma = 0.25$, $\rf = 0$ and $\Spot_0 = 100$. \emph{Left}: the forward (Fokker--Planck)
 equation \eqref{eq:fokkerplanck} transports the density forwards from the point mass at $\Spot_0$,
 which spreads as $t$ increases; this is the direction calibration works in, since $\Spot_0$ is
@@ -2553,14 +2563,16 @@ Having this, we can directly state the main theorem corresponding to the SDE app
 \begin{theorem}\label{thm:sdeapproach}
     The unique solution to 
     \begin{equation}
-        dX_t = \mu(t,X_t) \, dt + \sigma(t,X_t)\, dW_t, \quad X_{t_0} \ \mathcal{F}_{t_0}\text{-measurable}
+        dX_t = \mu(t,X_t) \, dt + \sigma(t,X_t)\, dW_t, \qquad X_{0} \ \mathcal{F}_{0}\text{-measurable}
     \end{equation}
-    is a diffusion process, whose transition distribution function $F_{s,x}(t,y)$ satisfies the Kolmogorov backward equation. If the additional conditions on part $b)$ of the previous Theorem are satisfied, then $X_t$ has density functions $p_{s,x}(t,y)$, satisfying the corresponding Kolmogorov forward equation. \hfill $\square$
+    is a diffusion process, whose transition distribution function $F_{s,x}(t,y)$ satisfies the Kolmogorov backward equation. If the additional conditions on part $b)$ of the previous Theorem are satisfied, then $X_t$ has density functions $p_{s,x}(t,y)$, satisfying the corresponding Kolmogorov forward equation. \qedopentext
 \end{theorem}
 
 \begin{example}
 We illustrate the previous discussion with the example that will occupy the whole of Chapter \ref{ch:finance}.
-Take $n=1$ and consider geometric Brownian motion, $dX_t = \rf X_t\,dt + \sigma X_t\,dW_t$ on
+Take $n=1$ and consider geometric Brownian motion with the short rate $\rf$ as its drift --- the
+risk-neutral form of Example \ref{example:blackscholessde}, which is the one pricing uses ---
+$dX_t = \rf X_t\,dt + \sigma X_t\,dW_t$ on
 $(0,\infty)$, so that $\mu(x) = \rf x$ and $\Sigma(x) = \sigma^2x^2$. By the theorem above its
 generator is
 \begin{equation}
@@ -2574,8 +2586,8 @@ Section \ref{sec:blackscholes}. Its adjoint,
 \end{equation}
 governs the forward equation \eqref{eq:fokkerplanck}, and it is the object Dupire inverts in
 Subsection \ref{subsec:localvol} to read a local volatility function off market data. The two
-equations of the table are thus not an abstraction: they are the pricing equation and the calibration
-equation of the entire Chapter \ref{ch:finance}.
+equations of Table \ref{tab:forwardbackward} are thus not an abstraction: they are the pricing
+equation and the calibration equation of the entire Chapter \ref{ch:finance}.
 \end{example}
 \section*{Notes and references}
 \addcontentsline{toc}{section}{Notes and references}

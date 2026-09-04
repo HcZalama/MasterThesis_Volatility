@@ -13,7 +13,10 @@
 %      appendix/   auxiliary results
 %======================================================================
 
-\documentclass[12pt, a4paper, hidelinks, openright, margin=2cm]{book}
+% NOTE: the 2cm margin is set by the geometry package in preamble/packages.tex.
+% It must NOT also be passed here: "margin" is not a book class option, and doing
+% so produced a "LaTeX Warning: Unused global option(s): [margin]" on every run.
+\documentclass[12pt, a4paper, hidelinks, openright]{book}
 
 \input{preamble/packages}
 \input{preamble/layout}
@@ -29,19 +32,24 @@
 \begin{document}
 %======================================================================
 
-\input{frontmatter/titlepage}
-
 %----------------------------------------------------------------------
 %  FRONT MATTER.  \frontmatter numbers these pages i, ii, iii, ...
 %  Do NOT reset the page counter by hand here: \mainmatter below restarts
 %  the numbering at arabic 1 on its own.  (The previous arrangement issued
 %  \mainmatter first and then forced \setcounter{page}{1}, which made the
-%  front matter and the body both claim pages 1-6 and produced a string of
-%  "destination with the same identifier (page.1)" warnings from pdfTeX,
-%  with the corresponding table-of-contents links pointing at the wrong
-%  pages.)
+%  front matter and the body both claim pages 1-6.)
+%
+%  \frontmatter must come BEFORE the title page, not after it.  With the
+%  title page typeset first, its two leaves were still numbered arabic 1
+%  and 2; \mainmatter then restarted arabic numbering at 1 for Part I, so
+%  pdfTeX emitted "destination with the same identifier (page.1)" (and
+%  page.2) and the corresponding table-of-contents links pointed at the
+%  title page instead of the body.
 %----------------------------------------------------------------------
 \frontmatter
+
+\input{frontmatter/titlepage}
+
 \input{frontmatter/dedication}
 
 \clearpage

@@ -27,7 +27,7 @@ Let $X, Y \in L^1(\Omega)$. Then:
     \item[6.] If $X \leq Y$, then $\mathbb{E}[X \mid \mathcal{G}] \leq \mathbb{E}[Y \mid \mathcal{G}]$; consequently $\left| \mathbb{E}[X \mid \mathcal{G}] \right| \leq \mathbb{E}[\,|X| \mid \mathcal{G}]$.
     \item[7.] For all $a,b \in \mathbb{R}$, $\mathbb{E}[aX + bY \mid \mathcal{G}] = a\,\mathbb{E}[X \mid \mathcal{G}] + b\,\mathbb{E}[Y \mid \mathcal{G}]$. In particular $\mathbb{E}[\,\cdot \mid \mathcal{G}]$ is a bounded linear operator from $L^{1}(\Omega,\mathcal{F})$ into $L^{1}(\Omega,\mathcal{G})$, a fact used to pass to limits in Theorem \ref{theorem:martingale_property}.
 \end{itemize}
-\hfill $\square$
+\qedopentext
 \end{proposition}
 
 The convergence theorems also carry over to the conditional setting, in exactly the form one would
@@ -46,13 +46,13 @@ $\liminf_{n\to\infty} X_n \in L^1(\Omega)$. Then
 \begin{proposition}[Conditional monotone convergence]\label{prop:condmct}
 Let $0 \leq X_1 \leq X_2 \leq \cdots$ and suppose $X = \lim_{n\to\infty} X_n \in L^1(\Omega)$. Then
 $\mathbb{E}[X \mid \mathcal{G}] = \lim_{n \to \infty} \mathbb{E}[X_n \mid \mathcal{G}]$ almost surely.
-\hfill $\square$
+\qedopentext
 \end{proposition}
 
 \begin{proposition}[Conditional dominated convergence]\label{prop:conddct}
 Suppose $X_n \to X$ almost surely and $|X_n| \leq Y$ for every $n$, with $Y \in L^1(\Omega)$.
 Then $\mathbb{E}[X_n \mid \mathcal{G}] \to \mathbb{E}[X \mid \mathcal{G}]$ almost surely and in $L^1(\Omega)$.
-\hfill $\square$
+\qedopentext
 \end{proposition}
 
 \section{Characteristic functions}\label{app:charfn}
@@ -76,7 +76,7 @@ For any real random variable $X$:
     Conversely, the existence of $2n$ continuous derivatives of $\charf_X$ in a neighbourhood of
     the origin implies $\mathbb{E}[|X|^{2n}] < \infty$.
 \end{itemize}
-\hfill $\square$
+\qedopentext
 \end{proposition}
 
 Property ii) deserves a word, since it is the reason the continuity hypothesis in the converse
@@ -106,7 +106,7 @@ distinct $a$, and all of them share the moment sequence of the log-normal distri
 \]
 Substituting $\log x = t + k$ turns the integrand into an odd function of $t$ multiplied by the
 Gaussian weight, and the integral vanishes. Taking $k=0$ shows in particular that each $f_a$
-integrates to $1$. \hfill $\blacksquare$
+integrates to $1$. \qedfilledtext
 
 It is worth being precise about the logical status of this. Carleman's condition
 $\sum_k m_{2k}^{-1/2k} = \infty$ is \emph{sufficient} for a law to be determined by its moments, and
@@ -132,7 +132,7 @@ u(t) \leq g(t) + \lambda \int_0^t g(s)\,e^{\lambda(t-s)}\,ds, \qquad 0 \leq t \l
 \]
 In particular, if $g \equiv \kappa$ is constant, then $u(t) \leq \kappa e^{\lambda t}$ for all
 $0 \leq t \leq T$; and if $\kappa = 0$, then $u \equiv 0$.
-\hfill $\square$
+\qedopentext
 \end{lemma}
 
 The final sentence is the one actually used. Uniqueness arguments for differential equations
@@ -149,7 +149,7 @@ Every finite signed measure $\nu$ on a measurable space $(\Omega,\mathcal{F})$ a
 decomposition $\nu = \nu^+ - \nu^-$ into mutually singular finite positive measures. The measure
 $|\nu| := \nu^+ + \nu^-$ is called the total variation of $\nu$, and $\nu \ll \lambda$ if and only
 if $|\nu| \ll \lambda$.
-\hfill $\square$
+\qedopentext
 \end{theorem}
 
 See \cite{roydenfitzpatrick2010} for a proof.

@@ -27,7 +27,7 @@ We first introduce the concept of a \textit{derivative} informally and give some
 
 In the context of modern mathematical finance, a financial derivative is formally defined as a \textit{contingent claim}. Its value is derived from---or ``contingent'' upon---the state of some other underlying variables.
 
-Let us fix a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_t)_{t \in [0, T]}, \PP)$, where $\PP$ represents the physical (or real-world) probability measure, and the filtration $(\mathcal{F}_t)_{t \geq 0}$ models the flow of information over time up to a finite time horizon $T$. Mathematically, a financial derivative with maturity $T$ is an $\mathcal{F}_T$-measurable random variable, denoted by $\Payoff_T$. A few contracts, such as perpetual American options, carry an infinite time horizon ($T=\infty$); these fall outside our finite-horizon framework and form no core part of the derivatives market, so we exclude them.
+Let us fix a filtered probability space $\FPSpace$, where $\PP$ represents the physical (or real-world) probability measure and the filtration $\Filt$ models the flow of information over time up to a finite horizon $T$. Mathematically, a financial derivative with maturity $T$ is an $\mathcal{F}_T$-measurable random variable, denoted by $\Payoff_T$. A few contracts, such as perpetual American options, carry an infinite time horizon ($T=\infty$); these fall outside our finite-horizon framework and form no core part of the derivatives market, so we exclude them.
 
 This measurability condition implies that the value of the derivative at maturity is fully determined by the information available at time $T$. The function determining this value is often referred to as the \textit{payoff function}, denoted by $\PayoffFn$, so that $\Payoff_T = \PayoffFn(\Spot_T)$ for a claim written on the terminal spot. The key idea behind the subsequent theory is being able to assign \textit{fair prices} to those contingent claims, deduced from quoted (and liquid) market data.
 
@@ -95,7 +95,7 @@ Options provide the \textit{right}, but not the \textit{obligation}, to transact
         \item \textbf{American options:} as their European counterparts, except that the option may be \textit{exercised} at any time up to maturity $T$.
 \end{itemize}
 
-Derivatives enable \textbf{hedging}, that is,  allow agents to transfer specific risks (e.g., volatility or tail risk) to those willing to bear them. In an idealized complete market, derivatives allow for the replication of any payoff profile. In a sense, liquid derivatives markets provide information to the market. Some market participants may be willing to join for pure speculation, while others genuinely need to hedge their positions, looking for a safer and more efficient way to transfer risk. Collectively, markets (and especially derivatives markets) act as an information network, where the price of a derivative reflects the market's consensus on the underlying asset's future distribution, given the payoffs involved.
+Derivatives enable \textbf{hedging}: they allow agents to transfer specific risks (e.g., volatility or tail risk) to those willing to bear them. In an idealised complete market, derivatives allow for the replication of any payoff profile. Some participants take a position for pure speculation, while others genuinely need to hedge, looking for a safer and more efficient way to transfer risk. Collectively, derivatives markets act as an information network: the price of a derivative reflects the participants' consensus on the future distribution of the underlying, and Proposition \ref{prop:breedenlitzenberger} below makes that statement exact.
 
 These concepts will be rigorously defined in the next subsection. However, the main question remains: what price should these contracts hold? Before entering the mathematical machinery, we can establish bounds based on physical intuition, much like conservation laws:
 \begin{itemize}
@@ -109,7 +109,7 @@ We now turn to the rigorous problem of pricing contingent claims. While elementa
 
 We work in a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_t)_{0 \le t \le T}, \PP)$ satisfying the usual conditions (right-continuity and completeness). The time horizon $T$ is finite.
 
-Let the market consist of $n+1$ assets denoted by the vector process $S = (S^0, S^1, \dots, S^n)$. We assume that each component $S^i$ is an \textbf{Itô process}. While the most abstract fundamental theorems of asset pricing rely on the broader class of general semimartingales, Itô processes provide the precise mathematical framework required for the diffusion models prevalent in this thesis, seamlessly connecting with the stochastic calculus developed in Section \ref{sec:stochasticcalculus}.
+Let the market consist of $n+1$ assets denoted by the vector process $S = (S^0, S^1, \dots, S^n)$. We assume that each component $S^i$ is an \textbf{Itô process}. While the most abstract fundamental theorems of asset pricing rely on the broader class of general semimartingales, Itô processes provide the precise mathematical framework required for the diffusion models prevalent in this dissertation, seamlessly connecting with the stochastic calculus developed in Section \ref{sec:stochasticcalculus}.
 
 We distinguish the $0$-th asset, $S^0$, as the \textbf{numeraire}.
 \begin{definition}[Numeraire]
@@ -191,7 +191,7 @@ numeraire $\Num$ if:
 \end{definition}
 
 \begin{theorem}[First Fundamental Theorem of Asset Pricing]\label{thm:firstFTAP}
-Assume the process $X$ is locally bounded. The market satisfies the NFLVR condition if and only if there exists at least one Equivalent Local Martingale Measure $\QQ$. \hfill $\square$
+Assume the process $X$ is locally bounded. The market satisfies the NFLVR condition if and only if there exists at least one Equivalent Local Martingale Measure $\QQ$. \qedopentext
 \end{theorem}
 
 The other reasonable question to ask ourselves is whether every contingent claim can be replicated by a self-financing strategy. Before stating the second theorem, we must rigorously define market completeness.
@@ -208,7 +208,7 @@ Note that the statement is made under the physical measure $\PP$. This is delibe
 Two function spaces appear in this circle of ideas and it is worth saying once how they fit together. Completeness is defined above by quantifying over $L^\infty(\mathcal{F}_T)$, which is the Delbaen--Schachermayer convention and the right one for the Fundamental Theorems, boundedness being what makes their separating-hyperplane argument work. The Martingale Representation Theorem \ref{thm:mrt}, by contrast, is an $L^2$ statement, because it is at bottom an assertion about an orthogonal projection in a Hilbert space. The two are reconciled by the inclusion $L^\infty(\mathcal{F}_T) \subset L^2(\mathcal{F}_T)$, valid because $\PP$ is a finite measure: every bounded claim is square-integrable, so the representation applies to every claim the definition above quantifies over. We use whichever space the argument at hand requires, and this inclusion is the only thing needed to pass between them.
 
 \begin{theorem}[Second Fundamental Theorem of Asset Pricing]\label{thm:secondFTAP}
-Assume that the set of equivalent local martingale measures $\mathcal{M}^e$ is non-empty (i.e., the market is arbitrage-free). The market is complete if and only if $\mathcal{M}^e$ is a singleton set (i.e., $\QQ$ is unique). \hfill $\square$
+Assume that the set of equivalent local martingale measures $\mathcal{M}^e$ is non-empty (i.e., the market is arbitrage-free). The market is complete if and only if $\mathcal{M}^e$ is a singleton set (i.e., $\QQ$ is unique). \qedopentext
 \end{theorem}
 
 If the market is arbitrage-free and complete (i.e., there exists a unique $\QQ$), the fair price at time $t$ of a generic derivative paying $\Payoff_T$ at maturity is given by the expectation of the discounted payoff:
@@ -216,7 +216,7 @@ If the market is arbitrage-free and complete (i.e., there exists a unique $\QQ$)
     \frac{V_t}{S^0_t} = \Ep{\QQ} \left[ \frac{\Payoff_T}{S^0_T} \bigg| \mathcal{F}_t \right] \implies V_t = S^0_t \, \Ep{\QQ} \left[ \frac{\Payoff_T}{S^0_T} \bigg| \mathcal{F}_t \right] \label{eq:riskneutralpricing}
 \end{equation}
 
-This formulation reveals that ``risk-neutral probabilities'' are not absolute; they are  linked to the choice of numeraire.
+This formulation reveals that ``risk-neutral probabilities'' are not absolute; they are tied to the choice of numeraire.
 
 Let $\widetilde{\Num}$ be a different numeraire (strictly positive semimartingale). Let $\QQ^{\Num}$ be the measure associated with numeraire $\Num$, and $\QQ^{\widetilde{\Num}}$ the measure associated with $\widetilde{\Num}$.
 Prices must be consistent regardless of the unit of account. Therefore, for any asset $Z$:
@@ -373,7 +373,7 @@ $V(T,\Spot) = \PayoffFn(\Spot)$ satisfies the linear parabolic partial different
 together with the terminal condition $V(T,\Spot)=\PayoffFn(\Spot)$.
 \end{theorem}
 
-\textbf{\textit{Proof:}} The hedging argument above. \hfill $\blacksquare$
+\textbf{\textit{Proof:}} The hedging argument above. \qedfilledtext
 
 \medskip
 
@@ -384,11 +384,15 @@ drift $\rf \Spot$ and diffusion coefficient $\sigma \Spot$, whence the probabili
 V(t,\Spot) = e^{-\rf(T-t)}\,\Ep{\QQ}\bigl[\PayoffFn(\Spot_T)\,\big|\,\Spot_t = \Spot\bigr],
 \qquad d\Spot_t = \rf \Spot_t\,dt + \sigma \Spot_t\,d\Wt^{\QQ}_t .
 \end{equation}
-The passage from \eqref{eq:BS_SDE_P} to the dynamics in \eqref{eq:bsexpectation} is precisely 
+The passage from \eqref{eq:BS_SDE_P} to the dynamics in \eqref{eq:bsexpectation} is precisely
 Girsanov's theorem with $\alpha = (\rf-\mu)/\sigma$, that is, with $-\alpha = (\mu-\rf)/\sigma$ the
 \emph{market price of risk}: the measure
-change subtracts a drift and leaves $\sigma$ untouched, exactly as discussed after Theorem 
-\ref{girsanovtheorem}. That the hedging argument and the martingale argument give the same answer is 
+change subtracts a drift and leaves $\sigma$ untouched, exactly as discussed after Theorem
+\ref{girsanovtheorem}. Its hypothesis is met here without effort, and it is worth checking once
+rather than assuming it: $\alpha$ is a constant, so
+$\E\bigl[\exp\bigl(\tfrac12\int_0^T\alpha^2\,ds\bigr)\bigr] = e^{\alpha^2T/2} < \infty$ and
+Novikov's condition (Theorem \ref{thm:novikov}) holds, whence $\mathcal{E}_\alpha$ is a genuine
+martingale and $\QQ$ is a probability measure equivalent to $\PP$. That the hedging argument and the martingale argument give the same answer is 
 not a coincidence but the content of Feynman--Kac, and the two viewpoints will alternate throughout 
 what follows --- the PDE when we want to compute, the expectation when we want to reason.
 
@@ -586,7 +590,7 @@ C(t) - P(t) = \Bond{t}{T}\bigl(\Fwd(t,T) - \Strike\bigr).
 \textbf{\textit{Proof:}} The payoffs satisfy the pointwise identity 
 $(\Spot_T-\Strike)^+ - (\Strike-\Spot_T)^+ = \Spot_T - \Strike$, valid for every value of $\Spot_T$. 
 Taking $\Ep{\QT}[\,\cdot\mid\Ft]$ and multiplying by $\Bond{t}{T}$, the right-hand side becomes 
-$\Bond{t}{T}(\Fwd(t,T)-\Strike)$ by \eqref{eq:forwarddef}. \hfill $\blacksquare$
+$\Bond{t}{T}(\Fwd(t,T)-\Strike)$ by \eqref{eq:forwarddef}. \qedfilledtext
 
 The proof used no dynamics --- not \eqref{eq:blackdynamics}, not even continuity of paths --- only 
 the linearity of expectation and an algebraic identity between payoffs. Consequently 
@@ -604,13 +608,87 @@ forward without any assumption about dividends. This is exactly how the coeffici
 \eqref{eq:spotforwardfactor} are obtained: from market data, rather than postulated.
 
 \subsection{Implied Volatility and the Inversion Problem}\label{subsec:impliedvol}
-In professional markets, participants do not ``price'' options using Black--Scholes to find the dollar value. The market price $C^{\mathrm{mkt}}$ is determined by supply and demand. Instead, Black--Scholes is used as a translation mechanism. Since vega is strictly positive (Proposition \ref{prop:greeks}), the pricing function $\sigma \mapsto C_{\mathrm{BS}}(\sigma)$ is strictly \emph{increasing}, and it sweeps out the whole no-arbitrage interval as $\sigma$ runs over $(0,\infty)$; any quote inside that interval therefore has one and only one preimage $\ivol$:
-\begin{equation}
-    C_{\mathrm{BS}}(\Spot, \Strike, T, \rf, \divy, \ivol) = C^{\mathrm{mkt}},
+In professional markets, participants do not ``price'' options using Black--Scholes to find the dollar value. The market price $C^{\mathrm{mkt}}$ is determined by supply and demand. Instead, Black--Scholes is used as a translation mechanism. Since vega is strictly positive (Proposition \ref{prop:greeks}), the pricing function $\sigma \mapsto C_{\mathrm{BS}}(\sigma)$ is strictly \emph{increasing}, and it sweeps out the whole no-arbitrage interval as $\sigma$ runs over $(0,\infty)$; any quote inside that interval therefore has one and only one preimage.
+
+\begin{definition}[Implied volatility]\label{def:impliedvol}
+Let $C^{\mathrm{mkt}}$ be an observed European call price with strike $\Strike$ and maturity $T$,
+lying strictly inside the no-arbitrage interval. Its \textbf{implied volatility}
+$\ivol(\Strike,T)$ is the unique $\sigma > 0$ solving
+\begin{equation}\label{eq:impliedvoldef}
+    C_{\mathrm{BS}}(\Spot, \Strike, T, \rf, \divy, \sigma) = C^{\mathrm{mkt}},
 \end{equation}
-the dividend yield $\divy$ entering through \eqref{eq:bscalldiv}.
-This 
-implied volatility is the true ``price'' quoted in the market. It is a quoting convention rather than a forecast: what it summarises is the market's view of the root-mean-square volatility over the life of the option \emph{under the pricing measure} $\QQ$, which is not the same as its expectation under $\PP$.
+the dividend yield $\divy$ entering through \eqref{eq:bscalldiv}. The map
+$(\Strike,T)\mapsto\ivol(\Strike,T)$ is the \textbf{implied volatility surface}, and it is the object
+Chapter \ref{ch:applications} calibrates against.
+\end{definition}
+
+Implied volatility, so defined, is the true ``price'' quoted in the market: a trader who says an
+option ``trades at fifteen'' is quoting $\ivol$, and the dollar amount is recovered from
+\eqref{eq:impliedvoldef}. Note what the definition does \emph{not} claim. It does not assert that the
+underlying follows \eqref{eq:BS_SDE_P}; it uses $C_{\mathrm{BS}}$ only as a strictly monotone change
+of units, and it would remain well posed even if every modelling assumption of Subsection
+\ref{subsec:bs_model} were false --- as, by the next subsection, they are.
+
+\subsubsection*{Implied against realised volatility}
+
+The word ``volatility'' is now doing two quite different jobs, and since the remainder of the
+dissertation turns on the difference, we separate them explicitly. Subsection \ref{subsec:bs_model}
+made the first distinction, between $\sigma$ as a \emph{parameter} of the model and $\sigma$ as a
+\emph{statistic} of observed returns. The second object is the statistic, made precise.
+
+\begin{definition}[Realised volatility]\label{def:realisedvol}
+Suppose the log-price has instantaneous variance $\sigma_t^2$, so that
+$d\log\Spot_t = \mu_t\,dt + \sigma_t\,d\Wt_t$ for some adapted drift $\mu_t$, which plays no part in
+what follows. The \textbf{realised variance} over $[0,T]$ is the
+time average
+\begin{equation}\label{eq:realisedvariance}
+\rvol^2[0,T] := \frac{1}{T}\int_0^T \sigma_t^2\,dt = \frac{1}{T}\,\bigl\langle \log \Spot \bigr\rangle_T ,
+\end{equation}
+and $\rvol$ is the \textbf{realised volatility}. Given prices $\Spot_0,\dots,\Spot_n$ observed at
+spacing $\Delta = T/n$, it is estimated by
+\begin{equation}\label{eq:realisedestimator}
+\widehat{\sigma}^{\,2} = \frac{1}{T}\sum_{i=1}^{n}\Bigl(\log\frac{\Spot_i}{\Spot_{i-1}}\Bigr)^{\!2} .
+\end{equation}
+\end{definition}
+
+The second equality in \eqref{eq:realisedvariance} is not a definition but a theorem of Chapter
+\ref{ch:foundations}: by Itô's rule the quadratic variation of $\log\Spot$ is
+$\int_0^T\sigma_t^2\,dt$, and by Definition \ref{def:quadratic-variation} and Proposition
+\ref{prop:qvcoincide} that quantity is the limit of the sums of squared increments as the mesh
+refines. The estimator \eqref{eq:realisedestimator} is therefore not a heuristic: it is the pathwise
+object of Subsection \ref{subsec:martingales} evaluated on data, and its convergence as
+$\Delta \to 0$ is exactly \eqref{eq:bmqv}. That the non-vanishing quadratic variation which forced
+It\^o's construction is also what makes volatility \emph{measurable} from a price series is not a
+coincidence; it is the same fact seen twice.
+
+The two quantities differ in three respects, and conflating them is the commonest error in this
+subject.
+
+\begin{itemize}
+    \item[i)] \textbf{Measure.} Realised volatility is a functional of the trajectory that actually
+    occurred: a statistic under $\PP$. Implied volatility is extracted from a \emph{price}, and
+    prices are expectations under $\QQ$ by \eqref{eq:riskneutralpricing}. By Girsanov's theorem
+    (Theorem \ref{girsanovtheorem}) the two measures agree on the diffusion coefficient of any
+    \emph{given} model --- which is why volatility, unlike expected return, is estimable at all ---
+    but they do not agree on the price of \emph{bearing} volatility, and that price is inside
+    $\ivol$.
+    \item[ii)] \textbf{Direction in time.} Realised volatility looks backwards over a window that has
+    already elapsed. Implied volatility looks forward over $[t,T]$, and summarises the market's view
+    of the root-mean-square volatility over the life of the contract.
+    \item[iii)] \textbf{What they are attached to.} Realised volatility is a single number attached
+    to a path and a window. Implied volatility is attached to a \emph{contract}: it depends on
+    $\Strike$ as well as on $T$, and is therefore a surface rather than a number.
+\end{itemize}
+
+Item iii) is the decisive one. Were Black--Scholes true, the surface would be flat and all three
+notions --- the parameter $\sigma$, the realised volatility $\rvol$, and the implied volatility
+$\ivol(\Strike,T)$ --- would be the same number. Empirically the surface is not flat, and the gap
+between the second and the third is a systematic one: implied volatility exceeds subsequently
+realised volatility on average, the difference being the \emph{variance risk premium} demanded by
+whoever sells the option and carries the risk. Implied volatility is consequently a price and not a
+forecast, and a model calibrated to option quotes is calibrated under $\QQ$. Everything from the
+next subsection onwards is an attempt to build dynamics under which the surface
+$\ivol(\Strike,T)$ can be non-flat and still arbitrage-free.
 
 \subsection{Smile and Skewness}
 \label{subsec:smile_skew}
@@ -627,18 +705,19 @@ The two shapes are not merely descriptive. Both say that the market's risk-neutr
 is not log-normal, and the following classical result makes the connection exact.
 
 \begin{proposition}[Breeden--Litzenberger \cite{breeden1978}]\label{prop:breedenlitzenberger}
-Let $C(\Strike,T)$ denote the price of a European call of strike $\Strike$ and maturity $T$, and 
-suppose the risk-neutral law of $\Spot_T$ admits a density $\psi_T$. Then
+Let $C(\Strike,T)$ denote the price of a European call of strike $\Strike$ and maturity $T$, and
+suppose the law of $\Spot_T$ under the $T$-forward measure $\QT$ admits a density $p_T$ --- the
+risk-neutral density itself whenever rates are deterministic, since $\QT = \QQ$ in that case. Then
 \begin{equation}\label{eq:breedenlitzenberger}
-    \psi_T(\Strike) = \frac{1}{\Bond{0}{T}}\,\frac{\partial^2 C}{\partial \Strike^2}(\Strike,T).
+    p_T(\Strike) = \frac{1}{\Bond{0}{T}}\,\frac{\partial^2 C}{\partial \Strike^2}(\Strike,T).
 \end{equation}
 \end{proposition}
 
-\textbf{\textit{Proof:}} Write $C(\Strike,T) = \Bond{0}{T}\int_{\Strike}^{\infty}(x-\Strike)\psi_T(x)\,dx$. 
+\textbf{\textit{Proof:}} Write $C(\Strike,T) = \Bond{0}{T}\int_{\Strike}^{\infty}(x-\Strike)p_T(x)\,dx$. 
 Differentiating once under the integral sign, the boundary term vanishes because the integrand is 
 zero at $x=\Strike$, leaving 
-$\partial_\Strike C = -\Bond{0}{T}\int_\Strike^\infty \psi_T(x)\,dx$. Differentiating a second time 
-gives \eqref{eq:breedenlitzenberger}. \hfill $\blacksquare$
+$\partial_\Strike C = -\Bond{0}{T}\int_\Strike^\infty p_T(x)\,dx$. Differentiating a second time 
+gives \eqref{eq:breedenlitzenberger}. \qedfilledtext
 
 The result is remarkable for what it does not assume: no model, no dynamics, only that prices are 
 discounted expectations of the payoff. A continuum of option quotes at a fixed maturity therefore 
@@ -647,7 +726,7 @@ opinion about volatility, it expresses a complete probability law, and the smile
 trace of that law failing to be log-normal.
 
 Two consequences of \eqref{eq:breedenlitzenberger} will be used constantly. First, since 
-$\psi_T \geq 0$, arbitrage-free call prices must be \emph{convex} in strike; a violation is a 
+$p_T \geq 0$, arbitrage-free call prices must be \emph{convex} in strike; a violation is a 
 butterfly arbitrage, executable by buying two wing options and selling two at the middle strike. 
 Second, the formula involves a \emph{second} derivative of market data, which is numerically 
 delicate in a way that Subsection \ref{subsec:localvol} will have to confront directly.
@@ -742,7 +821,7 @@ A total implied variance surface $\tvar(\lmon,T)$ is free of static arbitrage if
     $|\lmon|\to\infty$; more precisely, the asymptotic slopes are bounded by $2$, which is Lee's 
     moment formula \cite{lee2004}.
 \end{itemize}
-\hfill $\square$
+\qedopentext
 \end{proposition}
 
 Each condition has a direct financial meaning. Condition i) says a longer-dated option cannot be 
@@ -872,7 +951,7 @@ the characteristic function of the \emph{centred log-forward} $\log(\Fwd_T/\Fwd_
 \frac{\partial C}{\partial \tau} = \kappa D,
 \end{equation}
 with $C(u,0)=D(u,0)=0$. The system \eqref{eq:hestonriccati} admits an explicit solution in terms of 
-elementary functions. \hfill $\square$
+elementary functions. \qedopentext
 \end{theorem}
 
 % The centring in \eqref{eq:hestoncf} is deliberate and should not be skipped over. Taking the
@@ -951,7 +1030,7 @@ of calibration but of the driving noise. This is the empirical observation from 
 
 We conclude this chapter by briefly discussing the challenges posed by path-dependent derivatives, focusing on the most liquid and prominent example: American options. 
 
-Because an American option may be exercised at any time up to maturity, its value depends on the law of the underlying at \emph{every} intermediate date, not merely at $T$. A single implied volatility --- which by Subsection \ref{subsec:impliedvol} encodes one number extracted from one European quote --- therefore does not determine it: infinitely many dynamics reproduce that one quote while disagreeing about the intermediate marginals, and hence about the exercise boundary. This distinction is critically important because options on \textit{single names} (i.e., individual corporate stocks) are almost exclusively American-style. Investors in single equities are reluctant to relinquish the flexibility of early exercise, particularly to capture discrete dividends or navigate corporate actions. In contrast, broad market indices are generally considered more stable and are traded via extremely liquid European options.
+Because an American option may be exercised at any time up to maturity, its value depends on the law of the underlying at \emph{every} intermediate date, not merely at $T$. A single implied volatility, which by Definition \ref{def:impliedvol} is one number read off one European quote, therefore does not determine it: infinitely many dynamics reproduce that quote while disagreeing about the intermediate marginals, and hence about the exercise boundary. The point matters in practice because options on \textit{single names} (i.e., individual corporate stocks) are almost exclusively American-style. Investors in single equities are reluctant to relinquish the flexibility of early exercise, particularly to capture discrete dividends or navigate corporate actions. In contrast, broad market indices are generally considered more stable and are traded via extremely liquid European options.
 
 Before developing any machinery it is worth recording how much of the early-exercise premium is
 genuinely there, because for one of the two basic contracts the answer is: none. The result is due
@@ -995,7 +1074,7 @@ Since $\tau \geq t$ we have $\Ft \subseteq \mathcal{F}_\tau$, so conditioning bo
 \Ep{\QQ}\bigl[e^{-\rf\tau}(\Spot_\tau-\Strike)^+ \,\big|\, \Ft\bigr]
 \;\leq\; \Ep{\QQ}\bigl[e^{-\rf T}(\Spot_T-\Strike)^+ \,\big|\, \Ft\bigr] ,
 \]
-so the supremum in \eqref{eq:optimalstopping} is attained at $\tau = T$. \hfill $\blacksquare$
+so the supremum in \eqref{eq:optimalstopping} is attained at $\tau = T$. \qedfilledtext
 
 \medskip
 
@@ -1007,7 +1086,7 @@ $\divy > 0$, the forward is $\Spot_t e^{(\rf-\divy)(T-t)}$ and the chain of ineq
 soon as $\divy > \rf$; early exercise then becomes genuinely optimal in a neighbourhood of a
 dividend date. For the American \emph{put} the argument fails at the first step regardless of
 dividends, since deep in the money the discounted payoff is bounded above while immediate exercise
-is not, and early exercise is optimal for low enough spot (note that we do not have a Call-Put parity for American options).
+is not, and early exercise is optimal for low enough spot. Note also that put--call parity, Proposition \ref{prop:putcallparity}, has no American analogue: its proof rests on an identity between payoffs at a \emph{single} date, which early exercise destroys.
 
 We aim to show how a local volatility model can be adapted to price American options. However, we must first note a fundamental limitation: Local Volatility models do not perform perfectly for all types of path-dependent derivatives. In particular, because local volatility models make the volatility a deterministic function of the spot, hence perfectly correlated with it, they often misprice derivatives with discontinuous payoffs (which often lead to ill-posed pricing problems) or derivatives whose strikes are set at a future date, such as forward-starting options and cliquets. 
 
@@ -1058,7 +1137,7 @@ $Y$: that is, $\Snell$ is the smallest càdlàg supermartingale dominating $Y$. 
     $\mathfrak{C} = \{(t,\omega) : \Snell_t > Y_t\}$;
 \end{itemize}
 and the stopping time $\tau^{*} = \inf\{ s \geq t : \Snell_s = Y_s \}$ is optimal in
-\eqref{eq:optimalstopping}. A full treatment is given in \cite{peskirshiryaev2006}. \hfill $\square$
+\eqref{eq:optimalstopping}. A full treatment is given in \cite{peskirshiryaev2006}. \qedopentext
 \end{theorem}
 
 Since $e^{-\int_0^t \rf(s)\,ds}$ is strictly positive and deterministic, the continuation region and
@@ -1109,7 +1188,7 @@ $[0,T)\times(0,\infty)$, the three simultaneous conditions
     \end{cases}
 \end{equation}
 together with the terminal condition $V(T,\Fwd) = \PayoffFn(T,\Fwd)$ and $\PayoffFn$ as in 
-\eqref{eq:americanobstacle}. \hfill $\square$
+\eqref{eq:americanobstacle}. \qedopentext
 \end{theorem}
 
 The correspondence with Theorem \ref{thm:snell} is exact. The complementarity condition encodes the dichotomy: 

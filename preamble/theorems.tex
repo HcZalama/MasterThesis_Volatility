@@ -41,20 +41,36 @@
 \newtheorem*{convention*}{Convention}
 
 %======================================================================
-%  End-of-statement / end-of-proof markers.
+%  End-of-statement / end-of-proof markers.  See Convention 1.2:
+%  hollow = quoted without proof, filled = end of an argument.
 %
-%  Writing a bare "\hfill $\square$" after \end{equation} opens a fresh
-%  paragraph, so the marker lands on a line of its own with a full
-%  \parskip above it and reads as stranded. \qedopen and \qedfilled pull
-%  it back up so that it sits snugly under the closing display, still
-%  flush right (that is what the \hfill is doing). After ordinary text
-%  they behave exactly like the old "\hfill $\square$".
+%  There are two situations and they need different macros.
+%
+%  (1) After a DISPLAY.  Writing a bare "\hfill $\square$" after
+%      \end{equation} opens a fresh paragraph, so the marker lands on a
+%      line of its own with a full \parskip above it and reads as
+%      stranded.  \qedopen / \qedfilled pull it back up so that it sits
+%      snugly under the closing display, still flush right.
+%
+%  (2) After running TEXT.  A bare "\hfill $\square$" is wrong here too,
+%      but for a subtler reason: if the last line of the paragraph is
+%      full, TeX breaks the line BEFORE the marker, the \hfill is
+%      absorbed into the line that was just broken, and the symbol is
+%      left alone at the LEFT margin of a new line.  (This happened to
+%      Theorem 1.91.)  \qedopentext / \qedfilledtext use the standard
+%      amsthm trick -- an empty \hbox placed before \nobreak\hfill, so
+%      that any break happens ahead of the glue and the symbol carries
+%      its \hfill with it -- and therefore sit flush right whether they
+%      stay on the last line or move to a new one.
 %
 %  Usage:  ... \end{equation}
-%          \qedopen        % quoted without proof
-%  and     \qedfilled      % end of an argument
+%          \qedopen                       % display, quoted result
+%          \qedfilled                     % display, end of argument
+%  and     ... and the claim follows. \qedfilledtext
+%          ... see \cite{foo}. \qedopentext
 %======================================================================
 \makeatletter
+% (1) after a display: pull the marker up under the last line of it
 \newcommand{\thesis@endmark}[1]{%
   \par\nobreak
   \vskip -\parskip
@@ -64,4 +80,11 @@
 }
 \newcommand{\qedopen}{\thesis@endmark{\square}}
 \newcommand{\qedfilled}{\thesis@endmark{\blacksquare}}
+
+% (2) after running text: never orphaned at the left margin
+\newcommand{\thesis@textmark}[1]{%
+  \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill\quad$#1$%
+}
+\newcommand{\qedopentext}{\thesis@textmark{\square}}
+\newcommand{\qedfilledtext}{\thesis@textmark{\blacksquare}}
 \makeatother
