@@ -2,27 +2,24 @@
 
 \section{Introduction}\label{sec:roughintro}
 
-Remark \ref{rem:criticalexponent} closed Part \ref{part:part1} with a diagnosis rather than a
-theorem. Brownian motion has finite $p$-variation exactly for $p>2$; Young's integral requires
+Brownian motion has finite $p$-variation exactly for $p>2$; Young's integral requires
 $p<2$; and the Itô integral of Section \ref{sec:stochasticcalculus} bridges the gap not by refining
 an estimate but by \emph{spending probabilistic structure} --- adaptedness, an $L^2(\Omega)$ limit
-in place of a pathwise one, and a definition valid only up to null sets. That bargain is what
-Part \ref{part:part1} was built on, and it is worth being precise about the two circumstances in
-which it collapses.
+in place of a pathwise one, and a definition valid only up to null sets. 
+
 
 The first is that the driving signal may be rougher than Brownian. Itô's construction is not a
 general theory of integration against irregular paths: it is a theory of integration against
 \emph{semimartingales}, in the sense of Definition \ref{def:semimartingale}. The moment the
 integrator leaves that class, the entire apparatus --- the isometry of Theorem \ref{thm:itoisometry}, the martingale
-property, the localisation of Example \ref{example_stoppingTimes} --- becomes unavailable at once,
-and not merely inconvenient.
+property, the localisation of Example \ref{example_stoppingTimes} --- becomes unavailable at once.
 
 The second is subtler and, in the end, more consequential. Even where Itô's theory applies, it
 delivers the solution of a stochastic differential equation as a measurable function on $\Om$,
 constructed through an $L^2$ limit that depends on the filtration and the measure. It does not
 tell us that the solution depends \emph{continuously} on the driving trajectory, and in fact, as
 we shall see in Subsection \ref{subsec:whatfails}, no such statement is true in the topology one
-would naïvely choose. This is not a technical blemish. A model whose output is a discontinuous
+would naïvely choose. A model whose output is a discontinuous
 function of its input is a model one cannot approximate, cannot discretise with confidence, and
 cannot calibrate stably.
 
@@ -33,7 +30,7 @@ that idea. We begin, however, with the process that forces the question upon us.
 \subsection{Fractional Brownian Motion}\label{subsec:fbm}
 
 Brownian motion is characterised, among Gaussian processes with stationary increments, by the
-independence of those increments. Relaxing exactly that requirement --- and nothing else --- yields
+independence of those increments. Relaxing exactly that requirement yields
 the following one-parameter family, introduced by Kolmogorov and given its modern form by Mandelbrot
 and Van Ness \cite{mandelbrotvanness1968}.
 
@@ -50,8 +47,7 @@ That \eqref{eq:fbmcovariance} is a legitimate covariance --- that is, symmetric 
 semi-definite --- is a genuine constraint on $\Hurst$, and it is the reason the parameter range is
 $(0,1)$ and not larger; a proof is in \cite[Ch.\ 7]{marcusrosen2006}. Granting it, the process
 exists by the standard Gaussian construction, and Kolmogorov's criterion (Theorem
-\ref{thm:kolmogorovcontinuity}) supplies a continuous modification, with which we always work in
-accordance with Remark \ref{rem:modification}.
+\ref{thm:kolmogorovcontinuity}) supplies a continuous modification.
 
 \begin{proposition}[Elementary properties]\label{prop:fbmproperties}
 Let $\BH$ be a fractional Brownian motion with Hurst parameter $\Hurst \in (0,1)$. Then:
@@ -127,21 +123,12 @@ reproduce the argument. For $\Hurst > \tfrac12$ the quadratic variation of Defin
 continuous semimartingale with zero quadratic variation must be of finite variation, by the
 uniqueness of the decomposition, and this is a contradiction. For $\Hurst < \tfrac12$ the quadratic
 variation is instead infinite, which is incompatible with the decomposition from the other
-direction. Only the balance point $\Hurst = \tfrac12$ escapes.
-
-The consequence is severe and complete. \textbf{For $\Hurst \neq \tfrac12$ there is no Itô integral
-against $\BH$}, no Itô formula, no martingale representation, and no Girsanov theorem --- not
-because the constructions are difficult but because every one of them takes the semimartingale
-property as its hypothesis. Definition \ref{def:semimartingale} therefore marks the outer limit of
-the theory developed in Chapter \ref{ch:foundations}, and we have now crossed it.
+direction. Only the balance point $\Hurst = \tfrac12$ escapes. The consequence is severe and complete: for $\Hurst \neq \tfrac12$ there is no Itô integral
+against $\BH$, no Itô formula, no martingale representation, and no Girsanov theorem.
 
 \subsection{Volatility is Rough}\label{subsec:roughvol}
 
-Why should one wish to cross it? The answer, for this dissertation, is empirical, and although a
-thesis in mathematics is not the place for an econometric study, the finding that motivates
-everything below can be stated in one paragraph.
-
-Let $\sigma_t$ denote spot volatility, estimated from high-frequency returns over a grid of
+Let $\sigma_t$ denote realised volatility, estimated from high-frequency returns over a grid of
 spacing $\Delta$, and consider the $q$-th absolute moment of the increments of its logarithm,
 \begin{equation}\label{eq:scalingmoment}
 m(q,\Delta) \;:=\; \frac{1}{N}\sum_{i=1}^{N} \bigl|\log\sigma_{i\Delta} - \log\sigma_{(i-1)\Delta}\bigr|^{q} .
@@ -153,10 +140,10 @@ the increments are close to Gaussian. Comparison with \eqref{eq:fbmincrement} is
 are exactly the scaling relations of a fractional Brownian motion. The estimated exponent is
 $\Hurst \approx 0.1$, and it is remarkably stable across assets and across decades.
 
-\figurehere{Log--log plot of $m(q,\Delta)$ against $\Delta$ for several values of $q$, showing the
-parallel straight lines whose slopes are $\zeta_q$, alongside the plot of $\zeta_q$ against $q$
-exhibiting the linear (monofractal) relation $\zeta_q = q\Hurst$. This is the visual statement of
-the empirical finding of \cite{gatheraljaissonrosenbaum2018}.}
+% \figurehere{Log--log plot of $m(q,\Delta)$ against $\Delta$ for several values of $q$, showing the
+% parallel straight lines whose slopes are $\zeta_q$, alongside the plot of $\zeta_q$ against $q$
+% exhibiting the linear (monofractal) relation $\zeta_q = q\Hurst$. This is the visual statement of
+% the empirical finding of \cite{gatheraljaissonrosenbaum2018}.}
 
 This inverts an earlier consensus. The fractional stochastic volatility model of Comte and Renault
 \cite{comterenault1998} also used fractional Brownian motion, but with $\Hurst > \tfrac12$, in order
@@ -168,9 +155,7 @@ persistent, it is \emph{rough}. The resulting model, which we shall meet again i
 \sigma_t = \exp(X_t), \qquad \dd X_t = \nu\,\dd \BH_t - a\bigl(X_t - m\bigr)\dd t,
 \end{equation}
 with $a$ so small that, over any horizon of practical interest, $X$ is indistinguishable from
-a fractional Brownian motion.\footnote{The mean-reversion speed is written $\alpha$ in
-\cite{gatheraljaissonrosenbaum2018}; we use $a$, since $\alpha$ is reserved throughout this chapter
-for the H\"older exponent fixed in \eqref{eq:alpharange}.}
+a fractional Brownian motion.
 
 For our purposes the decisive consequence is the one that concerns the object Chapter \ref{ch:finance}
 was built to construct: the implied volatility surface. A model of the form
@@ -180,19 +165,18 @@ was built to construct: the implied volatility surface. A model of the form
 \qquad \text{as } \tau \downarrow 0 ,
 \end{equation}
 a power-law explosion at short maturities. Every model driven by a semimartingale volatility
-factor --- Heston included, and by Theorem \ref{thm:fbmnotsemimartingale} that is precisely the
-case $\Hurst = \tfrac12$ --- produces a skew that flattens as $\tau \downarrow 0$, and no choice of
+factor produces a skew that flattens as $\tau \downarrow 0$, and no choice of
 parameters repairs this. The observed surface does not flatten. Roughness is what the market
 implies, and $\eqref{eq:skewpowerlaw}$ is the cleanest statement of why.
 
-\begin{remark}
-The reader should note what \eqref{eq:rfsv} does and does not require. The equation is driven by
-$\BH$ but is \emph{linear} in $X$, so it can be solved explicitly, by a pathwise
-Riemann--Stieltjes argument, without any integration theory for $\BH$ at all. The difficulty
-arrives one level up, when one wishes to price --- that is, to integrate $\sigma_t$, a nonlinear
-functional of $\BH$, against the Brownian motion driving the asset price. That is a genuine
-stochastic integral against a rough signal, and it is the problem this chapter exists to address.
-\end{remark}
+% \begin{remark}
+% The reader should note what \eqref{eq:rfsv} does and does not require. The equation is driven by
+% $\BH$ but is \emph{linear} in $X$, so it can be solved explicitly, by a pathwise
+% Riemann--Stieltjes argument, without any integration theory for $\BH$ at all. The difficulty
+% arrives one level up, when one wishes to price --- that is, to integrate $\sigma_t$, a nonlinear
+% functional of $\BH$, against the Brownian motion driving the asset price. That is a genuine
+% stochastic integral against a rough signal, and it is the problem this chapter exists to address.
+% \end{remark}
 
 \subsection{What Fails, and Why}\label{subsec:whatfails}
 
@@ -218,7 +202,7 @@ immediately and for all $\Hurst \neq \tfrac12$.
 
 \medskip
 
-\noindent\textbf{And the obstruction is not a matter of technique.} One might still hope that the
+\noindent\textbf{The obstruction is not a matter of technique.} One might still hope that the
 map $(f,g)\mapsto \int g\,\dd f$, manifestly well defined for smooth paths, extends by continuity
 to the irregular ones --- that some cleverer topology on path space would do what the uniform
 topology fails to do. The following example, due to Lyons, shows that the uniform topology cannot.
@@ -264,32 +248,35 @@ and the object we should be topologising is not the path.
 Example \ref{ex:lyonscounterexample} tells us exactly what is missing. What distinguishes
 $\bigl(x^{(n)},y^{(n)}\bigr)$ from the zero path is the area it encloses --- equivalently, the
 iterated integral $\int\!\!\int \dd x\,\dd y$. So we shall carry that quantity along as part of the
-data, postulate it where it cannot be constructed, and topologise the enlarged object. That the
-resulting theory is not merely a device but the \emph{correct} formulation is the content of
-Theorem \ref{thm:ult}, and everything between here and there is the construction.
+data, postulate it where it cannot be constructed, and topologise the enlarged object. 
 
-\medskip
 
-One word on how the chapter is to be read, since its architecture is deliberate and easy to miss.
-What follows is not a survey of an unrelated theory placed alongside Part \ref{part:part1}. Three
-classical results --- Itô's formula and the Itô--Stratonovich correction, both obtained in Chapter
-\ref{ch:foundations}, together with the Wong--Zakai approximation theorem, which belongs to the same
-classical circle of ideas but was not needed there --- will be \emph{re-derived} here on
-different foundations, and in each case we shall state explicitly what the new derivation costs in
-hypotheses and what it buys in conclusions. That accounting is the real argument of this chapter.
-The results themselves are not new, and the rough-path versions are in two of the three cases
-strictly weaker than the classical ones; what is new is that they are obtained pathwise,
-deterministically, and with a continuity statement attached. The coda closing the chapter collects
-the three and draws the moral.
+% That the
+% resulting theory is not merely a device but the \emph{correct} formulation is the content of
+% Theorem \ref{thm:ult}, and everything between here and there is the construction.
+
+% \medskip
+
+% One word on how the chapter is to be read, since its architecture is deliberate and easy to miss.
+% What follows is not a survey of an unrelated theory placed alongside Part \ref{part:part1}. Three
+% classical results --- Itô's formula and the Itô--Stratonovich correction, both obtained in Chapter
+% \ref{ch:foundations}, together with the Wong--Zakai approximation theorem, which belongs to the same
+% classical circle of ideas but was not needed there --- will be \emph{re-derived} here on
+% different foundations, and in each case we shall state explicitly what the new derivation costs in
+% hypotheses and what it buys in conclusions. That accounting is the real argument of this chapter.
+% The results themselves are not new, and the rough-path versions are in two of the three cases
+% strictly weaker than the classical ones; what is new is that they are obtained pathwise,
+% deterministically, and with a continuity statement attached. The coda closing the chapter collects
+% the three and draws the moral.
 
 \section{Rough Paths}\label{sec:roughpaths}
 
 \subsection{Tensor Spaces}\label{subsec:tensorspaces}
 
-The iterated integrals we must carry are indexed by pairs of coordinates, and the algebraic home
+The iterated integrals we must carry are indexed by pairs of coordinates, so the algebraic home
 for such objects is the tensor product. We recall only what is needed; the systematic treatment,
 which requires free Lie algebras and the theory of the free nilpotent group, is developed in
-\cite[Ch.\ 3]{geng2021} and \cite[Ch.\ 7]{frizvictoir2010}, and we shall not need it.
+\cite[Ch.\ 3]{geng2021} and \cite[Ch.\ 7]{frizvictoir2010}.
 
 Throughout this chapter $V := \R^d$ with its standard basis $\{e_1,\dots,e_d\}$.
 
@@ -320,11 +307,10 @@ whose elements we write $\xi = (\xi_0,\xi_1,\xi_2)$, equipped with the multiplic
 \begin{equation}\label{eq:tensormultiplication}
 (\xi \otimes \eta)_n \;:=\; \sum_{k=0}^{n} \xi_k \otimes \eta_{n-k}, \qquad n = 0,1,2,
 \end{equation}
-all terms of order higher than two being discarded. We write
+all terms of higher order being discarded. We write
 $\Tone{2}(V) := \{\xi \in \Tens{2}(V) : \xi_0 = 1\}$. More generally, the truncation at order $N$ is
 $\Tens{N}(V) := \bigoplus_{n=0}^{N} V^{\otimes n}$, with the same multiplication truncated at order
-$N$, and the full tensor algebra --- in which no truncation is performed and elements are therefore
-infinite sequences --- is $T((V)) := \prod_{n \geq 0} V^{\otimes n}$. Only $\Tens{2}$ is used until
+$N$, and the full tensor algebra is $T((V)) := \prod_{n \geq 0} V^{\otimes n}$. Only $\Tens{2}$ is used until
 Section \ref{sec:signature}.
 \end{definition}
 
@@ -347,7 +333,7 @@ Let $x : [0,\Mat]\to V$ be continuously differentiable. For $s \leq t$ set
 X_{s,t} := x_t - x_s \in V, \qquad
 \lev_{s,t} := \int_s^t \bigl(x_r - x_s\bigr)\otimes \dd x_r = \int_s^t\!\!\int_s^r \dd x_u \otimes \dd x_r \in V\otimes V,
 \end{equation}
-both integrals being ordinary Riemann--Stieltjes integrals. In coordinates,
+both integrals being ordinary Riemann--Stieltjes integrals, so
 $\lev^{ij}_{s,t} = \int_s^t (x^i_r - x^i_s)\,\dot x^j_r\,\dd r$. The pair
 $\rpX_{s,t} := \bigl(1, X_{s,t}, \lev_{s,t}\bigr)$ takes values in $\Tone{2}(V)$.
 \end{example}
@@ -384,8 +370,7 @@ is new. Geometrically $A^{ij}_{s,t}$ is the signed area enclosed between the cho
 $(x^i_s,x^j_s)$ to $(x^i_t,x^j_t)$ and the arc of the path between them --- precisely the quantity
 that Example \ref{ex:lyonscounterexample} showed to be invisible to uniform convergence. Whether
 \eqref{eq:symmetricpart} continues to hold once $x$ is no longer differentiable is exactly the
-distinction between the two classes of rough path introduced in Subsection \ref{subsec:typesofrp},
-and it is the precise mathematical location of the difference between Itô and Stratonovich calculus.
+distinction between the two classes of rough path introduced in Subsection \ref{subsec:typesofrp}.
 
 \subsection{The Multiplicative Property}\label{subsec:multiplicative}
 
@@ -412,9 +397,8 @@ $\rpX_{s,t} = \rpX_{s,u}\otimes\rpX_{u,t}$ is immediate from \eqref{eq:tensormul
 \qedfilledtext
 
 \medskip
-
-Relation \eqref{eq:chen} is worth reading twice. At the first level it is the triviality
-$X_{s,t} = X_{s,u} + X_{u,t}$, the additivity of increments. At the second level it is a genuine
+At the first level, 
+$X_{s,t} = X_{s,u} + X_{u,t}$ is just the additivity of increments. At the second level it is a genuine
 constraint, and it says that $\lev$ is \emph{not} additive: concatenating two intervals produces a
 cross-term $X_{s,u}\otimes X_{u,t}$ which is the area contributed by the interaction of the two
 pieces. The relation is thus the algebraic residue of the additivity of integration, and it is what
@@ -454,7 +438,7 @@ $\lev : \{0\leq s\leq t\leq \Mat\} \to V\otimes V$ such that:
     \begin{equation}\label{eq:chenaxiom}
     \lev_{s,t} - \lev_{s,u} - \lev_{u,t} = X_{s,u}\otimes X_{u,t};
     \end{equation}
-    \item[ii)] (\textbf{analytic bound}) the seminorms
+    \item[ii)] (\textbf{Analytic bound}) the seminorms
     \begin{equation}\label{eq:rpnorms}
     \lVert X\rVert_{\alpha} := \sup_{s\neq t}\frac{|X_{s,t}|}{|t-s|^{\alpha}}, \qquad
     \lVert \lev\rVert_{2\alpha} := \sup_{s\neq t}\frac{|\lev_{s,t}|}{|t-s|^{2\alpha}}
@@ -467,9 +451,7 @@ $\vertiii{\rpX}_{\alpha} := \lVert X\rVert_\alpha + \lVert\lev\rVert_{2\alpha}^{
 
 The exponent $2\alpha$ in \eqref{eq:rpnorms} is not a convention but a necessity: $\lev$ is
 formally a double integral of increments of size $|t-s|^\alpha$, so any object deserving the name
-must scale that way. Note also that the two conditions pull in opposite directions --- i) is
-algebraic and rigid, ii) is analytic and merely quantitative --- and that neither alone would
-suffice.
+must scale that way. 
 
 \begin{definition}[The rough path metric]\label{def:rpmetric}
 For $\rpX = (X,\lev)$ and $\widetilde{\rpX} = (\widetilde X, \widetilde\lev)$ in $\RP{\alpha}$ set

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.24)  3 SEP 2026 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.24)  10 SEP 2026 22:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -845,25 +845,11 @@ Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 11.
 
 
 
-{C:/Users/hecto/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./Images/LOGOUNEDDDD.png>]) (frontmatter/dedication.tex [2]) (frontmatter/preface.tex) [3
+{C:/Users/hecto/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./Images/LOGOUNEDDDD.png>]) (frontmatter/dedication.tex [2]) (frontmatter/preface.tex) (frontmatter/abstract.tex) [3
 
 
-] (frontmatter/abstract.tex
-Overfull \hbox (3.08044pt too wide) in paragraph at lines 7--10
-[]\T1/lmr/m/n/12 This dis-ser-ta-tion is a self-contained ac-count of volatil-ity mod-elling, from the clas-si-cal foun-da-tions
- []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4
-
-]
-Overfull \hbox (10.6365pt too wide) in paragraph at lines 75--78
-\T1/lmr/bx/n/12 Palabras clave: \T1/lmr/m/n/12 cál-culo es-tocás-tico; in-te-gral de Itô; movimiento brow-n-i-ano; variación cuadrática;
- []
-
-[5]) [6
+] [4
 
 ] (main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4.
@@ -895,56 +881,45 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
  (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [7] [8] [9])
+) [5] [6] [7])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [10{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] (frontmatter/notation-table.tex
-Underfull \hbox (badness 10000) in alignment at lines 22--26
+ [8{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] (frontmatter/notation-table.tex
+Underfull \hbox (badness 10000) in alignment at lines 23--27
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 26--28
+Underfull \hbox (badness 10000) in alignment at lines 27--29
 [] []
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 29.
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 37.
+(Font)              <10.95> on input line 30.
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 36.
 (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Underfull \hbox (badness 10000) in alignment at lines 28--82
+Underfull \hbox (badness 10000) in alignment at lines 29--74
 [] []
  []
 
-frontmatter/notation-table.tex:82: ignored error: Infinite glue shrinkage found in box being split [11]
-frontmatter/notation-table.tex:82: ignored error: Infinite glue shrinkage found in box being split [12{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [13])
+[9{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}])
 \openout2 = `chapters/00-introduction.aux'.
 
- (chapters/00-introduction.tex [14
+ (chapters/00-introduction.tex [10
 
 
 
 ]
-Overfull \hbox (13.15486pt too wide) in paragraph at lines 26--27
+Overfull \hbox (13.15486pt too wide) in paragraph at lines 27--28
 \T1/lmr/m/n/12 and il-lus-trat-ing the strengths and chal-lenges as-so-ci-ated with each ap-proach. Some fi-nal con-clu-sions
  []
 
-[15]
-Overfull \hbox (5.49461pt too wide) in paragraph at lines 45--46
-\T1/lmr/m/n/12 grains sus-pended in wa-ter, no-ticed some-thing un-ex-pected: the par-ti-cles wan-dered along ir-reg-u-lar,
- []
-
-
-Overfull \hbox (0.74715pt too wide) in paragraph at lines 49--50
+[11]
+Overfull \hbox (0.74715pt too wide) in paragraph at lines 50--51
 \T1/lmr/m/n/12 math-e-mat-i-cal ob-ject took shape grad-u-ally, but it was Kiyoshi Itô's work on \T1/lmr/m/it/12 stochas-tic in-te-gra-tion
- []
-
-
-Overfull \hbox (6.06888pt too wide) in paragraph at lines 51--52
-[]\T1/lmr/m/n/12 Finance came to the sub-ject later, but with un-de-ni-able im-pact. To-day math-e-mat-ics is ev-ery-where
  []
 
 )
@@ -952,7 +927,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 76.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [16] [1
+ [12] [1
 
 
 
@@ -971,244 +946,167 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 107.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 110.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [4{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (10.75403pt too wide) in paragraph at lines 158--162
-\T1/lmr/m/n/12 times; it does ex-plicit work in Propo-si-tion []1.10[] be-low, and again in the Doob--Meyer de-com-po-si-tion
- []
-
-[5]
+ [4{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [5]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 234.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 257.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
  [6] [7]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 328.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 347.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
  [8] [9]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 452.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 492.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [10] [11]
+ [10]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 519.
+(Font)              <10> on input line 516.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 519.
+(Font)              <7> on input line 516.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 519.
+(Font)              <5> on input line 516.
+ [11]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 533.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 588.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
  [12] [13]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 648.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [14] [15]
-Overfull \hbox (7.06912pt too wide) in paragraph at lines 724--726
-[][]\T1/lmr/bx/n/12 Theorem 1.33 \T1/lmr/m/n/12 (Doob--Meyer de-com-po-si-tion)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 Let $\OML/lmm/m/it/12 M \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 M[]\OMS/lmsy/m/n/12 g[]$ \T1/lmr/m/it/12 be a càdlàg, square-integrable
+Overfull \hbox (2.51743pt too wide) in paragraph at lines 713--719
+\T1/lmr/m/n/12 sub-tract-ing from $\OML/lmm/m/it/12 M[]$ \T1/lmr/m/n/12 its mar-tin-gale part, pro-vided the fol-low-ing clas-si-cal de-com-po-si-tion. Writ-ing
  []
 
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 765.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 753.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[16]
-Overfull \hbox (1.47598pt too wide) in paragraph at lines 796--808
-\U/msb/m/n/12 E [][] \OML/lmm/m/it/12 f[] d\OMS/lmsy/m/n/12 h\OML/lmm/m/it/12 M\OMS/lmsy/m/n/12 i[]$\T1/lmr/m/n/12 , the com-pen-sator of []; lo-cal-i-sa-tion then re-moves the in-te-gra-bil-ity hy-pothe-ses.
- []
-
-[17]
+[14] [15]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 911.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 902.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [18]
-Overfull \hbox (3.48653pt too wide) in paragraph at lines 964--973
-[]\T1/lmr/m/n/12 The first stage is the Daniell--Kolmogorov ex-ten-sion the-o-rem. Con-di-tions iii) and iv) of Def-i-ni-tion
- []
-
-[19]
-Overfull \hbox (2.86693pt too wide) in paragraph at lines 1012--1019
-[]\T1/lmr/m/n/12 The two stages now fit to-gether. Daniell--Kolmogorov sup-plies a pro-cess whose finite-dimensional
- []
-
+ [16] [17]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1029.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1039.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[20] [21]
-<Images/reflection.pdf, id=1022, 470.54347pt x 245.9589pt>
+ [18] [19]
+<Images/reflection.pdf, id=929, 470.54347pt x 245.9589pt>
 File: Images/reflection.pdf Graphic file (type pdf)
 <use Images/reflection.pdf>
-Package pdftex.def Info: Images/reflection.pdf  used on input line 1150.
-(pdftex.def)             Requested size: 483.69687pt x 252.83757pt.
+Package pdftex.def Info: Images/reflection.pdf  used on input line 1121.
+(pdftex.def)             Requested size: 396.63496pt x 207.32838pt.
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1180.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1169.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [22]
-<Images/bm-variation.pdf, id=1048, 470.18498pt x 188.42395pt>
+ [20 <./Images/reflection.pdf>]
+<Images/bm-variation.pdf, id=997, 470.18498pt x 188.42395pt>
 File: Images/bm-variation.pdf Graphic file (type pdf)
 <use Images/bm-variation.pdf>
-Package pdftex.def Info: Images/bm-variation.pdf  used on input line 1207.
+Package pdftex.def Info: Images/bm-variation.pdf  used on input line 1178.
 (pdftex.def)             Requested size: 483.69687pt x 193.84882pt.
 
-Overfull \hbox (2.29619pt too wide) in paragraph at lines 1217--1219
+Overfull \hbox (2.29619pt too wide) in paragraph at lines 1188--1190
 []\T1/lmr/m/n/12 The same com-pe-ti-tion can be ex-pressed more finely by ask-ing, not whether the sum of in-cre-ments
  []
 
-[23 <./Images/reflection.pdf>]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1265.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [24 <./Images/bm-variation.pdf>]
-Overfull \hbox (2.68861pt too wide) in paragraph at lines 1300--1301
+[21 <./Images/bm-variation.pdf>]
+Overfull \hbox (2.68861pt too wide) in paragraph at lines 1271--1272
 \T1/lmr/m/n/12 Stochastic cal-cu-lus is a broad area of math-e-mat-ics which al-lows, among other things, ran-dom-ness
  []
 
-
-Overfull \hbox (7.7146pt too wide) in paragraph at lines 1309--1310
-[]\T1/lmr/m/n/12 The ex-po-si-tion be-low could be car-ried out in the full gen-er-al-ity an-tic-i-pated by the semi-martin-gales
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1295.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[22] [23]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1424.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [24] [25]
+Overfull \hbox (5.32635pt too wide) in paragraph at lines 1519--1522
+[][]\T1/lmr/bx/n/12 Definition 1.56 \T1/lmr/m/n/12 (Stratonovich in-te-gral)\T1/lmr/bx/n/12 . []\T1/lmr/m/n/12 Let $\OML/lmm/m/it/12 F \OMS/lmsy/m/n/12 2 C[]\OT1/lmr/m/n/12 (\U/msb/m/n/12 R\OT1/lmr/m/n/12 )$ \T1/lmr/m/n/12 and put $\OML/lmm/m/it/12 f \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 F\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 W\OT1/lmr/m/n/12 )$\T1/lmr/m/n/12 . The \T1/lmr/bx/n/12 Stratonovich
  []
 
-[25]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1373.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1564.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [26] [27]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1500.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [28]
-Overfull \hbox (5.32635pt too wide) in paragraph at lines 1550--1553
-[][]\T1/lmr/bx/n/12 Definition 1.58 \T1/lmr/m/n/12 (Stratonovich in-te-gral)\T1/lmr/bx/n/12 . []\T1/lmr/m/n/12 Let $\OML/lmm/m/it/12 F \OMS/lmsy/m/n/12 2 C[]\OT1/lmr/m/n/12 (\U/msb/m/n/12 R\OT1/lmr/m/n/12 )$ \T1/lmr/m/n/12 and put $\OML/lmm/m/it/12 f \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 F\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 W\OT1/lmr/m/n/12 )$\T1/lmr/m/n/12 . The \T1/lmr/bx/n/12 Stratonovich
- []
-
-[29]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1613.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [30]
+[26] [27]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1651.
+(caption)                particular \caption on input line 1621.
 See the caption package documentation for explanation.
 
-[31]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1726.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1681.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[28] [29]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1780.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [30] [31]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1913.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
  [32] [33]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1834.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [34]
-Overfull \hbox (2.97092pt too wide) in paragraph at lines 1835--1836
-[]\T1/lmr/m/n/12 Second, the square-integrability of the ini-tial con-di-tion is not dec-o-ra-tion. The whole con-struc-tion
- []
 
-[35]
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2037.
+See the caption package documentation for explanation.
+
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1939.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2060.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[34] [35]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2182.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
  [36] [37]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2039.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2336.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [38]
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2082.
-See the caption package documentation for explanation.
-
-[39]
+ [38] [39]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2169.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2443.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [40] [41]
-Overfull \hbox (7.36595pt too wide) in paragraph at lines 2250--2253
-\T1/lmr/m/it/12 dimensional Brow-n-ian mo-tion and let $\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = (\OML/lmm/m/it/12 []; [] ; []\OT1/lmr/m/n/12 )$ \T1/lmr/m/it/12 be an adapted pro-cess with $[][]\OMS/lmsy/m/n/12 k\OML/lmm/m/it/12 \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 s\OT1/lmr/m/n/12 )\OMS/lmsy/m/n/12 k[] \OML/lmm/m/it/12 ds <
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2289.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[42]
-Overfull \hbox (13.62053pt too wide) in paragraph at lines 2307--2315
-\T1/lmr/m/n/12 about how to com-pute it. Re-cov-er-ing $\OML/lmm/m/it/12 ^^Y$ \T1/lmr/m/n/12 in con-crete cases is pre-cisely the delta-hedging com-pu-ta-tion
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43]
-Overfull \hbox (3.4876pt too wide) detected at line 2388
-\OML/lmm/m/it/12 ^^V\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; x\OT1/lmr/m/n/12 ) = [] []\U/msb/m/n/12 E [] \OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 ^^F(\OML/lmm/m/it/12 t; x\OT1/lmr/m/n/12 ) = [] []\U/msb/m/n/12 E [] \OML/lmm/m/it/12 :
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2412.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[44] [45]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2511.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [46]
-Overfull \hbox (2.94942pt too wide) in paragraph at lines 2511--2512
+ [40]
+Overfull \hbox (2.94942pt too wide) in paragraph at lines 2459--2460
 \T1/lmr/m/it/12 and lin-ear growth con-di-tions. Then the Kol-mogorov for-ward equa-tion has a unique so-lu-tion. 
  []
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2527.
+(caption)                particular \caption on input line 2475.
 See the caption package documentation for explanation.
 
-
-Overfull \hbox (0.27464pt too wide) in paragraph at lines 2530--2533
-\T1/lmr/m/n/12 The du-al-ity is worth read-ing off the ta-ble: the back-ward equa-tion prop-a-gates a \T1/lmr/m/it/12 pay-off \T1/lmr/m/n/12 back-wards
- []
-
-
-Overfull \hbox (8.15857pt too wide) in paragraph at lines 2530--2533
-\T1/lmr/m/n/12 since it evolves from known cur-rent mar-ket data. Dupire's for-mula in the next chap-ter (Sub-sec-tion
- []
-
-<Images/forward-backward.pdf, id=1530, 470.27693pt x 195.0745pt>
+<Images/forward-backward.pdf, id=1372, 470.27693pt x 195.0745pt>
 File: Images/forward-backward.pdf Graphic file (type pdf)
 <use Images/forward-backward.pdf>
-Package pdftex.def Info: Images/forward-backward.pdf  used on input line 2536.
+Package pdftex.def Info: Images/forward-backward.pdf  used on input line 2483.
 (pdftex.def)             Requested size: 483.69687pt x 200.65213pt.
-[47 <./Images/forward-backward.pdf>]
-Overfull \hbox (7.91469pt too wide) in paragraph at lines 2567--2569
-\T1/lmr/m/it/12 then $\OML/lmm/m/it/12 X[]$ \T1/lmr/m/it/12 has den-sity func-tions $\OML/lmm/m/it/12 p[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; y\OT1/lmr/m/n/12 )$\T1/lmr/m/it/12 , sat-is-fy-ing the cor-re-spond-ing Kol-mogorov for-ward equa-tion.
- []
-
+[41]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2597.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2540.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[48]) [49]
+ [42 <./Images/forward-backward.pdf>]) [43]
 \openout2 = `chapters/02-financial.aux'.
 
- (chapters/02-financial.tex [50
+ (chapters/02-financial.tex [44
 
 
 
@@ -1216,242 +1114,258 @@ Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2597.
 ]
 Chapter 2.
 
-Overfull \hbox (4.10219pt too wide) in paragraph at lines 11--19
+Overfull \hbox (4.10219pt too wide) in paragraph at lines 11--16
 \T1/lmr/m/n/12 nu-meraire is a change of mea-sure; a hedg-ing strat-egy is the in-te-grand sup-plied by a rep-re-sen-ta-tion
  []
 
-[51]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 94.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [52] [53]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 168.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [54]
-Overfull \hbox (6.50494pt too wide) in paragraph at lines 185--187
-[][]\T1/lmr/bx/n/12 Definition 2.3 \T1/lmr/m/n/12 (Equiv-a-lent Lo-cal Mar-tin-gale Mea-sure)\T1/lmr/bx/n/12 . []\T1/lmr/m/n/12 A prob-a-bil-ity mea-sure $\U/msb/m/n/12 Q$ \T1/lmr/m/n/12 is an \T1/lmr/m/it/12 equiv-a-lent
- []
-
-[55]
-Overfull \hbox (8.20085pt too wide) in paragraph at lines 211--212
-[][]\T1/lmr/bx/n/12 Theorem 2.6 \T1/lmr/m/n/12 (Sec-ond Fun-da-men-tal The-o-rem of As-set Pric-ing)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 As-sume that the set of equiv-a-lent
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 243.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[56] [57]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 356.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [58] [59]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 475.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [60] [61]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 601.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [62] [63]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 701.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [64] [65]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 808.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [66]
-Overfull \hbox (4.58092pt too wide) in paragraph at lines 833--838
-[]\T1/lmr/m/n/12 In prac-tice one first fits a para-met-ric form guar-an-tee-ing i)--iii) --- Gatheral's SVI pa-ram-e-ter-i-sa-tion
- []
-
-[67]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 936.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [68] [69]
-Overfull \hbox (8.62444pt too wide) in paragraph at lines 1031--1032
-\T1/lmr/m/n/12 We con-clude this chap-ter by briefly dis-cussing the chal-lenges posed by path-dependent deriva-tives,
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1073.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[70]
-Overfull \hbox (2.8847pt too wide) in paragraph at lines 1110--1113
-[]\T1/lmr/m/n/12 The holder may ex-er-cise at any stop-ping time of her choos-ing, and will choose the one max-imis-ing
- []
-
-[71]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 1137.
- (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Overfull \hbox (1.83925pt too wide) in paragraph at lines 1156--1160
-\T1/lmr/m/n/12 Translating The-o-rem []2.22[] into the lan-guage of par-tial dif-fer-en-tial equa-tions gives a free bound-ary
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1203.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[72]) [73] [74
-
-
-
-] [75] [76]
-\openout2 = `chapters/03-roughpaths.aux'.
-
- (chapters/03-roughpaths.tex
-Chapter 3.
-[77
-
-
-]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 116.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [78] [79]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 231.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [80] [81]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 358.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [82] [83]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 488.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [84] [85]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 624.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [86] [87]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 758.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [88] [89]
-Overfull \hbox (2.0858pt too wide) in paragraph at lines 883--886
-[][]\T1/lmr/m/it/12 Remark \T1/lmr/m/n/12 3.31 (The in-te-gral de-pends on the lift)\T1/lmr/m/it/12 . []\T1/lmr/m/n/12 We can now make pre-cise the claim of Sub-sec-tion
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 910.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[90]
-Overfull \hbox (13.48949pt too wide) in paragraph at lines 969--978
-\T1/lmr/m/n/12 re-cov-ered is the time-homogeneous case, driven by Brow-n-ian mo-tion, un-der the stronger hy-poth-e-sis
- []
-
-[91]
-Overfull \hbox (1.303pt too wide) in paragraph at lines 1024--1031
-[][]\T1/lmr/m/it/12 Remark \T1/lmr/m/n/12 3.37 (Why $\OML/lmm/m/it/12 Y[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Y\OT1/lmr/m/n/12 )$ \T1/lmr/m/n/12 is im-posed)\T1/lmr/m/it/12 . []\T1/lmr/m/n/12 The con-straint is not cos-metic; with-out it unique-ness
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1039.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[92] [93]
-Overfull \hbox (24.66553pt too wide) in paragraph at lines 1134--1139
-[][]\T1/lmr/bx/n/12 Corollary 3.42 \T1/lmr/m/n/12 (Wong--Za-kai)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 Let $\OML/lmm/m/it/12 W$ \T1/lmr/m/it/12 be a Brow-n-ian mo-tion, $\OML/lmm/m/it/12 W[]$ \T1/lmr/m/it/12 its piecewise-linear in-ter-po-la-tion
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1176.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[94] [95]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1306.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [96] [97]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1430.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [98] [99]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1560.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [100]
-Overfull \hbox (17.03146pt too wide) in paragraph at lines 1602--1609
-\T1/lmr/m/n/12 al-though [] con-tains no $\OML/lmm/m/it/12 dt$ \T1/lmr/m/n/12 term what-ever. There is no con-tra-dic-tion, be-cause the de-com-po-si-tion
- []
-
-[101]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1703.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [102] [103]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1837.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [104] [105]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1984.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [106] [107]
-Overfull \hbox (8.32387pt too wide) in paragraph at lines 2067--2068
-[][]\T1/lmr/bx/n/12 Corollary 3.72 \T1/lmr/m/n/12 (A scale-free es-ti-ma-tor of the Hurst pa-ram-e-ter)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 With the no-ta-tion of Propo-si-tion
- []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2133.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[108] [109]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2271.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [110] [111]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2412.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [112] [113]
-File: Images/LOGOUNEDDDD.png Graphic file (type png)
-<use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2532.
-(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [114] [115])
+[45]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 98.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [116]
+ [46] [47]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 178.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [48]
+Overfull \hbox (6.50494pt too wide) in paragraph at lines 190--192
+[][]\T1/lmr/bx/n/12 Definition 2.3 \T1/lmr/m/n/12 (Equiv-a-lent Lo-cal Mar-tin-gale Mea-sure)\T1/lmr/bx/n/12 . []\T1/lmr/m/n/12 A prob-a-bil-ity mea-sure $\U/msb/m/n/12 Q$ \T1/lmr/m/n/12 is an \T1/lmr/m/it/12 equiv-a-lent
+ []
+
+
+Overfull \hbox (2.9166pt too wide) in paragraph at lines 213--214
+[]\T1/lmr/m/n/12 Completeness is de-fined above by quan-ti-fy-ing over $\OML/lmm/m/it/12 L[]\OT1/lmr/m/n/12 (\OMS/lmsy/m/n/12 F[]\OT1/lmr/m/n/12 )$\T1/lmr/m/n/12 , which is the Delbaen--Schachermayer
+ []
+
+[49]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 256.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [50] [51]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 391.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [52] [53]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 511.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [54] [55]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 629.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [56] [57]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 745.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [58] [59]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 913.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [60]
+Overfull \hbox (8.62444pt too wide) in paragraph at lines 988--989
+\T1/lmr/m/n/12 We con-clude this chap-ter by briefly dis-cussing the chal-lenges posed by path-dependent deriva-tives,
+ []
+
+[61]
+Overfull \hbox (2.8847pt too wide) in paragraph at lines 1063--1066
+[]\T1/lmr/m/n/12 The holder may ex-er-cise at any stop-ping time of her choos-ing, and will choose the one max-imis-ing
+ []
+
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1069.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[62]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 1088.
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Overfull \hbox (1.83925pt too wide) in paragraph at lines 1106--1109
+[]\T1/lmr/m/n/12 Translating The-o-rem []2.20[] into the lan-guage of par-tial dif-fer-en-tial equa-tions gives a free bound-ary
+ []
+
+[63])
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 92.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [64] [65
+
+
+
+] [66]
+\openout2 = `chapters/03-roughpaths.aux'.
+
+ (chapters/03-roughpaths.tex
+Chapter 3.
+
+Underfull \vbox (badness 1609) has occurred while \output is active []
+
+ [67
+
+
+]
+
+LaTeX Warning: Reference `rem:criticalexponent' on page 68 undefined on input line 64.
+
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 112.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[68] [69]
+
+LaTeX Warning: Reference `rem:criticalexponent' on page 70 undefined on input line 189.
+
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 241.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[70] [71]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 386.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [72]
+
+LaTeX Warning: Reference `rem:criticalexponent' on page 73 undefined on input line 424.
+
+[73]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 525.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [74] [75]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 655.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [76] [77]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 787.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [78] [79]
+Overfull \hbox (2.0858pt too wide) in paragraph at lines 865--868
+[][]\T1/lmr/m/it/12 Remark \T1/lmr/m/n/12 3.30 (The in-te-gral de-pends on the lift)\T1/lmr/m/it/12 . []\T1/lmr/m/n/12 We can now make pre-cise the claim of Sub-sec-tion
+ []
+
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 939.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[80]
+Overfull \hbox (13.48949pt too wide) in paragraph at lines 951--960
+\T1/lmr/m/n/12 re-cov-ered is the time-homogeneous case, driven by Brow-n-ian mo-tion, un-der the stronger hy-poth-e-sis
+ []
+
+[81]
+Overfull \hbox (1.303pt too wide) in paragraph at lines 1006--1013
+[][]\T1/lmr/m/it/12 Remark \T1/lmr/m/n/12 3.36 (Why $\OML/lmm/m/it/12 Y[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Y\OT1/lmr/m/n/12 )$ \T1/lmr/m/n/12 is im-posed)\T1/lmr/m/it/12 . []\T1/lmr/m/n/12 The con-straint is not cos-metic; with-out it unique-ness
+ []
+
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1068.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[82]
+Overfull \hbox (24.66553pt too wide) in paragraph at lines 1116--1121
+[][]\T1/lmr/bx/n/12 Corollary 3.41 \T1/lmr/m/n/12 (Wong--Za-kai)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 Let $\OML/lmm/m/it/12 W$ \T1/lmr/m/it/12 be a Brow-n-ian mo-tion, $\OML/lmm/m/it/12 W[]$ \T1/lmr/m/it/12 its piecewise-linear in-ter-po-la-tion
+ []
+
+[83]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1195.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [84] [85]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1336.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [86] [87]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1461.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [88] [89]
+Overfull \hbox (17.03146pt too wide) in paragraph at lines 1584--1591
+\T1/lmr/m/n/12 al-though [] con-tains no $\OML/lmm/m/it/12 dt$ \T1/lmr/m/n/12 term what-ever. There is no con-tra-dic-tion, be-cause the de-com-po-si-tion
+ []
+
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1591.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[90] [91]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1726.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [92]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [93]
+
+LaTeX Warning: Reference `rem:criticalexponent' on page 94 undefined on input line 1811.
+
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1851.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+[94] [95]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1994.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [96]
+Overfull \hbox (8.32387pt too wide) in paragraph at lines 2049--2050
+[][]\T1/lmr/bx/n/12 Corollary 3.71 \T1/lmr/m/n/12 (A scale-free es-ti-ma-tor of the Hurst pa-ram-e-ter)\T1/lmr/bx/n/12 . []\T1/lmr/m/it/12 With the no-ta-tion of Propo-si-tion
+ []
+
+[97]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2157.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [98] [99]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2275.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [100] [101]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2417.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [102] [103]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2527.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [104]) [105]
+File: Images/LOGOUNEDDDD.png Graphic file (type png)
+<use Images/LOGOUNEDDDD.png>
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 98.
+(pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
+ [106]
 \openout2 = `chapters/04-applications.aux'.
 
  (chapters/04-applications.tex
 Chapter 4.
-[117
+
+LaTeX Warning: Reference `conv:lvolarguments' on page 107 undefined on input line 34.
+
+
+LaTeX Warning: Reference `eq:gatheral' on page 107 undefined on input line 41.
+
+[107
 
 
 
@@ -1461,16 +1375,19 @@ Overfull \hbox (8.39375pt too wide) in paragraph at lines 57--60
 []\T1/lmr/m/it/12 Log-elasticities in ma-tu-rity. \T1/lmr/m/n/12 For a pos-i-tive func-tion $\OML/lmm/m/it/12 X$ \T1/lmr/m/n/12 of $\OML/lmm/m/it/12 T$ \T1/lmr/m/n/12 we write $\OML/lmm/m/it/12 ^^U[] \OT1/lmr/m/n/12 := \OML/lmm/m/it/12 @ [] X=@ [] T \OT1/lmr/m/n/12 =
  []
 
+
+LaTeX Warning: Reference `eq:gatheral' on page 108 undefined on input line 71.
+
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 102.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[118]
+[108]
 Overfull \hbox (11.66533pt too wide) in paragraph at lines 102--107
-\T1/lmr/m/n/12 Propo-si-tion []2.18[] hold \T1/lmr/m/it/12 iden-ti-cally\T1/lmr/m/n/12 . Ex-trap-o-la-tion is there-fore a the-o-rem, not an ex-trap-o-la-tion. 
+\T1/lmr/m/n/12 Propo-si-tion []2.17[] hold \T1/lmr/m/it/12 iden-ti-cally\T1/lmr/m/n/12 . Ex-trap-o-la-tion is there-fore a the-o-rem, not an ex-trap-o-la-tion. 
  []
 
-[119]
+[109]
 Overfull \hbox (2.0562pt too wide) in paragraph at lines 172--175
 \T1/lmr/m/n/12 in which the cur-va-ture ap-pears ex-actly once, lin-early, and with a pos-i-tive sign. Two con-se-quences
  []
@@ -1484,27 +1401,27 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 239.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[120] [121]
+[110] [111]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 370.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [122] [123]
+ [112] [113]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 515.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [124] [125]
+ [114] [115]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 728.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [126] [127]
+ [116] [117]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 970.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [128]
+ [118]
 Underfull \hbox (badness 1052) in paragraph at lines 1038--1041
 \T1/lmr/m/n/10.95 soft-min er-ror of Re-mark []4.7[] and leaves
  []
@@ -1519,22 +1436,22 @@ Underfull \hbox (badness 3302) in paragraph at lines 1063--1065
 \T1/lmr/m/n/10.95 op threads cost $\OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 6\OMS/lmsy/m/n/10.95 ^^B$ \T1/lmr/m/n/10.95 more than one.
  []
 
-[129]
+[119]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1107.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [130] [131]
+ [120] [121]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1225.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [132]
+ [122]
 Overfull \hbox (2.97128pt too wide) in paragraph at lines 1256--1264
 \T1/lmr/m/n/12 the sum run-ning over the $\OT1/lmr/m/n/12 2415$ \T1/lmr/m/n/12 quotes in-side the cone []. The nor-mal-i-sa-tion is the sub-stan-tive
  []
 
-[133]
+[123]
 Overfull \hbox (78.58714pt too wide) in paragraph at lines 1322--1328
 \T1/lmr/m/n/12 re-turns ex-po-nents $\OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 494\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 450\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 342\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 222\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 103\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 +0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 008$ \T1/lmr/m/n/12 at $\OML/lmm/m/it/12 H \OT1/lmr/m/n/12 = 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 05\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 10\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 20\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 30\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 40\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 50$\T1/lmr/m/n/12 ,
  []
@@ -1548,35 +1465,35 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1338.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[134]
-<Images/rh-smiles.pdf, id=3338, 470.22244pt x 277.97249pt>
+[124]
+<Images/rh-smiles.pdf, id=3104, 470.22244pt x 277.97249pt>
 File: Images/rh-smiles.pdf Graphic file (type pdf)
 <use Images/rh-smiles.pdf>
 Package pdftex.def Info: Images/rh-smiles.pdf  used on input line 1399.
 (pdftex.def)             Requested size: 483.69687pt x 285.93736pt.
- [135]
+ [125]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1477.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [136 <./Images/rh-smiles.pdf>]
-<Images/rh-identification.pdf, id=3422, 469.43379pt x 177.38081pt>
+ [126 <./Images/rh-smiles.pdf>]
+<Images/rh-identification.pdf, id=3187, 469.43379pt x 177.38081pt>
 File: Images/rh-identification.pdf Graphic file (type pdf)
 <use Images/rh-identification.pdf>
 Package pdftex.def Info: Images/rh-identification.pdf  used on input line 1532.
 (pdftex.def)             Requested size: 483.69687pt x 182.78004pt.
- [137]
+ [127]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1550.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [138 <./Images/rh-identification.pdf>] [139]
+ [128 <./Images/rh-identification.pdf>] [129]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1683.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [140] [141]
-<Images/levy-lag.pdf, id=3564, 470.1565pt x 195.65096pt>
+ [130] [131]
+<Images/levy-lag.pdf, id=3329, 470.1565pt x 195.65096pt>
 File: Images/levy-lag.pdf Graphic file (type pdf)
 <use Images/levy-lag.pdf>
 Package pdftex.def Info: Images/levy-lag.pdf  used on input line 1765.
@@ -1590,10 +1507,13 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1794.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[142 <./Images/levy-lag.pdf>] [143]
+[132 <./Images/levy-lag.pdf>] [133]
 Overfull \hbox (18.54149pt too wide) in paragraph at lines 1852--1855
 []\T1/lmr/bx/n/12 Pseudo-European Map-ping: \T1/lmr/m/n/12 As-sume these im-plied volatil-i-ties ap-prox-i-mate the volatil-i-ties
  []
+
+
+LaTeX Warning: Reference `eq:gatheral' on page 134 undefined on input line 1858.
 
 
 Overfull \hbox (4.2829pt too wide) in paragraph at lines 1866--1869
@@ -1604,37 +1524,32 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1947.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[144]) [145]
+[134]) [135]
 \openout2 = `chapters/05-conclusions.aux'.
 
- (chapters/05-conclusions.tex [146
+ (chapters/05-conclusions.tex [136
 
 
 
 
 ]
 Chapter 5.
-) [147]
+) [137]
 \openout2 = `appendix/A-auxiliary.aux'.
 
- (appendix/A-auxiliary.tex [148
+ (appendix/A-auxiliary.tex [138
 
 
 
 
 ]
 Appendix A.
-[149]
+[139]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 101.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [150] [151]
-Overfull \hbox (7.84612pt too wide) in paragraph at lines 180--182
-[][]\T1/lmr/bx/n/12 Definition A.10 \T1/lmr/m/n/12 (Class (D))\T1/lmr/bx/n/12 . []\T1/lmr/m/n/12 A pro-cess $\OML/lmm/m/it/12 X$ \T1/lmr/m/n/12 is of \T1/lmr/bx/n/12 class (D) \T1/lmr/m/n/12 if the fam-ily $\OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 X[] \OT1/lmr/m/n/12 : \OML/lmm/m/it/12 ^^\[]\OMS/lmsy/m/n/12 g$\T1/lmr/m/n/12 ,
- []
-
-
+ [140] [141]
 Overfull \hbox (25.66675pt too wide) in paragraph at lines 190--190
 []\T1/lmr/bx/n/17.28 The es-sen-tial supre-mum of a fam-ily of ran-dom vari-ables 
  []
@@ -1644,10 +1559,10 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 104.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [152] [153]
+ [142] [143]
 \openout2 = `appendix/B-proofs.aux'.
 
- (appendix/B-proofs.tex [154
+ (appendix/B-proofs.tex [144
 
 
 
@@ -1680,7 +1595,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 34.
 
-[155]
+[145]
 Overfull \hbox (7.06468pt too wide) in paragraph at lines 62--70
 \T1/lmr/m/n/12 Each $\OML/lmm/m/it/12 g[]$ \T1/lmr/m/n/12 has con-tin-u-ous sam-ple paths, since it is an in-def-i-nite in-te-gral, and $\OMS/lmsy/m/n/12 j\OML/lmm/m/it/12 g[]\OMS/lmsy/m/n/12 j ^^T \OML/lmm/m/it/12 M$\T1/lmr/m/n/12 . Adapt-ed-ness
  []
@@ -1689,7 +1604,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 104.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[156] [157]
+[146] [147]
 Overfull \hbox (4.58583pt too wide) in paragraph at lines 171--174
 \T1/lmr/m/n/12 The right-hand side has no drift, so $\OML/lmm/m/it/12 Z\OMS/lmsy/m/n/12 E[]$ \T1/lmr/m/n/12 is a $\U/msb/m/n/12 P$\T1/lmr/m/n/12 -local mar-tin-gale, and un-der the stated in-te-gra-bil-ity
  []
@@ -1698,7 +1613,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 225.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[158] [159]
+[148] [149]
 Overfull \hbox (38.81746pt too wide) in paragraph at lines 339--339
 []\T1/lmr/bx/n/17.28 Existence and unique-ness for rough dif-fer-en-tial equa-tions 
  []
@@ -1707,17 +1622,17 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 355.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[160] [161]
+[150] [151]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 489.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [162]) [163]
+ [152]) [153]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 105.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
- [164]
+ [154]
 Overfull \hbox (3.53232pt too wide) in paragraph at lines 109--109
 []\T1/lmr/m/n/12 Robert Alm-gren and Neil Chriss. ^^P  Op-ti-mal ex-e-cu-tion of port-fo-lio trans-ac-tions^^Q. In: \T1/lmr/m/it/12 Jour-nal
  []
@@ -1740,7 +1655,7 @@ Overfull \hbox (7.95787pt too wide) in paragraph at lines 109--109
 []\T1/lmr/m/n/12 Fabienne Comte and Eric Re-nault. ^^P  Long Mem-ory in Continuous-Time Stochas-tic Volatil-ity
  []
 
-[165
+[155
 
 
 
@@ -1773,7 +1688,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 109.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[166]
+[156]
 Overfull \hbox (7.0992pt too wide) in paragraph at lines 109--109
 []\T1/lmr/m/n/12 Ilya Loshchilov and Frank Hut-ter. \T1/lmr/m/it/12 SGDR: Stochas-tic Gra-di-ent De-scent with Warm Restarts\T1/lmr/m/n/12 .
  []
@@ -1798,7 +1713,7 @@ Overfull \hbox (9.38924pt too wide) in paragraph at lines 109--109
 []\T1/lmr/m/n/12 Goran Peskir and Al-bert Shiryaev. \T1/lmr/m/it/12 Op-ti-mal Stop-ping and Free-Boundary Prob-lems\T1/lmr/m/n/12 . Lec-tures
  []
 
-[167]
+[157]
 Overfull \hbox (7.01639pt too wide) in paragraph at lines 109--109
 []\T1/lmr/m/n/12 Marc Ro-mano and Nizar Touzi. ^^P  Con-tin-gent claims and mar-ket com-plete-ness in a stochas-tic
  []
@@ -1808,38 +1723,37 @@ Overfull \hbox (7.52373pt too wide) in paragraph at lines 109--109
 \T1/lmr/m/n/12 In: \T1/lmr/m/it/12 Math-e-mat-i-cal Pro-ceed-ings of the Cam-bridge Philo-soph-i-cal So-ci-ety \T1/lmr/m/n/12 49.1 (1953), pp. 31^^U39. 
  []
 
-
-Overfull \hbox (17.50916pt too wide) in paragraph at lines 109--109
-[]\T1/lmr/m/n/12 Laurence C. Young. ^^P  An In-equal-ity of the Hölder Type, Con-nected with Stielt-jes In-te-gra-tion^^Q.
- []
-
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 111.
 (pdftex.def)             Requested size: 21.14972pt x 19.75374pt.
-[168] (main.aux (chapters/00-introduction.aux) (chapters/01-foundations.aux) (chapters/02-financial.aux) (chapters/03-roughpaths.aux) (chapters/04-applications.aux) (chapters/05-conclusions.aux) (appendix/A-auxiliary.aux) (appendix/B-proofs.aux))
+[158] (main.aux (chapters/00-introduction.aux) (chapters/01-foundations.aux) (chapters/02-financial.aux) (chapters/03-roughpaths.aux) (chapters/04-applications.aux) (chapters/05-conclusions.aux) (appendix/A-auxiliary.aux) (appendix/B-proofs.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 54E2AE2BD9867E88FFF3854D950E804A;21684.
+(rerunfilecheck)             Checksum: 181CA18DF8006E9E5B628CCCCC145421;21549.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25849 strings out of 467871
- 459588 string characters out of 5418376
- 1365797 words of memory out of 5000000
- 53357 multiletter control sequences out of 15000+600000
- 763924 words of font info for 132 fonts, out of 8000000 for 9000
+ 25812 strings out of 467871
+ 459118 string characters out of 5418376
+ 1357225 words of memory out of 5000000
+ 53350 multiletter control sequences out of 15000+600000
+ 763452 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,18n,96p,1369b,2294s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,18n,96p,1350b,2294s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (184 pages, 2442773 bytes).
+Output written on main.pdf (170 pages, 2349365 bytes).
 PDF statistics:
- 4297 PDF objects out of 5155 (max. 8388607)
- 942 named destinations out of 1000 (max. 500000)
+ 4056 PDF objects out of 4296 (max. 8388607)
+ 913 named destinations out of 1000 (max. 500000)
  924 words of extra memory for PDF output out of 10000 (max. 10000000)
 

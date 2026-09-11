@@ -2229,33 +2229,6 @@
       \field{pages}{155\bibrangedash 167}
       \range{pages}{13}
     \endentry
-    \entry{young1936}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=167c60c9f6f9d31e787d5515a84e042f}{%
-           family={Young},
-           familyi={Y\bibinitperiod},
-           given={Laurence\bibnamedelima C.},
-           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \strng{namehash}{167c60c9f6f9d31e787d5515a84e042f}
-      \strng{fullhash}{167c60c9f6f9d31e787d5515a84e042f}
-      \strng{fullhashraw}{167c60c9f6f9d31e787d5515a84e042f}
-      \strng{bibnamehash}{167c60c9f6f9d31e787d5515a84e042f}
-      \strng{authorbibnamehash}{167c60c9f6f9d31e787d5515a84e042f}
-      \strng{authornamehash}{167c60c9f6f9d31e787d5515a84e042f}
-      \strng{authorfullhash}{167c60c9f6f9d31e787d5515a84e042f}
-      \strng{authorfullhashraw}{167c60c9f6f9d31e787d5515a84e042f}
-      \field{sortinit}{Y}
-      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Acta Mathematica}
-      \field{title}{An Inequality of the Hölder Type, Connected with {S}tieltjes Integration}
-      \field{volume}{67}
-      \field{year}{1936}
-      \field{pages}{251\bibrangedash 282}
-      \range{pages}{32}
-    \endentry
   \enddatalist
 \endrefsection
 \endinput
