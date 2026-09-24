@@ -1,17 +1,96 @@
-\chapter{Conclusions} \label{ch:conclusions} 
+% Unnumbered, exactly as the Introduction is: the thesis opens and closes with a
+% chapter that carries no number, and the numbered body sits between them.
+%
+% All three lines are needed. \chapter* alone would leave the entry out of the
+% table of contents, and would also leave the running heads showing "Chapter 4.
+% Applications" for the whole of this chapter, since \chapter* does not set the
+% marks. \label is kept so that the Introduction can still link here, but note
+% that \ref would now print a stale number -- the cross-reference there is a
+% \hyperref on the word instead.
+\chapter*{Conclusions} \label{ch:conclusions}
+\addcontentsline{toc}{chapter}{Conclusions}
+\markboth{Conclusions}{Conclusions}
+%\section*{Summary and reflections}
 
-\begin{theorem}\label{thm:main}
-This is the main result.
-\end{theorem}
+The aim of this dissertation was to build a bridge between mathematics and financial markets, from the perspective of an MSc degree in Mathematics. We have presented the key results of the mathematical theory, as well as the necessary financial background, and we have shown how the two interact in practice. We now summarise the main points of the work, and we conclude with some reflections on possible directions for further research.
 
-As we saw in Theorem~\ref{thm:main}, ...
+We began with measure theory and
+Brownian motion, and built the It\^o integral. We also obtained some results on the roughness of
+Brownian paths. Then we used that machinery to set up the standard pricing framework:
+arbitrage, the fundamental theorems, Black--Scholes, and the local and stochastic volatility models.
 
+In Part \ref{part:part2} we crossed the line where the driving
+signal is rougher than Brownian motion and the semimartingale construction of Part \ref{part:part1}
+no longer applies. There we developed
+rough path theory. This approach is more general, and it links directly with some recent developments
+in the theory of stochastic processes, such as regularity structures and paracontrolled
+distributions. The full reach of the theory is beyond our scope, so we restricted ourselves to two
+levels and to the key results involving the signature. We also looked at Brownian motion as a rough
+path.
 
-\begin{equation}\label{eq:energy}
-E = mc^2
-\end{equation}
+% Two results from the theory are worth repeating. The first is that rough path theory does not
+% replace stochastic calculus; it explains it. It\^o's formula, the It\^o--Stratonovich correction and
+% the Wong--Zakai theorem all reappeared in Chapter \ref{ch:roughpaths} as consequences of a single
+% fact: a trajectory does not determine its own iterated integrals, so a choice has to be made, and
+% those three classical results are that same choice becoming visible in three different places. The
+% second result is more practical. A rough price is not a semimartingale, so it admits no equivalent
+% martingale measure and the market it describes is not free of arbitrage. Roughness cannot be put in
+% the price. It has to go one level down, into the volatility. That is not a modelling preference but
+% a theorem, and it is the reason every rough volatility model in the literature is built the way it
+% is.
 
-We substitute into equation~\eqref{eq:energy}. also \ref{eq:energy}
+Chapter \ref{ch:applications} is where the models met the market, and the three studies there gave
+three different kinds of answer. The physics-informed surface worked: on an SPX book it placed
+$95.5\%$ of the quotes inside their own bid/ask, kept the typical error to the mid below five basis
+points, and showed no violation of the static no-arbitrage conditions on the validation grid, with
+the extrapolated wings covered analytically. Rough Heston did not
+fit nearly as well, and it pushed the Hurst parameter to the smooth end of its range. That looks
+like evidence that this market is not rough, but it is not. As \S\ref{subsec:rhidentification} shows, the
+estimator that would settle the question has no power over the maturities available: two calibrated
+models whose $\Hurst$ differs by a factor of almost five produce practically the same skew slope.
+The honest conclusion is that this option book cannot answer that question, which is a more useful
+thing to know than a fitted number would have been. The third study was the L\'evy area for a pair of assets, where the computations of rough path theory were carried out on real data.
 
+% Was the original goal achieved? I believe it was. The aim was to build a bridge between a reader who
+% knows the mathematics but not the market and a reader who knows the market but not the mathematics,
+% and both directions are served here. The first reader never meets a definition without being told
+% what it is for, and the second is shown the theorem sitting underneath habits that are usually taken
+% on trust. The comparison between the two calibrations makes the point better than any argument: a
+% surface with no dynamics describes today's prices almost perfectly, while a six-parameter model with
+% dynamics does not come close. That is not a defeat for rough Heston. It is what the trade-off
+% between describing and explaining looks like once someone measures it.
 
+The thesis is heterogeneous, in content and in intention, and this is deliberate. It moves from
+measure theory to neural networks and from theorems to basis points, and we have not sought to hide
+it: it reflects the author's professional experience. Several choices in Chapter \ref{ch:applications} come
+from the day-to-day work of a trading floor rather than from a textbook: measuring error in half-spreads instead of
+volatility points, treating absence of arbitrage as a hard constraint instead of a diagnostic, and
+asking of a quantity whether a desk could actually realise it. Those are the instincts of a
+front-office quantitative analyst, and they shaped the applied half of this work.
+
+Three directions remain open, and each is active work today. The signature of Section
+\ref{sec:signature} was developed here in full and then used only at its second level; the natural
+continuation is to let it drive the model itself, as in the joint calibration to SPX and VIX options
+of Cuchiero et al.\ \cite{cuchiero2025} and the path-dependent processes of Abi Jaber et al.\
+\cite{abijaber2024}. Second, roughness is not the only reading of the evidence in Subsection
+\ref{subsec:roughvol}: Guyon and Lekeufack \cite{guyonlekeufack2022} argue that volatility is mostly
+\emph{path-dependent} rather than rough, and this dissertation has not tested one account against
+the other. And on the theoretical side, reaching the exponents the data suggest needs Hairer's
+regularity structures \cite{hairer2014} rather than rough paths, in the form built for rough
+volatility by Bayer et al.\ \cite{bayerfrizgassiat2020}. Any of the three would make a thesis of its
+own.
+
+% There are limits, and they should be stated plainly. The two calibrations answer different questions
+% and were not run as a controlled head-to-head, so the contrast between them is informative rather
+% than decisive. The rough path machinery supplies rough Heston with vocabulary rather than with
+% proofs, because at the exponents the data suggest the lifting theorems are not available. And the
+% signature was developed in full and then used only at its second level. Each of these points to an
+% obvious continuation --- signature-based calibration, intraday sampling for the area, and regularity
+% structures for the theory --- but they are directions for another piece of work, not for this one.
+
+% I want to point out in particular the depth of rough path theory and of its extension to regularity
+% structures. Between them they give meaning to equations driven by signals far too irregular for
+% classical stochastic calculus, and they do it with a single idea: carry more information about the
+% path than the trajectory itself contains. Understanding that idea was, for me, the most rewarding
+% part of this work.
 

@@ -19,6 +19,40 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{ackerer2020}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=f73c087782a5ddc50890e1b90e8d585c}{%
+           family={Ackerer},
+           familyi={A\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod}}}%
+        {{hash=070163542003b4ffaa3410f76fced9b7}{%
+           family={Tagasovska},
+           familyi={T\bibinitperiod},
+           given={Natasa},
+           giveni={N\bibinitperiod}}}%
+        {{hash=540ceb4174c61b0464a50f8d81618c70}{%
+           family={Vatter},
+           familyi={V\bibinitperiod},
+           given={Thibault},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{55ef1b1748a9fccbb9c6a109d54c2f68}
+      \strng{fullhash}{55ef1b1748a9fccbb9c6a109d54c2f68}
+      \strng{fullhashraw}{55ef1b1748a9fccbb9c6a109d54c2f68}
+      \strng{bibnamehash}{55ef1b1748a9fccbb9c6a109d54c2f68}
+      \strng{authorbibnamehash}{55ef1b1748a9fccbb9c6a109d54c2f68}
+      \strng{authornamehash}{55ef1b1748a9fccbb9c6a109d54c2f68}
+      \strng{authorfullhash}{55ef1b1748a9fccbb9c6a109d54c2f68}
+      \strng{authorfullhashraw}{55ef1b1748a9fccbb9c6a109d54c2f68}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems 33 (NeurIPS 2020)}
+      \field{title}{Deep Smoothing of the Implied Volatility Surface}
+      \field{year}{2020}
+    \endentry
     \entry{almgrenchriss2001}{article}{}{}
       \name{author}{2}{}{%
         {{hash=d131e724d2881ef91d39366029fc74db}{%
@@ -530,6 +564,111 @@
       \field{pages}{61\bibrangedash 73}
       \range{pages}{13}
     \endentry
+    \entry{carteajaimungal2015}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=f44cd81b9149e6772753cb2ba9f054ec}{%
+           family={Cartea},
+           familyi={C\bibinitperiod},
+           given={Álvaro},
+           giveni={Á\bibinitperiod}}}%
+        {{hash=aa8922fa8465c0b8208b33e873a556af}{%
+           family={Jaimungal},
+           familyi={J\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f89e7355a9f1fc8ddb1951360652cf32}{%
+           family={Penalva},
+           familyi={P\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{47d5913cfd00e9678d1c013a12c8366f}
+      \strng{fullhash}{47d5913cfd00e9678d1c013a12c8366f}
+      \strng{fullhashraw}{47d5913cfd00e9678d1c013a12c8366f}
+      \strng{bibnamehash}{47d5913cfd00e9678d1c013a12c8366f}
+      \strng{authorbibnamehash}{47d5913cfd00e9678d1c013a12c8366f}
+      \strng{authornamehash}{47d5913cfd00e9678d1c013a12c8366f}
+      \strng{authorfullhash}{47d5913cfd00e9678d1c013a12c8366f}
+      \strng{authorfullhashraw}{47d5913cfd00e9678d1c013a12c8366f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algorithmic and High-Frequency Trading}
+      \field{year}{2015}
+    \endentry
+    \entry{chataigner2020}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e278c58f12760cfd2c27cec9ed690cdd}{%
+           family={Chataigner},
+           familyi={C\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0bf143581b6a50fadb41099cca42eda0}{%
+           family={Crépey},
+           familyi={C\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d1c13e78008bdad93f49d2f7b9247c3a}{%
+           family={Dixon},
+           familyi={D\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{10ad6a033fc2334b19f39d3053b90d47}
+      \strng{fullhash}{10ad6a033fc2334b19f39d3053b90d47}
+      \strng{fullhashraw}{10ad6a033fc2334b19f39d3053b90d47}
+      \strng{bibnamehash}{10ad6a033fc2334b19f39d3053b90d47}
+      \strng{authorbibnamehash}{10ad6a033fc2334b19f39d3053b90d47}
+      \strng{authornamehash}{10ad6a033fc2334b19f39d3053b90d47}
+      \strng{authorfullhash}{10ad6a033fc2334b19f39d3053b90d47}
+      \strng{authorfullhashraw}{10ad6a033fc2334b19f39d3053b90d47}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Risks}
+      \field{number}{3}
+      \field{title}{Deep Local Volatility}
+      \field{volume}{8}
+      \field{year}{2020}
+      \field{pages}{82}
+      \range{pages}{1}
+    \endentry
+    \entry{chen1957}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=369b82d5c9e19ede291c591e327a4cc3}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Kuo-Tsai},
+           giveni={K\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{fullhash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{fullhashraw}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{bibnamehash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{authorbibnamehash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{authornamehash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{authorfullhash}{369b82d5c9e19ede291c591e327a4cc3}
+      \strng{authorfullhashraw}{369b82d5c9e19ede291c591e327a4cc3}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Mathematics}
+      \field{number}{1}
+      \field{title}{Integration of Paths, Geometric Invariants and a Generalized {B}aker--{H}ausdorff Formula}
+      \field{volume}{65}
+      \field{year}{1957}
+      \field{pages}{163\bibrangedash 178}
+      \range{pages}{16}
+    \endentry
     \entry{cheridito2003}{article}{}{}
       \name{author}{1}{}{%
         {{hash=5531821a92d7ecfb88b66d25352cf2a9}{%
@@ -842,6 +981,39 @@
       \field{title}{Probability: Theory and Examples}
       \field{year}{2019}
     \endentry
+    \entry{ergunuthemann2020}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=678dea248187bdb4859db643f97c5340}{%
+           family={Ergun},
+           familyi={E\bibinitperiod},
+           given={Lerby\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=86ad2a453579d3260d4cde85f020444c}{%
+           family={Uthemann},
+           familyi={U\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Systemic Risk Centre, London School of Economics}%
+      }
+      \strng{namehash}{f69216d38d18269d0d675d90651fa055}
+      \strng{fullhash}{f69216d38d18269d0d675d90651fa055}
+      \strng{fullhashraw}{f69216d38d18269d0d675d90651fa055}
+      \strng{bibnamehash}{f69216d38d18269d0d675d90651fa055}
+      \strng{authorbibnamehash}{f69216d38d18269d0d675d90651fa055}
+      \strng{authornamehash}{f69216d38d18269d0d675d90651fa055}
+      \strng{authorfullhash}{f69216d38d18269d0d675d90651fa055}
+      \strng{authorfullhashraw}{f69216d38d18269d0d675d90651fa055}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{98}
+      \field{title}{Higher-Order Uncertainty in Financial Markets: Evidence from a Consensus Pricing Service}
+      \field{type}{Discussion Paper}
+      \field{year}{2020}
+    \endentry
     \entry{eleucrosenbaum2019}{article}{}{}
       \name{author}{2}{}{%
         {{hash=77c3606b9f5a7ec911e42237b1e66c3c}{%
@@ -916,7 +1088,7 @@
            giveni={K\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {University of St Andrews}%
+        {John Wiley \& Sons}%
       }
       \strng{namehash}{a4ba140e6ae5f4adf516028893d7e733}
       \strng{fullhash}{a4ba140e6ae5f4adf516028893d7e733}
@@ -930,7 +1102,8 @@
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Fractal Geometry}
+      \field{edition}{2}
+      \field{title}{Fractal Geometry: Mathematical Foundations and Applications}
       \field{year}{2003}
     \endentry
     \entry{feller1951}{article}{}{}
@@ -1163,6 +1336,106 @@
       \field{note}{University of Melbourne}
       \field{title}{An Introduction to the Theory of Rough Paths}
       \field{year}{2021}
+    \endentry
+    \entry{gubinelli2004}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=53ead5fa51e3a7a4edfcdedc97130b16}{%
+           family={Gubinelli},
+           familyi={G\bibinitperiod},
+           given={Massimiliano},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{fullhash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{fullhashraw}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{bibnamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{authorbibnamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{authornamehash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{authorfullhash}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \strng{authorfullhashraw}{53ead5fa51e3a7a4edfcdedc97130b16}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Functional Analysis}
+      \field{number}{1}
+      \field{title}{Controlling Rough Paths}
+      \field{volume}{216}
+      \field{year}{2004}
+      \field{pages}{86\bibrangedash 140}
+      \range{pages}{55}
+    \endentry
+    \entry{guyonlekeufack2022}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=ae97945971d3482f04991e10218f030e}{%
+           family={Guyon},
+           familyi={G\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5e2d0e03c61756f580b783c7cb8a252b}{%
+           family={Lekeufack},
+           familyi={L\bibinitperiod},
+           given={Jordan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{2}{%
+        {École des Ponts ParisTech}%
+        {University of California, Berkeley}%
+      }
+      \list{location}{2}{%
+        {Paris, France}%
+        {Berkeley, CA, USA}%
+      }
+      \strng{namehash}{433547497aee729c6f9c51787c24f6c8}
+      \strng{fullhash}{433547497aee729c6f9c51787c24f6c8}
+      \strng{fullhashraw}{433547497aee729c6f9c51787c24f6c8}
+      \strng{bibnamehash}{433547497aee729c6f9c51787c24f6c8}
+      \strng{authorbibnamehash}{433547497aee729c6f9c51787c24f6c8}
+      \strng{authornamehash}{433547497aee729c6f9c51787c24f6c8}
+      \strng{authorfullhash}{433547497aee729c6f9c51787c24f6c8}
+      \strng{authorfullhashraw}{433547497aee729c6f9c51787c24f6c8}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{Available at SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4174589}}
+      \field{title}{Volatility Is (Mostly) Path-Dependent}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4174589
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4174589
+      \endverb
+    \endentry
+    \entry{hairer2014}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=77a6aeb5159cb51c26b716e066c282e8}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{fullhash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{fullhashraw}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{bibnamehash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{authorbibnamehash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{authornamehash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{authorfullhash}{77a6aeb5159cb51c26b716e066c282e8}
+      \strng{authorfullhashraw}{77a6aeb5159cb51c26b716e066c282e8}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Inventiones Mathematicae}
+      \field{number}{2}
+      \field{title}{A Theory of Regularity Structures}
+      \field{volume}{198}
+      \field{year}{2014}
+      \field{pages}{269\bibrangedash 504}
+      \range{pages}{236}
     \endentry
     \entry{hamblylyons2010}{article}{}{}
       \name{author}{2}{}{%
@@ -1557,6 +1830,35 @@
       \verb{url}
       \verb https://arxiv.org/abs/1309.0260
       \endverb
+    \endentry
+    \entry{lewis2001}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=cc42e280ed5a17704d36d6ea6ecb8fe9}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Alan\bibnamedelima L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{institution}{2}{%
+        {Envision Financial Systems}%
+        {OptionCity.net}%
+      }
+      \strng{namehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{fullhash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{fullhashraw}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{bibnamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{authorbibnamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{authornamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{authorfullhash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{authorfullhashraw}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Available at SSRN 282110}
+      \field{title}{A Simple Option Formula for General Jump-Diffusion and Other Exponential {L}évy Processes}
+      \field{type}{techreport}
+      \field{year}{2001}
     \endentry
     \entry{loshchilov2019}{misc}{}{}
       \name{author}{2}{}{%
@@ -2041,39 +2343,6 @@
       \field{pages}{95\bibrangedash 105}
       \range{pages}{11}
     \endentry
-    \entry{romanotouzi1997}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=3f9a0176d2ce2099732446d5129b09de}{%
-           family={Romano},
-           familyi={R\bibinitperiod},
-           given={Marc},
-           giveni={M\bibinitperiod}}}%
-        {{hash=701a2d95e8b3a75c89608e9b91902077}{%
-           family={Touzi},
-           familyi={T\bibinitperiod},
-           given={Nizar},
-           giveni={N\bibinitperiod}}}%
-      }
-      \strng{namehash}{fa811f918cf4308ba35ecb1730889691}
-      \strng{fullhash}{fa811f918cf4308ba35ecb1730889691}
-      \strng{fullhashraw}{fa811f918cf4308ba35ecb1730889691}
-      \strng{bibnamehash}{fa811f918cf4308ba35ecb1730889691}
-      \strng{authorbibnamehash}{fa811f918cf4308ba35ecb1730889691}
-      \strng{authornamehash}{fa811f918cf4308ba35ecb1730889691}
-      \strng{authorfullhash}{fa811f918cf4308ba35ecb1730889691}
-      \strng{authorfullhashraw}{fa811f918cf4308ba35ecb1730889691}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Mathematical Finance}
-      \field{number}{4}
-      \field{title}{Contingent claims and market completeness in a stochastic volatility model}
-      \field{volume}{7}
-      \field{year}{1997}
-      \field{pages}{399\bibrangedash 412}
-      \range{pages}{14}
-    \endentry
     \entry{roydenfitzpatrick2010}{book}{}{}
       \name{author}{2}{}{%
         {{hash=eb545494ba09d1335ae8bea900ccb65d}{%
@@ -2108,6 +2377,37 @@
       \field{edition}{4th}
       \field{title}{Real Analysis}
       \field{year}{2010}
+    \endentry
+    \entry{totem}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=fc22ec38a16aa4058b36f21863b6e0b9}{%
+           family={{S\&P Global Market Intelligence}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fc22ec38a16aa4058b36f21863b6e0b9}
+      \strng{fullhash}{fc22ec38a16aa4058b36f21863b6e0b9}
+      \strng{fullhashraw}{fc22ec38a16aa4058b36f21863b6e0b9}
+      \strng{bibnamehash}{fc22ec38a16aa4058b36f21863b6e0b9}
+      \strng{authorbibnamehash}{fc22ec38a16aa4058b36f21863b6e0b9}
+      \strng{authornamehash}{fc22ec38a16aa4058b36f21863b6e0b9}
+      \strng{authorfullhash}{fc22ec38a16aa4058b36f21863b6e0b9}
+      \strng{authorfullhashraw}{fc22ec38a16aa4058b36f21863b6e0b9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Consensus pricing service for over-the-counter derivatives; access restricted to contributing institutions}
+      \field{title}{Totem: Trade Data Services}
+      \field{urlday}{24}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.spglobal.com/marketintelligence/en/mi/products/totem.html
+      \endverb
+      \verb{url}
+      \verb https://www.spglobal.com/marketintelligence/en/mi/products/totem.html
+      \endverb
     \endentry
     \entry{shreve2004}{book}{}{}
       \name{author}{1}{}{%
@@ -2228,6 +2528,33 @@
       \field{year}{1971}
       \field{pages}{155\bibrangedash 167}
       \range{pages}{13}
+    \endentry
+    \entry{young1936}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=167c60c9f6f9d31e787d5515a84e042f}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Laurence\bibnamedelima C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{fullhash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{fullhashraw}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{bibnamehash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{authorbibnamehash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{authornamehash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{authorfullhash}{167c60c9f6f9d31e787d5515a84e042f}
+      \strng{authorfullhashraw}{167c60c9f6f9d31e787d5515a84e042f}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acta Mathematica}
+      \field{title}{An Inequality of the Hölder Type, Connected with {S}tieltjes Integration}
+      \field{volume}{67}
+      \field{year}{1936}
+      \field{pages}{251\bibrangedash 282}
+      \range{pages}{32}
     \endentry
   \enddatalist
 \endrefsection

@@ -98,19 +98,17 @@ As a consequence, if \(X \in L^1(\Omega, \mathcal{F}, \PP)\) (that is, $\int |X|
 Conditional expectation inherits the properties one would expect of an averaging operator: it
 preserves expectations and order, it is linear, it acts as the identity on $\mathcal{G}$-measurable
 variables and as the plain expectation on independent ones, known factors may be taken out of it, and
-it satisfies the tower property $\E[X\mid\mathcal{H}] =
-\E[\E[X\mid\mathcal{G}]\mid\mathcal{H}]$ for $\mathcal{H}\subseteq\mathcal{G}$. These,
-together with the conditional forms of the Fatou, monotone and dominated convergence theorems, are
-recorded as Proposition \ref{prop:condexpproperties} in Appendix \ref{app:auxiliary}; we shall use
-them throughout without comment. Two further properties, however, are used more than all the others
-combined and are stated here.
+it satisfies the conditional Jensen inequality
+$\phi(\E[X\mid\mathcal{G}]) \leq \E[\phi(X)\mid\mathcal{G}]$ for convex $\phi$. These, together with the conditional forms of the Fatou, monotone and dominated convergence theorems, are
+recorded as Propositions \ref{prop:condexpproperties}--\ref{prop:conddct} in Appendix \ref{app:auxiliary}; we shall use
+them throughout without comment. Two further properties, however, are stated here.
 
-\begin{proposition}[Conditional Jensen and the $L^2$ projection]\label{prop:condjensenl2}
+\begin{proposition}[The tower property and the $L^2$ projection]\label{prop:towerl2}
 Let $\mathcal{G} \subseteq \mathcal{F}$ be a sub-$\sigma$-algebra. Then:
 \begin{itemize}
-    \item[i)] (\textbf{Conditional Jensen's inequality}) If $\phi : \R \to \R$ is convex and both $X$ and $\phi(X)$ are integrable, then
+    \item[i)] (\textbf{Tower property}) If $\mathcal{H}$ is a sub-$\sigma$-algebra of $\mathcal{G}$ and $X \in L^1(\Omega)$, then
     \[
-        \phi\bigl(\E[X \mid \mathcal{G}]\bigr) \leq \E[\phi(X) \mid \mathcal{G}]
+        \E[X \mid \mathcal{H}] = \E\bigl[\,\E[X \mid \mathcal{G}]\,\big|\,\mathcal{H}\,\bigr]
         \qquad \text{almost surely.}
     \]
 
@@ -200,7 +198,7 @@ $\{\tau < t\} = \bigcup_{n \geq 1}\{\tau \leq t - 1/n\}$ and each $\{\tau \leq t
 $\mathcal{F}_{t-1/n} \subseteq \mathcal{F}_t$, the union lies in $\mathcal{F}_t$. This implication
 uses nothing beyond monotonicity of the filtration.
 
-Conversely, suppose $\{\tau < t\} \in \mathcal{F}_t$ for every $t$. Then for each $n \geq 1$ we have
+Now, suppose $\{\tau < t\} \in \mathcal{F}_t$ for every $t$. Then for each $n \geq 1$ we have
 $\{\tau < t + 1/n\} \in \mathcal{F}_{t+1/n}$, and since $\{\tau \leq t\} = \bigcap_{n\geq1}\{\tau < t + 1/n\}$,
 \[
 \{\tau \leq t\} \;\in\; \bigcap_{n \geq 1}\mathcal{F}_{t+1/n} \;=\; \mathcal{F}_{t^+} \;=\; \mathcal{F}_t,
@@ -302,7 +300,7 @@ The resemblance of its density to the \textit{heat kernel} (see \cite{evans2010}
 
 \begin{example}[Multivariate Normal Distribution]\label{example:multivariatenormal}
 An $\R^d$-valued random vector $X$ follows a \textit{multivariate normal distribution} with
-mean $\mu \in \R^d$ and covariance $\Sigma \in \R^{d\times d}$, written
+mean $\mu \in \R^d$ and covariance $\Sigma \in \R^{d\times d}$, written similarly as
 $X \sim \Normal_d(\mu,\Sigma)$, if $a\transp X \sim \Normal(a\transp\mu,\, a\transp\Sigma a)$ for
 every $a \in \R^d$.
 \end{example}
@@ -333,7 +331,7 @@ The following are easily verified through Theorem \ref{theorem:LevyContinuity} (
 
     % \item Among all continuous distributions on $\mathbb{R}^d$ with a fixed mean and fixed covariance matrix $\Sigma \succ 0$, the multivariate normal distribution $\mathcal{N}_d(\mu, \Sigma)$ uniquely maximizes differential entropy.
 
-    \item While independence always implies zero correlation ($\Sigma_{XY} = 0$), the converse holds \emph{if and only if} the combined vector $(X, Y)$ is jointly normal.
+    \item While independence always implies zero correlation ($\Sigma_{XY} = 0$), the converse holds \emph{if} the combined vector $(X, Y)$ is jointly normal.
 \end{itemize}
 
 \begin{remark}[Normal marginals do not make a normal vector]\label{rem:gaussiantraps}
@@ -346,7 +344,7 @@ so $X$ and $Y$ are uncorrelated standard normal variables. They are very far fro
 The moral is that ``normal'' is a property of a \emph{joint law on $\mathbb{R}^d$}, not a property of a list of marginals. The pair $(X,Y)$ above has normal marginals on $\mathbb{R}$, but it is not multivariate normal in $\mathbb{R}^2$ and the standard linear-combination and independence properties fail for it.
 \end{remark}
 
-The normal distribution owes its central place to the following result, which we state in a weak form:
+The normal distribution owes its central place to the following result (in a weak form):
 
 \begin{theorem}[Central Limit Theorem]\label{thm:clt}
     Let $\{X_n\}_{n=1}^\infty$ be independent, identically distributed (\emph{i.i.d.}) random variables with finite mean $\mu$ and variance $\sigma^2 > 0$. Then
@@ -401,8 +399,7 @@ $a\transp X_n$ evaluated at $1$ is $\charf_{X_n}(a)$, so convergence of all one-
 projections is precisely pointwise convergence of $\charf_{X_n}$, and the limit is continuous at the
 origin because it is a characteristic function. \qedfilledtext
 
-Combining this with the one-dimensional Central Limit
-Theorem gives: 
+%Combining this with the one-dimensional Central Limit Theorem gives: 
 
 \begin{corollary}[Multivariate Central Limit Theorem]\label{cor:multivariateclt}
 Let $\{X_n\}_{n\geq1}$ be i.i.d.\ $\R^d$-valued random vectors with mean $\mu$ and finite
@@ -420,7 +417,7 @@ $Z \sim \Normal_d(0,\Sigma)$. Since $a$ was arbitrary, Theorem \ref{thm:cramerwo
 \eqref{eq:multivariateclt}. The degenerate case $a\transp\Sigma a = 0$ is included, the limit then
 being $0$. \qedfilledtext
 
-For a multivariate normal vector (and, as Remark \ref{rem:gaussiantraps} showed, only then) uncorrelatedness does imply independence. Indeed, if $\Sigma$ is block-diagonal then \eqref{eq:mvncharfn} factorises as a product of the characteristic functions of the corresponding sub-vectors, which is exactly independence.
+For a multivariate normal vector --- and, as Remark \ref{rem:gaussiantraps} showed, it is \emph{joint} normality that is needed, normality of each marginal separately being insufficient --- uncorrelatedness does imply independence. Indeed, if $\Sigma$ is block-diagonal then \eqref{eq:mvncharfn} factorises as a product of the characteristic functions of the corresponding sub-vectors, which is exactly independence.
 
 \begin{example}[Log-Normal Distribution]
 A random variable \( X \) is said to follow a \textbf{log-normal distribution} with parameters \( \mu \in \R \) and \( \sigma > 0 \), denoted
@@ -446,7 +443,7 @@ exist and are finite. In particular $\E[X] = e^{\mu+\sigma^2/2}$ and
 $\Var[X] = (e^{\sigma^2}-1)e^{2\mu+\sigma^2}$. And yet the
 log-normal distribution has two unpleasant analytical features.
 
-The first is that its characteristic function admits no closed-form expression. This is a genuine inconvenience. It is precisely why the Black--Scholes model, despite its explicit pricing formula, is not amenable to the Fourier techniques that make the Heston model of the next chapter tractable. What fails is the \emph{moment generating function} $\E[e^{uX}]$, which is infinite for every $u > 0$.
+The first is that its characteristic function admits no closed-form expression, and that the \emph{moment generating function} $\E[e^{uX}]$ is infinite for every $u > 0$.
  Despite having moments of all orders, \textbf{the log-normal distribution is not determined by them}: there is an explicit one-parameter family of mutually distinct densities on $(0,\infty)$ sharing every moment with it, exhibited by Heyde \cite{heyde1963} and reproduced in Appendix \ref{app:heyde}. 
  
 %  It is worth being precise about what does \emph{not} fail here. Lévy's inversion formula \eqref{levyInversionFormula} holds without exception, and the characteristic function does determine the log-normal law uniquely. What fails is the passage from the \emph{moment sequence} to the characteristic function.
@@ -499,7 +496,7 @@ where $\mathcal{F}_s = \sigma(X_r : r \leq s)$ is the $\sigma$-algebra generated
 
 The \textbf{transition probability} of a Markov process is $\PP(X_t \in A \mid X_s = x)$; in order to integrate against the measure it defines we write $P_{s,x}(t,dy) = \PP(X_t \in dy \mid X_s = x).$
 
-There is a rather sharp distinction between finite-state Markov processes and those with infinitely many states. In the finite case, the theory is built around transition matrices: the probability of moving from one state to another in a single step is recorded in a matrix $P_t$, so that the evolution is the product $\prod_{i=1}^n P_i$, and long-run behaviour can be analysed by classical linear-algebraic tools, especially in the stationary case, that is, when the transition probability is independent of $t$.
+There is a rather sharp distinction between finite-state Markov processes and those with infinitely many states. In the finite case, the theory is built around transition matrices: in discrete time the probability of moving from one state to another in a single step is recorded in a matrix $P_i$, so that the evolution over $n$ steps is the product $\prod_{i=1}^n P_i$. This is simplest in the \emph{time-homogeneous} case, that is, when the transition probability does not depend on $t$. In continuous time the corresponding object is a matrix exponential rather than such a product.
 
 In the infinite-state setting the dynamics are instead described by operators acting on spaces of functions or measures, so that the study of these processes relies on functional analysis and differential equations as much as on probability. That apparatus, the transition semigroup $(P_t)_{t\geq0}$, its infinitesimal generator, and the Kolmogorov equations they satisfy is developed in Subsection \ref{section:itoDiff}, once diffusions are available to make it concrete.
 
@@ -516,7 +513,7 @@ A martingale is a process whose expected future value, conditional on everything
     We say that $X_t$ is a \textbf{supermartingale} if the second condition is replaced by $X_s  \geq \E[X_t | \mathcal{F}_s]$ and a \textbf{submartingale} if $X_s\leq \E[X_t | \mathcal{F}_s].$\footnote{The Poisson process of Example \ref{example:randomwalk} is not a martingale; the \emph{compensated} process $\Nt_t - \lambda t$ is.}
 \end{definition}
 
-The following result will be useful when constructing stochastic processes from Itô integrals. Notice that if $X_t$ is a martingale, then by Jensen's inequality (Proposition \ref{prop:condjensenl2}, item i)) $X_t^2$ is a submartingale.
+The following result will be useful when constructing stochastic processes from Itô integrals. Notice that if $X_t$ is a \emph{square-integrable} martingale, then by Jensen's inequality (Proposition \ref{prop:condexpproperties}, item 5) $X_t^2$ is a submartingale.
  
 \begin{proposition}[Doob's submartingale inequality]\label{prop:doobmaximal}
     Let $Z = \{Z_t\}_{t\in[0,T]}$ be a right-continuous submartingale. Then, for any $\varepsilon > 0$,
@@ -592,8 +589,7 @@ integrable, so iii) is recorded only because it is the form in which the hypothe
 easiest to check. More importantly, under the finite-horizon convention of Definition
 \ref{stoppingTime} --- which is in force everywhere else in this dissertation, and under which every
 stopping time satisfies $\tau_2 \leq T$ --- hypothesis i) holds automatically, and the theorem
-applies unconditionally. The hypotheses therefore do work only on an infinite horizon, and that is
-why the theorem has been stated there.
+applies unconditionally. The hypotheses therefore do work only on an infinite horizon. 
 
 % It is worth being explicit about what the three hypotheses have in common, since they can look like
 % an arbitrary list. The proof passes to the limit in the discrete-time identity
@@ -747,9 +743,12 @@ obtained, defined by a decomposition. For the processes of this dissertation the
 
 \begin{proposition}\label{prop:qvcoincide}
 Let $M$ be a continuous square-integrable martingale. Then the pathwise quadratic variation 
-$[M]_t$ of Definition \ref{def:quadratic-variation} exists as a limit in $L^2(\Omega)$ and 
+$[M]_t$ of Definition \ref{def:quadratic-variation} exists as a limit in probability, uniformly on
+compact time intervals, and 
 coincides, up to indistinguishability, with the compensator $\langle M \rangle_t$ of Theorem 
-\ref{thm:doobmeyer}. Furthermore, the polarised quantity
+\ref{thm:doobmeyer}. The limit is not in general an $L^{2}$ one: taking $M_t = ZW_t$ with $Z$
+independent of $W$, $\mathcal{F}_0$-measurable and in $L^{2}\setminus L^{4}$ gives a continuous
+square-integrable martingale whose $[M]_t = Z^{2}t$ is not square-integrable. Furthermore, the polarised quantity
 \begin{equation}\label{eq:polarisation}
 \langle M, N \rangle_t := \tfrac{1}{2}\bigl( \langle M+N \rangle_t - \langle M \rangle_t - \langle N \rangle_t \bigr)
 = \lim_{\lVert\mathcal{P}\rVert\to0} \sum_k \bigl(M_{t_k}-M_{t_{k-1}}\bigr)\bigl(N_{t_k}-N_{t_{k-1}}\bigr)
@@ -784,7 +783,7 @@ where $M_t$ is a càdlàg local martingale and $A_t$ is adapted, càdlàg, of lo
 
 This last definition is the correct level of generality for stochastic integration. The two terms are exactly the 
 two mechanisms by which an integrator can be usable: $A$ has bounded variation, so 
-$\int g\,dA$ exists pathwise as a Riemann--Stieltjes integral in the classical sense; and $M$ is a 
+$\int g\,dA$ exists pathwise as a Lebesgue--Stieltjes integral; and $M$ is a 
 local martingale, so $\int g\,dM$ exists in the Itô sense. 
 
 Granting it, a semimartingale is precisely a process that can be integrated against by splitting the 
@@ -939,7 +938,7 @@ set of requirements in Definition~\ref{def:Brownian-motion}.  The construction p
 first one produces a process with the right finite-dimensional distributions and says nothing 
 whatever about its paths; the second repairs the paths without disturbing the distributions.
 
-The first step is the Daniell--Kolmogorov extension theorem. Conditions iii) and iv) of Definition 
+The first step is the Daniell--Kolmogorov extension theorem. Conditions i), iii) and iv) of Definition 
 \ref{def:Brownian-motion} prescribe, for every finite set of times $t_1 < \cdots < t_n$, the joint 
 law of $(W_{t_1},\dots,W_{t_n})$: it is the centred Gaussian law on $\R^n$ with covariance 
 $\min\{t_i,t_j\}$, which is positive semi-definite and therefore legitimate. These laws are 
@@ -1168,7 +1167,7 @@ contradicts \eqref{eq:bmqv}, which gives $[W]_t = t > 0$ in $L^2(\Omega)$ and he
 along a subsequence. \qedfilledtext
 
 This result is key because it shows that \textbf{the integral $\int_0^t f\,dW$ cannot be defined pathwise as a
-Riemann--Stieltjes integral}, for any non-trivial class of integrands, because $W$ does not induce
+Riemann--Stieltjes integral} for integrands as irregular as $W$ itself --- which is the case that matters, the integrand being typically a function of the driving path --- because $W$ does not induce
 a measure on $[0,t]$ along any path. Figure \ref{fig:bmvariation} shows the two sums of
 \eqref{eq:qvtvbound} pulling apart as the mesh is refined, which is the whole of Proposition
 \ref{prop:bmunboundedvariation} in one picture.
@@ -1208,8 +1207,9 @@ For $p = 1$ this is Definition \ref{def:totalvariation}. For $p=2$ it is \emph{n
 quadratic variation of Definition \ref{def:quadratic-variation}, and the difference is not cosmetic:
 the latter is a limit along partitions of vanishing mesh, the former a supremum over all partitions,
 and for Brownian motion the first equals $t$ while the second is infinite (Theorem
-\ref{thm:bmregularity} ii)). Refining a partition can only increase the sum of squared increments,
-so the supremum sees the worst partition rather than the fine ones. If 
+\ref{thm:bmregularity} ii)). Refining a partition need not increase the sum of squared increments --- splitting
+an increment into two of the same sign strictly decreases it, since $(a+b)^2 > a^2+b^2$ there ---
+and the supremum is attained instead along coarse partitions chosen to follow the path. If 
 $f$ is continuous and $V_p(f)_t < \infty$, then $V_q(f)_t < \infty$ for every $q > p$, since 
 $|f(t_k)-f(t_{k-1})|^q \leq (\max_k |f(t_k)-f(t_{k-1})|)^{q-p} |f(t_k)-f(t_{k-1})|^p$. Each 
 function thus has a critical exponent below which its $p$-variation is infinite and above which it 
@@ -1409,8 +1409,7 @@ of $I$, while the right-hand side expands identically.\qedfilledtext
 
 \medskip
 
-\noindent In the language of Proposition \ref{prop:condjensenl2}, item ii), this is precisely
-the statement that $I$ is an isometry from $L^2_{\mathrm{ad}}([0,T]\times\Omega)$ into $L^2(\Omega)$, extended
+\noindent This is precisely the statement that $I$ is an isometry from $L^2_{\mathrm{ad}}([0,T]\times\Omega)$ into $L^2(\Omega)$, extended
 from a dense subspace by continuity. It is worth noting that if $f$ is deterministic (i.e. does not depend on $\omega$), then
 \[
 I(f) \sim \Normal\!\left(0, \int_0^T f(t)^2\,dt\right).
@@ -1436,7 +1435,7 @@ $\mathcal{F}_{t_{i-1}}$ and then on $\mathcal{F}_s$ gives
 \E\bigl[\psi(t_{i-1})(W(t_i)-W(t_{i-1})) \mid \mathcal{F}_s\bigr]
 = \E\Bigl[\psi(t_{i-1})\,\E\bigl[W(t_i)-W(t_{i-1}) \mid \mathcal{F}_{t_{i-1}}\bigr] \,\Big|\, \mathcal{F}_s\Bigr] = 0,
 \]
-by the tower property (Proposition \ref{prop:condexpproperties}, item 5) and independence of the
+by the tower property (Proposition \ref{prop:towerl2}, item i)) and independence of the
 increment from $\mathcal{F}_{t_{i-1}}$. Hence $\E[X_t \mid \mathcal{F}_s] = X_s$.
 
 For general $f \in L^2_{\mathrm{ad}}$, take step processes $f_n \to f$ and write $X^n$ for the corresponding
@@ -1453,7 +1452,7 @@ Being a square-integrable martingale, $X$ has a compensator in the sense of Theo
 is used from Chapter \ref{ch:finance} onwards, so we record it.
 
 \begin{corollary}[Quadratic variation of an It\^o integral]\label{cor:qvitointegral}
-Let $f \in L^2_{\mathrm{ad}}([0,T]\times\Omega)$ and $X_t = \int_0^t f(s)\,dW_s$. Then
+Let $f \in L^2_{\mathrm{ad}}([0,T]\times\Omega)$ and let $X_t = \int_0^t f(s)\,dW_s$. Then
 \begin{equation}\label{eq:qvitointegral}
 \qv{X}_t = \int_0^t f(s)^2\,ds, \qquad t \in [0,T].
 \end{equation}
@@ -1475,7 +1474,7 @@ adapted, increasing and null at $0$, hence predictable, and the uniqueness in Th
 
 \medskip
 
-We must point out that the Markov property also holds, but we will return to that when we see these processes as diffusions in Subsection \ref{section:itoDiff}. 
+We must point out that when the integrand is of the form $f(s) = \sigma(s,X_s)$ the Markov property also holds, but we will return to that when we see these processes as diffusions in Subsection \ref{section:itoDiff}. 
 
 % Taking $f\equiv 1$ recovers Proposition \ref{prop:bm-properties}(f). Written differentially,
 % \eqref{eq:qvitointegral} reads $d\qv{X}_t = f(t)^2\,dt$, which is the entry
@@ -1484,7 +1483,7 @@ We must point out that the Markov property also holds, but we will return to tha
 % The Markov property also holds, but we will return to that when we see these processes as diffusions in Subsection \ref{section:itoDiff}.  We shall now address the continuity of the process $X_t$. We must keep in mind that this integral is not defined for each $\omega$ in a Riemann sense. The following result is therefore not as elementary as in real analysis.
 
 \begin{theorem}[Continuity property]\label{thm:itocontinuity}
-    Suppose $f\in L^2_{\mathrm{ad}}([0,T]\times\Omega). $ Then the process $X_t = \int_0^t f(s)dW(s)$ admits a continuous modification, with which we shall always work.
+    Suppose $f\in L^2_{\mathrm{ad}}([0,T]\times\Omega). $ Then the process given by $X_t = \int_0^t f(s)dW(s)$ admits a continuous modification, with which we shall always work.
 \end{theorem}
 \textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:itocontinuity}; see also \cite[Thm.\ 4.6.2]{kuo2006}. \qedfilledtext
 
@@ -1684,7 +1683,7 @@ driven by the Brownian increments themselves and an increment of $Y$ over a step
 $\Delta t$ has variance $\Delta t$ whatever the current state. Two consequences follow: a lattice built on $Y$ moves by the same amount at
 every node, which is exactly the condition under which a binomial or trinomial tree
 \emph{recombines}, so that the number of nodes grows quadratically rather than exponentially in the
-number of steps. Also, a discretisation of $Y$ no longer has to approximate a varying diffusion
+number of steps, allowing for fast numerical approaches. Also, a discretisation of $Y$ no longer has to approximate a varying diffusion
 coefficient, which is the term limiting the accuracy of the Euler scheme applied to $X$ directly.
 \end{example}
 
@@ -1719,7 +1718,7 @@ We need to establish some growth conditions on $\mu$ and $\sigma$ for the equati
 
  Notice that for $x\geq 0$ we have $1+x^2 \leq (1+x) ^2 \leq 2(1+x^2)$, so that the linear growth condition can be restated, for a new constant $C'$, as $|g(t,x)| \leq C' \sqrt{1+x^2}.$
 
-The proof of existence and uniqueness rests on a Picard iteration, exactly as for ordinary differential equations, and the comparison step is furnished by Grönwall's inequality (Lemma \ref{lem:gronwall} in Appendix \ref{app:auxiliary}); since the argument is deterministic and entirely standard we do not reproduce it here.
+The proof of existence and uniqueness rests on a Picard iteration, exactly as for ordinary differential equations, and the comparison step is furnished by Grönwall's inequality (Lemma \ref{lem:gronwall} in Appendix \ref{app:auxiliary}); since the argument is by now standard --- though, unlike its deterministic counterpart, it invokes the It\^o isometry and Doob's inequality at every step --- we do not reproduce it here.
 
 \begin{theorem}\label{thm:sdeexistence}
     Let $\mu$ and $\sigma$ be measurable functions on $[0,T] \times \R$ satisfying both the Lipschitz and the linear growth conditions in $x$ of Definition \ref{def:lipschitzgrowth}, and let the initial condition $X_0$ be $\mathcal{F}_0$-measurable with $\E[X_0^2] < \infty$. Then the stochastic differential equation \eqref{sde_template} admits a solution, which is unique in the following sense: any two solutions are indistinguishable. Moreover the solution has continuous sample paths.
@@ -1746,7 +1745,7 @@ the supremum may be taken over the rationals of $[0,t]$ together with $t$ itself
 event as a countable operation on members of $\mathcal{F}_t$. As the paths are continuous they are
 bounded on $[0,T]$ for almost every $\omega$, whence $\tau_n \uparrow T$ almost surely.
 
-Fix $n$ and stop the identity above at $\tau_n$. On $\{s \leq \tau_n\}$ the Lipschitz condition gives
+Fix $n$ and stop the identity above at $\tau_n$. On $\{s \leq \tau_n\}$ the Lipschitz condition then gives
 $|\sigma(s,X_s)-\sigma(s,Y_s)| \leq C|Z_s| \leq 2Cn$, so the stopped integrand
 $\mathds{1}_{[0,\tau_n]}(s)\bigl[\sigma(s,X_s)-\sigma(s,Y_s)\bigr]$ is bounded, adapted, and hence
 genuinely an element of $L^2_{\mathrm{ad}}([0,T]\times\Omega)$. Itô's isometry now applies to it, and together
@@ -1806,7 +1805,7 @@ Let us first make the distinction precise, since it is systematically blurred in
 literature and the blurring causes real confusion.
 
 \begin{definition}[Strong and weak solutions]\label{def:strongweak}
-Consider the equation $dX_t = \mu(t,X_t)\,dt + \sigma(t,X_t)\,dW_t$ with a given $\mathcal{F}_0$-measurable $X_0$.
+Consider  $dX_t = \mu(t,X_t)\,dt + \sigma(t,X_t)\,dW_t$ with a given $\mathcal{F}_0$-measurable $X_0$.
 \begin{itemize}
     \item[i)] A \textbf{strong solution} is a process $X$, adapted to the augmented filtration 
     generated by a \emph{given} Brownian motion $W$ and the initial condition, satisfying the 
@@ -1864,7 +1863,7 @@ $|\sqrt{x}-\sqrt{y}| \leq \sqrt{|x-y|}$, so Theorem \ref{thm:yamadawatanabe} app
 $\eta(u)=\xi\sqrt{u}$, and pathwise uniqueness holds. A non-negative weak solution exists, so the
 implication recorded above applies and \eqref{eq:cir} admits a unique \emph{strong} solution, in the
 sense of Definition \ref{def:strongweak}(i), with uniqueness in law. The equation is therefore well
-posed --- but by Yamada--Watanabe, not by Theorem \ref{thm:sdeexistence}.
+posed.
 \end{example}
 
 We also need the solution to 
@@ -1923,9 +1922,7 @@ X_t = X_0 + \int_0^t \mu(s)\,ds + \int_0^t \sigma(s)\,dW(s), \qquad 0 \leq t \le
 the integrals being taken componentwise. Growth conditions on $\mu_i$ and $\sigma_{ij}$ must again be
 imposed for the solution to make sense.
 
-So far, a multidimensional Brownian motion has \emph{independent} components, and both the formula
-and the multiplication table that accompanies it presuppose an object the definition above does not
-provide. In modelling one almost always wants the components to be
+So far, a multidimensional Brownian motion has \emph{independent} components. In modelling one almost always wants the components to be
 correlated --- a falling equity price accompanied by rising volatility, two rates moving together,
 an exchange rate and the foreign interest rate --- and we shall shortly make that precise.
 
@@ -1943,7 +1940,7 @@ following classical theorem supplies one.
 \end{theorem}
 \textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:levy}; see also \cite[Thm.\ 8.4.2]{kuo2006}. \qedfilledtext
 
-The statement is considerably stronger than it looks. Being a Brownian motion is, by Definition \ref{def:Brownian-motion}, a statement about the \emph{joint law} of the whole family $\{X_t\}$: independent, stationary, Gaussian increments. Lévy's theorem says that all of this is already implied by two facts about second moments --- that $X$ is a local martingale and that its quadratic variation is exactly $t$. Gaussianity is not assumed anywhere; it is a conclusion.
+The statement is considerably stronger than it looks. Being a Brownian motion is, by Definition \ref{def:Brownian-motion}, a statement about the \emph{joint law} of the whole family $\{X_t\}$: independent, stationary, Gaussian increments. Lévy's theorem says that all of this is already implied by two facts --- that $X$ is a local martingale and that its quadratic variation is exactly $t$. Gaussianity is not assumed anywhere; it is a conclusion.
 
 % The multidimensional form, with the condition $\langle X^i,X^j\rangle_t = \delta_{ij}t$, is the one we shall actually need, and it will be used twice. Immediately below it produces a correlated Brownian motion from an independent one. Later, in the proof of Girsanov's theorem, it will allow us to recognise a process as a Brownian motion under a \emph{new} measure without recomputing any distributions --- one need only check that quadratic variation is preserved, which it is, since quadratic variation is a pathwise notion and equivalent measures agree on which paths occur.
 
@@ -2077,9 +2074,7 @@ The following generalisation holds.
 
 \subsection{Probability measure changes}\label{subsec:measurechanges}
 
-Another important topic we must cover has to do with probability changes. Brownian motion depends crucially on the underlying probability $\PP$. Given a process $X_t$, it is natural to ask whether there is a probability $\QQ$ so that $X_t$ is a Brownian motion with respect to $\QQ$. We assume the $\sigma$-algebra and the filtration remain unchanged.
-
-The change of measure itself is engineered through a single family of processes, which we now introduce.
+Another important topic we must cover has to do with probability changes. Brownian motion depends crucially on the underlying probability $\PP$. Given a process $X_t$, it is natural to ask whether there is a probability $\QQ$ so that $X_t$ is a Brownian motion with respect to $\QQ$. We assume the $\sigma$-algebra and the filtration remain unchanged. The change of measure itself is engineered through a single family of processes, which we now introduce.
 
 \begin{definition}[Exponential Process]
     Let $\alpha \in \mathcal{L}(\Omega, L^2[0,T])$. We define its exponential process by
@@ -2089,7 +2084,7 @@ The change of measure itself is engineered through a single family of processes,
     which is precisely the solution of $d\mathcal E_\alpha(t) =\alpha(t)\mathcal{E}_\alpha (t) dW(t)$, $\mathcal E_\alpha(0) = 1$ so that $\mathcal{E}_\alpha(t)$ is a local martingale.
 \end{definition}
 
-This exponential process is important because it leads to the construction of a new probability $\QQ$ for which $\mathcal{E}_\alpha(t)$ is actually a martingale.
+This exponential process is important because, when it is a genuine $\PP$-martingale, it serves as the density of a new probability $\QQ$ with respect to $\PP$.
 
 \begin{theorem}\label{thm:exponentialmartingale}
     Let $\alpha \in \mathcal{L}(\Omega, L^2[0,T])$. Then $\mathcal E_\alpha(t)$ is a martingale if, and only if, $\E[\mathcal E_\alpha (t)]= 1 $ for all $t\in [0,T].$
@@ -2227,8 +2222,8 @@ is an $n$-dimensional $\QQ$-Brownian motion with independent components. \qedope
 \subsubsection*{The Martingale Representation Theorem}
 
 Girsanov's theorem tells us which measures are available. The following tells us which \emph{payoffs} 
-are attainable, and it is the deepest result of this subsection. Together the two constitute the 
-entire mathematical content of the fundamental theorems of asset pricing, proved in Section
+are attainable. Together the two constitute the 
+mathematical content, in the Brownian setting, of the fundamental theorems of asset pricing, proved in Section
 \ref{sec:derivatives} of the next chapter.
 
 \begin{theorem}[Martingale representation]\label{thm:mrt}
@@ -2246,9 +2241,8 @@ $\mathcal{L}(\Omega,L^2[0,T])$. \qedopentext
 
 The theorem should be read as a converse to Theorem \ref{theorem:martingale_property}. We 
 showed that every Itô integral is a martingale; here we learn that, provided the filtration is the 
-one generated by $\mathbf{W}$ and nothing more, \emph{every} martingale is an Itô integral. In the 
-language of Proposition \ref{prop:condjensenl2}, item ii), the stochastic integrals do not 
-merely sit inside the space of martingales: they exhaust it.
+one generated by $\mathbf{W}$ and nothing more, \emph{every} martingale is an Itô integral: the
+stochastic integrals do not merely sit inside the space of martingales, they exhaust it.
 
 % Two aspects of the hypothesis deserve to be underlined, because both will be load-bearing. The first is that the filtration must be generated by the Brownian motion itself. If 
 % $\Filt$ carries additional information --- like another independent Brownian motion or an independent random variable revealed at time $T$ --- the conclusion fails 
@@ -2281,10 +2275,14 @@ strategy replicating $\Payoff_T$ exactly.
 
 One hypothesis is being used silently. Theorem \ref{thm:mrt} is applied under $\QQ$ to the $\QQ$-Brownian motion $\mathbf{Z}$, so
 what it requires is that the filtration be generated by $\mathbf{Z}$, whereas the filtration we
-have is the one generated by $\mathbf{W}$. The two coincide: by Theorem \ref{thm:girsanovmulti},
-$\mathbf{Z}_t = \mathbf{W}_t - \int_0^t\alpha\,ds$ with $\alpha$ adapted, so each is a measurable
-functional of the other and, after the augmentation of Convention \ref{conv:usualconditions},
-$\FiltW = (\mathcal{F}^{\mathbf{Z}}_t)_{t\in[0,T]}$. Girsanov changes the measure and leaves the
+have is the one generated by $\mathbf{W}$. One inclusion is immediate: by Theorem \ref{thm:girsanovmulti},
+$\mathbf{Z}_t = \mathbf{W}_t - \int_0^t\alpha\,ds$ with $\alpha$ adapted, so $\mathbf{Z}$ is
+$\FiltW$-adapted and $\mathcal{F}^{\mathbf{Z}}_t \subseteq \mathcal{F}^{\mathbf{W}}_t$. The reverse
+inclusion can fail for a general adapted $\alpha$, since recovering $\mathbf{W}$ from $\mathbf{Z}$
+means solving $\mathbf{W}_t = \mathbf{Z}_t + \int_0^t\alpha\,ds$ for $\mathbf{W}$; but the two
+filtrations do coincide whenever $\alpha$ is deterministic, as it is in every application made here
+--- $\alpha$ is constant in Section \ref{sec:blackscholes} --- so that, after the augmentation of
+Convention \ref{conv:usualconditions}, $\FiltW = (\mathcal{F}^{\mathbf{Z}}_t)_{t\in[0,T]}$. Girsanov changes the measure and leaves the
 information alone, which is exactly what makes the two theorems composable.
 
 % Every claim is thus attainable, so the market is \emph{complete}, and the price of the claim is not 
@@ -2301,7 +2299,7 @@ information alone, which is exactly what makes the two theorems composable.
 % Fundamental Theorems: boundedness is what makes the separating-hyperplane argument work in a dual
 % pair. The Martingale Representation Theorem, by contrast, is an $L^2$ statement, because it is
 % ultimately a statement about an orthogonal projection in a Hilbert space --- Proposition
-% \ref{prop:condjensenl2}, item ii). The two are reconciled by the inclusion
+% \ref{prop:towerl2}, item ii). The two are reconciled by the inclusion
 % $L^\infty(\mathcal{F}_T) \subset L^2(\mathcal{F}_T)$, valid because $\PP$ is a finite measure: every
 % bounded claim is square-integrable, so the representation above applies to every claim the
 % completeness definition quantifies over. We use whichever space the argument at hand requires, and
@@ -2394,7 +2392,7 @@ generator is the second-order elliptic operator
 For Brownian motion, where $\Sigma = \mathbb{I}_{n\times n}$ and $\mu = 0$, this is
 $\mathcal{A}f = \tfrac12\Delta f$.
 
-We shall not develop the semigroup picture further, having obtained from it what we needed: the identification of the generator, and the confirmation that the $\tfrac12$ appearing in Itô's rule is the same $\tfrac12$ appearing in $\tfrac12\Delta$. It is worth recording, however, what the semigroup property actually encodes, because it is the first of the three approaches to fail in Part \ref{part:part2}. The identity $P_{t+s} = P_t \circ P_s$ is a restatement of the Markov property: the evolution over $t+s$ can be decomposed into evolution over $s$ followed by evolution over $t$, because at the intermediate instant the present state is a sufficient statistic for the future. When the driving noise has memory this decomposition is unavailable, the family $(P_t)$ is no longer a semigroup, and the generator ceases to exist as a local operator. Only the pathwise, integral formulation does, which is a large part of why the theory of Part \ref{part:part2} is built the way it is.
+We shall not develop the semigroup picture further, having obtained from it what we needed: the identification of the generator. It is worth recording, however, what the semigroup property actually encodes, because it is the first of the three approaches to fail in Part \ref{part:part2}. The identity $P_{t+s} = P_t \circ P_s$ is a restatement of the Markov property: the evolution over $t+s$ can be decomposed into evolution over $s$ followed by evolution over $t$, because at the intermediate instant the present state is a sufficient statistic for the future. When the driving noise has memory this decomposition is unavailable, the family $(P_t)$ is no longer a semigroup, and the generator ceases to exist as a local operator. Only the pathwise, integral formulation does, which is a large part of why the theory of Part \ref{part:part2} is built the way it is.
 
 \vspace{0.3cm}
 

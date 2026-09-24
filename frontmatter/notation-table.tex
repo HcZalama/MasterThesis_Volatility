@@ -17,7 +17,9 @@ do not agree on the notations they use.  The table below fixes the necessary con
 % the page after this heading.  longtable breaks it and repeats nothing, which is what
 % is wanted since each block carries its own subheading.
 {\small
-\renewcommand{\arraystretch}{1.25}
+% The stretch is set so that the table still closes on this single page with the
+% rough-path block added; it was 1.25 before that block existed.
+\renewcommand{\arraystretch}{1.09}
 \setlength{\LTleft}{0pt}
 \setlength{\LTright}{0pt}
 \begin{longtable}{@{}p{0.20\textwidth}p{0.74\textwidth}@{}}
@@ -70,6 +72,14 @@ $\ivol$, $\lvol$, $\rvol$ & Implied, local and realised volatility; $\tvar=\ivol
 $V$ & The value of a derivative.\\
 $\pi$, $\Pi_t$ & A trading strategy, and the value of a hedging portfolio.\\
 $N(\cdot)$ & Standard normal distribution function.\\
+\hline
+\multicolumn{2}{@{}l}{\textbf{Rough paths}}\\
+\hline
+$\rpX=(X,\lev)$ & A rough path: a trajectory \emph{plus} a second level it does not determine.\\
+$\lev_{s,t}$, $\levW_{s,t}$ & That second level, a function of \emph{two} times and never a path.\\
+$A_{s,t}$ & L\'evy area: the antisymmetric part of $\lev_{s,t}$, its only free datum for a pair.\\
+$\alpha$ & H\"older exponent of a rough path, always in $(\tfrac13,\tfrac12]$; distinct from $\Hurst$.\\
+$\Sig(\rpX)$, $\Sig^{N}$ & Signature of a rough path, and its truncation at level $N$.\\
 \hline
 \end{longtable}
 }

@@ -2426,7 +2426,8 @@
     <bcf:citekey order="51" intorder="1">lee2004</bcf:citekey>
     <bcf:citekey order="52" intorder="1">gatheral2014</bcf:citekey>
     <bcf:citekey order="53" intorder="1">heston1993</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">carrmadan1999</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">lewis2001</bcf:citekey>
+    <bcf:citekey order="54" intorder="2">carrmadan1999</bcf:citekey>
     <bcf:citekey order="55" intorder="1">bergomi2016</bcf:citekey>
     <bcf:citekey order="56" intorder="1">peskirshiryaev2006</bcf:citekey>
     <bcf:citekey order="57" intorder="1">delbaenschachermayer1994</bcf:citekey>
@@ -2441,28 +2442,28 @@
     <bcf:citekey order="66" intorder="1">heston1993</bcf:citekey>
     <bcf:citekey order="67" intorder="1">bergomi2016</bcf:citekey>
     <bcf:citekey order="68" intorder="1">carrmadan1999</bcf:citekey>
-    <bcf:citekey order="69" intorder="1">gatheral2014</bcf:citekey>
-    <bcf:citekey order="70" intorder="1">lee2004</bcf:citekey>
-    <bcf:citekey order="71" intorder="1">lyons1998</bcf:citekey>
-    <bcf:citekey order="72" intorder="1">mandelbrotvanness1968</bcf:citekey>
-    <bcf:citekey order="73" intorder="1">marcusrosen2006</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">lewis2001</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">gatheral2014</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">lee2004</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">lyons1998</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">mandelbrotvanness1968</bcf:citekey>
     <bcf:citekey order="74" intorder="1">marcusrosen2006</bcf:citekey>
-    <bcf:citekey order="75" intorder="1">frizvictoir2010</bcf:citekey>
-    <bcf:citekey order="76" intorder="1">rogers1997</bcf:citekey>
-    <bcf:citekey order="77" intorder="1">gatheraljaissonrosenbaum2018</bcf:citekey>
-    <bcf:citekey order="78" intorder="1">comterenault1998</bcf:citekey>
-    <bcf:citekey order="79" intorder="1">frizhairer2020</bcf:citekey>
-    <bcf:citekey order="80" intorder="1">geng2021</bcf:citekey>
-    <bcf:citekey order="81" intorder="1">frizvictoir2010</bcf:citekey>
-    <bcf:citekey order="82" intorder="1">lyons1998</bcf:citekey>
-    <bcf:citekey order="83" intorder="1">frizvictoir2010</bcf:citekey>
-    <bcf:citekey order="84" intorder="1">frizhairer2020</bcf:citekey>
-    <bcf:citekey order="85" intorder="1">frizvictoir2010</bcf:citekey>
-    <bcf:citekey order="86" intorder="1">frizhairer2020</bcf:citekey>
-    <bcf:citekey order="87" intorder="1">frizvictoir2010</bcf:citekey>
-    <bcf:citekey order="88" intorder="1">coutinqian2002</bcf:citekey>
-    <bcf:citekey order="89" intorder="1">frizhairer2020</bcf:citekey>
-    <bcf:citekey order="90" intorder="1">lyonsvictoir2007</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">marcusrosen2006</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">frizvictoir2010</bcf:citekey>
+    <bcf:citekey order="77" intorder="1">rogers1997</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">gatheraljaissonrosenbaum2018</bcf:citekey>
+    <bcf:citekey order="79" intorder="1">comterenault1998</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">frizhairer2020</bcf:citekey>
+    <bcf:citekey order="81" intorder="1">geng2021</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">frizvictoir2010</bcf:citekey>
+    <bcf:citekey order="83" intorder="1">lyons1998</bcf:citekey>
+    <bcf:citekey order="84" intorder="1">frizvictoir2010</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">frizhairer2020</bcf:citekey>
+    <bcf:citekey order="86" intorder="1">frizvictoir2010</bcf:citekey>
+    <bcf:citekey order="87" intorder="1">frizhairer2020</bcf:citekey>
+    <bcf:citekey order="88" intorder="1">frizvictoir2010</bcf:citekey>
+    <bcf:citekey order="89" intorder="1">coutinqian2002</bcf:citekey>
+    <bcf:citekey order="90" intorder="1">frizhairer2020</bcf:citekey>
     <bcf:citekey order="91" intorder="1">frizhairer2020</bcf:citekey>
     <bcf:citekey order="92" intorder="1">frizhairer2020</bcf:citekey>
     <bcf:citekey order="93" intorder="1">frizhairer2020</bcf:citekey>
@@ -2480,61 +2481,85 @@
     <bcf:citekey order="105" intorder="1">geng2021</bcf:citekey>
     <bcf:citekey order="106" intorder="1">chevyrevlyons2016</bcf:citekey>
     <bcf:citekey order="107" intorder="1">eleucrosenbaum2019</bcf:citekey>
-    <bcf:citekey order="108" intorder="1">frizhairer2020</bcf:citekey>
-    <bcf:citekey order="109" intorder="1">rogers1997</bcf:citekey>
-    <bcf:citekey order="110" intorder="1">cheridito2003</bcf:citekey>
-    <bcf:citekey order="111" intorder="1">frizvictoir2010</bcf:citekey>
-    <bcf:citekey order="112" intorder="1">almgrenchriss2001</bcf:citekey>
-    <bcf:citekey order="113" intorder="1">kalsi2020</bcf:citekey>
-    <bcf:citekey order="114" intorder="1">almgrenchriss2001</bcf:citekey>
+    <bcf:citekey order="108" intorder="1">geng2021</bcf:citekey>
+    <bcf:citekey order="109" intorder="1">delbaenschachermayer1994</bcf:citekey>
+    <bcf:citekey order="110" intorder="1">rogers1997</bcf:citekey>
+    <bcf:citekey order="111" intorder="1">cheridito2003</bcf:citekey>
+    <bcf:citekey order="112" intorder="1">frizvictoir2010</bcf:citekey>
+    <bcf:citekey order="113" intorder="1">almgrenchriss2001</bcf:citekey>
+    <bcf:citekey order="114" intorder="1">kalsi2020</bcf:citekey>
     <bcf:citekey order="115" intorder="1">almgrenchriss2001</bcf:citekey>
     <bcf:citekey order="116" intorder="1">rogers1997</bcf:citekey>
-    <bcf:citekey order="117" intorder="1">cheridito2003</bcf:citekey>
-    <bcf:citekey order="118" intorder="1">kalsi2020</bcf:citekey>
-    <bcf:citekey order="119" intorder="1">lyonsnejadperez2020</bcf:citekey>
-    <bcf:citekey order="120" intorder="1">cuchiero2025</bcf:citekey>
-    <bcf:citekey order="121" intorder="1">romanotouzi1997</bcf:citekey>
-    <bcf:citekey order="122" intorder="1">bayerfrizgassiat2020</bcf:citekey>
-    <bcf:citekey order="123" intorder="1">frizhairer2020</bcf:citekey>
-    <bcf:citekey order="124" intorder="1">bayerfrizfukasawa2023</bcf:citekey>
-    <bcf:citekey order="125" intorder="1">dinunno2023</bcf:citekey>
-    <bcf:citekey order="126" intorder="1">gatheral2014</bcf:citekey>
-    <bcf:citekey order="127" intorder="1">raissi2019</bcf:citekey>
-    <bcf:citekey order="128" intorder="1">raissi2019</bcf:citekey>
-    <bcf:citekey order="129" intorder="1">karniadakis2021</bcf:citekey>
-    <bcf:citekey order="130" intorder="1">baydin2018</bcf:citekey>
-    <bcf:citekey order="131" intorder="1">lee2004</bcf:citekey>
-    <bcf:citekey order="132" intorder="1">lee2004</bcf:citekey>
-    <bcf:citekey order="133" intorder="1">loshchilov2019</bcf:citekey>
-    <bcf:citekey order="134" intorder="1">loshchilov2017</bcf:citekey>
-    <bcf:citekey order="135" intorder="1">gatheral2014</bcf:citekey>
-    <bcf:citekey order="136" intorder="1">raissi2019</bcf:citekey>
-    <bcf:citekey order="137" intorder="1">karniadakis2021</bcf:citekey>
-    <bcf:citekey order="138" intorder="1">baydin2018</bcf:citekey>
-    <bcf:citekey order="139" intorder="1">loshchilov2019</bcf:citekey>
-    <bcf:citekey order="140" intorder="1">loshchilov2017</bcf:citekey>
-    <bcf:citekey order="141" intorder="1">gatheral2006</bcf:citekey>
-    <bcf:citekey order="142" intorder="1">lee2004</bcf:citekey>
-    <bcf:citekey order="143" intorder="1">dupire1994</bcf:citekey>
-    <bcf:citekey order="144" intorder="1">gatheral2014</bcf:citekey>
-    <bcf:citekey order="145" intorder="1">eleucrosenbaum2019</bcf:citekey>
-    <bcf:citekey order="146" intorder="1">abijaber2024</bcf:citekey>
-    <bcf:citekey order="147" intorder="1">bayerfrizfukasawa2023</bcf:citekey>
-    <bcf:citekey order="148" intorder="1">carrmadan1999</bcf:citekey>
-    <bcf:citekey order="149" intorder="1">gatheraljaissonrosenbaum2018</bcf:citekey>
-    <bcf:citekey order="150" intorder="1">lyonsnejadperez2020</bcf:citekey>
-    <bcf:citekey order="151" intorder="1">billingsley1995</bcf:citekey>
-    <bcf:citekey order="152" intorder="1">durrett2019</bcf:citekey>
-    <bcf:citekey order="153" intorder="1">heyde1963</bcf:citekey>
-    <bcf:citekey order="154" intorder="1">durrett2019</bcf:citekey>
-    <bcf:citekey order="155" intorder="1">roydenfitzpatrick2010</bcf:citekey>
-    <bcf:citekey order="156" intorder="1">durrett2019</bcf:citekey>
-    <bcf:citekey order="157" intorder="1">karatzasshreve1991</bcf:citekey>
-    <bcf:citekey order="158" intorder="1">kuo2006</bcf:citekey>
-    <bcf:citekey order="159" intorder="1">frizhairer2020</bcf:citekey>
-    <bcf:citekey order="160" intorder="1">geng2021</bcf:citekey>
-    <bcf:citekey order="161" intorder="1">frizhairer2020</bcf:citekey>
-    <bcf:citekey order="162" intorder="1">frizhairer2020</bcf:citekey>
+    <bcf:citekey order="117" intorder="1">lyons1998</bcf:citekey>
+    <bcf:citekey order="118" intorder="1">frizhairer2020</bcf:citekey>
+    <bcf:citekey order="119" intorder="1">frizvictoir2010</bcf:citekey>
+    <bcf:citekey order="120" intorder="1">geng2021</bcf:citekey>
+    <bcf:citekey order="121" intorder="1">chen1957</bcf:citekey>
+    <bcf:citekey order="122" intorder="1">gubinelli2004</bcf:citekey>
+    <bcf:citekey order="123" intorder="1">young1936</bcf:citekey>
+    <bcf:citekey order="124" intorder="1">mandelbrotvanness1968</bcf:citekey>
+    <bcf:citekey order="125" intorder="1">marcusrosen2006</bcf:citekey>
+    <bcf:citekey order="126" intorder="1">rogers1997</bcf:citekey>
+    <bcf:citekey order="127" intorder="1">coutinqian2002</bcf:citekey>
+    <bcf:citekey order="128" intorder="1">lyonsvictoir2007</bcf:citekey>
+    <bcf:citekey order="129" intorder="1">hamblylyons2010</bcf:citekey>
+    <bcf:citekey order="130" intorder="1">boedihardjo2016</bcf:citekey>
+    <bcf:citekey order="131" intorder="1">chevyrevlyons2016</bcf:citekey>
+    <bcf:citekey order="132" intorder="1">chevyrevkormilitzin2016</bcf:citekey>
+    <bcf:citekey order="133" intorder="1">levinlyonsni2013</bcf:citekey>
+    <bcf:citekey order="134" intorder="1">almgrenchriss2001</bcf:citekey>
+    <bcf:citekey order="135" intorder="1">carteajaimungal2015</bcf:citekey>
+    <bcf:citekey order="136" intorder="1">kalsi2020</bcf:citekey>
+    <bcf:citekey order="137" intorder="1">lyonsnejadperez2020</bcf:citekey>
+    <bcf:citekey order="138" intorder="1">abijaber2024</bcf:citekey>
+    <bcf:citekey order="139" intorder="1">cuchiero2025</bcf:citekey>
+    <bcf:citekey order="140" intorder="1">gatheral2014</bcf:citekey>
+    <bcf:citekey order="141" intorder="1">raissi2019</bcf:citekey>
+    <bcf:citekey order="142" intorder="1">ackerer2020</bcf:citekey>
+    <bcf:citekey order="143" intorder="1">chataigner2020</bcf:citekey>
+    <bcf:citekey order="144" intorder="1">raissi2019</bcf:citekey>
+    <bcf:citekey order="145" intorder="1">karniadakis2021</bcf:citekey>
+    <bcf:citekey order="146" intorder="1">baydin2018</bcf:citekey>
+    <bcf:citekey order="147" intorder="1">totem</bcf:citekey>
+    <bcf:citekey order="148" intorder="1">ergunuthemann2020</bcf:citekey>
+    <bcf:citekey order="149" intorder="1">lee2004</bcf:citekey>
+    <bcf:citekey order="150" intorder="1">lee2004</bcf:citekey>
+    <bcf:citekey order="151" intorder="1">loshchilov2019</bcf:citekey>
+    <bcf:citekey order="152" intorder="1">loshchilov2017</bcf:citekey>
+    <bcf:citekey order="153" intorder="1">raissi2019</bcf:citekey>
+    <bcf:citekey order="154" intorder="1">karniadakis2021</bcf:citekey>
+    <bcf:citekey order="155" intorder="1">baydin2018</bcf:citekey>
+    <bcf:citekey order="156" intorder="1">loshchilov2019</bcf:citekey>
+    <bcf:citekey order="157" intorder="1">loshchilov2017</bcf:citekey>
+    <bcf:citekey order="158" intorder="1">gatheral2006</bcf:citekey>
+    <bcf:citekey order="159" intorder="1">lee2004</bcf:citekey>
+    <bcf:citekey order="160" intorder="1">dupire1994</bcf:citekey>
+    <bcf:citekey order="161" intorder="1">gatheral2014</bcf:citekey>
+    <bcf:citekey order="162" intorder="1">eleucrosenbaum2019</bcf:citekey>
+    <bcf:citekey order="163" intorder="1">bayerfrizfukasawa2023</bcf:citekey>
+    <bcf:citekey order="164" intorder="1">dinunno2023</bcf:citekey>
+    <bcf:citekey order="165" intorder="1">carrmadan1999</bcf:citekey>
+    <bcf:citekey order="166" intorder="1">gatheraljaissonrosenbaum2018</bcf:citekey>
+    <bcf:citekey order="167" intorder="1">lyonsnejadperez2020</bcf:citekey>
+    <bcf:citekey order="168" intorder="1">abijaber2024</bcf:citekey>
+    <bcf:citekey order="169" intorder="1">cuchiero2025</bcf:citekey>
+    <bcf:citekey order="170" intorder="1">cuchiero2025</bcf:citekey>
+    <bcf:citekey order="171" intorder="1">abijaber2024</bcf:citekey>
+    <bcf:citekey order="172" intorder="1">guyonlekeufack2022</bcf:citekey>
+    <bcf:citekey order="173" intorder="1">hairer2014</bcf:citekey>
+    <bcf:citekey order="174" intorder="1">bayerfrizgassiat2020</bcf:citekey>
+    <bcf:citekey order="175" intorder="1">billingsley1995</bcf:citekey>
+    <bcf:citekey order="176" intorder="1">durrett2019</bcf:citekey>
+    <bcf:citekey order="177" intorder="1">heyde1963</bcf:citekey>
+    <bcf:citekey order="178" intorder="1">durrett2019</bcf:citekey>
+    <bcf:citekey order="179" intorder="1">roydenfitzpatrick2010</bcf:citekey>
+    <bcf:citekey order="180" intorder="1">durrett2019</bcf:citekey>
+    <bcf:citekey order="181" intorder="1">karatzasshreve1991</bcf:citekey>
+    <bcf:citekey order="182" intorder="1">kuo2006</bcf:citekey>
+    <bcf:citekey order="183" intorder="1">frizhairer2020</bcf:citekey>
+    <bcf:citekey order="184" intorder="1">geng2021</bcf:citekey>
+    <bcf:citekey order="185" intorder="1">frizhairer2020</bcf:citekey>
+    <bcf:citekey order="186" intorder="1">frizhairer2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

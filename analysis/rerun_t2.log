@@ -1,0 +1,43 @@
+sample: 2360 quotes, 15 maturities, T in [0.1040, 1.8480]
+[rough]   differential evolution, N=80 ...
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[rough]   DE Phi = 84705.4  (1287s)
+[rough]   polished Phi = 76081.9  (2996s)
+[classic] differential evolution, N=80 ...
+[classic] DE Phi = 75976.0  (1328s)
+[classic] polished Phi = 76081.9  (1795s)
+
+--- rough Heston (H free) ---
+    v0           0.023678551835350725
+    theta        0.062489964678026276
+    lam          2.1172800621606873
+    xi           0.9218726978526204
+    rho          -0.7347364287906043
+    H            0.49999999999358746
+    Phi          76085.49596702338
+    Phi_per_n    32.2396169351794
+    rmse_bp      39.225188515261074
+    max_abs_bp   185.3014433053629
+    inside_pct   9.872881355932202
+    n            2360
+
+--- classical Heston (H = 1/2) ---
+    v0           0.023678554989113542
+    theta        0.06249000416482195
+    lam          2.117277134500454
+    xi           0.9218722899654771
+    rho          -0.7347365587372394
+    H            0.5
+    Phi          76085.49599648736
+    Phi_per_n    32.23961694766413
+    rmse_bp      39.22522238948292
+    max_abs_bp   185.30194404645485
+    inside_pct   9.872881355932202
+    n            2360
+
+wrote params / permat / quotes
+
+profiling in H ...
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega

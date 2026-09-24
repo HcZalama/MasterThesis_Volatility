@@ -1,0 +1,35 @@
+profiling on 2360 quotes, 11 values of H
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.030  Phi/n=  124.598  theta=0.1348  kappa=0.331  xi=0.369  rho=-0.713
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.076  Phi/n=  125.086  theta=0.0892  kappa=0.654  xi=0.445  rho=-0.706
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.122  Phi/n=  101.207  theta=0.0921  kappa=0.604  xi=0.440  rho=-0.721
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.168  Phi/n=   70.408  theta=0.1221  kappa=0.412  xi=0.436  rho=-0.728
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.214  Phi/n=   60.971  theta=0.1061  kappa=0.541  xi=0.484  rho=-0.735
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.260  Phi/n=   51.484  theta=0.0998  kappa=0.620  xi=0.522  rho=-0.731
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.306  Phi/n=   49.857  theta=0.0813  kappa=0.892  xi=0.591  rho=-0.739
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.352  Phi/n=   44.848  theta=0.0727  kappa=1.218  xi=0.675  rho=-0.719
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.398  Phi/n=   36.073  theta=0.0791  kappa=1.098  xi=0.692  rho=-0.732
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.444  Phi/n=   34.174  theta=0.0698  kappa=1.527  xi=0.792  rho=-0.735
+C:\Users\hecto\source\repos\HcZalama\MasterThesis_Volatility\analysis\rough_heston.py:206: RuntimeWarning: overflow encountered in divide
+  nxt = sig - f / vega
+[profile] H=0.490  Phi/n=   32.690  theta=0.0646  kappa=1.909  xi=0.879  rho=-0.735
+done

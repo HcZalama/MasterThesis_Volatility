@@ -20,10 +20,11 @@
 
 
 @book{falconer,
-  title={Fractal Geometry},
+  title={Fractal Geometry: Mathematical Foundations and Applications},
   author={Falconer, Kenneth},
+  edition={2},
   year={2003},
-  publisher={University of St Andrews}
+  publisher={John Wiley \& Sons}
 }
 
 @book{kuo2006,
@@ -94,16 +95,31 @@
 }
 
 
-@misc{parent2024,
-  author       = {Léo Parent},
-  title        = {Essays on Asset Price Dynamics Modeling},
-  year         = {2024},
-  month        = {9},
-  note         = {Available at SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5002182}},
-  institution  = {PRISM Sorbonne},
-  address      = {Paris, France},
-  url          = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5002182}
-}
+%======================================================================
+%  WITHDRAWN -- not cited anywhere in the text or the appendices, so it is
+%  commented out here rather than deleted.
+%
+%  Every line is prefixed, and the at-sign has been dropped from the entry
+%  type as well.  Both are deliberate: biber honours the percent sign as a
+%  comment, but some editor-side bib parsers do not, and on meeting a
+%  prefixed entry type they begin reading an entry, lose their place, and
+%  then declare the whole file unparsable -- which costs citation
+%  autocompletion in the editor.  Dropping the at-sign leaves nothing for
+%  any parser to latch onto.
+%
+%  TO RESTORE: strip the leading percent from each line, and put the
+%  at-sign back in front of the entry type.
+%======================================================================
+%  misc{parent2024,
+%   author       = {Léo Parent},
+%   title        = {Essays on Asset Price Dynamics Modeling},
+%   year         = {2024},
+%   month        = {9},
+%   note         = {Available at SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5002182}},
+%   institution  = {PRISM Sorbonne},
+%   address      = {Paris, France},
+%   url          = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5002182}
+% }
 
 
 @article{dinunno2023,
@@ -152,6 +168,8 @@
   url          = {https://onlinelibrary.wiley.com/doi/abs/10.1111/mafi.12442}
 }
 
+% Restored: cited in the Conclusions as the competing reading of the evidence
+% that Subsection 3.1.2 reports.
 @misc{guyonlekeufack2022,
   author       = {Julien Guyon and Jordan Lekeufack},
   title        = {Volatility Is (Mostly) Path-Dependent},
@@ -292,13 +310,18 @@
   year    = {2019},
 }
 
-@book{wilmott1995,
-  author    = {Paul Wilmott and Sam Howison and Jeff Dewynne},
-  title     = {The Mathematics of Financial Derivatives: A Student Introduction},
-  publisher = {Cambridge University Press},
-  address   = {Cambridge, UK},
-  year      = {1995}
-}
+%======================================================================
+%  WITHDRAWN -- not cited anywhere in the text or the appendices.  See the
+%  note above the withdrawn Parent entry for why it is commented out in
+%  this particular way, and for how to restore it.
+%======================================================================
+%  book{wilmott1995,
+%   author    = {Paul Wilmott and Sam Howison and Jeff Dewynne},
+%   title     = {The Mathematics of Financial Derivatives: A Student Introduction},
+%   publisher = {Cambridge University Press},
+%   address   = {Cambridge, UK},
+%   year      = {1995}
+% }
 
 @article{raissi2019,
   author  = {Maziar Raissi and Paris Perdikaris and George Em Karniadakis},
@@ -733,4 +756,53 @@
   number  = {4},
   pages   = {399--412},
   year    = {1997}
+}
+
+% ---------------------------------------------------------------------------
+% ADDED IN RESPONSE TO REVIEW -- PLEASE VERIFY YEAR, VENUE AND PAGES BEFORE
+% SUBMITTING.  Details below are believed correct but were not checked against
+% the publishers' records.
+% ---------------------------------------------------------------------------
+
+@techreport{lewis2001,
+  author      = {Alan L. Lewis},
+  title       = {A Simple Option Formula for General Jump-Diffusion and Other Exponential {L}\'evy Processes},
+  institution = {Envision Financial Systems and OptionCity.net},
+  year        = {2001},
+  note        = {Available at SSRN 282110}
+}
+
+@inproceedings{ackerer2020,
+  author    = {Damien Ackerer and Natasa Tagasovska and Thibault Vatter},
+  title     = {Deep Smoothing of the Implied Volatility Surface},
+  booktitle = {Advances in Neural Information Processing Systems 33 (NeurIPS 2020)},
+  year      = {2020}
+}
+
+@article{chataigner2020,
+  author  = {Marc Chataigner and St\'ephane Cr\'epey and Matthew Dixon},
+  title   = {Deep Local Volatility},
+  journal = {Risks},
+  volume  = {8},
+  number  = {3},
+  pages   = {82},
+  year    = {2020}
+}
+
+
+@online{totem,
+  author  = {{S\&P Global Market Intelligence}},
+  title   = {Totem: Trade Data Services},
+  url     = {https://www.spglobal.com/marketintelligence/en/mi/products/totem.html},
+  urldate = {2026-09-24},
+  note    = {Consensus pricing service for over-the-counter derivatives; access restricted to contributing institutions}
+}
+
+@techreport{ergunuthemann2020,
+  author      = {Lerby M. Ergun and Andreas Uthemann},
+  title       = {Higher-Order Uncertainty in Financial Markets: Evidence from a Consensus Pricing Service},
+  institution = {Systemic Risk Centre, London School of Economics},
+  type        = {Discussion Paper},
+  number      = {98},
+  year        = {2020}
 }
