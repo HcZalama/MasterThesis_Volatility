@@ -22,7 +22,7 @@ Let $X, Y \in L^1(\Omega)$. Then:
     \item[1.] $\mathbb{E}\!\left[\,\mathbb{E}[X \mid \mathcal{G}]\,\right] = \mathbb{E}[X]$; that is, $\mathbb{E}[X\mid\mathcal{G}]$ and $X$ have the same expectation.
     \item[2.] If $X$ is $\mathcal{G}$-measurable, then $\mathbb{E}[X \mid \mathcal{G}] = X$.
     \item[3.] If $X$ and $\mathcal{G}$ are independent --- that is, $\{X \in U\}$ and $A$ are independent events for every Borel $U \subseteq \mathbb{R}$ and every $A \in \mathcal{G}$ --- then $\mathbb{E}[X \mid \mathcal{G}] = \mathbb{E}[X]$.
-    \item[4.] (\textbf{Taking out what is known}) If $Y$ is $\mathcal{G}$-measurable and $\mathbb{E}[|XY|]<\infty$, then $\mathbb{E}[XY \mid \mathcal{G}] = Y\,\mathbb{E}[X \mid \mathcal{G}]$.
+    \item[4.] (\textbf{Taking out what is known}) If $Y$ is $\mathcal{G}$-measurable and $\mathbb{E}[|XY|]<\infty$, then we have $\mathbb{E}[XY \mid \mathcal{G}] = Y\,\mathbb{E}[X \mid \mathcal{G}]$.
     \item[5.] (\textbf{Conditional Jensen's inequality}) If $\phi : \mathbb{R} \to \mathbb{R}$ is convex and both $X$ and $\phi(X)$ are integrable, then $\phi\bigl(\mathbb{E}[X \mid \mathcal{G}]\bigr) \leq \mathbb{E}[\phi(X) \mid \mathcal{G}]$.
     \item[6.] If $X \leq Y$, then $\mathbb{E}[X \mid \mathcal{G}] \leq \mathbb{E}[Y \mid \mathcal{G}]$; consequently $\left| \mathbb{E}[X \mid \mathcal{G}] \right| \leq \mathbb{E}[\,|X| \mid \mathcal{G}]$.
     \item[7.] For all $a,b \in \mathbb{R}$, $\mathbb{E}[aX + bY \mid \mathcal{G}] = a\,\mathbb{E}[X \mid \mathcal{G}] + b\,\mathbb{E}[Y \mid \mathcal{G}]$. In particular $\mathbb{E}[\,\cdot \mid \mathcal{G}]$ is a bounded linear operator from $L^{1}(\Omega,\mathcal{F})$ into $L^{1}(\Omega,\mathcal{G})$, a fact used to pass to limits in Theorem \ref{theorem:martingale_property}.
@@ -187,7 +187,7 @@ local one, and under which the Snell envelope of Theorem \ref{thm:snell} is well
 process dominated by an integrable variable is of class D; in particular, so is any bounded
 process.
 
-\section{The essential supremum of a family of random variables}\label{app:esssup}
+\section{The ess. supremum of a family of random variables}\label{app:esssup}
 
 \begin{definition}[Essential supremum]\label{def:esssup}
 Let $\{X_i\}_{i \in I}$ be a family of random variables on $\PSpace$, indexed by an arbitrary and

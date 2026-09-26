@@ -61,6 +61,10 @@ INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\svgnam.def
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\svgnam.def
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\svgnam.def
+INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
+INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
+INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\generic\soul\soul.sty
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\generic\soul\soul.sty
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\generic\soul\soul.sty
@@ -122,8 +126,6 @@ INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.st
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
-INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.sty
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.sty
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.sty
@@ -747,10 +749,6 @@ INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\chapters\03-roughpaths.tex
 INPUT .\chapters\03-roughpaths.tex
 OUTPUT chapters\03-roughpaths.aux
@@ -983,10 +981,6 @@ INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\rh-identification.pdf
 INPUT .\Images\rh-identification.pdf
 INPUT .\Images\rh-identification.pdf
@@ -1029,10 +1023,6 @@ INPUT .\Images\levy-lag.pdf
 INPUT .\Images\levy-lag.pdf
 INPUT .\Images\levy-lag.pdf
 INPUT .\Images\levy-lag.pdf
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
@@ -1104,10 +1094,6 @@ INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
-INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png

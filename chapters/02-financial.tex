@@ -282,6 +282,8 @@ PDE that the price must satisfy.
 
 Having established the general theory of arbitrage-free pricing and martingale measures, we now specialise our market model to the most famous and widely used framework: the Black--Scholes--Merton model, usually called the Black--Scholes model, or simply the BS model.
 
+\vspace{-0.3cm}
+
 \subsection{The Model}
 \label{subsec:bs_model}
 
@@ -313,7 +315,11 @@ object, and Subsection \ref{subsec:impliedvol} keeps the two apart.
 % seeing emerge from the computation rather than being handed the risk-neutral dynamics with $\mu$ 
 % already replaced by $\rf$.
 
+\vspace{-0.5cm}
+
 \subsubsection*{The hedging argument}
+
+\vspace{-0.3cm}
 
 Consider a derivative whose value is a smooth function $V(t,\Spot)$ of time and the current spot, and
 seek to \emph{replicate} it with $\Delta_t$ units of the underlying and $\beta_t$ units of the bank
@@ -517,6 +523,7 @@ determines the delivery price uniquely:
 \end{equation}
 \end{definition}
 
+
 Identity \eqref{eq:forwarddef} says that the forward price is a $\QT$-martingale. It holds by construction, with no assumption 
 whatever on interest rates, on dividends, or on their nature. In particular we deliberately do 
 \emph{not} write $\Fwd(t,T) = \Spot_t e^{(\rf-\divy)(T-t)}$, which is valid only for constant $\rf$, 
@@ -549,8 +556,7 @@ implied volatility. The result is the celebrated Black-76 formula \cite{black197
 
 Across a whole \emph{surface} the relation \eqref{eq:spotforwardfactor} does substantive work, and it
 is worth being explicit that its coefficients carry the maturity as well as the observation time:
-each quoted maturity has its own forward, $\Fwd(t,T)=a(t,T)\,\Spot_t+b(t,T)$, and at $t=0$ not one of
-them is the spot. Two consequences follow. The log-moneyness
+each quoted maturity has its own forward; $\Fwd(t,T)=a(t,T)\,\Spot_t+b(t,T)$. Two consequences follow. The log-moneyness
 $\lmon=\log(\Strike/\Fwd(t,T))$ of \eqref{eq:totalvariance} centres every smile on its
 own forward, so the forward curve is what aligns the surface in the strike direction: an error in it
 shears the smiles against one another by an amount that grows with $T$, and Subsection
@@ -621,8 +627,7 @@ of units, and it would remain well posed even if every modelling assumption of S
 
 \subsubsection*{Implied against realised volatility}
 
-The word ``volatility'' is by now doing three quite different jobs, and since the remainder of the
-dissertation turns on telling them apart, we separate them here once and for all. There is $\sigma$,
+The word ``volatility'' is by now doing three quite different jobs. There is $\sigma$,
 a \emph{parameter} of the model \eqref{eq:BS_SDE_P}, constant by assumption and not observable.
 There is $\ivol$, a \emph{quote}: read off an observed price through Definition
 \ref{def:impliedvol}, and varying with strike and maturity precisely because the model that defines
@@ -675,7 +680,7 @@ If the assumptions of Black--Scholes were satisfied physically (i.e., if returns
     \item \textbf{The Smile:} Typical in Forex markets. $\ivol$ is lowest at the money ($\Strike \approx \Fwd$) and rises for strikes far from the money in \emph{both} directions. This reflects ``fat tails'' (leptokurtosis) in the return distribution: extreme moves in either direction are more probable than the Gaussian model predicts.
 \end{itemize}
 
-\begin{figure}[htbp]
+\begin{figure}[!b]
 \centering
 \includegraphics[width=\textwidth]{Images/smile-skew.pdf}
 \caption[The skew and the smile]{The two shapes described above, each drawn against the flat line
@@ -808,9 +813,9 @@ A total implied variance surface $\tvar(\lmon,T)$ is free of static arbitrage if
     being a \emph{necessary} condition on an arbitrage-free surface rather than a sufficient one. What
     is required in addition, in the Gatheral--Jacquier formulation, is the tail condition
     $d_{+}(\lmon)\to-\infty$ as $\lmon\to+\infty$, which is what forces the call price to vanish in the
-    far wing.
+    far wing. \qedopentext
+
 \end{itemize}
-\qedopentext
 \end{proposition}
 
 Each condition has a direct financial meaning. Condition i) says a longer-dated option cannot be 
@@ -1029,7 +1034,6 @@ We conclude this chapter by  discussing the challenges posed by path-dependent d
 
 Because an American option may be exercised at any time up to maturity, its value depends on the law of the underlying at \emph{every} intermediate date, not merely at $T$. A single implied volatility, which by Definition \ref{def:impliedvol} is one number read off one European quote, therefore does not determine it: infinitely many dynamics reproduce that quote while disagreeing about the intermediate marginals, and hence about the exercise boundary. The point matters in practice because options on \textit{single names} (i.e., individual corporate stocks) are almost exclusively American-style. Investors in single equities are reluctant to relinquish the flexibility of early exercise, particularly to capture discrete dividends or navigate corporate actions. In contrast, broad market indices are generally considered more stable and are traded via extremely liquid European options.
 
-\newpage
 
 % Before developing any machinery it is worth recording how much of the early-exercise premium is
 % genuinely there, because for one of the two basic contracts the answer is: none. The result is due
@@ -1107,6 +1111,8 @@ measure of Subsection \ref{subsec:forward}, is
 % dividends are absorbed into the cash coefficient $b_t$ of \eqref{eq:spotforwardfactor} 
 % and never enter \eqref{eq:localvolforward} at all.
 
+%\vspace{-0.65cm}
+
 \subsubsection*{Optimal stopping and the Snell envelope}
 
 Before writing any partial differential equation, let us state what an American option \emph{is} in 
@@ -1119,6 +1125,9 @@ $[t,T]$ and $\PayoffFn$ for the exercise payoff, the value at time $t$ is
 V_t = \operatorname*{ess\,sup}_{\tau \in \Stop{[t,T]}} 
 \Ep{\QQ}\left[ e^{-\int_t^{\tau}\rf(s)\,ds}\,\PayoffFn(\tau, \Spot_\tau) \,\Big|\, \Ft \right].
 \end{equation}
+
+\newpage
+
 The essential supremum, defined in Appendix \ref{app:esssup}, is required because the family is uncountable. This is an optimal stopping 
 problem, and its solution is classical. Discounting has to be brought inside before the classical statement applies, since it is the
 \emph{discounted} value, not $V$ itself, that is a supermartingale. Write

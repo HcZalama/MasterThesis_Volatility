@@ -41,7 +41,7 @@ norm of $L^2_{\mathrm{ad}}([0,T]\times\Omega)$, and recall that it suffices to a
 $f$ within $\varepsilon$ by a step process, since the step processes then form a dense subspace.
 
 \medskip
-\noindent\textbf{Step 1: $f$ bounded with continuous sample paths.} Let $|f| \leq M$ and let
+\noindent\textbf{Step 1: $f$ bounded with continuous sample paths.} Since $f$ is bounded, let $|f| \leq M$ and let
 $\mathcal{P}_n = \{0 = t^n_0 < \cdots < t^n_{k_n} = T\}$ be partitions with
 $\lVert\mathcal{P}_n\rVert \to 0$. Put
 \[
@@ -61,10 +61,10 @@ $f$ by $0$ outside $[0,T]$ and mollify in time: for $n \in \mathbb{N}$ set
 \[
 g_n(t) := n\int_{t - 1/n}^{t} f(s)\,ds = \int_0^1 f\bigl(t - \tfrac{u}{n}\bigr)du .
 \]
-Each $g_n$ has continuous sample paths, since it is an indefinite integral, and $|g_n| \leq M$.
+Each $g_n$ has continuous sample paths, since it is an indefinite integral, and we have $|g_n| \leq M$.
 Adaptedness is preserved because $g_n(t)$ averages $f$ over $[t-1/n,\,t]$ only, using no information
 after $t$; this is where averaging \emph{backwards} rather than symmetrically matters. For the
-average to be $\mathcal{F}_t$-measurable one works throughout with the version of $f$ whose
+average to be $\mathcal{F}_t$-measurable one works  with the version of $f$ whose
 restriction to $[0,t]\times\Omega$ is $\mathcal{B}([0,t])\otimes\mathcal{F}_t$-measurable for every
 $t$; every adapted process that is jointly measurable admits one, and we use it without further
 comment. By the
@@ -109,7 +109,7 @@ We prove Theorem \ref{theorem:riemannian_limit} of Chapter \ref{ch:foundations}.
 \textbf{\textit{Proof:}} Let $f_\mathcal{P}(t) = \sum_i f(t_{i-1})\mathds{1}_{[t_{i-1},t_i)}(t)$ be
 the left-endpoint step approximation, so that the Riemann sum is exactly $I(f_\mathcal{P})$. By Itô's
 isometry it suffices to show that $\int_0^T \mathbb{E}[(f - f_\mathcal{P})^2]\,dt \to 0$. Expanding
-the square, this integral is a sum of terms of the form
+the square, we have a sum of terms of the form
 $\mathbb{E}[f(t)^2] - 2\mathbb{E}[f(t)f(t_{i-1})] + \mathbb{E}[f(t_{i-1})^2]$, each built from the
 function $(s,t)\mapsto\mathbb{E}[f(t)f(s)]$ evaluated at points within $\lVert\mathcal{P}\rVert$ of
 the diagonal. That function is continuous by hypothesis, hence uniformly continuous on the compact
@@ -282,7 +282,6 @@ $[u,t]$ yields partitions of $[s,t]$ whose mesh tends to zero, and whose sums co
 $(\mathcal{I}\Xi)_{s,u} + (\mathcal{I}\Xi)_{u,t}$ by construction and to $(\mathcal{I}\Xi)_{s,t}$ by
 the preceding paragraph. \qedfilledtext
 
-\newpage
 
 \section{Gubinelli's integration theorem}\label{app:proof:gubinelli}
 We prove Theorem \ref{thm:gubinelli} of Chapter \ref{ch:roughpaths}.
@@ -416,7 +415,7 @@ $[\Mat_0, 2\Mat_0]$, and so on; after $\lceil \Mat/\Mat_0\rceil$ steps the inter
 exhausted. That the concatenation is again a controlled path, and that it solves
 \eqref{eq:rdeintegral} across the junctions, follows from the additivity of the rough integral.
 
-For global uniqueness, suppose $(\widetilde Y,\widetilde\Gub)$ is another solution on $[0,\Mat]$ and
+For global uniqueness, suppose we have another solution on  $[0,\Mat]$ given by $(\widetilde Y,\widetilde\Gub)$, and
 let $\sigma := \sup\{t : \widetilde Y = Y \text{ on } [0,t]\}$. The two agree at $\sigma$ by
 continuity, so applying Step 3 on $[\sigma,\sigma+\tau]$ --- legitimate since $\tau$ does not depend
 on the initial value $Y_\sigma$ --- forces them to agree there also, contradicting the maximality of

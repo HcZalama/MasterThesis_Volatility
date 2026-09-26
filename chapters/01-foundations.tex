@@ -30,7 +30,11 @@ end of a proof, whether that proof is given in full, reduced to a sketch, or def
 \ref{app:proofs}.
 \end{convention*}
 
+\vspace{-0.3cm}
+
 \section{Probabilistic Preliminaries}\label{sec:preliminaries}
+
+\vspace{-0.2cm}
 
 \subsection{Processes, filtrations and stopping times}\label{subsec:processesfiltrations}
 
@@ -320,7 +324,7 @@ The characteristic function $\charf_X$ of \eqref{eq:mvncharfn} extends to an ent
 
 Any symmetric positive semi-definite matrix $\Sigma$ admits a matrix factor $\Sigma = L L^{\top}$ (e.g., via Cholesky or spectral decomposition), yielding the representation $X \stackrel{d}{=} \mu + L Z$ for $Z \sim \mathcal{N}_d(0, I_d)$. What sets the multivariate case apart from the one-dimensional one is geometry: $L$ acts as an anisotropic scaling followed by a rotation, deforming the spherical contours of $Z$ into oriented ellipsoids and thereby introducing directional cross-correlations.
 
-The following are easily verified through Theorem \ref{theorem:LevyContinuity} (or by evaluating characteristic functions directly via \eqref{eq:mvncharfn}):
+The following identities are easily verified through Theorem \ref{theorem:LevyContinuity} (or by evaluating characteristic functions directly via \eqref{eq:mvncharfn}):
 
 \begin{itemize}
     \item Let $X \sim \mathcal{N}_d(\mu_X, \Sigma_X)$ and $Y \sim \mathcal{N}_d(\mu_Y, \Sigma_Y)$ be two \emph{independent} multivariate normal random vectors in $\mathbb{R}^d$.  For matrices $A, B \in \mathbb{R}^{m \times d}$ and a vector $c \in \mathbb{R}^m$, 
@@ -1124,7 +1128,7 @@ The construction is shown in Figure \ref{fig:reflection}: up to $\tau_a$ the two
 after it the reflected one is the mirror image of the original in the level $a$, turning
 the count of paths finishing above $a$ into the count of those that ever reached it. Note that $\E[\overline{W}_t] = \E|W_t| = \sqrt{2t/\pi}$.
 
-\begin{figure}[htbp]
+\begin{figure}[!b]
 \centering
 \includegraphics[width=0.82\textwidth]{Images/reflection.pdf}
 \caption[The reflection principle]{The reflection principle. A Brownian path (solid) reaching the
@@ -1135,6 +1139,8 @@ statement that this pairing is measure-preserving.}
 \label{fig:reflection}
 \end{figure}
 
+
+
 % Two things follow. First, , which
 % already says that the expected high-water mark of a driftless price over $[0,t]$ grows like
 % $\sqrt{t}$, on the same scale as the fluctuation itself. Second, \eqref{eq:jointmaxdensity} is a \emph{joint} law across the whole interval,
@@ -1144,6 +1150,8 @@ statement that this pairing is measure-preserving.}
 % model and are precisely the contracts for which the local volatility model of the next chapter
 % (Subsection \ref{subsec:localvol}), calibrated to terminal marginals alone, gets the answer wrong. We return to
 % this in Chapter \ref{ch:applications}.
+
+\newpage
 
 \subsection{Path regularity}\label{subsec:pathregularity}
 
@@ -1181,7 +1189,7 @@ a measure on $[0,t]$ along any path. Figure \ref{fig:bmvariation} shows the two 
 \eqref{eq:qvtvbound} pulling apart as the mesh is refined, which is the whole of Proposition
 \ref{prop:bmunboundedvariation} in one picture.
 
-\begin{figure}[htbp]
+\begin{figure}[!b]
 \centering
 \includegraphics[width=\textwidth]{Images/bm-variation.pdf}
 \caption[Total variation against quadratic variation]{A Brownian path on $[0,1]$ (left) and its
@@ -1190,8 +1198,7 @@ $\mathcal{P}_n$ with $\lVert\mathcal{P}_n\rVert = 1/n$. The sum of absolute incr
 bound, with slope $\tfrac12$ on these axes, so that it diverges like $\sqrt{n}$ --- while the sum of squared
 increments settles at $t=1$. This is Proposition \ref{prop:bmunboundedvariation} and
 \eqref{eq:bmqv} side by side: the same path has infinite total variation and quadratic variation
-exactly $t$, and it is this pair of facts that makes the Riemann--Stieltjes integral unavailable and
-the Itô integral necessary.}
+matching exactly $t$.}
 \label{fig:bmvariation}
 \end{figure} The same competition can be expressed more finely by asking, not whether the sum of increments 
 converges, but for which exponent $p$ the sum of $p$-th powers does.
@@ -1236,12 +1243,16 @@ Let $W$ be a Brownian motion. Then, almost surely:
 \end{itemize}
 \end{theorem}
 
+\vspace{-0.12cm}
+
 Part i) was half-proved above via Kolmogorov's criterion; the negative half, like iii), is due to 
 Paley, Wiener and Zygmund, and proofs of all three may be found in \cite{falconer2003} or 
 \cite{karatzasshreve1991}. Part iii) is worth a moment's reflection. A continuous function 
 which is differentiable nowhere is already a celebrated pathology in real analysis, exhibited with 
 some effort by Weierstrass; the theorem says that if one picks a Brownian path at random one 
 obtains such a function with probability one. The pathological case is the meaningful case for stochastic integration.
+
+\vspace{-0.45cm}
 
 % \begin{remark}[The critical exponent]\label{rem:criticalexponent}
 % Brownian motion has finite $p$-variation exactly for $p > 2$. The number $2$ is a threshold in a 
@@ -1276,6 +1287,8 @@ obtains such a function with probability one. The pathological case is the meani
     
 
 \section{Stochastic Calculus}\label{sec:stochasticcalculus}
+
+\vspace{-0.3cm}
 
 Stochastic calculus is a broad area of mathematics which allows, among other things, randomness and uncertainty to be incorporated into differential equations. One of our main aims is to give meaning to expressions of the kind 
 \begin{equation}\label{eq:sde_intro}
@@ -1613,10 +1626,15 @@ We state Itô's rule directly in its general form, using the convenient \textit{
 \qedopen
 \end{theorem}
 
+\vspace{-0.3cm}
+
 \noindent
 A convenient way to derive Equation~\eqref{eq:ito_formula} is through a symbolic
 derivation using the Taylor expansion to first order in $dt$ and second order in $dX_t$,
 together with the \textit{Itô table} of Table \ref{tab:ItoTableScalar}.
+
+
+\vspace{-0.75cm}
 
 \begin{center}
 \[
@@ -1629,6 +1647,9 @@ dt & 0 & 0
 {\captionof{table}{Itô multiplication table for a scalar Brownian motion.}%
 \label{tab:ItoTableScalar}}
 \end{center}
+
+
+\vspace{-0.3cm}
 
 \noindent
 Applying the Taylor expansion to $V(t,X_t)$ gives
@@ -2023,7 +2044,7 @@ d\bigl\langle X^{(l)},X^{(h)}\bigr\rangle_t
 The proof is the one-dimensional argument of Theorem \ref{theorem:itorule} applied coordinatewise,
 with Table \ref{tab:ItoTable} supplying the second-order terms; see
 \cite[Ch.\ 7]{kuo2006} or \cite[Ch.\ 4]{oksendal2003}. Taking $V(x_1,x_2) = x_1x_2$ and $n=2$
-recovers the Itô product rule.
+recovers the Itô product rule. The Itô multiplication table extends accordingly.
 
 % The correlated form \eqref{eq:crossvariationcorrelated} is stated because it, and not
 % \eqref{eq:crossvariation}, is what the Heston system \eqref{eq:heston} requires: that model is
@@ -2033,7 +2054,7 @@ recovers the Itô product rule.
 % \ref{def:correlatedbm}, and then apply \eqref{eq:crossvariation} to $\sigma L$ --- but keeping the
 % general form to hand avoids performing that substitution silently every time the table is used.
 
-The Itô multiplication table extends accordingly.
+
 
 \[
 \begin{array}{c|ccccc}
@@ -2494,14 +2515,13 @@ $\displaystyle -\partial u/\partial s = \mathcal A u$ \\
 Here $\mathcal A^*$ represents the formal adjoint of the generator $\mathcal A$; see \cite{karatzasshreve1991} for the functional-analytic details. The backward equation propagates a \emph{payoff} backwards from maturity and is the natural object for pricing a single contract, whereas the forward equation propagates a \emph{density} forwards from today and is the natural object for calibration, since it evolves from known current market data. Dupire's formula in the next chapter (Subsection \ref{subsec:localvol}) is precisely an application of the second.
 Figure \ref{fig:forwardbackward} below shows the two evolutions for the geometric Brownian motion.
 
-\begin{figure}[htbp]
+\begin{figure}[!b]
 \centering
 \includegraphics[width=\textwidth]{Images/forward-backward.pdf}
 \caption[The forward and backward equations]{The two equations of Table \ref{tab:forwardbackward}, for geometric Brownian
 motion with $\sigma = 0.25$, $\rf = 0$ and $\Spot_0 = 100$. \emph{Left}: the forward (Fokker--Planck)
 equation \eqref{eq:fokkerplanck} transports the density forwards from the point mass at $\Spot_0$,
-which spreads as $t$ increases; this is the direction calibration works in, since $\Spot_0$ is
-observed today. \emph{Right}: the backward equation \eqref{Kolmogorov_backward} transports the call
+which spreads as $t$ increases.  \emph{Right}: the backward equation \eqref{Kolmogorov_backward} transports the call
 payoff $(x-\Strike)^+$ backwards from maturity, smoothing the kink at the strike as the remaining
 time $T-s$ grows; this is the direction pricing works in.}
 \label{fig:forwardbackward}

@@ -58,6 +58,19 @@
 % Part pages carry no footer
 \patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
 
+% ---------- Float placement ----------
+%  The default \bottomfraction is 0.3: a full-width figure with its caption is
+%  taller than that, so LaTeX refuses to put it at the bottom of a text page and
+%  defers it instead.  These values let a tall float sit at the foot of a page
+%  that still carries text, which is what the [!b] specifiers below rely on.
+%  (Note that the ORDER of letters in [htbp] is ignored -- LaTeX always tries
+%  top, then bottom, then a float page -- so preferring the bottom means giving
+%  b alone.)
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.80}
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\floatpagefraction}{0.75}
+
 % ---------- Paragraph spacing ----------
 \setlength{\parskip}{0.68em}
 %\setlength{\parskip}{1em} %añadir espaciado entre parrafos. "em" es una unidad como cm o pt.

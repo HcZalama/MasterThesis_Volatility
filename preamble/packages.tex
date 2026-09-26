@@ -17,6 +17,12 @@
 \usepackage{longtable}   % the notation table must be able to break across pages
 \usepackage[svgnames]{xcolor}   % o [x11names]
 
+
+\usepackage{tabularx}  % For flexible column wrapping to fit \linewidth
+\usepackage{caption}   % Ensures proper caption formatting inside minipages
+\usepackage{float}     % Required only if you use the [H] placement specifier
+\usepackage{booktabs}  % Optional, recommended for clean rules (\toprule, etc.)
+
 % soul provides \hl (yellow marker). Guarded so the document still builds on a
 % minimal TeX installation; on a full TeX Live the guard is a no-op.
 \newif\ifthesis@hassoul
