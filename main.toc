@@ -1,102 +1,108 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Introduction}{xi}{chapter*.2}%
-\contentsline {section}{\numberline {1}Objective and Scope}{xi}{section.0.1}%
-\contentsline {section}{\numberline {2}A worthy note on context}{xii}{section.0.2}%
+\contentsline {chapter}{List of Figures}{ix}{chapter*.2}%
+\contentsline {chapter}{List of Tables}{xi}{chapter*.3}%
+\contentsline {chapter}{Notation}{xii}{chapter*.3}%
+\contentsline {chapter}{Introduction}{xiii}{chapter*.4}%
+\contentsline {section}{\numberline {1}Objective and Scope}{xiii}{section.0.1}%
+\contentsline {section}{\numberline {2}A worthy note on context}{xiv}{section.0.2}%
 \contentsline {part}{I\hspace {1em}Foundations and Classical Models}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}Stochastic Foundations}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Probabilistic Preliminaries}{3}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Processes, filtrations and stopping times}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Fundamental Distributions}{7}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Markov Processes}{10}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.3}Markov Processes}{11}{subsection.1.1.3}%
 \contentsline {subsection}{\numberline {1.1.4}Martingales, semimartingales and local martingales}{11}{subsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.1.5}Brownian Motion}{15}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.5}Brownian Motion}{16}{subsection.1.1.5}%
 \contentsline {subsection}{\numberline {1.1.6}Path regularity}{20}{subsection.1.1.6}%
 \contentsline {section}{\numberline {1.2}Stochastic Calculus}{22}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}The Itô Integral}{22}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Itô's Chain Rule}{27}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Stochastic Differential Equations}{29}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}The multidimensional case}{32}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Probability measure changes}{35}{subsection.1.2.5}%
-\contentsline {subsection}{\numberline {1.2.6}Diffusions and the Kolmogorov Equations}{38}{subsection.1.2.6}%
-\contentsline {section}{Notes and references}{43}{section*.8}%
+\contentsline {subsection}{\numberline {1.2.1}The Itô Integral}{23}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Itô's Chain Rule}{28}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Stochastic Differential Equations}{30}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}The multidimensional case}{33}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Probability measure changes}{36}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Diffusions and the Kolmogorov Equations}{39}{subsection.1.2.6}%
+\contentsline {section}{Notes and references}{44}{section*.10}%
 \contentsline {chapter}{\numberline {2}Financial Foundations and Classical Models}{45}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Financial Derivatives}{45}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}The Concept of a Derivative}{45}{subsection.2.1.1}%
-\contentsline {paragraph}{1. Forwards}{46}{section*.10}%
-\contentsline {paragraph}{2. Options}{46}{section*.11}%
+\contentsline {paragraph}{1. Forwards}{46}{section*.12}%
+\contentsline {paragraph}{2. Options}{46}{section*.13}%
 \contentsline {subsection}{\numberline {2.1.2}Derivative Pricing}{47}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}The Black--Scholes Framework}{51}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}The Model}{51}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}The Forward and Put--Call parity}{54}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Implied Volatility and the Inversion Problem}{55}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Implied Volatility and the Inversion Problem}{56}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Smile and Skewness}{57}{subsection.2.2.4}%
 \contentsline {section}{\numberline {2.3}Other Relevant Models}{58}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Local Volatility Models}{58}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Local Volatility Models}{59}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Stochastic Volatility Models}{60}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Path-Dependence and American Options}{61}{subsection.2.3.3}%
-\contentsline {section}{Notes and references}{64}{section*.22}%
-\contentsline {part}{II\hspace {1em}Modern Approaches}{65}{part.2}%
-\contentsline {chapter}{\numberline {3}Rough Paths}{67}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{67}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Fractional Brownian Motion}{67}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Volatility is Rough}{69}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}What Fails, and Why}{70}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Rough Paths}{71}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Tensor Spaces}{71}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}The Multiplicative Property}{72}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Types of Rough Paths}{74}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Fundamental Results}{76}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Integration}{76}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Differential Equations}{80}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Existence}{81}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Uniqueness and Continuity}{82}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}The Signature Transform}{83}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Rough Models}{85}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Rough Geometric Brownian Motion}{87}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}The optimal execution problem}{90}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Schedules as linear functionals of the signature}{91}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Two assets: the L\'evy area}{95}{subsection.3.5.4}%
-\contentsline {section}{Notes and references}{97}{section*.23}%
-\contentsline {chapter}{\numberline {4}Applications}{99}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Calibration of an Implied Volatility Surface with a PINN}{99}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}The Analytic Wings}{103}{subsection.4.1.1}%
-\contentsline {subsubsection}{The calendar condition on the wings}{105}{section*.28}%
-\contentsline {subsection}{\numberline {4.1.2}Smoothness Across the Frontiers}{106}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}The Core Network and Exact Derivatives}{107}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}The Objective}{107}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Collocation, Sampling and the Optimiser}{108}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Hyperparameters}{108}{subsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.1.7}Diagnostics}{109}{subsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.1.8}Results}{110}{subsection.4.1.8}%
-\contentsline {section}{\numberline {4.2}Calibration to Rough Heston}{111}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}The objective}{112}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Results}{113}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}What the surface can and cannot identify}{116}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}The L\'evy Area of an Index Pair}{117}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}The data}{118}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}The three exact identities}{118}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Calibrating the instrument: a lag scan}{119}{subsection.4.3.3}%
-\contentsline {section}{Notes and references}{121}{section*.47}%
-\contentsline {chapter}{Conclusions}{123}{chapter*.48}%
-\contentsline {chapter}{\numberline {A}Auxiliary Results}{125}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Complements on conditional expectation}{125}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Characteristic functions}{126}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Moment indeterminacy of the log-normal law}{127}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Grönwall's inequality}{127}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Radon--Nikodym and the Jordan decomposition}{128}{section.A.5}%
-\contentsline {section}{\numberline {A.6}Uniform integrability and the class D}{128}{section.A.6}%
-\contentsline {section}{\numberline {A.7}The essential supremum of a family of random variables}{128}{section.A.7}%
-\contentsline {chapter}{\numberline {B}Deferred Proofs}{131}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Doob's submartingale inequality}{131}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Density of step processes in $L^2_{\mathrm {ad}}([0,T]\times \Omega )$}{131}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Continuity of the sample paths of an Itô integral}{132}{section.B.3}%
-\contentsline {section}{\numberline {B.4}The Itô integral as a limit of Riemann sums}{133}{section.B.4}%
-\contentsline {section}{\numberline {B.5}Lévy's characterisation theorem}{133}{section.B.5}%
-\contentsline {section}{\numberline {B.6}Girsanov's theorem}{133}{section.B.6}%
-\contentsline {section}{\numberline {B.7}The sewing lemma}{134}{section.B.7}%
-\contentsline {section}{\numberline {B.8}Gubinelli's integration theorem}{136}{section.B.8}%
-\contentsline {section}{\numberline {B.9}Existence \& uniqueness (rough differential equations)}{137}{section.B.9}%
-\contentsline {section}{\numberline {B.10}Continuity of the Itô--Lyons map}{138}{section.B.10}%
-\contentsline {section}{\numberline {B.11}Monotone density along a rising wing}{139}{section.B.11}%
-\contentsline {chapter}{Bibliography}{141}{appendix*.49}%
+\contentsline {subsection}{\numberline {2.3.3}Path-Dependence and American Options}{62}{subsection.2.3.3}%
+\contentsline {section}{Notes and references}{65}{section*.24}%
+\contentsline {part}{II\hspace {1em}Modern Approaches}{67}{part.2}%
+\contentsline {chapter}{\numberline {3}Rough Paths}{69}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{69}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Fractional Brownian Motion}{69}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Volatility is Rough}{71}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}What Fails, and Why}{72}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Rough Paths}{73}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Tensor Spaces}{73}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}The Multiplicative Property}{74}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Types of Rough Paths}{76}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Fundamental Results}{78}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Integration}{78}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Differential Equations}{83}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Existence}{84}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Uniqueness and Continuity}{84}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}The Signature Transform}{85}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Rough Models}{88}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Rough Geometric Brownian Motion}{90}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}The optimal execution problem}{93}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Schedules as linear functionals of the signature}{94}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Two assets: the L\'evy area}{98}{subsection.3.5.4}%
+\contentsline {section}{Notes and references}{101}{section*.25}%
+\contentsline {chapter}{\numberline {4}Applications}{103}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Calibration of an Implied Volatility Surface with a PINN}{104}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}The Analytic Wings}{107}{subsection.4.1.1}%
+\contentsline {subsubsection}{The calendar condition on the wings}{110}{section*.30}%
+\contentsline {subsection}{\numberline {4.1.2}Smoothness Across the Frontiers}{111}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}The Core Network and Exact Derivatives}{111}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}The Objective}{112}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Collocation, Sampling and the Optimiser}{113}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Hyperparameters}{113}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Diagnostics}{114}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Results}{115}{subsection.4.1.8}%
+\contentsline {section}{\numberline {4.2}Calibration to Rough Heston}{116}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}The objective}{117}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Results}{118}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}What the surface can and cannot identify}{121}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Planting a known Hurst index}{123}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}The same book as \S \ref {sec:pinn}}{124}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}The L\'evy Area of an Index Pair}{126}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}The data}{127}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}The three exact identities}{127}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Calibrating the instrument: a lag scan}{128}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}The classical route, and why it agrees}{128}{subsection.4.3.4}%
+\contentsline {section}{Notes and references}{131}{section*.55}%
+\contentsline {chapter}{Conclusions}{133}{chapter*.56}%
+\contentsline {chapter}{\numberline {A}Auxiliary Results}{135}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Complements on conditional expectation}{135}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Characteristic functions}{136}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Moment indeterminacy of the log-normal law}{137}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Grönwall's inequality}{137}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Radon--Nikodym and the Jordan decomposition}{138}{section.A.5}%
+\contentsline {section}{\numberline {A.6}Uniform integrability and the class D}{138}{section.A.6}%
+\contentsline {section}{\numberline {A.7}The essential supremum of a family of random variables}{138}{section.A.7}%
+\contentsline {chapter}{\numberline {B}Deferred Proofs}{141}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Doob's submartingale inequality}{141}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Density of step processes in $L^2_{\mathrm {ad}}([0,T]\times \Omega )$}{141}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Continuity of the sample paths of an Itô integral}{142}{section.B.3}%
+\contentsline {section}{\numberline {B.4}The Itô integral as a limit of Riemann sums}{143}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Lévy's characterisation theorem}{143}{section.B.5}%
+\contentsline {section}{\numberline {B.6}Girsanov's theorem}{144}{section.B.6}%
+\contentsline {section}{\numberline {B.7}The sewing lemma}{144}{section.B.7}%
+\contentsline {section}{\numberline {B.8}Gubinelli's integration theorem}{147}{section.B.8}%
+\contentsline {section}{\numberline {B.9}Existence \& uniqueness (rough differential equations)}{148}{section.B.9}%
+\contentsline {section}{\numberline {B.10}Continuity of the Itô--Lyons map}{149}{section.B.10}%
+\contentsline {section}{\numberline {B.11}Monotone density along a rising wing}{150}{section.B.11}%
+\contentsline {chapter}{Bibliography}{153}{appendix*.57}%

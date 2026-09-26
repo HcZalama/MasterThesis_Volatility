@@ -15,7 +15,7 @@
 The aim of this dissertation was to build a bridge between mathematics and financial markets, from the perspective of an MSc degree in Mathematics. We have presented the key results of the mathematical theory, as well as the necessary financial background, and we have shown how the two interact in practice. We now summarise the main points of the work, and we conclude with some reflections on possible directions for further research.
 
 We began with measure theory and
-Brownian motion, and built the It\^o integral. We also obtained some results on the roughness of
+Brownian motion, and built the Itô integral. We also obtained some results on the roughness of
 Brownian paths. Then we used that machinery to set up the standard pricing framework:
 arbitrage, the fundamental theorems, Black--Scholes, and the local and stochastic volatility models.
 
@@ -29,7 +29,7 @@ levels and to the key results involving the signature. We also looked at Brownia
 path.
 
 % Two results from the theory are worth repeating. The first is that rough path theory does not
-% replace stochastic calculus; it explains it. It\^o's formula, the It\^o--Stratonovich correction and
+% replace stochastic calculus; it explains it. Itô's formula, the Itô--Stratonovich correction and
 % the Wong--Zakai theorem all reappeared in Chapter \ref{ch:roughpaths} as consequences of a single
 % fact: a trajectory does not determine its own iterated integrals, so a choice has to be made, and
 % those three classical results are that same choice becoming visible in three different places. The
@@ -39,17 +39,47 @@ path.
 % a theorem, and it is the reason every rough volatility model in the literature is built the way it
 % is.
 
+Two results of that chapter are worth repeating. The first is that rough path theory does not
+replace stochastic calculus; it explains it. It\^o's formula, the It\^o--Stratonovich correction and
+the Wong--Zakai theorem all reappeared in Chapter \ref{ch:roughpaths} as consequences of a single
+fact: a trajectory does not determine its own iterated integrals, so a choice has to be made, and
+those three classical results are that choice becoming visible in three different places. The second
+is more practical. A rough price is not a semimartingale, so it admits no equivalent martingale
+measure and the market it describes is not free of arbitrage. Roughness cannot be put in the price;
+it has to go one level down, into the volatility. That is not a modelling preference but a theorem,
+and it is the reason every rough volatility model in the literature is built the way it is.
+
 Chapter \ref{ch:applications} is where the models met the market, and the three studies there gave
 three different kinds of answer. The physics-informed surface worked: on an SPX book it placed
 $95.5\%$ of the quotes inside their own bid/ask, kept the typical error to the mid below five basis
 points, and showed no violation of the static no-arbitrage conditions on the validation grid, with
 the extrapolated wings covered analytically. Rough Heston did not
-fit nearly as well, and it pushed the Hurst parameter to the smooth end of its range. That looks
-like evidence that this market is not rough, but it is not. As \S\ref{subsec:rhidentification} shows, the
+fit nearly as well, and it pushed the Hurst parameter to the smooth endpoint of its range --- the
+value at which the model \emph{is} the classical Heston system, and at which a control fitted with
+$\Hurst$ held at $\tfrac12$ reproduces the six-parameter optimum exactly.
+\S\ref{subsec:rhpinn} repeats the calibration on the network's own book, out to one year, and
+reaches the same endpoint, so the preference is a property of the market rather than of one
+export. That looks like evidence that this market is not rough, but it is not. As \S\ref{subsec:rhidentification} shows, the
 estimator that would settle the question has no power over the maturities available: two calibrated
 models whose $\Hurst$ differs by a factor of almost five produce practically the same skew slope.
 The honest conclusion is that this option book cannot answer that question, which is a more useful
-thing to know than a fitted number would have been. The third study was the L\'evy area for a pair of assets, where the computations of rough path theory were carried out on real data.
+thing to know than a fitted number would have been.
+
+The third study is the one place where the machinery of Chapter \ref{ch:roughpaths} is used as
+machinery rather than as vocabulary. The L\'evy area of an index pair was computed on eleven years of
+closes; Chen's relation and geometricity hold there to rounding error, and the estimator of
+Subsection \ref{subsec:levyarea} --- blind to the contemporaneous correlation by construction ---
+returns a null on the synchronous data and better than four standard errors against a one-day
+displacement of it. The instrument works; on this pair there was nothing for it to find.
+
+The limits should be stated as plainly. The two calibrations answer different questions: one fits a surface, the other a
+dynamic model. \S\ref{subsec:rhpinn} does put them on the same quotes, but the objectives remain
+different, so the contrast between them prices a parametrisation rather than ranking two theories
+of volatility.
+Rough path theory supplies the rough Heston model with vocabulary rather than with proofs, because
+at the exponents the data suggest the lifting theorems are not available. And the signature was
+developed in full and then used only at its second level. Each of these is a boundary of the present
+work rather than a defect in it, but none of them should be left for a reader to discover.
 
 % Was the original goal achieved? I believe it was. The aim was to build a bridge between a reader who
 % knows the mathematics but not the market and a reader who knows the market but not the mathematics,

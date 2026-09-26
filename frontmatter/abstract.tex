@@ -11,7 +11,7 @@ The aim of this work is to present a natural progression from the classical foun
 % the mathematics and the finance are visible to each other at every stage.
 
 Part I develops the machinery: Chapter \ref{ch:foundations} covers the basics of stochastic calculus, constructs
-the It\^o integral from the ground up, and pays some attention to the regularity of Brownian
+the Itô integral from the ground up, and pays some attention to the regularity of Brownian
 paths. Chapter \ref{ch:finance} builds the financial theory on that foundation:
 contingent claims and arbitrage, the fundamental theorems of asset pricing, the Black--Scholes
 framework, and the local and stochastic volatility models devised to repair it.
@@ -23,7 +23,7 @@ iterated integrals. Chapter \ref{ch:applications} brings the theory to data, whe
 implemented.
 
 % The organising thread is a single number. The critical exponent of Brownian motion is exactly two:
-% Young's integral requires less, It\^o's construction reaches it by spending probabilistic structure,
+% Young's integral requires less, Itô's construction reaches it by spending probabilistic structure,
 % and rough path theory is what remains when even that is out of reach. The empirical exponent of
 % volatility lies on the far side of it, and the mathematics of Part II is the price of crossing.
 
@@ -31,9 +31,10 @@ This document constitutes the Master’s Thesis of Héctor Zalama Alonso, prepar
 
 \vspace{0.4cm}
 
-\noindent\textbf{Keywords:} stochastic calculus; It\^o integral; Brownian motion; quadratic
+\noindent\textbf{Keywords:} stochastic calculus; Itô integral; Brownian motion; quadratic
 variation; volatility; Black--Scholes; local and stochastic volatility; fractional Brownian motion;
-rough paths; rough volatility; calibration.
+rough paths; rough volatility; signature; rough Heston; physics-informed neural networks;
+calibration.
 
 % \vspace{1.2cm}
 
@@ -46,9 +47,9 @@ rough paths; rough volatility; calibration.
 % redactado de modo que la matem\'atica y las finanzas permanezcan mutuamente visibles en todo momento.
 
 % La Parte I desarrolla la maquinaria y la teor\'ia construida sobre ella. El Cap\'itulo
-% \ref{ch:foundations} construye la integral de It\^o desde el principio, prestando especial atenci\'on
+% \ref{ch:foundations} construye la integral de Itô desde el principio, prestando especial atenci\'on
 % a la regularidad de las trayectorias brownianas: es la coexistencia de una variaci\'on cuadr\'atica
-% finita y no nula con una variaci\'on total infinita lo que obliga a la construcci\'on de It\^o y lo
+% finita y no nula con una variaci\'on total infinita lo que obliga a la construcci\'on de Itô y lo
 % que, llevado un poco m\'as lejos, marca el punto en el que dicha construcci\'on deja de ser
 % aplicable. El Cap\'itulo \ref{ch:finance} levanta sobre ese cimiento la teor\'ia financiera
 % --- derivados y ausencia de arbitraje, los teoremas fundamentales de valoraci\'on de activos, el
@@ -57,21 +58,21 @@ rough paths; rough volatility; calibration.
 
 % La Parte II se ocupa de lo que ocurre m\'as all\'a de la frontera de las semimartingalas. El
 % Cap\'itulo \ref{ch:roughpaths} expone la teor\'ia de \emph{rough paths}: la evidencia emp\'irica de
-% que la volatilidad es rugosa, el sentido preciso en que la teor\'ia de It\^o deja de estar disponible
+% que la volatilidad es rugosa, el sentido preciso en que la teor\'ia de Itô deja de estar disponible
 % cuando la se\~nal directora tiene exponente cr\'itico mayor que dos, y la soluci\'on de Lyons
 % mediante la extensi\'on de una trayectoria por sus integrales iteradas, junto con la transformada
 % signatura y los modelos de volatilidad rugosa que sustenta. El Cap\'itulo \ref{ch:applications}
 % lleva la teor\'ia a los datos, calibrando, implementando y comparando los modelos.
 
 % El hilo conductor es un \'unico n\'umero. El exponente cr\'itico del movimiento browniano es
-% exactamente dos: la integral de Young exige menos, la construcci\'on de It\^o lo alcanza a costa de
+% exactamente dos: la integral de Young exige menos, la construcci\'on de Itô lo alcanza a costa de
 % estructura probabil\'istica, y la teor\'ia de \emph{rough paths} es lo que queda cuando ni siquiera
 % eso est\'a al alcance. El exponente emp\'irico de la volatilidad se sit\'ua al otro lado, y la
 % matem\'atica de la Parte II es el precio de cruzarlo.
 
 % \vspace{0.4cm}
 
-% \noindent\textbf{Palabras clave:} c\'alculo estoc\'astico; integral de It\^o; movimiento browniano;
+% \noindent\textbf{Palabras clave:} c\'alculo estoc\'astico; integral de Itô; movimiento browniano;
 % variaci\'on cuadr\'atica; volatilidad; Black--Scholes; volatilidad local y estoc\'astica; movimiento
 % browniano fraccionario; \emph{rough paths}; volatilidad rugosa; calibraci\'on.
 

@@ -11,7 +11,7 @@ arbitrage permits.
 The chapter is nonetheless mathematical throughout, and deliberately so. The claim we shall keep
 returning to is that the financial content of this subject is not a layer of interpretation applied
 on top of the probability: it \emph{is} the probability, read in a particular way. A change of
-numeraire is a change of measure; a hedging strategy is the integrand supplied by a representation
+numeraire is a change of measure; a hedging strategy is the integrand supplied by a suitable representation
 theorem; a risk-neutral density is a second derivative of observed option prices. 
 
 \medskip
@@ -29,7 +29,7 @@ Let us fix a filtered probability space $\FPSpace$, where $\PP$ represents the p
 This measurability condition implies that the value of the derivative at maturity is fully determined by the information available at time $T$. The function determining this value is often referred to as the \textit{payoff function}, denoted by $\PayoffFn$, so that, for a claim written on the terminal spot, $\Payoff_T = \PayoffFn(\Spot_T)$. The key idea behind the subsequent theory is being able to assign \textit{fair prices} to those contingent claims, deduced from quoted (and liquid) market data.
 
 The prices of such claims are not independent of one another. A small set of standardised, highly
-liquid contracts carries enough information to determine the price of a great many bespoke ones, and
+liquid contracts carries enough information to determine the price of a great many other ones, and
 the principle enforcing this consistency is the absence of \textbf{arbitrage}: informally, the
 impossibility of a strictly positive risk-free profit from zero net initial investment.
 
@@ -315,15 +315,19 @@ object, and Subsection \ref{subsec:impliedvol} keeps the two apart.
 
 \subsubsection*{The hedging argument}
 
-Consider a derivative whose value is a smooth function $V(t,\Spot)$ of time and the current spot. 
-Form the portfolio
+Consider a derivative whose value is a smooth function $V(t,\Spot)$ of time and the current spot, and
+seek to \emph{replicate} it with $\Delta_t$ units of the underlying and $\beta_t$ units of the bank
+account $\Num_t = e^{\rf t}$, held self-financingly in the sense of \eqref{eq:selffinancing}:
 \[
-\Pi_t = -V(t,\Spot_t) + \Delta_t \Spot_t,
+\Pi_t = \Delta_t \Spot_t + \beta_t \Num_t,
+\qquad
+d\Pi_t = \Delta_t\,d\Spot_t + \beta_t\,d\Num_t = \Delta_t\,d\Spot_t + \rf\bigl(\Pi_t - \Delta_t\Spot_t\bigr)dt .
 \]
-consisting of a short position in the derivative and $\Delta_t$ units of the underlying. Assuming 
-the position is self-financing in the sense of \eqref{eq:selffinancing}, its value evolves as
+Carrying the bank holding as the residual $\beta_t\Num_t = \Pi_t - \Delta_t\Spot_t$ is what keeps the
+argument honest: the cost of rebalancing $\Delta$ is financed by $\beta$ rather than assumed away.
+Requiring $\Pi_t = V(t,\Spot_t)$ at every $t$ then forces
 \begin{equation}\label{eq:portfoliodynamics}
-    d\Pi_t = -dV_t + \Delta_t \, d\Spot_t .
+    dV_t = \Delta_t \, d\Spot_t + \rf\bigl(V - \Delta_t \Spot_t\bigr)\,dt .
 \end{equation}
 Itô's rule (Theorem \ref{theorem:itorule}) applied to $V(t,\Spot_t)$, using 
 $(d\Spot_t)^2 = \sigma^2\Spot_t^2\,dt$ from Table \ref{tab:ItoTableScalar}, gives
@@ -332,31 +336,26 @@ $(d\Spot_t)^2 = \sigma^2\Spot_t^2\,dt$ from Table \ref{tab:ItoTableScalar}, give
     + \frac{1}{2} \sigma^2 \Spot_t^2 \frac{\partial^2 V}{\partial \Spot^2} \right) dt 
     + \sigma \Spot_t \frac{\partial V}{\partial \Spot}\, d\Wt_t .
 \end{equation}
-Substituting \eqref{eq:BS_SDE_P} and \eqref{eq:dV} into \eqref{eq:portfoliodynamics} and collecting 
+Substituting \eqref{eq:BS_SDE_P} and \eqref{eq:dV} into \eqref{eq:portfoliodynamics} and collecting
 terms,
 \begin{equation}\label{eq:portfoliogrouped}
-    d\Pi_t = \underbrace{\left( -\frac{\partial V}{\partial t} 
-    - \frac{1}{2}\sigma^2 \Spot_t^2 \frac{\partial^2 V}{\partial \Spot^2} 
-    + \mu \Spot_t\Bigl[\Delta_t - \frac{\partial V}{\partial \Spot}\Bigr] \right)}_{\text{drift}} dt 
-    + \underbrace{\sigma \Spot_t\left( \Delta_t - \frac{\partial V}{\partial \Spot} \right)}_{\text{diffusion}} d\Wt_t .
+    \underbrace{\left( \frac{\partial V}{\partial t}
+    + \frac{1}{2}\sigma^2 \Spot_t^2 \frac{\partial^2 V}{\partial \Spot^2} - \rf V + \rf\Spot_t\Delta_t
+    + \mu \Spot_t\Bigl[\frac{\partial V}{\partial \Spot} - \Delta_t\Bigr] \right)}_{\text{drift}} dt
+    + \underbrace{\sigma \Spot_t\left( \frac{\partial V}{\partial \Spot} - \Delta_t \right)}_{\text{diffusion}} d\Wt_t \;=\; 0 .
 \end{equation}
-The portfolio is exposed to randomness only through the second term. Choosing
+An Itô process that vanishes identically has both coefficients zero, a continuous local martingale of
+finite variation being constant, so \eqref{eq:portfoliogrouped} splits into two equations. The
+diffusion term forces
 \begin{equation}\label{eq:delta}
-    \Delta_t = \frac{\partial V}{\partial \Spot}(t,\Spot_t)
+    \Delta_t = \frac{\partial V}{\partial \Spot}(t,\Spot_t) ,
 \end{equation}
-annihilates it. This is the \emph{delta} of the derivative, and \eqref{eq:delta} is the hedge.
+which is the \emph{delta} of the derivative, and \eqref{eq:delta} is the hedge.
 
-Now observe what \eqref{eq:portfoliogrouped} has become. The same choice \eqref{eq:delta} that kills 
-the diffusion term also kills the bracket multiplying $\mu$ in the drift. \textbf{The expected return 
-of the stock has cancelled}, so a position that is neutral to 
-the random part of $\Spot$ is automatically neutral to its drift as well. What remains,
-\[
-d\Pi_t = \left( -\frac{\partial V}{\partial t} - \frac{1}{2}\sigma^2 \Spot_t^2\frac{\partial^2 V}{\partial \Spot^2}\right) dt,
-\]
-is riskless. A riskless self-financing portfolio must earn the risk-free rate --- otherwise, by 
-borrowing or lending against it, one manufactures an arbitrage in the sense of Subsection 
-\ref{subsec:derivativepricing} --- so $d\Pi_t = \rf \Pi_t\,dt$ with 
-$\Pi_t = -V + \Spot_t \partial V/\partial \Spot$. Equating the two expressions and rearranging yields 
+Now observe what \eqref{eq:portfoliogrouped} has become. The same choice \eqref{eq:delta} that kills
+the diffusion term also kills the bracket multiplying $\mu$ in the drift. \textbf{The expected return
+of the stock has cancelled}, so a position that is neutral to
+the random part of $\Spot$ is automatically neutral to its drift as well. What remains of the drift is
 the Black--Scholes equation.
 
 \begin{theorem}[Black--Scholes--Merton]\label{thm:blackscholespde}
@@ -462,7 +461,7 @@ higher; and it is \emph{not} a sensitivity to a quantity the model admits to be 
 constant is a symptom that the model is being used outside its own assumptions. 
 
 
-\subsection{The Forward and Put--Call parity}\label{subsec:dividends}
+\subsection{The Forward and Put--Call parity}\label{subsec:forward}
 
 
 Suppose first that dividends are paid \emph{continuously} at a constant proportional rate $\divy$. 
@@ -542,7 +541,26 @@ $b_t$ and never touch the dynamics, which stay diffusive. The drift vanishes, be
 is already a martingale under its own measure --- so there is no drift to specify and none to get 
 wrong. And the resulting formula is calibrated directly against quantities the market quotes.
 
-Thus, we can transform the formula $(S_t-K)^+ = ((F_t-b_t)/a_t-K)^+ = (F_t-(K a_t+b_t))^+/a_t$ and price the call on the forward, which is continuous and log-normal, rather than on the spot, which is not. The calibration is therefore much simpler, since we only need to work with the forward implied volatility. The result is the celebrated Black-76 formula \cite{black1976}. 
+For a European claim at a \emph{single} maturity the change of variable costs nothing at all: since
+$\Fwd(T,T)=\Spot_T$, the payoff $(\Spot_T-\Strike)^+$ \emph{is} $(\Fwd_T-\Strike)^+$, so one may price
+the call on the forward --- which is continuous and log-normal --- rather than on the spot, which is
+neither. The calibration is therefore much simpler, since we only need to work with the forward
+implied volatility. The result is the celebrated Black-76 formula \cite{black1976}.
+
+Across a whole \emph{surface} the relation \eqref{eq:spotforwardfactor} does substantive work, and it
+is worth being explicit that its coefficients carry the maturity as well as the observation time:
+each quoted maturity has its own forward, $\Fwd(t,T)=a(t,T)\,\Spot_t+b(t,T)$, and at $t=0$ not one of
+them is the spot. Two consequences follow. The log-moneyness
+$\lmon=\log(\Strike/\Fwd(t,T))$ of \eqref{eq:totalvariance} centres every smile on its
+own forward, so the forward curve is what aligns the surface in the strike direction: an error in it
+shears the smiles against one another by an amount that grows with $T$, and Subsection
+\ref{subsec:rhresults} uses exactly that signature to rule out a spot-moneyness convention in the
+data. And it is what leaves the local volatility clean, since the forward dynamics
+\eqref{eq:localvolforward} carry no drift, and with it none of the rate and dividend terms that
+\eqref{eq:dupire} does. Finally, for a contract looking at the spot \emph{strictly before} $T$ the
+relation is needed inverted, $(\Spot_t-\Strike)^+=\bigl(\Fwd_t-(a_t\Strike+b_t)\bigr)^+/a_t$: a call
+on the forward struck at $a_t\Strike+b_t$, which is the American obstacle
+\eqref{eq:americanobstacle} of Subsection \ref{subsec:american}.
 
 \begin{proposition}[Black-76 \cite{black1976}]\label{prop:black76}
 Under \eqref{eq:blackdynamics}, the time-$t$ value of a European call with strike $\Strike$ and 
@@ -659,10 +677,12 @@ If the assumptions of Black--Scholes were satisfied physically (i.e., if returns
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{Images/smile_skew.png}
-\caption[The skew and the smile]{The two shapes described above. Left: the usual foreign exchange smile,
-symmetric about the money and rising into both wings. Right: the typical equity skew, falling monotonically in the strike, so that
-downside protection carries the highest implied volatility.  The curves are illustrative shapes and not drawn from market quotes.}
+\includegraphics[width=\textwidth]{Images/smile-skew.pdf}
+\caption[The skew and the smile]{The two shapes described above, each drawn against the flat line
+that Black--Scholes predicts. Left: the typical equity skew, falling monotonically in the strike, so
+that downside protection carries the highest implied volatility. Right: the usual foreign exchange
+smile, near-symmetric about the money and rising into both wings. The curves are illustrative shapes
+and not drawn from market quotes.}
 \label{fig:smileskew}
 \end{figure}
 
@@ -866,7 +886,7 @@ differentiation is stable and the local variance is automatically non-negative.
 
 \subsection{Stochastic Volatility Models}\label{subsec:stochvol}
 
-Throughout this subsection, and in Subsection \ref{subsec:american} which follows it, interest rates and dividend yields are taken to be \emph{deterministic}. It is what makes the $T$-forward measure coincide with the risk-neutral one, $\QT = \QQ$, so that expectations below may be written under $\QQ$ while still exploiting the $\QT$-martingale property of the forward; and it is what allows the discounting term in the American pricing operator of \eqref{eq:LCP_American} to be a deterministic function of time. With stochastic rates both statements require the change of numeraire of Subsection \ref{subsec:dividends} to be carried through explicitly.
+Throughout this subsection, and in Subsection \ref{subsec:american} which follows it, interest rates and dividend yields are taken to be \emph{deterministic}. It is what makes the $T$-forward measure coincide with the risk-neutral one, $\QT = \QQ$, so that expectations below may be written under $\QQ$ while still exploiting the $\QT$-martingale property of the forward; and it is what allows the discounting term in the American pricing operator of \eqref{eq:LCP_American} to be a deterministic function of time. With stochastic rates both statements require the change of numeraire of Subsection \ref{subsec:forward} to be carried through explicitly.
 
 To capture realistic dynamics of the volatility surface itself, we introduce a second source of randomness. In Stochastic Volatility (SV) models, the variance $v_t = \sigma_t^2$ follows its own stochastic differential equation. Under the risk-neutral measure $\QQ$, the system is described by:
 \begin{equation}
@@ -901,8 +921,13 @@ condition frequently violated by calibrated parameters. Unlike local volatility,
 two Brownian motions while only one asset is traded, so the hypothesis of Theorem \ref{thm:mrt} 
 fails: a claim whose value depends on $\Wt^v$ cannot be written as a stochastic integral against the 
 traded asset alone. By Theorem \ref{thm:secondFTAP} the equivalent martingale measure is therefore 
-not unique, and pricing requires either specifying a market price of volatility risk or, as is usual in practice, calibrating 
-$(\kappa,\theta,\xi,\rho,v_0)$ directly to liquid quotes.
+not unique, and pricing requires either specifying a market price of volatility risk or, as is usual in practice, calibrating
+$(\kappa,\theta,\xi,\rho,v_0)$ directly to liquid quotes. The incompleteness is not irreparable:
+admitting a single traded option as a second instrument completes the market again, and the same
+argument yields the representation of a European price as a mixture of Black--Scholes values
+\eqref{eq:bscall} taken over the realised variance, obtained by conditioning on the variance path.
+Both are due to Romano and Touzi \cite{romanotouzi1997}, and the second is the standard route to
+prices in a stochastic volatility model when no characteristic function is available.
 
 % The reason Heston's model, rather than some other stochastic volatility model, became the industry 
 % standard is computational, and worth stating explicitly because Part \ref{part:part2} will build 
@@ -933,7 +958,7 @@ elementary functions. \qedopentext
 % structural: the centred $\charf$ depends only on $(v_t,\kappa,\theta,\xi,\rho,\tau)$ and not on
 % $\Spot_t$, $\rf$ or $\divy$, which is exactly the separation between model parameters and market data
 % that makes calibration well posed. This is the same reason the forward was singled out as the right
-% variable in Subsection \ref{subsec:dividends}.
+% variable in Subsection \ref{subsec:forward}.
 
 % The centring also supplies a cheap correctness check, worth recording because the error it catches is
 % silent. Since $\Fwd$ is a $\QT$-martingale, $\Ep{\QQ}[\Fwd_T/\Fwd_t \mid \Ft] = 1$, so
@@ -1014,6 +1039,12 @@ Because an American option may be exercised at any time up to maturity, its valu
 % American option is worth the supremum, over exercise times, of the expected discounted payoff will
 % lose nothing by reading it now.
 
+The result below is due to Merton \cite{merton1973}, and it explains why dividends have kept
+reappearing in the discussion above. Its proof refers forward to the optimal stopping problem
+\eqref{eq:optimalstopping}, written out two subsections below; the reader willing to grant that an
+American option is worth the supremum, over exercise times, of the expected discounted payoff will
+lose nothing by reading it here.
+
 \begin{proposition}[No early exercise for the American call]\label{prop:mertonnoearly}
 Assume $\rf \geq 0$ and that the underlying pays no dividends before $T$. Then an American call is
 never optimally exercised before maturity, and its value coincides with that of the European call
@@ -1066,11 +1097,11 @@ We aim to show how a local volatility model can be adapted to price American opt
 
 Nevertheless, to price American options accurately we must model the entire volatility surface prior 
 to maturity, not merely the terminal marginal. The model we use, expressed under the $T$-forward 
-measure of Subsection \ref{subsec:dividends}, is
+measure of Subsection \ref{subsec:forward}, is
 \begin{equation}\label{eq:localvolforward}
     d\Fwd_t = \lvol(t,\Fwd_t)\,\Fwd_t \, d\Wt^{T}_t .
 \end{equation}
-% Working in the forward has the same three advantages set out in Subsection \ref{subsec:dividends}: 
+% Working in the forward has the same three advantages set out in Subsection \ref{subsec:forward}: 
 % the drift vanishes because a forward is a martingale under its own measure, the dynamics stay 
 % purely diffusive, and --- crucially here --- the discontinuities introduced by discrete cash 
 % dividends are absorbed into the cash coefficient $b_t$ of \eqref{eq:spotforwardfactor} 

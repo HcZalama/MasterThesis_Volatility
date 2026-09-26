@@ -104,7 +104,7 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 fig.legend([Patch(color=L), Line2D([], [], color=K, lw=1.0),
             Line2D([], [], color=G, lw=1.0, ls="--")],
-           ["bid/ask", "$H=0.49$", "$H=0.107$"],
+           ["bid/ask", "$H=1/2$", "$H=0.107$"],
            frameon=False, ncol=3, loc="lower center",
            bbox_to_anchor=(0.5, -0.045), handlelength=2.2)
 fig.tight_layout(pad=0.4)
@@ -143,6 +143,10 @@ A1, S1 = model_atm_skew(P_SMOOTH)
 A2, S2 = model_atm_skew(P_ROUGH)
 slope = lambda s: np.polyfit(np.log(Ts), np.log(np.abs(s)), 1)[0]
 
+for _lab, _s in (("market", mS), ("H=1/2", S1), ("H=0.107", S2)):
+    print(f"  skew slope {_lab:9s} {slope(_s):+.3f}   implied H "
+          f"{slope(_s)+0.5:+.3f}")
+
 fig, (p1, p2, p3) = plt.subplots(1, 3, figsize=(6.4, 2.35))
 
 # -- the profile ------------------------------------------------------
@@ -160,7 +164,7 @@ tidy(p1)
 
 # -- ATM level --------------------------------------------------------
 p2.semilogx(Ts, mA * 100, "o", ms=3, color=K, label="market")
-p2.semilogx(Ts, A1 * 100, "-", lw=1.0, color=K, label="$H=0.49$")
+p2.semilogx(Ts, A1 * 100, "-", lw=1.0, color=K, label="$H=1/2$")
 p2.semilogx(Ts, A2 * 100, "--", lw=1.0, color=G, label="$H=0.107$")
 p2.set_xlabel("$T$  (years)")
 p2.set_ylabel(r"ATM $\sigma_{\mathrm{imp}}$  (%)")
@@ -177,7 +181,7 @@ p3.set_ylabel(r"$|\partial_k\sigma_{\mathrm{imp}}|$ at the money")
 p3.set_title("Skew power law", fontsize=8.5, pad=5)
 p3.text(0.97, 0.97,
         f"fitted slope\nmarket  ${slope(mS):+.3f}$\n"
-        f"$H=0.49$  ${slope(S1):+.3f}$\n"
+        f"$H=1/2$  ${slope(S1):+.3f}$\n"
         f"$H=0.107$  ${slope(S2):+.3f}$",
         transform=p3.transAxes, fontsize=7.2, ha="right", va="top")
 tidy(p3)

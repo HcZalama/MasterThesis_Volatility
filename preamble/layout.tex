@@ -22,24 +22,34 @@
 \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
 %\renewcommand{\plainheadrulewidth}{0pt}
 
+\newcommand{\unedlogo}{%
+  \raisebox{-0.25\height}{\includegraphics[width=1.5em]{Images/LOGOUNEDDDD.png}}%
+}
+
+% 2. Create an invisible phantom with the exact height/depth of the logo
+\newcommand{\footerstrut}{\vphantom{\unedlogo}}
+
 \fancypagestyle{fancyhdr}{%
   \fancyhf{}%
   \fancyhead[CE]{\leftmark}
   \fancyhead[CO]{\rightmark}
   \fancyfoot[LE]{\thepage}
   \fancyfoot[RO]{\thepage}
-  \fancyfoot[LO]{\textsc{Héctor Zalama Alonso}}
-  \fancyfoot[RE]{\textsc{Universidad Nacional de Educación a Distancia}\quad \includegraphics[width=1.8em]{Images/LOGOUNEDDDD.png}}
+  % \footerstrut ensures odd pages have the exact same height as even pages:
+  \fancyfoot[LO]{\textsc{Héctor Zalama Alonso}\footerstrut}
+  \fancyfoot[RE]{\textsc{Universidad Nacional de Educación a Distancia}\quad\unedlogo}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
 }
 
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyfoot[LE]{\thepage}
   \fancyfoot[RO]{\thepage}
-  \fancyfoot[LO]{\textsc{Héctor Zalama Alonso}}
-  \fancyfoot[RE]{\textsc{Universidad Nacional de Educación a Distancia}\quad \includegraphics[width=1.8em]{Images/LOGOUNEDDDD.png}}
-  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
-  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+  \fancyfoot[LO]{\textsc{Héctor Zalama Alonso}\footerstrut}
+  \fancyfoot[RE]{\textsc{Universidad Nacional de Educación a Distancia}\quad\unedlogo}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
 }
 
 \setlength{\headheight}{16pt}   % silences the fancyhdr \headheight warning

@@ -1,15 +1,15 @@
 \chapter{Applications} \label{ch:applications}
 
 Everything so far has been either machinery or a model. This chapter is the place where both are
-made to meet market data. Three studies are carried out. The first two are calibrations to the same
-option book and are deliberately complementary; the third is not a calibration at all, and measures
-the underlying series directly.
+made to meet market data. Three studies are carried out. The first two calibrate the same index on
+the same value date and are deliberately complementary; the third is not a calibration at all, and
+measures the underlying series directly.
 
 
 The first fits an implied volatility surface directly, imposing the static no-arbitrage conditions of
 Proposition \ref{prop:staticarbitrage} as penalties rather than inheriting them from a parametric
 family, and extrapolating beyond the quoted range by a closed form on which those conditions are
-\emph{proved} rather than sampled. The second fits the same smiles with the rough Heston model of
+\emph{proved} rather than sampled. The second fits that index with the rough Heston model of
 Definition \ref{def:roughheston}, so that a model with dynamics --- and with the short-dated skew
 that Chapter \ref{ch:roughpaths} identified as the empirical signature of roughness --- is measured
 against a surface fitted with no dynamics at all. Section \ref{sec:pinn} produces the best possible \emph{description} of
@@ -121,27 +121,28 @@ and the calendar quantity satisfies
 \end{equation}
 \end{proposition}
 
-% \begin{proof}
-% From $\tvar=\ivol^{2}T$ we get $\partial_{\lmon}\tvar=2T\ivol\,\ivd{k}$ and
-% $\partial^{2}_{\lmon\lmon}\tvar=2T\bigl(\ivd{k}^{2}+\ivol\,\ivd{kk}\bigr)$. Substituting into
-% \eqref{eq:butterfly} term by term, the first term is
-% \[
-%   \Bigl(1-\frac{\lmon\,\partial_{\lmon}\tvar}{2\tvar}\Bigr)^{2}
-%   =\Bigl(1-\frac{\lmon\cdot 2T\ivol\,\ivd{k}}{2T\ivol^{2}}\Bigr)^{2}=(1-\nskew)^{2},
-% \]
-% the second is
-% \[
-%   -\frac{(\partial_{\lmon}\tvar)^{2}}{4}\Bigl(\frac{1}{\tvar}+\frac14\Bigr)
-%   =-T^{2}\ivol^{2}\ivd{k}^{2}\Bigl(\frac{1}{T\ivol^{2}}+\frac14\Bigr)
-%   =-T\,\ivd{k}^{2}-\tfrac14 T^{2}\ivol^{2}\ivd{k}^{2},
-% \]
-% and the third is $\tfrac12\partial^{2}_{\lmon\lmon}\tvar=T\ivd{k}^{2}+T\ivol\,\ivd{kk}$. The two
-% occurrences of $T\,\ivd{k}^{2}$ cancel, which leaves \eqref{eq:gvol}. For \eqref{eq:calvol},
-% $\partial_{T}\tvar=\partial_{T}(\ivol^{2}T)=\ivol^{2}+2T\ivol\,\ivd{T}=\ivol^{2}(1+2\elas{\ivol})$,
-% and dividing by $\tvar/T=\ivol^{2}$ gives $T\partial_T\tvar/\tvar=\elas{\tvar}=1+2\elas{\ivol}$.
-% \end{proof}
+\textbf{\textit{Proof:}} From $\tvar=\ivol^{2}T$ we get $\partial_{\lmon}\tvar=2T\ivol\,\ivd{k}$ and
+$\partial^{2}_{\lmon\lmon}\tvar=2T\bigl(\ivd{k}^{2}+\ivol\,\ivd{kk}\bigr)$. Substituting into
+\eqref{eq:butterfly} term by term, the first term is
+\[
+  \Bigl(1-\frac{\lmon\,\partial_{\lmon}\tvar}{2\tvar}\Bigr)^{2}
+  =\Bigl(1-\frac{\lmon\cdot 2T\ivol\,\ivd{k}}{2T\ivol^{2}}\Bigr)^{2}=(1-\nskew)^{2},
+\]
+the second is
+\[
+  -\frac{(\partial_{\lmon}\tvar)^{2}}{4}\Bigl(\frac{1}{\tvar}+\frac14\Bigr)
+  =-T^{2}\ivol^{2}\ivd{k}^{2}\Bigl(\frac{1}{T\ivol^{2}}+\frac14\Bigr)
+  =-T\,\ivd{k}^{2}-\tfrac14 T^{2}\ivol^{2}\ivd{k}^{2},
+\]
+and the third is $\tfrac12\partial^{2}_{\lmon\lmon}\tvar=T\ivd{k}^{2}+T\ivol\,\ivd{kk}$. The two
+occurrences of $T\,\ivd{k}^{2}$ cancel, which leaves \eqref{eq:gvol}. For \eqref{eq:calvol},
+$\partial_{T}\tvar=\partial_{T}(\ivol^{2}T)=\ivol^{2}+2T\ivol\,\ivd{T}=\ivol^{2}(1+2\elas{\ivol})$,
+and dividing by $\tvar/T=\ivol^{2}$ gives $T\partial_T\tvar/\tvar=\elas{\tvar}=1+2\elas{\ivol}$.
+\qedfilledtext
 
-The cancellation is  what makes the volatility parameterisation
+\medskip
+
+The cancellation is what makes the volatility parameterisation
 workable at all. In \eqref{eq:butterfly} the slope enters through two terms of opposite sign whose
 leading parts are both $O(T)$; in \eqref{eq:gvol} that part is gone and what survives is a clean
 decomposition
@@ -178,7 +179,8 @@ In \eqref{eq:gsplit} the curvature term $T\ivol\,\ivd{kk}$ is linear in $\ivd{kk
     particular, spreading it over three times the width recovers two thirds of the cost;
   \item[ii)] positive curvature \emph{raises} $g$, so curvature is a cost only where it is
     negative --- and that is precisely the case of interest here, since a rising wing approaching a
-    finite asymptote must approach it concavely. At the join this is $\ivd{kk}=-\nskew/\ell<0$,
+    finite asymptote must approach it concavely. At the join this is $\ivd{kk}=-s/\ell<0$ by
+    \eqref{eq:wingjet},
     which is what \eqref{eq:joinbutterfly} charges for and what forces the floor
     \eqref{eq:ellmin} on $\ell$.
 \end{itemize}
@@ -203,8 +205,11 @@ In \eqref{eq:gsplit} the curvature term $T\ivol\,\ivd{kk}$ is linear in $\ivd{kk
 
 \subsubsection*{Inputs}
 
-The only inputs the model requires are bid/ask volatility pairs taken from market quotes, together
-with the strike and maturity they belong to: $(\ivol^{\mathrm{bid}},\ivol^{\mathrm{ask}};\lmon,T)$.
+The only inputs the model requires are implied volatility observations with the strike and maturity
+they belong to, $(T,\Strike/\Fwd,\ivol)$. Observations sharing a $(T,\Strike)$ are grouped into a
+single quote, the bid and ask being the smallest and largest of the group and the mid their mean; a
+lone observation is given a half-spread of one basis point. The band is therefore the true bid/ask,
+and $h$ in \eqref{eq:fitresidual} is half of it.
 This implicitly hides one preliminary step, namely the forward curve calibration needed to invert the
 volatilities out of market prices through Definition \ref{def:impliedvol}, the forward being the
 one fixed in Definition \ref{def:forwardprice}. We assume throughout that this has been done.
@@ -358,7 +363,9 @@ Three properties of \eqref{eq:phidagger} deserve comment.
   \item It returns the correct root in \emph{both} orientations. For $\tvar_{0}<2|\lmon^{*}|$ the
     quadratic \eqref{eq:phiquadratic} opens upward and the feasible set is
     $[0,r_{\mathrm{small}}]$; for $\tvar_{0}>2|\lmon^{*}|$ it opens downward and the set is
-    $[r_{-},r_{\mathrm{large}}]$. In both cases \eqref{eq:phidagger} returns the binding endpoint.
+    $[r_{-},r_{\mathrm{large}}]$. In both cases \eqref{eq:phidagger} returns the binding endpoint,
+    and at $\tvar_{0}=2|\lmon^{*}|$, where that coefficient vanishes and the textbook form divides by
+    zero, it returns the root of the surviving linear equation.
   \item At $T=0$ it reduces exactly to $1-\sqrt{g_{\star}}$ (Proposition
     \ref{prop:shortdated}). Indeed $\tvar_{0}=Ta^{2}\to0$ forces $B_{\ell}\to0$, whence the radicand
     tends to $4A_{\ell}^{2}g_{\star}$ and
@@ -427,9 +434,10 @@ admissible window, so that in particular $0\le\nskew_{0}<1$. If
 then $g(x)\ge g(0)$ for all $x\ge0$.
 \end{lemma}
 
-The proof is given in Appendix \ref{app:proof:master}.  Under \eqref{eq:ellcap} the lift obeys $b=\nskew_{0}a\ell/|\lmon^{*}|\le
+\textbf{\textit{Proof:}} The argument is given in Appendix \ref{app:proof:master}. Under
+\eqref{eq:ellcap} the lift obeys $b=\nskew_{0}a\ell/|\lmon^{*}|\le
 \nskew_{0}a<a$, and it is exactly this inequality that makes each of the three terms of \eqref{eq:gvol} attain its
-minimum over $[0,\infty)$ at the endpoint $x=0$.
+minimum over $[0,\infty)$ at the endpoint $x=0$. \qedfilledtext
 
 Consequently $g\ge g_{\star}$ on the entire rising tail as soon as it holds at the join, and the join
 is where \eqref{eq:joinbutterfly} was imposed. We do not claim that \eqref{eq:ellcap} is sharp. The
@@ -468,9 +476,9 @@ $\upsilon_{1}\mapsto\upsilon_{1}-c_{\star}b$.
 Since $\Caldrift'(\hat{x})=e^{-\hat{x}}\bigl[(\upsilon_{1}+\upsilon_{2})-\upsilon_{2}\hat{x}\bigr]$
 has the single root $\hat{x}^{*}=(\upsilon_{1}+\upsilon_{2})/\upsilon_{2}$ and
 $\Caldrift''(\hat{x}^{*})=-\upsilon_{2}e^{-\hat{x}^{*}}$, the point $\hat{x}^{*}$ is a minimum iff
-$\upsilon_{2}<0$ and a maximum iff $\upsilon_{2}>0$; in the latter case, when $\upsilon_{2}=0$ and
-$\hat{x}^{*}$ is undefined, or when $\hat{x}^{*}\notin[0,\infty)$, the minimum is attained at an
-endpoint. Hence
+$\upsilon_{2}<0$ and a maximum iff $\upsilon_{2}>0$. In the latter case, and equally when
+$\upsilon_{2}=0$ --- so that $\hat{x}^{*}$ is undefined --- or when $\hat{x}^{*}\notin[0,\infty)$,
+the minimum is attained at an endpoint. Hence
 \begin{equation}\label{eq:threescalars}
   \min_{\hat{x}\ge0}\Caldrift \;=\; \min\Bigl(\bigl\{\Caldrift(0),\,\Caldrift(\infty)\bigr\}\cup
   \bigl\{\Caldrift(\hat{x}^{*}):\;\upsilon_{2}<0\ \text{and}\ \hat{x}^{*}\ge0\bigr\}\Bigr)
@@ -780,7 +788,7 @@ $\ivol^{\mathrm{mid}}$ its mid. The primary residual is $\varepsilon$-insensitiv
 units,
 \begin{equation}\label{eq:fitresidual}
   \varepsilon\;=\;\Bigl(\frac{\bigl|\ivol-\ivol^{\mathrm{mid}}\bigr|}{h}-c_{\varepsilon}\Bigr)^{+},
-  \qquad c_{\varepsilon}=0.30,
+  \qquad c_{\varepsilon}=0.10,
 \end{equation}
 with a Huber knee beyond. A quote comfortably inside its spread contributes no gradient, so effort is
 reallocated to quotes that are outside.
@@ -848,7 +856,6 @@ consistently or one silently overrides the other.
 \end{itemize}
 
 % \subsubsection{Shape}
-\label{subsec:shape}
 
 % Where the market is silent, preferences replace data.
 
@@ -966,8 +973,7 @@ confined to it from initialisation.
 
 The \emph{rotary} modulates the arbitrage weight within each period as
 $\bigl(2+\cos(2\pi n/n_{\mathrm{rot}})\bigr)/3$, never reaching zero. The period $n_{\mathrm{rot}}$
-divides the restart period so that the cycle always ends at maximum enforcement and phase-locks with
-the learning-rate schedule. Finally, a \emph{ratchet} snapshots the parameters $\Theta$ at the end of each rotary period and keeps the best state seen. 
+divides the length of each phase, so that every phase ends at maximum enforcement. Finally, a \emph{ratchet} snapshots the parameters $\Theta$ at the end of each rotary period and keeps the best state seen. 
 
 % When no state is feasible the ranking is on arbitrage first, with ties --- the usual case, since the violation is zero almost everywhere --- broken on fit; ranking on the violation alone once delivered $34.9\%$ of quotes inside their spread when a state with $44.3\%$ sat in the pool.
 
@@ -1011,8 +1017,9 @@ Table \ref{tab:hyper} collects the settings that carry an argument, now that eac
 The loss weights are not among them, and no single vector would represent them. Training proceeds in
 stages. Within each stage the learning rate decays, and the weights attached to the arbitrage
 penalties are rescaled from a localised diagnostic: the domain is partitioned, the violation of each
-condition is measured cell by cell, and the weight carried by that condition on that cell is raised
-in proportion to the measured violation. The weights are therefore a function of position on the
+condition is measured cell by cell, and the weight carried by that condition on that cell is
+multiplied up wherever a violation is found and decayed back wherever none is, inside a fixed
+range. The weights are therefore a function of position on the
 grid and of the stage, not constants. What is fixed, and is reported below, are the margins and the
 caps.
 
@@ -1023,8 +1030,9 @@ caps.
 \hline
 Symbol & Value & Rationale\\
 \hline
-$c_{\ell}$ & $1.00$ & Hypothesis \eqref{eq:ellcap} of Lemma \ref{lem:master}, and \emph{sharp}: the
-  measured excess $\min_{x\ge0}g(x)-g(0)$ is $0$ at $c_{\ell}=1$ and $-5.4\times10^{-4}$ at
+$c_{\ell}$ & $1.00$ & Hypothesis \eqref{eq:ellcap} of Lemma \ref{lem:master}. It is the exact limit
+  of the \emph{argument}, not provably of the result (\S\ref{subsec:wings}); what is measured is that
+  the excess $\min_{x\ge0}g(x)-g(0)$ is $0$ at $c_{\ell}=1$ and $-5.4\times10^{-4}$ at
   $c_{\ell}=1.2$.\\
 $c_{\dagger}$ & $0.90$ & Safety factor in $\nskew_{0}\le c_{\dagger}\nskew_{0}^{\dagger}$; absorbs
   the softmin error of Remark \ref{rem:softmin} and leaves margin. The $\Psi$-weighted worst inward
@@ -1040,16 +1048,18 @@ $\ell/|\lmon^{*}|$ & $\ge0.75$ & By \eqref{eq:wingjet}, $|\ivd{xx}|=|s|/\ell$, s
   \emph{is} a cap on peak wing curvature.\\
 $c_{\infty}$ & $0.85$ & Floor on $\Winf/a$ for a falling wing, via \eqref{eq:asymptotefloor}; trades
   wing freedom against asymptote collapse.\\
-$\Lambda/|\lmon^{*}|$ & $\le0.25$ & Collar width. Trades two effects both linear in $\Lambda$:
-  injected curvature $\approx0.361\,|\Delta_{\mathrm{s}}'''|\,\Lambda$, and quoted range swallowed
-  $=\Lambda$.\\
-$c_{\mathrm{soft}}$ & $60$ & Softmin sharpness in Remark \ref{rem:softmin}; error
-  $\le\log2/60\approx0.0116$, an absolute error rather than a relative one, absorbed by
-  $c_{\dagger}$; the soft minimum lies \emph{below} the exact one, so it cannot breach a ceiling but
-  can breach a floor.\\
+$\Lambda/|\lmon^{*}|$ & $\le0.25$ / $0.10$ & Collar width, left and right. Trades two effects both
+  linear in $\Lambda$: injected curvature $\approx0.361\,|\Delta_{\mathrm{s}}'''|\,\Lambda$, and
+  quoted range swallowed $=\Lambda$. The right fraction is the smaller because $|\lmon^{*}_{\mathrm{R}}|$
+  is itself smaller, and a quarter of it reaches back over quoted strikes.\\
+$c_{\mathrm{soft}}$ & $60$ & Softmin sharpness in Remark \ref{rem:softmin}. It is applied per
+  channel, divided by that channel's own scale --- the ceiling for $\nskew_{0}$, $|\lmon^{*}|$ for
+  $\ell$ --- so the error is $\log2/60\approx1.2\%$ of that scale and is absorbed by $c_{\dagger}$.
+  The soft minimum lies \emph{below} the exact one, so it cannot breach a ceiling; the soft maximum
+  used for the $\ell$ floor lies above it.\\
 $h_{T}$ & $0.05$ & Relative step for the maturity drift, $T\,e^{\pm h_{T}}$. The only finite
   difference in the model.\\
-$c_{\varepsilon}$ & $0.30$ & Fit deadband \eqref{eq:fitresidual} in half-spread units.\\
+$c_{\varepsilon}$ & $0.10$ & Fit deadband \eqref{eq:fitresidual} in half-spread units.\\
 $\Delta \lmon_{\min}$ & $0.04$ / $0.015$ & Long and short slope-pair spacings.\\
 network & $24\times3$ & With the enriched feature basis \eqref{eq:features} this matches what a
   $32\times4$ network delivered at $0.44$ of the cost.\\
@@ -1087,10 +1097,12 @@ The instrumentation reports, at each checkpoint:
     falling call wing does.
   \item \textbf{Collar swallow}: how much quoted range each collar absorbs and how much of the
     surface at the innermost swallowed quote is wing rather than network.
-  \item \textbf{The theorem monitor}: the fraction of maturities at which
-    $\upsilon_{1}+\upsilon_{2}<0$. Zero on both sides means the minimum of $\Caldrift$ is attained at
-    an endpoint and the wing is calendar-free by Theorem \ref{thm:wingreduction} rather than by
-    sampling.
+  \item \textbf{The theorem monitor}: the smallest value taken over the maturity line by each of
+    $\upsilon_{0}$, $\upsilon_{0}+\upsilon_{1}$ and $\upsilon_{1}+\upsilon_{2}$, each normalised by
+    its own scale, together with the fraction of nodes at which the third is negative. All three
+    minima non-negative on both sides is what makes the wing calendar-free by Theorem
+    \ref{thm:wingreduction} rather than by sampling; the third alone only places the minimum of
+    $\Caldrift$ at an endpoint, and says nothing about its sign there.
   \item \textbf{Shape}: the number of trusted quote pairs that move the wrong way. A surface can lie
     inside every bid/ask and still have the wrong local direction.
   \item \textbf{An independent dense scan} on a mesh finer than, and deliberately not aligned with,
@@ -1101,7 +1113,7 @@ The instrumentation reports, at each checkpoint:
 
 \subsection{Results}
 
-After calibration to several underlyings for different value dates (that is, for market data from different days), the surface is smooth and fits the market well. No violation of \eqref{eq:twoconditions} was detected on the independent validation grid; on the rising wings the butterfly condition holds analytically under Lemma \ref{lem:master}, while the calendar guarantee additionally requires the hypotheses of Theorem \ref{thm:wingreduction} throughout the maturity interval. A finite penalty evaluated at collocation points is not a proof of an inequality on a continuum, and none is claimed here. 
+After calibration to several underlyings for different value dates (that is, for market data from different days), the surface is smooth and fits the market well. No violation of \eqref{eq:twoconditions} was detected on the independent validation grid; on the rising wings the butterfly condition holds analytically under Lemma \ref{lem:master}. No companion lemma is stated for a falling wing, and none is needed for the same reason: there $\ivd{kk}=-s/\ell>0$ enters \eqref{eq:gsplit} as a credit rather than a cost, so the mechanism Lemma \ref{lem:master} exists to control is absent. What remains on that side is \eqref{eq:joinbutterfly}, which the counterexample of \S\ref{subsec:wings} shows is not automatic and which is therefore imposed rather than assumed; beyond the join the condition is checked on the validation grid, not proved. The calendar guarantee additionally requires the hypotheses of Theorem \ref{thm:wingreduction} throughout the maturity interval. A finite penalty evaluated at collocation points is not a proof of an inequality on a continuum, and none is claimed here. 
 
 
 
@@ -1190,7 +1202,7 @@ After calibration to several underlyings for different value dates (that is, for
 \end{figure}
 
 
-The tests performed, mainly for arbitrage purposes, have been passed. In terms of market fit, the main limitation has been noisy quotes as input data. Figure \ref{fig:pinnsurface} above shows the fitted surface against the quotes. It belongs to the SPX index, which is in a sense one of the most complex underlyings to calibrate due to the abundance of market data, tight bid/ask spreads and the presence of a strong skew. The errors measured to the mid are typically below five basis points, and $550$ of the $576$ quotes fall inside their own bid/ask, which is a good outcome given the complexity of the surface and the number of quotes fitted. The surface is smooth, and the implied volatilities are consistent with market observations.
+The tests performed, mainly for arbitrage purposes, have been passed. In terms of market fit, the main limitation has been noisy quotes as input data. Figure \ref{fig:pinnsurface} above shows the fitted surface against the quotes. It belongs to the SPX index, which is in a sense one of the most complex underlyings to calibrate due to the abundance of market data, tight bid/ask spreads and the presence of a strong skew. The errors measured to the mid are typically below five basis points, and, as Table \ref{tab:vol_calibration_all} records, $550$ of the $576$ quotes fall inside their own bid/ask, which is a good outcome given the complexity of the surface and the number of quotes fitted. The surface is smooth, and the implied volatilities are consistent with market observations. The $26$ misses are not spread across the book: $25$ of them lie on the two adjacent smiles $T=1.2704$ and $T=1.3662$, where the surface places $15$ and $12$ of $26$ quotes inside. Every other maturity is matched in full.
 
 
 % \begin{table}[htbp]
@@ -1225,8 +1237,10 @@ not fitted but \emph{implied} by six numbers describing a variance process. The 
 point of the chapter, and the question it answers is how much of a real index smile a two-factor
 rough model can carry.
 
-The book is the one described in \S\ref{sec:pinn}, but the sample and the objective are not those
-of \S\ref{subsec:objective}, and the two studies are therefore not a controlled comparison. Two
+The quotes are a Totem pull for the same index and value date as \S\ref{sec:pinn}, but a
+different export of it, and the objective is not that of \S\ref{subsec:objective}; the two
+studies are therefore not a controlled comparison, and \S\ref{subsec:rhpinn} repeats this
+calibration on the network's own book to supply one. Two
 filters are applied here. Only the sixteen maturities whose $T$ is recoverable exactly are retained,
 from $T=0.1040$ to $T=2.8446$; and within each of them an at-the-money cone
 $|\lmon|\le\tfrac12\sqrt{T}$ is imposed, which keeps $2415$ of the $2648$ quotes. The cone is not a
@@ -1398,7 +1412,7 @@ $\Hurst$ & $[0.02,\,0.50]$ & Hurst index. The upper endpoint is the classical He
   box \emph{contains} the non-rough model and does not assume the conclusion.\\
 \hline
 \end{tabular}
-\caption{The optimisation box. Only $\rho$ is sign-constrained; the Hurst index is free over the
+\caption[The optimisation box]{The optimisation box. Only $\rho$ is sign-constrained; the Hurst index is free over the
 whole admissible range, including its classical endpoint.}
 \label{tab:rhbounds}
 \end{table}
@@ -1454,8 +1468,8 @@ whole admissible range, including its classical endpoint.}
 \label{subsec:rhresults}
 
 Table \ref{tab:rhfit} reports the fit. The global search was a differential evolution over the box of
-Table \ref{tab:rhbounds} on a coarse time grid, followed by a bounded local polish on a fine one; the
-the bound on the polish is not a detail.
+Table \ref{tab:rhbounds} on a coarse time grid, followed by a bounded local polish on a fine one.
+The polish is bounded by the same box, which is why $\Hurst$ reaches its endpoint and does not pass it.
 
 \begin{table}[H]
 \centering
@@ -1464,22 +1478,33 @@ the bound on the polish is not a detail.
 \hline
 Parameter & Value & \\
 \hline
-$v_{0}$ & $0.02370$ & spot volatility $\sqrt{v_{0}}=15.39\%$\\
-$\theta$ & $0.06354$ & long volatility $\sqrt{\theta}=25.21\%$\\
-$\kappa$ & $2.0033$ & \\
-$\xi$ & $0.8968$ & \\
-$\rho$ & $-0.7346$ & \\
-$\Hurst$ & $0.4900$ & \emph{at the smooth end} of the box $[0.02,\,0.50]$; $\alpha_{\Hurst}=0.99$\\
+$v_{0}$ & $0.02368$ & spot volatility $\sqrt{v_{0}}=15.39\%$\\
+$\theta$ & $0.06247$ & long volatility $\sqrt{\theta}=24.99\%$\\
+$\kappa$ & $2.1184$ & \\
+$\xi$ & $0.9220$ & \\
+$\rho$ & $-0.7347$ & \\
+$\Hurst$ & $0.5000$ & \emph{at the smooth end} of the box $[0.02,\,0.50]$; $\alpha_{\Hurst}=1.00$\\
 \hline
-$\Phi$ & $76\,787$ & $\Phi/n=31.80$ on $n=2415$ quotes\\
-RMSE & $44.4$ bp & of volatility\\
-inside bid/ask & $9.5\%$ & median half-spread $5.5$ bp\\
+$\Phi$ & $76\,160$ & $\Phi/n=31.54$ on $n=2415$ quotes\\
+RMSE & $43.6$ bp & of volatility\\
+inside bid/ask & $10.3\%$ & median half-spread $5.5$ bp\\
 \hline
 \end{tabular}
-\caption{Rough Heston calibrated to $2415$ SPX quotes, all six
-parameters free. The Hurst index lands on the boundary of its admissible range.}
+\caption[Rough Heston calibrated to the SPX book]{Rough Heston calibrated to $2415$ SPX quotes, all six
+parameters free. The Hurst index lands on the upper endpoint of its admissible range,
+at which $\alpha_{\Hurst}=1$ and \eqref{eq:roughheston} \emph{is} the classical Heston system
+\eqref{eq:heston}. A control fitted on the same sample with $\Hurst$ pinned at $\tfrac12$
+reproduces every entry of this table, and its objective agrees with the one above to nine
+significant figures.}
 \label{tab:rhfit}
 \end{table}
+
+One parameter check is worth recording. Here $2\kappa\theta = 0.265$ against $\xi^{2}=0.850$, so the
+Feller condition \eqref{eq:fellercondition} fails; and since $\Hurst=\tfrac12$ the variance is
+exactly the square-root process of Example \ref{example:cirwellposed}, so Proposition
+\ref{prop:feller} applies verbatim and the calibrated variance reaches the origin with positive
+probability. This is the behaviour Subsection \ref{subsec:stochvol} anticipated, and it is the price
+of a steep short-dated skew.
 
 
 
@@ -1507,27 +1532,27 @@ $T=0.104$ it is a quarter of that distance away and tens of half-spreads out.}
 \hline
 $T$ & quotes & med.\ $h$ (bp) & RMSE (bp) & bias (bp) & \% of $\Phi$ & \% of $\Hurst$ gap\\
 \hline
-$0.1040$ & $256$ & $5.6$ & $47.0$ & $+36.5$ & $\mathbf{24.3}$ & $\mathbf{+57.3}$\\
-$0.1807$ & $266$ & $5.8$ & $29.4$ & $+0.9$ & $9.1$ & $+9.5$\\
-$0.2574$ & $212$ & $4.8$ & $30.7$ & $-9.6$ & $15.1$ & $+0.5$\\
-$0.3504$ & $210$ & $4.7$ & $22.1$ & $-8.6$ & $4.8$ & $-1.6$\\
-$0.4298$ & $118$ & $4.5$ & $28.5$ & $-21.2$ & $5.6$ & $-0.4$\\
-$0.5257$ & $126$ & $4.2$ & $29.0$ & $-18.4$ & $5.0$ & $+4.0$\\
-$0.6023$ & $132$ & $4.4$ & $30.0$ & $-17.9$ & $4.0$ & $+5.6$\\
-$0.6790$ & $134$ & $4.9$ & $23.4$ & $-16.4$ & $3.3$ & $+6.6$\\
-$0.7748$ & $146$ & $4.9$ & $27.1$ & $-8.8$ & $4.5$ & $+9.4$\\
-$0.8515$ & $147$ & $5.8$ & $23.5$ & $+8.2$ & $2.8$ & $+4.4$\\
-$0.9281$ & $147$ & $6.6$ & $29.4$ & $+21.2$ & $4.2$ & $+2.9$\\
-$1.0240$ & $145$ & $7.5$ & $36.0$ & $+23.1$ & $5.0$ & $+2.7$\\
-$1.1006$ & $160$ & $8.3$ & $44.4$ & $+43.6$ & $5.9$ & $-0.5$\\
-$1.3470$ & $\;\;99$ & $10.8$ & $78.5$ & $+73.2$ & $5.3$ & $-0.4$\\
-$1.8480$ & $\;\;62$ & $29.1$ & $114.0$ & $+107.4$ & $1.1$ & $+0.2$\\
-$2.8446$ & $\;\;55$ & $109.9$ & $136.5$ & $+135.1$ & $0.1$ & $+0.1$\\
+$0.1040$ & $256$ & $5.6$ & $46.6$ & $+35.7$ & $\mathbf{24.1}$ & $\mathbf{+56.9}$\\
+$0.1807$ & $266$ & $5.8$ & $29.7$ & $+0.7$ & $9.3$ & $+9.1$\\
+$0.2574$ & $212$ & $4.8$ & $31.1$ & $-9.5$ & $15.5$ & $+0.0$\\
+$0.3504$ & $210$ & $4.7$ & $22.0$ & $-8.3$ & $4.8$ & $-1.7$\\
+$0.4298$ & $118$ & $4.5$ & $28.1$ & $-20.7$ & $5.6$ & $-0.3$\\
+$0.5257$ & $126$ & $4.2$ & $28.4$ & $-17.9$ & $4.9$ & $+4.2$\\
+$0.6023$ & $132$ & $4.4$ & $29.5$ & $-17.4$ & $3.9$ & $+5.8$\\
+$0.6790$ & $134$ & $4.9$ & $23.1$ & $-16.1$ & $3.2$ & $+6.7$\\
+$0.7748$ & $146$ & $4.9$ & $27.0$ & $-8.7$ & $4.6$ & $+9.6$\\
+$0.8515$ & $147$ & $5.8$ & $23.6$ & $+8.2$ & $2.8$ & $+4.4$\\
+$0.9281$ & $147$ & $6.6$ & $29.5$ & $+21.0$ & $4.3$ & $+2.9$\\
+$1.0240$ & $145$ & $7.5$ & $36.0$ & $+22.6$ & $5.1$ & $+2.8$\\
+$1.1006$ & $160$ & $8.3$ & $43.6$ & $+42.7$ & $5.8$ & $-0.3$\\
+$1.3470$ & $\;\;99$ & $10.8$ & $76.7$ & $+71.6$ & $5.1$ & $-0.2$\\
+$1.8480$ & $\;\;62$ & $29.1$ & $110.6$ & $+104.4$ & $1.0$ & $+0.2$\\
+$2.8446$ & $\;\;55$ & $109.9$ & $131.7$ & $+130.0$ & $0.1$ & $+0.1$\\
 \hline
 \end{tabular}
-\caption{Fit by maturity at the parameters of Table \ref{tab:rhfit}. The last two columns are the
+\caption[Fit by maturity]{Fit by maturity at the parameters of Table \ref{tab:rhfit}. The last two columns are the
 share of the objective $\Phi$ contributed by each maturity, and that maturity's share of the gap
-$\Phi(\Hurst{=}0.107)-\Phi(\Hurst{=}0.49)$. In volatility the error grows with maturity; weighted by
+$\Phi(\Hurst{=}0.107)-\Phi(\Hurst{=}\tfrac12)$. In volatility the error grows with maturity; weighted by
 the spread the order reverses, and the shortest maturity carries both a quarter of the objective and
 well over half of the preference for the smooth kernel.}
 \label{tab:rhpermat}
@@ -1536,14 +1561,14 @@ well over half of the preference for the smooth kernel.}
 Three things must be said about this table before anything is concluded from it.
 
 \emph{The fit is mediocre in absolute terms.} A root mean square error of $44$ basis points against a
-median half-spread of $5.5$ is eight half-spreads, and only $9.5\%$ of quotes are matched inside their
+median half-spread of $5.5$ is eight half-spreads, and only $10.3\%$ of quotes are matched inside their
 own bid/ask. Six parameters do not span sixteen maturities of SPX. Figure \ref{fig:rhsmiles} shows
 the shape of the failure and Table \ref{tab:rhpermat} localises it.
 
 \emph{Where the failure sits depends on the units.} Measured in
 volatility the error grows with maturity: about $25$ basis points from three months to one year,
-rising monotonically to a \emph{bias} of $+135$ at $T=2.84$, where bias and RMSE are $135.1$ and
-$136.5$ so that essentially the whole error is a parallel offset. Measured in half-spreads --- which
+rising monotonically to a \emph{bias} of $+130$ at $T=2.84$, where bias and RMSE are $130.0$ and
+$131.7$ so that essentially the whole error is a parallel offset. Measured in half-spreads --- which
 is the metric \eqref{eq:rhobjective} actually minimises --- the ranking reverses completely, because
 the market quotes the long end $20$ times more loosely than the short one: the median half-spread runs
 from $4.5$ basis points around six months to $109.9$ at the longest maturity. 
@@ -1572,17 +1597,19 @@ $0.337$ & $\;38.62$ & $0.0240$ & $0.1032$ & $0.637$ & $0.582$ & $-0.731$\\
 $0.375$ & $\;36.49$ & $0.0239$ & $0.0857$ & $0.917$ & $0.649$ & $-0.732$\\
 $0.413$ & $\;34.61$ & $0.0239$ & $0.0753$ & $1.235$ & $0.724$ & $-0.733$\\
 $0.452$ & $\;33.03$ & $0.0238$ & $0.0684$ & $1.596$ & $0.806$ & $-0.734$\\
-$0.490$ & $\;\mathbf{31.79}$ & $0.0237$ & $0.0635$ & $2.003$ & $0.897$ & $-0.735$\\
+$0.490$ & $\;31.79$ & $0.0237$ & $0.0635$ & $2.003$ & $0.897$ & $-0.735$\\
+$0.500$ & $\;\mathbf{31.54}$ & $0.0237$ & $0.0625$ & $2.118$ & $0.922$ & $-0.735$\\
 \hline
 \end{tabular}
-\caption{The objective profiled in $\Hurst$. Entries marked $^{*}$ sit on the upper bound of
-$\theta$. The profile is strictly monotone: every rougher kernel fits strictly worse.}
+\caption[The objective profiled in the Hurst index]{The objective profiled in $\Hurst$. Entries marked $^{*}$ sit on the upper bound of
+$\theta$. The profile decreases strictly at every step of the grid: every rougher kernel on it
+fits worse.}
 \label{tab:rhprofile}
 \end{table}
 
-The profile is strictly monotone. At $\Hurst=0.107$, a value typical of the rough volatility
-literature, the objective is $2.6$ times its value at the boundary. Three checks were made before
-reading anything into this.
+The profile decreases strictly at every step of the grid. At $\Hurst=0.107$, a value typical of the
+rough volatility literature, the objective is $2.6$ times its value at the endpoint. Four checks
+were made before reading anything into this.
 
 \begin{itemize}
   \item \textbf{Is it the box?} For $\Hurst\le0.26$ the fitted $\theta$ sits on its upper bound, so
@@ -1592,6 +1619,9 @@ reading anything into this.
     and $\theta$ at $\Hurst=0.490$ and $\Hurst=0.375$ unchanged to four decimal places: those
     optima are interior. Even granted absurd parameters the rough kernel fits more than twice as badly
     as the smooth one does at its own interior optimum.
+  \item \textbf{Is it the search?} No. A global search and an independent local restart from a
+    different starting point return the same endpoint, agreeing in $\Phi$ to ten significant
+    figures.
   \item \textbf{Is it the solver?} No. Fitting the model's \emph{own} short-dated at-the-money skew
     to a power of $T$ returns an exponent close to the predicted $\Hurst-\tfrac12$ throughout the
     range: $-0.494$ against $-0.45$ at $\Hurst=0.05$, $-0.342$ against $-0.30$ at $\Hurst=0.20$,
@@ -1609,10 +1639,13 @@ reading anything into this.
 \label{subsec:rhidentification}
 
 It would be easy, and wrong, to report Table \ref{tab:rhprofile} as evidence that this index is not
-rough. The correct conclusion is weaker and more interesting: \emph{this data cannot resolve
-$\Hurst$ at all}. What the monotone profile reflects is the short-dated at-the-money term structure,
-which a one-factor rough Heston with a flat $v_{0}$ and $\theta$ cannot carry; $\Hurst$ is left to
-absorb that misspecification.
+rough without first asking whether the fit can see $\Hurst$ at all. Two estimators are in play and
+they must be kept apart: the at-the-money skew regression, which is what the rough volatility
+literature reads $\Hurst$ off, and the objective \eqref{eq:rhobjective} itself. The first has no
+power over this maturity range, as the rest of this subsection shows. The second does, and
+\S\ref{subsec:rhplant} shows it by planting a known $\Hurst$ and recovering it. The distinction is
+the whole of the matter: an inference from the blindness of the one to the blindness of the other is
+exactly the step that does not hold.
 
 The argument rests on one measurement. Remark \ref{rem:roughhestoncost} identified the empirical
 signature of roughness as the at-the-money skew power law $T^{\Hurst-1/2}$, and it is natural to
@@ -1629,15 +1662,14 @@ applied to the fitted models themselves.
 Skew regressed over $T\in[0.104,\,2.845]$ & slope & implied $\Hurst$\\
 \hline
 market quotes & $-0.454$ & $0.046$\\
-model at $\Hurst=0.490$ & $-0.474$ & $0.026$\\
-model at $\Hurst=0.107$ & $-0.507$ & $-0.007$\\
+model at $\Hurst=\tfrac12$ & $-0.475$ & $0.025$\\
+model at $\Hurst=0.107$ & $-0.506$ & $-0.006$\\
 \hline
 \end{tabular}
-\caption{The skew power law estimated over the available maturity range, applied to the market and to
+\caption[The skew power law over the available range]{The skew power law estimated over the available maturity range, applied to the market and to
 two calibrated models whose true Hurst indices differ by a factor of nearly five. The estimator
-cannot tell them apart. The legend of Figure \ref{fig:rhidentification} reports $-0.506$ for the
-last of these, the same fit recomputed on the plotted maturity grid; the two agree to the precision
-the estimate carries.}
+cannot tell them apart. The legend of Figure \ref{fig:rhidentification} reports the same three
+slopes.}
 \label{tab:rhskewexponent}
 \end{table}
 
@@ -1645,8 +1677,8 @@ the estimate carries.}
 \centering
 \includegraphics[width=\textwidth]{Images/rh-identification.pdf}
 \caption[What the surface identifies]{Left: the objective profiled in $\Hurst$, the other five
-parameters re-optimised at each point; it is strictly monotone and its minimum is the boundary
-$\Hurst=0.49$, marked. Centre: the at-the-money term structure, market against the two calibrated
+parameters re-optimised at each point; it decreases at every step and its least value on the
+grid drawn is $\Hurst=\tfrac12$, marked. Centre: the at-the-money term structure, market against the two calibrated
 models. Right: the same two models and the market on log axes, with the fitted slopes of
 $|\partial_{\lmon}\ivol|$ against $T$. The three slopes agree to within $0.06$ although the two models
 differ in $\Hurst$ by a factor of nearly five, which is Table \ref{tab:rhskewexponent} drawn: over
@@ -1654,19 +1686,214 @@ this maturity range the skew power law does not separate rough from smooth.}
 \label{fig:rhidentification}
 \end{figure}
 
-The model with $\Hurst=0.49$ --- numerically close to the classical endpoint --- reproduces the
-``rough'' exponent $-0.474$ essentially as well as the genuinely rough model reproduces $-0.507$, and
+The model at $\Hurst=\tfrac12$ --- the classical endpoint itself --- reproduces the
+``rough'' exponent $-0.475$ essentially as well as the genuinely rough model reproduces $-0.506$, and
 both lie on the same side of the market's $-0.454$, within $0.06$ of it. The estimator has no power here, and the reason is that
 $T^{\Hurst-1/2}$ is an asymptotic statement as $T\to0$. Over a range beginning at $38$ days, the
 mean reversion of \emph{any} Heston-type model decays the skew on its own, and that decay dominates
 the contribution of the kernel.
 
 One entry of Table \ref{tab:rhskewexponent} deserves a line of its own. The implied $\Hurst$ read
-off the rough model is $-0.007$, outside the admissible range $(0,\tfrac12)$ altogether. That is not
+off the rough model is $-0.006$, outside the admissible range $(0,\tfrac12)$ altogether. That is not
 a property of the model, whose $\Hurst$ is $0.107$ by construction, but of the estimator: over this
 maturity range the regression does not recover the exponent it is meant to measure, and nothing
 constrains the value it returns to be admissible. An estimate that lands outside the parameter space
 is the clearest possible symptom of the identification failure this subsection is about.
+
+% ---------------------------------------------------------------------------
+\subsection{Planting a known Hurst index}
+\label{subsec:rhplant}
+
+Table \ref{tab:rhprofile} and Table \ref{tab:rhskewexponent} are both read off the market, where the
+answer is unknown. The question they raise --- whether the objective can identify $\Hurst$ on a grid
+of this shape --- can be settled on a book whose answer is known, because we build it.
+
+Take the sixteen maturities, the strike ladder and the cone of the real sample; price them with
+\eqref{eq:roughheston} at the parameters of Table \ref{tab:rhfit} but with $\Hurst=0.10$; and
+perturb each quote by a Gaussian draw of one standard half-spread. The result carries the geometry
+and the noise of the market and a Hurst index of exactly $0.10$. Since
+$\E[(\text{noise}/h)^{2}]=1$ by construction, the objective at the planted parameters must be
+$\Phi/n=1$; it is $1.003$, which is the first check that the book is what it claims to be.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrrrrr}
+\hline
+ & $v_{0}$ & $\theta$ & $\kappa$ & $\xi$ & $\rho$\\
+\hline
+planted & $0.023679$ & $0.062474$ & $2.11842$ & $0.92200$ & $-0.73474$\\
+recovered at $\Hurst=0.10$ & $0.023670$ & $0.062400$ & $2.12494$ & $0.92256$ & $-0.73481$\\
+\hline
+\end{tabular}
+\caption[Planted and recovered parameters]{The five nuisance parameters planted in the synthetic book and those returned by the
+calibration with $\Hurst$ held at the planted value. The search is the one behind Table
+\ref{tab:rhfit}: differential evolution followed by a bounded polish.}
+\label{tab:rhplant}
+\end{table}
+
+Run at $\Hurst=0.10$ the calibration returns $\Phi/n=1.001$ --- the noise floor --- and the five
+parameters of Table \ref{tab:rhplant}. Run at $\Hurst=\tfrac12$ on the same book it returns $55.3$.
+Set that beside the market book and the contrast is the point:
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrr}
+\hline
+$\Phi/n$ at & $\Hurst\approx0.1$ & $\Hurst=\tfrac12$\\
+\hline
+the synthetic book, planted rough & $\mathbf{1.00}$ & $55.3$\\
+the market book of Table \ref{tab:rhfit} & $82.7$ & $\mathbf{31.5}$\\
+\hline
+\end{tabular}
+\caption[Rough and smooth kernels on both books]{The objective on a book that is rough by construction and on the market book, at the two
+ends of the admissible range. On the first the rough kernel wins by a factor of fifty; on the second
+the smooth kernel wins by a factor of $2.6$. Every entry is a global search, so the four are
+like for like: the market entry at $\Hurst\approx0.1$ is a fit at $\Hurst=0.107$ returning $82.71$
+against the $82.83$ of Table \ref{tab:rhprofile}, and the synthetic entry at $\Hurst=\tfrac12$
+returns $55.30$. There the smooth kernel drives $\xi$ to its upper bound trying to carry a roughness
+it does not have, which is the mirror of what $\theta$ does on the market book at small $\Hurst$.}
+\label{tab:rhplantcompare}
+\end{table}
+
+The objective therefore separates a rough book from a smooth one by a wide margin, on exactly the
+grid the market book occupies and at exactly its noise level. Table \ref{tab:rhskewexponent} shows
+that the skew regression cannot tell the two apart; this shows that the calibration can. What the
+market book says is accordingly not that $\Hurst$ is unknowable here, but that this surface is not
+rough within this model family --- and the reason the profile slides to the endpoint is the one
+\S\ref{subsec:rhpinn} reads off the quotes directly, a term structure of the at-the-money level that
+no one-factor Heston can thread at any $\Hurst$.
+
+One caveat remains, and it concerns the instrument rather than the conclusion. The profile of Table
+\ref{tab:rhprofile} re-optimises the five nuisance parameters by a Nelder--Mead continuation,
+walking $\Hurst$ down from the smooth end. On the synthetic book that procedure reports
+$\Phi/n=19.6$ at $\Hurst=0.124$, where $1.003$ is attainable: carried down from $\tfrac12$ it never
+reaches the basin a rough kernel needs. A profile built that way is an \emph{upper bound} on
+$\Phi^{*}(\Hurst)$. On the market book the bound is tight --- the independent global search quoted
+above agrees with it to $0.14\%$, and on the same five parameters --- because there is no distant
+rough basin to miss. On a book that has one, there is, and a profile alone would not have found it.
+
+% ---------------------------------------------------------------------------
+\subsection{The same book as \S\ref{sec:pinn}}
+\label{subsec:rhpinn}
+
+One thing has been left implicit. The sample fitted above is not the one \S\ref{sec:pinn} trained on.
+Both are Totem consensus pulls for the same index and the same value date, but they are different
+exports: the network was given $576$ quotes on $22$ maturities reaching $T=9.28$, while
+\eqref{eq:rhobjective} was minimised over the $2415$ quotes of a denser sixteen-maturity grid that
+stops at $T=2.84$. Nothing said so far depends on the difference, but a comparison between the two
+methods does, so the calibration is repeated here on the network's own book.
+
+Two filters are applied, and to the rough Heston fit alone: maturities out to one year, which leaves
+the eight shortest smiles, and an at-the-money cone $|\lmon|\le\tfrac12\sqrt{T+0.1}$, which keeps
+$133$ of the $212$ quotes in that range. The network was fitted to the whole book.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrl}
+\hline
+Parameter & Value & \\
+\hline
+$v_{0}$ & $0.14412$ & spot volatility $\sqrt{v_{0}}=37.96\%$\\
+$\theta$ & $0.13592$ & long volatility $\sqrt{\theta}=36.87\%$\\
+$\kappa$ & $6.6187$ & \\
+$\xi$ & $1.2578$ & \\
+$\rho$ & $-0.1234$ & \\
+$\Hurst$ & $0.500000$ & \emph{at the smooth end} of the box $[0.02,\,0.50]$\\
+\hline
+$\Phi$ & $2588.5$ & $\Phi/n=19.46$ on $n=133$ quotes\\
+RMSE & $58.4$ bp & of volatility; largest error $160.7$ bp\\
+inside bid/ask & $20.3\%$ & median half-spread $11.1$ bp\\
+\hline
+\end{tabular}
+\caption[Rough Heston on the network's own book]{Rough Heston calibrated to the $133$ quotes of the book of \S\ref{sec:pinn} with $T\le1$
+lying inside the cone $|\lmon|\le\tfrac12\sqrt{T+0.1}$, all six parameters free. As in Table
+\ref{tab:rhfit} the Hurst index goes to the upper endpoint of its range; a control with $\Hurst$
+pinned at $\tfrac12$ reproduces every entry above to six decimal places.}
+\label{tab:rhpinn}
+\end{table}
+
+The free search returns $\Hurst=0.500000$. Pinning $\Hurst$ at $\tfrac12$ and refitting the other
+five parameters reproduces every entry of the table to six decimal places, and the profile falls
+strictly from $\Phi/n=21.15$ at $\Hurst=0.05$ to $19.46$ at the endpoint. A second book, on a
+different maturity grid, therefore returns the answer the first one did: left free, the calibration
+selects its own classical limit.
+
+Here $2\kappa\theta = 1.799$ against $\xi^{2}=1.582$, so this fit satisfies the Feller condition
+\eqref{eq:fellercondition} that the one of Table \ref{tab:rhfit} violates.
+
+The absolute fit is worse than in Table \ref{tab:rhfit} --- $58$ basis points against a median
+half-spread of $11$ --- and the reason has nothing to do with the kernel. It is in the third column
+of Table \ref{tab:rhpinnmat}.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{rrrrrrr}
+\hline
+$T$ & quotes & ATM $\ivol$ & med.\ $h$ (bp) & RMSE (bp) & bias (bp) & inside\\
+\hline
+$0.1971$ & $16$ & $0.3692$ & $14.5$ & $78.4$ & $-76.5$ & $0.0\%$\\
+$0.2738$ & $14$ & $0.3554$ & $18.9$ & $57.7$ & $+53.9$ & $0.0\%$\\
+$0.3504$ & $15$ & $0.3476$ & $15.0$ & $123.6$ & $+122.5$ & $0.0\%$\\
+$0.4463$ & $16$ & $0.3627$ & $10.9$ & $34.2$ & $-30.8$ & $12.5\%$\\
+$0.5229$ & $18$ & $0.3577$ & $\;\;8.9$ & $15.9$ & $-1.9$ & $61.1\%$\\
+$0.5996$ & $18$ & $0.3531$ & $\;\;9.4$ & $46.3$ & $+44.7$ & $5.6\%$\\
+$0.6954$ & $18$ & $0.3580$ & $10.3$ & $12.5$ & $-4.3$ & $50.0\%$\\
+$0.7693$ & $18$ & $0.3602$ & $\;\;8.1$ & $28.0$ & $-24.6$ & $22.2\%$\\
+\hline
+\end{tabular}
+\caption[Fit by maturity on the network's book]{The fit of Table \ref{tab:rhpinn} by maturity. The third column is the market
+at-the-money volatility, taken from the quote nearest $\lmon=0$; it changes direction three times.
+A Heston at-the-money term structure cannot, at any $\Hurst$.}
+\label{tab:rhpinnmat}
+\end{table}
+
+The at-the-money level does not fall monotonically. It descends to $0.3476$ at $T=0.35$, recovers to
+$0.3627$ at $T=0.45$, dips again and rises again: three changes of direction across eight maturities.
+A one-factor Heston term structure interpolates between $\sqrt{v_{0}}$ and $\sqrt{\theta}$ at the
+single rate $\kappa$, and is therefore monotone in $T$ for every admissible parameter set, $\Hurst$
+included. It cannot thread that shape, and the bias column records the consequence: it alternates in
+sign --- $-76$, $+54$, $+123$, $-31$, $-2$, $+45$, $-4$, $-25$ basis points --- rather than drifting
+one way, as a misspecified kernel would make it. The two maturities the model does reach, $T=0.52$
+and $T=0.70$, are the two that happen to sit on a monotone path through the rest.
+
+The optimiser pays for the attempt in the parameters. It drives $\xi$ to $1.26$ and puts both
+$v_{0}$ and $\theta$ in the upper part of their boxes, and it returns $\rho=-0.12$: an implausibly
+weak spot/volatility correlation for an equity index, and the signature of a fit spending its skew on
+a level mismatch it cannot repair.
+
+Figure \ref{fig:rhpinncompare} places both methods on the two smiles the diffusion fits best. Where
+it attains root mean square errors of $15.9$ and $12.5$ basis points, the network attains $3.2$ and
+$4.2$, against half-spreads of $8.9$ and $10.3$: it is inside the quoted band at every strike of
+both, and its residual is of the order of a third of a half-spread rather than two.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Images/pinn-heston-compare.pdf}
+\caption[Heston and the network on two smiles]{The two maturities of Table
+\ref{tab:rhpinnmat} at which the diffusion comes closest to the quoted spread, with the surface of
+\S\ref{sec:pinn} drawn alongside it. Top: implied volatility, the bid/ask band shaded. Bottom: the
+error in half-spread units, the shaded strip being $\pm1$ half-spread. Across the $36$ strikes shown
+the network stays inside the band at every one and the diffusion at $20$.}
+\label{fig:rhpinncompare}
+\end{figure}
+
+Two conclusions follow, and they are of different kinds. The first concerns the model: on this book,
+as on the other, nothing is gained by letting $\Hurst$ leave $\tfrac12$, and what defeats the fit is
+the term structure of the at-the-money level rather than the roughness of the kernel. That is the
+diagnosis \S\ref{subsec:rhidentification} reached by reading the profile; here it is reached from the
+quotes themselves, which is the stronger route to it.
+
+The second concerns the comparison, and it should be stated without decoration. The network places
+$550$ of $576$ quotes inside their own bid/ask across $22$ maturities; the diffusion places $27$ of
+$133$ inside across eight. This is not a contest between two theories of volatility and is not
+offered as one --- the objectives differ, and \S\ref{subsec:objective} fits a surface where
+\eqref{eq:rhobjective} fits a dynamic model. It is the price of a parametrisation, and the price is
+large: what the six parameters buy is an arbitrage-free model of the spot with an interpretable
+$\rho$, a $\kappa$ and a $\theta$, and what they cost is every basis point of the gap above.
 
 % Two consequences follow.
 
@@ -1720,7 +1947,7 @@ only then is the estimator read. And because a number that is near zero is easy 
 accident, the estimator is finally put through a scan in which the correct answer is known in
 advance.
 
-% Throughout this section $\theta$ is the lead--lag coefficient of Definition \ref{def:leadlag}. The
+% Throughout this section $\leadlag$ is the lead--lag coefficient of Definition \ref{def:leadlag}. The
 % Heston long variance of Definition \ref{def:roughheston}, written with the same letter, belongs to
 % Section \ref{sec:roughcalib} and does not occur here.
 
@@ -1740,7 +1967,7 @@ Within each window the path is
   \qquad i=1 \text{ (S\&P 500)},\ 2 \text{ (EURO STOXX 50)},
 \]
 so that $X_{t_{0}}=0$ as the signature requires. Windows are consecutive and non-overlapping, of
-$n\in\{5,10,21,63\}$ observations --- a week, a fortnight, a month and a quarter of trading.
+$n\in\{5,10,21,63\}$ increments, that is $n+1$ consecutive closes --- a week, a fortnight, a month and a quarter of trading.
 
 One piece of cleaning is necessary and is worth stating because it is not cosmetic. The two markets
 observe different holiday calendars, and the source carries a shut market forward at its previous
@@ -1758,7 +1985,7 @@ observations.
 \label{subsec:levyidentities}
 
 Two quadrature rules are computed side by side. Left-point sums,
-$\lev^{12}_{s,t}\approx\sum_{k}X^{1}_{s,t_{k}}(X^{2}_{t_{k+1}}-X^{2}_{t_{k}})$, give the It\^o lift;
+$\lev^{12}_{s,t}\approx\sum_{k}X^{1}_{s,t_{k}}(X^{2}_{t_{k+1}}-X^{2}_{t_{k}})$, give the Itô lift;
 trapezoidal sums give the Stratonovich, or geometric, lift. The two differ in the symmetric part by
 the realised covariation and agree in the antisymmetric part, which is Remark
 \ref{rem:areaconventions}. Table \ref{tab:levyidentities} reports the largest violation observed
@@ -1772,14 +1999,14 @@ over every window of every length.
 Identity & Source & $\max|\text{defect}|$\\
 \hline
 $\Sym\lev^{12}_{0,\Mat}=\tfrac12 X^{1}_{0,\Mat}X^{2}_{0,\Mat}$ &
-  Proposition \ref{prop:leveltwofree} & $1.7\times10^{-18}$\\
+  Proposition \ref{prop:leveltwofree} & $6.9\times10^{-18}$\\
 $A^{\mathrm{str}}_{0,\Mat}=A^{\mathrm{it\hat o}}_{0,\Mat}$ &
   Remark \ref{rem:areaconventions} & $8.7\times10^{-19}$\\
 $A_{s,t}-A_{s,u}-A_{u,t}-\tfrac12\det(\,\cdot\,)$ &
-  Proposition \ref{prop:chenarea} & $1.7\times10^{-18}$\\
+  Proposition \ref{prop:chenarea} & $3.7\times10^{-18}$\\
 \hline
 \end{tabular}
-\caption{The identities of Subsection \ref{subsec:levyarea}, evaluated on $2849$ daily observations
+\caption[The three exact identities]{The identities of Subsection \ref{subsec:levyarea}, evaluated on $2849$ daily observations
 of the index pair. All three are satisfied at the level of double-precision rounding.}
 \label{tab:levyidentities}
 \end{table} All three sit at $10^{-18}$, which is rounding error and not agreement. 
@@ -1790,7 +2017,7 @@ of the index pair. All three are satisfied at the level of double-precision roun
 % \ref{prop:symmetricpart} holds for smooth paths. What the check confirms is that the code computes
 % the object the theory names, and that no rough-path lifting question has been silently begged.
 
-% Second, the It\^o--Stratonovich agreement is worth pausing on. The two lifts genuinely differ: their
+% Second, the Itô--Stratonovich agreement is worth pausing on. The two lifts genuinely differ: their
 % symmetric parts are separated by the realised covariation of the two legs, which over a month of
 % index data is not small. That the \emph{antisymmetric} parts coincide to $10^{-19}$ is the numerical
 % content of the statement that the quadratic covariation is symmetric, and it means the measurement
@@ -1822,7 +2049,7 @@ $21$ & $135$ & $+1.52\times10^{-5}$ & $8.79\times10^{-5}$ & $+0.17$ & $+0.008$ &
 $63$ & $\;\;45$ & $+5.28\times10^{-4}$ & $2.64\times10^{-4}$ & $+2.00$ & $+0.120$ & $0.385$\\
 \hline
 \end{tabular}
-\caption{Mean L\'evy area over non-overlapping windows of $n$ observations. ``scale'' is
+\caption[Mean L\'evy area by window length]{Mean L\'evy area over non-overlapping windows of $n$ increments. ``scale'' is
 $\bigl(\E[(X^{1}_{0,\Mat})^{2}]\,\E[(X^{2}_{0,\Mat})^{2}]\bigr)^{1/2}$, which renders the third
 column dimensionless; the last column compares the area with the symmetric part of the same tensor.}
 \label{tab:levysync}
@@ -1861,7 +2088,7 @@ deliberately misaligned pair. Pair $X^{1}_{t}$ with $X^{2}_{t+\ell}$ for $\ell=-
 days. A positive $\ell$ pairs today's S\&P with a later STOXX, which imposes an artificial lead of
 the first index over the second; a negative $\ell$ imposes the reverse. Proposition
 \ref{prop:leadlagarea} computes the expected area in the model \eqref{eq:leadlagmodel}, where the
-coupling enters through a coefficient $\theta$ rather than through a time shift; the two are not the
+coupling enters through a coefficient $\leadlag$ rather than through a time shift; the two are not the
 same experiment, and we take the proposition as a guide to sign and rough size rather than as a
 prediction for this scan. What the scan should produce on any reading is a response that reverses
 with the sign of $\ell$ and vanishes where the series are truly aligned.
@@ -1882,7 +2109,7 @@ $+2$ & $-1.05\times10^{-3}$ & $1.94\times10^{-4}$ & $-5.42$ & $-0.557$\\
 $+3$ & $-9.53\times10^{-4}$ & $2.23\times10^{-4}$ & $-4.27$ & $-0.511$\\
 \hline
 \end{tabular}
-\caption{Mean L\'evy area under an imposed lag of $\ell$ trading days, monthly windows ($n=21$,
+\caption[Mean L\'evy area under an imposed lag]{Mean L\'evy area under an imposed lag of $\ell$ trading days, monthly windows ($n=21$,
 $135$ windows). The response reverses in sign with $\ell$ and changes sign at $\ell=0$; it is not
 exactly odd, the magnitudes at $\pm\ell$ differing by some $30\%$ at $|\ell|=1$.}
 \label{tab:levylag}
@@ -1902,11 +2129,66 @@ alone.}
 \label{fig:levylag}
 \end{figure}
 
-The scan behaves as expected. Every non-zero lag is detected at
+The scan behaves as expected; Figure \ref{fig:levylag} draws it. Every non-zero lag is detected at
 $|t|\ge4.26$; the area reverses with the imposed lag --- negative under the convention above, in
 which a positive $\ell$ makes the first index lead, and positive under the reverse --- so the
 statistic reports not only that the series are misaligned but \emph{which} of them leads; and the
-zero crossing sits at $\ell=0$ and nowhere else. 
+zero crossing sits at $\ell=0$ and nowhere else.
+
+% ---------------------------------------------------------------------------
+\subsection{The classical route, and why it agrees}
+\label{subsec:levyxcorr}
+
+A null area on data whose two exchanges close four and a half hours apart invites one objection
+above all others, and it is answered by computing the statistic the area is supposed to improve
+upon. Write $\delta^{i}_{t}$ for the daily increments and
+$\gamma(h) := \E[\delta^{1}_{t}\delta^{2}_{t+h}]$ for their cross-covariance, with $h>0$ meaning
+that the first index leads. For a linearly interpolated pair the level-two entries are
+$\lev^{12}=\sum_{i<j}\delta^{1}_{i}\delta^{2}_{j}$ and
+$\lev^{21}=\sum_{i<j}\delta^{2}_{i}\delta^{1}_{j}$, so that under stationarity
+\begin{equation}\label{eq:areafromxcov}
+  \E\bigl[A_{0,\Mat}\bigr] \;=\; \tfrac12\sum_{h=1}^{n-1}(n-h)\bigl[\gamma(h)-\gamma(-h)\bigr].
+\end{equation}
+The contemporaneous term $\gamma(0)$ is absent: only the \emph{antisymmetric} part of the
+cross-covariance survives, which is Remark \ref{rem:rhocancels} read on data rather than on a model.
+
+Both sides of \eqref{eq:areafromxcov} can be measured, and Table \ref{tab:levyxcorr} does so.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{rrrr}
+\hline
+$h$ & $\gamma(h)$ & $\mathrm{corr}$ & $t$\\
+\hline
+$-2$ & $+1.322\times10^{-5}$ & $+0.097$ & $+5.16$\\
+$-1$ & $-6.367\times10^{-6}$ & $-0.047$ & $-2.48$\\
+$\phantom{-}0$ & $+7.669\times10^{-5}$ & $+0.561$ & $+29.91$\\
+$+1$ & $+1.919\times10^{-5}$ & $+0.140$ & $+7.48$\\
+$+2$ & $-1.862\times10^{-6}$ & $-0.014$ & $-0.73$\\
+\hline
+\end{tabular}
+\caption[Cross-correlogram of the daily increments]{Cross-correlogram of the daily increments, $2848$ of them, with the Bartlett standard
+error $N^{-1/2}=0.019$. The lag-one entry is positive and strongly significant: the first index does
+lead the second by a day, exactly as the difference in closing times predicts.}
+\label{tab:levyxcorr}
+\end{table}
+
+The lag-one effect is therefore real, and large. Taken alone it would put
+$\tfrac12(n-1)[\gamma(1)-\gamma(-1)] = 2.56\times10^{-4}$ into \eqref{eq:areafromxcov}, some three
+standard errors above what the area measures. What removes it is the rest of the sum. The lag-two
+entry carries the opposite sign --- $\gamma(-2)$ is positive and significant while $\gamma(2)$ is
+not --- and contributes $-1.43\times10^{-4}$; the remaining lags continue to cancel, and the full
+sum \eqref{eq:areafromxcov} comes to $2.99\times10^{-5}$ against a measured
+$\overline{A}=1.52\times10^{-5}$. The two routes agree to $0.17$ standard errors.
+
+That is the resolution, and it is worth stating in the order the evidence arrives. The
+non-synchronous closing effect is present in the data and the correlogram finds it at $t=+7.5$. The
+area does not contradict that reading; it reports the $(n-h)$-weighted antisymmetric \emph{sum} over
+all lags, in which the one-day lead is very nearly cancelled by what follows it. A cross-correlogram
+scanned lag by lag would have stopped at the first entry and concluded that the pair is
+misaligned. Whether the net is the quantity one wants is a modelling decision and not a statistical
+one --- but the two statistics are measuring what they claim to, and on this pair they agree. 
 
 % The estimator is not blind. It reports zero on the synchronous data
 % because the synchronous data has no lead--lag to report.
@@ -1941,7 +2223,7 @@ inference is drawn.
 correlation cannot.} Table \ref{tab:levylag} exhibits an instrument that is null at alignment,
 grows with misalignment and reports direction through its sign. Remark \ref{rem:rhocancels} explains
 why this is not a repackaged correlation: in the model \eqref{eq:leadlagmodel} the contemporaneous
-coupling $\rho$ and the lagged coupling $\theta$ are separately adjustable, and the area is exactly
+coupling $\rho$ and the lagged coupling $\leadlag$ are separately adjustable, and the area is exactly
 blind to the first. The symmetric part of the tensor, which on this pair is some fifty times larger,
 is where the correlation lives. The two statistics are measurements of orthogonal components of one
 object, and Proposition \ref{prop:leveltwofree} is the statement that between them they exhaust it.
@@ -1952,14 +2234,16 @@ calibration adds is that the instrument is not simply blind: the same statistic 
 $t=0.17$ here returns $|t|>4$ against a one-day displacement of the same data. A displacement of a
 whole day is, however, a very large signal, and the scan says nothing about power against a
 realistic one. The natural objection --- that the S\&P and the EURO STOXX close some four and a half
-hours apart, which is manifestly a lead--lag --- is \emph{not} disposed of, and the limitation
-should be stated plainly. A displacement shorter than the sampling interval does not leave the
-expected area unchanged. For two-sided Brownian drivers observed at unit spacing with an offset
-$\delta\in(0,1)$, the linearly interpolated pair has $\E[A]=\delta/2$ rather than $0$, because the
-overlap of the two increments contributes $\delta$ to one cross-covariance and nothing to the other.
-The closing offset is therefore a genuine confound of the daily measurement rather than something
-the statistic may ignore, and resolving it requires intraday sampling, at which point the offset
-moves inside the observable range. 
+hours apart, which is manifestly a lead--lag --- is answered in \S\ref{subsec:levyxcorr} rather than
+dismissed: the effect is in the data, the correlogram finds it at $t=+7.5$, and the area is null
+because the one-day lead is cancelled by the lags behind it, not because the statistic cannot see
+it. What remains is a limitation of the sampling rather than of the estimator. A displacement
+shorter than the interval does not leave the expected area unchanged: for two-sided Brownian drivers
+observed at unit spacing with an offset $\delta\in(0,1)$, the linearly interpolated pair has
+$\E[A]=\delta/2$ rather than $0$, because the overlap of the two increments contributes $\delta$ to
+one cross-covariance and nothing to the other. A sub-daily offset is therefore invisible to both
+statistics alike, and resolving it requires intraday sampling, at which point the offset moves
+inside the observable range. 
 
 
 % ===========================================================================
@@ -2064,8 +2348,9 @@ Lemma \ref{lem:master} and Theorem \ref{thm:wingreduction} rather than sampled.
 Section \ref{sec:roughcalib} rests on the characteristic function of El Euch and Rosenbaum
 \cite{eleucrosenbaum2019}, quoted as Theorem \ref{thm:roughhestoncf}; the wider rough volatility
 programme in which it sits is surveyed in \cite{bayerfrizfukasawa2023} and \cite{dinunno2023}. The
-Fourier route from a characteristic function to a price is
-\cite{carrmadan1999}, evaluated here on the contour $\operatorname{Im}u=-\tfrac12$. The claim that
+Fourier route from a characteristic function to a price was opened by \cite{carrmadan1999}; the
+form used here, evaluated on the contour $\operatorname{Im}u=-\tfrac12$, is Lewis'
+\cite{lewis2001}. The claim that
 the at-the-money skew behaves as $T^{\Hurst-1/2}$, on which \S\ref{subsec:rhidentification} turns, is
 from \cite{gatheraljaissonrosenbaum2018}. Proposition \ref{prop:noquadrature} is elementary and is
 recorded only because it removes the singular quadrature that a direct reading of

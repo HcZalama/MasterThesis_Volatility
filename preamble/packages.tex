@@ -29,7 +29,13 @@
 \fi
 
 \usepackage{empheq}
-\usepackage[margin=2cm]{geometry}
+\usepackage[
+  top=2cm,
+  left=2cm,
+  right=2cm,
+  bottom=2.6cm,      % Gives the footer room to breathe away from the paper edge
+  footskip=1.3cm      % Pushes the footer baseline (and rule) safely away from the text
+]{geometry}
 \usepackage{fancyhdr}
 % dsfont provides \mathds{1} for the indicator. Guarded for portability.
 \newif\ifthesis@hasdsfont

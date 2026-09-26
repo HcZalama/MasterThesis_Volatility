@@ -1079,7 +1079,7 @@
       \field{volume}{19}
       \field{year}{2010}
     \endentry
-    \entry{falconer}{book}{}{}
+    \entry{falconer2003}{book}{}{}
       \name{author}{1}{}{%
         {{hash=a4ba140e6ae5f4adf516028893d7e733}{%
            family={Falconer},
@@ -1102,7 +1102,7 @@
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{2}
+      \field{edition}{2nd}
       \field{title}{Fractal Geometry: Mathematical Foundations and Applications}
       \field{year}{2003}
     \endentry
@@ -1399,7 +1399,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{7}
-      \field{note}{Available at SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4174589}}
+      \field{note}{Available at SSRN}
       \field{title}{Volatility Is (Mostly) Path-Dependent}
       \field{year}{2022}
       \verb{urlraw}
@@ -2343,6 +2343,39 @@
       \field{pages}{95\bibrangedash 105}
       \range{pages}{11}
     \endentry
+    \entry{romanotouzi1997}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=3f9a0176d2ce2099732446d5129b09de}{%
+           family={Romano},
+           familyi={R\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=701a2d95e8b3a75c89608e9b91902077}{%
+           family={Touzi},
+           familyi={T\bibinitperiod},
+           given={Nizar},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa811f918cf4308ba35ecb1730889691}
+      \strng{fullhash}{fa811f918cf4308ba35ecb1730889691}
+      \strng{fullhashraw}{fa811f918cf4308ba35ecb1730889691}
+      \strng{bibnamehash}{fa811f918cf4308ba35ecb1730889691}
+      \strng{authorbibnamehash}{fa811f918cf4308ba35ecb1730889691}
+      \strng{authornamehash}{fa811f918cf4308ba35ecb1730889691}
+      \strng{authorfullhash}{fa811f918cf4308ba35ecb1730889691}
+      \strng{authorfullhashraw}{fa811f918cf4308ba35ecb1730889691}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical Finance}
+      \field{number}{4}
+      \field{title}{Contingent claims and market completeness in a stochastic volatility model}
+      \field{volume}{7}
+      \field{year}{1997}
+      \field{pages}{399\bibrangedash 412}
+      \range{pages}{14}
+    \endentry
     \entry{roydenfitzpatrick2010}{book}{}{}
       \name{author}{2}{}{%
         {{hash=eb545494ba09d1335ae8bea900ccb65d}{%
@@ -2401,6 +2434,7 @@
       \field{urlday}{24}
       \field{urlmonth}{9}
       \field{urlyear}{2026}
+      \field{year}{2026}
       \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.spglobal.com/marketintelligence/en/mi/products/totem.html

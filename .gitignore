@@ -1,0 +1,25 @@
+# ---------- LaTeX build products ----------
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.bbl-SAVE-ERROR
+
+# main.pdf and main.bbl are deliberately NOT ignored: the compiled thesis and the
+# biber output are kept under version control so the document builds without biber.
+
+# ---------- editor / IDE ----------
+.vs/
+.testbuild/
+
+# ---------- Python ----------
+__pycache__/
+*.pyc

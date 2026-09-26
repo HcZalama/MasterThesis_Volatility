@@ -1,5 +1,10 @@
 \thispagestyle{empty}
 
+% Unnumbered, exactly as the Introduction is, but still listed in the table of
+% contents: \addcontentsline must come after \thispagestyle so that the page
+% number written out is this one.
+\addcontentsline{toc}{chapter}{Notation}
+
 {\Huge \textbf{Notation}}
 
 \vspace{0.6cm}
@@ -18,8 +23,9 @@ do not agree on the notations they use.  The table below fixes the necessary con
 % is wanted since each block carries its own subheading.
 {\small
 % The stretch is set so that the table still closes on this single page with the
-% rough-path block added; it was 1.25 before that block existed.
-\renewcommand{\arraystretch}{1.09}
+% rough-path block added; it was 1.25 before that block existed, and 1.09 until the
+% block grew enough to strand the last row on a page of its own.
+\renewcommand{\arraystretch}{1.0}
 \setlength{\LTleft}{0pt}
 \setlength{\LTright}{0pt}
 \begin{longtable}{@{}p{0.20\textwidth}p{0.74\textwidth}@{}}
@@ -56,8 +62,10 @@ $\rho$ & A \emph{correlation}, always; $P=(\rho_{ij})$ is a correlation matrix (
 $p_{s,x}(t,y)$, $p_T$ & Transition density of a Markov process, and the terminal density of $\Spot_T$.\\
 $V_1(f)_t$, $V_p(f)_t$ & Total variation and $p$-variation of $f$ on $[0,t]$.\\
 $\rqv{X}$, $\qv{X}$ & Realised (pathwise) and predictable quadratic variation of $X$, respectively.\\
+% The row for $\mathcal{L}(\Omega,L^p[0,T])$ was removed: the same letter denotes the space
+% of linear maps $\mathcal{L}(V,W)$ in Chapter 3. Each reading is clear where it occurs, and
+% a table entry claiming one of them globally would be wrong. Both are defined in place.
 $\Lad{[0,T]\times\Om}$ & Adapted integrands square-integrable in $dt\otimes d\PP$.\\
-$\Lloc{\Om,L^p[0,T]}$ & The larger, pathwise class: adapted, with $\int_0^T|f|^p\,dt<\infty$ almost surely.\\
 \hline
 \multicolumn{2}{@{}l}{\textbf{Finance}}\\
 \hline
@@ -78,6 +86,7 @@ $N(\cdot)$ & Standard normal distribution function.\\
 $\rpX=(X,\lev)$ & A rough path: a trajectory \emph{plus} a second level it does not determine.\\
 $\lev_{s,t}$, $\levW_{s,t}$ & That second level, a function of \emph{two} times and never a path.\\
 $A_{s,t}$ & L\'evy area: the antisymmetric part of $\lev_{s,t}$, its only free datum for a pair.\\
+$\leadlag$ & Lead--lag coefficient of a pair of assets (Definition~\ref{def:leadlag}); never $\theta$, which is the Heston long-run variance.\\
 $\alpha$ & H\"older exponent of a rough path, always in $(\tfrac13,\tfrac12]$; distinct from $\Hurst$.\\
 $\Sig(\rpX)$, $\Sig^{N}$ & Signature of a rough path, and its truncation at level $N$.\\
 \hline
