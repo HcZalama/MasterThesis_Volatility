@@ -82,6 +82,22 @@
 \ifthesis@hasbiblatex
   \usepackage[style=numeric,backend=biber]{biblatex}
   \addbibresource{Referencias/Bib.bib}
+  % Line breaking *inside the bibliography only*.  The global
+  % \hyphenpenalty=100000 set further down (next to hyperref) forbids word
+  % breaks throughout the document; that is what we want for the body text,
+  % but it left the reference list with a couple of dozen overfull lines,
+  % because entries are full of long unbreakable words (journal and series
+  % names, publishers, URLs) set in a hanging-indent block.  \bibsetup is
+  % biblatex's hook, executed inside the bibliography's own group, so
+  % everything set here is undone the moment the bibliography ends: no other
+  % paragraph of the thesis is affected.
+  \appto\bibsetup{%
+    \hyphenpenalty=50        % allow word breaks again, here only
+    \exhyphenpenalty=50      % ... including at existing hyphens (Free-Boundary)
+    \tolerance=9999          % accept a loose line rather than an overfull one
+    \emergencystretch=3em    % last-resort stretch for the worst entries
+    \hbadness=10000          % do not report the looseness this buys
+  }
 \else
   \newcommand{\addbibresource}[1]{}
   \newcommand{\printbibliography}[1][]{\chapter*{Bibliography}}

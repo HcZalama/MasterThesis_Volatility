@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.24)  26 SEP 2026 22:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.24)  26 SEP 2026 23:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1574,7 +1574,7 @@ Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2329.
  [98]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
-Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2404.
+Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2402.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [99]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
@@ -1921,123 +1921,39 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 117.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [148]
-Overfull \hbox (3.53232pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Robert Alm-gren and Neil Chriss. ^^P  Op-ti-mal ex-e-cu-tion of port-fo-lio trans-ac-tions^^Q. In: \T1/lmr/m/it/12 Jour-nal
- []
-
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 121.
-(C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+ (C:\Users\hecto\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (29.08253pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Lorenzo Bergomi. \T1/lmr/m/it/12 Stochas-tic Volatil-ity Mod-el-ing\T1/lmr/m/n/12 . Chap-man & Hall/CRC Fi-nan-cial Math-e-mat-ics
- []
-
-
-Overfull \hbox (1.85294pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Fischer Black. ^^P  The Pric-ing of Com-mod-ity Con-tracts^^Q. In: \T1/lmr/m/it/12 Jour-nal of Fi-nan-cial Eco-nomics
- []
-
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 121.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
-[149
+ [149
 
 
 
 ]
-Overfull \hbox (7.95787pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Fabienne Comte and Eric Re-nault. ^^P  Long Mem-ory in Continuous-Time Stochas-tic Volatil-ity
- []
-
-
-Overfull \hbox (14.68636pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Laure Coutin and Zhong-min Qian. ^^P  Stochas-tic Anal-y-sis, Rough Path Anal-y-sis and Frac-tional
- []
-
-
-Overfull \hbox (18.52222pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Jim Gatheral and An-toine Jacquier. ^^P  Arbitrage-Free SVI Volatil-ity Sur-faces^^Q. In: \T1/lmr/m/it/12 Quan-ti-ta-tive
- []
-
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 121.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
-[150]
-Overfull \hbox (21.7534pt too wide) in paragraph at lines 121--121
-\T1/lmr/m/n/12 Vari-a-tion and the Re-duced Path Group^^Q. In: \T1/lmr/m/it/12 An-nals of Math-e-mat-ics \T1/lmr/m/n/12 171.1 (2010), pp. 109^^U167. 
- []
-
-
-Overfull \hbox (2.28862pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Eduardo Abi Jaber, Louis-Amand Gérard, and Yux-ing Huang. ^^P  Path-Dependent Pro-cesses
- []
-
-
-Overfull \hbox (0.74768pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Olav Kallen-berg. \T1/lmr/m/it/12 Foun-da-tions of Mod-ern Prob-a-bil-ity\T1/lmr/m/n/12 . 3rd ed. Cham, Switzer-land: Springer,
- []
-
-
-Overfull \hbox (10.41379pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Alan L. Lewis. \T1/lmr/m/it/12 A Sim-ple Op-tion For-mula for Gen-eral Jump-Diffusion and Other Ex-po-nen-tial
- []
-
-
-Overfull \hbox (7.0992pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Ilya Loshchilov and Frank Hut-ter. \T1/lmr/m/it/12 SGDR: Stochas-tic Gra-di-ent De-scent with Warm Restarts\T1/lmr/m/n/12 .
- []
-
+ [150]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 121.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
-[151]
-Overfull \hbox (7.15103pt too wide) in paragraph at lines 121--121
-\T1/lmr/m/it/12 Times\T1/lmr/m/n/12 . Vol. 100. Cam-bridge Stud-ies in Ad-vanced Math-e-mat-ics. Cam-bridge, UK: Cam-bridge
- []
-
-
-Overfull \hbox (5.10703pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Robert C. Mer-ton. ^^P  The-ory of Ra-tio-nal Op-tion Pric-ing^^Q. In: \T1/lmr/m/it/12 The Bell Jour-nal of Eco-nomics
- []
-
-
-Overfull \hbox (4.61942pt too wide) in paragraph at lines 121--121
-\T1/lmr/m/n/12 mod-el-ing^^Q. In: \T1/lmr/m/it/12 arXiv preprint arXiv:2309.01033 \T1/lmr/m/n/12 (2023). Ac-cessed: 2025-08-20. \T1/lmr/m/sc/12 url\T1/lmr/m/n/12 : []$\T1/lmtt/m/n/12 https :
- []
-
-
-Overfull \hbox (9.38924pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Goran Peskir and Al-bert Shiryaev. \T1/lmr/m/it/12 Op-ti-mal Stop-ping and Free-Boundary Prob-lems\T1/lmr/m/n/12 . Lec-tures
- []
-
-
-Overfull \hbox (7.01639pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Marc Ro-mano and Nizar Touzi. ^^P  Con-tin-gent claims and mar-ket com-plete-ness in a stochas-tic
- []
-
-
-Overfull \hbox (7.52373pt too wide) in paragraph at lines 121--121
-\T1/lmr/m/n/12 In: \T1/lmr/m/it/12 Math-e-mat-i-cal Pro-ceed-ings of the Cam-bridge Philo-soph-i-cal So-ci-ety \T1/lmr/m/n/12 49.1 (1953), pp. 31^^U39. 
- []
-
+ [151]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 121.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
-[152]
-Overfull \hbox (17.50916pt too wide) in paragraph at lines 121--121
-[]\T1/lmr/m/n/12 Laurence C. Young. ^^P  An In-equal-ity of the Hölder Type, Con-nected with Stielt-jes In-te-gra-tion^^Q.
- []
-
+ [152]
 File: Images/LOGOUNEDDDD.png Graphic file (type png)
 <use Images/LOGOUNEDDDD.png>
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 123.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
-[153] (main.aux (chapters/00-introduction.aux) (chapters/01-foundations.aux) (chapters/02-financial.aux) (chapters/03-roughpaths.aux) (chapters/04-applications.aux) (chapters/05-conclusions.aux) (appendix/A-auxiliary.aux) (appendix/B-proofs.aux))
+ [153] (main.aux (chapters/00-introduction.aux) (chapters/01-foundations.aux) (chapters/02-financial.aux) (chapters/03-roughpaths.aux) (chapters/04-applications.aux) (chapters/05-conclusions.aux) (appendix/A-auxiliary.aux) (appendix/B-proofs.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -2051,13 +1967,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  25982 strings out of 467871
  463482 string characters out of 5418376
- 1359245 words of memory out of 5000000
+ 1360276 words of memory out of 5000000
  53519 multiletter control sequences out of 15000+600000
  766683 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,18n,96p,1406b,2316s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (167 pages, 2585878 bytes).
+Output written on main.pdf (167 pages, 2586114 bytes).
 PDF statistics:
  4122 PDF objects out of 4296 (max. 8388607)
  899 named destinations out of 1000 (max. 500000)
