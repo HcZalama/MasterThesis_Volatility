@@ -306,8 +306,8 @@ INPUT .\Images\LOGOUNEDDDD.png
 INPUT .\Images\LOGOUNEDDDD.png
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr17.tfm
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
-INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr17.tfm
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
+INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr17.tfm
 INPUT C:\Users\hecto\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\hecto\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
 INPUT .\frontmatter\dedication.tex
