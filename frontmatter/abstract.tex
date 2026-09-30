@@ -2,7 +2,7 @@
 
 {\Huge \textbf{Abstract}}
 
-\vspace{0.6cm}
+\vspace{0.1cm}
 
 The aim of this work is to present a natural progression from the classical foundations of stochastic calculus to the study and application of modern tools such as Rough Path Theory, with the ultimate goal of employing these tools in the field of financial modelling. 
 
@@ -22,58 +22,49 @@ sense in which the semimartingale theory of Part I becomes unavailable, and Lyon
 iterated integrals. Chapter \ref{ch:applications} brings the theory to data, where the models are calibrated and
 implemented.
 
-% The organising thread is a single number. The critical exponent of Brownian motion is exactly two:
-% Young's integral requires less, Itô's construction reaches it by spending probabilistic structure,
-% and rough path theory is what remains when even that is out of reach. The empirical exponent of
-% volatility lies on the far side of it, and the mathematics of Part II is the price of crossing.
 
 This document constitutes the Master’s Thesis of Héctor Zalama Alonso, prepared as the final requirement for the Master’s Degree in Advanced Mathematics at UNED, under the supervision of Carlos Escudero Liébana, Full Professor at UNED.
 
-\vspace{0.4cm}
+
 
 \noindent\textbf{Keywords:} stochastic calculus; Itô integral; Brownian motion; quadratic
 variation; volatility; Black--Scholes; local and stochastic volatility; fractional Brownian motion;
 rough paths; rough volatility; signature; rough Heston; physics-informed neural networks;
 calibration.
 
-% \vspace{1.2cm}
+\vspace{0.6cm}
 
-% {\Huge \textbf{Resumen}}
+{\Huge \textbf{Resumen}}
 
-% \vspace{0.6cm}
+\vspace{0.1cm}
 
-% Esta memoria presenta un estudio autocontenido de la modelizaci\'on de la volatilidad, desde los
-% fundamentos cl\'asicos del c\'alculo estoc\'astico hasta los modelos rugosos que los han desplazado,
-% redactado de modo que la matem\'atica y las finanzas permanezcan mutuamente visibles en todo momento.
+Esta memoria presenta un estudio autocontenido de la modelizaci\'on de la volatilidad, desde los
+fundamentos cl\'asicos del c\'alculo estoc\'astico hasta los modelos rugosos,
+redactado de modo que la matem\'atica y las finanzas permanezcan mutuamente visibles en todo momento.
 
-% La Parte I desarrolla la maquinaria y la teor\'ia construida sobre ella. El Cap\'itulo
-% \ref{ch:foundations} construye la integral de Itô desde el principio, prestando especial atenci\'on
-% a la regularidad de las trayectorias brownianas: es la coexistencia de una variaci\'on cuadr\'atica
-% finita y no nula con una variaci\'on total infinita lo que obliga a la construcci\'on de Itô y lo
-% que, llevado un poco m\'as lejos, marca el punto en el que dicha construcci\'on deja de ser
-% aplicable. El Cap\'itulo \ref{ch:finance} levanta sobre ese cimiento la teor\'ia financiera
-% --- derivados y ausencia de arbitraje, los teoremas fundamentales de valoraci\'on de activos, el
-% marco de Black--Scholes y los modelos de volatilidad local y estoc\'astica concebidos para
-% corregirlo --- identificando en cada paso qu\'e resultado probabil\'istico est\'a actuando.
+La Parte I desarrolla la maquinaria y la teor\'ia construida sobre ella. El Cap\'itulo
+\ref{ch:foundations} construye la integral de Itô desde el principio, prestando especial atenci\'on
+a la regularidad de las trayectorias brownianas: es la coexistencia de una variaci\'on cuadr\'atica
+finita y no nula con una variaci\'on total infinita lo que obliga a la construcci\'on de Itô y lo
+que, llevado un poco m\'as lejos, marca el punto en el que dicha construcci\'on deja de ser
+aplicable. El Cap\'itulo \ref{ch:finance} levanta sobre ese cimiento la teor\'ia financiera
+--- derivados y ausencia de arbitraje, los teoremas fundamentales de valoraci\'on de activos, el
+marco de Black--Scholes y los modelos de volatilidad local y estoc\'astica --- identificando en cada paso qu\'e resultado probabil\'istico est\'a actuando.
 
-% La Parte II se ocupa de lo que ocurre m\'as all\'a de la frontera de las semimartingalas. El
-% Cap\'itulo \ref{ch:roughpaths} expone la teor\'ia de \emph{rough paths}: la evidencia emp\'irica de
-% que la volatilidad es rugosa, el sentido preciso en que la teor\'ia de Itô deja de estar disponible
-% cuando la se\~nal directora tiene exponente cr\'itico mayor que dos, y la soluci\'on de Lyons
-% mediante la extensi\'on de una trayectoria por sus integrales iteradas, junto con la transformada
-% signatura y los modelos de volatilidad rugosa que sustenta. El Cap\'itulo \ref{ch:applications}
-% lleva la teor\'ia a los datos, calibrando, implementando y comparando los modelos.
+La Parte II se ocupa de lo que ocurre m\'as all\'a de las semimartingalas. El
+Cap\'itulo \ref{ch:roughpaths} expone la teor\'ia de \emph{rough paths}: la evidencia emp\'irica de
+que la volatilidad es rugosa, el sentido preciso en que la teor\'ia de Itô deja de estar disponible
+cuando la se\~nal tiene exponente cr\'itico mayor que dos, y la soluci\'on de Lyons
+mediante la extensi\'on de una trayectoria por sus integrales iteradas, junto con la transformada
+signatura y los modelos de volatilidad rugosa que sustenta. El Cap\'itulo \ref{ch:applications}
+lleva la teor\'ia a los datos, calibrando, implementando y comparando los modelos.
 
-% El hilo conductor es un \'unico n\'umero. El exponente cr\'itico del movimiento browniano es
-% exactamente dos: la integral de Young exige menos, la construcci\'on de Itô lo alcanza a costa de
-% estructura probabil\'istica, y la teor\'ia de \emph{rough paths} es lo que queda cuando ni siquiera
-% eso est\'a al alcance. El exponente emp\'irico de la volatilidad se sit\'ua al otro lado, y la
-% matem\'atica de la Parte II es el precio de cruzarlo.
 
-% \vspace{0.4cm}
 
-% \noindent\textbf{Palabras clave:} c\'alculo estoc\'astico; integral de Itô; movimiento browniano;
-% variaci\'on cuadr\'atica; volatilidad; Black--Scholes; volatilidad local y estoc\'astica; movimiento
-% browniano fraccionario; \emph{rough paths}; volatilidad rugosa; calibraci\'on.
 
-% \newpage
+
+\noindent\textbf{Palabras clave:} c\'alculo estoc\'astico; integral de Itô; movimiento browniano;
+ volatilidad; variaci\'on cuadr\'atica; Black--Scholes; volatilidad local y estoc\'astica; movimiento
+browniano fraccionario; \emph{rough paths}; volatilidad rugosa; calibraci\'on.
+
+\newpage

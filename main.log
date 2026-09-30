@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.24)  29 SEP 2026 10:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.24)  30 SEP 2026 18:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -873,11 +873,11 @@ Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 11.
 
 
 
-{C:/Users/hecto/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./Images/LOGOUNEDDDD.png>]) (frontmatter/dedication.tex [2]) (frontmatter/preface.tex) (frontmatter/abstract.tex) [3
+{C:/Users/hecto/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./Images/LOGOUNEDDDD.png>]) (frontmatter/dedication.tex [2]) (frontmatter/preface.tex) (frontmatter/abstract.tex [3
 
 
 
-] [4
+]) [4
 
 ] (main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7.
@@ -1088,7 +1088,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1108.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [19]
-<Images/reflection.pdf, id=954, 470.54347pt x 245.9589pt>
+<Images/reflection.pdf, id=958, 470.54347pt x 245.9589pt>
 File: Images/reflection.pdf Graphic file (type pdf)
 <use Images/reflection.pdf>
 Package pdftex.def Info: Images/reflection.pdf  used on input line 1133.
@@ -1098,7 +1098,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1154.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [20 <./Images/reflection.pdf>]
-<Images/bm-variation.pdf, id=1022, 470.18498pt x 188.42395pt>
+<Images/bm-variation.pdf, id=1026, 470.18498pt x 188.42395pt>
 File: Images/bm-variation.pdf Graphic file (type pdf)
 <use Images/bm-variation.pdf>
 Package pdftex.def Info: Images/bm-variation.pdf  used on input line 1194.
@@ -1236,7 +1236,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 2512.
 See the caption package documentation for explanation.
 
-<Images/forward-backward.pdf, id=1399, 470.27693pt x 195.0745pt>
+<Images/forward-backward.pdf, id=1403, 470.27693pt x 195.0745pt>
 File: Images/forward-backward.pdf Graphic file (type pdf)
 <use Images/forward-backward.pdf>
 Package pdftex.def Info: Images/forward-backward.pdf  used on input line 2520.
@@ -1334,7 +1334,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 654.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [56]
-<Images/smile-skew.pdf, id=1719, 470.27693pt x 188.0626pt>
+<Images/smile-skew.pdf, id=1723, 470.27693pt x 188.0626pt>
 File: Images/smile-skew.pdf Graphic file (type pdf)
 <use Images/smile-skew.pdf>
 Package pdftex.def Info: Images/smile-skew.pdf  used on input line 685.
@@ -1672,7 +1672,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1148.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [114]
-<Images/surface_pinn.png, id=3012, 706.89093pt x 574.39594pt>
+<Images/surface_pinn.png, id=3016, 706.89093pt x 574.39594pt>
 File: Images/surface_pinn.png Graphic file (type png)
 <use Images/surface_pinn.png>
 Package pdftex.def Info: Images/surface_pinn.png  used on input line 1188.
@@ -1712,7 +1712,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1567.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [117]
-<Images/rh-smiles.pdf, id=3071, 470.22244pt x 277.97249pt>
+<Images/rh-smiles.pdf, id=3075, 470.22244pt x 277.97249pt>
 File: Images/rh-smiles.pdf Graphic file (type pdf)
 <use Images/rh-smiles.pdf>
 Package pdftex.def Info: Images/rh-smiles.pdf  used on input line 1645.
@@ -1735,7 +1735,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1791.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [120]
-<Images/rh-identification.pdf, id=3158, 469.43379pt x 177.38081pt>
+<Images/rh-identification.pdf, id=3162, 469.43379pt x 177.38081pt>
 File: Images/rh-identification.pdf Graphic file (type pdf)
 <use Images/rh-identification.pdf>
 Package pdftex.def Info: Images/rh-identification.pdf  used on input line 1813.
@@ -1757,7 +1757,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 1988.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [123]
-<Images/pinn-heston-compare.pdf, id=3280, 444.90971pt x 309.78154pt>
+<Images/pinn-heston-compare.pdf, id=3284, 444.90971pt x 309.78154pt>
 File: Images/pinn-heston-compare.pdf Graphic file (type pdf)
 <use Images/pinn-heston-compare.pdf>
 Package pdftex.def Info: Images/pinn-heston-compare.pdf  used on input line 1991.
@@ -1777,7 +1777,7 @@ File: Images/LOGOUNEDDDD.png Graphic file (type png)
 Package pdftex.def Info: Images/LOGOUNEDDDD.png  used on input line 2204.
 (pdftex.def)             Requested size: 17.62474pt x 16.46074pt.
  [126]
-<Images/levy-lag.pdf, id=3386, 470.1565pt x 195.65096pt>
+<Images/levy-lag.pdf, id=3390, 470.1565pt x 195.65096pt>
 File: Images/levy-lag.pdf Graphic file (type pdf)
 <use Images/levy-lag.pdf>
 Package pdftex.def Info: Images/levy-lag.pdf  used on input line 2257.
@@ -1973,9 +1973,9 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  89i,18n,96p,1406b,2316s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/hecto/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (167 pages, 2587492 bytes).
+Output written on main.pdf (167 pages, 2590126 bytes).
 PDF statistics:
- 4122 PDF objects out of 4296 (max. 8388607)
+ 4126 PDF objects out of 4296 (max. 8388607)
  899 named destinations out of 1000 (max. 500000)
  875 words of extra memory for PDF output out of 10000 (max. 10000000)
 
